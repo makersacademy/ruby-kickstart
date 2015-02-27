@@ -1,3 +1,5 @@
+# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!! IT'S A TOUGH ONE :)
+
 # Write a method, spiral_access, that takes a 2d square array (an array of arrays)
 # and a block, and calls the block for each of the elements, in spiral order.
 #
