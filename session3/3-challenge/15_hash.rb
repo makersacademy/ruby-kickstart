@@ -2,6 +2,9 @@
 
 # https://vimeo.com/24716767
 
+# ONCE YOU'VE WATCHED THIS VIDEO, DO NOT SPEND MORE THAN 30-40 MINUTES STRUGGLING THROUGH THIS CHALLENGE BEFORE MOVING ON!
+
+
 # For this problem, you will need to know how to use a linked list.
 #
 # A linked list is like a train, each car is connected to the car behind it. Then you just
