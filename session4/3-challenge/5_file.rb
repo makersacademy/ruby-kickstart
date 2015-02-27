@@ -1,3 +1,5 @@
+# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solutions file, try to understand the code, then close the file, come back here, and try again to solve it.
+
 # you will be given a file name
 # inside the file will be a series of numbers
 # find the largest number on each line
