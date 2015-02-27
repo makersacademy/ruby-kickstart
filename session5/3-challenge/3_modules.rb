@@ -1,3 +1,5 @@
+# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solution, try to understand the code, then close the file, come back here, and try again to solve it.
+
 # Write a list class. Implementation doesn't matter.
 #
 # list = List.new
