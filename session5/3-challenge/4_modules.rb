@@ -1,6 +1,9 @@
 # Well, we love being able to overload operators
 # But it gets to be a tad tedious after a while.
 #
+
+# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solution, try to understand the code, then close the file, come back here, and try again to solve it. 
+
 # Wouldn't it be great if we could write those methods one time,
 # and have them work for any class we wanted to drop them into?
 #
