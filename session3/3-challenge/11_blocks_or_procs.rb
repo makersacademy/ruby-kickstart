@@ -1,3 +1,5 @@
+# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!
+
 # Write a method that initializes an Array
 # it receives one parameter, which is 5 by default, but can be overridden by the user
 # The parameter determines the size of the Array to initialize
