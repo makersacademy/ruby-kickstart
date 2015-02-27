@@ -1,3 +1,5 @@
+# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!
+
 # This challenge is based off of Example 1 (session 3/2-examples/1_hashes)
 # modify it such that it also accepts in the hash, a color (whose values are red("#FF0000"), green("#00FF00"), and blue(#0000FF) )
 # if the color is set, then it should show up in the style
