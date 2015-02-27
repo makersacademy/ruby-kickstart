@@ -1,6 +1,9 @@
 # There are many types of exceptions and errors in Ruby
 # We want to get a list of them.
-#
+
+# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solution, try to understand the code, then close the file, come back here, and try again to solve it. 
+
+
 # We will assume that any constant whose name contains either
 # "exception" or "error" anywhere in it, regardless of case,
 # is either an exception or an error.
