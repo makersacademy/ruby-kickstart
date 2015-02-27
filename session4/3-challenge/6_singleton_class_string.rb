@@ -1,3 +1,5 @@
+# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solutions file, try to understand the code, then close the file, come back here, and try again to solve it.
+
 # In Ruby on Rails, when a person goes to a URL on your site, your application looks at the url,
 # and maps it to a controller method to handle the request
 #
