@@ -1,3 +1,5 @@
+# DO NOT SPEND MORE THAN 30-40 MINUTES STRUGGLING THROUGH THIS BEFORE MOVING ON!
+
 # You have two different problems to solve, you must get which one it is from a hash
 # The default value for the hash should be :count_clumps
 # If no hash is provided, choose count_clumps
