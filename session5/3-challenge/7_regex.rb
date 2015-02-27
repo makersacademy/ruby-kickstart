@@ -1,3 +1,5 @@
+# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solution, try to understand the code, then close the file, come back here, and try again to solve it. 
+
 # You are writing software for the Green Thumb Nursery. They sent you their inventory
 # in a text document, but you need to extract the data in order to use it. You start to
 # pull it out, by hand, one at a time. But it is tedious and your eyes start drooping.
