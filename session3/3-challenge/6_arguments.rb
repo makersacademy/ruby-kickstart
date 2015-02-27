@@ -1,3 +1,5 @@
+# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
+
 # Write a method, match_maker, which will receive an unknown number of
 # elements, and return an array where every two elements are represented by true or false.
 #
