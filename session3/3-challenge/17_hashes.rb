@@ -1,3 +1,5 @@
+# DO NOT SPEND MORE THAN 30-40 MINUTES STRUGGLING THROUGH THIS BEFORE MOVING ON!
+
 # Print to stdout, each element in a hash based linked list, in reverse.
 # If you don't know what that is, go check out the previous problem.
 #
