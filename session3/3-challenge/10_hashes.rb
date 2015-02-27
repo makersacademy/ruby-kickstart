@@ -1,3 +1,5 @@
+# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
+
 # Lets represent a file system with hashes
 # You will be passed a hash table, whose keys represent folders.
 # Their values will either be arrays of filenames in that directory
