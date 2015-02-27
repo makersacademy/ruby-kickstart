@@ -1,6 +1,6 @@
 # This is the same as 4:6 but now we want to make this more comprehensive
 
-# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solutions file, try to understand the code, then close the file, come back here, and try again to solve it.
+# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solution, try to understand the code, then close the file, come back here, and try again to solve it.
 
 # There are a few nuances, though.
 # The String you return must be retained during the object's entire life
