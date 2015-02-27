@@ -1,3 +1,5 @@
+# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solutions file, try to understand the code, then close the file, come back here, and try again to solve it.
+
 # Write a method that receives a number 1 through 5.
 # Depending on the value of the number, it will raise
 # some particular type of exception.
