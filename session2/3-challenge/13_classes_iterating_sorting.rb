@@ -1,3 +1,5 @@
+# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
+
 # Define a class called User that keeps track of a person's username
 # it should receive the username when initialized
 # it should have a method add_blog which accepts a date and text
