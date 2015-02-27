@@ -1,3 +1,5 @@
+# DO NOT SPEND MORE THAN 30-40 MINUTES STRUGGLING THROUGH THIS BEFORE MOVING ON!
+
 # Build your own sort method. It does not have to be fancy, any sort will do.
 # There are many listed here: http://en.wikipedia.org/wiki/Sorting_algorithm#Summaries_of_popular_sorting_algorithms
 #
