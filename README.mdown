@@ -59,33 +59,33 @@ The course consists of six sessions, all of which have common features:
 Sessions Overview
 ========
 
-- 1
+- Chapter 1
     * Introduction
     * Arithmetic
     * Logic
     * String
     * Basic IO
-- 2
+- Chapter 2
     * Arrays
     * Basic Classes
     * Singleton Classes
-- 3
+- Chapter 3
     * Symbols
     * Hashes
     * Blocks / Procs
     * Method Parameters
-- 4
+- Chapter 4
     * Boolean Return Values
     * Introspection / Reflection
     * Ranges
     * Simple File IO
     * Inheritance
     * Exceptions
-- 5
+- Chatper 5
     * Modules
     * Regular Expressions
     * Ruby gems
-- 6
+- Chapter 6
     * The Web
     * Sinatra
     * ERB
