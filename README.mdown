@@ -36,7 +36,7 @@ The course consists of six sessions, all of which have common features:
 
   The rest were spawned out of the brain of Mr Cheek himsef.
 
-  Don't forget to run `rack session_number:challenge_number` as you go along for feedback on whether your solutions are correct, and once you've got all your tests passing, you can compare your solution to the solutions in the 'solved' section (next)
+  Don't forget to run `rake session_number:challenge_number` as you go along for feedback on whether your solutions are correct, and once you've got all your tests passing, you can compare your solution to the solutions in the 'solved' section (next)
 
   If you have suggestions for further challenges, please create them and MAKE A PULL REQUEST!! :)
 
@@ -59,33 +59,33 @@ The course consists of six sessions, all of which have common features:
 Sessions Overview
 ========
 
-- 1
+- Chapter 1
     * Introduction
     * Arithmetic
     * Logic
     * String
     * Basic IO
-- 2
+- Chapter 2
     * Arrays
     * Basic Classes
     * Singleton Classes
-- 3
+- Chapter 3
     * Symbols
     * Hashes
     * Blocks / Procs
     * Method Parameters
-- 4
+- Chapter 4
     * Boolean Return Values
     * Introspection / Reflection
     * Ranges
     * Simple File IO
     * Inheritance
     * Exceptions
-- 5
+- Chatper 5
     * Modules
     * Regular Expressions
     * Ruby gems
-- 6
+- Chapter 6
     * The Web
     * Sinatra
     * ERB
