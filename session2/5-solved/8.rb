@@ -1,6 +1,6 @@
-def got_three?(elements)
-  elements.each_cons 3 do |a, b, c|
-    return true if a == b && b == c
+def got_three?(ary)
+  ary.each_cons(3) do |v0, v1, v2|
+    return true if v0 == v1 && v1 == v2
   end
   false
 end

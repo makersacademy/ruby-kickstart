@@ -1,13 +1,5 @@
-class Integer
-  def prime?
-    return false if self < 2
-    2.upto Math.sqrt(self) do |i|
-      return false if self % i == 0
-    end
-    true
-  end
-end
+require 'prime'
 
 def prime_chars?(strings)
-  strings.join.length.prime?
+  Prime.prime?(strings.join.length)
 end

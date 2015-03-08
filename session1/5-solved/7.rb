@@ -1,10 +1,18 @@
 def pirates_say_arrrrrrrrr(string)
-  to_return = ""
-  add_next = false
-  string.size.times do |index|
-    current_char = string[index,1] # the second param here tells it to get a str of length 1. This is only necessary on 1.8. If you are on 1.9, just go with string[index]
-    to_return << current_char if add_next
-    add_next = (current_char == "r" || current_char == "R")
+  mystring = ""
+  was_r = false
+  string.size.times do |i|
+    if was_r && string[i].downcase != "r"
+      mystring << string[i]
+      was_r = false
+    elsif was_r && string[i].downcase == "r"
+      mystring << string[i]
+    elsif was_r != true  && string[i].downcase == "r"
+      was_r = true    
+    else
+      next
+    end
   end
-  to_return
+  was_r = false
+  mystring
 end

@@ -1,7 +1,3 @@
 def arithmetic2(a, b)
-  if a < b
-    a / 2.0
-  else
-    b / 2.0
-  end
+  a < b ? a.to_f / 2 : b.to_f / 2
 end
