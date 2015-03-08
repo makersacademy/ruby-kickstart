@@ -15,3 +15,14 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? (array)
+  sum=(array.inject(:+)).length
+  n = ((sum**0.5).to_i)+1
+  m=2
+  prime_array=[]
+    while m!=n
+    prime_array << (sum % m)
+    m+=1
+    end
+  prime_array.include?(0) ? false : true
+end
