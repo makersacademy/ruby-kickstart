@@ -8,6 +8,7 @@
 # arithmetic2(19, 10)  # => 5.0
 # arithmetic2(-6, -7)  # => -3.5
 
+
 def arithmetic2(a, b)
   if a < b
      a / 2.0
