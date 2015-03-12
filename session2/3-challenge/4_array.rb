@@ -8,5 +8,12 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(numbers)
+  numbers.select { |n| numbers.include? n*n }.sort
+end
 
-
+=begin
+Line 12 - .select returns a new array of selected numbers that the code block
+gives it as true.
+.include? is asking  if numbers includes n*n
+=end
