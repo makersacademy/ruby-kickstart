@@ -6,12 +6,20 @@
 
 
 def pirates_say_arrrrrrrrr(string)
-  to_return = ""  # this is the string that will be returned, we need to add to it
-  add_next = false 
-  string.size.times do |index| # so if the string was '3' long then it would 3 times, because you want it to go through the entire string as a loop
-    current_char = string[index] # this will return each character every time you loop
-    to_return << current_char if add_next # the << keeps adding, but the < keeps overriding. Because we have set add_next to false, it w
-    add_next = (current_char == "r" || current_char == "R") # it returns the current character if it is 'r' or 'R'
-  end
-  to_return
+
+return_string = "" # !> assigned but unused variable - return_string
+
+r_character = false
+
+string.chars.each do |char| 
+
+return_string << char if r_character == true
+
+r_character = (char.upcase == "R")
+
 end
+
+return_string
+
+end
+
