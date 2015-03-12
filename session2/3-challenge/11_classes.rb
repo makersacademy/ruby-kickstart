@@ -29,7 +29,25 @@ class BeerSong
 	end
 
 	def print_song
-		print_song_outside @num_bottles
+		while true
+			if num_bottles == 1 then
+				puts "One bottle of beer on the wall,"
+				puts "One bottle of beer,"
+				puts "Take one down, pass it around,"
+				puts "Zero bottles of beer on the wall."
+				num_bottles -= 1
+			elsif num_bottles == 0 then
+				break
+			else
+				text_num = convert_number_to_text(num_bottles)
+				new_num = convert_number_to_text(num_bottles - 1)
+				puts "#{text_num.capitalize} bottles of beer on the wall,"
+				puts "#{text_num.capitalize} bottles of beer,"
+				puts "Take one down, pass it around,"
+				puts "#{new_num.capitalize} #{num_bottles > 2 ? 'bottles' : 'bottle'} of beer on the wall."
+				num_bottles -= 1
+			end
+		end
 	end
 end
 
@@ -52,26 +70,4 @@ def convert_number_to_text number
 	new_string = "#{tens[words_tens.to_sym]}-#{ones[words_ones.to_sym]}"
 
 	new_string
-end
-
-def print_song_outside num_bottles
-	while true
-		if num_bottles == 1 then
-			puts "One bottle of beer on the wall,"
-			puts "One bottle of beer,"
-			puts "Take one down, pass it around,"
-			puts "Zero bottles of beer on the wall."
-			num_bottles -= 1
-		elsif num_bottles == 0 then
-			break
-		else
-			text_num = convert_number_to_text(num_bottles)
-			new_num = convert_number_to_text(num_bottles - 1)
-			puts "#{text_num.capitalize} bottles of beer on the wall,"
-			puts "#{text_num.capitalize} bottles of beer,"
-			puts "Take one down, pass it around,"
-			puts "#{new_num.capitalize} #{num_bottles > 2 ? 'bottles' : 'bottle'} of beer on the wall."
-			num_bottles -= 1
-		end
-	end
 end
