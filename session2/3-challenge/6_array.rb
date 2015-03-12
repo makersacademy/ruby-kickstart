@@ -15,7 +15,7 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
-require 'Prime'
+require 'prime'
 
 def prime_chars? char_array
 	full_string = char_array.join
