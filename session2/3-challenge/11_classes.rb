@@ -22,6 +22,8 @@
 # Add any additional methods you find helpful.
 
 class BeerSong
+	attr_accessor :num_bottles
+
 	def initialize(num_bottles = 0)
 		@num_bottles = num_bottles
 		@num_bottles = 99 if @num_bottles >= 99
@@ -29,23 +31,24 @@ class BeerSong
 	end
 
 	def print_song
+		num_bott = num_bottles
 		while true
-			if num_bottles == 1 then
+			if num_bott == 1 then
 				puts "One bottle of beer on the wall,"
 				puts "One bottle of beer,"
 				puts "Take one down, pass it around,"
 				puts "Zero bottles of beer on the wall."
-				num_bottles -= 1
-			elsif num_bottles == 0 then
+				num_bott -= 1
+			elsif num_bott == 0 then
 				break
 			else
-				text_num = convert_number_to_text(num_bottles)
-				new_num = convert_number_to_text(num_bottles - 1)
+				text_num = convert_number_to_text(num_bott)
+				new_num = convert_number_to_text(num_bott - 1)
 				puts "#{text_num.capitalize} bottles of beer on the wall,"
 				puts "#{text_num.capitalize} bottles of beer,"
 				puts "Take one down, pass it around,"
-				puts "#{new_num.capitalize} #{num_bottles > 2 ? 'bottles' : 'bottle'} of beer on the wall."
-				num_bottles -= 1
+				puts "#{new_num.capitalize} #{num_bott > 2 ? 'bottles' : 'bottle'} of beer on the wall."
+				num_bott -= 1
 			end
 		end
 	end
