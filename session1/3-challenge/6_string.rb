@@ -7,4 +7,13 @@
 
 def odds_and_evens(string, return_odds)
 
+	string_array = string.split(//)
+	new_string_array = []
+
+	string_array.each_with_index do |char, index|
+		new_string_array << char if (return_odds ? index.odd? : index.even?)
+	end
+
+new_string_array.join
+
 end

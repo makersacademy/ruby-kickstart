@@ -65,14 +65,6 @@ class Blog
 
 end
 
-=begin
-f = User.new('jamesmiller')
-puts f.blogs.to_s
-new_blog = f.add_blog Date.parse("2015-03-10"), "Here is some text to go in the blog."
-another_blog = f.add_blog Date.parse("2015-03-11"), "Here is different text ja."
-puts f.blogs[0].date
-puts f.blogs[1].date
-=end
 
 # ==========  EXAMPLE  ==========
 #

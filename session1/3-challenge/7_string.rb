@@ -6,4 +6,14 @@
 
 def pirates_say_arrrrrrrrr(string)
 
+	string_array = string.split(//)
+	new_string_array = []
+
+	string_array.each_with_index do |char, index|
+		new_string_array << string_array[index + 1] if char.downcase == "r"
+	end
+
+	new_string_array.join
+
 end
+
