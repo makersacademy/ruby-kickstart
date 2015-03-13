@@ -14,3 +14,8 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(numbers)
+  # Only select (keep) the numers that when devided by 3 DONT leave a remainder of 3
+  # and then map those numbers to a new array, finding their remainder when devided by 3
+  numbers.select { |number| number % 3 != 0 }.map { |number| number % 3 }
+end

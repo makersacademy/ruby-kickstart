@@ -24,12 +24,36 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  # While loop which gets users input and stores in line
+  while line = gets
+    # Chomp the input and overwrite the input
+    line.chomp!
+    # IF line = BYE then break the while loop
+    break if line == "BYE"
+    # if line is in upcase and isn;t nothing
+    if line == line.upcase && line != ""
+      puts "NO, NOT SINCE 1938!"
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+  end
 end
 
+=begin Without comments:
 
+def deaf_grandma
+  while line = gets
+    line.chomp!
+    break if line == "BYE"
+    if line == line.upcase && line != ""
+      puts "NO, NOT SINCE 1938!"
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+  end
+end
 
-
+=end
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.

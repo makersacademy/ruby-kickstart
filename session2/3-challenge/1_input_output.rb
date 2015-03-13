@@ -8,6 +8,9 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  # get the users input, split it into two values and map it to a new array, converted to intergers.
+  a , b = gets.split.map { |num| num.to_i }
+  puts a + b
+  puts a - b
+  puts a * b
 end

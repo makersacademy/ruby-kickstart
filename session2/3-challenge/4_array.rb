@@ -8,5 +8,7 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
-
+def get_squares(numbers)
+  # Only select (keep) the numbers that include n*n (n's square) and sort it
+  numbers.select { |n| numbers.include? n*n }.sort
+end
