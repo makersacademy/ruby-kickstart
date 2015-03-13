@@ -25,6 +25,18 @@
 
 def deaf_grandma
 
+  s = gets.chomp
+
+  if s != "BYE"
+
+    if s != "" && s == s.upcase
+    puts "NO, NOT SINCE 1938!"
+    deaf_grandma
+    else
+    puts "HUH?! SPEAK UP, SONNY!"
+    deaf_grandma
+    end
+  end
 end
 
 

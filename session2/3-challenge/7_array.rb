@@ -9,3 +9,26 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(s)
+
+  a = s.gsub(/[^\w\'\’\s]/, ' ').split
+
+  b = []
+
+  i = 0
+
+  l = a.length
+
+  while i <= l - 1
+    if i.even?
+      b << a[i]
+    end
+    i = i + 1
+  end
+
+  b
+
+end
+
+#print alternate_words("n$ad'v rose&nber'g don’t Karoline Ei&^lb'erg")
+#puts

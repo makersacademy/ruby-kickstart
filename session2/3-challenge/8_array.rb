@@ -6,3 +6,15 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three? (a)
+  l = a.length
+  i = 0
+  result = false
+  while i < l - 2
+    if a[i] == a[i+1] && a[i] == a[i+2]
+      result = true
+    end
+    i = i + 1
+  end
+  result
+end

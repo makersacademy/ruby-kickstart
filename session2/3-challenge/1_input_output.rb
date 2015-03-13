@@ -7,7 +7,13 @@
 # Standard input will be like "9 2\n" and will expect you to print
 # "11\n7\n18\n" to standard output.
 
+
 def sum_difference_product
-  # your code goes here
-  
+  s = gets
+  a = s.split
+  puts "#{a[0].to_i + a[1].to_i} #{a[0].to_i - a[1].to_i} #{a[0].to_i * a[1].to_i}"
 end
+
+# puts "type two numbers"
+
+# sum_difference_product

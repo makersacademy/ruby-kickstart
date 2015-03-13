@@ -7,6 +7,14 @@
 
 class String
   def every_other_char
+    a = ""
+    length.times do |i|
+    next if i.odd?
+    a << self[i]
+    end
+    a
   end
-  
 end
+
+# print "abcdefghijk".every_other_char
+# puts

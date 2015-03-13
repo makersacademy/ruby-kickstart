@@ -15,3 +15,20 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(a)
+  n = a.join.length
+  i = 2
+  n == 0 ? prime = false : n == 1 ? prime = false : prime = true
+
+  while i < n
+    if n % i == 0
+      prime = false
+    end
+    i = i + 1
+  end
+
+  prime
+
+end
+
+# puts prime_chars?(["nadav", "rosenberg"])
