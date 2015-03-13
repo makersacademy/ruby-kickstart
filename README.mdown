@@ -26,7 +26,7 @@ The course consists of six sessions, all of which have common features:
 
   Once you've gone through the notes for a section, have a look and a play with the examples to check you fully understand what's going on.
 
-  *PLEASE BE ENCOURAGED TO ADD AS MANY EXAMPLES AS YOU CAN AND MAKE A PULL REQUEST!!*
+  *PLEASE BE ENCOURAGED TO ADD AS MANY EXAMPLES AS YOU CAN!*
 
   **Challenges**
   --------------
@@ -40,8 +40,8 @@ The course consists of six sessions, all of which have common features:
   Don't forget to run `rake <session_number>:<challenge_number>` as you go along for feedback on whether your solutions are correct, and once you've got all your tests passing, you can compare your solution to the solutions in the 'solved' section (next)
 
   If you have suggestions for further challenges, please create them and MAKE A PULL REQUEST!! :)
-
-  FYI - when you solve a challenge, please *move* your solution into the relevant file in the 'solved' directory and make a pull request. I would like to keep the challenges empty so future students don't immediately see the solutions... And remember to do 'git pull' before you add your solution, so I don't have to spend my life fixing merge conflicts :)
+  
+  Please put your answers in the challenges section. After completing the first two chapters, submit a pull request and Travis CI will check everything for you. 
 
   **Solved & Specs**
   -------------------
