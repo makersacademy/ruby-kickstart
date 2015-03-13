@@ -2,8 +2,4 @@ language: ruby
 rvm:
   - 2.1.0
 script:
-<<<<<<< HEAD
   - "bundle exec rake {1,2}:all"
-=======
-  - "bundle exec rake {1,2}:all"
->>>>>>> 142a4bdde6309ea0df304aedebeed1c2a6dce9d7
