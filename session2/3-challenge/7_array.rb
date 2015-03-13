@@ -9,3 +9,13 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(str)
+  spl = str.sub("-"," ").delete("." "?" "," ";" "(").split
+  spl.each_index do |x|
+    if x==0
+      next
+    end
+    spl.delete_at(x)
+  end
+  return spl
+end
