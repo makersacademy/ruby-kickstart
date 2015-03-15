@@ -1,5 +1,5 @@
 # Prompt the user for a number, then read it in and print out "hi" that many times
-#
+
 # Repeat this process until the user submits "bye", then say "goodbye" and end the program
 # HINT: Check out example 2 if you get stuck
 
@@ -31,16 +31,4 @@ def hi_hi_goodbye
   puts 'Goodbye!'
 end
 
-=begin
-line 27 is asigning the users imput to gets and while there is a string entered
-it will equate to true.
-The && boolean is then comparing it with the input not equalling bye: /bye/ searches
-for the string 'bye' in the input.  If both are true then the next line is executed
-If one is false ie no text input or input is 'bye' then line 31 is executed.
-
-
-
-# This will just invoke the method if you run this program directly
-# This way you can try it out by running "$ ruby 2_input_output_control.rb"
-# but it will still work for our tests
 hi_hi_goodbye if $0 == __FILE__
