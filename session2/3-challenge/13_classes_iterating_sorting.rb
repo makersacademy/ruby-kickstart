@@ -18,7 +18,6 @@
 #      end
 
 
-
 # ==========  EXAMPLE  ==========
 #
 # lissa = User.new 'QTSort'
@@ -66,3 +65,51 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+	attr_accessor :username, :blogs
+
+	def initialize(username)
+		self.username = username
+		self.blogs = []
+	end
+
+	def add_blog(date, text)
+    	new_blog = Blog.new(date, self, text)
+    	blogs << new_blog
+    	self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+   		new_blog
+	end
+end
+
+class Blog
+	attr_accessor :date, :user, :text
+
+	def initialize(date, user, text)
+		self.date = date
+		self.text = text
+		self.user = user
+	end
+
+	def summary		
+		array = text.split
+		array1 = array[0..9]
+		array2 = array1.join(' ')
+		array2
+	end
+
+	def entry
+		"#{user.username} #{date}\n#{text}"
+	end
+
+	def ==(other)
+		if date == other.date &&
+			user == other.user &&
+			text == other.text
+			return true
+		else
+			return false
+		end
+	end
+end
+

@@ -15,3 +15,19 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array)
+	number = array.join.length
+	return false if number < 2
+	if (2..number/2).none?{|x| number % x == 0} == true
+		return true
+	else
+		return false
+	end
+end
+
+=begin
+
+So I want to say, starting from the number 2, modulo this number by all the numbers between 2 and itself. 
+Then, if any are zero, return false. Otherwise, return true.
+
+=end

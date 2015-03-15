@@ -6,3 +6,17 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(array)
+	array.each_cons 3 do |x, y, z|
+		return true if x == y && y == z
+	end
+	return false
+end
+#	array.length.times do |i|
+#		if array[i] == array[i-1] && array[i] == array[i-2]
+#			return true
+#		else 
+#			return false
+#		end
+#	end
+

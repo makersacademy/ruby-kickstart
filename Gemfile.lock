@@ -47,5 +47,5 @@ DEPENDENCIES
   helloworld
   nokogiri
   rake
-  rspec (~> 3.0)
+  rspec
   sinatra
