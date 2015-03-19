@@ -15,6 +15,7 @@ def get_squares(array)
     (0..sortedArray.length-1).each do |n|
       if i*i == sortedArray[n]
         solution.push(i)
+        break
       end
     end
   end

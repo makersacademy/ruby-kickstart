@@ -34,7 +34,6 @@ def hi_hi_goodbye
     if input != "\n"
       puts 'hi '*input.to_i
     end
-
   end
 
 end

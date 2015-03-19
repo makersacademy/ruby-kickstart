@@ -16,9 +16,12 @@
 #
 
 class Person
-  def initialize(n, a, b)
-    @name = n
-    @age = a
-    @birthday = b
+  attr_accessor :name, :age
+  def initialize(n, a)
+    self.name = n
+    self.age = a
+  end
+  def birthday
+    self.age = self.age + 1
   end
 end
