@@ -8,6 +8,14 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
+  integer1 = $stdin.gets.chomp.to_i
+  integer2 = $stdin.gets.chomp.to_i
+
+  sum = integer1 + integer2
+  difference = integer1 - integer2
+  product = integer1 * integer2
   
+  puts "The sum is #{sum}, the difference is #{difference} and the product is #{product}"
 end
+
+sum_difference_product

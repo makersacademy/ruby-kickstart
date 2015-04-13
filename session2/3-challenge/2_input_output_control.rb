@@ -20,13 +20,28 @@
 
 def hi_hi_goodbye
   # your code here
+  puts "Please enter a number"
+  input = nil
 
+  while input != "bye".to_i
+  	input = $stdin.gets.chomp.to_i
+  	puts "hi" * input
+  	# break if input == "bye".to_i
+  end
+  puts "goodbye"
+
+#   while times = $stdin.gets.chomp.to_i #why does example way of doing it not even take input
+#   	puts "hi" * times
+#   	break if times.chomp == "bye"
+#   end
+#   	puts "goodbye"
 end
 
+hi_hi_goodbye
 
 
 
 # This will just invoke the method if you run this program directly
 # This way you can try it out by running "$ ruby 2_input_output_control.rb"
 # but it will still work for our tests
-hi_hi_goodbye if $0 == __FILE__
+# hi_hi_goodbye if $0 == __FILE__end
