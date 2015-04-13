@@ -8,7 +8,7 @@
 # ten_twenty(6) # => 10
 
 def ten_twenty(n)
-	if n % 2 == 0
+	if n % 2 == 0 #could try the n.even? method
 		puts 10
 	else 
 		puts 20
