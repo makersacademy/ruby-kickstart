@@ -6,5 +6,5 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	#need to watch video
 end
