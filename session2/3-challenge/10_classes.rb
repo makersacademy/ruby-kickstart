@@ -16,5 +16,9 @@
 #
 
 class Person
-
+	def initialize(name, age, birthday)
+		@name = name
+		@age = age
+		@birthday = birthday
+	end
 end
