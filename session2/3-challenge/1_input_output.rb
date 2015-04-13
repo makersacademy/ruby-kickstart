@@ -8,6 +8,11 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  puts "Enter two integers"
+  nos = $stdin.gets.chomp.split(' ')
+  puts "#{nos[0].to_i + nos[1].to_i}"
+  puts "#{nos[0].to_i - nos[1].to_i}"
+  puts "#{nos[0].to_i * nos[1].to_i}"
 end
+
+sum_difference_product

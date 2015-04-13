@@ -8,5 +8,12 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
-
+def get_squares(numbers)
+  squares = numbers.map{|number| number * number}
+  newarr = squares.each_index.select{|i| numbers.include? squares[i]}
+  fnlarr = []
+  newarr.each do |i|
+    fnlarr.push("#{numbers[i]}")
+  end
+  p fnlarr.sort
+end
