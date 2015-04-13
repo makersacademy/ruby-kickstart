@@ -4,7 +4,12 @@
 #
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
+# odds_and_evens("supercalifragilisticexpialidocious", true)
 
 def odds_and_evens(string, return_odds)
-
+  if return_odds
+	puts string.gsub(/(.)./, '\1')
+  else
+    puts string.gsub(/.(.)/, '\1')
+  end
 end
