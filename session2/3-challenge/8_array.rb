@@ -6,3 +6,18 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(arr)
+  batches = []
+  arr.each_cons(3) {|a, b, c| batches << [a, b, c]}
+  r = 0
+  batches.each do |batch|
+    if batch.uniq.length == 1
+      r += 1; break
+    end
+  end
+  if r > 0
+    puts true
+  else
+    puts false
+  end
+end

@@ -9,3 +9,12 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+  arr = string.split(' ')
+  newarr = arr.each_index.select{|i| i == 0 || (i % 2) == 0}
+  fnlarr = []
+  newarr.each do |i|
+    fnlarr.push("#{arr[i]}".gsub(/^(\W+)?(\w+)(\W+)?$/, '\2'))
+  end
+  p fnlarr
+end

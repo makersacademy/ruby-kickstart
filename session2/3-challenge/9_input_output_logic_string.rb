@@ -24,7 +24,16 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  command=gets.chomp
+  while command!='BYE'
+    if command != command.upcase or command == ''
+      puts 'HUH?!  SPEAK UP, SONNY!'
+    else
+      year=rand(1930 .. 1950)
+      puts 'NO, NOT SINCE '+year.to_s+'!'
+    end
+    command=gets.chomp
+  end
 end
 
 
