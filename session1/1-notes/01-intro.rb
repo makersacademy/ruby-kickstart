@@ -54,3 +54,205 @@
 # "Whoever holds the keys to programming ends up building the reality in which the rest of us live."
 # -- Douglas Rushkoff
 
+
+# to see the results of expressions. To show the results of a line, we use the following notation:
+
+3 + 8  #=> 11
+
+my_var = 4
+my_var #=> 4
+
+# This shows what that line evaluates to, and in the case of a  line with just a variable on it, shows the
+# the value of the objects it refers to.
+
+# Ruby organizes related data, and the ways of manipulating it, into an abstract idea called an object.
+
+# and since five is an object, it also has methods on it
+
+5.even? # => false
+5.odd?  # => true
+5.next  # => 6
+
+# Variables let us keep track of where our objects are -- so you can access objects through variables.
+
+five = 5  # five is a variable, 5 is the object it is pointing to
+
+# variables can be set to point to new values
+
+five   # => 5
+five = 'five'
+five   # => 'five'
+
+# The way you modify objects is through a series of instructions called methods.
+
+# For example, there is a set of instructions that know how to capitalize text. We group them into a method
+# named capitalize.
+
+"josh".capitalize   # => "Josh"
+
+# You can make methods, too!
+
+def is_this_a_method?
+  "Yes, it is!"   #"Yes it is!" is an object. Because this is the last object in the method, its address will
+  # be returned
+end
+
+is_this_a_method?  # => "Yes, it is!"
+
+# When you make a method, remember that it is its own little world.
+# it doesn't know about anything outside of itself, this is called scope.
+
+defined? twelve   # => nil
+twelve = 12
+defined? twelve   # => "local-variable"
+
+def my_own_little_world
+  defined? twelve   # => when we call this method it will return nil cause twelve isn't defined inside
+end                 # this method
+
+my_own_little_world   # => nil
+defined? twelve       # => "local-variable"  --- only when we called it outside returns 'local-variable' cause
+                      # twelve is defined above outside of the method.
+
+# You can pass objects, into the method. Whn we pass an object in, the variable that points to it is called
+# an argument or a parameter.
+
+# person1 and person2 are arguments or parameters
+def beam_me_up(person1,person2)
+  "The away team consists of #{person1} and #{person2}."
+end
+
+beam_me_up("Ryker", "Data")   # => "The away team consistes of Ryker and Data."
+
+# You know how you and I can go to the same website, but even though we both see it in our browser, there
+# is only one website?
+# Objects are the same way, when you pass one in, you can access it from the variable outside and inside the
+# method, but there is still just one object.
+
+def browser_goto(website)
+  website.object_id   # => 21345640
+  "Direct your browser towards #{website}"
+end
+
+# the same object id means they aer the same object
+website = "ruby-kickstart.com"
+website.object_id       # => 21345640
+browser_goto(website)   # => "Direct your browser towards ruby-kickstart.com"
+
+# Ruby likes to be beautiful, it doesn't make you put parentheses where it can figure out what you meant.
+browser_goto website    # => "Direct your browser towards ruby-kickstart.com"
+
+# There are some special methods called operators.
+# They are special because the Ruby interpreter lets you use them in pretty ways, even though they are just
+# methods.
+# That's called syntactic sugar!
+
+# there is a method named +
+3.+(5)    # => 8    -- 3 dot method plus and argument 5
+
+# but that's ugly, so Ruby lets you say
+3 + 5     # => 8
+2 - 4     # => -2
+10 / 3    # => 3
+10 % 3    # => 1
+
+# Ruby respects order of operations
+2 * 3 + 10   # => 16
+2 + 3 * 10   # => 32
+
+# operator is just a method it not just applies to numbers...also strings
+"cow" + "chicken"   # => "cowchicken"
+
+# math can't be implemented as purely as is done in the classroom
+# this means that while you think of 10 and 10.0 as the same thing, most programming languages don't.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
