@@ -12,5 +12,5 @@ def pirates_say_arrrrrrrrr(string)
     r1_index += 1
     fnlarr.push("#{strarr[r1_index]}")
   end
-  puts fnlarr.join("")
+  fnlarr.join("")
 end
