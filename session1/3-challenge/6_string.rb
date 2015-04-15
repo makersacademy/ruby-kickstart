@@ -6,20 +6,26 @@
 #
 
 def odds_and_evens(string, return_odds)
-	newstring = ""
-	#create new string to hold return of method
-	string.length.times do |i|
-		#finds length of string and to each part of that length (index) does the following...
-		next if i.even? && return_odds == true
-		#next iterates through the string to find even numbers if the boolean is true
-		next if i.odd? && return_odds == false
-		#if boolean is false, next finds odd numbers
-		newstring << string[i]
-		#pushs them to the string
+	evenstring = ""
+	oddstring = ""
+	letters = string.split ''
+	letters.each_index do |i|
+		if i % 2 == 0
+			evenstring << string[i]
+		else
+			oddstring << string[i]
+		end
 	end
-	return newstring
+	if return_odds == false
+		return evenstring
+	else
+		return oddstring
+	end
+
+
 end
+
+
 	
 
 odds_and_evens("abcdefg", true)
-odds_and_evens("willthiswork", false)
