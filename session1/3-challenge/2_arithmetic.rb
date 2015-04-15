@@ -10,11 +10,9 @@
 
 def arithmetic2(a, b)
 	if a < b
-		puts (a/2).to_f #figure out why this doesn't work?
-	elsif b < a
-		puts (b/2).to_f #figure out why this doesn't work?
+		a / 2.0  
 	else
-		puts "Numbers are the same, enter 2 different numbers" 
+		b / 2.0
 	end
 end
 

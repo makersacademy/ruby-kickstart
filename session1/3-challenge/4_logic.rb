@@ -24,9 +24,9 @@ def grade(num_books, has_read_books)
 	end
 
 	if has_read_books == true
-		puts (grade.ord - 1).chr # (.ord) finds the ASCII character number and decrements by 1 then turns into its corresponding character (.chr)
+		(grade.ord - 1).chr # (.ord) finds the ASCII character number and decrements by 1 then turns into its corresponding character (.chr)
 	else
-		puts grade
+		grade
 	end
 end
 
