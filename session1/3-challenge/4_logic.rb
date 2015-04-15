@@ -20,10 +20,8 @@ def grade(num_books, has_read_books)
   else
     result = "B"
   end
-  
   if has_read_books
     result = (result.ord - 1).chr
   end
-  
-  puts "Grade is #{result}"
+  result
 end
