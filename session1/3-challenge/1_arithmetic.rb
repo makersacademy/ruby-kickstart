@@ -9,5 +9,10 @@
 # arithmetic1(-6)     # => -50
 
 def arithmetic1(n)
+	number = (n * 5) - 20
+	return number
 end
 
+arithmetic1(10)
+arithmetic1(10.5)
+arithmetic1(-6)
