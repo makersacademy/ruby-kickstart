@@ -5,7 +5,6 @@
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
 
-
 def odds_and_evens(string, return_odds)
 final_result = ""
   string.length.times {|x|
