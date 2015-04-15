@@ -13,6 +13,18 @@
 
 
 def grade(num_books, has_read_books)
+	
+	grades = ["A","B","C","D"]
+	n = nil
+	if num_books < 10
+		n = 3
+	elsif num_books.between?(10,20)
+		n = 2
+	else num_books > 20
+		n = 1
+	end
+
+	has_read_books == true ? grades[n-1] : grades[n]
 end
 
 
