@@ -21,5 +21,5 @@ def mod_three(numbers)
       fnlarr.push(n % 3)
     end
   end
-  p fnlarr
+  fnlarr
 end
