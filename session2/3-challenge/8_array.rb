@@ -16,8 +16,8 @@ def got_three?(arr)
     end
   end
   if r > 0
-    puts true
+    true
   else
-    puts false
+    false
   end
 end
