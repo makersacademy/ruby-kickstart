@@ -10,3 +10,8 @@
 
 
 
+def get_squares(array)
+	output = Array.new
+	array.each { |n| output.push n if array.include?(n*n)}
+	output.sort
+end

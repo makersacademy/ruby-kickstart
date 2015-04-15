@@ -8,6 +8,14 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  # get input
+  input = gets.chomp
+  #split into array by space
+  array = input.split(" ").map {|s| s.to_i}
+  x = array[0]
+  y = array[1]
+  #output
+  puts (x + y).to_s + "\n" + (x - y).to_s + "\n" + (x * y).to_s + "\n"  
 end
+
+# Wow I just checked the solution, I made it a lot harder than required...
