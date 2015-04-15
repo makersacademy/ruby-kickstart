@@ -7,7 +7,7 @@
 def add_more_ruby(string)
 	string.gsub!("sad", "happy")
 	string.gsub!("Sad", "Happy")
-	puts string
+	return string
 end
 
 add_more_ruby("The clowns were sad.")       
