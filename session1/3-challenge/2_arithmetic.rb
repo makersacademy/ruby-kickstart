@@ -10,8 +10,8 @@
 
 def arithmetic2(a, b)
   if a > b
-    puts "#{b.to_f / 2}"
+    b / 2.0
   else
-    puts "#{a.to_f / 2}"
+    a / 2.0
   end
 end
