@@ -5,12 +5,12 @@
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
 
-def odds_and_evens(string, return_odds)
+
+def pirates_say_arrrrrrrrr(string)
 final_result = ""
-  string.length.times {|x|
-    next if return_odds == true && x.even? # return odd characters
-    next if return_odds == false && x.odd? # return even characters
-    final_result << string[x]
-  }
-    return final_result
-end
+string.split.each do |x|
+  next if string[x] == "r" || string[x] == "R"
+  final_result << string[x]
+  end
+  final_result
+ end
