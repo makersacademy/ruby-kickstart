@@ -25,7 +25,7 @@
 
 def deaf_grandma
 	puts "You've gone to visit grandma, you start the conversation"
-	input = nil
+	input = $stdin.gets.chomp
 	until input == "BYE"
 		input = $stdin.gets.chomp
 		if input == input.downcase

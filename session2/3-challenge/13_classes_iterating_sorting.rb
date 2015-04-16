@@ -17,7 +17,21 @@
 #        return self.date == other.date
 #      end
 
-
+#steps
+	#set-up class User - ultimately stores user info and their blogs
+	#initialize the user when receives a username
+	#method add_blog that takes a date and text to add to a blog
+	#method blogs that returns array of all blogs user written in chronological order (newest first)
+		# => pulls in an array (where stored?) and sorts (method to make sure most recently added is first 
+			#- this may be through how you add blogs e.g. goes at the front with unshift) 
+		# => need to think about the .entry variable?
+	
+	#set-up class Blog - ultimately stores entry for web log
+	#set up initialize with accessible (getter and setter) methods for text date and user
+	#method for summary first 10 words from text or entire text if less than 10 words
+		# => method on a string or array which take first x number of words - something like head-10 in command line
+			#may also need the else statement for showing whole string
+	#set-up a comparison method to check if two blogs same - if have same user, date and text?
 
 # ==========  EXAMPLE  ==========
 #

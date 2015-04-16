@@ -18,17 +18,17 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
+#MY SOLUTION#
 def hi_hi_goodbye
   # your code here
   puts "Please enter a number"
-  input = nil
-
+  input = $stdin.gets.chomp.to_i
   while input != "bye".to_i
+  	puts "hi " * input
   	input = $stdin.gets.chomp.to_i
-  	puts "hi" * input
   	# break if input == "bye".to_i
   end
-  puts "goodbye"
+  print "Goodbye!"
 
 #   while times = $stdin.gets.chomp.to_i #why does example way of doing it not even take input
 #   	puts "hi" * times
@@ -37,7 +37,22 @@ def hi_hi_goodbye
 #   	puts "goodbye"
 end
 
-hi_hi_goodbye
+#GIVEN TESTED SOLUTION#
+# def prompt
+#   puts 'Enter a number or bye'
+# end
+
+# def hi_hi_goodbye
+#   prompt
+#   while (line = gets) && (line !~ /bye/) # first is an assignment statement that returns a line or nil, and is thus boolean
+#     line.to_i.times { print 'hi ' }
+#     puts
+#     prompt
+#   end
+#   puts "Goodbye!"
+# end
+
+# hi_hi_goodbye if $0 == __FILE__ 
 
 
 

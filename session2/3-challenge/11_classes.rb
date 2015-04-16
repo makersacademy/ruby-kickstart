@@ -43,7 +43,6 @@ class BeerSong
 		elsif @beers_on_wall > 99
 			@beers_on_wall = 99
 		end
-		puts "Starting point: there are #{@beers_on_wall} beers on the wall"
 	end
 
 	def print_song

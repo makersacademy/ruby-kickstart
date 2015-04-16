@@ -16,13 +16,13 @@
 	#Remove specified list of punctuation from each element (method to do this?)
 	#return that new array -> may need to set-up empty variable for that array
 
-def alternate_words(sentence)
+def alternate_words(sentence) #Not clear why failing test because exact same output
 	array = sentence.split(' ')
 	
 	new_array = []
 	array.length.times {|index| new_array << array[index] if index.even?}
 	new_array.map! {|element| element.gsub(/[[:punct:]]/, "")}
-	puts new_array
+	return new_array
 end
 
 alternate_words("Lorem ipsum dolor sit amet.")

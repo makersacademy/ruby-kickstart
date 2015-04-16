@@ -14,7 +14,7 @@ def get_squares(numbers)
 	# squares.sort!
 	# puts squares
 	squares = numbers.select { |n| numbers.include? n*n }.sort
-	puts squares
+	return squares
 end
 
 get_squares([25, 4, 9, 6, 50, 16, 5])
