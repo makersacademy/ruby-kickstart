@@ -21,14 +21,18 @@ def prime_chars?(arr)
     n += chars.length
   end
   
-  i = 2
-  while i < n
-    if (n % i) == 0
-      rslt = false; break
-    else
-      rslt = true
+  if n == 2
+    rslt = true
+  else
+    i = 2
+    while i < n
+      if (n % i) == 0
+        rslt = false; break
+      else
+        rslt = true
+      end
+  	  i += 1
     end
-  	i += 1
   end
-  puts rslt
+  rslt
 end
