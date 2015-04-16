@@ -25,11 +25,9 @@ end
 
 def hi_hi_goodbye
 	puts prompt
-	num = gets.chomp
-	while num != "bye"
-		puts "Enter a number"
-		num = gets.chomp
-		puts "hi" * num.to_i
+	while (num = gets.chomp) && (num != "bye")
+		puts "hi " * num.to_i
+		puts prompt
 	end
 	puts "goodbye"
   # your code here
