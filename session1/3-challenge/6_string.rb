@@ -7,9 +7,11 @@
 # odds_and_evens("supercalifragilisticexpialidocious", true)
 
 def odds_and_evens(string, return_odds)
+  list = ""
   if return_odds
-	puts string.gsub(/(.)./, '\1')
+    string.length.times {|i| list << string[i] if i.odd?}
   else
-    puts string.gsub(/.(.)/, '\1')
+    string.length.times {|i| list << string[i] if i.even?}
   end
+  list
 end
