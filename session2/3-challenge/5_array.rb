@@ -14,3 +14,15 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(numarray)
+	output = []
+	numarray.each do |n|
+		rem = n % 3
+		output << rem if rem != 0
+	end
+	return output
+end
+
+mod_three([0])
+
+
