@@ -13,7 +13,7 @@ def get_squares(numbers)
   newarr = squares.each_index.select{|i| numbers.include? squares[i]}
   fnlarr = []
   newarr.each do |i|
-    fnlarr.push("#{numbers[i]}")
+    fnlarr.push(numbers[i])
   end
   p fnlarr.sort
 end
