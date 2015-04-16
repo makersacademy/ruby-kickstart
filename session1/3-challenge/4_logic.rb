@@ -13,6 +13,14 @@
 
 
 def grade(num_books, has_read_books)
+	grades = ["D", "C", "B", "A"]
+	i = num_books/10
+	i = 1 if num_books == 20
+	i = 2 if i > 2
+	if has_read_books
+		i += 1
+	end
+	grades[i]
 end
 
 
