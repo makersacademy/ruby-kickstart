@@ -9,3 +9,18 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+class String
+	def stripper
+		self.gsub(/\!|\@|\$|\#|\%|\^|\&|\*|\(|\)|\-|\=|\_|\+|\[|\]|\:|\;|\,|\.|\/|\<|\>|\?|\\/x, '')
+	end
+end
+
+def alternate_words(string)
+	output = Array.new
+	string.stripper.split("\s").each_with_index do |item,index|
+		output << item if index % 2 == 0
+	end
+	output
+end
+
+puts alternate_words("Would a dating service on the net be frowned upon . . . ? I hope not")  # => ["Lorem", "dolor", "amet"]
