@@ -10,11 +10,12 @@
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
 def alternate_words(string)
-  arr = string.split(' ')
-  newarr = arr.each_index.select{|i| i == 0 || (i % 2) == 0}
+  arr = string.gsub(/[!@$#%^&*()-=_+\[\]:;,.\/<>?\|]/, ' ').split(' ')
+  newarr = arr.each_index.select{|i| i.even?}
   fnlarr = []
   newarr.each do |i|
-    fnlarr.push("#{arr[i]}".gsub(/^(\W+)?(\w+)(\W+)?$/, '\2'))
+    fnlarr.push(arr[i].gsub(/^(\W+)?(\w+)(\W+)?$/, '\2'))
   end
-  p fnlarr
+  fnlarr.reject! {|word| word !~ /\w+/}
+  fnlarr
 end
