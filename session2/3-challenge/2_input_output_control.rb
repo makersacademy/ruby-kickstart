@@ -30,6 +30,7 @@ def hi_hi_goodbye
     puts "Enter a number"
     no = $stdin.gets.chomp
   end
+  puts "goodbye"
 end
 
 # This will just invoke the method if you run this program directly
