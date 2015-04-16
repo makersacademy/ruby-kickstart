@@ -15,3 +15,28 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+def prime_chars?(array)
+	num = array.join.length
+	if num % 2 != 0
+		return true
+	else
+		return false
+	end
+end
+
+
+
+
+
+
+
+prime_chars?(['abc'])          # => true
+prime_chars?(['a', 'bc'])        # => true
+prime_chars?(['ab', 'c'] )       # => true
+prime_chars?(['a', 'b', 'c'])    # => true
+
+prime_chars?(['abcd'])           # => false
+prime_chars?(['ab', 'cd'])       # => false
+prime_chars?(['a', 'bcd'])      # => false
+prime_chars?(['a', 'b', 'cd'])   # => false
