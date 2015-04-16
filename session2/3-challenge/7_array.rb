@@ -9,3 +9,22 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(sentence)
+	bads = "! @ $ # % ^ & * ( ) - = _ + [ ] : ; , . / < > ? \\ |".split(' ')
+	bads.each do |bad|
+	sentence = sentence.gsub(bad, ' ')
+	end
+	
+	output = []
+	array = sentence.split
+	array.each_with_index do |words, index|
+		if (index.even?) || (index == 0)
+			output << words
+		end
+	end
+	return output
+end
+
+
+alternate_words("Lorem ipsum dolor sit amet.")
+alternate_words("Can't we all get along?")
