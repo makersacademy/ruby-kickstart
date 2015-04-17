@@ -16,9 +16,12 @@
 # prime_chars? ['a', 'b', 'cd']   # => false
 
 
+require 'prime'
+
+
 def prime_chars?(array)
 	num = array.join.length
-	if num % 2 != 0
+	if num.prime?
 		return true
 	else
 		return false
@@ -29,10 +32,9 @@ end
 
 
 
+prime_chars?(['a', 'bc'])
 
-
-prime_chars?(['abc'])          # => true
-prime_chars?(['a', 'bc'])        # => true
+prime_chars?(['abc'])        # => true
 prime_chars?(['ab', 'c'] )       # => true
 prime_chars?(['a', 'b', 'c'])    # => true
 
