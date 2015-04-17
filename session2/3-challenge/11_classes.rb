@@ -28,50 +28,48 @@ class BeerSong
     number = 0 if number < 0
     @number = number
   end
-end
 
-def number_text(number)
-  if number >= 10
-    numarr = number.to_s.split(//)
-    tens = numarr[0]
-    units = numarr[1]
-    
-    tens_replacements = [["9", "ninety"], ["8", "eighty"], ["7", "seventy"], ["6", "sixty"], ["5", "fifty"], ["4", "forty"], ["3", "thirty"], ["2", "twenty"], ["1", "ten"]]
-	tens_replacements.each {|replacement| tens.gsub!(replacement[0], replacement[1])}
-  else
-    tens = ""
-    units = number.to_s
+  def print_song
+    while number > 0
+      numstring = number_text(number)
+      s1 = ""; s1 = "s" if number != 1
+      number -= 1
+      numstringless1 = number_text(number)
+      s2 = ""; s2 = "s" if number != 1
+
+      puts """
+        #{numstring} bottle#{s1} of beer on the wall,
+        #{numstring} bottle#{s1} of beer,
+        Take one down, pass it around,
+        #{numstringless1} bottle#{s2} of beer on the wall.
+      """
+    end
   end
-  units_replacements = [["9", "nine"], ["8", "eight"], ["7", "seven"], ["6", "six"], ["5", "five"], ["4", "four"], ["3", "three"], ["2", "two"], ["1", "one"], ["0", ""]]
-  units_replacements.each {|replacement| units.gsub!(replacement[0], replacement[1])}
-  
-  hyphen = ""; hyphen = "-" if tens != "" && units != ""
-  numstring = tens + hyphen + units
-  numstring = "zero" if numstring == ""
 
-  teens_replacements = [["ten-nine", "nineteen"], ["ten-eight", "eighteen"], ["ten-seven", "seventeen"], ["ten-six", "sixteen"], ["ten-five", "fifteen"], ["ten-four", "fourteen"], ["ten-three", "thirteen"], ["ten-two", "twelve"], ["ten-one", "eleven"]]
-  teens_replacements.each {|replacement| numstring.gsub!(replacement[0], replacement[1])}
-  
-  numstring.capitalize
-end
-
-def print_song(number)
-  while number > 0
-    numstring = number_text(number)
-    s1 = ""; s1 = "s" if number != 1
-    number -= 1
-    numstringless1 = number_text(number)
-    s2 = ""; s2 = "s" if number != 1
+  def number_text(number)
+    if number >= 10
+      numarr = number.to_s.split(//)
+      tens = numarr[0]
+      units = numarr[1]
     
-    puts """
-      #{numstring} bottle#{s1} of beer on the wall,
-      #{numstring} bottle#{s1} of beer,
-      Take one down, pass it around,
-      #{numstringless1} bottle#{s2} of beer on the wall.
-    """
+      tens_replacements = [["9", "ninety"], ["8", "eighty"], ["7", "seventy"], ["6", "sixty"], ["5", "fifty"], ["4", "forty"], ["3", "thirty"], ["2", "twenty"], ["1", "ten"]]
+	  tens_replacements.each {|replacement| tens.gsub!(replacement[0], replacement[1])}
+    else
+      tens = ""
+      units = number.to_s
+    end
+    units_replacements = [["9", "nine"], ["8", "eight"], ["7", "seven"], ["6", "six"], ["5", "five"], ["4", "four"], ["3", "three"], ["2", "two"], ["1", "one"], ["0", ""]]
+    units_replacements.each {|replacement| units.gsub!(replacement[0], replacement[1])}
+  
+    hyphen = ""; hyphen = "-" if tens != "" && units != ""
+    numstring = tens + hyphen + units
+    numstring = "zero" if numstring == ""
+
+    teens_replacements = [["ten-nine", "nineteen"], ["ten-eight", "eighteen"], ["ten-seven", "seventeen"], ["ten-six", "sixteen"], ["ten-five", "fifteen"], ["ten-four", "fourteen"], ["ten-three", "thirteen"], ["ten-two", "twelve"], ["ten-one", "eleven"]]
+    teens_replacements.each {|replacement| numstring.gsub!(replacement[0], replacement[1])}
+  
+    numstring.capitalize
   end
 end
 
-# bottles = BeerSong.new 4
-
-# print_song(bottles.number)
+BeerSong.new 4
