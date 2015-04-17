@@ -6,5 +6,29 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	array = string.split(" ")
+	word = " "
+	if return_odds
+		i = 1
+		for e in array
+			if i%2 != 0
+				word += e + " "
+				i += 1
+			else
+				i += 1
+			end
+		end
+	else
+		i = 1
+		for e in array
+			if i%2 == 0
+				word += e + " "
+				i += 1
+			else
+				i += 1
+			end
+		end
+	end
+	word
+end
 end
