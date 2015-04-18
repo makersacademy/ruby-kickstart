@@ -1,3 +1,4 @@
+
 # DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
 
 # Write a program that outputs the lyrics for "Ninety-nine Bottles of Beer on the Wall"
@@ -20,3 +21,68 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+class BeerSong
+	attr_accessor :bottles
+
+	def initialize(bottles)
+		if bottles > 99
+			bottles = 99
+		elsif bottles < 0
+			bottles = 0
+		end
+		self.bottles = bottles
+	end
+
+	def poem(num)
+		if num == 0
+			String.new
+		else
+		puts "#{words_to_numbers num} #{plurals num} of beer on the wall,
+#{words_to_numbers num} #{plurals num} of beer,
+Take one down, pass it around,
+#{words_to_numbers num-1} #{plurals num-1} of beer on the wall."
+    	end
+
+	end
+
+	def print_song
+		bottles.downto 1 do |botts|
+			poem botts
+		end
+	end
+
+	def plurals(num)
+		if num == 1
+			plural = "bottle"
+		else
+			plural = "bottles"
+		end
+	end
+
+	def words_to_numbers(num)
+		littleuns = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+		biguns = ["zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+			if (num < 20) && (num >= 0)
+		littleuns[num].capitalize
+			elsif num % 10 == 0
+		tens = num/10
+		biguns[tens].capitalize
+			else
+		ten = num / 10
+		rem = num % 10 
+		first = biguns[ten]
+		second = littleuns[rem]
+		"#{first.capitalize}-#{second.capitalize}"
+		end
+	end
+
+end
+
+test = BeerSong.new(99)
+test.print_song
+
+
+
+
+
