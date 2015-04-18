@@ -22,6 +22,7 @@
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
 
+
 class BeerSong
 	attr_accessor :bottles
 
@@ -38,12 +39,8 @@ class BeerSong
 		if num == 0
 			String.new
 		else
-		puts "#{words_to_numbers num} #{plurals num} of beer on the wall,
-#{words_to_numbers num} #{plurals num} of beer,
-Take one down, pass it around,
-#{words_to_numbers num-1} #{plurals num-1} of beer on the wall."
+		puts "#{words_to_numbers num} #{plurals num} of beer on the wall,\n#{words_to_numbers num} #{plurals num} of beer,\nTake one down, pass it around,\n#{words_to_numbers num-1} #{plurals num-1} of beer on the wall.\n"
     	end
-
 	end
 
 	def print_song
@@ -79,7 +76,7 @@ Take one down, pass it around,
 
 end
 
-test = BeerSong.new(99)
+test = BeerSong.new(100)
 test.print_song
 
 
