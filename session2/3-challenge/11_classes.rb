@@ -33,16 +33,14 @@ class BeerSong
     while number > 0
       numstring = number_text(number)
       s1 = ""; s1 = "s" if number != 1
-      number -= 1
+      @number -= 1
       numstringless1 = number_text(number)
       s2 = ""; s2 = "s" if number != 1
 
-      puts """
-        #{numstring} bottle#{s1} of beer on the wall,
-        #{numstring} bottle#{s1} of beer,
-        Take one down, pass it around,
-        #{numstringless1} bottle#{s2} of beer on the wall.
-      """
+      puts "#{numstring} bottle#{s1} of beer on the wall,"
+      puts "#{numstring} bottle#{s1} of beer,"
+      puts "Take one down, pass it around,"
+      puts "#{numstringless1} bottle#{s2} of beer on the wall."
     end
   end
 
@@ -71,5 +69,3 @@ class BeerSong
     numstring.capitalize
   end
 end
-
-BeerSong.new 4
