@@ -7,6 +7,13 @@
 
 class String
   def every_other_char
+    newText = []
+    text = self.chars
+    for x in 0..text.length
+      if x.even?
+        newText << text[x]
+      end
+    end
+    newText = newText.join
   end
-  
 end

@@ -9,3 +9,10 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(words)
+	words.gsub! /[!?,.]/, " "
+	words = words.split
+	sentence = []
+	words.each_with_index { |text, index| sentence << text if index.even? }
+	sentence
+end
