@@ -30,26 +30,5 @@ end
 
 staircase(5)
 
-def append(ary, n)
-	1.upto n do |i|
-		ary.unshift(i)
-	end
-	puts ary
-end
-
-append([], 5)
-
-def append2( ary, n )
-	return ary if n < 0 #this is the base case parameter
-	ary << n
-	append2(ary, n-1)
-end
-
-append2([],5)
-
-#create function that takes a number and appends it at the front and produces all the other numbers
-	#create an upto n iteration
-	#as goes through push output back to ary
-
 
 

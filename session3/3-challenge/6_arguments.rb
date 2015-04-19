@@ -19,3 +19,36 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+#steps
+	#create method match_maker that accepts default = true, and a splat argument
+	#create an array where every two elements true or false (split into 2's) => method for slicing?
+	#set logic based on first parameter which defaults to true
+
+	def match_maker(logic, *arrays)
+		new_arrays =[]
+		arrays.each_slice(2){|a,b| new_arrays << [a,b]}
+		puts new_arrays
+		puts logic
+	end
+
+	match_maker(true,1,2,3,4)
+
+# def match_maker(opposites_attract, *elements) #logic parameter, then splat argument
+#   to_return = [] #set-up new array to slice in to
+#   elements.each_slice 2 do |first, last| #set-up each_slice method
+#     first  = !!first
+#     last   = !!last
+#     result = if opposites_attract
+#                first != last
+#              else
+#                first == last
+#              end
+#     to_return << result
+#   end
+#   to_return
+# end
+
+
+
+
+

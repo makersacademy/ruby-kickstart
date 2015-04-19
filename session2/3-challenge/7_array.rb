@@ -21,7 +21,7 @@ def alternate_words(sentence) #Not clear why failing test because exact same out
 	
 	new_array = []
 	array.length.times {|index| new_array << array[index] if index.even?}
-	new_array.map! {|element| element.gsub(/[[:punct:]]/, "")}
+	new_array.map! {|element| element.gsub(/\p{P}(?<!')/, "")}
 	return new_array
 end
 

@@ -28,13 +28,7 @@ def hi_hi_goodbye
   	input = $stdin.gets.chomp.to_i
   	# break if input == "bye".to_i
   end
-  print "Goodbye!"
-
-#   while times = $stdin.gets.chomp.to_i #why does example way of doing it not even take input
-#   	puts "hi" * times
-#   	break if times.chomp == "bye"
-#   end
-#   	puts "goodbye"
+  puts "Goodbye!"
 end
 
 #GIVEN TESTED SOLUTION#

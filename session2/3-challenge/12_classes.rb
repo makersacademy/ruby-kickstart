@@ -41,7 +41,7 @@ class Fraction
 	end
 
 	def lowest
-			return "#{@numerator/gcd(@numerator,@denominator)}" + "/" + "#{@denominator/gcd(@numerator,@denominator)}"
+		return "#{@numerator/gcd(@numerator,@denominator)}" + "/" + "#{@denominator/gcd(@numerator,@denominator)}"
 	end
 
   def gcd(a,b) #input for one of the other functions - greatest common divisor

@@ -10,10 +10,10 @@
 def sum_difference_product
   # integer1 = $stdin.gets.chomp.to_i
   # integer2 = $stdin.gets.chomp.to_i
-integer1, integer2 = gets.split.map { |num| num.to_i }
- puts integer1 + integer2
- puts integer1 - integer2
- puts integer1 * integer2
+  a , b = gets.split.map { |num| num.to_i }
+  puts a + b
+  puts a - b
+  puts a * b
  
  #puts "#{sum}\n#{difference}\n#{product}\n"
  #multiple solutions work but test not passing (even when copy solution)
