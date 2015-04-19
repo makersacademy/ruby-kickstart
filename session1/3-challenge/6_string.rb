@@ -4,7 +4,14 @@
 #
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
+# odds_and_evens("supercalifragilisticexpialidocious", true)
 
 def odds_and_evens(string, return_odds)
-
+  list = ""
+  if return_odds
+    string.length.times {|i| list << string[i] if i.odd?}
+  else
+    string.length.times {|i| list << string[i] if i.even?}
+  end
+  list
 end
