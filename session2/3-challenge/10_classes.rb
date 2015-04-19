@@ -16,6 +16,7 @@
 #
 
 class Person
+<<<<<<< HEAD
 
 	attr_accessor 'name', 'age'
 
@@ -26,5 +27,11 @@ class Person
 
 	def birthday
 		@age += 1
+=======
+	def initialize(name, age, birthday)
+		@name = name
+		@age = age
+		@birthday = birthday
+>>>>>>> 0718f30a89be639e676a2adeb890b6cb8525ba11
 	end
 end

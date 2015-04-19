@@ -29,6 +29,7 @@ class BeerSong
 		end
 	end
 	def print_song
+<<<<<<< HEAD
 	  if @start <= 0
 	  else
 	  while @start > 1
@@ -74,4 +75,23 @@ class BeerSong
 end
 
 song = BeerSong.new(99)
+=======
+	  until @start == 1
+		puts "#{@start} bottles of beer on the wall,", 
+		"#{@start} bottles of beer,", 
+ 		"Take one down, pass it around,",
+ 		"#{@start-1} bottles of beer on the wall.",
+ 		"...",
+ 		@start -= 1
+	  end
+ 	  puts "One bottle of beer on the wall,",
+ 		"One bottle of beer,",
+ 		"Take one down, pass it around,",
+ 		"..."
+ 	  "Zero bottles of beer on the wall."
+	end
+end
+
+song = BeerSong.new(5)
+>>>>>>> 0718f30a89be639e676a2adeb890b6cb8525ba11
 song.print_song
