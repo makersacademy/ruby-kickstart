@@ -9,10 +9,6 @@
 # This time you will have to define the method, it's called: get_squares
 
 def get_squares(numbers)
-	# squares =[]
-	# numbers.each_cons(2){ |a,b| squares << b if a/b == b} #key construct to remember
-	# squares.sort!
-	# puts squares
 	squares = numbers.select { |n| numbers.include? n*n }.sort
 	return squares
 end
@@ -23,6 +19,6 @@ get_squares([25, 4, 9, 6, 50, 16, 5])
 	# create an unsorted array of numbers
 	# create an iteration structure over array to compare a value with its square (select or map)
 	# ensure that iterator only selects those which have a square -> n = n*n
-	# sort the output array - .sort
+	# sort the output array - .sort?
 
 

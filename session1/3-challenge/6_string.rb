@@ -12,7 +12,6 @@
 # 		string_array.each_with_index do |v,i| 
 # 										puts v if i % 2 == 1 # string_array.push doesn't work here upfront (even when add an empty array to push in to)
 # 		end
-# 		#What is the best way to store outputs of iterations in a new array variable?
 # 	elsif return_odds == false
 # 		string_array = string.split('')
 # 		string_array.each_with_index do |v,i| 
@@ -34,17 +33,6 @@ def odds_and_evens(string, return_odds)
 	end
 	return to_return
 end
-
-#STRING SOLUTION - AS IN SOLUTIONS
-# def odds_and_evens(string, return_odds)
-#   to_return = ""
-#   string.size.times do |index| 
-#     next if return_odds && index.even?
-#     next if !return_odds && index.odd?
-#     to_return << string[index]
-#   end
-#   puts to_return
-# end
 
 odds_and_evens("Stringy", true)
 odds_and_evens("Stringy", false)

@@ -14,15 +14,6 @@
 def got_three?(array)
 	result = []
 	array.each_cons(3){|a, b, c| return true if a == b && a == c && b === c}
-
-	# puts result.length #logic doesn't work because could be 1,1,2,2 and be three in a row
-	# if result.length >= 2
-	# 	puts "True: it has three or more of the same element in a row"
-	# 	return true
-	# else
-	# 	puts "False: it does not have three or more of the same element in a row"
-	# 	return false
-	# end
 end
 
 got_three?([1, 2, 2, 2, 3])
