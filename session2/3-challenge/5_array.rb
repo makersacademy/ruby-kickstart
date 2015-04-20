@@ -14,3 +14,7 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(numbers)
+  # for all number in numbers, include only those where number modules 3 does not equate to zero. Map those to a new array, storing the result of number modulus 3
+  numbers.select { |number| number % 3 != 0}.map{ |number| number % 3}
+end

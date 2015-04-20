@@ -14,4 +14,11 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
-
+def prime_chars?(string)
+  unless string.count % 1 == 0 && string.count % string.count == 0
+    return 'false'
+  else 
+    return 'true'
+  end
+end
+prime_chars?('abcde')

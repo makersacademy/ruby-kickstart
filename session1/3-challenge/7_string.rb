@@ -7,7 +7,7 @@
 def pirates_say_arrrrrrrrr(string)
   # we want to return a string so to_return is initially set to an empty string
   to_return = ""
-  # I don't quite understand this
+  # This is to avoid returning everything by default (true)
   add_next = false
   # this takes the number of characters in the string and tells the block to run as many times as there are characters, taking x as a block parameter
   string.size.times do |x|
