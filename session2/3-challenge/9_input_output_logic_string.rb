@@ -23,9 +23,31 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
+<<<<<<< HEAD
+#requires an if/else statement!
+#  we get a line from the user, if it's in lower case or if they've not writen anything, puts "HUH??" and if in capital letters, puts "NO, NOT SINCE..."
+# 
+
+def deaf_grandma
+  while line = gets.chomp
+    break if line == "BYE"
+    if line == line.upcase && line != ""
+      puts "NO, NOT SINCE 1938!"
+    else
+      puts "HUH?! SPEAK UP SONNY!"
+    end
+  end
+end
+
+
+
+
+
+=======
 def deaf_grandma
 
 end
+>>>>>>> c6e3db68b1696c9b1ce9890d9a36cc8d971f72ab
 
 
 
