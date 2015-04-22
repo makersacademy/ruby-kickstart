@@ -5,4 +5,20 @@
 # got_three? ['a', 'a', 'b']  # => false
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
+class Array
+	def sum
+		sum = 0
+		self.each {|num| sum += num}
+		sum
+	end
+end
 
+def got_three?(array)
+	check_a = array.each_cons(3).to_a
+	check_a.each do |ars|
+		if ars.sum == ars[0]*3
+			true
+		end
+	end
+	false
+end
