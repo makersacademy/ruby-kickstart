@@ -22,9 +22,52 @@
 # f.to_s               # => "50/100"
 # f.to_f               # => 0.5
 
+<<<<<<< HEAD
+#still referred to 12.rb quite a bit
+
 class Fraction
+  attr_accessor :numerator, :denominator
+
+  def initialize(numerator, denominator)
+    self.numerator, self.denominator = numerator, denominator
+  end
+  
+  def to_s #creates a string out of numerator and denominator in the form of a fraction
+    "#{numerator}/#{denominator}"
+  end
+  
+  def to_f #turns numerator/denominator fraction into a float
+    numerator / denominator.to_f
+  end
+  
+=======
+class Fraction
+>>>>>>> c6e3db68b1696c9b1ce9890d9a36cc8d971f72ab
   def gcd(a,b)
     return a if b == 0
     gcd(b, a%b)
   end
+<<<<<<< HEAD
+  
+  def lowest
+    divisor = gcd(numerator, denominator)
+    Fraction.new(numerator/divisor, denominator/divisor)
+  end
 end
+
+f = Fraction.new 20, 60
+f.numerator
+f.denominator
+f.to_s
+f.lowest.to_s
+f.numerator = 50
+f.denominator = 100
+f.to_s
+f.to_f
+
+
+
+  
+=======
+end
+>>>>>>> c6e3db68b1696c9b1ce9890d9a36cc8d971f72ab
