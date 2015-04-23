@@ -16,9 +16,19 @@ end
 def got_three?(array)
 	check_a = array.each_cons(3).to_a
 	check_a.each do |ars|
-		if ars.sum == ars[0]*3
-			true
+		i = 0
+		count  = 0
+		while i<3
+			if ars[i] == ars[0]
+				count += 1
+				i += 1
+			else
+				i += 1
+			end
+		end
+		if count == 3
+			return true
 		end
 	end
-	false
+	return false
 end
