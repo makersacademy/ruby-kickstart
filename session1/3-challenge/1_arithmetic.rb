@@ -9,5 +9,8 @@
 # arithmetic1(-6)     # => -50
 
 def arithmetic1(n)
+  # re-ordering and using brackets for clarity
+  (n * 5) - 20
 end
 
+puts arithmetic1(12)

@@ -13,6 +13,17 @@
 
 
 def grade(num_books, has_read_books)
+  # grade is altered on whether has_read_books is true or false so we can use an if statement to cover these two possible outcomes
+   if has_read_books   
+# i.e if this equates to true
+    return "C" if num_books < 10      
+    return "B" if num_books <= 20
+    return "A"
+  else 
+    return "D" if num_books < 10
+    return "C" if num_books <=20
+    return "B"
+  end
 end
 
 

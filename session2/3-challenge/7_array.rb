@@ -9,3 +9,13 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(sentence)
+array = sentence.split(' ')
+array.each_with_index do |item, index|
+  if (index % 2 != 0) then
+    array2[] << item
+  end
+    return array2
+  end
+  alternate_words("Apples Oranges Crows Telephone Light Sugar")
+end

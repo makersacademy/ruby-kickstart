@@ -8,5 +8,11 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(numbers)
+  # select method returns a new array containing all elements where code block is true
+  numbers.select { |n| numbers.include? n*n }.sort 
+  # for all instances of 'n' return numbers if n squared is found, and then sort these in ascending order
+end
+  
 
 
