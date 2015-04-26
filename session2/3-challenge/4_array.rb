@@ -9,4 +9,15 @@
 # This time you will have to define the method, it's called: get_squares
 
 
+def get_squares(array)
+	array.select {|n| array.include? n*n}.sort
+end
 
+=begin
+
+class Array
+  def square!
+    self.map! {|num| num ** 2}
+  end
+end
+=end

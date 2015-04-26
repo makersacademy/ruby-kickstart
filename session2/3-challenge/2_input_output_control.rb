@@ -14,19 +14,17 @@
 # USER:    bye
 # PROGRAM: goodbye
 
-
-# remember you can try your program out with              $ ruby 2_input_output_control.rb
-# and when you think it is correct, you can test it with  $ rake 2:2
-
-def hi_hi_goodbye
-  # your code here
-
+class Object
+  def is_number?
+    self.to_f.to_s == self.to_s || self.to_i.to_s == self.to_s
+  end
 end
 
+puts "Enter a number: "
+line = gets.chomp
+while line.is_number? == true
+	line = gets.chomp
+puts "hi " * line.to_i
+end
+puts "goodbye"
 
-
-
-# This will just invoke the method if you run this program directly
-# This way you can try it out by running "$ ruby 2_input_output_control.rb"
-# but it will still work for our tests
-hi_hi_goodbye if $0 == __FILE__
