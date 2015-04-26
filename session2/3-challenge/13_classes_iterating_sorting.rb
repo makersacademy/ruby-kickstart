@@ -65,4 +65,61 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
+# takes the pre-defined date module, giving us the date for blog entry
 require 'date'
+
+# creates new class called User
+class User
+
+# will require these two variables
+  attr_accessor :username, :blogs
+
+# takes the parameter username when creating a new instance
+  def initialize(username)
+# sets username on current object
+    self.username = username
+# sets blogs as an empty array on current object
+    self.blogs    = []
+  end
+
+# add_blog requires date and text
+  def add_blog(date, text)
+# sets variable added_blog to a new instance of Blog, requiring date, self and text)
+    added_blog = Blog.new(date, self, text)
+# adds added_blog to the array blogs
+    blogs << added_blog
+# sorts blogs array in reverse date order
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+# returns added_blog
+    added_blog
+  end
+end
+
+class Blog
+
+# new objects will require date, user and text
+  attr_accessor :date, :user, :text
+
+# set these on the current object
+  def initialize(date, user, text)
+    self.date = date
+    self.user = user
+    self.text = text
+  end
+
+  def summary
+# takes the first 10 elements from the array, puts them together separated by a space
+    text.split[0..9].join(' ')
+  end
+
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def ==(other)
+# confirms two blog entries are identical by comparing all three elements
+    date    == other.date &&
+      user  == other.user &&
+      text  == other.text
+  end
+end

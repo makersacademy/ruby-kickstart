@@ -7,10 +7,11 @@
 
 class String
   def every_other_char
-    newArray = []
-    every_other_char.with_index do |char, index|
-      to_return << char if index.even?
+    to_return = ''
+    each_char_with_index do |char, index|
+      to_return << char if index % 2 == 0
+    end
+    to_return
   end
-  to_return
 end
-end
+

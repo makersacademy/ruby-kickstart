@@ -14,11 +14,19 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
-def prime_chars?(string)
-  unless string.count % 1 == 0 && string.count % string.count == 0
-    return 'false'
-  else 
-    return 'true'
+class Integer
+  # create a class called Integer, then define what a prime number is inside prime?
+  def prime?
+    return false if self < 2
+    2.upto Math.sqrt(self) do |i|
+      return false if self % i == 0
+    end
+    true
   end
 end
-prime_chars?('abcde')
+
+def prime_chars?(strings)
+  # prime_chars? takes one parameter, an array
+  strings.join.length.prime?
+  # .join combines the elements of the array, length counts the number of items and then prime? is applied to it, implicitly returning true or false
+end

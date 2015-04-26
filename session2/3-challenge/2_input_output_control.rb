@@ -5,11 +5,11 @@ def hi_hi_goodbye
   print "Please enter a number between 1 and 10, or 'bye': "
   input = gets.chomp
   if input == 'bye'
-    print "goodbye"
+    print "goodbye\n"
     return
   else
     input = input.to_i
-    print 'hi' * input
+    print "hi\n" * input
   end
  hi_hi_goodbye
 end
