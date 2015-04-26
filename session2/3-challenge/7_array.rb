@@ -10,7 +10,7 @@
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
 def alternate_words(words)
-	words = words.gsub(/[^A-Za-z0-9\s]/ , '')
+	words = words.gsub(/[!@#$%^&*()=_+,.<>?;:"|]/ , '')
 	words = words.split
 	return_words = []
 	i = 1
