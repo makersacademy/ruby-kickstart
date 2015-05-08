@@ -7,6 +7,9 @@
 
 class String
   def every_other_char
+    chars = self.split(//)
+    to_return = ""
+    to_return << chars.values_at(* chars.each_index.select {|i| i.even?}).join.to_s
+
   end
-  
 end

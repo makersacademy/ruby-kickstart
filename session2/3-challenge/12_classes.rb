@@ -23,8 +23,36 @@
 # f.to_f               # => 0.5
 
 class Fraction
+
+  def initialize(numerator, denominator)
+    @numerator = numerator
+    @denominator = denominator
+  end
+
+  attr_accessor 'numerator', 'denominator'
+
+  def to_s
+    "#{@numerator}/#{@denominator}"
+  end
+
+  def to_f
+    (@numerator.to_f / @denominator.to_f).to_f
+  end
+
   def gcd(a,b)
     return a if b == 0
     gcd(b, a%b)
   end
+
+  def lowest
+    common_denom = gcd(@numerator, @denominator)
+    @numerator = (@numerator / common_denom)
+    @denominator = (@denominator / common_denom)
+  end
 end
+
+#Getting there, the lowest method doesn't quite work yet.
+#
+#Currently I'm getting;
+# f.to_s               # => "20/60"
+# f.lowest.to_s        # => "3"

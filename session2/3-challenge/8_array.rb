@@ -6,3 +6,11 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(input)
+  input.each_with_index do |x, i|
+    if i >= 2 && x == input[i-1] && x == input[i-2]
+      return true
+    end
+  end
+  false
+end
