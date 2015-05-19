@@ -4,13 +4,15 @@
 # pirates_say_arrrrrrrrr("Katy Perry is on the radio!")   # => "rya"
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
-def pirates(string)
-  to_return = ""
-  add_next = false
-  string.size.times do |index|
-    current_char = string[index,1] 
-    to_return << current_char if add_next 
-    add_next = (current_char == "r" || current_char == "R")
-  end
-  to_return
+def pirates_say_arrrrrrrrr(string)
+	result = ""
+	0.upto(string.length - 2) do |i|
+		c1 = string[i] 
+		c2 = string [i+1]
+		if (c1 == "r" || c1 == "R")
+			result += c2  
+		end
+	end
+	return result
 end
+
