@@ -6,12 +6,12 @@
 #
 
 def odds_and_evens(string, return_odds)
-  to_return = ""
-  string.size.times do |index|
-    next if return_odds && index.even?
-    next if !return_odds && index.odd?
-    to_return << string[index]
+  result = ""
+  0.upto(string.length - 1) do |num|
+  
+  	if (return_odds == true && !num.even?) or (return_odds == false && num.even? )
+  		result << string[num]
+	end
   end
-  to_return
+  return result
 end
-
