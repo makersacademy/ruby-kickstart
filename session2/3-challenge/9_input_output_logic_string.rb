@@ -22,15 +22,23 @@
 # USER:     bye
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
-
-def deaf_grandma
-
+def deaf_grandma 
+	string = gets.chomp 
+	while string != "BYE"
+		if string == string.upcase && string != ""
+			puts "NO, NOT SINCE 1938!" 
+		else 
+			puts "HUH?! SPEAK UP, SONNY!"
+		end 
+		string = gets.chomp
+	end
 end
 
 
 
+deaf_grandma if $0 == __FILE__ # this will call your code so you can run it from the terminal
 
 
-# This will call your code so you can run it from the terminal.
-# But not call it otherwise, so that it will work with our tests.
-deaf_grandma if $0 == __FILE__
+
+
+

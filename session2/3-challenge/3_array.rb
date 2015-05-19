@@ -7,6 +7,15 @@
 
 class String
   def every_other_char
+  	result = ""
+  	counter = 0
+  	while counter < self.length
+  		if (counter.even?)
+  			result = result + self[counter] 
+		end
+  		counter += 1
+  	end
+  	return result
   end
-  
 end
+
