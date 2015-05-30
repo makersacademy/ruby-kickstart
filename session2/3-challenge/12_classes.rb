@@ -10,6 +10,7 @@
 # then dividing both by that number.
 # I have included a greatest common divisor method for you
 # You should also define a method, to_s, that will represent the Fraction as a String
+
 #
 # EXAMPLE:
 # f = Fraction.new 20, 60
