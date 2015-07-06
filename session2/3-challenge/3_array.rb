@@ -7,6 +7,11 @@
 
 class String
   def every_other_char
+    nustring = String.new
+    length.times do |index|
+      nustring << self[index] if index.even?
+    end
+    nustring
   end
-  
 end
+#print "".every_other_char

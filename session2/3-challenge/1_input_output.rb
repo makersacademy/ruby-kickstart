@@ -8,6 +8,12 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  #puts "Type two numbers- hit return"
+  user_input = gets
+  int_one = user_input.split(" ")[0].to_i
+  #puts "This is int_one #{int_one}"
+  int_two = user_input.split(" ")[1].to_i
+  #puts "This is int_two #{int_two}"
+  print "#{int_one + int_two}\n#{int_one - int_two}\n#{int_one * int_two}"
 end
+sum_difference_product
