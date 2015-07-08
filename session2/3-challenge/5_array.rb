@@ -14,3 +14,12 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(the_array)
+  #return a new array consisting of their remainder when divided by three.
+  the_array.select! {|number| number % 3 != 0 }
+  new_array = the_array.map {|number| number % 3 }
+  #Exclude any numbers which are actually dividible by three.
+  #new_array if
+  new_array
+end
+#mod_three [0]

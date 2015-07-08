@@ -24,7 +24,16 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  #(whatever you type in), she should respond with HUH?!  SPEAK UP, SONNY!
+  while grandson = gets
+    if grandson == "BYE\n"
+      break
+    elsif grandson == grandson.upcase && grandson.strip.empty? != true
+      puts "NO, NOT SINCE 1938!"
+     else
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+  end
 end
 
 
