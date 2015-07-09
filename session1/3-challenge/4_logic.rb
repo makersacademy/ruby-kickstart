@@ -13,6 +13,27 @@
 
 
 def grade(num_books, has_read_books)
+  grade = ""
+  if num_books < 10
+    if has_read_books == true
+      grade = "C"
+    else
+      grade = "D"
+    end
+  elsif num_books >= 10 && num_books < 21
+    if has_read_books == true
+      grade = "B"
+    else
+      grade = "C"
+    end
+  elsif num_books > 20
+    if has_read_books == true
+      grade = "A"
+    else
+      grade = "B"
+    end
+  end
+  grade
 end
 
 
