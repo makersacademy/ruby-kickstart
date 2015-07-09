@@ -6,10 +6,12 @@
 
 def pirates_say_arrrrrrrrr(string)
   to_return = ""
-  string.size.times do |index|
-    next if string[index] != "r"
-      to_return << string[index]
+  counter = 0
+  while counter < string.length-1
+    if (string[counter] == "r" || string[counter] == "R")
+      to_return << string[counter+1]
     end
-    to_return
+      counter += 1
+  end
+  to_return
 end
-puts pirates_say_arrrrrrrrr("What are you making me do here?")
