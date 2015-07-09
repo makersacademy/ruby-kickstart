@@ -5,7 +5,7 @@
 "%032b" % 5 # => "00000000000000000000000000000101"
 
 # and since five is an object, it also has methods on it
+
 5.even? # => false
 5.odd?  # => true
 5.next  # => 6
-

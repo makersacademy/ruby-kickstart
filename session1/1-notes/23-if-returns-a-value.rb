@@ -35,4 +35,3 @@ end
 
 unless_returns_value true   # => "yep, it's true"
 unless_returns_value false  # => "nope, it's not true"
-

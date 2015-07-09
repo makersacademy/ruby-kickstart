@@ -17,4 +17,3 @@ five.next  # => 6
 five           # => 5
 five = "five"
 five           # => "five"
-

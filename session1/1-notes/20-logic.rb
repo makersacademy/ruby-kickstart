@@ -15,4 +15,3 @@ go_outside?(false, true )  # => false
 go_outside?(false, false)  # => false
 
 # Look, the go_outside? method knows exactly what to do, because it knows about logic!
-

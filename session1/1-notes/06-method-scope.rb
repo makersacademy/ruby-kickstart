@@ -23,4 +23,3 @@ def beam_me_up(person1, person2)
 end
 
 beam_me_up("Ryker", "Data") # => "The away team consists of Ryker and Data."
-
