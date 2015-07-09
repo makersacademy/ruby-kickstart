@@ -7,6 +7,10 @@
 
 class String
   def every_other_char
+    even_char = String.new
+    length.times do |l|
+    even_char << self[l] if l.even?
   end
-  
+    even_char
+end
 end
