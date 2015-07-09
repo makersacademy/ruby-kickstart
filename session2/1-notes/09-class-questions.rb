@@ -10,4 +10,6 @@
 
 # Are classes objects?
 # If no, where do you think their methods are stored?
-# If yes, what class are they instances of?
+# If yes, what class are they instances of? They are instances of the class Class
+
+
