@@ -6,7 +6,8 @@
 # "".every_other_char         # => ""
 
 class String
-  def every_other_char
+  def every_other_char(array)
+    alternate = array.select {|x| x.even?}
+    return alternate
   end
-  
 end
