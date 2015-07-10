@@ -23,7 +23,7 @@ MyConstant  = 12
 my_variable = 13
 def example
   begin
-    MyConstant        # => 12
+    MyConstant        # => 12     If you use Constant as variables it can!
     my_variable       # =>
   rescue => exception
     exception         # => #<NameError: undefined local variable or method `my_variable' for main:Object>
