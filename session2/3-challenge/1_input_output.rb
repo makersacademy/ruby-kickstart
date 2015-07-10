@@ -9,5 +9,10 @@
 
 def sum_difference_product
   # your code goes here
-  
+  integers = gets.split.map {|num| num.to_i}
+  puts integers[0] + integers[1]
+  puts integers[0] - integers[1]
+  puts integers[0] * integers[1]
 end
+
+sum_difference_product
