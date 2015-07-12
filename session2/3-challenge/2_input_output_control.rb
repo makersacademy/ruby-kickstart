@@ -27,7 +27,7 @@ def hi_hi_goodbye
     (response = gets) && (response.downcase !~ /bye/)
     response.to_i.times { print "hi "}
     puts
-    greeting 
+    greeting
   end
     puts "goodbye"
 end
