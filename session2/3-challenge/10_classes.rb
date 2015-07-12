@@ -15,6 +15,43 @@
 # josh.age      # => 30
 #
 
+# class Person
+#   attr_writer :name, :age
+
+#   def name=(name, age)
+#     @name = name
+#     @age = age
+#   end
+
+#   def name
+#     @name
+#     @age
+#   end
+
+#   def birthday
+#     @age += 1
+#   end
+
+# end
+
+# josh = Person.new("ben", 17)
+
+
+# ################################
+
+
 class Person
+  attr_accessor :name, :age
+
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+
+  def birthday
+    @age += 1
+  end
 
 end
+
+josh = Person.new("ben", 17)

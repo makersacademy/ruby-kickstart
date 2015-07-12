@@ -8,5 +8,25 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+# def get_squares(arr)
+#   new_arr = []
+#   arr_yes = []
+#   arr.each do |number|
+#     new_arr << number * number
+#     new_arr.include?(arr) if true
+#     arr_yes << arr
+#     puts arr_yes
+#   end
+# end
+
+# get_squares [9]
+# get_squares [9,3]
+# get_squares [9,3,81]
+# get_squares [25, 4, 9, 6, 50, 16, 5]
 
 
+#######################
+
+def get_squares(numbers)
+  numbers.select { |n| numbers.include? n*n }.sort
+end

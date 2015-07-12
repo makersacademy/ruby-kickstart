@@ -6,3 +6,11 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(a)
+  a.each {|num| if num > 3 puts true}
+end
+
+got_three?([1, 2, 2, 2, 3])
+got_three?(['a', 'a', 'b'])
+got_three?(['a', 'a', 'a'])
+got_three?([1, 2, 1, 1])

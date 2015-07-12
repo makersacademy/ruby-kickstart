@@ -8,6 +8,8 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+a, b = split.each { |x| x.to.i}
+  puts a + b
+  puts a - b
+  puts a * b
 end
