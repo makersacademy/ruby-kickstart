@@ -15,3 +15,26 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+class Integer
+  def prime?
+    return false if self < 2
+    2.upto Math.sqrt(self) do |i|   # think about it as a shortcut to testing if it's a prime number! For example, if it's 17, we can test, 2, 3, 4 etc until 16. But there's bound to be some repetition (similar numbers). The easiest is to divide it exactly by half which is the square root. And that's all we have to check up to.
+      return false if self % i == 0
+    end
+    true
+  end
+end
+
+def prime_chars? array
+  joint = array.join('')
+  sum = joint.length
+  sum.prime?
+end
+
+puts prime_chars? ['abcde']
+
+
+
+
+

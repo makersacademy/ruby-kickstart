@@ -9,3 +9,24 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+
+def alternate_words string
+  cleaned_string = string.gsub!(/[^a-zA-Z ']/, "")
+  array = cleaned_string.split
+  index = 0
+  to_return = []
+
+  while index <= array.length
+    word = array[index]
+    to_return << word
+    index += 2
+  end
+
+  to_return
+end
+
+
+
+print alternate_words "Can't we all get along?"
+
+
