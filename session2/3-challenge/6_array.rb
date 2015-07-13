@@ -14,4 +14,10 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
-
+def prime_chars?(arr)
+	return false if arr == []
+		prime = arr.map { |char| char.length}.reduce(:+)
+			return false if prime < 2
+			(2..(prime/2)).each { |i| return false if (prime % i) == 0}
+	return true
+end

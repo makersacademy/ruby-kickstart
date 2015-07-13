@@ -5,5 +5,13 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+	to_return = ""
+	add_next = false
+	string.size.times do |x|
+		current = string[x]
+		to_return << current if add_next
+		add_next = (current == "r" || current == "R")
+	end
+	to_return
 end
+
