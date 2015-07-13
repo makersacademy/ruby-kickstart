@@ -14,3 +14,13 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(numbers)
+  not_div_by_three = numbers.select { |n| n % 3 != 00 } # This creates a new array, excluding numbers divisable by 3
+  remainder = not_div_by_three.map { |n| n % 3 } # This creates a further array of the remainder after dividing by 3
+end
+
+# def mod_three(numbers)      # This is the official method all on one line
+#  numbers.select { |number| number % 3 != 0 }.map { |number| number % 3 }
+# end
+
+puts mod_three [0,1,2,3,4,5,6,7]

@@ -21,6 +21,17 @@
 def hi_hi_goodbye
   # your code here
 
+  while true
+
+  puts "Enter a number:"
+  num = gets.chomp
+    break if num == "bye"
+  puts "hi " * num.to_i
+
+end
+
+puts "Goodbye!"
+
 end
 
 
