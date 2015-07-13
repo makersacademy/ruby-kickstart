@@ -12,5 +12,4 @@ def sum_difference_product
   puts a + b
   puts a - b
   puts a * b
-  
 end
