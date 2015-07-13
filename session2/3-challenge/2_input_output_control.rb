@@ -19,8 +19,13 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-
+  puts "Please enter a number!"
+  while (input = gets) && (input !~ /bye/)
+    input.to_i.times { print 'hi ' }
+    puts
+    puts "Please enter a number!"
+  end
+  puts "Goodbye!"
 end
 
 
