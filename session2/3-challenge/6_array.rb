@@ -1,20 +1,14 @@
-# Write a method named prime_chars? which takes array of strings
-# and returns true if the sum of the characters is prime.
-#
-# Remember that a number is prime if the only integers that can divide it with no remainder are 1 and itself.
-#
-def prime_chars? numbers
-  string_length = numbers.join.length
-  if string_length % 
 
+class Integer
+  def prime?
+    return false if self < 2
+    2.upto Math.sqrt(self) do |x|
+      return false if self % x == 0
+    end
+    true
+  end
 end
-prime_chars? ['abc']            # => true
-prime_chars? ['a', 'bc']        # => true
-prime_chars? ['ab', 'c']        # => true
-prime_chars? ['a', 'b', 'c']    # => true
-#
-# Examples of length four
-# prime_chars? ['abcd']           # => false
-# prime_chars? ['ab', 'cd']       # => false
-# prime_chars? ['a', 'bcd']       # => false
-# prime_chars? ['a', 'b', 'cd']   # => false
+
+def prime_chars? num
+   num.join.length.prime?
+end
