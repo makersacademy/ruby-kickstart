@@ -6,11 +6,12 @@
 
 def pirates_say_arrrrrrrrr(string)
   array = ""
+  to_add = false
   string.size.times do |l|
-    if l =  ( "r" || "R" )    
-          array << string[l]
+  current = string[l]
+    array << current if to_add
+      to_add = (current == "r" || current == "R")
     end
-end
   array
 end
 
