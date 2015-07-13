@@ -100,4 +100,3 @@ sessions_with_problems.each do |session, problems|
 end
 
 task :default => get_sessions.map { |session| "#{session}:all" }
-
