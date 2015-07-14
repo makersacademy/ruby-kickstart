@@ -10,10 +10,12 @@
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
 def alternate_words(str)
-  return_array = []
-  str.split.map.each_slice(2) do |x, y|
-    return_array << x
+  return_arr= []
+  str.gsub(/[!@$#%^&*\(\)-=_+\[\]:;,.\/<>?\\|]/, " ").split.map.each_slice(2) do |x, y|
+  return_arr << x
   end
+  return_arr
+
 end
 
-alternate_words("hey you howdy go find me a method")
+alternate_words("lorem ipsum dolor. hey")
