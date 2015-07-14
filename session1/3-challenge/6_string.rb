@@ -4,7 +4,15 @@
 #
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
+# odds_and_evens("abcdefg",true)    # => "bdf"
+# odds_and_evens("abcdefg",false)   # => "aceg"
 
 def odds_and_evens(string, return_odds)
-
+  output = ""
+  string.length.times do |x|
+    next if return_odds && x.even?
+    next if return_odds == false && x.odd?
+    output << string[x]
+  end
+  output
 end
