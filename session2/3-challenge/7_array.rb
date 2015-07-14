@@ -9,3 +9,11 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(str)
+  return_array = []
+  str.split.map.each_slice(2) do |x, y|
+    return_array << x
+  end
+end
+
+alternate_words("hey you howdy go find me a method")
