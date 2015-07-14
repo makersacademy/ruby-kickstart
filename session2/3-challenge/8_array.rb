@@ -10,8 +10,8 @@ def got_three?(arr)
   arr.each_cons 3 do |a, b, c|
    if a == b && b == c
      return true
-   else
-     return false
-    end
+   exit
+   end
   end
+  return false
 end
