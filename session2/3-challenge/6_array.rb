@@ -25,6 +25,6 @@ def prime_chars?(strings)
     return true
 end
 
-puts prime_chars?('abc')
+puts prime_chars?('abckdsfkjsdge')
     
         
