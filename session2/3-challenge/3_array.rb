@@ -14,4 +14,4 @@ class String
   return evens
   end
 end
-"abcdefg".every_other_char
+puts "abcdefg".every_other_char

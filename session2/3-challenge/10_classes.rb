@@ -51,7 +51,6 @@ class Person
   def birthday
     @age += 1
   end
-
 end
 
-josh = Person.new("ben", 17)
+p Person.new("Ben", 17)
