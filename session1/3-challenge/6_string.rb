@@ -6,5 +6,17 @@
 #
 
 def odds_and_evens(string, return_odds)
+  if return_odds == true
+    n=1
+  else
+    n=0
+  end
+  
+  loop do
+    print string[n]
+    n += 2
+    break if string[n] == nil
+  end
+  
 
 end
