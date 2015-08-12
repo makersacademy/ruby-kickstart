@@ -6,3 +6,14 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three? (strings)
+	answer = false
+	i = 0
+	while i < (strings.length)
+		answer = true if strings[i] == strings[i+1] && strings[i+2]
+		i+=1
+	end
+	answer
+end 
+
+# can't work out why method returns true for got_three? ['a', 'a', 'b']. returns correct answer for other examples.
