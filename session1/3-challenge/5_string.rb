@@ -5,4 +5,10 @@
 # add_more_ruby("Sad times are ahead!")         # => "Happy times are ahead!"
 
 def add_more_ruby(string)
+	array = string.split()
+	array.map! { |x| x == "sad" ? "happy" : x}
+	array.map! { |x| x == "sad." ? "happy." : x}
+	array.map! { |x| x == "Sad" ? "Happy" : x}
+	newString = array.join(" ")
+	puts newString
 end

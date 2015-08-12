@@ -6,5 +6,17 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	array = string.split(//)
+	toReturn = []
+	if return_odds == true
+		for i in 0..(string.length)
+			toReturn.push(array[i])if i % 2 == 1
+		end
+	else
+		for i in 0..(string.length)
+			toReturn.push(array[i])if i % 2 == 0
+		end
+	end
+	newString = toReturn.join()
+	puts newString
 end
