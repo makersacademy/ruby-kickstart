@@ -18,5 +18,4 @@ def odds_and_evens(string, return_odds)
 		end
 	end
 	newString = toReturn.join()
-	puts newString
 end
