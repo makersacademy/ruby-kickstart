@@ -29,6 +29,7 @@ def deaf_grandma
 		input = gets.chomp
 		if input != input.upcase
 			puts "HUH?! SPEAK UP, SONNY!"
+		elsif input == "BYE"
 		else
 			puts "NO, NOT SINCE 1938!"
 		end
