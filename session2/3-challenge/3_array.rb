@@ -13,7 +13,6 @@ class String
 		toReturn.push(array[i])if i % 2 == 0
   	end
 	newString = toReturn.join()
-	puts newString
   end
   
 end
