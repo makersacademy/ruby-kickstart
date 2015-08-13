@@ -10,5 +10,5 @@ def add_more_ruby(string)
 	array.map! { |x| x == "sad." ? "happy." : x}
 	array.map! { |x| x == "Sad" ? "Happy" : x}
 	newString = array.join(" ")
-	puts newString
+	newString
 end
