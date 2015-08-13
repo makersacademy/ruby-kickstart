@@ -19,5 +19,5 @@ def mod_three (array)
 	array.each do |x|
 		newArray.push(x % 3) if x % 3 != 0
 	end
-	print newArray
+	newArray
 end
