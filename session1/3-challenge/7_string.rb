@@ -11,5 +11,4 @@ def pirates_say_arrrrrrrrr(string)
 		toReturn.push(array[i+1]) if array[i] == "r" or array[i] == "R"
 	end
 	newString = toReturn.join()
-	puts newString
 end
