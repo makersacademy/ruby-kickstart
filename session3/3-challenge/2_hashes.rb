@@ -8,6 +8,23 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
+def staircase (num)
+	hash = Hash.new
+	for i in 1..(num)
+		if i % 2 == 1
+			for x in 1..(i)
+				hash[i] = x if x % 2 == 0
+			end
+		else
+		end
+	end
+end
+
+puts staircase 4
+
+					
+#tough one, can't work out how to crack this one
+
 
 
 
