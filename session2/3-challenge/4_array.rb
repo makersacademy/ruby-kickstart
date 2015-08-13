@@ -13,6 +13,6 @@ def get_squares (array)
 	array.each do |x|
 		newArray.push(x) if array.include? x**2
 	end
-	print newArray.sort!
+	newArray.sort!
 end
 
