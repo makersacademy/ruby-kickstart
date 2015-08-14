@@ -11,11 +11,12 @@
 
 def alternate_words (strings)
 	newArray = []
+	"! @ $ # % ^ & * ( ) - = _ + [ ] : ; , . / < > ? \\ |".split.each do |x|
+		strings = strings.gsub(x, " ")
+	end
 	array = strings.split(" ")
 	for i in 0..(array.length-1)
 		newArray.push(array[i]) if i % 2 == 0
 	end
-	print newArray
+	newArray
 end
-
-# Not sure how to include the punctuation criteria
