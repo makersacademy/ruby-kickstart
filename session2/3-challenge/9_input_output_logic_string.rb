@@ -27,7 +27,7 @@ def deaf_grandma
 	input = " "
 	while input != "BYE"
 		input = gets.chomp
-		if input != input.upcase
+		if input != input.upcase || input == ""
 			puts "HUH?! SPEAK UP, SONNY!"
 		elsif input == "BYE"
 		else
