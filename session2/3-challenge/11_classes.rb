@@ -21,11 +21,16 @@
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
 
-Class BeerSong
-	attr_accessor 'bottles'
+class BeerSong
+	attr_accessor :bottles
 
 	def initialize (bottles)
-		@bottles = 0 if bottles < 0
-		@bottles = 99 if bottles > 99
-		self.@bottles = bottles	
+		bottles = 0 if bottles < 0
+		bottles = 99 if bottles > 99
+		self.bottles = bottles	
 	end
+
+
+end
+
+#struggling with this one
