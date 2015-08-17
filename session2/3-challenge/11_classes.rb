@@ -33,4 +33,4 @@ class BeerSong
 
 end
 
-#struggling with this one
+#struggling with this one. had a look at the solution and most of it makes sense

@@ -54,7 +54,7 @@ class Blog
 end
 
 
-#struggling with the other criteria 
+#struggling with the other criteria. had a look at the solution
 
 
 
