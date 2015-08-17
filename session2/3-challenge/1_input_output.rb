@@ -8,6 +8,22 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
+  puts "Give me some integers"
+  ints = $stdin.gets.chomp
+
+  arr = ints.split(/ /).map { |s| s.to_i }
+
+  new_arr = []
+
+  arr.each_slice(2) do |x,y| 
+  	new_arr << x + y
+  	new_arr << x - y
+  	new_arr << x * y
+  end
   
+  puts new_arr[0].to_s
+  puts new_arr[1].to_s
+  puts new_arr[2].to_s
 end
+
+sum_difference_product
