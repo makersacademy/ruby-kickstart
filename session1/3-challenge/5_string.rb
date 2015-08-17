@@ -5,4 +5,5 @@
 # add_more_ruby("Sad times are ahead!")         # => "Happy times are ahead!"
 
 def add_more_ruby(string)
+  string.gsub(/[sS]ad/, "sad" => "happy", "Sad" => "Happy") # pick out all words "sad" with letter (S,s) and replace these words
 end
