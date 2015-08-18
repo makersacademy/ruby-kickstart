@@ -15,8 +15,9 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
-def prime_chars? (string)
-  length_num = string.length
-  (2...length_num).map {|i| return false if length_num % i == 0}
+def prime_chars?(string)
+  characters = string.join.length
+  return false if characters < 2
+  (2..characters/2).none? {|i| return false if characters % i == 0}
   true
 end
