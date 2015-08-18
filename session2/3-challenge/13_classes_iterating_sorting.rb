@@ -101,9 +101,7 @@ class Blog
   end
 
   def ==(other)
-    self.date == other.date &&
-    self.user == other.user &&
-    self.text == other.text
+    self.date == other.date && self.user == other.user && self.text == other.text
   end
 end
 
