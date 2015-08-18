@@ -8,5 +8,10 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
-
+def get_squares(numbers)
+  numbers2 = numbers.to_a.select do |number|   # define var as array, select numbers 
+    number if numbers.include?(number **2)      #  which sqaures are included in our array
+  end
+  numbers2.sort                               
+end
+  
