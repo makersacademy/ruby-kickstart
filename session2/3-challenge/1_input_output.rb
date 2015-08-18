@@ -8,6 +8,18 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+
+  puts "Please type in a number:"
+  number_1 = gets.chomp.to_i
+  puts "Please type in a second number:"
+  number_2 = gets.chomp.to_i
+
+  sum = number_1 + number_2
+  difference = number_1 - number_2
+  product = number_1 * number_1
+
+  puts "The sum of your two numbers is #{sum}", "The difference of your two numbers is #{difference}", "and the product of your two numbers is #{product}"
+
 end
+
+sum_difference_product
