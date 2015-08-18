@@ -10,6 +10,9 @@
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
 def alternate_words string
+  string.gsub!(/[^a-z0-9]/i, ' ')
+  string.downcase!
+  p string
   array = string.split(" ")
   n = 1
   
@@ -22,5 +25,3 @@ def alternate_words string
 array
 
 end
-    
-

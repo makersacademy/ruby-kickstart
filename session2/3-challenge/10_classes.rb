@@ -17,8 +17,7 @@
 
 class Person
   
-  attr_accessor :name
-  attr_reader :age
+  attr_accessor :name, :age
   
   def initialize(name, age)
     @name = name

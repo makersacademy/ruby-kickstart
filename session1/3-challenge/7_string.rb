@@ -5,7 +5,7 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-  array_1 = string.split""
+  array_1 = string.downcase.split""
   array_2 = []
   
   loop do
@@ -15,6 +15,6 @@ def pirates_say_arrrrrrrrr(string)
     array_2 << array_1[arrr]
   end
   
-puts array_2
+array_2.join
 
 end

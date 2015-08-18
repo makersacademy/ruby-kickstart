@@ -27,7 +27,7 @@ def hi_hi_goodbye
     puts "hi" * num.to_i
   end
   
-"goodbye"
+puts "goodbye"
 
 end
 

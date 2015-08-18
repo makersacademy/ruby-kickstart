@@ -9,12 +9,10 @@
 
 def sum_difference_product
   
-  puts "First integer please"
-  a = gets.chomp.to_i
+  a , b = gets.split.map {|num| num.to_i}
   
-  puts "Second integer please"
-  b = gets.chomp.to_i
-  
-  puts "Sum:#{(a + b)}\nDifference:#{a - b}\nProduct:#{a * b}\n"
+  puts a + b
+  puts a - b
+  puts a * b
   
 end
