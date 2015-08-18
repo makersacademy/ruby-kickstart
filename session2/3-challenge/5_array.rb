@@ -14,3 +14,8 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(numbers) 
+  squares = numbers.to_a.map { |number| number%3 }   #first we craete new array with our (var%3)-remainder condition, define it as array;
+  num_arr = squares.reject { |square| square == 0 }  #second put away all elements with 0;                
+end
+  
