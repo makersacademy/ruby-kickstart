@@ -76,21 +76,21 @@ class User
     @blogs = []
   end
   
-  def add_blog date, text  
+  def add_blog date, text 
     new_blog = Blog.new(date, @username, text)
     @blogs << new_blog
-    @blog
+    new_blog
   end
   
 end
 
 class Blog
   
-  attr_reader :date, :user, :text
+  attr_reader :date, :username, :text
   
-  def initialize(date, user, text)
+  def initialize(date, username, text)
     @date = date
-    @user = user
+    @username = username
     @text = text
   end
   
@@ -99,7 +99,7 @@ class Blog
   end 
   
   def entry
-    "#{user.username} #{date}\n#{text}"
+    "#{username} #{date}\n#{text}"
   end 
   
   def ==(other)
