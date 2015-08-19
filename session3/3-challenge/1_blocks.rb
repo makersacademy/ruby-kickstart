@@ -8,4 +8,4 @@ def reverse_map(*input, &block)
 	input.reverse.map(&block)
 end
 
-print reverse_map(1, 2, 3) { |i| i * 2 }
+
