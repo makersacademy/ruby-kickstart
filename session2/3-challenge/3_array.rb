@@ -13,6 +13,7 @@ class String
     p array
     n=0
     
+    
     loop do
       if array[n] != nil
         output << array[n]
