@@ -9,10 +9,9 @@
 
 def ten_twenty(n)
 	if n % 2 == 0
-		puts 10
+		10
 	else
-		puts 20
+		20
 	end
 end
 
-ten_twenty(11)

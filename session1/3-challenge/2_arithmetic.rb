@@ -10,10 +10,8 @@
 
 def arithmetic2(a, b)
 	if a < b
-		puts (a/2.0)	
+		(a/2.0)	
 	else
-		puts (b/2.0)
+		(b/2.0)
 	end
 end
-
-arithmetic2(20, 5)
