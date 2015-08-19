@@ -15,4 +15,3 @@ def first_pos (string)
 	hash
 end
 
-first_pos "The dog and the cat and the cow"
