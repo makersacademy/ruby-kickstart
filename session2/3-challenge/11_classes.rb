@@ -20,3 +20,16 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+num = 99
+
+while num > 2 do 
+		puts "#{num} bottles of beer on the wall\n #{num} bottles of beer\n Take one down, pass it around\n"
+		num -= 1 
+		puts "#{num} bottles of beer on the wall"
+	end 
+	puts "2 bottles of beer on the wall, 2 bottles of beer!\n
+	 Take one down, pass it around, 1 bottle of beer on the wall\n
+	 One bottle of beer on the wall, 1 bottle of beer\n
+	Take one down, pass it around, no more bottles of beer on the wall"
+	

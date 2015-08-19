@@ -24,8 +24,19 @@
 # USER:     BYE
 
 def deaf_grandma
-
+	while true
+	input = gets.chomp
+	if input == input.downcase
+		puts "HUH? SPEAK UP, SONNY!"
+	elsif input == "BYE" 
+	 break 
+	elsif input == input.upcase
+		puts "NO, NOT SINCE 19#{rand(10..70)}!"		
+	 end 	
 end
+end 
+
+deaf_grandma 
 
 
 
@@ -33,4 +44,4 @@ end
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
-deaf_grandma if $0 == __FILE__
+#deaf_grandma if $0 == __FILE__
