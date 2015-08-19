@@ -13,5 +13,3 @@ def word_count (string)
 	array.each { |word| toReturn[word.downcase] += 1 }
 	toReturn
 end
-
-print word_count "The dog and the cat"
