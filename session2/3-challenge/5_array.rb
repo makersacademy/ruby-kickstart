@@ -16,13 +16,7 @@
 
 def mod_three array
   
-  array.each do |num|
-    if num % 3 == 0
-      array.delete(num)  
-  end
-end
-  
-  array.map! { |num| num = num % 3 }
+  array.select {|num| num % 3 != 0}.map {|num| num % 3}
   
 end
 
