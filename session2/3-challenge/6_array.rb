@@ -15,3 +15,16 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+class Integer
+  def is_prime?
+    return false if self < 2                                                 # => false
+    Math.sqrt(self).to_i.downto(2).each {|i| return false if self % i == 0}
+    true
+  end
+end
+
+def prime_chars?(arr)
+  arr.join.length.is_prime?  # => false
+end
+
+prime_chars? ['abcd']  # => false
