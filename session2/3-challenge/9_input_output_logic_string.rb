@@ -23,12 +23,20 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
+
 def deaf_grandma
 
+  while true
+    line = gets.chomp
+
+    break if line == "BYE"
+    if line != line.upcase || line == ""
+      puts "HUH?! SPEAK UP, SONNY!"
+    else
+      puts "NO, NOT SINCE 1938!"
+    end
+  end
 end
-
-
-
 
 
 # This will call your code so you can run it from the terminal.
