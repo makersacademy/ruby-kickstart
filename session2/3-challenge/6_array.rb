@@ -18,8 +18,8 @@
 def prime_chars?(arr)
   require 'prime'
 
-  count = arr.join.length
-  Prime.prime?(count)
+  arr.join.length.prime?
+  # Prime.prime?(count)
 
 
 end
