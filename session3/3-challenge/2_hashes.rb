@@ -9,21 +9,15 @@
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
 def staircase (num)
-	hash = Hash.new
-	for i in 1..(num)
-		if i % 2 == 1
-			for x in 1..(i)
-				hash[i] = x if x % 2 == 0
-			end
-		else
-		end
-	end
+	toReturn = {}
+	for i in 1..num
+		toReturn[i] = (2..i).step(2).to_a if i.odd?
+    end
+    toReturn
 end
 
-puts staircase 4
+	
 
-					
-#tough one, can't work out how to crack this one
 
 
 
