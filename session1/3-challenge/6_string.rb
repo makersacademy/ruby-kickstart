@@ -6,5 +6,11 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	if return_odds % 2 != 0
+		puts string[1,3,5,7,9]
+	else
+		puts string[2,4,6,8,10]
+	end
 end
+
+odds_and_evens("My name is harry", false)
