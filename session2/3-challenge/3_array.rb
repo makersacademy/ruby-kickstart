@@ -7,9 +7,7 @@
 
 class String
   def every_other_char
-    output = ""
     each_char.with_index {|x, index| print x if index.even?}
-    output
   end
 end
 
