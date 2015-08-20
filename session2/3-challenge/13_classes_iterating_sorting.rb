@@ -31,12 +31,9 @@ class User
 	def add_blog (date, text)
 		blog = Blog.new(date, self, text)
 		blogs.push(blog)
+		self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+		blogs
 	end
-
-	def blogs
-		self.blogs.sort_by { |blog| blog.date }.reverse
-	end
-
 end
 
 class Blog
@@ -49,12 +46,22 @@ class Blog
 	end
 
 	def summary
-		text.split[0..9].join(" ")
+		text.split[0..9].join(' ')
 	end
+
+	def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def ==(other)
+    date   == other.date &&
+      user == other.user &&
+      text == other.text
+  end
 end
 
 
-#struggling with the other criteria. had a look at the solution
+#found this one tough, had a look at solution. not sure why this one fails rake test
 
 
 
