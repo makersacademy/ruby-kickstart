@@ -6,7 +6,10 @@
 # "".every_other_char         # => ""
 
 class String
-  def every_other_char
+  def every_other_char 
+  letters = self.split(//)
+  letters.select.each_with_index { |str, i| i.even?}.join
   end
   
 end
+

@@ -6,5 +6,9 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	if return_odds == false
+		(string[1]) + (string[3]) + (string[5])
+	else
+		 (string[1]) + (string[3]) + (string[5])
+end
 end

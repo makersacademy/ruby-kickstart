@@ -6,3 +6,8 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three chunks
+
+chunks.sort.chunk{ |e| e }.select { |e, chunk| chunk.size == 3 }.map.any?
+
+end
