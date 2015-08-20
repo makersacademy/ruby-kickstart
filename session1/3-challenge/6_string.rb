@@ -4,7 +4,16 @@
 #
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
+# odds_and_evens("abcdefg",true)    # => "bdf"
+# odds_and_evens("abcdefg",false)   # => "aceg"
 
 def odds_and_evens(string, return_odds)
-
+  if true
+    string.select do |num|
+    next if num % 2 == 0
+  end
+  else
+  end
 end
+
+odds_and_evens "1234556", true
