@@ -86,11 +86,11 @@ end
 
 class Blog
   
-  attr_reader :date, :username, :text
+  attr_reader :date, :user, :text
   
-  def initialize(date, username, text)
+  def initialize(date, user, text)
     @date = date
-    @username = username
+    @user = user
     @text = text
   end
   
@@ -99,7 +99,7 @@ class Blog
   end 
   
   def entry
-    "#{username} #{date}\n#{text}"
+    "#{user} #{date}\n#{text}"
   end 
   
   def ==(other)
