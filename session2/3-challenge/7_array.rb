@@ -12,14 +12,13 @@
 def alternate_words(blah)
 
   output = blah.split(/[\?\!\@\$\#\%\^\&\*\(\)\-\=\_\+\[\]\:\;\,\.\/\<\>\\\|\s]/)
+  output.reject!(&:empty?)
 
   output1 = []
   output.each_slice(2) { |a, b| output1 << [a] }
 
   output1.flatten
 
-  # blah.select { |a,b| output << a }
-
 end
 
-p alternate_words("Can't we all get along?")
+p alternate_words("Elementary, my dear Watson!")
