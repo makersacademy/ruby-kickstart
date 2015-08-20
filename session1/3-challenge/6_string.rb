@@ -6,5 +6,23 @@
 #
 
 def odds_and_evens(string, return_odds)
+	string_array = string.split('')
+	sorted_array = []
 
+	if return_odds == true
+		string_array.each do |item|
+			if ((string_array.index(item) % 2) > 0)
+				sorted_array.push item
+			end
+		end
+	else
+		string_array.each do |item|
+			if ((string_array.index(item) % 2) == 0)
+				sorted_array.push item
+			end
+		end
+	end
+	
+	sorted_array.join('')
 end
+
