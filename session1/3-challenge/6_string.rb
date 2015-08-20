@@ -7,4 +7,16 @@
 
 def odds_and_evens(string, return_odds)
 
+  arr = string.split(//)
+  output = []
+  if return_odds == true
+    arr.each_slice(2) {|a,b| output << b }
+  elsif return_odds == false
+    arr.each_slice(2) {|a,b| output << a }
+  end
+
+  output.compact.join
+
 end
+
+p odds_and_evens("abcdefg", true)
