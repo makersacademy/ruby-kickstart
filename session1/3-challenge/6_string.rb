@@ -20,10 +20,11 @@ puts odds_and_evens("abcdefghi", true)
 def odds_and_even(string, return_odds)
 	var = string.split(//)
 	if !return_odds
-		var.values_at(* var.each_index.select {|i| i.even?})
+		var1 = var.values_at(* var.each_index.select {|i| i.even?})
 	else
-		var.values_at(* var.each_index.select {|i| i.odd?})
-	end
+		var1 = var.values_at(* var.each_index.select {|i| i.odd?})
+    var1.join
+  end
 end
 
 puts odds_and_even("abcdefghi", true)
