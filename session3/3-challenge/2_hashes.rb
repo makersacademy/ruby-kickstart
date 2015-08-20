@@ -15,10 +15,3 @@ def staircase (num)
     end
     toReturn
 end
-
-	
-
-
-
-
-
