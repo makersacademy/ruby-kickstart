@@ -68,44 +68,44 @@
 require 'date'
 
 class User
-  
-  attr_accessor :blogs, :username
-  
-  def initialize (username)
-    @username = username
-    @blogs = []
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+    self.username = username
+    self.blogs    = []
   end
-  
-  def add_blog date, text 
-    new_blog = Blog.new(date, @username, text)
-    @blogs << new_blog
+
+  def add_blog(date, text)
+    new_blog = Blog.new(date, self, text)
+    blogs << new_blog
+    self.blogs = blogs.sort_by {|blog| blog.date }.reverse
     new_blog
   end
-  
 end
 
+
+
 class Blog
-  
-  attr_reader :date, :user, :text
-  
+  attr_accessor :date, :user, :text
+
   def initialize(date, user, text)
-    @date = date
-    @user = user
-    @text = text
+    self.date = date
+    self.user = user
+    self.text = text
   end
-  
+
   def summary
     text.split.first(10).join(" ")
-  end 
-  
+  end
+
   def entry
-    "#{user} #{date}\n#{text}"
-  end 
-  
+    "#{user.username} #{date}\n#{text}"
+  end
+
   def ==(other)
-    date == other.date &&
-    user == other.user &&
-    text == other.text
+      date == other.date &&
+      user == other.user &&
+      text == other.text
   end
 end
   
