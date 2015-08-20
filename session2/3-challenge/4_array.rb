@@ -8,5 +8,14 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+# def get_squares
+#   to_return = ''
+#   each_char.sort.reverse do |char|
+#     to_return << char if to_return.include?(char*char)
+#   end
+#   to_return
+# end
 
-
+def get_squares(num)
+  num.sort.select { |n| num if num.include?(n*n) }
+end
