@@ -6,11 +6,24 @@
 #
 
 def odds_and_evens(string, return_odds)
-	if return_odds == true
-		string
+  to_return = ""
+  string.length.times do |index|
+    next if return_odds && index.even?
+    next if !return_odds && index.odd?
+    to_return << string[index]
+  end
+  to_return
+end
+
+puts odds_and_evens("abcdefghi", true)
+
+def odds_and_even(string, return_odds)
+	var = string.split(//)
+	if !return_odds
+		var.values_at(* var.each_index.select {|i| i.even?})
 	else
-		string
+		var.values_at(* var.each_index.select {|i| i.odd?})
 	end
 end
 
-puts odds_and_evens("abcdefghij", true)
+puts odds_and_even("abcdefghi", true)
