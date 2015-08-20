@@ -5,6 +5,18 @@
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
 
-def odds_and_evens(string, return_odds)
 
+def odds_and_evens(string, return_odds)
+  new_array = string.split("") 
+  string = ""
+  new_array.each_with_index do |letter, index|
+    if index.odd? == true && return_odds == true
+      string = string + letter
+      elsif
+      index.even? == true && return_odds == false
+      string = string + letter
+    end
+  end
+  string
 end
+
