@@ -7,13 +7,28 @@
 # odds_and_evens("abcdefg",true)    # => "bdf"
 # odds_and_evens("abcdefg",false)   # => "aceg"
 
+
+
 def odds_and_evens(string, return_odds)
-  if true
-    string.select do |num|
-    next if num % 2 == 0
-  end
-  else
-  end
+
+evens = []  # => []
+odd = []    # => []
+
+string.split('').each_with_index do |item,index|  # => ["a", "b", "c", "d", "e", "f", "g"]
+    if index.even?                                # => true, false, true, false, true, false, true
+  evens << item                                   # => ["a"], ["a", "c"], ["a", "c", "e"], ["a", "c", "e", "g"]
+
+else odd << item  # => ["b"], ["b", "d"], ["b", "d", "f"]
+
+    end  # => ["a"], ["b"], ["a", "c"], ["b", "d"], ["a", "c", "e"], ["b", "d", "f"], ["a", "c", "e", "g"]
+  end    # => ["a", "b", "c", "d", "e", "f", "g"]
+
+if return_odds == true  # => false
+  odd.join
+else
+  evens.join            # => "aceg"
+end                     # => "aceg"
+
 end
 
-odds_and_evens "1234556", true
+odds_and_evens "abcdefg", false  # => "aceg"
