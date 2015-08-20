@@ -26,6 +26,5 @@ class Integer
 end
 
 def prime_chars?(string)
-  n = string.join.length
-  n.prime?
+  string.join.length.prime?
 end

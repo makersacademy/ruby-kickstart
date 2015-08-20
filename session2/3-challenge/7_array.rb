@@ -10,7 +10,13 @@
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
 def alternate_words string
-  array = string.split(" ")
+  ',.?;-)('.split(//).each do |x|
+    string = string.gsub(x, ' ')
+  end
+    
+    p string
+  
+  array = string.split
   n = 1
   
   loop do
