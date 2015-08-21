@@ -10,7 +10,7 @@ def odds_and_evens(string, return_odds)
 	sorted_array = []
 
 	if return_odds == true
-		string_array.each do |item|
+	  string_array.each do |item|
 			if ((string_array.index(item) % 2) > 0)
 				sorted_array.push item
 			end
@@ -21,8 +21,9 @@ def odds_and_evens(string, return_odds)
 				sorted_array.push item
 			end
 		end
-	end
+ 	end
 	
 	sorted_array.join('')
 end
 
+puts odds_and_evens("1122334434232456", true)
