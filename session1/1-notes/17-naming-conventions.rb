@@ -37,3 +37,4 @@ example # invokes the method
 #   Remember, constants are just variables that aren't supposed to change.
 #   go test this in irb
 
+puts "Test"
