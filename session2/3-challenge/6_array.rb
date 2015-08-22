@@ -15,3 +15,10 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require "prime"
+def prime_chars?(input)
+  input_length = input.map { |s| s.length }.inject(:+)
+  input_length.prime?
+end
+
+puts prime_chars?(['a', 'b', 'c', 'ddddd'])
