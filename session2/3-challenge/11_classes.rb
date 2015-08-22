@@ -20,3 +20,45 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+class BeerSong
+  attr_accessor :number
+
+  def initialize(number)
+    number = 0 if number < 0
+    number = 99 if number > 99
+
+    self.number = number
+  end
+
+  def print_song
+    number.downto(1) do |bottles|
+      print_stanza bottles
+    end
+  end
+
+  def print_stanza(n)
+    if n.zero?
+      String.new
+    else
+      puts "#{english_num_bottles(n)} bottle#{"s" if n != 1} of beer on the wall," ,
+           "#{english_num_bottles(n)} bottle#{"s" if n != 1} of beer,",
+           "Take one down, pass it around,",
+           "#{english_num_bottles(n - 1)} bottle#{"s" if n == 1} of beer on the wall.\n\n"
+    end
+  end
+
+  def english_num_bottles(n)
+    teens = %w(zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen)
+    tens = %w(zero ten twenty thirty forty fifty sixty seventy eighty ninety)
+    var = ""
+    if 0 <= n && n <= 19
+      var = "#{teens[n]}"
+    elsif n % 10 == 0
+      var = "#{tens[n/10]}"
+    else
+      var = "#{english_num_bottles(n / 10 * 10)}-#{english_num_bottles(n % 10)}"
+    end
+    var.capitalize
+  end
+end

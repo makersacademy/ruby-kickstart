@@ -24,13 +24,19 @@
 # USER:     BYE
 
 def deaf_grandma
+while (command = $stdin.gets.chomp) != 'BYE'
+  year = (rand(1900...2000))
 
+  if command == command.upcase
+    puts "NO, NOT SINCE #{year}!"
+  else
+    puts "HUH?! SPEAK UP, SONNY!"
+  end
 end
-
-
-
+end
 
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
+
 deaf_grandma if $0 == __FILE__
