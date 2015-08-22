@@ -7,6 +7,13 @@
 
 class String
   def every_other_char
+    to_return = ""
+    self.each_char.with_index do |character, index|
+      to_return << character if index.even?
+    end
+    to_return
   end
-  
+
 end
+
+puts "abcdef".every_other_char
