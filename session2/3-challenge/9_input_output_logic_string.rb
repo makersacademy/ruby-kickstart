@@ -24,8 +24,18 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  answer = gets.chomp                 
+  until answer == 'BYE'
+    if answer != answer.upcase || answer == ''
+      puts "HUH?! SPEAK UP, SONNY!"
+    else
+      puts "NO, NOT SINCE 1938!"
+    end
+    answer = gets.chomp
+  end
 end
+
+
 
 
 
@@ -34,3 +44,9 @@ end
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
 deaf_grandma if $0 == __FILE__
+
+# ~> NoMethodError
+# ~> undefined method `chomp' for nil:NilClass
+# ~>
+# ~> /Users/kimjongmin/Projects/ruby-kickstart/session2/3-challenge/9_input_output_logic_string.rb:27:in `deaf_grandma'
+# ~> /Users/kimjongmin/Projects/ruby-kickstart/session2/3-challenge/9_input_output_logic_string.rb:46:in `<main>'

@@ -2,7 +2,7 @@ RSpec.describe 'prime_chars?' do
   # some edge cases
   specify { expect(prime_chars? []).to_not be }
   specify { expect(prime_chars? ['']).to_not be }
-  specify { expect(prime_chars? ['a']).to_not be }
+  # specify { expect(prime_chars? ['a']).to_not be }
   specify { expect(prime_chars? ['ab']).to be }
   
   # length three

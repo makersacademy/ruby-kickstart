@@ -15,3 +15,18 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime?(number)
+  i = 2
+  until i == number
+    if number % i == 0
+      return false
+    end
+    i += 1
+  end
+  return true
+end
+
+def prime_chars?(string_array)
+  count = string_array.join('').length
+  prime?(count)
+end

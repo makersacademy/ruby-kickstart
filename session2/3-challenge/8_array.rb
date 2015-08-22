@@ -6,3 +6,13 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(array)
+  i = 0
+  while i < array.length
+    if array[i] == array[i+1] && array[i+1] == array[i+2]
+      return true
+    end
+    i += 1
+  end
+  false
+end
