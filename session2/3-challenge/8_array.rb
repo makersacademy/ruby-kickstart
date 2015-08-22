@@ -6,3 +6,15 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(numbers)
+	numbers.each_cons(3) do |array|
+		return true if array[0] == array[1] && array[1] == array[2]
+	end
+	return false 
+end
+
+p got_three? [1, 2, 2, 2, 3]  # => true
+p got_three? ['a', 'a', 'b']  # => false
+p got_three? ['a', 'a', 'a']  # => true
+p got_three? [1, 2, 1, 1]     # => false
+		

@@ -9,3 +9,15 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+	string1 = []
+	string2 = string.split(/\W+/)
+	string2.length.times do |index|
+		string1 << string2[index] if index.even?
+ 	end
+ 	p string1
+end
+
+alternate_words("Lorem ipsum dolor sit amet.")  # => ["Lorem", "dolor", "amet"]
+alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
+alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]

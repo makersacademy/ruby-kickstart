@@ -24,13 +24,21 @@
 # USER:     BYE
 
 def deaf_grandma
-
+	answer = ''
+	while answer != "BYE"
+		answer = gets.chomp
+		if answer == answer.upcase
+			puts "NO, NOT SINCE 1938!"
+		else
+			puts "HUH?! SPEAK UP< SONNY!"
+		end
+	end
 end
 
-
+deaf_grandma
 
 
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
-deaf_grandma if $0 == __FILE__
+# deaf_grandma if $0 == __FILE__
