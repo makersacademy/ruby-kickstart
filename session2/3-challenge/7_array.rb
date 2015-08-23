@@ -9,3 +9,14 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(words)
+  to_return = []
+  words = words.split(" ")
+  words.each_with_index do |word, index|
+    word.delete!("!@$#%&*()=_+[]:;,./<>?\\|^-")
+    to_return << word if index.even?
+  end
+  to_return.select { |word| word != ""}
+end
+
+puts alternate_words("Hello, this is^ exercise 7-").inspect
