@@ -22,15 +22,16 @@
 # USER:     bye
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
-
 def deaf_grandma
-
+  if @text == @text.upcase && @text != ""
+    puts  "NO, NOT SINCE 1938!"
+  else 
+    puts "HUH?! SPEAK UP, SONNY!"
+end
 end
 
-
-
-
-
-# This will call your code so you can run it from the terminal.
-# But not call it otherwise, so that it will work with our tests.
-deaf_grandma if $0 == __FILE__
+while text = gets.chomp!
+  break if text == "BYE"
+  @text = text
+  deaf_grandma
+end
