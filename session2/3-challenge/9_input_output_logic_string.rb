@@ -25,8 +25,18 @@
 
 def deaf_grandma
 
+while true
+  grandson = gets.chomp
+  if grandson != grandson.upcase || grandson == ""
+    puts 'HUH?! SPEAK UP, SONNY!'
+  elsif grandson == "BYE"
+    break
+  else
+    puts 'NO, NOT SINCE 1938!'
+  end
 end
 
+end
 
 
 
