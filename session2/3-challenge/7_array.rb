@@ -11,12 +11,16 @@
 
 def alternate_words(words)
   to_return = []
+  "!@$#%&*()=_+[]:;,./<>?\\|^-".each_char do |symbol|
+    words = words.gsub(symbol, " ")
+  end
+
   words = words.split(" ")
   words.each_with_index do |word, index|
-    word.delete!("!@$#%&*()=_+[]:;,./<>?\\|^-")
     to_return << word if index.even?
   end
-  to_return.select { |word| word != ""}
+  to_return
 end
 
 puts alternate_words("Hello, this is^ exercise 7-").inspect
+
