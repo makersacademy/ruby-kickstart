@@ -75,7 +75,7 @@ class BeerSong
       elsif second.to_i == 0
         word = number_to_english[first.to_i * 10]
       else
-        word = number_to_english[first.to_i * 10] + number_to_english[second.to_i]
+        word = number_to_english[first.to_i * 10] + "-" + number_to_english[second.to_i]
       end
       
     word    
@@ -84,18 +84,35 @@ class BeerSong
   
   def print_song
     
+    if @num == 0
+      return ""
+    end
+      
+      
+    
     loop do
       
+      if @num == 1
+        bottles = "bottle"
+      else
+        bottles = "bottles"
+      end
       
-      puts "#{num_to_word(@num)} bottles of beer on the wall,
-            #{num_to_word(@num)} bottles of beer"
-          
-            @num -= 1
-          
-      puts  "Take one down, pass it around,
-            #{num_to_word(@num)} bottles of beer on the wall."
+      puts "#{num_to_word(@num).capitalize} #{bottles} of beer on the wall," 
+      puts "#{num_to_word(@num).capitalize} #{bottles} of beer,"
+      
+      @num -= 1
+      
+      if @num == 1
+        bottles = "bottle"
+      else
+        bottles = "bottles"
+      end
+      
+      puts  "Take one down, pass it around,"
+      puts "#{num_to_word(@num).capitalize} #{bottles} of beer on the wall."
             
-      break if @num < 1 
+       break if @num < 1 
             
       end
     
