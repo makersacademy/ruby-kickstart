@@ -24,7 +24,18 @@
 # USER:     BYE
 
 def deaf_grandma
-
+sentence=''
+puts 'speak to Grandma'
+  while sentence!='BYE'
+  sentence=gets.chomp
+	if sentence!=(sentence.upcase)
+    puts 'HUH?!  SPEAK UP, SONNY!'
+    elsif sentence=='BYE'
+    puts 'OK! BYE'
+    else
+	puts 'NO, NOT SINCE 1938!'
+    end
+  end
 end
 
 
