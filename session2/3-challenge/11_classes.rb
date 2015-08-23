@@ -86,6 +86,7 @@ class BeerSong
     
     loop do
       
+      
       puts "#{num_to_word(@num)} bottles of beer on the wall,
             #{num_to_word(@num)} bottles of beer"
           
@@ -94,7 +95,7 @@ class BeerSong
       puts  "Take one down, pass it around,
             #{num_to_word(@num)} bottles of beer on the wall."
             
-       break if @num <= 0
+      break if @num < 1 
             
       end
     
