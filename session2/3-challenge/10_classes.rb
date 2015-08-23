@@ -16,5 +16,17 @@
 #
 
 class Person
+  # get and set methods for name and age
+  attr_accessor :name, :age
 
+
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+
+                     #change age
+  def birthday
+    @age += 1
+  end
 end
