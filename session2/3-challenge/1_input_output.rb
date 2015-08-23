@@ -7,7 +7,15 @@
 # Standard input will be like "9 2\n" and will expect you to print
 # "11\n7\n18\n" to standard output.
 
-def sum_difference_product
-  # your code goes here
-  
+def sum_difference_product(input)
+  x = input.gsub(/\s+/m, ' ').strip.split(" ")[0].to_i
+  y = input.gsub(/\s+/m, ' ').strip.split(" ")[1].to_i
+  puts x + y
+  puts (x - y).abs
+  puts x * y
 end
+
+puts "Please enter two numbers seperated by one whitespace and hit RETURN:"
+input = gets.chomp
+
+sum_difference_product(input)

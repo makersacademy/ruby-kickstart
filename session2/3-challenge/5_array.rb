@@ -14,3 +14,28 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+
+
+
+def mod_three(input)
+  output = []
+  input.each do |num|
+    if num % 3 != 0
+      output << num % 3
+    end
+  end
+    p output
+end
+
+
+
+
+mod_three [0]  # => []
+mod_three [1]  # => [1]
+mod_three [2]  # => [2]
+mod_three [3]  # => []
+mod_three [4]  # => [1]
+mod_three [5]  # => [2]
+mod_three [6]  # => []
+mod_three [7]  # => [1]
+mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
