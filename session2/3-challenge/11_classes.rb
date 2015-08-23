@@ -24,6 +24,7 @@
 class BeerSong
   
   def initialize num
+    
     if num > 99
       @num = 99
     elsif num < 0
@@ -93,7 +94,7 @@ class BeerSong
       puts  "Take one down, pass it around,
             #{num_to_word(@num)} bottles of beer on the wall."
             
-       break if @num == 0
+       break if @num <= 0
             
       end
     
