@@ -15,3 +15,13 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+array = ["hi","yo"]  # => ["hi", "yo"]
+
+x = 0            # => 0
+n = array.join.size  # => 4
+while n > x
+x +=1
+break of n%
+end
+                # => 4
+# Leaving this one where it seems the only way would be for each number to be counted up to 17,425,000 to see if its divisable (the largest prime number)
