@@ -15,3 +15,18 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+# OMG, such MATH! I could never get to this solution. I'll have to get some help to understand this one. Will get back to ir later.
+
+class Integer
+  def prime?
+    return false if self < 2
+    2.upto Math.sqrt(self) do |i|
+      return false if self % i == 0
+    end
+    true
+  end
+end
+
+def prime_chars?(strings)
+  strings.join.length.prime?
+end
