@@ -9,4 +9,9 @@
 # arithmetic2(-6, -7)  # => -3.5
 
 def arithmetic2(a, b)
+  if a < b
+    p (a / 2.0)
+  else
+    p (b / 2.0)
+  end
 end
