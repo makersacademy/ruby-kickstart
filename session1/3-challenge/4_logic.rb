@@ -28,7 +28,5 @@ def grade(num_books, has_read_books)
 	end
 end
 
-puts grade(21, true)
-
-
+puts grade(13, true)
 
