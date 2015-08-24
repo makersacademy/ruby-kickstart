@@ -9,7 +9,6 @@
 #=begin
 def word_count (string)
 	toReturn = Hash.new {0}
-	array = string.split(" ")
-	array.each { |word| toReturn[word.downcase] += 1 }
+	string.split(" ").each { |word| toReturn[word.downcase] += 1 }
 	toReturn
 end
