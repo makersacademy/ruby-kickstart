@@ -7,6 +7,10 @@
 
 class String
   def every_other_char
+  	scan(/(.).?/).join
   end
-  
 end
+
+
+#p "abcdefg".every_other_char
+#p "".every_other_char

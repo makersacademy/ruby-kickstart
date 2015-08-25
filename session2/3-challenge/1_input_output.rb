@@ -8,6 +8,9 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+	str = gets.chomp
+	a = str.to_i
+	b = str.reverse.to_i
+	print "#{a+b}\n#{(a-b).abs}\n#{a*b}\n"
 end
+

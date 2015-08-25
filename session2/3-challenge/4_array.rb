@@ -8,5 +8,15 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(arr)
+	new_array = []
+	arr.each do |a|
+		if arr.count(a**2) > 0
+			new_array << a
+		end
+	end
+	new_array.sort
+end
 
 
+#p get_squares [25, 4, 9, 6, 50, 16, 5]
