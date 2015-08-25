@@ -19,3 +19,32 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(different_return_true, *bool)
+	result = []
+	bool.each_slice(2) do |x,y|
+		x = !!x; y = !!y	
+		if different_return_true
+			result << (x != y)
+		else
+			result << (x == y)
+		end
+	end
+	result
+end
+
+#p match_maker(true, true,  true, 0, nil )
+
+# array1 = (1..21).to_a
+# p array1
+# result = []
+# to_add = 0
+# array1.each_slice 3 do |x,y,z| 
+# 	to_add = x+y+z
+# 	result << to_add
+# end
+# p result
+
+
+
+
+
