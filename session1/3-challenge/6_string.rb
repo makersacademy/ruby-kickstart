@@ -6,5 +6,18 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	new_string = ""
+	if return_odds
+		n = 1
+	else
+		n = 0
+	end
+	n.step(string.length-1,2) do |current|
+		new_string << string[current]
+	end
+	new_string
 end
+
+
+puts odds_and_evens("abcdefg", true)
+puts odds_and_evens("abcdefghijklmnop", false)
