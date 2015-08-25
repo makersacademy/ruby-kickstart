@@ -19,3 +19,22 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(*e)
+to_return = []
+
+e1 = e.shift
+
+e.each_slice 2 do |a, b|
+  if e1 == true && !!a == !!b
+    to_return << false
+  elsif e1 == true && !!a != !!b
+    to_return << true
+  elsif e1 != true && !!a == !!b
+    to_return << true
+  else
+    to_return << false
+  end
+end
+
+  to_return
+end
