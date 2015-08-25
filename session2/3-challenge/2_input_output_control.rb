@@ -19,14 +19,20 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-
+	puts "Enter a number "
+	while input = gets
+		puts "hi " * input.to_i
+	break if input.chomp == "bye"
+	end
+	puts "goodbye"
 end
 
 
 
 
-# This will just invoke the method if you run this program directly
-# This way you can try it out by running "$ ruby 2_input_output_control.rb"
-# but it will still work for our tests
-hi_hi_goodbye if $0 == __FILE__
+# # This will just invoke the method if you run this program directly
+# # This way you can try it out by running "$ ruby 2_input_output_control.rb"
+# # but it will still work for our tests
+
+
+# hi_hi_goodbye if $0 == __FILE__
