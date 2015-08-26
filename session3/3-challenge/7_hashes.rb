@@ -57,12 +57,14 @@ class HTMLTag
   end
 
   def style
-    if options[:font]
-    return "style='font-family:#{font};color:#{color};'" if options[:color]
-    return "style='font-family:#{font}'"
-    else
-      return "style='color:#{color};'" if options[:color]
+    if !!options[:font] && !!options[:color]
+        return "style='font-family:#{font};color:#{color};'" 
+    elsif !!options[:font] && !options[:color]
+        return "style='font-family:#{font};'" 
+    elsif !options[:font] && !!options[:color]
+        return "style='color:#{color};'" 
     end
+    return nil
   end
 
   def to_s
@@ -72,4 +74,11 @@ class HTMLTag
     "</#{name}>\n"
   end
 end
+
+# html = HTMLTag.new 'p', 'Hello World', :multiline => false,:font => :serif, :color => :red
+# p html.to_s
+
+#color:#FF0000;
+#"<p style='font-family:\"Times New Roman\", \"Georgia\"'>Hello World</p>\n"
+#"<p style='color:#FF0000;font-family:\"Times New Roman\", \"Georgia\"'>Hello World</p>\n"
 
