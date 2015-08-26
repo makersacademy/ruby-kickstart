@@ -21,37 +21,27 @@
 # f.to_f               # => 0.5
 
 class Fraction
-  def initialize numer, denom
-    @numer = numer
-    @denom = denom
-  end
+  attr_accessor :numerator, :denominator
 
-  attr_accessor 'numer', 'denom'
-
-  def to_f
-    return (@numer.to_f / @denom.to_f).round(1)
-  end
-
-  def lowest
-    (@numer / gcd(@numer, @denom)).to_s + '/' + (@denom / gcd(@numer, @denom)).to_s
-  end
-
-  def gcd(a,b)
-    return a if b == 0
-    gcd(b, a%b)
+  def initialize(numerator, denominator)
+    self.numerator, self.denominator = numerator, denominator
   end
 
   def to_s
-    return @numer.to_s + '/' + @denom.to_s
+    "#{@numerator}/#{@denominator}"
+  end
+
+  def to_f
+    @numerator / @denominator.to_f
+  end
+
+  def gcd(a, b)
+    return a if b == 0
+    gcd b, (a % b)
+  end
+
+  def lowest
+    divisor = gcd(@numerator, @denominator)
+    Fraction.new(@numerator/divisor, @denominator/divisor)
   end
 end
-
-f = Fraction.new 20, 60
-puts f.numer          # => 20
-puts f.denom        # => 60
-puts f.to_s               # => "20/60"
-puts f.lowest.to_s        # => "1/3"
-puts f.numer = 50
-puts f.denom = 100
-puts f.to_s               # => "50/100"
-puts f.to_f               # => 0.5
