@@ -1,6 +1,6 @@
 # A grad student at a local university thinks he has discovered a formula to
-# predict what kind of grades a person will get. He says if you own less than 
-# 10 books, you will get a "D". If you own 10 to 20 books, you will get a "C", 
+# predict what kind of grades a person will get. He says if you own less than
+# 10 books, you will get a "D". If you own 10 to 20 books, you will get a "C",
 # and if you own more than 20 books, you will get a "B".
 # He further hypothesizes that if you actually read your books, then you will
 # get a full letter grade higher in every case.
@@ -10,4 +10,15 @@
 # grade(15, true)   # => "B"
 
 def grade(num_books, reads_books)
+  array = ['D', 'C', 'B', 'A']
+  if reads_books == true; i = 1 else i = 0 end
+  if num_books < 10
+    return array[0 + i]
+  else
+    if num_books > 20
+      return array[2 + i]
+    else
+      return array[1 + i]
+    end
+  end
 end
