@@ -7,7 +7,10 @@
 # Standard input will be like "9 2\n" and will expect you to print
 # "11\n7\n18\n" to standard output.
 
-def sum_difference_product
-  # your code goes here
-  
+def sum_difference_product number1 number2
+	number1, number2 = gets.split.map {|numb| num.to_i}
+	
+	puts number1 + number2
+	puts number1 - number2
+	puts number1 * number2
 end
