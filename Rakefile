@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 gem 'rspec', '~> 3.0'
+=======
+gem 'rspec', '~> 3.2.0'
+>>>>>>> e561307affac65044c457ccb0397550e7f2f21a4
 
 # overriding Rake method that displays tasks so that -T will display in the correct order
 module Rake
@@ -63,10 +67,17 @@ def run_spec(session_num,problem)
   if ENV['solved']
     problem_dir = "#{sess}/solved/#{problem}.rb"
   else
+<<<<<<< HEAD
     problem_dir = Dir["#{sess}/challenge/#{problem}_*.rb"].first
   end
   sh "ruby -c '#{problem_dir}'"                                                             # check syntax
   sh "rspec -cr '#{problem_dir}' -r enumerator '#{sess}/spec/#{problem}.rb' --fail-fast"    # run spec (c for colour, r to require the files, enumerator required for 1.8.6 compatibility)
+=======
+    problem_dir = Dir["#{sess}/3-challenge/#{problem}_*.rb"].first
+  end
+  sh "ruby -c '#{problem_dir}'"                                                             # check syntax
+  sh "rspec -cr '#{problem_dir}' -r enumerator '#{sess}/4-spec/#{problem}.rb' --fail-fast"    # run spec (c for colour, r to require the files, enumerator required for 1.8.6 compatibility)
+>>>>>>> e561307affac65044c457ccb0397550e7f2f21a4
 end
 
 
@@ -80,7 +91,11 @@ end
 # each value is a range indicating the problems available for this session
 def sessions_with_problems
   get_sessions.inject Hash.new do |sessions_with_sections, session|
+<<<<<<< HEAD
     challenges = Dir["session#{session}/challenge/*.rb"]
+=======
+    challenges = Dir["session#{session}/3-challenge/*.rb"]
+>>>>>>> e561307affac65044c457ccb0397550e7f2f21a4
     sessions_with_sections[session] = challenges.map { |challenge| challenge[%r([^/]+?$)].to_i }.sort
     sessions_with_sections
   end
