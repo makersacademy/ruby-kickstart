@@ -8,4 +8,14 @@
 # alternate_words("Lorem ipsum dolor sit amet.")  # => ["Lorem", "dolor", "amet"]
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
-
+def alternate_words(input)
+  punctuation = '! @ $ # % ^ & * ( ) - = _ + [ ] : ; , . / < > ? \ |'.split
+  array = []
+  punctuation.each do |char|
+    input = input.gsub(char, ' ')
+  end
+  input.split.each_with_index do |w, index|
+    if index.even?; array.push w end
+  end
+  array
+end

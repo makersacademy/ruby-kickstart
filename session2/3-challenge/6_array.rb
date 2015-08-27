@@ -14,4 +14,13 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
-
+def prime_chars? input
+  sum = input.join.length
+  i, prime = 2, true
+  if sum <= 2; prime = false end
+  while (i < sum and prime == true)
+    if sum % i == 0; prime = false end
+    i = i + 1
+  end
+  prime
+end

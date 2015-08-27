@@ -9,10 +9,16 @@
 # grade(4,  true)   # => "C"
 # grade(15, true)   # => "B"
 
-# <10 books => D, 10..20 books => C, >20 book =>B
-
-
-def grade(num_books, has_read_books)
+def grade(num_books, reads_books)
+  array = ['D', 'C', 'B', 'A']
+  if reads_books == true; i = 1 else i = 0 end
+  if num_books < 10
+    return array[0 + i]
+  else
+    if num_books > 20
+      return array[2 + i]
+    else
+      return array[1 + i]
+    end
+  end
 end
-
-
