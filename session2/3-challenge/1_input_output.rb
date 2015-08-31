@@ -1,6 +1,6 @@
 # Remember you can test this code with
 #   $ rake 2:1
-
+ 
 # Write a program that reads in two integers typed on the keybaord
 # and outputs their sum, difference, and product
 #

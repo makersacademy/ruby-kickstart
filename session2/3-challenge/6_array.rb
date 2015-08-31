@@ -2,7 +2,7 @@
 # and returns true if the sum of the characters is prime.
 #
 # Remember that a number is prime if the only integers that can divide it with no remainder are 1 and itself.
-#
+# 
 # Examples of length three
 # prime_chars? ['abc']            # => true
 # prime_chars? ['a', 'bc']        # => true
