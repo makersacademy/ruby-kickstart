@@ -1,3 +1,19 @@
+**Ruby-Kickstart**
+=================
+Makers Academy Precourse materials.
+
+Description
+------------
+Ruby-Kickstart 1 & 2 project materials. Covers in depth the use of Arithmetic, Logic, Strings, Hashes, Arrays, Classes, Scope, and more.
+
+Installation/Dependencies
+--------------------------
+- Ruby Version 2.2.0
+
+Other Info:
+------------
+
+
 Welcome to RubyKickstart!
 =========================
 
