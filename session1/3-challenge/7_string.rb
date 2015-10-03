@@ -5,5 +5,11 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  final = []
+  index = 0
+  while index < string.length
+    final.push(string[index + 1]) if string[index] == "R" || string[index] == "r"
+    index += 1
+  end
+  final.join
 end
