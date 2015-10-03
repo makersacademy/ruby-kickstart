@@ -5,5 +5,13 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  s = ''
+  len = string.length
+  (0...len).each do |x|
+    if string[x] == "r" || string[x] == "R"
+      break if x == len-1
+      s << string[x+1]
+    end
+  end
+  s
 end
