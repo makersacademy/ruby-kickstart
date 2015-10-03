@@ -55,6 +55,37 @@
 # end       # => ["a", "m", "r", 1, 3, 4, 9, 2.5, 9.0, 25.8]
 
 
+def your_sort(array, &order_block)
+	order_block ||=  Proc.new {|x, y| x <=> y}
+	swaps = 0
+	for i in 0...array.length-1
+		if order_block.call(array[i],array[i+1]) > 0
+			array[i], array[i+1] = array[i+1], array[i]
+			swaps += 1
+		end
+	end
+	swaps == 0 ? array : your_sort(array, &order_block)
+end
 
 
+# test = ['hello','world','joe','asdf']
+
+# p your_sort test
+# p your_sort_josh test
+# p your_sort [24, 0, 68, 44, 68, 47, 42, 66, 89, 22]
+
+
+# p your_sort [24, 0, 68, 44, 68, 47, 42, 66, 89, 22] do |a, b|
+#   if a < b
+#     -1
+#   elsif a > b
+#     1
+#   else
+#     0
+#   end
+# end   # => [0, 22, 24, 42, 44, 47, 66, 68, 68, 89]
+
+# p your_sort %w(The quick brown fox jumps over the lazy dog) do |a, b|
+#   a[1..1] <=> b[1..1]
+# end   # => ["lazy", "The", "the", "fox", "dog", "brown", "jumps", "quick", "over"]
 

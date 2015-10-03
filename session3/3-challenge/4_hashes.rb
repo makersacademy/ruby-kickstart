@@ -6,3 +6,10 @@
 #
 # first_pos "The dog and the cat and the cow" # => {"The" => 0, "dog" => 1, "and" => 2, "the" => 3, "cat" => 4, "cow" => 7}
 
+def first_pos string
+	result = {}
+	string.split().each.with_index{|x,i| result[x] = i if !result.has_key?(x)}
+	result
+end
+
+#p first_pos "The dog and the cat and the cow" 

@@ -28,4 +28,40 @@
 # shared [1,2,:c], ['a','b',:c]      # => [{1=>[true, nil], 2=>[true, nil], :c=>[true, true], "a"=>[nil, true], "b"=>[nil, true]}, [:c]]
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
+# array = [1,2,3] & [1,2,4]
+# p array
+
+def shared array1, array2
+	hash = Hash.new()
+	array1.each do |e| 
+		hash[e] = [nil,nil]
+		hash[e][0] = true 
+	end
+	array2.each do |e| 
+		hash[e] = [nil,nil] unless hash.has_key?(e)
+		hash[e][1] = true	
+	end
+	result = []
+	hash.each do |key, value|
+		result << key if value[0] && value[1]
+	end
+	output = []; output << hash; output << result
+
+end
+
+# a = [1,2,4]
+# b = [2,4,5,6,3]
+# p shared a, b
+
+# hash1 = Hash.new()
+# hash1['hi'] = [nil,nil]
+# hash1['hi'][0] = 123
+# p hash1
+
+
+
+
+
+
+
 

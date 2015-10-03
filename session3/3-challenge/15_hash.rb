@@ -47,4 +47,13 @@
 # middle head                        # => 3
 
 
+def middle hash
+	hash[:data]%2 == 0 ?  hash[:data]/2  :  hash[:data]/2 +1 
+end
+
+
+
+
+
+
 

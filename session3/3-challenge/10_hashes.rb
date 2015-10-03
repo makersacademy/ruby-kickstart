@@ -30,5 +30,31 @@
 #
 # create it from scratch :)
 
+def pathify hash_dir = [], curnt_file = '/', result = []
+	hash_dir.each do |key,value|
+		curnt_file = curnt_file
+		curnt_file_with_key = curnt_file + "#{key}/"
+
+		if value.is_a? Array
+			value.each.with_index do |file, i|
+				to_append = curnt_file_with_key + "#{file}"
+				result << to_append
+			end
+		else #has to be a hash
+			result = pathify(hash_dir[key], curnt_file_with_key, result)
+		end
+	end
+	return result
+end
+                                                      
+#p pathify({'folder1'=>{'folder2'=> {'folder3' => ['file1','file2']}}})
+#p pathify ({'usr' => {'bin' => ['ruby','python'], 'include' => ['zlib.h'] }})     
+
+# p pathify 'usr' => {'bin' => ['ruby']}                                                        # => ['/usr/bin/ruby']
+# p pathify 'usr' => {'bin' => ['ruby', 'perl'] }                                                # => ['/usr/bin/ruby', '/usr/bin/perl']
+# p pathify 'usr' => {'bin' => ['ruby'], 'include' => ['zlib.h'] }                               # => ['/usr/bin/ruby', '/usr/include/zlib.h']
+# p pathify 'usr' => {'bin' => ['ruby']}, 'opt' => {'local' => {'bin' => ['sqlite3', 'rsync']} } # => ['/usr/bin/ruby', 'opt/local/bin/sqlite3', 'opt/local/bin/rsync']
+#p pathify   
+
 
 

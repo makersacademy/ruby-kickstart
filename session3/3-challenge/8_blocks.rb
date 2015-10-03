@@ -27,11 +27,23 @@
 
 class Person
 
-  attr_accessor :name
+  attr_accessor :name, :age, :quote
 
-  def initialize( &initializer )
-    @initializer = initializer
-    initializer.call self
+  def initialize(data = Hash.new, &initializer )
+  	@name = data[:name]
+  	@age = data[:age]
+  	@quote = data[:quote]
+
+    if initializer.nil?
+    	@initializer = Proc.new {}
+    else
+    	@initializer = initializer
+    end
+
+    # @initializer = initializer || Proc.new {}   # || is alternative definition if value is nil
+    # @initializer.call self
+
+    @initializer.call self
   end
 
   def reinit
@@ -39,3 +51,11 @@ class Person
   end
 
 end
+
+# p1 = Person.new :name => 'Joe', :age => 31, :quote => 'never give up' do |x| 
+# 		x.name = 'harry'; x.age = 40; x.quote = 'Hello world'
+# 	end
+# p p1
+
+# artist = Person.new :name => 'Prince', :quote => 'Hello world' 
+# p artist
