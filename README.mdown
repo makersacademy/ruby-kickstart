@@ -3,6 +3,45 @@ Welcome to RubyKickstart!
 
 **RubyKickstart is an interactive guide to learning the Ruby programming language.**
 
+<<<<<<< HEAD
+The material here follows along with [the videos](https://vimeo.com/channels/844657), but it's not necessary to watch them to get the benefits.
+And get the [source code](https://github.com/JoshCheek/ruby-kickstart) with notes and challenges.
+
+
+How it works
+============
+
+RubyKickstart is downloaded onto your computer as a folder full of files and folders.
+It consists of six sessions, all of which have common features:
+
+  **Videos**
+  ----------
+  Each session has a video where I go through the notes with some friends I made this material for.
+  Watch your way through the video and follow along with the material on your computer.
+
+  **Notes**
+  ---------
+  Each session has a set of notes files, which are just simple Ruby programs that are heavily commented to walk
+  through the material of that session. This is the material that we go through for each session.
+
+  **Examples**
+  ------------
+  Existence of examples is intermittent. They are full Ruby programs that demonstrate the material taught in the notes.
+  You can run them on your own and modify them to experiment with the ideas they demonstrate.
+
+  **Quizzes**
+  -----------
+  Each session has an associated quiz available on the website. The quizzes test that you understood the material for the session.
+
+  **Challenges**
+  --------------
+  Challenges are found in each session. They provide fun programming exercises for you to work through,
+  so you have something to work on that utilizes the session's information. Challenges are taken
+  from a few different places. Several are taken from different books that I have enjoyed, including the third edition
+  of Absolute Java by Walter Savitch, which is probably my favourite CS book (for beginners), it was exceptionally well done,
+  and one was taken from Learn to Program by Chris Pine, a book to teach programming to absolute beginners, using Ruby.
+  The rest were spawned out of my own brain, or from real world situations that I have found myself in.
+=======
 **Disclaimer - this is a shameless continuation of the original Ruby Kickstart by Josh Cheek. I have no intention of reinventing the wheel, and I gladly stand on the shoulder of giants :)
 
 How you should use this
@@ -46,12 +85,26 @@ The course consists of six sessions, all of which have common features:
   If you have suggestions for further challenges, please create them and MAKE A PULL REQUEST!! :)
   
   Please put your answers in the challenges section. After completing the first two chapters, submit a pull request and Travis CI will check everything for you. 
+>>>>>>> e561307affac65044c457ccb0397550e7f2f21a4
 
   **Solved & Specs**
   -------------------
   Along with challenges, each session provides solutions to its challenges and
   a suite of automated tests you can use to test the correctness of your solutions.
 
+<<<<<<< HEAD
+  **Cheatsheets**
+  ---------------
+  Although not part of the sessions, RubyKickstart has a number of cheatsheets which contain all the syntax
+  for various topics. Some of the material in the cheatsheets is not covered in the notes or examples for sessions,
+  so make sure you check out the cheatsheets before diving into the challenges.
+
+
+Sessions
+========
+
+- 1
+=======
   Feel free to add your own alternative/improved solutions in this section and make a pull request to me. It would be cool to have dozens of solutions in every section so people can analyze all the different ways you can solve a problem and learn from them.
 
   **Cheatsheets**
@@ -65,32 +118,53 @@ Sessions Overview
 ========
 
 - Chapter 1
+>>>>>>> e561307affac65044c457ccb0397550e7f2f21a4
     * Introduction
     * Arithmetic
     * Logic
     * String
     * Basic IO
+<<<<<<< HEAD
+- 2
+    * Arrays
+    * Basic Classes
+    * Singleton Classes
+- 3
+=======
 - Chapter 2
     * Arrays
     * Basic Classes
     * Singleton Classes
 - Chapter 3
+>>>>>>> e561307affac65044c457ccb0397550e7f2f21a4
     * Symbols
     * Hashes
     * Blocks / Procs
     * Method Parameters
+<<<<<<< HEAD
+- 4
+=======
 - Chapter 4
+>>>>>>> e561307affac65044c457ccb0397550e7f2f21a4
     * Boolean Return Values
     * Introspection / Reflection
     * Ranges
     * Simple File IO
     * Inheritance
     * Exceptions
+<<<<<<< HEAD
+- 5
+    * Modules
+    * Regular Expressions
+    * Ruby gems
+- 6
+=======
 - Chatper 5
     * Modules
     * Regular Expressions
     * Ruby gems
 - Chapter 6
+>>>>>>> e561307affac65044c457ccb0397550e7f2f21a4
     * The Web
     * Sinatra
     * ERB
@@ -111,17 +185,29 @@ What you'll need to use it
    - [**A text editor**](http://texteditors.org/cgi-bin/wiki.pl) Our Recommendations:
      * Windows: [SciTE](http://www.scintilla.org/SciTE.html) should come with the one click installer
      * Linux: [SciTE](http://www.scintilla.org/SciTE.html) also works great on linux :)
+<<<<<<< HEAD
+     * Mac: [TextMate](http://macromates.com/) costs $50 but can be used by a beginner, and yet is powerful, has a community, and can be customized to meet your needs
+=======
      * Mac: [Sublime Text 2](http://www.sublimetext.com/2) or [Atom](https://atom.io/). Atom works straight away with Terminal and is growing in popularity. Sublime Text will need you to setup env variables to launch projects using the subl command.
+>>>>>>> e561307affac65044c457ccb0397550e7f2f21a4
 
 Age
 ===
 
+<<<<<<< HEAD
+This is several years old now, but I updated it to RSpec 3 and cleaned it up a lot
+=======
 This is several years old now, but it was updated to RSpec 3 and cleaned it up a lot
+>>>>>>> e561307affac65044c457ccb0397550e7f2f21a4
 in December 2014. Everything should still work fine and be applicable.
 
 There is now a Gemfile in the root, you can ignore it, it's mostly for letting me
 know what versions I last checked it against.
 
+<<<<<<< HEAD
+The website is down now b/c Heroku changed since I made this. I'll hopefully get
+it up again, but IDK how much work it's going to take, so it might not happen.
+=======
 
 Quizzes
 ===
@@ -129,3 +215,4 @@ Quizzes
 There used to be quizzes that were placed at the end of each section, and could be used to check that you'd retained all the information you'd just been taught. They're gone now... While I'll try to create them in the near future, if you fancy the challenge, feel free to jump in and make them on Memrise/Quizlet and send a link to jordan@makersacademy.com
 
 That's it - enjoy the walkthrough!
+>>>>>>> e561307affac65044c457ccb0397550e7f2f21a4
