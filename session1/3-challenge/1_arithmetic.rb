@@ -11,7 +11,3 @@
 def arithmetic1(n)
 	n.to_f*5-20
 end
-
-puts arithmetic1(10)     # => 30
-puts arithmetic1(10.5)   # => 32.5
-puts arithmetic1(-6)     # => -50
