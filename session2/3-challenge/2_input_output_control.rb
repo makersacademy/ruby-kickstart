@@ -1,5 +1,5 @@
 # Prompt the user for a number, then read it in and print out "hi" that many times
-#
+# 
 # Repeat this process until the user submits "bye", then say "goodbye" and end the program
 # HINT: Check out example 2 if you get stuck
 
@@ -19,11 +19,19 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
+  
+  puts "Enter a number"                  # prompt
+  number = gets.chomp                    # input
+  while number != "bye"                  # condition 1
+    number2 = number.to_i                # change type of our var
+  puts " Hi " * number2                  # action 1
+  puts "Enter a number"                  # action 2
+  number = gets.chomp                    # action 3
+    break if number.to_s == "bye"        # condition 2
+  end                                    
+  puts "goodbye"                          #action 4
 
 end
-
-
 
 
 # This will just invoke the method if you run this program directly
