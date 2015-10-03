@@ -19,3 +19,24 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker (boolean, *args)
+	toReturn = []
+	args.each_slice(2) do |a, b|
+		a = !!a
+		b = !!b
+		if boolean == true
+			if a != b 
+				toReturn << true 
+			else
+				toReturn << false
+			end
+		else
+			if a != b 
+				toReturn << false 
+			else
+				toReturn << true
+			end
+		end
+	end
+	toReturn
+end

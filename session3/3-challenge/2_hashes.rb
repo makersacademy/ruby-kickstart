@@ -8,6 +8,10 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
-
-
-
+def staircase (num)
+	toReturn = {}
+	for i in 1..num
+		toReturn[i] = (2..i).step(2).to_a if i.odd?
+    end
+    toReturn
+end
