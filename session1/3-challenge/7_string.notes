@@ -1,0 +1,8 @@
+1 Create a new string object
+2 Begin a loop that iterates with the value of the length of the string, but from zero and minus one
+4 Is the index value in the string equal to "R"?
+5 then order the string index +1 to be pushed into the string dump
+6 close off
+7 close off
+8 return string dump
+9 close off

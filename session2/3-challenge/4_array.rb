@@ -7,6 +7,25 @@
 # get_squares [25, 4, 9, 6, 50, 16, 5] # => [4, 5]
 
 # This time you will have to define the method, it's called: get_squares
+# If the original array includes Math.sqrt(x), then append
+
+def get_squares(input)
+  result = []
+      input.select{|x| result << x if input.include? x*x }
+      result.sort!
+  p result
+end
+
+get_squares([3,9,3])
 
 
-
+# def get_squares(input)
+#   result = []
+#   input.each do |x|
+#     if input.include? Math.sqrt(x)
+#       result << Math.sqrt(x).to_i
+#       result.sort!
+#     end
+#   end
+#   p result
+# end

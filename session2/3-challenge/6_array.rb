@@ -15,3 +15,30 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require 'prime'
+
+class Integer
+  def prime?
+    return false if self < 2
+    Prime.prime?(self)
+  end
+end
+
+def prime_chars?(string)
+  string.join.length.prime?
+end
+
+prime_chars? ["abbbbb"]
+
+
+
+prime_chars? ['abc']            # => true
+prime_chars? ['a', 'bc']        # => true
+prime_chars? ['ab', 'c']        # => true
+prime_chars? ['a', 'b', 'c']    # => true
+
+# Examples of length four
+prime_chars? ['abcd']           # => false
+prime_chars? ['ab', 'cd']       # => false
+prime_chars? ['a', 'bcd']       # => false
+prime_chars? ['a', 'b', 'cd']   # => false
