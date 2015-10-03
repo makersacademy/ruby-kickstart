@@ -7,6 +7,8 @@
 
 class String
   def every_other_char
+    result = []
+    self.chars.each_with_index {|l, i| result.push(l) if i.even?}
+    result.join
   end
-  
 end
