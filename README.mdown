@@ -8,7 +8,11 @@ Welcome to RubyKickstart!
 How you should use this
 ============
 
-You should fork this repo and download the files and folders to your computer.
+* Fork this repo
+* Clone it down to your local machine
+* Run `bundle install`
+* Answer the questions and push them up to github
+* Send a pull request
 
 The course consists of six sessions, all of which have common features:
 
