@@ -19,8 +19,6 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-
   puts "Enter a number"
   g = (gets.chomp)
   if g == "bye"
