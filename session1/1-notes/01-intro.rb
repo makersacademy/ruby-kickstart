@@ -1,4 +1,4 @@
-#Watch this video - https://vimeo.com/24093428 - these notes are in support of the video. 
+#Watch this video - https://vimeo.com/24093428 - these notes are in support of the video.
 
 #Try to keep up, have the notes open and ADD YOUR OWN NOTES TO IT TO HELP CLARIFY EVERYTHING FOR YOURSELF.
 
@@ -53,4 +53,4 @@
 # You can create anything you can conceive of, like a brilliant architect.
 # "Whoever holds the keys to programming ends up building the reality in which the rest of us live."
 # -- Douglas Rushkoff
-
+d 
