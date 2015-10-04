@@ -18,13 +18,23 @@
 # USER:     hi grandma.
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     HI GRANDMA!
-# GRANDMA:  NO, NOT SINCE 1938!
+# GRANDMA:  "NO, NOT SINCE 1938!"
 # USER:     bye
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
 def deaf_grandma
-
+  continue=true
+  while continue
+  	ans = gets.chomp
+  	if ans == "BYE"
+  	  continue = false
+    elsif ans.upcase == ans && ans != ""
+      puts "NO, NOT SINCE 1938!"
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+  end
 end
 
 

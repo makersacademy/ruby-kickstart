@@ -7,6 +7,6 @@
 
 class String
   def every_other_char
-  end
-  
+    self.scan(/./).map.with_index {|x, i| i%2 == 0 ? x : nil}.compact.join
+  end  
 end
