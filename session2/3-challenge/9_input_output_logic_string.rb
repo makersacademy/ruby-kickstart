@@ -23,12 +23,36 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
-def deaf_grandma
-
+def deaf_grandma start
+	text = gets.chomp
+	bye = 1
+	loop do
+		if bye < 3 
+			if text == "BYE"
+				bye += 1
+				return "WHEN I WAS A GIRL..."
+			elsif text == text.upcase
+				return "NO, NOT SINCE 1938!"
+			else
+				return "HUH?! SPEAK UP, SONNY!"
+			end
+		else
+			return "BYE SONNEY"
+			break
+		end
+	text = gets.chomp
+	end
 end
 
+deaf_grandma "hello"
 
-
+# USER:     hi grandma.
+# GRANDMA:  HUH?! SPEAK UP, SONNY!
+# USER:     HI GRANDMA!
+# GRANDMA:  NO, NOT SINCE 1938!
+# USER:     bye
+# GRANDMA:  HUH?! SPEAK UP, SONNY!
+# USER:     BYE
 
 
 # This will call your code so you can run it from the terminal.
