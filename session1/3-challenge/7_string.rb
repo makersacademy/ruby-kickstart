@@ -5,5 +5,7 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  a = ''
+  string.each_char.with_index{|x,y| (x == 'r' || x == 'R') && y+1 != string.length ? a << string[y+1] : x}
+  a
 end
