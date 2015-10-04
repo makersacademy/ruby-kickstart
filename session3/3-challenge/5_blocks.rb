@@ -23,10 +23,9 @@ def spiral_access two_d, &block
   a, b, counter = 0, -1, 0
   list = []
 
-  (two_d[a].length).times {                             # first step across right
+  (two_d[a].length).times {                                       # first step across right
     b += 1
-    list << two_d[a][b]
-  }
+    list << two_d[a][b] }
 
   counter += 1
 
@@ -44,7 +43,7 @@ def spiral_access two_d, &block
     (two_d.length-counter).times {                                # 4,0 -> 1,0 (up)
       a -= 1
       list << two_d[a][b] }
-    (two_d.length-counter).times {                                 # 0,0 -> 0,4 (right)
+    (two_d.length-counter).times {                                # 0,0 -> 0,4 (right)
       b += 1
       list << two_d[a][b] }
 
