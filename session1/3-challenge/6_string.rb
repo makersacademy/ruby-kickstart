@@ -6,5 +6,9 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  chars = string.chars
+  for i in 0..(chars.length-1)
+    (chars[i] = '') if (return_odds ? i.even? : i.odd?)
+  end
+  chars.join
 end
