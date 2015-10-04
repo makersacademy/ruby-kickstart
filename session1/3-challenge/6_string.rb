@@ -6,5 +6,19 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+indices = (0..(string.length - 1))
+new_string = ''
+  if return_odds == false
+    indices = indices.map{|el| el.even? ? el : nil }.compact
+    while indices != []
+      new_string = new_string << string[(indices.shift)]
+    end
+    new_string
+  elsif return_odds == true
+    indices = indices.map{|el| el.odd? ? el : nil }.compact
+    while indices != []
+      new_string = new_string << string[(indices.shift)]
+    end
+    p new_string
+  end
 end
