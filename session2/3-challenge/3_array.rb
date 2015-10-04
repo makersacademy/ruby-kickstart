@@ -7,6 +7,13 @@
 
 class String
   def every_other_char
+  	eoc = ''
+  	ind = 0
+  	while ind < self.size
+  		eoc << self[ind]
+  		ind += 2 
+  	end
+  	eoc
   end
   
 end
