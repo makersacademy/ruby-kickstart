@@ -10,3 +10,11 @@
 
 
 
+def get_squares arr
+
+  new_arr = arr.select {|num| arr.include? num * num}.sort
+end
+
+  #arr.sort #return i numeri al quadrato che sono già presenti nell'input iniziale
+
+puts get_squares [3,4,5,6,7,8,9,81]
