@@ -19,3 +19,12 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(flag, *args)
+  args = args.each_slice(2).to_a
+  if flag
+    args.map { |pair| !!pair[0] ^ !!pair[1] }
+  else
+    args.map { |pair| !(!!pair[0] ^ !!pair[1]) }
+  end
+end
+

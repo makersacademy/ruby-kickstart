@@ -1,4 +1,4 @@
-# Write a method that takes a string and returns an array
+# Write a method that takes a string and returns a hash
 # whose keys are all the downcased words in the string,
 # and values are the number of times these words were seen.
 #
@@ -6,3 +6,8 @@
 #
 # Example:
 # word_count "The dog and the cat" # => {"the" => 2, "dog" => 1, "and" => 1, "cat" => 1}
+
+def word_count(str)
+  hashed = str.downcase.split
+  Hash[hashed.uniq.map { |word| [word, hashed.count(word)]}]
+end
