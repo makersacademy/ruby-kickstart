@@ -6,3 +6,6 @@
 #
 # first_pos "The dog and the cat and the cow" # => {"The" => 0, "dog" => 1, "and" => 2, "the" => 3, "cat" => 4, "cow" => 7}
 
+def first_pos(str)
+  str.split(' ').each_with_object(Hash.new(0)) { |i,count| count[i] = str.split(' ').index(i) }
+end
