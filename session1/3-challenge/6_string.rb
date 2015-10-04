@@ -7,4 +7,19 @@
 
 def odds_and_evens(string, return_odds)
 
+   even = []
+   odd = []
+   arr = string.each_char.to_a
+   arr.each_index{|index| index % 2 == 0 ? even << arr[index] : odd << arr[index]}
+  if return_odds == true
+    return odd.join('')
+  else
+    return even.join('')
+  end
+
+
+
+
 end
+puts odds_and_evens('ciao', true)
+puts odds_and_evens('ciao', false)
