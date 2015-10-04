@@ -9,5 +9,15 @@
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
 
+def staircase n
+  counts = Hash.new([])
+  (1..n).each do |x|
+    next if x.even?
+    counts[x] = ((2..x).select{|x| x.even? })
 
-
+    # (1..x).each do |y|
+    #   y.even? ? counts[x] = y : next
+    # end
+  end
+ counts
+end
