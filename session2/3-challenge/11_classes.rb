@@ -20,3 +20,26 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+require_relative './english_number'
+
+class BeerSong
+  def initialize(number_of_bottles)
+    @number_of_bottles = number_of_bottles > 99 ? 99 : number_of_bottles
+    @number_of_bottles = 0 if number_of_bottles < 0
+  end
+
+  def print_song
+    @number_of_bottles.downto(1).each do |n|
+      puts "#{english_number(n).capitalize} #{bottle(n)} of beer on the wall,\n" +
+      "#{english_number(n).capitalize} #{bottle(n)} of beer,\n" +
+      "Take one down, pass it around,\n" +
+      "#{english_number(n - 1).capitalize} #{bottle(n-1)} of beer on the wall."
+    end
+  end
+
+  private
+  def bottle(n)
+    n == 1 ? 'bottle' : 'bottles'
+  end
+end

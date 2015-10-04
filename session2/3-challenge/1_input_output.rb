@@ -8,6 +8,6 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  input = gets.chomp.scan(/[-]?\d+/).map(&:to_i)
+  puts "#{input.reduce(:+)}\n#{input.reduce(:-)}\n#{input.reduce(:*)}\n"
 end
