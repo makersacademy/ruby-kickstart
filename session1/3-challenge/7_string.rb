@@ -5,5 +5,5 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  string.chars.map.with_index { |char, i| string[i+1] if char.downcase == 'r'}.join
 end
