@@ -19,3 +19,10 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(*args)
+  bool = args[0]; count = 0; ans = []
+  (args.size/2).times {
+     ans << (bool ? !(args[count+1] && true) == !!(args[count+2] && true) : !args[count+1] == !args[count+2])
+     count += 2 }
+  args.size < 3 ? ans = [] : ans
+end
