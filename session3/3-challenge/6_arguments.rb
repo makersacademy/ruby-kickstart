@@ -12,16 +12,14 @@ def match_maker *n
 
 
   bool = n.first
-  puts bool
   a = []
     count = 1
     while count < ((n.length) - 1)
       if bool
-        b = n[count] != n[count+1] && n[count+1].class == n[count].class
-        print b
+        b = !!n[count] != !!n[count+1] #&& n[count+1].class == n[count].class
         a << b
       else
-        a << (n[count] == n[count+1])
+        a << (!!n[count] == !!n[count+1])
       end
       count +=2
     end

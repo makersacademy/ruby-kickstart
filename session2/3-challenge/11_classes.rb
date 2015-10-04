@@ -23,34 +23,42 @@
 
 class BeerSong
   attr_accessor :n
-  def initialize(n)
-    if n < 0
-      @beer = 0
-    elsif n < 99
+  def initialize(x)
+    n = x.to_i
+    if (n >= 1) && (n <=99)
+      @beer = n
+    elsif n > 99
       @beer = 99
     else
-      @beer = n
+      @beer = 0
     end
+  end
 
+  #from his, cuz it's nicer
+  def translate(n)
+    if 0 <= n && n <= 19
+      %w(zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen)[n]
+    elsif n % 10 == 0
+      %w(zero ten twenty thirty forty fifty sixty seventy eighty ninety)[n/10]
+    else
+      "#{translate n/10*10}-#{translate n%10}".downcase
+    end.capitalize
   end
 
 
-  def print_song
-    n = @beer
-    beers = " bottles of beer "
-    beer = " bottle of beer "
+def print_song
 
-    while n != 1
-      print n.to_s+beers + "on the wall.\n"
-      print n.to_s+beers + "\n"
-      n -= 1
-      print "Take one down and pass it around, " + n.to_s+ beers+"  on the wall\n"
+  if @beer == 0
+    ""
+  else
+    while @beer >= 1
+      plural = @beer != 1 ? "s" : ""
+      print (translate(@beer ))+" bottle"+ plural +" of beer" + " on the wall,\n"
+      print (translate(@beer ))+" bottle"+ plural + " of beer" + ",\n"
+      print "Take one down, pass it around,\n"
+      @beer -= 1
+      print  (translate(@beer))+" bottle"+ (@beer != 1 ? "s" : "") + " of beer"+" on the wall.\n"
+      end
     end
-
-    print "1 bottle of beer on the wall.1 bottle of beer Take one down and pass it around, 0 bottles of beer   on the wall\n\n"
-    print "No more  bottle of beer on the wall, no more bottle of beer ."
   end
 end
-
-
-

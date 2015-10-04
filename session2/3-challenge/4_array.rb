@@ -10,7 +10,5 @@
 
 
 def get_squares(n)
-  a = []
-  n.map{ |x| n.include?(x*x) ? a << x : x}
-  a.sort
+  n.select{|x| n.include?(x*x)}.sort
 end

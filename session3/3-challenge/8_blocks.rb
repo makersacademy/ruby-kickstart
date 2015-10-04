@@ -27,18 +27,15 @@
 
 class Person
 
-  attr_accessor :name, :age, :quote
+  attr_accessor name, age, quote
 
-  def initialize( &initializer )
-    @initializer = initializer
-    initializer.call self
-    @initializer = (initializer || Proc.new { |person| })
+  def initialize( &block )
+    @block = block
+    block.call self
+    @block = (block || Proc.new { |person| })
+    @name, @age, @quote = name, age, quote # =>
   end
-  def self.name
-    @name = self
-  end
-  def self.age
-    @age = self
+
   end
   def reinit
     @initializer.call self

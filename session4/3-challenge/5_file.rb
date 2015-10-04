@@ -15,3 +15,10 @@
 #
 # line_sums('nums.txt')   # =>   808 + 919 + 822 + 876 + 974   # =>   4399
 
+def line_sums file
+  n = File.open file
+  sum = []
+  n.each_line{|x| sum << x.split.last.to_i} #.sort! { |x,y| x <=> y }
+  p sum
+  #sum.reduce(:+)
+end
