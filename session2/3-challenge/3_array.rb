@@ -7,6 +7,12 @@
 
 class String
   def every_other_char
+    arr = ""
+    self.size.times do |n|
+      if n.even?
+        arr = (arr << self.getbyte(n).chr)
+      end
+    end
+    return arr
   end
-  
 end

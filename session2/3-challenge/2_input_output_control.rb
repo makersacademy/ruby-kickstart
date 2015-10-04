@@ -19,7 +19,18 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
+  submitting = true
+
+  while submitting do
+    string = gets.chomp
+
+    if string == 'bye'
+      puts 'goodbye'
+      submitting = false
+    else
+      string.to_i.times {puts 'hi'}
+    end
+  end
 
 end
 
