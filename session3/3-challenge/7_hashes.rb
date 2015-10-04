@@ -72,4 +72,3 @@ class HTMLTag
     "</#{name}>\n"
   end
 end
-
