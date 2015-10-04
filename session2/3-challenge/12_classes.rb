@@ -27,4 +27,20 @@ class Fraction
     return a if b == 0
     gcd(b, a%b)
   end
+
+  def numerator
+
+  end
+
+  def demoninator
+    a
+  end
+
+  def to_f
+    a.to_f
+
+
+
+
+
 end

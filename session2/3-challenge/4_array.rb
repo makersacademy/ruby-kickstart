@@ -9,4 +9,8 @@
 # This time you will have to define the method, it's called: get_squares
 
 
-
+def get_squares(n)
+  a = []
+  n.map{ |x| n.include?(x*x) ? a << x : x}
+  a.sort
+end
