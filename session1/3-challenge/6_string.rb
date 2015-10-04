@@ -6,5 +6,22 @@
 #
 
 def odds_and_evens(string, return_odds)
+  new_string = ''
+  index = 0
 
+  if return_odds == true
+  while index < string.length
+    new_string += string[index] if index.odd?
+    index +=1
+  end
+  end
+
+  if return_odds == false
+  while index < string.length
+    new_string += string[index] if index.even?
+    index +=1
+  end
+  end
+  
+  new_string
 end
