@@ -6,3 +6,10 @@
 #
 # Example:
 # word_count "The dog and the cat" # => {"the" => 2, "dog" => 1, "and" => 1, "cat" => 1}
+
+def word_count n
+  a = {}
+  b = n.downcase.split
+  b.each{|x| a.has_key?(x) ? x : a[x] = b.count(x) }
+  a
+end

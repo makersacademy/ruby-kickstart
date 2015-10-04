@@ -6,3 +6,13 @@
 #
 # first_pos "The dog and the cat and the cow" # => {"The" => 0, "dog" => 1, "and" => 2, "the" => 3, "cat" => 4, "cow" => 7}
 
+def first_pos n
+  b = n.split
+  print b
+  a = {}
+  b.each{ |x| a[x] = b.index(x)}
+  a
+end
+
+
+#first_pos "The dog and the cat and the cow"

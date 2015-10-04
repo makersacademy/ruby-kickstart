@@ -26,6 +26,7 @@
 #                      <li style='color:#0000FF;font-family:"Courier New", "Lucida Console"'>football</li>
 #                      </ol>
 
+
 class HTMLTag
   FONTS = {
     :serif      => '"Times New Roman", "Georgia"',
@@ -72,4 +73,3 @@ class HTMLTag
     "</#{name}>\n"
   end
 end
-
