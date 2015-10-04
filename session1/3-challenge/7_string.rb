@@ -5,5 +5,6 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  string.scan(/(?<=[rR]{1})\w{1}/)*''
 end
+
