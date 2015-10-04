@@ -6,5 +6,5 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	string.scan(/./).map.with_index {|x, i| return_odds ? (i%2 == 1 ? x : nil) : (i%2 == 0 ? x : nil)}.compact.join
 end
