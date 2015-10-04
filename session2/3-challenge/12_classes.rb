@@ -23,8 +23,33 @@
 # f.to_f               # => 0.5
 
 class Fraction
+
+  attr_accessor 'numerator', 'denominator'
+
+  def initialize numerator, denominator
+    @numerator, @denominator = numerator, denominator
+  end
+
+  # returns greatest common denominator
   def gcd(a,b)
     return a if b == 0
     gcd(b, a%b)
+  end
+
+  # returns the ratio as a float
+  def to_f
+    @numerator.fdiv @denominator
+  end
+
+  # returns a new Fraction, numerator and denominator reduced to lowest terms
+  # find greatest common denominator and divide both by that
+  def lowest
+    common = gcd @numerator, @denominator
+    Fraction.new @numerator/common, @denominator/common
+  end
+
+  # represent the Fraction as a String
+  def to_s
+    "#{numerator}/#{denominator}"
   end
 end
