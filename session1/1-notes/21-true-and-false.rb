@@ -16,6 +16,8 @@ false.class                     # => FalseClass
 !!false   # => false
 
 
+# false and nil are the only two objects that evaluate to false, everything else evaluates to true.
+
 # But what about all the other objects? They want to be boolean too!
 # Turns out they can! (except nil, he can go sit in the corner with false)
 
