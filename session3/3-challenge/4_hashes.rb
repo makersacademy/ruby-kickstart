@@ -6,3 +6,8 @@
 #
 # first_pos "The dog and the cat and the cow" # => {"The" => 0, "dog" => 1, "and" => 2, "the" => 3, "cat" => 4, "cow" => 7}
 
+def first_pos(str)
+  out={}
+  str.gsub(/[^a-zA-Z ]+/, " ").split(" ").map.with_index {|x, i| [x, i]}.each {|x| out.store(x[0], x[1]) if out[x[0]] == nil }
+  out
+end
