@@ -14,4 +14,19 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+def prime_chars? strings
+arr_string = arr.join('')
+is_prime? arr_string
+end
 
+
+def is_prime? string
+length = string.length
+return true if length == 1
+return false if length <1
+
+2.upto(length-1) do |x|
+return false if length % x == 0
+end
+true
+end
