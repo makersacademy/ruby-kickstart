@@ -19,7 +19,48 @@
 # end
 # order # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
 
+def spiral_access array, &block
 
+  return if array.flatten == []
 
+  x, y = 0, 0
+
+  while x < array.length
+    block.call array[y][x]
+    x += 1
+  end
+
+  x -= 1
+
+  while y < (array.length - 1)  
+    y += 1
+    block.call array[y][x]
+  end
+
+  while x > 0                
+    x -= 1
+    block.call array[y][x]
+  end
+
+  y -= 1      
+
+  while y > 0                
+    block.call array[y][x]  
+    y -= 1
+  end
+  
+  array.pop
+  array.delete_at 0
+
+  array.each do |sub_arr|
+    sub_arr.pop
+    sub_arr.delete_at 0
+  end
+
+  spiral_access array, &block
+
+end
+
+  
 
 
