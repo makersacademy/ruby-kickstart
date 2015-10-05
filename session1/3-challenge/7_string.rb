@@ -5,5 +5,13 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  result = ''
+  (string.size-1).times do |index|
+    if string[index].downcase == 'r'
+      result << string[index+1]
+    else
+      next
+    end
+  end
+  result
 end
