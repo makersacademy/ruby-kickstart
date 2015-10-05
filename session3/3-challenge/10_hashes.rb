@@ -30,5 +30,9 @@
 #
 # create it from scratch :)
 
+def pathify(hash)
+  #break if hash.empty?
+  hash.to_a[0][0] + pathify(hash.to_a[0][1])
+end
 
-
+puts pathify({'usr' => {'bin' => ['ruby']}})
