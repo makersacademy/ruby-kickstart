@@ -10,6 +10,9 @@
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
 def alternate_words(text)
-	p text.chars.each_with_index {|val, index| /[a-zA-Z]|(')/ === val ? text}
+text.scan(/[\w‘’']+/).select.with_index {|val, index| index % 2 == 0 }
 end
-alternate_words("Lorem ipsum dolor sit amet.")
+
+
+
+alternate_words "Would a dating service on the net be frowned upon . . . ? I hope not. But even if it is, don’t let that stop you from notifying me via net mail if you start one"
