@@ -39,7 +39,7 @@ class Person
   end
 end
 
-Person.home_planet
+Person.home_planet # => "Earth"
 kate = Person.new 'Kate Beckinsale'
 josh = Person.new 'Josh Cheek'
 kate.home_planet  # => "Earth"
