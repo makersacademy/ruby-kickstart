@@ -6,5 +6,21 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	#return_odds ? string % 2 : !string % 2
+	array = []
+	a = string.split("")
+	#a.delete(" ")
+	l = a.length
+	count = 0
+	l.times do
+		if return_odds			
+			array << a[count] if count.odd?
+			
+		else
+			array << a[count] if count.even?
+		end
+		count += 1
+	end
+	array.join
+	#a.map { |i| x = i if a.at(i.index).odd? }
 end
