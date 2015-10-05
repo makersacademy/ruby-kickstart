@@ -31,25 +31,12 @@
 #   end
 # end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def array_init(n=5, &block)
+  if block_given?
+    (0...n).map(&block)
+  else
+    number = 0; array = []
+    n.times{array.push(number.to_s); number += 100}
+    array
+  end
+end
