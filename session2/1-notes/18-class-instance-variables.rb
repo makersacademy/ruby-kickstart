@@ -9,6 +9,9 @@ class Person
   # make sense to give EVERY class a home_planet, so
   # lets put it on the singleton_class
   self # => Person
+  
+  # So the Person class will have a home_planet method, however at this stage, instances of the Person class itself will
+  # not.
   class << self
     attr_accessor 'home_planet'
   end
@@ -29,12 +32,14 @@ class Person
   end
 
   # This one is for instances
+  # Every instance of the Person class will now have their own home planet, which points to Person.home_planet, i.e.
+  # the method attr_accessor defined above.
   def home_planet
     Person.home_planet
   end
 end
 
-Person.home_planet
+Person.home_planet # => "Earth"
 kate = Person.new 'Kate Beckinsale'
 josh = Person.new 'Josh Cheek'
 kate.home_planet  # => "Earth"
