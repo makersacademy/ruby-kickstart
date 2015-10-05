@@ -28,4 +28,9 @@
 # shared [1,2,:c], ['a','b',:c]      # => [{1=>[true, nil], 2=>[true, nil], :c=>[true, true], "a"=>[nil, true], "b"=>[nil, true]}, [:c]]
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
-
+def shared(a,b)
+  counter = Hash.new([]); common = []
+  a.each_with_object(counter) { |i, counter| b.include?(i) ? counter[i] = [true, true] : counter[i] = [true, nil] }
+  b.each_with_object(counter) { |i, counter| a.include?(i) ? common << i : counter[i] = [nil, true] }
+  [counter, common.sort]
+end
