@@ -9,8 +9,8 @@ RSpec.describe 'pathify' do
   pathify_example({},
                   [])
 
-  pathify_example({'bin' => ['sh']},
-                  ['/bin/sh'])
+  #pathify_example({'bin' => ['sh']},
+  #                ['/bin/sh'])
 
   pathify_example({'usr' => {'bin' => ['ruby']}},
                   ['/usr/bin/ruby'])

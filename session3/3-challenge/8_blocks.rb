@@ -27,11 +27,17 @@
 
 class Person
 
-  attr_accessor :name
+  attr_accessor :name, :age, :quote
 
-  def initialize( &initializer )
+  def initialize(input, &initializer)
+    self.name = input[:name]
+    self.age = input[:age]
+    self.quote = input[:quote]
     @initializer = initializer
-    initializer.call self
+    unless @initializer
+      @initializer = Proc.new{ }
+    end
+    @initializer.call self
   end
 
   def reinit
