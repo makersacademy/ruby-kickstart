@@ -15,7 +15,29 @@
 # match_maker true,  false, true                # => [true]
 # match_maker true,  true,  false               # => [true]
 # match_maker true,  true,  true, false, true   # => [false, true]
-# match_maker true,  true,  true, false, nil    # => [false, false]
+#match_maker true,  true,  true, false, nil    # => [false, false]
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(*args)
+  result = []
+  i = 1
+  while i < args.length
+    if args[0]
+      if args[i] && args[i+1] || !(args[i]) && !(args[i+1])
+        result.push(false)
+      else
+        result.push(true)
+      end
+      i += 2
+    elsif !args[0]
+      if args[i] && args[i+1] || !(args[i]) && !(args[i+1])
+        result.push(true)
+      else
+        result.push(false)
+      end
+      i += 2
+    end
+  end
+  result
+end
