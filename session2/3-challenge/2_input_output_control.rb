@@ -24,12 +24,8 @@ end
 def hi_hi_goodbye
   loops
   number = gets.chomp
-    if number == "bye"
-      puts "goodbye"
-      exit
-    else number.to_i.times {print "hi "}
-    end
-    puts
+  return "goodbye" if number == "bye"
+  number.to_i.times {print "hi "}
   hi_hi_goodbye
 end
 
