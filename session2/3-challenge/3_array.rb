@@ -7,6 +7,8 @@
 
 class String
   def every_other_char
+  	array = string.split(/,/)
+  	return array.select.each_with_index { |_, i| i.even? }
   end
   
 end
