@@ -15,3 +15,13 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? array
+  sum = array.join('').length
+  return nil if sum == 0
+  return false if sum == 1
+  return true if sum == 2
+  (2..Math.sqrt(sum)).each do |x|
+    return false if (sum % x) == 0
+  end
+  true
+end
