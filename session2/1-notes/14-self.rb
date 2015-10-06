@@ -33,3 +33,4 @@ class Example
   new         # => #<Example:0x000001008631d8>
 end
 
+#GM - new, when called without a receiver (as on line 33) will implicitly be called upon whatever the current object is.

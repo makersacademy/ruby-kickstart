@@ -1,6 +1,10 @@
+# GM - have a look at about 48:00 onwards in https://vimeo.com/24365612 for this to make some sense.
+
 # Lets say we wanted to know what planet people are from.
 # Well, that information is the same across every person
 # so we can keep it in an instance variable on the class.
+
+# GM - we're making an instance variable of the class, rather than an instance variable of INSTANCES of that class.
 
 class Person
   # When we define methods here, they get defined for
@@ -12,7 +16,8 @@ class Person
   class << self
     attr_accessor 'home_planet'
   end
-
+  # GM - the below is stuff within the Person class, rather than the Person class's singleton class!
+  
   # remember, self is Person, so @home_planet
   # is defined on the Person class itself
   @home_planet = 'Erth'
