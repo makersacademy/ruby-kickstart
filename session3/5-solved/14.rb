@@ -22,5 +22,6 @@ def count_clumps(*numbers)
 end
 
 def same_ends(n, *params)
+
   params[0, n] == params[-n, n]
 end

@@ -20,3 +20,4 @@ def shared(a, b)
 
   return union, result.sort
 end
+puts shared [1,2,:c], ['a','b',:c] 
