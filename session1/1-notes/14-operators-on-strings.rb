@@ -9,3 +9,4 @@ my_string == your_string # => false
 my_string = "book"
 my_string == your_string # => true
 
+#GM - = is the 'equality operator', == is the 'assignment operator'.

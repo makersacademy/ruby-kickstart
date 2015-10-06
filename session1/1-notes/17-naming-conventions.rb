@@ -5,8 +5,9 @@
 local_variable = nil
 
 # Constants are like variables, but you're telling the world that the value should not change.
-# Any variable that starts with a capital letter is a constant.
+# GM - new: Any variable that starts with a capital letter is a constant.
 # Use CamelCase with constants.
+# GM - Ruby will not expect you to change a variable whose name starts with a capital letter. Nor will users. You could if you wanted, though.
 Constant = nil
 
 
@@ -18,6 +19,8 @@ Constant = nil
 
 # Remember when I said methods were their own little worlds? I lied.
 # Constants can be seen by anything defined in their scope.
+# GM - intresting to note that local variables can't be seen within methods - see below.
+# GM - also, see the use of rescue => exception below - the begin block is trying to break because it can't find my_variable, but rescue => exception is saying ' rather than breaking, tell me WHY you wanted to break. So it shows the relevant error.
 
 MyConstant  = 12
 my_variable = 13
@@ -34,6 +37,7 @@ example # invokes the method
 
 
 # Question: classes begin with uppercase letters, are they constants?
+# GM - answer is YES!
 #   Remember, constants are just variables that aren't supposed to change.
 #   go test this in irb
 

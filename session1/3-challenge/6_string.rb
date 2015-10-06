@@ -6,5 +6,21 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  if return_odds == false
+    string_odds = ''
+    (0..string.length-1).each do |i|
+      if i.even?
+        string_odds << string[i]
+      end
+    end
+    return string_odds
+  else
+    string_evens = ''
+    (0..string.length-1).each do |i|
+      if i.odd?
+        string_evens << string[i]
+      end
+    end
+    return string_evens
+  end
 end
