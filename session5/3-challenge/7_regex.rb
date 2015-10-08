@@ -1,4 +1,4 @@
-# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solution, try to understand the code, then close the file, come back here, and try again to solve it. 
+# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solution, try to understand the code, then close the file, come back here, and try again to solve it.
 
 # You are writing software for the Green Thumb Nursery. They sent you their inventory
 # in a text document, but you need to extract the data in order to use it. You start to
@@ -34,7 +34,16 @@
 #            ["Autumn Flowering Cherry", "2 to 4 feet", "$8.95"]]
 #
 
+#x = "American Redbud Tree, which ships at 1 to 2 feet, cost $5.95
+#Autumn Flowering Cherry, which ships at 2 to 4 feet, cost: $8.95"
 
-
-
-
+def tree_parser(string)
+  result = []
+  new_string = string.split(/[\n]/)
+  new_string.each do |s|
+    sentence_array = []
+    sentence_array << s.scan(/^.*?[,;]/).join(" ").gsub(/[\,\;]/, "") << s.scan(/[0-9].*feet/) <<s.scan(/\$.*[0-9]/)
+    result << sentence_array.flatten
+  end
+  result
+end
