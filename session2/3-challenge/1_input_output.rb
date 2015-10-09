@@ -8,10 +8,9 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  #a = gets.chomp
-  #b = gets.chomp	
-  (a,b) = gets.split.map { |num| num.to_i }
-  puts a + b
-  puts a - b
-  puts a * b
+	array = gets.chomp.split(" ")
+	to_i = array.map { |i| i.to_i }
+	puts to_i[0] + to_i[1]
+	puts to_i[0] - to_i[1]
+	puts to_i[0] * to_i[1]
 end
