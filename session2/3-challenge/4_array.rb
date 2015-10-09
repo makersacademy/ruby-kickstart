@@ -10,7 +10,6 @@
 
 
 def get_squares(array)
-	array.sort.select { |i| i if array.include? i**i }
-
+	array.sort.select { |i| i if array.include? i*i }
 end
 
