@@ -1,10 +1,10 @@
-def list_length(head)
-  head[:next].nil? ? 1 : 1 + list_length(head[:next])
+def list_length(node)
+  node[:next].nil? ? 1 : 1 + list_length(node[:next])
 end
 
-def middle(head)
-  (list_length(head) / 2).times { head = head[:next] }
-  head[:data]
+def middle(node)
+  (list_length(node) / 2).times { node = node[:next] }
+  node[:data]
 end
 
 head = {:data => 1, :next => nil} # 1
