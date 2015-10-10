@@ -6,5 +6,17 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  odds = []
+  evens = []
+  if return_odds
+      string.chars.each_with_index do |l, i|
+        odds.push(l) if i.odd?
+    end
+    odds.join
+  else
+    string.chars.each_with_index do |l, i|
+        evens.push(l) if i.even?
+    end
+    evens.join
+  end
 end

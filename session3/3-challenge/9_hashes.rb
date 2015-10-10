@@ -28,4 +28,17 @@
 # shared [1,2,:c], ['a','b',:c]      # => [{1=>[true, nil], 2=>[true, nil], :c=>[true, true], "a"=>[nil, true], "b"=>[nil, true]}, [:c]]
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
-
+def shared(ar1, ar2)
+  shared_array = ar1.select{|n| ar2.include?(n)}.sort
+  hash = Hash.new {|this_hash, key| this_hash[key] = []}
+  (ar1 + ar2).uniq.each{|char| hash[char]}.each do |element|
+    if ar1.include?(element) && ar2.include?(element)
+      hash[element] << true << true
+    elsif ar1.include?(element) && !(ar2.include?(element))
+      hash[element] << true << nil
+    elsif !(ar1.include?(element)) && ar2.include?(element)
+      hash[element] << nil << true
+    end
+  end
+  [hash, shared_array]
+end

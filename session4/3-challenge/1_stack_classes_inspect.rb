@@ -71,4 +71,3 @@ class Stack
     output
   end
 end
-

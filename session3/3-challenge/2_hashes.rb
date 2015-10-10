@@ -8,6 +8,8 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
-
-
-
+def staircase(n)
+  hash = Hash.new { |this_hash, key| this_hash[key] = [] }
+  (1..n).each{|n| hash[n] if n.odd?}
+  hash.each{|key, value| (value << (1..key).select{|n| n.even?}).flatten!}
+end

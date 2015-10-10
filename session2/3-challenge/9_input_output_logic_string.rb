@@ -24,11 +24,17 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  loop do
+    words = gets.chomp
+    if words == words.downcase || words == words.capitalize
+      puts "HUH?! SPEAK UP, SONNY!"
+    elsif words == words.upcase && words.chomp != "BYE"
+      puts "NO, NOT SINCE 1938!"
+    elsif words.chomp == "BYE"
+      break
+    end
+  end
 end
-
-
-
 
 
 # This will call your code so you can run it from the terminal.
