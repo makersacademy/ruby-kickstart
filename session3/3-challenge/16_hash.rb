@@ -4,7 +4,7 @@
 # If you don't know what that is, go check out the previous problem.
 
 # head = {:data => 1, :next => nil}
-# print_list head
+# print_list head # =>
 # head = {:data => 2, :next => head}
 # print_list head
 # head = {:data => 3, :next => head}
@@ -16,9 +16,8 @@
 # head = {:data => 6, :next => head}
 # print_list head
 
-def print_list(node, list = '')
-  list += "#{node[:data]}\n"
-  return puts list if node[:next].nil?
-  print_list(node[:next], list)
+def print_list(node)
+  p node[:data]
+  print_list(node[:next]) if node[:next]
 end
 
