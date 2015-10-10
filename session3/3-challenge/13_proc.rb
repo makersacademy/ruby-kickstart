@@ -56,5 +56,28 @@
 
 
 
+=begin - below is my version which actually gives all the same results as in the rspec but for some reason
+still fails the test...
 
+def your_sort(numbers, &block)
+  if block_given?
+    numbers.sort_by(&block)
+  else
+    numbers.sort{|a, b| a <=> b}
+  end
+end
+
+=end
+
+def your_sort( array , &orderer )
+  # if it is nil, then it hasn't been set, default to spaceship operator for comparison result
+  orderer ||= Proc.new { |a, b| a <=> b }
+
+  array.each_index do |index1|
+    array.each_index do |index2|
+      order = orderer.call(array[index1], array[index2])
+      array[index1], array[index2] = array[index2], array[index1] if order < 0
+    end
+  end
+end
 
