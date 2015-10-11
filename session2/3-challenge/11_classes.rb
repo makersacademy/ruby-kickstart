@@ -43,3 +43,5 @@ class BeerSong
     n == 1 ? 'bottle' : 'bottles'
   end
 end
+# ~> -:24:in `require_relative': cannot infer basepath (LoadError)
+# ~>  from -:24:in `<main>'
