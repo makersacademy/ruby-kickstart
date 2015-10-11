@@ -26,3 +26,7 @@
 #   The fourth time the block is passed  35 , 10 and it returns 45
 #   The method then returns 45
 #
+
+def passthrough(enum, passed_in, &block)
+  enum.inject(passed_in, &block)
+end
