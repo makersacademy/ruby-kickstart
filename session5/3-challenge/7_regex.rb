@@ -1,4 +1,4 @@
-# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solution, try to understand the code, then close the file, come back here, and try again to solve it. 
+# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solution, try to understand the code, then close the file, come back here, and try again to solve it.
 
 # You are writing software for the Green Thumb Nursery. They sent you their inventory
 # in a text document, but you need to extract the data in order to use it. You start to
@@ -21,7 +21,7 @@
 #   Royal Empress Tree, which ships @ 2 to 4 feet, cost: $4.50
 #   White Dogwood Tree, which ships at 2 to 3 feet, cost: $5.95"
 #
-# **BE CAREFU!** The Green Thumb Nursery technician had a few fat fingers when entering
+# **BE CAREFUL!** The Green Thumb Nursery technician had a few fat fingers when entering
 # the data, you'll have to make your regex robust enough to accommodate this.
 #
 # Example:
@@ -34,7 +34,9 @@
 #            ["Autumn Flowering Cherry", "2 to 4 feet", "$8.95"]]
 #
 
-
-
+def tree_parser(str)
+  return [] if str.empty?
+  str.scan(/^([\w\s]+).+(\d to \d feet).+(\$.+$)/)
+end
 
 
