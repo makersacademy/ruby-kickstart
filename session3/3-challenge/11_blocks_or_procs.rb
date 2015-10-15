@@ -31,25 +31,6 @@
 #   end
 # end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def array_init size = 5, &block
+  (0..size-1).map { |i| block ? block.call(i) : (i * 100).to_s }
+end
