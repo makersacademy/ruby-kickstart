@@ -40,18 +40,22 @@ class ApplicationController
       end
 
       def + str
-        raise RuntimeError.new("use << method instead")
+        raise_error
       end
 
       def * str
-        raise RuntimeError.new("use << method instead")
+        raise_error
       end
 
       def []=(o,n)
-        raise RuntimeError.new("use << method instead")
+        raise_error
+      end
+
+      private
+      def raise_error
+        raise RuntimeError, "use << method instead"
       end
     end
     @body_class
   end
 end
-
