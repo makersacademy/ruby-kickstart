@@ -3,7 +3,7 @@
 # If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solution, try to understand the code, then close the file, come back here, and try again to solve it. 
 
 # The Green Thumb Nursery calls you up "hey, remember that list of trees we sent you?"
-# "Sure" you reply, fondly reveling in the brillinace of your regular expression that
+# "Sure" you reply, fondly reveling in the brilliance of your regular expression that
 # parsed it. "We want you to put it in a webpage for us" they tell you.
 #
 # Given the same inputs as challenge 7, output results in string format like this:
