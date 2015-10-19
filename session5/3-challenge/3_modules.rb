@@ -25,4 +25,27 @@
 # ff.min                        # => 1
 # ff.select { |num| num.odd? }  # => [1, 5, 3]
 
+class List
+  include Enumerable
+  
+  attr_reader :list
 
+  def initialize
+    @list = []
+  end
+
+  def << item
+    list << item
+    self
+  end
+
+  def each(&block)
+    list.each(&block)
+  end
+
+  def inspect
+    list_str = list.to_s.gsub(/[\[\]]/, '')
+    str = "#<List: #{list_str}>"
+  end
+
+end
