@@ -20,3 +20,24 @@
 # stack.push 2
 # stack # => [1, 2]
 
+require_relative './1_stack_classes_inspect'
+
+class StackInDisguise < Stack
+  def inspect
+    return '[]' unless @head
+    result = []
+    node = @head
+    loop do
+      result.unshift(node.data.inspect)
+      return "[#{result.join(', ')}]" unless node.next_node
+      node = node.next_node
+    end
+  end
+end
+
+stack = StackInDisguise.new
+stack.push 1
+stack.push 2
+stack # =>
+# ~> -:23:in `require_relative': cannot infer basepath (LoadError)
+# ~>  from -:23:in `<main>'

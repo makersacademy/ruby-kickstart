@@ -28,6 +28,17 @@
 #   The concat method will do the same thing as the << method
 
 class ApplicationController
-  def body_class
+  attr_reader :body_class
+
+  def initialize
+    @body_class = ''
   end
 end
+
+class String
+  def << str # !> method redefined; discarding old <<
+    concat ' ' unless length.zero?
+    concat str
+  end
+end
+

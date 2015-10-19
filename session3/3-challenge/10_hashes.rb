@@ -30,5 +30,14 @@
 #
 # create it from scratch :)
 
+def pathify(paths, pathified=[])
+  return paths.map { |path| "/#{path}"} if paths.is_a? Array
 
+  paths.each do |parent_path, child_dirs|
+    parent_path = "/#{parent_path}"
+    child_paths = pathify(child_dirs)
+    pathified += child_paths.map { |child_path| parent_path + child_path }
+  end
+  pathified
+end
 

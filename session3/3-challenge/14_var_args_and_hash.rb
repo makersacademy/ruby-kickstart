@@ -23,5 +23,22 @@
 # problem_14 2,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => true
 # problem_14 3,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => false
 
+def problem_14(*args)
+  h = args.last
+  if h.respond_to?(:key)
+    args.pop
+    send(h[:problem], *args)
+  else
+    send(:count_clumps, *args)
+  end
+end
 
+def count_clumps(*args)
+  args.chunk { |item| item }.select {|item| item[1].length > 1 }.length
+end
+
+def same_ends(*args)
+  return true if args[0] == 0
+  args[1..args[0]] == args[-args[0]..-1] ? true : false
+end
 

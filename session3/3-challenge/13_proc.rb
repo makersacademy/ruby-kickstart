@@ -54,7 +54,13 @@
 #   end
 # end       # => ["a", "m", "r", 1, 3, 4, 9, 2.5, 9.0, 25.8]
 
+def your_sort(arr, &order)
+  order ||= proc { |a, b| a <=> b }
 
-
-
-
+  arr.each_index do |i|
+    arr.each_index do |j|
+      arr[i], arr[j] = arr[j], arr[i] if order[arr[i], arr[j]] < 0
+    end
+  end
+  arr
+end

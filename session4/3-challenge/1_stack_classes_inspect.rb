@@ -3,13 +3,13 @@
 # A stack is a collection of objects, where when you add a new object to the collection,
 # called "pushing", it becomes the first object that you remove from the collection,
 # called "popping". Arrays can be used as stacks:
-stack = Array.new
-stack.push 1
-stack.push 2
-stack       # => [1, 2]
-stack.pop   # => 2
-stack.pop   # => 1
-stack.pop   # => nil
+# stack = Array.new
+# stack.push 1
+# stack.push 2
+# stack       # => [1, 2]
+# stack.pop   # => 2
+# stack.pop   # => 1
+# stack.pop   # => nil
 
 
 
@@ -39,36 +39,62 @@ class Stack
     to_return
   end
 end
-stack = Stack.new
-stack.push 1
-stack.push 2
-stack         # => #<Stack:0x00000100862698 @head=#<Node:0x00000100862648 @next=#<Node:0x00000100862670 @next=nil, @data=1>, @data=2>>
-stack.pop     # => 2
-stack.pop     # => 1
-stack.pop     # => nil
+# stack = Stack.new
+# stack.push 1
+# stack.push 2
+# stack         # => #<Stack:0x007f84db1923c0 @head=#<Node:0x007f84db192370 @next_node=#<Node:0x007f84db192398 @next_node=nil, @data=1>, @data=2>>
+# stack.pop     # => 2
+# stack.pop     # => 1
+# stack.pop     # => nil
 
 
 # Looks good, except that inspection is uuuuuugly. It's the default
 # inspect method from Kernel, which knows nothing about our lists.
 #
 # I want you to override it so that I can do this:
-stack = Stack.new
-stack.push 1
-stack.push 2
-stack.push 3
-stack # =>  (3)2)1)
+# stack = Stack.new
+# stack.push 1
+# stack.push 2
+# stack.push 3
+# stack # => #<Stack:0x007f84db18b840 @head=#<Node:0x007f84db18b7c8 @next_node=#<Node:0x007f84db18b7f0 @next_node=#<Node:0x007f84db18b818 @next_node=nil, @data=1>, @data=2>, @data=3>>
+
+# @head=#<  Node:0x007fd9c29ca8f8
+    # @next_node  =#<Node:0x007fd9c29ca920 @next_node=#<Node:0x007fd9c29ca948 @next_node=nil,
+    #             @data=1>, @data=2>,
+    # @data=3>
+
+# @next_node=#< Node:0x007fd9c29ca920
+    # @next_node  =#<Node:0x007fd9c29ca948 @next_node=nil, @data=1>,
+    # @data=2>
+
+# @next_node=#< Node:0x007fd9c29ca948
+    # @next_node  =nil,
+    # @data=1 >
+
+
+
+### USER SOLUTION
+# (3)2)1)
 
 class Stack
   def inspect
-    output = "("
-    current_head = @head
-    while current_head
-      output << current_head.data.inspect
-      output << ")"
-      current_head = current_head.next_node
+    return '()' unless @head
+    str = '('
+    node = @head
+    loop do
+      str += "#{node.data.inspect})"
+      return str unless node.next_node
+      node = node.next_node
     end
-    output << ")" if output == "("
-    output
   end
 end
+
+# stack = Stack.new
+# stack.push 1
+# stack.push 2
+# stack.push 3
+# stack # => (3)2)1)
+
+# stack2 = Stack.new
+# stack2 # => ()
 

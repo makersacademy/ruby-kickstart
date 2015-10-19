@@ -31,6 +31,10 @@
 #   end
 # end
 
+def array_init(size = 5, &block)
+  return (0...size).map { |e| (e * 100).to_s } unless block_given?
+  Array.new(size, &block)
+end
 
 
 

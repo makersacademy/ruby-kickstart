@@ -8,6 +8,8 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
-
-
+def staircase(num)
+  Hash[(1..num).to_a.select { |n| n.odd? }
+    .map { |n| [n, (1..n).to_a.select { |n| n.even?}] } ]
+end
 

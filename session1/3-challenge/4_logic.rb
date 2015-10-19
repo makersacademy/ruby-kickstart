@@ -13,6 +13,10 @@
 
 
 def grade(num_books, has_read_books)
+  grade = 'C'
+  grade = 'B' if num_books >= 10
+  grade = 'A' if num_books > 20
+  has_read_books ? grade : grade.next
 end
 
 

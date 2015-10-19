@@ -8,5 +8,9 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(arr)
+  arr.select { |num| num if arr.include?(num * num) }.sort
+end
+
 
 

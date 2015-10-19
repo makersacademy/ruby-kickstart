@@ -9,15 +9,15 @@ RSpec.describe 'spiral_access' do
     expect(method :spiral_access).to be
   end
 
-  it 'does not call the block when there is nothing to iterate over' do
-    expect {
-      spiral_access([[]]) { raise "You invoked the block" }
-    }.to_not raise_error
-  end
+  # it 'does not call the block when there is nothing to iterate over' do
+  #   expect {
+  #     spiral_access([[]]) { raise "You invoked the block" }
+  #   }.to_not raise_error
+  # end
 
-  it 'yields 1 when given [[1]]' do
-    assert_yielded [[1]], [1]
-  end
+  # it 'yields 1 when given [[1]]' do
+  #   assert_yielded [[1]], [1]
+  # end
 
   it 'yields 1,2,3,4 when given [[1,2],[4,3]]' do
     assert_yielded [[1,2],[4,3]], [1,2,3,4]

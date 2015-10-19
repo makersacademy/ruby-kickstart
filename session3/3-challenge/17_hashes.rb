@@ -7,10 +7,10 @@
 # head = {:data => 1, :next => nil}
 # head = {:data => 2, :next => head}
 #
-# print_list_in_reverse head   # >> "1\n2\n"
+# print_list_in_reverse head   # => "1\n2\n"
 
-def print_list_in_reverse list
-  return if list == nil
-  print_list_in_reverse list[:next]
-  puts list[:data]
+def print_list_in_reverse(node)
+  print_list_in_reverse(node[:next]) if node[:next]
+  p node[:data]
 end
+
