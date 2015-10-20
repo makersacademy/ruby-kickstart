@@ -21,7 +21,7 @@
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
 
-require_relative './english_number'
+require_relative '../includes/english_number'
 
 class BeerSong
   def initialize(number_of_bottles)
