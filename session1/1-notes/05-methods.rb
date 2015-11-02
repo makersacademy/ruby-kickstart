@@ -5,9 +5,9 @@
 
 
 # You can make methods, too!
-
+# def begins a method..
 def is_this_a_method?
-  "Yes, it is!" # "Yes, it is!" is an object. Because this is the last object in the method, its address will be returned.
+  puts "Yes, it is!" # "Yes, it is!" is an object. Because this is the last object in the method, its address will be returned.
 end
 
 is_this_a_method? # => "Yes, it is!"
