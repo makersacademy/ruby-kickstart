@@ -33,3 +33,4 @@
 # https://github.com/JoshCheek/ruby-kickstart/blob/master/cheatsheets/logic_and_control.rb
 # https://github.com/JoshCheek/ruby-kickstart/blob/master/cheatsheets/strings.rb
 
+#these cheatsheets are not in the repo!
