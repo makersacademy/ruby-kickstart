@@ -5,5 +5,20 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  characters = string.downcase.split("") << " "
+  #characters << " "
+  output = ""
+  
+  until characters.index("r") == nil do
+    position = characters.index("r")
+    output << characters[position + 1]
+    characters[position] = " "   
+  end
+  
+  if output[-1] == " "
+    output.chomp!(" ")
+  end
+  
+  output
+      
 end

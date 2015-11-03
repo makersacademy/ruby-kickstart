@@ -6,5 +6,14 @@
 #
 
 def odds_and_evens(string, return_odds)
+output = ""
+return_odds ? n = 1 : n = 0
+
+until n >= string.length
+  output << string[n]
+  n+=2
+end
+
+output
 
 end
