@@ -6,7 +6,6 @@
 
 def pirates_say_arrrrrrrrr(string)
   characters = string.downcase.split("") << " "
-  #characters << " "
   output = ""
   
   until characters.index("r") == nil do

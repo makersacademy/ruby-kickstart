@@ -14,3 +14,10 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(nums)
+rem_of_3 = []
+nums.each do |num|
+  rem_of_3 << num % 3 if num % 3 != 0
+end
+rem_of_3
+end

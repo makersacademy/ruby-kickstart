@@ -15,3 +15,22 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(chars)
+sum = 0
+chars.each do |char|
+  sum += char.length
+end
+
+return false if sum == 0
+return false if sum == 1
+return true if sum == 2
+
+for i in 2..(sum-1)
+  if sum % i == 0
+    return false
+  end
+end
+
+true
+
+end
