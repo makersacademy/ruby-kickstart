@@ -14,5 +14,3 @@ def ten_twenty(n)
     return 20
   end
 end
-
-puts ten_twenty(5)
