@@ -9,4 +9,11 @@
 # arithmetic2(-6, -7)  # => -3.5
 
 def arithmetic2(a, b)
+  if a <= b
+    a.fdiv(2)
+  elsif a > b
+    b.fdiv(2)
+  end
 end
+
+puts arithmetic2 5, 10
