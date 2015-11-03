@@ -9,3 +9,19 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(str)
+'/[!@$#%^&*()-=+\[\]:;,.\/<>?\|]/'.split(//).each do |x|
+  str = str.gsub(x, " ")
+end
+
+# I took the idea for this code block from the solution. The solution I came up
+# with (below) was giving me a 'Can't modify frozen string' error when run with
+# Rspec. It works if you just run it in Ruby though
+#str.gsub!(/[!@$#%^&*()-=+\[\]:;,.\/<>?\|]/, "")  => This was my original code.
+words = str.split
+output = []
+for i in 0..(words.length-1) do
+  output << words[i] if i.even?
+end
+output
+end
