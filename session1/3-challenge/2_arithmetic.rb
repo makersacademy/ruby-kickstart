@@ -8,5 +8,12 @@
 # arithmetic2(19, 10)  # => 5.0
 # arithmetic2(-6, -7)  # => -3.5
 
+def half_float(n)
+  n/2.to_f
+end
+
 def arithmetic2(a, b)
+  if a > b then half_float(b)
+  else half_float(a)
+  end
 end
