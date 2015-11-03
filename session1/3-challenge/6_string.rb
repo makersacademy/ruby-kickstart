@@ -8,11 +8,7 @@
 def odds_and_evens(string, return_odds)
   returned_string = ""
   string.split(//).each_index do |c|
-    if return_odds && c.odd?
-      returned_string << string[c]
-    elsif !return_odds && c.even?
-      returned_string << string[c]
-    end
+    returned_string << string[c] if return_odds && c.odd? or !return_odds && c.even?
   end
   returned_string
 end
