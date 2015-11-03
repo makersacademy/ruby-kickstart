@@ -6,5 +6,18 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  string.split("")
+  new_string = []
+  array_length = string.length + 1
+  if return_odds # return new string with all odd characters
+  	i = 1
+  else # return string with all even characters
+  	i = 0
+  end
+  
+  while i <= array_length +1
+    new_string << string[i]
+    i += 2
+  end
+  new_string.join("")
 end
