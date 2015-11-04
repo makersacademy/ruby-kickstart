@@ -13,6 +13,25 @@
 
 
 def grade(num_books, has_read_books)
+
+	def ifReads(grade, reads_books)
+		    if reads_books == true
+			(grade.ord - 1). chr
+		end
+		
+		if num_books < 10
+		    grade = "D"
+		    ifReads
+		elsif num_books.member? 10..20
+		    grade = "C" 
+		    ifReads
+	    elsif num_books. > 20
+		    grade = "B"
+		    ifReads
+	    end
+    end
+    
+	puts grade
 end
 
 
