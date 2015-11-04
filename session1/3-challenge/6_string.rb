@@ -6,5 +6,9 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  if return_odds == true
+    return string.split[1,3,5,7]
+  else
+    string.split[0,2,4,6]
+  end
 end
