@@ -5,10 +5,25 @@
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
 
+
 def odds_and_evens(string, return_odds)
-if return_odds = true
-puts string if string%2==0
-else
-puts string%2 !=0
+  to_return = ""
+  string.length.times do |i|
+    next if return_odds && i.even?
+    next if !return_odds && i.odd?
+    to_return << string[i]
+  end
+  to_return
 end
-end
+
+
+
+#def odds_and_evens(string, return_odds)
+ # new_string = ""
+  #string.sizes.times do |i|
+   # next if return_odds && i%2==0
+    #next if !return_odds && i%2!=0
+    #new_string << string[i]
+  #end
+  #to_return
+#end
