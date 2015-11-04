@@ -14,3 +14,12 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(arr)
+  to_return = []
+  arr.each {|n| to_return << n % 3 unless (n % 3 == 0) }
+  to_return
+end
+
+def mod_three (arr)
+  arr.select {|number| number % 3 != 0}.map {|number| number % 3}
+end
