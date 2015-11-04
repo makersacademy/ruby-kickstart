@@ -5,5 +5,15 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
+  return_string = ''
+  arr = string.split(//) # =>
+  arr.each_index do |item|
+    if arr[item].downcase == 'r'
+      return_string << arr[item+1]
+    end
+  end
 
+  return_string # =>
 end
+
+puts pirates_say_arrrrrrrrr('are you really learning Ruby?')
