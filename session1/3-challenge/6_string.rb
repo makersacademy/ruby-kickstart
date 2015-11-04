@@ -6,5 +6,23 @@
 #
 
 def odds_and_evens(string, return_odds)
+    new_string = String.new
+    
+    if return_odds
+        iterator = 0
+        string.each_char do |i|
+            iterator += 1
+            next if iterator.odd?
+            new_string << i
+        end   
+    else
+        iterator = -1
+        string.each_char do |i|
+            iterator += 1
+            next if iterator.odd?
+            new_string << i
+        end  
+    end
 
+    new_string
 end
