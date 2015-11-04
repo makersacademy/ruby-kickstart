@@ -15,3 +15,9 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? entry
+  num = entry.join.length
+  return false if num == 0 || num == 1
+  (2...num).each {|i| return false if num % i == 0}
+  return true
+end

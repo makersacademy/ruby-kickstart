@@ -14,3 +14,7 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three numbers
+  numbers = numbers.select {|i| i % 3 != 0}
+  numbers.collect! {|i| i % 3}
+end
