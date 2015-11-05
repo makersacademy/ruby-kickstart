@@ -78,11 +78,8 @@ class User
 
   def add_blog(date, text)
     new_blog = Blog.new(date, self, text)
-    blogs << new_blog
-    blogs.sort! {|blog1, blog2| blog2.date <=> blog1.date}
     new_blog
   end
-
 
 end
 
@@ -92,6 +89,8 @@ class Blog
       self.date = date
       self.user = user
       self.text = text
+      user.blogs << self
+      user.blogs.sort! {|blog1, blog2| blog2.date <=> blog1.date}
     end
 
     def ==(other)
@@ -107,7 +106,22 @@ class Blog
     end
 end
 
+=begin
+lissa = User.new 'QTSort'
+puts lissa.username                  # => "QTSort"
+puts lissa.blogs
+lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
+puts "1: #{lissa.blogs}\n....................\n"
+Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"                                    # we'll call this blog2
+puts "2: #{lissa.blogs}\n....................\n"
+Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"              # we'll call this blog3
+puts "3: #{lissa.blogs}\n....................\n"
+Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best ^_^"   # we'll call this blog4
+puts "4: #{lissa.blogs}\n....................\n"
+#puts lissa.blogs
+                     # => [ blog1 , blog4 , blog2 , blog3 ]
 #user = User.new 'QTSort'
 #blog = user.add_blog(Date.today, "text")
 #puts blog
 #puts user.blogs.first
+=end
