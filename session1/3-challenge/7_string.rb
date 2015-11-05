@@ -4,6 +4,17 @@
 # pirates_say_arrrrrrrrr("Katy Perry is on the radio!")   # => "rya"
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
-def pirates_say_arrrrrrrrr(string)
 
+def pirates_say_arrrrrrrrr(string)
+	i = 0 
+	character_after_every_r = []
+	ary = string.split("")
+	ary.each do |c|
+		if c.upcase == "R"
+		character_after_every_r << ary[i+1]
+		end
+		i += 1
+	end
+	character_after_every_r.join
 end
+
