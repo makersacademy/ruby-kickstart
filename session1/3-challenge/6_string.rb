@@ -6,5 +6,8 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+result = ""
+num = string.size
+string.split.each.with_index do |s, i|
+    
 end
