@@ -11,14 +11,10 @@
 
 def alternate_words(str)
   return_arr = []
-  punct = ['!', '@', '$', '#', '%', '^', '&', '*', '(', ')', '-', '=', '_', '+', '[', ']', ':', ';', ',', '.', '/', '<', '>', '?', '\\', '|']
-
-  words = str.split(' ')
-  words.length.times do |i|
-    words[i] = words[i][0...-1] if punct.include? words[i][words[i].length - 1]
-    words[i] = words[i][1...words[i].length] if punct.include? words[i][0]
-    return_arr << words[i] if i.even?
-  end
+  str
+    .gsub(/[^A-Za-z0-9'’\s]/, " ")
+    .split
+    .each_with_index {|w, i| return_arr << w if i.even?}
   return_arr
 end
   

@@ -20,3 +20,56 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+#
+class BeerSong
+  attr_reader :bottles
+
+  def initialize(bottles)
+    bottles = 0 if bottles < 0
+    bottles = 99 if bottles > 99
+    @bottles = bottles
+  end
+
+  def print_song
+    until @bottles == 0
+      num = to_english(@bottles)
+      less = to_english(@bottles - 1)
+      bottle1 = num == "One" ? 'bottle' : 'bottles'
+      bottle2 = less == "One" ? 'bottle' : 'bottles'
+      puts "#{num} #{bottle1} of beer on the wall,\n"\
+        "#{num} #{bottle1} of beer,\n"\
+        "Take one down, pass it around,\n"\
+        "#{less} #{bottle2} of beer on the wall." 
+      @bottles -= 1
+    end
+  end
+
+  private
+
+  def to_english(num)
+    nums = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
+      'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',
+      'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
+    big_nums = ['twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy',
+      'eighty', 'ninety']
+    if num < 20
+      english = nums[num]
+    else
+      tens = num/10
+      ones = num%10
+      english = big_nums[tens-2]
+      english = big_nums[tens-2] + '-' + nums[ones] unless ones == 0
+    end
+    english.capitalize
+  end
+end
+
+
+=begin
+wall = BeerSong.new(1000)
+puts "new wall with " + wall.bottles.to_s + " bottles"
+wall.print_song
+=end
+
+
+
