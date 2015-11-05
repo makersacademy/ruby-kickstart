@@ -15,3 +15,13 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(arr)
+  total = arr.join.length
+  return false if total < 2
+  (total - 1).downto(2) do |i|
+    return false if total % i == 0
+  end
+  true
+end
+     
+

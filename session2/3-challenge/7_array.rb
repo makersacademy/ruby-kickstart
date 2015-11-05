@@ -9,3 +9,19 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(str)
+  return_arr = []
+  punct = ['!', '@', '$', '#', '%', '^', '&', '*', '(', ')', '-', '=', '_', '+', '[', ']', ':', ';', ',', '.', '/', '<', '>', '?', '\\', '|']
+
+  words = str.split(' ')
+  words.length.times do |i|
+    words[i] = words[i][0...-1] if punct.include? words[i][words[i].length - 1]
+    words[i] = words[i][1...words[i].length] if punct.include? words[i][0]
+    return_arr << words[i] if i.even?
+  end
+  return_arr
+end
+  
+    
+
+    

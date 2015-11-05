@@ -8,6 +8,14 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  puts "Please enter two integers, seperated by a space..."
+  inputs = gets.chomp.split(' ')
+  inputs.each_with_index {|n, i| inputs[i] = n.to_i}
+  sum = inputs[0] + inputs[1]
+  difference = inputs[0] - inputs[1]
+  product = inputs[0] * inputs[1]
+
+  puts sum
+  puts difference
+  puts product
 end
