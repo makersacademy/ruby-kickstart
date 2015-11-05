@@ -15,3 +15,11 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? (array)
+  num = array.join("").length
+  return false if num < 2
+  test = (2..Math.sqrt(num)).map do |x|
+    return false if num % x == 0
+  end
+    true
+end
