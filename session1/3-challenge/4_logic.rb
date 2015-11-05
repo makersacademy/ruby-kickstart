@@ -13,6 +13,28 @@
 
 
 def grade(num_books, has_read_books)
+# turn boolean value into numbers i can manipulate later
+  if has_read_books == true
+    has_read_books = 1
+  else
+    has_read_books = 0
+  end
+# make a hash I can search through to see which grade bracket the number of
+# books a student has falls within. similarly to above instead of assigning 0..9
+# to D I use numbers so I can add and subtract them later. The last key/value seems sooooo hacky.
+  hash = {1 => 0..9, 2 => 10..20, 3=>21..1000000000000}
+# search through the hash and select the grade bracket. Spits out an array though...
+  score = hash.find {|key, value| value === num_books}
+# so now we have to select the element of the array we want, wich will always be [0]
+#does hash include num_books? If so, return the key.
+#turning the boolean values into numbers allows me to manipulate them like so now:
+  if score[0] + has_read_books <= 1
+    return "D"
+  elsif score[0] + has_read_books == 2
+    return "C"
+  elsif score[0] + has_read_books == 3
+    return "B"
+  else
+    return "A"
+  end
 end
-
-
