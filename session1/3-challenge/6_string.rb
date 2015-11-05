@@ -7,11 +7,10 @@
 
 def odds_and_evens(string, return_odds)
   to_return = ""
-  if return_odds == true
-    return string.split.select{|char| char % 2 == 0 }.join
-  else
-    return string.split.select{|char| char % 2 != 0 }.join
-    to_return << string[char]
-end
+  string.size.times do |index|
+    next if return_odds && index.even?
+    next if !return_odds && index.odd?
+    to_return << string[index]
+    end
   to_return
 end
