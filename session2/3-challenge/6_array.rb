@@ -14,4 +14,9 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
-
+require 'prime'
+  def prime_chars?(strings) 
+  sum = strings.join.length
+  sum.prime? ? true : false
+  end
+prime_chars? ["abcd"]
