@@ -19,7 +19,38 @@
 # end
 # order # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
 
+def spiral_access(arr, iter=0, &block)  # Had to check the solution with this
+                                        # one for help implementing the recursion
+  width = arr.first.length-1
+  height = arr.length-1
+
+  return if width / 2 < iter || height / 2 < iter
+
+  for w in (iter..width-iter)
+    block.call arr[iter][w]
+  end
+
+  for h in (iter+1..height-iter)
+    block.call arr[h][width-iter]
+  end
+
+  (width-1-iter).downto(iter).each do |w|
+    block.call arr[height-iter][w]
+  end
+
+  (height-1-iter).downto(iter+1).each do |h|
+    block.call arr[h][iter]
+  end
+
+  spiral_access(arr, iter+=1, &block)
+
+end
 
 
 
-
+#two_d = [[1]]
+ #order = []
+ #spiral_access two_d do |i|
+  # order << i
+ #end
+ #print order
