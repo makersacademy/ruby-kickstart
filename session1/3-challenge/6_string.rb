@@ -4,7 +4,18 @@
 #
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
-
 def odds_and_evens(string, return_odds)
+new_string = ""
 
+if return_odds 
+	string.length.to_i.times do |x|
+		new_string << string[x] if x.odd?
+	end	
+else
+	string.length.to_i.times do |x|
+		new_string << string[x] if x.even?
+	end
 end
+new_string
+end
+
