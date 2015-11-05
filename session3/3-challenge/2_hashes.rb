@@ -8,6 +8,10 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
-
-
-
+def staircase(n)
+negs = (1..n).select { |e| e.odd? }
+evens = (1..n).select { |e| e.even? }
+hash = {}
+negs.each {|i| hash[i] = evens.first((i-1)/2)}
+hash
+end
