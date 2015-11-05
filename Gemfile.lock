@@ -49,4 +49,3 @@ DEPENDENCIES
   rake
   rspec (~> 3.1.0)
   sinatra
-  
