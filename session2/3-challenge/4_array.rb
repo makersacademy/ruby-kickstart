@@ -8,5 +8,17 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(numbers)
+	squares = []
+	numbers = numbers.to_a
+	numbers.map do |n| 
+		if numbers.include? (n && n**2) 
+			squares << n
+			end
+		end
+		 squares.sort
+end
+		
+	puts get_squares [2,6,8,4,6,50,4]
 
 
