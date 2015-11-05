@@ -6,9 +6,12 @@
 #
 
 def odds_and_evens(string, return_odds)
+  to_return = ""
   if return_odds == true
-    return string.split[1,3,5,7]
+    return string.split.select{|char| char % 2 == 0 }.join
   else
-    string.split[0,2,4,6]
-  end
+    return string.split.select{|char| char % 2 != 0 }.join
+    to_return << string[char]
+end
+  to_return
 end
