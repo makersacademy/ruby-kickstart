@@ -5,5 +5,17 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
+  n=0
+  newstring =""
+
+  while n+1 < string.length do
+    if
+      string[n] == "r" || string[n] == "R"
+      newstring << string[n+1]
+    end
+    n+=1
+  end
+
+  return newstring
 
 end
