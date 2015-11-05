@@ -9,7 +9,7 @@
 
 def sum_difference_product
   input = gets.chomp 
-  nums = input.split.map{|x| x.to_i}
+  nums = input.split(' ').map{|x| x.to_i}
   puts nums[0] + nums[1]
   puts nums[0] - nums[1]
   puts nums[0] * nums[1]
