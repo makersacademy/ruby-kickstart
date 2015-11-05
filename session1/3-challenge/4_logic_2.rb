@@ -23,9 +23,9 @@ def grade(num_books, has_read_books)
 case
 when num_books > 21
   num_books = 3
-when num_books >=10 && <=20
+when num_books === 10..20
   num_books = 2
-when num_books >10
+when num_books <= 9
   num_books = 1
 end
 #add them all together and evaluate
