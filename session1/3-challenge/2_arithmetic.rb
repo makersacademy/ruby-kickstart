@@ -10,8 +10,8 @@
 
 def arithmetic2(a, b)
   if a <= b
-    return a.fdiv(2)
+    a.fdiv(2)
   else
-    return b.fdiv(2)
+    b.fdiv(2)
   end
 end

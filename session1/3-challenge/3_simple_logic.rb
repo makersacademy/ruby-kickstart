@@ -9,8 +9,8 @@
 
 def ten_twenty(n)
   if n % 2 == 0
-    return 10
+    10
   else
-    return 20
+     20
   end
 end
