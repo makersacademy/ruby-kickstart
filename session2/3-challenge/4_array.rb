@@ -8,5 +8,10 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
-
+def get_squares(array)
+  array.inject([]) do |memo, num|
+    memo << num if array.include? num ** 2
+    memo.sort
+  end
+#  memo.sort
+end
