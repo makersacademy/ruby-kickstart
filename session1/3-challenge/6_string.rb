@@ -7,7 +7,10 @@
 
 def odds_and_evens(string, return_odds)
 result = ""
-num = string.size
-string.split.each.with_index do |s, i|
-    
+string.size.times do |i|
+   next if return_odds && i.even?
+   next if !return_odds && i.odd?
+   result << string[i]
+end
+result
 end
