@@ -9,8 +9,5 @@
 
 def sum_difference_product
   input = gets.chomp.split.map { |s| s.to_i }
-  sum = input[0] + input[1]
-  difference = input[0] - input[1]
-  product = input[0] * input[1]
-  print sum.to_s + "\n" + difference.to_s + "\n" + product.to_s + "\n"
+  print "#{input[0]+input[1]}\n#{input[0]-input[1]}\n#{input[0]*input[1]}\n"
 end
