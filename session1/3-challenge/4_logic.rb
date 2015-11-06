@@ -13,6 +13,28 @@
 
 
 def grade(num_books, has_read_books)
+
+if has_read_books== true
+    
+    
+num_books=num_books+10
+
+else
+    
 end
+puts num_books
+
+if num_books<10
+    puts "You Get A D"
+    
+elsif num_books>=10 && num_books<20
+     puts "You Get A C"
+     
+ else num_books>20
+      puts "You Get A B"
+      
+ end
+ 
+ end
 
 
