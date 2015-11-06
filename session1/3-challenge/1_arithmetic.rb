@@ -9,5 +9,12 @@
 # arithmetic1(-6)     # => -50
 
 def arithmetic1(n)
+    
+    m=n*5
+    
+    a=m-20
+    
+    puts a
+    
 end
 
