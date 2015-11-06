@@ -14,4 +14,13 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+def prime_chars?(array)
+	return false if array == []
+	prime = array.map(&:size).inject(0,:+)
+	return false if prime < 2
+	return true if prime = 'prime'
+	end
+	 
 
+
+		
