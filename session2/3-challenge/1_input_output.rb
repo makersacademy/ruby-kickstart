@@ -8,6 +8,13 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
+  puts "Enter two numbers separated by a space"
+  numbers = gets.chomp.split
+
+  firstnum = numbers[0].to_i
+  secnum = numbers[1].to_i
+  puts firstnum + secnum
+  puts firstnum - secnum
+  puts firstnum * secnum
   
 end
