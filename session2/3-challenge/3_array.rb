@@ -7,6 +7,10 @@
 
 class String
   def every_other_char
+  others = ""  
+  each_char.with_index do |x, y|
+      y.even? ? others << x : nil
+      end
+  others   
   end
-  
 end
