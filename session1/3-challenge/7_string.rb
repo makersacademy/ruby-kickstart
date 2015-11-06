@@ -5,5 +5,12 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+	returning = ""
+	nextc = false
+	string.length.times {|x| 
+		character = string[x]
+		returning << character if nextc
+		nextc = (character == "r" || character == "R")
+	}
+	returning
 end
