@@ -6,5 +6,9 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  range = 0..string.length-1
+  new_string = String.new
+  range.step(2) {|x| string[x+1] && new_string << string[x+1]} if return_odds
+  range.step(2) {|x| new_string << string[x]} if !return_odds
+  new_string
 end

@@ -9,4 +9,16 @@
 # This time you will have to define the method, it's called: get_squares
 
 
-
+def get_squares(array)
+  to_return = Array.new
+  array.each do |x|
+    square = x * x
+    array.each do |y|
+      if y == square
+        to_return << x
+        break
+      end
+    end
+  end
+  to_return.sort
+end
