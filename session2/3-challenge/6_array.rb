@@ -14,11 +14,18 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
-require 'prime'
+class Integer
+def prime?
+	return false if self < 2
+	2.upto Math.sqrt(self) do |i|
+	return false if self % i == 0
+   end
+   true
+  end
+end
 
 def prime_chars?(array)
-	return false if array == []
-	return false if prime < 2 
+	array.join.length.prime?
 	end
 	 
 
