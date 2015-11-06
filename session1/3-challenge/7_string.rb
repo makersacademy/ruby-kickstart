@@ -10,9 +10,13 @@ abb = (0 ... string.length).find_all { |i| string[i,1] == 'r' }
 
 n=abb.count
 
-a,b=abb
 
-puts string [a+1]
-puts string [b+1]
+for i in (0 .. n) do
+    puts string[abb[i]+1]
+
+    
+    
+    
+end
 
 end
