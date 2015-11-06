@@ -7,4 +7,21 @@
 
 def odds_and_evens(string, return_odds)
 
+n=string.length
+
+if return_odds==true
+    for i in (1..n).step(2) do
+    puts string [i]
+    
+end
+
+else 
+
+ for i in (0..n).step(2) do
+    puts string [i]
+    
+end
+
+end
+
 end
