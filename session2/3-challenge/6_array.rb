@@ -15,3 +15,20 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require 'prime.rb'
+
+def prime_chars?(array)
+  counter = 0
+  array.each {|e| counter += e.size }
+  Prime.prime?(counter)
+end
+
+p prime_chars? ['abc']            # => true
+p prime_chars? ['a', 'bc']        # => true
+p prime_chars? ['ab', 'c']        # => true
+p prime_chars? ['a', 'b', 'c']    # => true
+
+p prime_chars? ['abcd']           # => false
+p prime_chars? ['ab', 'cd']       # => false
+p prime_chars? ['a', 'bcd']       # => false
+p prime_chars? ['a', 'b', 'cd']   # => false

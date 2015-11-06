@@ -9,3 +9,14 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+#these are the two we need to ignore: '’
+
+def alternate_words(string)
+  final_string = []
+  string.gsub(/[^a-z0-9'’\s]/i, ' ').split.each_with_index {|word, index| final_string << word if index.even?}
+  final_string
+end
+
+p alternate_words("Lorem ipsum dolor sit amet.")  # => ["Lorem", "dolor", "amet"]
+p alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
+p alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
