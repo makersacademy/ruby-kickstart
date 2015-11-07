@@ -7,7 +7,7 @@
 # got_three? [1, 2, 1, 1]     # => false
 
 def got_three?(a) 
-	a.each_cons 3 do |a, b, c| 
+	a.each_cons(3) do |a, b, c| 
 	return true if a == b && b == c 
 end
 false 
