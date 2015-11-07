@@ -9,8 +9,11 @@
 
 def ten_twenty(n)
   if n.odd? == true
-    return 20
+     20
   else
-    return 10
+     10
   end
 end
+
+p ten_twenty(5) # => 20
+p ten_twenty(6) # => 10

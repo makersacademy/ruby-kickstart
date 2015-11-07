@@ -10,8 +10,13 @@
 
 def arithmetic2(a, b)
   if a < b
-    return a / 2.to_f
+     a / 2.to_f
   else
-    return b / 2.to_f
+     b / 2.to_f
   end
 end
+
+
+p arithmetic2(1, 2)    # => 0.5
+p arithmetic2(19, 10)  # => 5.0
+p arithmetic2(-6, -7)  # => -3.5
