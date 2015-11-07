@@ -8,5 +8,17 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(numbers)
+  numbers_after_check = []
+  numbers.each do |n|
+    puts "checkin if #{n*n} is in the array #{numbers.join(',')}..."
+    if numbers.include? n*n
+      numbers_after_check << n
+      puts "final numbers updated: #{numbers_after_check}"
+    end
+  end
+  numbers_after_check.sort!
+end
 
-
+#get_squares [9,3,81]
+#get_squares [25, 4, 9, 6, 50, 16, 5]
