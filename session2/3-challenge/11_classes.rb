@@ -54,8 +54,13 @@ class BeerSong
   end
 
   def verse
-
-    b = bottles
+    if bottles < 0
+      b = 0
+    elsif bottles > 99
+      b = 99
+    else
+      b = bottles
+    end
 
     if b == 0
       puts "Zero bottles of beer on the wall."
@@ -68,13 +73,13 @@ class BeerSong
         puts english_num(b).capitalize + " bottles of beer on the wall."
         puts ""
       end
+        lastverse
     end
 
-    lastverse
   end
 
 end
 
-s1 = BeerSong.new 7
+s1 = BeerSong.new 100
 
 s1.verse
