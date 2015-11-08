@@ -9,5 +9,19 @@
 
 def sum_difference_product
   # your code goes here
-  
+  a , b = gets.split.map {|x| x.to_i}
+  puts a + b
+  puts a - b
+  puts a * b
 end
+
+
+
+=begin
+- get the integers with gets
+- split the integers so that you have two separate integers from one gets statement 
+- pass these integers in to a method that produces the sum, difference and product of the integers
+
+
+
+=end

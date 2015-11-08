@@ -14,3 +14,13 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(arr)
+	arr.select {|x| x % 3 != 0}.map {|x| x % 3}
+end
+
+p mod_three [1,2,3,4,5]
+
+=begin
+remember that do --- end or {---} works for any number of arrays in a method 
+	eg. arr.each {|x| something}.select {|x| something}
+=end 

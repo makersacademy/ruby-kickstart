@@ -20,8 +20,25 @@
 
 def hi_hi_goodbye
   # your code here
+  puts "Enter a number"
+
+#count = 0
+
+while true
+	num = gets.chomp
+	
+	if num != 'bye'
+		puts "hi " * num.to_i
+		
+	elsif num == 'bye'
+		puts "goodbye"
+		break
+	end
+	puts "Enter a number"
+end
 
 end
+
 
 
 
