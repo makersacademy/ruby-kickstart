@@ -5,26 +5,22 @@
 #
 
 def prime_chars?(array_strings)
-  sum_characters = array_strings.join('').length.to_i
-  i = 1
-  result = ""
-  sum_characters.times do
-    puts "#{sum_characters} is divisible by #{i}"
-    result = true if i != sum_characters && % i == 0 
-    result = false if sum_characters % i == 0
-    i += 1
+  sum = array_strings.join('').length.to_i
+  is_sum_prime = true
+  for num in 2...sum
+    is_sum_prime = false if sum % num == 0
   end
-  p result
+  is_sum_prime
 end
 
 # Examples of length three
-prime_chars? ['abc']            # => true
-prime_chars? ['a', 'bc']        # => true
-prime_chars? ['ab', 'c']        # => true
-prime_chars? ['a', 'b', 'c']    # => true
+# prime_chars? ['abc']            # => true
+# prime_chars? ['a', 'bc']        # => true
+# prime_chars? ['ab', 'c']        # => true
+# prime_chars? ['a', 'b', 'c']    # => true
 #
 # Examples of length four
-prime_chars? ['abcd']           # => false
-prime_chars? ['ab', 'cd']       # => false
-prime_chars? ['a', 'bcd']       # => false
-prime_chars? ['a', 'b', 'cd']   # => false
+# prime_chars? ['abcd']           # => false
+# prime_chars? ['ab', 'cd']       # => false
+# prime_chars? ['a', 'bcd']       # => false
+# prime_chars? ['a', 'b', 'cd']   # => false
