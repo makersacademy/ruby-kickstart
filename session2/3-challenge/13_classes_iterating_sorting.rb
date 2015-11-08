@@ -6,6 +6,43 @@
 # it should have a method blogs which returns an array of all blogs the user has written
 # they should be in reverse chronological order (newest first)
 #
+
+class User
+  def initialize username
+    @username = username
+    @blogs = []
+  end
+
+  def add_blog date, entry
+    blog = Blog.new date, self.username, entry
+  end
+
+  def blogs
+    @@blogs.sort! #reverse cronologcal order
+  end
+
+end
+
+class Blog
+  attr_accessor 'date', 'username', 'entry'
+
+  def initialize date, username, entry
+    @date, @username, @entry = date, username, entry
+    blog_post = [@date, @username, @entry]
+    @@blogs << blog_post
+  end
+
+  def get_summary
+    summary = @blog_post[2].split(" ")
+    summary.select! { |i| summary[0...9].include?(i) }
+    summary.join(" ")
+  end
+
+  def == other
+    return self.date == other.date
+  end
+end
+
 # Define a class called Blog that could be used to store an entry for your web log.
 # The class should have a getter and setter methods: text , date , user
 # its initialize method should receive the date, user , and text

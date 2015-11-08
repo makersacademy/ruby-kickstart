@@ -10,6 +10,37 @@
 # then dividing both by that number.
 # I have included a greatest common divisor method for you
 # You should also define a method, to_s, that will represent the Fraction as a String
+
+class Fraction
+  attr_accessor :numerator, :denominator
+
+  def initialize(numerator, denominator)
+    @numerator = numerator
+    @denominator = denominator
+  end
+
+  def to_f
+    @numerator.to_f/@denominator.to_f
+  end
+
+  def gcd(a,b)
+    return a if b == 0
+    gcd(b, a%b)
+  end
+
+  def lowest
+    temp_fraction = Fraction.new @numerator, @denominator
+    divider = gcd(temp_fraction.numerator,temp_fraction.denominator).to_i
+    (temp_fraction.numerator / divider)/(temp_fraction.denominator / divider)
+  end
+
+  def to_s
+      "#{@numerator}/#{@denominator}"
+  end
+
+end
+
+
 #
 # EXAMPLE:
 # f = Fraction.new 20, 60
@@ -21,10 +52,3 @@
 # f.denominator = 100
 # f.to_s               # => "50/100"
 # f.to_f               # => 0.5
-
-class Fraction
-  def gcd(a,b)
-    return a if b == 0
-    gcd(b, a%b)
-  end
-end
