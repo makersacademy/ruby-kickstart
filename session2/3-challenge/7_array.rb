@@ -9,3 +9,15 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words sentence
+    sentence = sentence.gsub(/[^A-Za-z0-9'’]/, " ")
+    sentence = sentence.split
+    
+    final = Array.new
+    
+    sentence.each_with_index do |x, index|
+      final << x if index.even?
+    end
+    
+    final
+end
