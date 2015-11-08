@@ -21,63 +21,41 @@
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
 
+class Fixnum
+
+  def is_plural
+    self == 1 ? "bottle" : "bottles"
+  end
+
+end
+
 class BeerSong
 
-  def initialize(bottles)
+  def initialize (bottles)
     bottles = 99 if bottles > 99
     bottles = 0 if bottles < 0
     @bottles = bottles
   end
 
   def print_song
-    (0...@bottles).each do |i|
-      this_bottles = @bottles - i
-      next_bottles = @bottles - (i + 1)
-      this_plural = plural(this_bottles)
-      next_plural = plural(next_bottles)
-      puts "#{english(this_bottles).capitalize} #{this_plural} of beer on the wall,"
-      puts "#{english(this_bottles).capitalize} #{this_plural} of beer,"
+    @bottles.downto(1) do |bot_num|
+      puts "#{to_eng(bot_num).capitalize} #{bot_num.is_plural} of beer on the wall,"
+      puts "#{to_eng(bot_num).capitalize} #{bot_num.is_plural} of beer,"
       puts "Take one down, pass it around,"
-      puts "#{english(next_bottles).capitalize} #{next_plural} of beer on the wall."
+      puts "#{to_eng(bot_num - 1).capitalize} #{(bot_num-1).is_plural} of beer on the wall."
     end
   end
 
-  def english(n)
-    if n == 0
-      return "zero"
+  def to_eng(value)
+    numbers_to_name = {90 => "ninety", 80 => "eighty", 70 => "seventy", 60 => "sixty", 50 => "fifty", 40 => "forty", 30 => "thirty", 20 => "twenty", 19 => "nineteen", 18 =>"eighteen", 17 =>"seventeen",  16 => "sixteen", 15=>"fifteen", 14=>"fourteen", 13=>"thirteen", 12=>"twelve", 11 => "eleven", 10 => "ten", 9 => "nine", 8 => "eight", 7 => "seven", 6 => "six", 5 => "five", 4 => "four", 3 => "three", 2 => "two", 1 => "one", 0 => "zero"}
+    if value < 20 || value % 10 == 0
+      return numbers_to_name[value]
+    else
+      tens = value / 10
+      tens_return = tens * 10
+      singles = value - tens * 10
+      return numbers_to_name[tens_return] + "-" + numbers_to_name[singles]
     end
-
-    eng_num = ""
-
-    singles = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
-    tens = ['ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
-    teens = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
-
-    remaining = n
-
-    ten_push = remaining / 10
-    remaining = remaining - ten_push * 10
-
-    if ten_push > 0
-      if ten_push == 1 && remaining != 0
-        eng_num = teens[remaining - 1]
-        remaining = 0
-      elsif remaining != 0
-        eng_num = tens[ten_push - 1] + "-"
-      else
-        eng_num = tens[ten_push -1]
-      end
-    end
-
-    if remaining != 0
-      eng_num = eng_num + singles[remaining - 1]
-    end
-
-    eng_num
-  end
-
-  def plural(n)
-    n == 1 ? "bottle" : "bottles"
   end
 
 end
