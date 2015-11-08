@@ -9,4 +9,21 @@
 # This time you will have to define the method, it's called: get_squares
 
 
+def get_squares(squares)
 
+new = []
+
+squares.each {|num| new << num if squares.include? num**2 }
+
+new.sort
+
+end
+
+
+
+
+
+
+  p get_squares [9,3]                    # => [3]
+  p get_squares [9,3,81]                 # => [3, 9]
+  p get_squares [25, 4, 9, 6, 50, 16, 5] # => [4, 5]
