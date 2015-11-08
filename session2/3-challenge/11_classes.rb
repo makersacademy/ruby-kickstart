@@ -20,3 +20,61 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+class BeerSong
+
+  def initialize(bottles)
+    @bottles = bottles
+  end
+
+  attr_accessor 'bottles'
+
+  def english_num(number)
+    units = ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen",
+      "fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
+    tens = ["twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
+
+    unit = number % 10
+    ten = (number - unit)/10 - 2  # rebased to match the index of tens array
+
+    if number < 20
+      units[number]
+    elsif unit == 0
+      tens[ten]
+    else
+      tens[ten]+"-"+units[unit]
+    end
+  end
+
+  def lastverse
+    puts "One bottle of beer on the wall,"
+    puts "One bottle of beer,"
+    puts "Take one down, pass it around,"
+    puts "Zero bottles of beer on the wall."
+  end
+
+  def verse
+
+    b = bottles
+
+    if b == 0
+      puts "Zero bottles of beer on the wall."
+    else
+      until b == 1 do
+        puts english_num(b).capitalize + " bottles of beer on the wall,"
+        puts english_num(b).capitalize + " bottles of beer,"
+        puts "Take one down, pass it around,"
+        b -= 1
+        puts english_num(b).capitalize + " bottles of beer on the wall."
+        puts ""
+      end
+    end
+
+    lastverse
+  end
+
+end
+
+s1 = BeerSong.new 7
+
+s1.verse
