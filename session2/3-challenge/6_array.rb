@@ -15,3 +15,16 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(*strings)
+  sum = strings.join.length
+  require 'prime'
+  puts (sum).prime?
+end
+
+#si fuese sumar el valor 
+#def prime_chars?(*n)
+#	sum=n.reduce :+
+#	require 'prime'
+#	puts (sum).prime?
+
+#end

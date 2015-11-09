@@ -10,3 +10,8 @@
 
 
 
+def get_squares (numbers)
+numbers.sort.select {|x| numbers.include? x*x}
+end
+
+
