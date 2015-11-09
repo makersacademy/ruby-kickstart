@@ -53,7 +53,7 @@ class BeerSong
     puts "Zero bottles of beer on the wall."
   end
 
-  def verse
+  def print_song
     if bottles < 0
       b = 0
     elsif bottles > 99
@@ -63,23 +63,22 @@ class BeerSong
     end
 
     if b == 0
-      puts "Zero bottles of beer on the wall."
+      puts ""
     else
       until b == 1 do
         puts english_num(b).capitalize + " bottles of beer on the wall,"
         puts english_num(b).capitalize + " bottles of beer,"
         puts "Take one down, pass it around,"
         b -= 1
-        puts english_num(b).capitalize + " bottles of beer on the wall."
+        if b == 1
+          puts english_num(b).capitalize + " bottle of beer on the wall."
+        else
+          puts english_num(b).capitalize + " bottles of beer on the wall."
+        end
         puts ""
       end
-        lastverse
+      lastverse
     end
-
   end
 
 end
-
-s1 = BeerSong.new 100
-
-s1.verse
