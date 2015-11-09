@@ -31,11 +31,11 @@ class Fraction
   attr_accessor 'numerator', 'denominator'
 
   def to_s
-    "#{numerator}/#{denominator}"
+    "#{@numerator}/#{@denominator}"
   end
 
   def to_f
-    numerator*1.0/denominator
+    @numerator*1.0/@denominator
   end
 
   def gcd(a,b)
@@ -44,10 +44,12 @@ class Fraction
   end
 
   def lowest
-    common = gcd(numerator,denominator)
-    n = numerator/common
-    d = denominator/common
-    Fraction.new n, d
+    common = gcd(@numerator,@denominator)
+    Fraction.new @numerator/common, @denominator/common
   end
 
 end
+
+f = Fraction.new 20, 60
+
+puts f.lowest
