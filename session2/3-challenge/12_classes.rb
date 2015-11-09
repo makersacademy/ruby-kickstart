@@ -49,7 +49,3 @@ class Fraction
   end
 
 end
-
-f = Fraction.new 20, 60
-
-puts f.lowest
