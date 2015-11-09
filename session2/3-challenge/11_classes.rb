@@ -22,6 +22,7 @@
 # Add any additional methods you find helpful.
 
 class BeerSong
+
   def initialize(num)
     @num = num
     if @num > 99
@@ -30,6 +31,7 @@ class BeerSong
       @num = 0
     end
   end
+
   def eng_num(x)
     ones_array = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
     teens_array = ['', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
@@ -42,6 +44,7 @@ class BeerSong
     english_num << ones_array[ones] unless tens == 1 || tens >= 1 && ones == 0
     english_num.join("-").capitalize
   end
+
   def bottles(x)
       if x == 1
         "bottle"
@@ -62,30 +65,5 @@ class BeerSong
 end
 
 our_song = BeerSong.new(33)
+
 our_song.print_song
-
-
-=begin
-counter = 99
-while counter != 3
-  counter -= 1
-  puts "#{counter} bottles of beer on the wall, #{counter} bottles of beer."
-  puts "Take one down and pass it around, #{counter - 1} bottles of beer on the wall."
-end
-puts "#{counter - 1} bottles of beer on the wall, #{counter - 1} bottles of beer."
-puts "Take one down and pass it around, #{counter - 2} bottle of beer on the wall."
-puts "#{counter - 2} bottle of beer on the wall, #{counter - 2} bottle of beer."
-puts "Take one down and pass it around, no more bottles of beer on the wall."
-puts "No more bottles of beer on the wall, no more bottles of beer."
-puts "Go to the store and buy some more, " + rand(2..99).to_s + " bottles of beer on the wall."
-=end
-=begin
-while x > 0
-	if x > 0
-		puts x.to_s + ' bottles of beer on the wall, ' + x.to_s + ' bottles of beer'
-		puts 'Take one down, pass it around'
-	end
-	x -= 1
-	puts x.to_s + ' bottles of beer on the wall.'
-end
-=end
