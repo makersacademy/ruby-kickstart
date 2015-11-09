@@ -54,12 +54,12 @@ class BeerSong
   end
 
   def print_song
-    if bottles < 0
+    if @bottles < 0
       b = 0
-    elsif bottles > 99
+    elsif @bottles > 99
       b = 99
     else
-      b = bottles
+      b = @bottles
     end
 
     if b == 0
@@ -75,7 +75,6 @@ class BeerSong
         else
           puts english_num(b).capitalize + " bottles of beer on the wall."
         end
-        puts ""
       end
       lastverse
     end
