@@ -6,7 +6,9 @@
 # "".every_other_char         # => ""
 
 class String
-  def every_other_char
+  def every_other_char()
+  	mystringarray = chars.select.with_index{|_,i| (i) % 2 == 0}
+	mystringarray.join("")
   end
   
 end

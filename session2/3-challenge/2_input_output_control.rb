@@ -20,7 +20,17 @@
 
 def hi_hi_goodbye
   # your code here
-
+loop do
+  puts "enter a number or type 'bye' to exit"
+  n = gets.chomp.to_i
+	  if n == "bye".to_i
+	  	   print "goodbye"
+	  	   exit
+	  else
+	    print "hi " * n	
+	    print "\n"    
+	  end 
+ end
 end
 
 
