@@ -27,13 +27,4 @@ class Person
   def birthday
     @age += 1
   end
-
 end
-
-richard = Person.new 'richard', 28
-
-richard.name
-richard.age
-richard.name = 'Ric'
-puts richard.name
-puts richard.birthday 
