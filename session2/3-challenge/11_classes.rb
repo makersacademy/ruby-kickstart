@@ -34,10 +34,10 @@ class BeerSong
         if @bottles == 0
             puts ""
         else @bottles.downto(1) do
-            puts "#{english_number(@bottles).capitalize} #{more_than_one?} of beer on the wall,"
-            puts "#{english_number(@bottles).capitalize} #{more_than_one?} of beer,"
+            puts "#{english_number(@bottles)} #{more_than_one?} of beer on the wall,".capitalize
+            puts "#{english_number(@bottles)} #{more_than_one?} of beer,".capitalize
             puts "Take one down, pass it around,"
-            puts "#{english_number(@bottles-1).capitalize} #{one_left?} of beer on the wall." end
+            puts "#{english_number(@bottles-=1)} #{more_than_one?} of beer on the wall.".capitalize end
         end#not cycling
     end
 
@@ -67,14 +67,6 @@ class BeerSong
         end
     end    
                 
-    def one_left?
-        if @bottles == 2
-            return "bottle"
-        else 
-            return "bottles"
-        end
-    end
-  
     def more_than_one?
         if @bottles == 1
             return "bottle"
