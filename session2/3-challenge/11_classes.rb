@@ -1,46 +1,62 @@
-class BeerSong
-  attr_accessor :beers
+# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
 
-  def initialize(beers)
-    beers = 0  if beers < 0
-    beers = 99 if beers > 99
-    self.beers = beers
+# Write a program that outputs the lyrics for "Ninety-nine Bottles of Beer on the Wall"
+# Your program should print the number of bottles in English, not as a number. For example:
+#
+# Ninety-nine bottles of beer on the wall,
+# Ninety-nine bottles of beer,
+# Take one down, pass it around,
+# Ninety-eight bottles of beer on the wall.
+# ...
+# One bottle of beer on the wall,
+# One bottle of beer,
+# Take one down, pass it around,
+# Zero bottles of beer on the wall.
+#
+# Your program should not use ninety-nine output statements!
+# Design your program with a class named BeerSong whose initialize method
+# receives a parameter indicating the number of bottles of beer initially on the wall.
+# If the parameter is less than zero, set the number of bottles to zero. Similarly,
+# if the parameter is greater than 99, set the number of beer bottles to 99
+# Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
+# Add any additional methods you find helpful.
+
+class BeerSong
+  def initialize(num)
+    @num = num
+    if @num > 99
+      @num = 99
+    elsif @num < 0
+      @num = 0
+    end
+  end
+  def eng_num(x)
+    ones_array = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    teens_array = ['', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
+    tens_array = ['','ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+    english_num = []
+    ones = x % 10
+    tens = (x - ones) / 10
+    english_num << tens_array[tens] unless tens == 0 || tens == 1 && ones > 0
+    english_num << teens_array[ones] if tens == 1 && ones != 0
+    english_num << ones_array[ones] unless tens == 1 || tens >= 1 && ones == 0
+    english_num.join("-").capitalize
+  end
+  def bottles(x)
+      if x == 1
+        "bottle"
+      else
+        "bottles"
+      end
   end
 
   def print_song
-    beers.downto 1 do |i|
-      print_stanza i
-    end
-  end
-
-  def print_stanza(n)
-    if n.zero?
-      String.new
-    else
-      puts "#{translate n} #{bottle n} of beer on the wall,"        ,
-           "#{translate n} #{bottle n} of beer,"                    ,
-           "Take one down, pass it around,"                         ,
-           "#{translate n - 1} #{bottle n-1} of beer on the wall."
-    end
-  end
-
-  def bottle(n)
-    if n == 1 then 'bottle' else 'bottles' end
-  end
-
-  def translate(n)
-    if 0 <= n && n <= 19
-      %w(zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen)[n]
-    elsif n % 10 == 0
-      %w(zero ten twenty thirty forty fifty sixty seventy eighty ninety)[n/10]
-    else
-      "#{translate n/10*10}-#{translate n%10}".downcase
-    end.capitalize
+    while @num > 0
+        puts "#{eng_num(@num)} #{bottles(@num)} of beer on the wall,"
+        puts "#{eng_num(@num)} #{bottles(@num)} of beer,"
+        puts "Take one down, pass it around,"
+        puts "#{eng_num(@num - 1)} #{bottles(@num - 1)} of beer on the wall."
+        @num -= 1
+      end
   end
 end
-
-# Apologies for simply copying the solved challenge solution.
-# The code I was working on was so close but it was just a little too sloppy to fix within the deadline.
-# I will start again from scratch and work on my own solution that actually works & submit it later today.
-# I realise the mistake of not trying a cleaner approach sooner & perhaps not leaving enough time to complete the task.
-# I tried my very best and really did spend a lot of time trying to complete this challenge.
