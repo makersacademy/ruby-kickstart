@@ -20,3 +20,67 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+class BeerSong
+    attr_accessor :bottles 
+
+    def initialize(bottles)
+        @bottles = 0 if bottles < 0
+        @bottles = 99 if bottles > 99 
+        @bottles = bottles
+    end
+
+    def print_song
+        if @bottles == 0
+            puts ""
+        else @bottles.downto(1) do
+            puts "#{english_number(@bottles).capitalize} #{more_than_one?} of beer on the wall,"
+            puts "#{english_number(@bottles).capitalize} #{more_than_one?} of beer,"
+            puts "Take one down, pass it around,"
+            puts "#{english_number(@bottles-1).capitalize} #{one_left?} of beer on the wall." end
+        end#not cycling
+    end
+
+    def english_number(number)
+        if number == 0
+            return "zero"
+        end
+        num_string = ''
+        ones = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+        tens = ['ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+        teens = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen,' 'seventeen', 'eighteen', 'nineteen']
+        left = number
+        write = left/10
+        left = left - write*10
+        if write > 0
+            if ((write==1) && (left > 0))
+                num_string = num_string + teens[left-1]
+                left = 0
+            else
+                num_string = num_string + tens[left-1]
+            end
+        end
+        write = left
+        left = 0
+        if write > 0
+            num_string = num_string + ones[write-1]
+        end
+    end    
+                
+    def one_left?
+        if @bottles == 2
+            return "bottle"
+        else 
+            return "bottles"
+        end
+    end
+  
+    def more_than_one?
+        if @bottles == 1
+            return "bottle"
+        else 
+            return "bottles"
+        end
+    end
+  
+end
