@@ -8,6 +8,18 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
+ puts "input number"
+ n1=gets.chomp
+ puts "input second number"
+ n2=gets.chomp
+ 
+ puts n1.to_i+n2.to_i
+ 
+ if n1.to_i>=n2.to_i
+     puts n1.to_i-n2.to_i
+ else
+     puts n2.to_i-n1.to_i
+ end
+ n1.to_i*n2.to_i
   
 end
