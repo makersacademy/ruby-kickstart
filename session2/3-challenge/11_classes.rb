@@ -53,18 +53,22 @@ class BeerSong
       puts "Take one down, pass it around,"
       puts "Zero bottles of beer on the wall."
       @beers -= 1
-    elsif @beers == 2
-      puts "Two bottles of beer on the wall,"
-      puts "Two bottles of beer,"
-      puts "Take one down, pass it around,"
-      puts "One bottle of beer on the wall."
-      @beers -= 1
-    else until @beers == 3 do
+    # elsif @beers == 2
+    #   puts "Two bottles of beer on the wall,"
+    #   puts "Two bottles of beer,"
+    #   puts "Take one down, pass it around,"
+    #   puts "One bottle of beer on the wall."
+    #   @beers = 1
+    else until @beers == 1 do
       puts "#{english_num(beers).capitalize} bottles of beer on the wall,"
       puts "#{english_num(beers).capitalize} bottles of beer,"
       puts "Take one down, pass it around,"
-      puts "#{(english_num(beers) - 1).capitalize} bottles of beer on the wall."
-      @beers -= 1
+      if @beers == 2
+        puts "One bottle of beer on the wall."
+        @beers -= 1
+      else puts "#{(english_num(beers) - 1).capitalize} bottles of beer on the wall."
+        @beers -= 1
+      end
     end
     end
   end
