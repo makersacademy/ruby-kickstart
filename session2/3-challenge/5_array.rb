@@ -17,3 +17,13 @@ def mod_three(number)
   number.select {|num| num % 3 != 0}.map {|num| num % 3}
 
 end
+
+
+p mod_three [0]  # => []
+p mod_three [1]  # => [1]
+p mod_three [2]  # => [2]
+p mod_three [3]  # => []
+p mod_three [4]  # => [1]
+p mod_three [5]  # => [2]
+p mod_three [6]  # => []
+p mod_three [7]  # => [1]

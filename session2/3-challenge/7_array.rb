@@ -12,12 +12,14 @@
 def alternate_words(sentence)
 
   '!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each {|char| sentence = sentence.gsub(char, ' ')}
-  
+
 
   new_array = []
   sentence.split(' ').each_with_index {|word, index| new_array << word if index.even?}
 
   new_array
+
+
 end
 
 
