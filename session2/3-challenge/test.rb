@@ -15,22 +15,11 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
-#def prime_chars?(arr)
-#  base = arr.join.scan(/./).length
-#  return false if base <= 1
-#  Math.sqrt(base).to_i.downto(2).each {|i| return false if base % i == 0}
-#  true
-#end
-class Integer
-  def prime?
-    return false if self < 2
-    2.upto Math.sqrt(self) do |i|
-      return false if self % i == 0
-    end
-    true
-  end
+def prime_chars?(arr)
+  base = arr.join.scan(/./).length
+  return false if base <= 1
+  Math.sqrt(base).to_i.downto(2).each {|i| return false if base % i == 0}
+  true
 end
 
-def prime_chars?(strings)
-  strings.join.length.prime?
-end
+prime_chars?(["test", "testingg"])
