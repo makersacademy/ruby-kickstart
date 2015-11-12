@@ -22,6 +22,15 @@ def fib(n)
   fib(n-1) + fib(n-2)
 end
 
+def fact(n)
+  return 1 if n == 1
+  
+  f = n * fact(n-1)
+  
+end
+
+puts fact(4)
+
 
 
 puts fib 10

@@ -24,7 +24,6 @@ def match_maker(*elements)
 output = []
 pairs = []
 determin = elements.shift
-#elements.map! {|x| x == 0? true : x}
 elements.each_slice(2) {|a, b| pairs << [a, b]}
 
 pairs.each do |a, b|
