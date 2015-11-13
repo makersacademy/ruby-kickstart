@@ -30,5 +30,17 @@
 #
 # create it from scratch :)
 
+def pathify(table, output=[], path=['/'])
+  table.each do |k, v|
+    path << k + '/'
+      if v.is_a? Array
+        v.each{|file| output << path.join + file}
+      else
+        pathify(v, output, path)
+      end
+    path.pop
+  end
+  output
+end
 
-
+p pathify 'usr' => {'bin' => ['ruby']}, 'opt' => {'local' => {'bin' => ['sqlite3', 'rsync']} }
