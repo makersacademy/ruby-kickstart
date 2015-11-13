@@ -55,7 +55,7 @@
   def bottle(n)
     if n == 1 then 'bottle' else 'bottles' end
   end
-c
+
   # translates number to English
   def translate(n)
     if 0 <= n && n <= 19
