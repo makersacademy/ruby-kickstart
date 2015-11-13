@@ -31,25 +31,12 @@
 #   end
 # end
 
+def array_init(size=5, &block)
+  if block
+    Array.new(size, &block)
+  else
+    Array.new(size){|i| (i * 100).to_s}
+  end
+end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+p array_init(2) {|i| i.to_s }
