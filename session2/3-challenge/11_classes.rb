@@ -22,73 +22,54 @@
 # Add any additional methods you find helpful.
 class BeerSong
 
-  attr_accessor 'beer'
+  # attr_accessor :beer
 
   def initialize(beer)
-		if beer > 99
-				@beer = 99
-			elsif beer < 0
-				@beer = 0
-			else
-				@beer = beer
-		end
+    @beer = beer
+		@beer = 99 if beer > 99
+		@beer = 0 if beer < 0
   end
 
-	def bottle(n)
-		if n == 1
-			"bottle"
-		else
-			"bottles"
-		end
-	end
-
+	# def bottle(n)
+	# 	"bottle" if n == 1
+	# 	"bottles" if n == 0
+  #   # "bottles" if n == 0
+	# end
 
   def print_song
     while @beer > 0
-    	puts "#{number(@beer).capitalize} #{bottle(@beer)} of beer on the wall,"
-    	puts "#{number(@beer).capitalize} #{bottle(@beer)} of beer,"
+    	puts "#{number(@beer).capitalize} #{@beer <= 1 ? "bottle" : "bottles"} of beer on the wall,"
+    	puts "#{number(@beer).capitalize} #{@beer <= 1 ? "bottle" : "bottles"} of beer,"
     	puts "Take one down, pass it around,"
-    	puts "#{number(@beer-1).capitalize} #{bottle(@beer-1)} of beer on the wall."
+    	puts "#{number(@beer-1).capitalize} #{@beer-1 <= 1 ? "bottle" : "bottles"} of beer on the wall."
 			@beer -= 1
-
-			puts
-		#	break if @beer == 0
-		end
-			puts ""
-
+	  end
   end
 
 
 	def number(beers)
-  	ones = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
-  	teens = ['', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
-  	tens = ['', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+    qty_10s_to_19s = {
+      0 =>'zero', 1=>'one', 2=>'two', 3=>'three', 4=>'four', 5=>'five', 6=>'six', 7=>'seven', 8=>'eight', 9=>'nine', 10=>'ten', 11=>'eleven', 12=>'twelve', 13=>'thirteen', 14=>'fourteen', 15=>'fifteen', 16=>'sixteen', 17=>'seventeen', 18=>'eighteen', 19=>'nineteen'
+    }
 
-  string = ''
+    qty_20s_to_90s = {
+      2=>'twenty', 3=>'thirty', 4=>'forty', 5=>'fifty', 6=>'sixty', 7=>'seventy', 8=>'eighty', 9=>'ninety'
+    }
 
-  	if beers > 19
-    	tensplace = beers / 10
-    	string << tens[tensplace - 1]
-    	beers -= tensplace * 10
-    return string if beers % 10 == 0
-    	string << '-'
+    first = beers.div(10)
+    second = beers % 10
 
-  	elsif (beers < 20 && beers > 9)
-    	teensplace = beers % 10
-
-    return string << teens[teensplace+1]
-  	end
-
-  	if beers >= 0
-    	string << ones[beers]
-    	string
-  	end
+    string = ""
+    string << qty_10s_to_19s[beers] if beers < 20
+    string << qty_20s_to_90s[first] +"-"+ qty_10s_to_19s[second] if beers >= 20 && second != 0
+    string << qty_20s_to_90s[first] if beers >= 20 && second == 0
+    string
 	end
 
 
 end
 
 
-bottle = BeerSong.new(200)
+quantity = BeerSong.new(1)
 
-bottle.print_song
+p quantity.print_song
