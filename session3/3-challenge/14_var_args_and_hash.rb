@@ -31,6 +31,7 @@ def problem_14(*params)
 end
 
 def count_clumps(*nums)
+  nums.flatten!
   count = 0
   while nums.length > 1
     if nums[1] == nums[0]
@@ -48,11 +49,12 @@ def count_clumps(*nums)
 end
 
 def same_ends(*nums)
-n = nums.shift
-nums[0..n-1] == nums[-n..-1]
+  nums.flatten!
+  n = nums.shift
+  nums[0..n-1] == nums[-n..-1]
 end
 
-p problem_14 [1, 2, 2, 3, 4, 4],    :problem => :count_clumps
-#problem_14 1,    [5, 6, 45, 99, 13, 5, 6],  :problem => :same_ends    # => false
+#p problem_14 [1, 2, 2, 3, 4, 4],    :problem => :count_clumps
+#p problem_14 1,    [5, 6, 45, 99, 13, 5, 6],  :problem => :same_ends    # => false
 #problem_14 2,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => true
 #problem_14 3,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => false
