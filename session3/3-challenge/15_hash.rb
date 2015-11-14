@@ -46,5 +46,22 @@
 # head = {:data => 6, :next => head}
 # middle head                        # => 3
 
+def middle(list)
+  data = get_data_into_array list
+  data[data.length/2]
+end
 
+def get_data_into_array(list, data=[])
+  data <<  list[:data]
+  return data if list[:next] == nil
+  get_data_into_array(list[:next], data)
+end
 
+head = {:data => 1, :next => nil}
+head = {:data => 2, :next => head}
+head = {:data => 3, :next => head}
+head = {:data => 4, :next => head}
+head = {:data => 5, :next => head}
+head = {:data => 6, :next => head}
+
+p middle head
