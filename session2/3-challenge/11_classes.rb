@@ -20,3 +20,118 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+=begin class BeerSong
+
+  attr_accessor 'beer'
+
+  def initialize(beer)
+		if beer > 99
+				@beer = 99
+			elsif beer < 0
+				@beer = 0
+			else
+				@beer = beer
+		end
+  end
+
+	def bottle(n)
+		if n == 1
+			"bottle"
+		else
+			"bottles"
+		end
+	end
+
+
+  def print_song
+    while @beer > 0
+    	puts "#{number(@beer).capitalize} #{bottle(@beer)} of beer on the wall,"
+    	puts "#{number(@beer).capitalize} #{bottle(@beer)} of beer,"
+    	puts "Take one down, pass it around,"
+    	puts "#{number(@beer-1).capitalize} #{bottle(@beer-1)} of beer on the wall."
+			@beer -= 1
+
+			puts
+		#	break if @beer == 0
+		end
+			puts ""
+
+  end
+
+
+	def number(beers)
+  	ones = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+  	teens = ['', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
+  	tens = ['', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+
+  string = ''
+
+  	if beers > 19
+    	tensplace = beers / 10
+    	string << tens[tensplace - 1]
+    	beers -= tensplace * 10
+    return string if beers % 10 == 0
+    	string << '-'
+
+  	elsif (beers < 20 && beers > 9)
+    	teensplace = beers % 10
+
+    return string << teens[teensplace+1]
+  	end
+
+  	if beers >= 0
+    	string << ones[beers]
+    	string
+  	end
+	end
+
+
+end
+
+
+bottle = BeerSong.new(200)
+
+bottle.print_song
+=end
+
+class BeerSong
+
+  def initialize(beer)
+    @beer = beer
+		@beer = 99 if beer > 99
+		@beer = 0 if beer < 0
+  end
+
+  def print_song
+    while @beer > 0
+    	puts "#{number(@beer).capitalize} #{@beer <= 1 ? "bottle" : "bottles"} of beer on the wall,"
+    	puts "#{number(@beer).capitalize} #{@beer <= 1 ? "bottle" : "bottles"} of beer,"
+    	puts "Take one down, pass it around,"
+    	puts "#{number(@beer-1).capitalize} #{@beer-1 == 1 ? "bottle" : "bottles"} of beer on the wall."
+			@beer -= 1
+	  end
+  end
+
+
+	def number(beers)
+    qty_1s_to19s = {
+      0 =>'zero', 1=>'one', 2=>'two', 3=>'three', 4=>'four', 5=>'five', 6=>'six', 7=>'seven', 8=>'eight', 9=>'nine', 10=>'ten', 11=>'eleven', 12=>'twelve', 13=>'thirteen',
+      14=>'fourteen', 15=>'fifteen', 16=>'sixteen', 17=>'seventeen', 18=>'eighteen', 19=>'nineteen'
+    }
+
+    qty_20s_to_90s = {
+      2=>'twenty', 3=>'thirty', 4=>'forty', 5=>'fifty', 6=>'sixty', 7=>'seventy', 8=>'eighty', 9=>'ninety'
+    }
+
+    first = beers.div(10)
+    second = beers % 10
+
+    string = ""
+    string << qty_1s_to19s[beers] if beers < 20
+    string << qty_20s_to_90s[first] +"-"+ qty_1s_to19s[second] if beers >= 20 && second != 0
+    string << qty_20s_to_90s[first] if beers >= 20 && second == 0
+    string
+	end
+
+
+end
