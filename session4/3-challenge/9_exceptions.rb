@@ -14,6 +14,19 @@
 # In these cases, don't do anything, because we don't know
 # why that error was raised.
 
+#class FirstNameError < Exception
+#end
+#class LastNameError < Exception
+#end
 
+def full_name (person)
 
+  begin
+    full_name = "#{person.first_name} #{person.last_name}"
+  rescue FirstNameError => e
+    return person.last_name
+  rescue LastNameError =>e
+    return person.first_name
+  end
 
+end

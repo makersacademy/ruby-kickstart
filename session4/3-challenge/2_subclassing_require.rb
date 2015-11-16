@@ -20,3 +20,23 @@
 # stack.push 2
 # stack # => [1, 2]
 
+require File.dirname(__FILE__) + '/1_stack_classes_inspect.rb'
+
+class StackInDisguise < Stack
+
+  def inspect
+    output = []
+    current_head = @head
+    while current_head
+      output << current_head.data
+      current_head = current_head.next_node
+    end
+    output.reverse.inspect
+  end
+
+end
+
+stack = StackInDisguise.new
+stack.push 1
+stack.push 2
+p stack # => [1, 2]

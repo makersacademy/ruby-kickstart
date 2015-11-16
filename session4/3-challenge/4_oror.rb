@@ -11,5 +11,15 @@
 # first_object nil, nil, nil  # => nil
 
 def first_object(arg1, arg2, arg3)
-  
+to_return = arg1 if arg1
+to_return ||= arg2 if arg2
+to_return ||= arg3 if arg3
+
+to_return
 end
+
+p first_object 1, nil, nil
+p first_object nil, 1, nil
+p first_object nil, nil, 1
+p first_object nil, 1, 2
+p first_object nil, nil, nil

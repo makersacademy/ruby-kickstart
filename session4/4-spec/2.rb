@@ -1,6 +1,6 @@
 RSpec.describe 'context' do
   specify '1_stack_classes_inspect has been required' do
-    path = File.expand_path("../../challenge/1_stack_classes_inspect.rb", __FILE__)
+    path = File.expand_path("../../3-challenge/1_stack_classes_inspect.rb", __FILE__)
     expanded_loaded_features = $LOADED_FEATURES.map { |filename| File.expand_path filename }
     expect(expanded_loaded_features).to include path
   end

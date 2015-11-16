@@ -72,3 +72,4 @@ class Stack
   end
 end
 
+#p stack
