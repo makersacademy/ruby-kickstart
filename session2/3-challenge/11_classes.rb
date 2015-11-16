@@ -22,33 +22,25 @@
 # Add any additional methods you find helpful.
 class BeerSong
 
-  # attr_accessor :beer
-
   def initialize(beer)
     @beer = beer
 		@beer = 99 if beer > 99
 		@beer = 0 if beer < 0
   end
 
-	# def bottle(n)
-	# 	"bottle" if n == 1
-	# 	"bottles" if n == 0
-  #   # "bottles" if n == 0
-	# end
-
   def print_song
     while @beer > 0
     	puts "#{number(@beer).capitalize} #{@beer <= 1 ? "bottle" : "bottles"} of beer on the wall,"
     	puts "#{number(@beer).capitalize} #{@beer <= 1 ? "bottle" : "bottles"} of beer,"
     	puts "Take one down, pass it around,"
-    	puts "#{number(@beer-1).capitalize} #{@beer-1 <= 1 ? "bottle" : "bottles"} of beer on the wall."
+    	puts "#{number(@beer-1).capitalize} #{@beer-1 == 1 ? "bottle" : "bottles"} of beer on the wall."
 			@beer -= 1
 	  end
   end
 
 
 	def number(beers)
-    qty_10s_to_19s = {
+    qty_1s_to19s = {
       0 =>'zero', 1=>'one', 2=>'two', 3=>'three', 4=>'four', 5=>'five', 6=>'six', 7=>'seven', 8=>'eight', 9=>'nine', 10=>'ten', 11=>'eleven', 12=>'twelve', 13=>'thirteen', 14=>'fourteen', 15=>'fifteen', 16=>'sixteen', 17=>'seventeen', 18=>'eighteen', 19=>'nineteen'
     }
 
@@ -60,8 +52,8 @@ class BeerSong
     second = beers % 10
 
     string = ""
-    string << qty_10s_to_19s[beers] if beers < 20
-    string << qty_20s_to_90s[first] +"-"+ qty_10s_to_19s[second] if beers >= 20 && second != 0
+    string << qty_1s_to19s[beers] if beers < 20
+    string << qty_20s_to_90s[first] +"-"+ qty_1s_to19s[second] if beers >= 20 && second != 0
     string << qty_20s_to_90s[first] if beers >= 20 && second == 0
     string
 	end
@@ -70,6 +62,6 @@ class BeerSong
 end
 
 
-quantity = BeerSong.new(1)
-
-p quantity.print_song
+ # quantity = BeerSong.new(1)
+ #
+ # p quantity.print_song
