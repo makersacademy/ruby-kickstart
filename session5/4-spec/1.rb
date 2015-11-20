@@ -1,3 +1,5 @@
+require File.join(File.dirname(__FILE__), '..', '3-challenge', '1_singleton_class_string_exception')
+
 RSpec.describe 'ApplicationController#body_class' do
   let(:ac) { ApplicationController.new }
 

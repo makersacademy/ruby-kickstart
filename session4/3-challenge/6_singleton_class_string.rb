@@ -28,21 +28,25 @@
 #   The concat method will do the same thing as the << method
 
 class ApplicationController
+
   def body_class
     return @body_class if @body_class
     @body_class = String.new
-      def @body_class.<<(str)
-        concat ' ' unless length.zero?
-        concat str
-      end
+    def @body_class.<<(str)
+      concat ' ' if length != 0
+      concat str
+    end
     @body_class
   end
+
 end
 
 
-ac = ApplicationController.new
-ac.body_class << 'admin'
-ac.body_class << 'category'
-
-p "a" << 'b'
-p ac.body_class
+controller = ApplicationController.new
+   #controller.body_class                 # => ""
+  controller.body_class << 'admin'
+  controller.body_class                 # => "admin"
+controller.body_class << 'category'
+   controller.body_class                 # => "admin category"
+   controller.body_class << 'page' << 'order'
+p  controller.body_class                 # => "admin c
