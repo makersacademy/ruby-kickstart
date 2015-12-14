@@ -13,6 +13,13 @@
 
 
 def grade(num_books, has_read_books)
+  case
+    when num_books > 20
+      mark = "A"
+    when  num_books >= 10 && num_books <= 20
+      mark = "B"
+    when num_books < 10
+      mark = "C"
+  end
+  has_read_books ? mark : mark.next
 end
-
-
