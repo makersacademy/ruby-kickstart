@@ -13,6 +13,12 @@
 
 
 def grade(num_books, has_read_books)
+  prediction = 4 if num_books < 10
+  prediction = 3 if (10..20).include? num_books
+  prediction = 2 if num_books > 20
+  prediction -=1 if has_read_books == true
+  grades = {1 => "A", 2 => "B", 3 => "C", 4 => "D"}
+  grades[prediction]
 end
 
 
