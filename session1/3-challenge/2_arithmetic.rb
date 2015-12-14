@@ -9,4 +9,7 @@
 # arithmetic2(-6, -7)  # => -3.5
 
 def arithmetic2(a, b)
+num_array = [a, b]
+min_number = num_array.min
+half_min = (min_number.to_f)*0.5
 end
