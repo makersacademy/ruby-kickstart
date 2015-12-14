@@ -6,5 +6,17 @@
 #
 
 def odds_and_evens(string, return_odds)
+	string = Array.new
+if return_odds = false
+	string.each do |current|
+     next if current % 2 == 1
+   string << current
+else
+string.each do |current|
+     next if current % 2 == 0
+   string << current
+end
+
+
 
 end
