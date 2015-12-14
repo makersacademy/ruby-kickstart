@@ -2,7 +2,7 @@
 # it doesn't know about anything outside of itself, this is called scope.
 
 defined? twelve # => nil
-twelve = 12
+twelve = 12 # This is different to tweleve inside the method
 defined? twelve # => "local-variable"
 
 def my_own_little_world
