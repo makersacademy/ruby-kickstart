@@ -24,9 +24,10 @@ if num_books < 10 && has_read_books != true
      "B"
     elsif num_books > 20 && has_read_books != true
 	"B"
-	else
+	elsif
 	num_books > 20 && has_read_books == true
 	"A"
+else
 	end
 
 end
