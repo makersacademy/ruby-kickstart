@@ -6,4 +6,18 @@
 
 def pirates_say_arrrrrrrrr(string)
 
+return_value =[]
+array = string.chars
+x = 1
+array.each do |i|
+  if i == "r" || i == "R"
+    return_value << array[x]
+  end
+
+x+=1
+
+end 
+
+return_value.join
+
 end
