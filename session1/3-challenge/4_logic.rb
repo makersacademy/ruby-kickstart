@@ -8,11 +8,28 @@
 # grade(4,  false)  # => "D"
 # grade(4,  true)   # => "C"
 # grade(15, true)   # => "B"
-
 # <10 books => D, 10..20 books => C, >20 book =>B
 
 
 def grade(num_books, has_read_books)
+
+	if num_books < 10 && has_read_books == false
+		"D"
+	elsif num_books < 10 && has_read_books == true 
+		"C" 
+	elsif num_books >=10 && num_books <=20 && has_read_books == false
+		"C"
+	elsif num_books >=10 && num_books <=20 && has_read_books == true
+		"B"
+	elsif num_books > 20 && has_read_books == false
+		"B"
+	elsif num_books > 20 && has_read_books == true 
+		"A"
+		
+	end
+		
 end
+
+
 
 
