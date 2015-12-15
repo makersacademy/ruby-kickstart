@@ -14,3 +14,12 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+
+
+def mod_three(numbers)
+  remainders = []
+  numbers.each do |n|
+    remainders << n % 3 if n % 3 != 0
+  end
+  remainders
+end
