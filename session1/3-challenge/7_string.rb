@@ -5,5 +5,12 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  new_characters = ""
+  add_next_char = false
+  string.size.times do |index|
+    current_character = string[index]
+    new_characters << current_character if add_next_char
+    add_next_char = (current_character == "r" || current_character == "R")
+  end
+  new_characters
 end
