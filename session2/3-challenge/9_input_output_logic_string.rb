@@ -24,10 +24,16 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  begin
+    inpt = gets
+    return if inpt.chomp == "BYE"
+    if inpt.upcase == inpt && inpt.chomp !=""
+      puts "NO, NOT SINCE 1938!"
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+  end until inpt.chomp == "BYE"
 end
-
-
 
 
 
