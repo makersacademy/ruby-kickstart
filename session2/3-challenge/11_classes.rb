@@ -20,3 +20,50 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+class BeerSong
+    attr_accessor 'number_of_bottles'
+    def initialize(number_of_bottles)
+        @number_of_bottles = number_of_bottles
+        @number_of_bottles = 0 if number_of_bottles < 0
+        @number_of_bottles = 99 if number_of_bottles > 99
+    end
+    
+    def num_to_word(number)
+	    ones = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+	    teenagers = ["eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+	    tens = ["ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+
+	    return "Zero" if number == 0
+
+	    num_string = ""
+	    write = number/10
+	    left = number - write * 10
+	    if write > 0
+		    if ((write == 1) && (left > 0))
+			    num_string << teenagers[left - 1]
+			    left = 0
+		    else
+			    num_string << tens[write - 1]
+			    num_string << "-" if left > 0
+		    end
+	    end
+
+	    if left > 0
+		    num_string << ones[left]
+	    end
+	    num_string.capitalize
+    end
+    
+    public
+    def print_song
+        n = number_of_bottles
+        while n > 0
+            puts "#{num_to_word(n)} bottle#{n == 1 ? "" : "s"} of beer on the wall,"
+            puts "#{num_to_word(n)} bottle#{n == 1 ? "" : "s"} of beer,"
+            puts "Take one down, pass it around,"
+            puts "#{num_to_word(n - 1)} bottle#{n == 2 ? "" : "s"} of beer on the wall."
+            n -= 1
+        end
+    end
+end
