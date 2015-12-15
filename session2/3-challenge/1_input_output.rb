@@ -11,5 +11,5 @@ def sum_difference_product
   input = gets.split(" ")
   a = input[0].to_i
   b=input[1].to_i
-  puts (a + b).to_s + "\n" + (a - b).to_s + "\n" + (a * b).to_s
+  puts "#{a + b}\n#{a - b}\n#{a * b}"
 end
