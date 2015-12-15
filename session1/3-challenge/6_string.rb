@@ -5,6 +5,19 @@
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
 
-def odds_and_evens(string, return_odds)
 
+def odds_and_evens(string, return_odds)
+	s_array = string.chars.to_a
+	if return_odds !=true
+    s_array.values_at(* s_array.each_index.select {|i| i.even?}).join
+else
+	s_array.values_at(* s_array.each_index.select {|i| i.odd?}).join
 end
+end
+
+puts odds_and_evens("abcdefg", true)
+
+
+
+
+
