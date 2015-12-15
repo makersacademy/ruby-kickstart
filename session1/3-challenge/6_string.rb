@@ -5,6 +5,19 @@
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
 
-def odds_and_evens(string, return_odds)
 
+def odds_and_evens(string, return_odds)
+	new_string = []
+	string.split("").each_with_index do |x,i|
+	 	if return_odds == true 
+	 		if i.odd? 
+	 			new_string.push(x)
+	 		end
+	 	else 
+	 		if i.even?
+	 		 	new_string.push(x)
+	 		end
+	 	end
+	 end
+	return new_string.join("")
 end
