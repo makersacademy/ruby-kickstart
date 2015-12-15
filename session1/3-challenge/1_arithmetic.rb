@@ -8,6 +8,8 @@
 # arithmetic1(10.5)   # => 32.5
 # arithmetic1(-6)     # => -50
 
+#added comment
+
 def arithmetic1(n)
   n * 5 - 20
 end
