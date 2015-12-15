@@ -7,6 +7,6 @@
 
 class String
   def every_other_char
+     self.split('').each_slice(2).to_a.map{|x| x[0]}.join
   end
-  
 end
