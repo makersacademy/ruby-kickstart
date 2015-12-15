@@ -7,6 +7,9 @@
 
 class String
   def every_other_char
+    (0..(self.size)).map {|i| self[i] if i.even?}.compact.join
   end
   
 end
+
+
