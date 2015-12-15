@@ -13,6 +13,18 @@
 
 
 def grade(num_books, has_read_books)
+  grades = ["A", "B", "C", "D"]
+  if num_books < 10
+    grade_position = 2
+  elsif num_books >= 10 && num_books <= 20
+    grade_position = 1
+  else
+    grade_position = 0
+  end
+
+  unless has_read_books
+    grade_position +=1
+  end
+
+  return grades.at(grade_position)
 end
-
-
