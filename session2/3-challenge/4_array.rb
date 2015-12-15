@@ -8,5 +8,9 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
+def get_squares(numbers)
+  squares = []
+  numbers.each { |x| squares.push(x) if numbers.include? (x**2)}
+  squares.sort!
+end
 
