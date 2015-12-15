@@ -5,11 +5,9 @@
 # add_more_ruby("Sad times are ahead!")         # => "Happy times are ahead!"
 
 def add_more_ruby(string)
-  if string.downcase.include? "sad"
     string.gsub! "sad", "happy"
     string.gsub! "Sad", "Happy"
     string
-  end
 end
 #figure out a way to keep capitalized words capitalized
 
