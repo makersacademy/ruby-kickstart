@@ -9,9 +9,9 @@ def pirates_say_arrrrrrrrr(string)
     letters = ""
 
     string.size.times do |i|
-    	puts "index = #{i}"
+        puts "index = #{i}"
         current_letter = string[i]
-        puts "current_char = #{current_letter}"
+        puts "current_letter = #{current_letter}"
         next_letter = string[i + 1] || ""
         puts "letters = #{letters}, next_letter = #{next_letter}"
         letters << next_letter if (current_letter == "r" || current_letter == "R")
