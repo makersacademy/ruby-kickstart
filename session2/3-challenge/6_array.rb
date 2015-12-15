@@ -15,3 +15,17 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(strings)
+  new_string = strings.join("")
+  i = 2
+  choice = true
+  while i < new_string.length 
+    if (new_string.length % i) == 0
+      choice = false
+      break
+    end
+    i += 1
+  end
+  choice = false if new_string.length == 0 || new_string.length == 1
+  choice
+end
