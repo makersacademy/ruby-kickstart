@@ -5,5 +5,13 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  counter = 0
+  result = ''
+  while counter <= string.length
+    if (string[counter] == "r" || string[counter] == "R") && counter < (string.length - 1)
+      result += string[counter + 1]
+    end
+    counter += 1
+  end
+  result
 end
