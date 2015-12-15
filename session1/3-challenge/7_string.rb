@@ -5,5 +5,17 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+	
+	c = string.downcase.chars
+	size = c.length
+	result = []
+	(0..size-1).each do |i|
+		if (c[i] == "r")
+			if (i < size - 1)
+				result.push(c[i + 1])
+			end
+		end
+	end
+	return result.join("")
+	
 end
