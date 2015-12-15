@@ -5,5 +5,11 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  new_string = ""
+  for i in 0...(string.length - 1)
+    if string[i] == "r" || string[i] == "R"
+      new_string += string[i + 1]
+    end
+  end
+  new_string
 end
