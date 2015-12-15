@@ -6,5 +6,13 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  if return_odds == false
+    new_string = ""
+    string.split("").each_with_index { |c, i| new_string << c if i % 2 == 0}
+    new_string
+  else
+    new_string = ""
+    string.split("").each_with_index { |c, i| new_string << c if i % 2 == 1}
+    new_string
+  end
 end
