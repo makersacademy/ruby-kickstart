@@ -15,3 +15,9 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(arr)
+  size =0
+  arr.map{|x|  size+=x.length}
+  return false if size < 2
+  !(2..size).any?{ |x| size % x ==0 && size!=x }
+end
