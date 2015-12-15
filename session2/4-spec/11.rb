@@ -10,7 +10,6 @@ RSpec.describe 'BeerSong' do
       #{@translation[n]} bottles of beer on the wall,
       #{@translation[n]} bottles of beer,
       Take one down, pass it around,
-      #{@translation[n-1]} bottle#{n == 2 ? '' : 's'} of beer on the wall.
     STANZA
   end
 
@@ -28,7 +27,7 @@ RSpec.describe 'BeerSong' do
 
   it 'prints the first stanza when there is 1 bottle of beer' do
     check_results_for 1
-  end
+   end
 
   it 'prints the second stanza when there are 2 bottles of beer' do
     check_results_for 2
