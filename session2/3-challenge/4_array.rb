@@ -10,3 +10,6 @@
 
 
 
+def get_squares(nums)
+  nums.sort.select{|number| nums.include?(number**2) }
+end
