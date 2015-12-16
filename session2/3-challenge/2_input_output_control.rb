@@ -19,8 +19,16 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-
+  number = gets.chomp
+  hi = "hi"
+  bye = "goodbye"
+  if number.class != Integer
+    puts hi.times(number)
+  elsif number.downcase == "bye"
+    puts "goodbye"
+  else
+    number = gets.chomp
+  end
 end
 
 
