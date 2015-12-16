@@ -13,5 +13,5 @@ def pirates_say_arrrrrrrrr(string)
       new_letters << letters[i + 1]
     end
   end
-   7new_letters.join
+   new_letters.join
 end
