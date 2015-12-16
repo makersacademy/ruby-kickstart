@@ -13,6 +13,6 @@ def pirates_say_arrrrrrrrr(string)
 
   end
 
-  new_string.to_s
+  new_string
 
 end
