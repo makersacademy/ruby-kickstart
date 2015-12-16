@@ -18,11 +18,7 @@
 require 'prime'
 
 def prime_chars?(arr)
-  count = 0
-  arr.each do |string|
-    count += string.length
-  end
-  
-  Prime.prime?(count)
+  Prime.prime?(arr.join.length)
 end
 
+puts prime_chars?(["a", "b", "c"])
