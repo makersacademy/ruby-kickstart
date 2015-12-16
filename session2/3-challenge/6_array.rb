@@ -15,3 +15,14 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require 'prime'
+
+def prime_chars?(arr)
+  count = 0
+  arr.each do |string|
+    count += string.length
+  end
+  
+  Prime.prime?(count)
+end
+
