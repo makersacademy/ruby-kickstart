@@ -9,3 +9,11 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+    array = string.split(/[^\w+['’]\w+]+/)
+    output = []
+    for i in 0...array.length
+        output << array[i] if i % 2 == 0
+    end
+    output
+end
