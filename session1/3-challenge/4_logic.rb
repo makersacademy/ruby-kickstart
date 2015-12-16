@@ -13,10 +13,13 @@
 
 
 def grade(num_books, has_read_books)
-  first = "D" if num_books == < 10
-elsif num_books == 10...20 first = "C"
-elsif num_books == > 20 first = "B"
-end
-if has_read_books = true
-  first = ""
+  if has_read_books == true
+    return "C" if num_books <  10
+    return "B" if num_books <= 20
+    return "A"
+  else
+    return "D" if num_books <  10
+    return "C" if num_books <= 20
+    return "B"
+  end
 end
