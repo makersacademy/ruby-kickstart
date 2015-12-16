@@ -5,5 +5,14 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
+  new_string = ""
+
+  string[0...-1].downcase.split("").each_with_index do |char, index|
+
+    new_string += string[index.next] if char == "r"
+
+  end
+
+  new_string.to_s
 
 end
