@@ -25,3 +25,4 @@ end
 'one line if statement'     if true       # => "one line if statement"
 'one line unless statement' unless false  # => "one line unless statement"
 
+# EVERY IF STATEMENT RETURNS AN OBJECT (THE LAST OBJECT EVALUATED ON)

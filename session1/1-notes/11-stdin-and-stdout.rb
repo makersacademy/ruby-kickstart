@@ -13,7 +13,7 @@
 user_response = gets
 
 # Use puts to write the line to stdout
-puts "You said: #{user_response}"
+puts "You said: #{user_response}" #THIS IS CALLED INTERPOLATION
 
 
 

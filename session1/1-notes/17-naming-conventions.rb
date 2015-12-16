@@ -7,13 +7,13 @@ local_variable = nil
 # Constants are like variables, but you're telling the world that the value should not change.
 # Any variable that starts with a capital letter is a constant.
 # Use CamelCase with constants.
-Constant = nil
+Constant = nil # CAN BE CONSIDERED AS A GLOBAL VARIABLE - IF DEFINED IN THE MAIN SCOPE
 
 
 # Instance variables are variables that belong to an object rather than a scope.
 # Any variable that starts with an '@' sigil is an instance variable.
 # We'll talk more about these later.
-@instance_variable = nil
+@instance_variable = nil # ASPERAND
 
 
 # Remember when I said methods were their own little worlds? I lied.

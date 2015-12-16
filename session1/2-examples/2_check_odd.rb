@@ -10,7 +10,7 @@ unless ARGV.first
 end       # If you're exiting because something went wrong, pass a different number like 1
 
 
-# Unix is too dumb to know the argument is a number, so it passes it in as text.
+# Unix is too dumb to know the argument is a number, so it passes it in as text. # ARGUMENTS ARE TEXT ONLY
 # We'll have to turn it into a number ourselves with to_i (what if the user didn't pass a number?)
 number = ARGV.first.to_i
 

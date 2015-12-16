@@ -11,7 +11,7 @@ def get_line
 end
 
 def finished?(line)
-  line == "exit"
+  line == "exit" #THIS WILL EVALAUATE TO TRUE IF USER INPUTS exit
 end
 
 def user_message(lines_seen, line)
