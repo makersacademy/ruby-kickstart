@@ -24,9 +24,7 @@
 class BeerSong
 	def initialize(beers)
 		@beers = beers
-		if @beers == 0  
-			@beers = ""
-		elsif beers < 0 
+		if @beers <= 0 
 			 @beers = ""
 		elsif @beers > 99 
 			 @beers = 99 
@@ -38,16 +36,17 @@ class BeerSong
 			puts ""
 		else
 			while @beers > -1
-				if 	@beers == 1
-					puts "#{BeerSong.text_nums(@beers).capitalize} bottle of beer on the wall,"
-					puts "#{BeerSong.text_nums(@beers).capitalize} bottle of beer,"
-					puts "Take one down, pass it around,"
+				if      @beers == 1
+                                        puts "#{BeerSong.text_nums(@beers).capitalize} bottle of beer on the wall,"
+                                        puts "#{BeerSong.text_nums(@beers).capitalize} bottle of beer,"
+                                        puts "Take one down, pass it around,"
 				elsif @beers == 0
 					puts "#{BeerSong.text_nums(@beers).capitalize} bottles of beer on the wall."
 				else
 					puts "#{BeerSong.text_nums(@beers).capitalize} bottles of beer on the wall,"
 					puts "#{BeerSong.text_nums(@beers).capitalize} bottles of beer,"
 					puts "Take one down, pass it around,"
+					puts "#{BeerSong.text_nums(@beers-1).capitalize} bottle#{@beers-1 == 1 ? "" : 's' } of beer on the wall."
 				end
 				@beers -= 1
 			end
