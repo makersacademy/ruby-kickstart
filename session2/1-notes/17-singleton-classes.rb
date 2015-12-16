@@ -33,7 +33,7 @@ obj.singleton_methods # => [:greet, :about]
 # Question: if everything is an object, and every object
 #   has a singleton class, then do singleton classes have
 #   singleton classes?
-#
+#   Yes
 #   How can you test your answer out?
 
 obj = Object.new
