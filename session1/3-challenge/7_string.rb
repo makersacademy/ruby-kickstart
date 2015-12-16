@@ -17,5 +17,5 @@ def pirates_say_arrrrrrrrr(string)
         end
   end
   newer_string = new_string.join("")
-  return newer_string
+  newer_string
 end

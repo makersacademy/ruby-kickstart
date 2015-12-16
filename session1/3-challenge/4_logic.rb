@@ -14,21 +14,21 @@
 def grade(num_books, has_read_books)
   if num_books < 10
     if has_read_books
-      return "C"
+      "C"
     else
-      return "D"
+      "D"
     end
   elsif num_books >= 10 && num_books <= 20
     if has_read_books
-      return "B"
+      "B"
     else
-      return "C"
+      "C"
     end
   else
     if has_read_books
-      return "A"
+      "A"
     else
-      return "B"
+      "B"
     end
   end
 end
