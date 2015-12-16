@@ -14,19 +14,15 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+require 'prime'
+
 def prime_chars? arr
-	if arr == [] || arr == [""] 
+        if arr == [] || arr == [""]
                 false
         else
                 a = []
                 arr.each {|x| a << x.length}
                 a = a.inject {|sum, x| sum + x}
-                if a < 2
-                	false
-                else
-                	2..upto(a) do |x|
-                		a % x == 1 ? true : false
-                	end
-                end
+                Prime.prime?(a) 
         end
 end
