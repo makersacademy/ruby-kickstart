@@ -9,4 +9,14 @@
 # arithmetic2(-6, -7)  # => -3.5
 
 def arithmetic2(a, b)
+  if a < b
+     a / 2.to_f
+  else
+     b / 2.to_f
+  end
 end
+
+
+p arithmetic2(1, 2)    # => 0.5
+p arithmetic2(19, 10)  # => 5.0
+p arithmetic2(-6, -7)  # => -3.5

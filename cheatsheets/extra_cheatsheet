@@ -1,0 +1,185 @@
+# =====  Logical Operators  =====
+a , b , c = 1 , 2 , 3
+a == b && a == c          # logical and
+a == b || a == c          # logical or
+
+# less than, greater than
+4 <  5  # => true
+4 <  3  # => false
+
+4 >  3  # => true
+4 >  5  # => false
+
+# less/greater than or equal to
+4 <= 3  # => false
+4 <= 4  # => true
+4 <= 5  # => true
+
+4 >= 3  # => true
+4 >= 4  # => true
+4 >= 5  # => false
+
+# equal to
+4 == 3  # => false
+4 == 4  # => true
+
+# =====  General syntax of an if statement  =====
+def one_two_or_three(n)
+  if n == 1
+    return 'one'
+  elsif n == 2
+    return 'two'
+  else
+    return 'three'
+  end
+end
+
+one_two_or_three 1 # => "one"
+one_two_or_three 2 # => "two"
+one_two_or_three 3 # => "three"
+
+
+# =====  Single line  =====
+result = 'set'
+result = 'modified once' if 1 == 1
+result                                    # => "modified once"
+result = 'modified twice' if 1 != 1
+result                                    # => "modified once"
+
+
+# =====  ! to negate  =====
+result = 'set'
+result = 'modified once' if !false
+result                                    # => "modified once"
+result = 'modified twice' if !true
+result                                    # => "modified once"
+
+
+# =====  False and nil are false, everything else is true  =====
+!!false           # => false
+!!true            # => true
+!!nil             # => false
+!!Array.new       # => true
+!!String.new      # => true
+!!Regexp.new('')  # => true
+
+
+# =====  Unless  =====
+result = 'set'
+result = 'modified once' unless 1 == 2
+result                                    # => "modified once"
+result = 'modified twice' unless 1 == 1
+result                                    # => "modified once"
+
+
+# =====  While  =====
+i = 0
+ary = Array.new
+while i < 5
+  ary << i
+  i += 1
+end
+ary # => [0, 1, 2, 3, 4]
+
+
+# =====  Loops  =====
+ary = Array.new
+5.times do |current|
+  ary << current
+end
+ary # => [0, 1, 2, 3, 4]
+
+
+ary = Array.new
+1.step 10 , 2 do |current|
+  ary << current
+end
+ary # => [1, 3, 5, 7, 9]
+
+
+
+# =====  Skip this iteration / Stop iterating  =====
+ary = Array.new
+10.times do |current|
+  next if current % 2 == 1
+  ary << current
+end
+ary # => [0, 2, 4, 6, 8]
+
+
+# break out of a loop
+ary = Array.new
+10.times do |current|
+  break if current >= 5
+  ary << current
+end
+ary # => [0, 1, 2, 3, 4]
+
+# This should get you started.
+# But to see all the cool things you can do, check out the documentation
+#
+# http://ruby-doc.org/core/classes/String.html
+
+
+# Make a new string
+"Can interpolate #{1+1}"      # => "Can interpolate 2"
+'Cannot interpolate #{1+1}'   # => "Cannot interpolate \#{1+1}"
+
+string = <<END_OF_DOC.upcase
+  This is a here document, I can interpolate #{1}
+  It will continue until it finds, the line END_OF_DOC by itself.
+  Notice I can continue doing things on the line the here document is defined in.
+  here I called String#upcase on it.
+END_OF_DOC
+
+string  # => "  THIS IS A HERE DOCUMENT, I CAN INTERPOLATE 1\n  IT WILL CONTINUE UNTIL IT FINDS, THE LINE END_OF_DOC BY ITSELF.\n  NOTICE I CAN CONTINUE DOING THINGS ON THE LINE THE HERE DOCUMENT IS DEFINED IN.\n  HERE I CALLED STRING#UPCASE ON IT.\n"
+
+
+# Useful methods
+'abc'.length        # => 3
+'abc' == 'abc'      # => true
+'abc' == 'def'      # => false
+'AbCd'.downcase     # => "abcd"
+'AbCd'.upcase       # => "ABCD"
+" abc   ".strip     # => "abc"
+
+# concatenation
+'hello' + 'world'   # => "helloworld"
+'hello' << 'world'  # => "helloworld"
+# wait O.o why two methods for this?
+s = "abc"
+s + "def"       # => "abcdef"
+s               # => "abc"
+s << "def"      # => "abcdef"
+s               # => "abcdef"
+
+# Access parts of the string (-1 counts backwards from the end)
+"abc"[-1]           # => "c"
+"abc"[0]            # => "a"
+"abc"[1]            # => "b"
+"abc"[2]            # => "c"
+"abc"[3]            # => nil
+"abcdefg"[2..4]     # => "cde"
+"abcdefg"[4..-1]    # => "efg"
+
+# Changing parts of a string
+message = "Josh said"
+message["Josh"] = "dom"
+message             # => "dom said"
+message += ' "Howdy"'
+message             # => "dom said \"Howdy\""
+message.capitalize  # => "Dom said \"howdy\""
+message             # => "dom said \"Howdy\""
+message[-2] = 'e'
+message             # => "dom said \"Howde\""
+message[-2] = 'y!'
+message             # => "dom said \"Howdy!\""
+
+# Other useful methods (some of these use regular expressions, we'll talk about them more later)
+"abc" * 3                                     # => "abcabcabc"
+" abc \n".chomp                               # => " abc "
+'trite'.gsub('t','b')                         # => "bribe"
+"Their IDs are 11, and 492".scan(/\d+/)       # => ["11", "492"]
+"Jack and Jill ran up the hill".split         # => ["Jack", "and", "Jill", "ran", "up", "the", "hill"]
+"/usr/bin:/opt/local:/Users/josh".split(':')  # => ["/usr/bin", "/opt/local", "/Users/josh"]
+"abcdefg hi".split(//)                        # => ["a", "b", "c", "d", "e", "f", "g", " ", "h", "i"]

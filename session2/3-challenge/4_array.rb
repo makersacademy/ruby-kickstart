@@ -7,6 +7,13 @@
 # get_squares [25, 4, 9, 6, 50, 16, 5] # => [4, 5]
 
 # This time you will have to define the method, it's called: get_squares
+def get_squares(squares)
+  squares.select {|num| squares.include? num*num}.sort
+
+end
 
 
-
+p get_squares [9]
+p get_squares [9,3]
+p get_squares [9,3,81]
+p get_squares [25, 4, 9, 6, 50, 16, 5]

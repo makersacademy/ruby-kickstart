@@ -12,8 +12,24 @@
 # remember, you can try your program by going to the terminal and typing   $ ruby 9_input_output_logic_string.rb
 #
 # example:
+def deaf_grandma
+
+  loop do
+  user_input = gets.chomp
+    break if user_input == "BYE"
+
+    if user_input != user_input.upcase || user_input == ""
+      puts "HUH?! SPEAK UP, SONNY!"
+    else
+      puts "NO, NOT SINCE 1938!"
+    end
+  end
+
+end
 #
-#
+
+
+
 # USER:     $ ruby 9_input_output_logic_string.rb
 # USER:     hi grandma.
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
@@ -23,9 +39,7 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
-def deaf_grandma
 
-end
 
 
 

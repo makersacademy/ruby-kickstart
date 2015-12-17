@@ -5,6 +5,29 @@
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
 
+#def odds_and_evens(string, return_odds)
+#  new_string = ""
+#  string.size.times do |index|
+#    next if return_odds && index.even?
+#    next if !return_odds && index.odd?
+#    new_string << string[index]
+#  end
+#  new_string
+#end
+
 def odds_and_evens(string, return_odds)
+  new_string = ''
+
+  if return_odds
+    string.length.times {|num| new_string << string[num] if num.odd?}
+
+  elsif
+    string.length.times {|num| new_string << string[num] if num.even?}
+
+  end
+
+  new_string
 
 end
+
+p odds_and_evens("abcdefg", false)
