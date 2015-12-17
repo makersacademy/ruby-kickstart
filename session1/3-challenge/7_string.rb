@@ -6,4 +6,15 @@
 
 def pirates_say_arrrrrrrrr(string)
 
+  result = ""
+
+  string.length.times do |current|
+    next if string[current] == 0 # skip first character
+    if string[current] == "r" || string[current] == "R"
+      if string[current+1] != nil # make sure we don't exceed the last character
+        result << string[current+1]
+      end
+    end
+  end
+return result
 end
