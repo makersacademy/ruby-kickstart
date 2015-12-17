@@ -20,7 +20,21 @@
 
 def hi_hi_goodbye
   # your code here
-
+  input = ""
+  output = ""
+  while input != "bye" do
+    puts "Enter a number"
+    input = gets.chomp
+    if input =~ /\d+/
+      input.to_i.times do
+        output << "hi "
+      end
+      puts output
+    elsif input != "bye"
+      puts "Please enter a number or type 'bye' to exit the program"
+    end
+  end
+  puts "goodbye"
 end
 
 
