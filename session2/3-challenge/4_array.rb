@@ -9,4 +9,25 @@
 # This time you will have to define the method, it's called: get_squares
 
 
+def get_squares(numbers)
+
+	numbers.select {|n| numbers.include? n*n}.sort #didn't even get close on this one.
+
+end
+#def get_squares(num)
+
+	#sorted_array = ""
+
+		#array.each do |num| num ** num 
+		#square = num.map do |sq| sq ** sq 
+			
+		
+
+		#end
+
+
+	#return sorted_array
+
+#end
+#compare the squared number with the rest of the numbers in the array/ if any matches, push match into 'sorted_array'. ghanster
 
