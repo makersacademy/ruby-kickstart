@@ -14,3 +14,24 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(numbers)
+  count = 0
+  result = []
+  while count < numbers.length
+    test = numbers[count] % 3
+    result << test if test != 0
+    count +=1
+  end
+  result
+end
+
+# mod_three [0]  # => []
+# mod_three [1]  # => [1]
+# mod_three [2]  # => [2]
+# mod_three [3]  # => []
+# mod_three [4]  # => [1]
+# mod_three [5]  # => [2]
+# mod_three [6]  # => []
+# mod_three [7]  # => [1]
+#
+ mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
