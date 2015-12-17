@@ -19,10 +19,15 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-
+  puts "give answer or say bye"
+  answer = gets.chomp
+  while answer != "bye"
+    puts "hi " * answer.to_i
+    puts "give answer or say bye"
+    answer = gets.chomp
+  end
+    "goodbye"
 end
-
 
 
 
