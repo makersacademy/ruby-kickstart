@@ -17,7 +17,24 @@
 # hints:
 #   you can set up default behaviour for a hash by passing a block, see cheatsheet (essentially a lazy initialization)
 #   you can get an array of keys from a hash with the keys method
-#
+
+def shared(a,b)
+
+	both = {}
+	a.each { |i|
+		both[i] ||= [nil, nil]
+		both[i][0] = true
+	}
+	b.each { |j|
+		both[j] ||= [nil, nil]
+		both[j][1] = true
+	}
+	same = both.select { |key, value| value == [true,true] }.map { |key, value| key }
+	return both, same.sort
+end
+
+
+
 # examples:
 #
 # shared [1,2,3], [1,2,4]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, nil], 4=>[nil, true]}, [1, 2]]
@@ -25,7 +42,7 @@
 # shared [], [1,2]                   # => [{1=>[nil, true], 2=>[nil, true]}, []]
 # shared [1,2], []                   # => [{1=>[true, nil], 2=>[true, nil]}, []]
 # shared [], []                      # => [{}, []]
-# shared [1,2,:c], ['a','b',:c]      # => [{1=>[true, nil], 2=>[true, nil], :c=>[true, true], "a"=>[nil, true], "b"=>[nil, true]}, [:c]]
+puts shared [1,2,:c], ['a','b',:c]      # => [{1=>[true, nil], 2=>[true, nil], :c=>[true, true], "a"=>[nil, true], "b"=>[nil, true]}, [:c]]
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
 

@@ -39,11 +39,14 @@ class HTMLTag
     :blue => "#0000FF"
   }
 
-  attr_accessor :name, :innerHTML, :options
+  attr_accessor :name, :innerHTML, :font, :color, :multiline
 
   # options: :multiline should be true or false
-  def initialize(name, innerHTML, options={})
-    @name, @innerHTML, @options = name, innerHTML, options
+  def initialize(name, innerHTML, font, color, options = Hash.new)
+    @name, @innerHTML =  name, innerHTML
+    self.color = COLORS[options[:color]]
+    self.font = FONTS[options[:font]]
+    self.multiline = options.fetch :multiline, false
   end
 
   def font

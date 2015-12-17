@@ -31,4 +31,16 @@
 # create it from scratch :)
 
 
+def pathify (paths=Hash.new)
+	return paths.map { |path| "/" + path } if paths.is_a? Array
 
+	filenames = []
+	paths.each do | parent, child_dir|
+		parent = "/" + parent
+		child_path = pathify child_dir 
+		child_path.each do |child_path|
+			filenames << parent + child_path
+		end
+	end
+	filenames
+end

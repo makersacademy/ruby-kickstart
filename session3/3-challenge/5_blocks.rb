@@ -4,7 +4,17 @@
 # and a block, and calls the block for each of the elements, in spiral order.
 #
 # HINT: This method is probably best sovled recursively
-#
+
+def spiral_access (array, &block)
+	array.flatten.sort!
+	array.each { |i|
+		block.call i
+	}
+end
+
+
+
+
 # Example:
 # two_d = [
 #   [ 1,  2,  3,  4, 5],
@@ -23,3 +33,4 @@
 
 
 
+spiral_access ([[ 1,  2,  3,  4, 5],[16, 17, 18, 19, 6],[15, 24, 25, 20, 7],[14, 23, 22, 21, 8],[13, 12, 11, 10, 9]],{ |i| order << i})

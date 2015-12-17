@@ -18,29 +18,48 @@
 # EXTRA POINTS FOR:
 #   normalizing the input (the proc) at the start, rather than checking to see if it is there every time
 #   you wish to use it. (hint: if no block is submitted, the proc variable will be nil)
-#
+
+
+
+def your_sort (array, &sorter)
+
+	sorter ||= Proc.new { |i,j| i <=> j}
+
+	array.each_index do |index1|
+		array.each_index do |index2|
+			sort = sorter.call array[index1] , array[index2]
+			array[index1], array[index2] = array[index2], array[index1] if sort < 0
+		end
+	end
+
+end
+
+
+
+
+
 #
 # EXAMPLE:
 #
 # sorting numbers:
-#
-# your_sort [24, 0, 68, 44, 68, 47, 42, 66, 89, 22]  # => [0, 22, 24, 42, 44, 47, 66, 68, 68, 89]
-#
-# your_sort [24, 0, 68, 44, 68, 47, 42, 66, 89, 22] do |a, b|
-#   if a < b
-#     -1
-#   elsif a > b
-#     1
-#   else
-#     0
-#   end
-# end   # => [0, 22, 24, 42, 44, 47, 66, 68, 68, 89]
-#
+
+#print your_sort [24, 0, 68, 44, 68, 47, 42, 66, 89, 22]  # => [0, 22, 24, 42, 44, 47, 66, 68, 68, 89]
+=begin
+print your_sort [24, 0, 68, 44, 68, 47, 42, 66, 89, 22] do |a, b|
+   if a < b
+     -1
+   elsif a > b
+     1
+   else
+     0
+   end
+ end   # => [0, 22, 24, 42, 44, 47, 66, 68, 68, 89]
+=end
 #
 # sorted by second letter (don't worry about things like 'the' vs 'The'):
-# your_sort %w(The quick brown fox jumps over the lazy dog) do |a, b|
-#   a[1..1] <=> b[1..1]
-# end   # => ["lazy", "The", "the", "fox", "dog", "brown", "jumps", "quick", "over"]
+print your_sort %w(The quick brown fox jumps over the lazy dog) do |a, b|
+   a[1..1] <=> b[1..1]
+ end   # => ["lazy", "The", "the", "fox", "dog", "brown", "jumps", "quick", "over"]
 #
 #
 # placing all strings first, integers second, and floats last, each sorted within themselves

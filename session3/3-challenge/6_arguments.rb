@@ -8,14 +8,28 @@
 # If it is true, then they will be true when they are oppositely truthy.
 # If it is false, then they will be true when they are similarly truthy.
 #
-# Examples:
-# match_maker false, true,  true                # => [true]
-# match_maker true,  true,  true                # => [false]
-# match_maker true,  false, false               # => [false]
-# match_maker true,  false, true                # => [true]
-# match_maker true,  true,  false               # => [true]
-# match_maker true,  true,  true, false, true   # => [false, true]
-# match_maker true,  true,  true, false, nil    # => [false, false]
-# match_maker true,  true,  true, true, nil     # => [false, true]
-# match_maker true,  true,  true, 0, nil        # => [false, true]
+
+
+def match_maker (condition, *input)
+	result = []
+	if condition == true
+		input.each_slice(2) { |i, j|
+			if i == !!j 
+				result << false 
+			else
+				result << true 
+			end
+		}
+	elsif condition == false
+		input.each_slice(2) { |i, j|
+			if i == !j
+				result << true 
+			else
+				result << false 
+			end
+		}
+	end
+	result
+end
+
 

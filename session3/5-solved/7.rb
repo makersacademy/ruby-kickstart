@@ -21,20 +21,33 @@ class HTMLTag
     self.multiline = options.fetch :multiline, false
   end
 
+  def font
+    font = options[:font]
+    FONTS[font]
+  end
+
+  def color
+    color = options[:color]
+    COLORS[color]
+  end
+
   def style
-    return nil unless font || color
-    to_return = "style='"
-    to_return << "font-family:#{font};" if font
-    to_return << "color:#{color};"      if color
-    to_return << "'"
-    to_return
+    if options[:font]
+      return "style = 'font-family:#{font};color:#{color};'" if options[:color]
+      return "style = 'font-family:#{font};'}"
+    else
+      return"style=color:#{color};"      if options[:color]
+    end
   end
 
   def to_s
-    line_end = ""
-    line_end = "\n" if multiline # remember, if options[:multiline] doesn't exist, it will return nil, and nil is false
+    line_end = if options[:multiline]  then "\n" else "" end # remember, if options[:multiline] doesn't exist, it will return nil, and nil is false
     "<#{name} #{style}>#{line_end}"   \
       "#{innerHTML.chomp}#{line_end}" \
     "</#{name}>\n"
   end
+
 end
+
+sat = HTMLTag.new("Daniel", "fgfhhksdjhdslkadl", :font => :serif, :color => :red, :multiline => true)
+sat.font

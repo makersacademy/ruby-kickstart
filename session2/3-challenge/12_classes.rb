@@ -1,5 +1,3 @@
-# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
-
 # Define a class called Fraction
 # This class is used to represent a ratio of two integers
 # Include setter methods called numerator and denominator that allow the user to change these values
@@ -23,8 +21,37 @@
 # f.to_f               # => 0.5
 
 class Fraction
-  def gcd(a,b)
-    return a if b == 0
-    gcd(b, a%b)
-  end
+
+	attr_accessor :numerator, :denominator
+
+	def initialize (numerator, denominator)
+		@numerator = numerator
+		@denominator = denominator
+		gcd(@numerator, @denominator)
+		to_f
+	end
+
+	def to_f
+		@numerator/@denominator.to_f
+	end
+
+	def lowest
+		num = (@numerator/@a)
+		denom = (@denominator/@a)
+		@lowest = num/denom.to_r
+	end
+
+	def to_s
+		"#{@numerator}/#{@denominator}"
+	end
+  	def gcd(a,b)
+	    if b == 0
+	    	return @a = a 
+	    	lowest
+	    else
+	    	gcd(b, a%b)
+		end
+ 	end
 end
+
+print Fraction.new(20, 60)

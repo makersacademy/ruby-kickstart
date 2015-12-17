@@ -6,3 +6,14 @@
 #
 # first_pos "The dog and the cat and the cow" # => {"The" => 0, "dog" => 1, "and" => 2, "the" => 3, "cat" => 4, "cow" => 7}
 
+def first_pos string
+	hash = {}
+	x = 0
+	print split = string.split(" ")
+	split.each { |i| 
+		hash[i] ||= x
+		x += 1
+	}
+	hash
+end
+

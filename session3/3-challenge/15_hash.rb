@@ -31,20 +31,33 @@
 #
 # Now that we know what a linked list is, write a function named middle, which takes a linked list,
 # and returns the data halfway down the list.
-#
-# EXAMPLES:
-# head = {:data => 1, :next => nil}
-# middle head                        # => 1
-# head = {:data => 2, :next => head}
-# middle head                        # => 1
-# head = {:data => 3, :next => head}
-# middle head                        # => 2
-# head = {:data => 4, :next => head}
-# middle head                        # => 2
-# head = {:data => 5, :next => head}
-# middle head                        # => 3
-# head = {:data => 6, :next => head}
-# middle head                        # => 3
+
+def list_size (list)
+	return 0 unless list
+	1 + list_size(list[:next])
+end
+
+def middle (list, distance = list_size(list)/2)
+	return list[:data] if distance == 0
+	middle list[:next], (distance -1)
+end
 
 
+=begin
 
+
+puts head = {:data => 1, :next => nil}
+puts middle head                        # => 1
+puts head = {:data => 2, :next => head}
+puts middle head                        # => 1
+puts head = {:data => 3, :next => head}
+puts middle head                        # => 2
+puts head = {:data => 4, :next => head}
+puts middle head                        # => 2
+puts head = {:data => 5, :next => head}
+puts middle head                        # => 3
+puts head = {:data => 6, :next => head}
+puts middle head                        # => 3
+
+
+=end
