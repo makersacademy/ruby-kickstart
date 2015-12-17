@@ -8,6 +8,11 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  input=gets
+  integer1 = input.split(' ')[0].to_i
+  integer2 = input.split(' ')[1].to_i
+
+  puts integer1 + integer2
+  puts integer1 - integer2
+  puts integer1 * integer2
 end

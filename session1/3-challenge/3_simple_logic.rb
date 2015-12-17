@@ -8,4 +8,5 @@
 # ten_twenty(6) # => 10
 
 def ten_twenty(n)
+  (n % 2) > 0 ? 20 : 10
 end

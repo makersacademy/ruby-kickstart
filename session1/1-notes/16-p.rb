@@ -1,3 +1,4 @@
+# GM - this is new. p is like sayiing 'how would you represent this in your source code?'
 # One other important output method is the 'p' method. p outputs an object's internal representation:
 # think of it as how the object looks in code. This kind of output is what we've been putting to the right of
 # lines of code in these notes.

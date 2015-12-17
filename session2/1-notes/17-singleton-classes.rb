@@ -6,6 +6,7 @@
 # can have its own unique behaviour by defining
 # methods on its singleton class.
 
+# GM - the singleton class means (for example) that you can add methods to the specific string "abc" rather than just to its main class, String.
 
 # Singleton classes don't have names
 obj = Object.new
@@ -35,6 +36,6 @@ obj.singleton_methods # => [:greet, :about]
 #   singleton classes?
 #
 #   How can you test your answer out?
-
+# GM - YES! see below.
 obj = Object.new
 puts obj.singleton_class.singleton_class # => #<Class:#<Class:#<Object:0x007fbd6210e3d0>>>

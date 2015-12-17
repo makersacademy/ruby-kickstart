@@ -11,6 +11,7 @@ end
 # This is the syntax for single line blocks
 # note that you need parens around that 1,
 # we'll discuss why later
+# GM ^ interesting
 mah_method!(1) { |block_parameter| block_parameter * 2 }
 
 
