@@ -5,7 +5,7 @@
 # add_more_ruby("Sad times are ahead!")         # => "Happy times are ahead!"
 
 def add_more_ruby(string)
-  string.downcase.gsub("sad", "happy").capitalize 
+  string.gsub("sad", "happy").gsub("Sad", "Happy").gsub("SAD", "HAPPY")
 end
 
 puts add_more_ruby("The clowns were sad.")
