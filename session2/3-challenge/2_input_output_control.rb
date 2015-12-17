@@ -18,17 +18,16 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
+
+
 def hi_hi_goodbye
-  number = gets.chomp
-  hi = "hi"
-  bye = "goodbye"
-  if number.class != Integer
-    puts hi.times(number)
-  elsif number.downcase == "bye"
-    puts "goodbye"
-  else
-    number = gets.chomp
+  input = ""
+  while input.downcase != "bye"
+    puts "Enter a number"
+    input = gets.chomp
+    input.to_i.times { print "hi " }
   end
+  puts "goodbye"
 end
 
 
