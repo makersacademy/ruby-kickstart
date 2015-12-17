@@ -6,5 +6,10 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  letters = string.chars
+  if return_odds
+    letters.select.each_with_index { |_, i| i.odd? }.join
+  else
+    letters.select.each_with_index { |_, i| i.even? }.join
+  end
 end
