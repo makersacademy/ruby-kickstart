@@ -19,8 +19,28 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
+puts "Enter a number"
+input = gets.chomp
 
+#check if it contains bye
+#check if it has a number
+#if it has a number say hi that many times
+#if it doesn't have a number return
+
+
+until input == "bye"
+  if input =~ /\D/
+    puts "Enter a number"
+  elsif input !~ /\d/
+    puts "Enter a number"
+  else
+    number = input.to_i
+    puts "hi "*number
+  end
+  puts "Enter a number"
+  input = gets.chomp
+end
+puts "goodbye"
 end
 
 
