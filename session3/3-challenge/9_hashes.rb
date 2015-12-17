@@ -29,3 +29,10 @@
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
 
+def shared a, b
+  result = Hash[(a+b).uniq.map { |sym| [sym, [nil,nil]] }]
+  a.each { |item| result[item][0] = true }
+  b.each { |item| result[item][1] = true }
+  both = result.select { |k, v| v == [true,true]}.keys
+  return result, both.sort
+end

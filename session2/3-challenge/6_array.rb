@@ -15,3 +15,12 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(strings)
+  num = strings.join.size
+  return false if num <= 1
+  sqrt = (num**0.5).to_i
+  (2..sqrt).each do |n|
+    return false if num % n == 0
+  end
+  true
+end

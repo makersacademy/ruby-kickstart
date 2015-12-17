@@ -19,3 +19,13 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker *elements
+  key = elements.shift
+  puts key
+  results = []    
+  elements.each_slice(2) do |a, b|
+    a, b = !!a, !!b
+    results << ( key ? a != b : a == b )
+  end
+  results
+end

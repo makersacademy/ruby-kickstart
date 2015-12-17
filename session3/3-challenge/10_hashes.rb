@@ -30,5 +30,21 @@
 #
 # create it from scratch :)
 
+def pathify paths
+  if paths.is_a? Array
+    return paths.map { |filename| "/#{filename}" }
+  end
 
+  if paths.is_a? Hash
+    result = []
+    paths.each do |this_dir, child_dirs|
+      this_dir = "/#{this_dir}"
+      child_dirs = pathify child_dirs
+      child_dirs.each do |child_dir|
+        result << "#{this_dir}#{child_dir}"
+      end
+    end
+    return result
+  end
 
+end

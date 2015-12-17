@@ -6,3 +6,14 @@
 #
 # first_pos "The dog and the cat and the cow" # => {"The" => 0, "dog" => 1, "and" => 2, "the" => 3, "cat" => 4, "cow" => 7}
 
+def first_pos string
+  results = {}
+  index = 0
+  string.split.each do |word|
+    if !results[word] || results[word] > index
+      results[word] = index
+    end
+    index += 1
+  end
+  results  
+end
