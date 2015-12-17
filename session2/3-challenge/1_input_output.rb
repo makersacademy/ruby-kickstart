@@ -8,6 +8,7 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+    answer = gets
+    numbers = answer.split.map(&:to_i)
+    puts "#{numbers[0] + numbers[-1]}\n#{numbers[0] - numbers[-1]}\n#{numbers[0] * numbers[-1]}"
 end
