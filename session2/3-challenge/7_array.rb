@@ -11,18 +11,6 @@
 
 def alternate_words (string)
 	solution = []
-	prestring = string.split(/--/).flatten.join(" ")
-	prestring2 = string.split(/-/).flatten.join(" ")
-	prestring2.split(" ").each.with_index do |word, ind|
-		if ind % 2 == 0
-			if ("a".."z").include? (word[-1])
-				solution << word
-			elsif ("A".."Z").include? (word[-1])
-				solution << word
-			else
-				solution << word.slice(0...-1) unless word.slice(0...-1) == ""
-			end
-		end
-	end
+	string.gsub(/[!@$#%^&*()\-=_+\[\]:;,.\/<>?\\|]/, " ").split(" ").each {|word| word.strip}.each_with_index {|word, ind| solution << word if ind % 2 == 0}
 	solution
 end
