@@ -9,3 +9,21 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words (array)
+
+  return_array = []
+  last_array = []
+
+  '!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each do |char|
+    array = array.gsub(char, ' ')
+end
+  
+  array.split.map.each_slice(2) do |x, y|
+    return_array << x
+end
+
+return_array
+
+end
+
+
