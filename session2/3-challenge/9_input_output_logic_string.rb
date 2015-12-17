@@ -24,8 +24,21 @@
 # USER:     BYE
 
 def deaf_grandma
-
+	#input = "Hello"
+	input = gets.chomp
+	invalid_response = "HUH?! SPEAK UP, SONNY!"
+	correct_response = "NO, NOT SINCE 1938!"
+	invalid = input.scan(/[a-z]/).length > 0 || input == ""
+	correct = input.scan(/[A-Z]/).length == input.scan(/[a-zA-Z]/).length
+	bye = input == "BYE" ? true : false
+	case 
+	when correct && bye then return ""
+	when correct then correct_response; deaf_grandma
+	when invalid then invalid_response; deaf_grandma
+	end
 end
+
+p deaf_grandma
 
 
 

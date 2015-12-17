@@ -1,5 +1,3 @@
-# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
-
 # Write a program that outputs the lyrics for "Ninety-nine Bottles of Beer on the Wall"
 # Your program should print the number of bottles in English, not as a number. For example:
 #
@@ -14,7 +12,7 @@
 # Zero bottles of beer on the wall.
 #
 # Your program should not use ninety-nine output statements!
-# Design your program with a class named BeerSong whose initialize method
+# Design your program with a class named BeerSong whose initialize method 
 # receives a parameter indicating the number of bottles of beer initially on the wall.
 # If the parameter is less than zero, set the number of bottles to zero. Similarly,
 # if the parameter is greater than 99, set the number of beer bottles to 99
