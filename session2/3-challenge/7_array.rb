@@ -13,5 +13,3 @@ def alternate_words(string)
 	a = "!@$#%^&*()-=_+[]:;,./<>?\\|".chars
 	(string.gsub(/-/," ").chars - a).join.split(" ").select.with_index{|_,i| i.even?}
 end
-
-print alternate_words "If you want to accomplish something in the world, idealism is not enough--you need to choose a method that works to achieve the goal. In other words, you need to be pragmatic."
