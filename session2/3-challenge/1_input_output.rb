@@ -9,5 +9,10 @@
 
 def sum_difference_product
   # your code goes here
-  
+  inputs = gets.split(" ").map { |n| n.to_i }
+
+  a = inputs[0]
+  b = inputs[1]
+
+  print "#{a+b}\n#{a-b}\n#{a*b}\n"
 end
