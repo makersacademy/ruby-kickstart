@@ -9,3 +9,11 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+  array = string.gsub(/[!@\$#%\^&\*\(\)-=_\+\[\]:;\.\/<>\?\\\|]/, " ").split
+  new_array = []
+  array.each_index { |x| new_array << array[x] if x % 2 == 0 }
+  new_array
+end
+
+#need to look at Regex because that's a very long way to exclude the characters. (Couldn't find a way to exclude the apostrophe - tried \[^a-zA-Z' ]\ but it still replaced the apostrophe)
