@@ -7,7 +7,7 @@
 
 class String
   def every_other_char
-    text = []
+    text = ""
     each_char.with_index {|char, i| text << char if i.even? }
     text
   end
