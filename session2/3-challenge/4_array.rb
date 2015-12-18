@@ -8,5 +8,14 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(array)
+  array.select { |num| array.include? num ** 2 }.sort
+end
 
 
+
+# Alternative Solution
+# def get_squares(array)
+#   array.select { |num| array.any? { |square| square == num ** 2}}.sort
+# end
+  
