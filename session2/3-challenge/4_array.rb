@@ -10,12 +10,6 @@
 
 def get_squares(array)
 
-  to_return = []
-
-  array.each do |num|
-      to_return << num if array.include?(num * num)
-  end
-
-  to_return.sort
+  array.select { |num| num if array.include? num * num }.sort
 
 end
