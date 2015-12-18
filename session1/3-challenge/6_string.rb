@@ -14,6 +14,3 @@ def odds_and_evens(string, return_odds)
     end
   text
 end
-
-puts odds_and_evens("hello does this work", true)
-puts odds_and_evens("hello does this work", false)
