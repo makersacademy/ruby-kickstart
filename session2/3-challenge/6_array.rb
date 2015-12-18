@@ -15,3 +15,13 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array)
+
+  count = 0
+
+  array.each { |x| count += x.size }
+
+  require 'Prime'
+  Prime.prime?(count)
+
+end
