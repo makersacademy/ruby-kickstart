@@ -7,6 +7,8 @@
 
 class String
   def every_other_char
+    letters = self.chars
+    letters.select.each_with_index {|_, index| index.even?}.join
   end
-  
+
 end
