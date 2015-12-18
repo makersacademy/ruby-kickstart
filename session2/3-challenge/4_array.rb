@@ -8,5 +8,7 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
+def get_squares(arr)
+  arr.sort.map {|i| i if arr.include? i * i}.compact
+end
 
