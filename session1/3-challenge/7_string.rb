@@ -12,7 +12,3 @@ def pirates_say_arrrrrrrrr(string)
   end
   text
 end
-
-puts pirates_say_arrrrrrrrr("are you really learning Ruby?")
-puts pirates_say_arrrrrrrrr("Katy Perry is on the radio!")
-puts pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")
