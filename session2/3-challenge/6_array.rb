@@ -15,3 +15,8 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array)
+    number = array.join.length
+    return false if number < 2
+    (2..Math.sqrt(number)).none? {|i| number % i == 0}
+end
