@@ -24,7 +24,19 @@
 # USER:     BYE
 
 def deaf_grandma
-
+puts "Hhh--elllo dear, my you've grown. Hhh-ow are youuu?"
+bye_count = 0
+	while true
+			user_input = gets.chomp
+			if user_input == "BYE"
+					bye_count += 1
+					puts "HI DEAR, IT'S NICE TO SEE YOU TOO."	
+			else puts user_input =~ /[a-z]/ ? "HUH? SPEAK UP SONNY. MY HEARING AID IS PLAYING UP." : "NO DEAR, NOT SINCE 19#{rand(99)}"
+					bye_count = 0
+			end
+		break if bye_count >= 3
+	end
+puts "OH, BYE BYE SWEETIE."
 end
 
 
