@@ -38,20 +38,22 @@ class Fraction
   end
   
   def numerator
-    p @numer
+    return @numer
   end
   
   def denominator
-    p @denom
+    return @denom
   end
   
   def to_s
-    p "#{@numer}/#{@denom}"
-    self
+    
+    return "#{@numer}/#{@denom}"
+    
   end
   
   def to_f
-    p (@numer.to_f/@denom.to_f)
+    float = (@numer.to_f/@denom.to_f)
+    return float
   end
   
   def lowest
@@ -74,6 +76,16 @@ class Fraction
     gcd(b, a%b)
   end
 end
+
+f = Fraction.new 20, 60
+p f.numerator          # => 20
+p f.denominator        # => 60
+p f.to_s               # => "20/60"
+p f.lowest.to_s        # => "1/3"
+f.numerator = 50
+f.denominator = 100
+p f.to_s               # => "50/100"
+p f.to_f               # => 0.5
 
 
 
