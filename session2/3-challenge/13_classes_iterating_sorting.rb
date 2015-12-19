@@ -81,32 +81,47 @@ class User
   def add_blog(date, text)
     $i += 1
     $blog_store[$i-1] = Array.new
-    $blog_store[$i-1][0] = "blog#{$i}"
-    $blog_store[$i-1][1] = date
+    $blog_store[$i-1][1] = "blog#{$i}"
+    $blog_store[$i-1][0] = date
     $blog_store[$i-1][2] = text
   end
   
   def blogs
     @blog_return = Array.new
+    p $blog_store
+    $blog_store = $blog_store.sort.reverse
     $blog_store.each {|x|
-      @blog_return.push(x[0])
+      @blog_return.push(x[1])
     }
     return @blog_return
   end
 end
 
 class Blog 
+  
   def initialize(date, user, text)
     @date = date
     @user = user
     @text = text
     $i += 1
     $blog_store[$i-1] = Array.new
-    $blog_store[$i-1][0] = "blog#{$i}"
-    $blog_store[$i-1][1] = date
+    $blog_store[$i-1][1] = "blog#{$i}"
+    $blog_store[$i-1][0] = date
     $blog_store[$i-1][2] = text
     puts "we'll call this blog#{$i}"
   end
+  
+  def get_summary
+    string_return = ""
+    ten_array = Array.new
+    ten_array = $blog_store[0][2].split
+    for j in 0...10
+      string_return = string_return + " " + ten_array[j]
+    end
+    string_return
+  end
+    
+    
 end
 
 lissa = User.new 'QTSort'
@@ -117,6 +132,18 @@ Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"
 Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"
 Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best"
 p lissa.blogs
+
+blog5 = Blog.new Date.today, lissa, <<BLOG_ENTRY
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci nunc, porta non tristique eu, auctor tincidunt mauris.
+ Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vitae nibh sapien. Curabitur
+ eget eros bibendum justo congue auctor non at turpis. Aenean feugiat vestibulum mi ac pulvinar. Fusce ut felis justo, in
+ porta lectus."
+BLOG_ENTRY
+
+p lissa.blogs
+p blog5.get_summary
+
+
 
 
 
