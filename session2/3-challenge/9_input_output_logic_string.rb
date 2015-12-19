@@ -24,7 +24,19 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  continue = true
+  input = gets.chomp
+  while continue == true
+  if input =~ /[a-z]/ || input !~ /\w/
+    puts "HUH?! SPEAK UP, SONNY!"
+    input = gets.chomp
+  elsif input !~ /[a-z]/ && input != "BYE"
+    puts "NO, NOT SINCE 1938!"
+    input = gets.chomp
+  elsif input == "BYE"
+    continue = false
+  end
+end
 end
 
 
