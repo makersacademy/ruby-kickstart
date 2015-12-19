@@ -66,3 +66,59 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+
+class User
+
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+    self.username = username
+    self.blogs = []
+  end
+
+  def add_blog(date, text)
+    added_blog = Blog.new(date, self, text)
+    blogs << added_blog
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+    added_blog
+  end
+
+end
+
+class Blog
+  attr_accessor :date, :user, :text
+
+  def initialize(date,user,text)
+    self.date = date
+    self.user = user
+    self.text = text
+  end
+
+  def summary
+    text.split[0..9].join(' ')
+  end
+
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def ==(other)
+    date   == other.date &&
+      user == other.user &&
+      text == other.text
+  end
+
+end
+
+matt = User.new('Matt')
+matt.add_blog(Date.parse("2015-12-05"),"Donec id elit non mi porta gravida at eget metus." )
+matt.add_blog(Date.parse("2015-12-10"),"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec sed odio dui." )
+heather = User.new('Heather')
+heather.add_blog(Date.parse("2015-11-06"), "Nullam quis risus eget urna mollis ornare vel eu leo.")
+heather.add_blog(Date.parse("2015-12-02"), "Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum.")
+blog1 = matt.blogs.first
+blog2 = heather.blogs[1]
+puts blog1.user
+puts blog1.entry
+puts blog2.entry
