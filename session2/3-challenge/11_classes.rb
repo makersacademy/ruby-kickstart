@@ -20,3 +20,58 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+class BeerSong
+
+  attr_accessor "bottles"
+
+    def initialize(bottles)
+      @bottles = bottles
+      @bottles = 0 if @bottles < 0
+      @bottles = 99 if @bottles > 99
+    end
+
+    def print_song
+      @bottles.downto(1) do |beer|
+        song_lines(beer)
+      end
+    end
+
+    def song_lines(num)
+
+      if num.zero?
+        String.new
+      else
+
+      puts "#{to_word num} #{plural? num} of beer on the wall,",
+           "#{to_word num} #{plural? num} of beer,",
+           "Take one down, pass it around,",
+           "#{to_word num-1} #{plural? num-1} of beer on the wall."
+      end
+
+    end
+
+    def plural?(num)
+      if num == 1
+        "bottle"
+      else
+        "bottles"
+      end
+
+    end
+
+    def to_word(n)
+
+      if 0 <= n && n <= 19
+    ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"][n]
+      elsif n % 10 == 0
+    ['zero', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'][n/10]
+      else
+    "#{to_word n/10*10}-#{to_word n%10}"
+      end.capitalize
+
+    end
+end
+
+test = BeerSong.new(99)
+test.print_song
