@@ -9,7 +9,5 @@
 # This time you will have to define the method, it's called: get_squares
 
 def get_squares(array)
-  array.select {|n| array.any? {|i| i==n*n}} 
+  array.select {|n| array.any? {|i| i==n*n}}.sort
 end
-
-puts get_squares([3,8,9,6,5,7,25])
