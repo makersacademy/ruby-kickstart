@@ -9,3 +9,27 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(sentence)
+
+  # list al characters to be removed
+  to_remove = ['!', '@', '$', '#', '%', '^', '&', '*', '(', ')',  '-', '=', '_',
+  '+', '[', ']', ':', ';', ',', '.', '/', '<', '>', '?', '\\', '|', '  ', '--']
+
+  # remove characters and any double spaces that are created
+  to_remove.each do |char|
+    sentence = sentence.gsub(char,' ') # replace remove characters with spaces
+    sentence = sentence.gsub('  ',' ') # replace any double spaces wiht single spaces
+  end
+
+  # split remaining words and push every other one to result array
+  words = sentence.split(/\s/)
+  result = []
+
+  for i in 0...words.length
+    if i % 2 == 0
+      result << words[i]
+    end
+  end
+    return result
+
+end
