@@ -66,3 +66,57 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+$blog_store = []
+$i = 0
+class User
+  
+  def initialize(username)
+    @username = username
+  end
+  
+  def username
+    @username
+  end
+  
+  def add_blog(date, text)
+    $i += 1
+    $blog_store[$i-1] = Array.new
+    $blog_store[$i-1][0] = "blog#{$i}"
+    $blog_store[$i-1][1] = date
+    $blog_store[$i-1][2] = text
+  end
+  
+  def blogs
+    @blog_return = Array.new
+    $blog_store.each {|x|
+      @blog_return.push(x[0])
+    }
+    return @blog_return
+  end
+end
+
+class Blog 
+  def initialize(date, user, text)
+    @date = date
+    @user = user
+    @text = text
+    $i += 1
+    $blog_store[$i-1] = Array.new
+    $blog_store[$i-1][0] = "blog#{$i}"
+    $blog_store[$i-1][1] = date
+    $blog_store[$i-1][2] = text
+    puts "we'll call this blog#{$i}"
+  end
+end
+
+lissa = User.new 'QTSort'
+p lissa.username 
+lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
+p lissa.blogs
+Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"
+Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"
+Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best"
+p lissa.blogs
+
+
+
