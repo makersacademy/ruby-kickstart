@@ -10,10 +10,13 @@
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
 def alternate_words (sentence)
-  words = sentence.split(/[-'w]+/)
-  solution = []
-  words.each_with_index do |word, index|
-    solution << word if index.even?
+  '!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each do |char|
+    sentence = sentence.gsub(char, ' ')
   end
-  solution
+  words = sentence.split
+  answer = []
+  words.each_with_index do |word, index|
+    answer << word if index.even?
+  end
+  answer
 end
