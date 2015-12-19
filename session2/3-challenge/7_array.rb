@@ -15,4 +15,3 @@ def alternate_words(sentence)
 	new_array	 
 end
 
-ok
