@@ -66,3 +66,33 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class Users
+  def initialize(username)
+    @username = username
+  end
+
+  def add_blog
+    @date = date
+    @text = text
+  end
+
+  def blogs #a method blogs which returns an array of all blogs the user has written, they should be in reverse chronological order (newest first)
+
+  end
+
+  attr_accessor "username"
+
+end
+
+class Blog
+
+  attr_accessor "date", "text", "user"
+
+  def initialize(date, user, text)
+    @date = date
+    @user = user
+    @text = text
+  end
+
+end
