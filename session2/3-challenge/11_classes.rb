@@ -23,83 +23,44 @@
 
 
 class BeerSong
+  attr_accessor :beers
 
-  attr_accessor('number')
-
-  def initialize(number)
-    @number = number
+  def initialize(beers)
+    beers = 0  if beers < 0
+    beers = 99 if beers > 99
+    self.beers = beers
   end
-
-  def englishNumber(number)
-    if number < 0
-      number = 0
-    end
-    if number > 99
-      number = 99
-    end
-
-    numString = ''
-
-    ones = ['zero',  'one',     'two',       'three',    'four',     'five',
-                 'six',     'seven',     'eight',    'nine']
-    tens = ['ten',     'twenty',    'thirty',   'forty',    'fifty',
-                 'sixty',   'seventy',   'eighty',   'ninety']
-    teens = ['eleven',  'twelve',    'thirteen', 'fourteen', 'fifteen',
-                 'sixteen', 'seventeen', 'eighteen', 'nineteen']
-
-    left = number
-
-    write = left/10
-    left  = left - write*10
-
-    if write > 0
-      if ((write == 1) and (left > 0))
-        numString = numString + teens[left-1]
-        left = 0
-      else
-        numString = numString + tens[write-1]
-      end
-
-      if left > 0
-        numString = numString + '-'
-      end
-    end
-
-    write = left
-    left  = 0
-
-    if write >= 0
-      numString = numString + ones[write]
-    end
-    numString
-  end
-
 
   def print_song
-    var1 = @number
-    while var1 != 0
-    var2 = (var1-1)
-    if var1 > 2
-    puts (englishNumber(var1) + ' bottles of beer on the wall,').capitalize
-    puts (englishNumber(var1) + ' bottles of beer,').capitalize
-    puts 'Take one down, pass it around,'
-    puts (englishNumber(var2) + ' bottles of beer on the wall.').capitalize
+    beers.downto 1 do |i|
+      print_stanza i
     end
-    if var1 == 2
-      puts (englishNumber(var1) + ' bottles of beer on the wall,').capitalize
-      puts (englishNumber(var1) + ' bottles of beer,').capitalize.capitalize
-      puts 'Take one down, pass it around,'
-      puts (englishNumber(var2) + ' bottle of beer on the wall.').capitalize
-    end
-    if var1 == 1
-      puts (englishNumber(var1) + ' bottle of beer on the wall,').capitalize
-      puts (englishNumber(var1) + ' bottle of beer,').capitalize
-      puts 'Take one down, pass it around,'
-      puts (englishNumber(var2) + ' bottles of beer on the wall.').capitalize
-    end
-    var1 = var2
-   end
-
   end
 
+  def print_stanza(n)
+    if n.zero?
+      String.new
+    else
+      puts "#{translate n} #{bottle n} of beer on the wall,"        ,
+           "#{translate n} #{bottle n} of beer,"                    ,
+           "Take one down, pass it around,"                         ,
+           "#{translate n - 1} #{bottle n-1} of beer on the wall."
+    end
+  end
+
+  # returns "bottle" or "bottles"
+  def bottle(n)
+    if n == 1 then 'bottle' else 'bottles' end
+  end
+
+  # translates number to English
+  def translate(n)
+    if 0 <= n && n <= 19
+      %w(zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen)[n]
+    elsif n % 10 == 0
+      %w(zero ten twenty thirty forty fifty sixty seventy eighty ninety)[n/10]
+    else
+      "#{translate n/10*10}-#{translate n%10}".downcase
+    end.capitalize
+  end
 end
