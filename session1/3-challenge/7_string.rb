@@ -6,4 +6,13 @@
 
 def pirates_say_arrrrrrrrr(string)
 
+  letters = string.split("")
+  output = ""
+
+  letters.each_with_index do |x, i|
+    output << letters[i+1] if x.downcase == "r" && i+1 < letters.length
+  end
+
+  output
+
 end
