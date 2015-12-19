@@ -14,3 +14,11 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(nums)
+    divided_by =[]
+    nums.each {|num| divided_by << num%3 if num%3 !=0}
+    #puts "this is original #{nums}, and new #{divided_by}"
+    return divided_by
+end
+#mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
+puts 0%3

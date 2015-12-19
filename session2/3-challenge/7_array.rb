@@ -9,3 +9,10 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(s)
+    ss = s.scan(/[\w'’]+/) #splits the words, but no special characters except '’
+    #words = ss.split(' ')
+    #puts ss.select.each_with_index { |_, i| i.even? }
+    return ss.select.each_with_index { |_, i| i.even? }
+end
+#alternate_words("Wou'ld a dating service on the net be frowned upon . . . ? I hope not. But even if it is, don’t let that stop you from notifying me via net mail if you start one.")
