@@ -23,8 +23,40 @@
 # f.to_f               # => 0.5
 
 class Fraction
+
+  def initialize(numerator, denominator)
+    @numerator = numerator
+    @denominator = denominator
+  end
+
+  def numerator
+    numerator = @numerator
+  end
+
+  def denominator
+    denominator = @denominator
+  end
+
   def gcd(a,b)
     return a if b == 0
     gcd(b, a%b)
   end
+
+  attr_accessor "numerator", "denominator"
+
+  def to_f #returns ratio as a float
+    return @numerator.to_f / @denominator.to_f
+  end
+
+  def lowest #returns new fraction where the numerator and denominator are reduced to lowest terms (ie 20/60 become 1/3)
+    top = @numerator / gcd(@numerator, @denominator)
+    bottom = @denominator / gcd(@numerator, @denominator)
+    answer = Rational(top,bottom)
+    return answer
+  end
+
+  def to_s
+    return "#{@numerator}/#{@denominator}"
+  end
+
 end
