@@ -19,8 +19,15 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-
+  loop do
+    puts "Enter a number"
+    input = gets.chomp
+    break if input.downcase == "bye"
+    repeat = input.to_i
+    repeat.times {print "hi "}
+    puts ""
+  end
+  puts "goodbye"
 end
 
 
