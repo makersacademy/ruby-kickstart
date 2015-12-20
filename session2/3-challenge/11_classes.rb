@@ -56,9 +56,7 @@ class BeerSong
   end
 
   def print_song
-    beers.downto 1 do
-      |beer| verse(beer)
-    end
+    beers.downto(1) { |amount| verse(amount)}
   end
 
 end
