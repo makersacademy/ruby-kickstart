@@ -14,4 +14,14 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+require 'prime'
 
+def prime_chars?(arr)
+  len = 0
+  
+  arr.each do |x|
+    len += x.length
+  end
+
+  Prime.prime?(len)
+end
