@@ -23,7 +23,7 @@ def hi_hi_goodbye
     user_input= gets.chomp
 
     while user_input != "bye"
-        puts "hi" * user_input.to_i
+        puts "hi " * user_input.to_i
     user_input =gets.chomp
 end
     puts "goodbye"
