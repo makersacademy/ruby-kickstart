@@ -17,7 +17,8 @@ Constant = nil
 
 
 # Remember when I said methods were their own little worlds? I lied.
-# Constants can be seen by anything defined in their scope.
+# Constants can be seen by anything defined in their scope - so they can be seen outside of a method
+# Scope - each of the 'little worlds' is a scope - constans cascade down from parent to child scopes
 
 MyConstant  = 12
 my_variable = 13
@@ -36,4 +37,3 @@ example # invokes the method
 # Question: classes begin with uppercase letters, are they constants?
 #   Remember, constants are just variables that aren't supposed to change.
 #   go test this in irb
-

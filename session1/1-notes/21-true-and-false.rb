@@ -6,7 +6,7 @@ true.class                      # => TrueClass
 'yep, its true'   if true       # => "yep, its true"
 
 # the false object:
-false.class                     # => FalseClass
+false.class                     # => FalseClass - n.b the false class would evaluate to true!
 'nope, its not true' if false   # => nil
 
 # you can flip them with a leading bang
@@ -23,3 +23,4 @@ false.class                     # => FalseClass
   !!object # => true, true, true, true, true, false
 end
 
+# Everything evaluates to true except false and nil 

@@ -11,7 +11,7 @@
 obj = Object.new
 obj.singleton_class # => #<Class:#<Object:0x00000100866ab8>>
 
-# You can access the singleton class like this
+# You can access the singleton class like this - we're opening up the singleton class for this particular object
 class << obj
   def greet
     'Howdy, partner.'

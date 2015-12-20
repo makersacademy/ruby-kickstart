@@ -2,6 +2,8 @@
 # is stored in the String class.
 length = String.instance_method 'length'
 length # => #<UnboundMethod: String#length>
+#  A method becomes bounded when it is associated with an object, so;
+"abc".method 'length' # => #<Method: String#length>
 
 
 # So if we want to make a new method on strings,

@@ -5,7 +5,7 @@
 # That was a lie, they can see instance variables.
 # We'll talk more about that in a bit.
 class Car
-  # we call methods like this a "setter"
+  # we call methods like this a "setter" - the default value for an instance variable is nil
   def set_miles(miles)
     @miles = miles
   end
@@ -25,4 +25,4 @@ car.instance_variable_get '@miles'  # => 1000
 
 
 # Question: We create our car by calling Car.new
-# where is the new method defined?
+# where is the new method defined? - in the Class class
