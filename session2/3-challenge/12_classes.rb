@@ -35,7 +35,7 @@
       return a if b == 0
       gcd(b, a%b)
     end
-   
+  
    def to_f
      # Return number as a float
      @numerator.to_f/@denominator.to_f
@@ -51,8 +51,14 @@
    def to_s
      # Return fraction as a string
      "#{numerator}/#{denominator}"
+   end
   end
-	
+ 
+ f = Fraction.new 20, 60
+ puts f.lowest.numerator
+ puts f.numerator
+ puts f.denominator
+ 
 	
 	
 	
