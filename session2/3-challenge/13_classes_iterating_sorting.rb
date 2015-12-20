@@ -103,22 +103,48 @@ class Blog
     @date = date
     @user = user
     @text = text
+    @repeat = 0
     $i += 1
-    $blog_store[$i-1] = Array.new
-    $blog_store[$i-1][1] = "blog#{$i}"
-    $blog_store[$i-1][0] = date
-    $blog_store[$i-1][2] = text
+    store
     puts "we'll call this blog#{$i}"
+  end
+  
+  def store
+    @array_position = $blog_store.length + 1 if @repeat == 0
+    @array_position = 1 if @repeat == 1
+    $blog_store[@array_position-1] = Array.new
+    $blog_store[@array_position-1][1] = "blog#{$i}"
+    $blog_store[@array_position-1][0] = @date
+    $blog_store[@array_position-1][2] = @text
   end
   
   def get_summary
     string_return = ""
     ten_array = Array.new
+    puts $blog_store
     ten_array = $blog_store[0][2].split
     for j in 0...10
       string_return = string_return + " " + ten_array[j]
     end
     string_return
+  end
+  
+  def date=(new_date)
+    @date = new_date
+    @repeat = 1
+    store
+  end
+  
+  def text=(new_text)
+    @text = new_text
+    @repeat = 1
+    store
+  end
+  
+  def user=(new_user)
+    @user = new_user
+    @repeat = 1
+    store
   end
     
     
@@ -141,8 +167,12 @@ blog5 = Blog.new Date.today, lissa, <<BLOG_ENTRY
 BLOG_ENTRY
 
 p lissa.blogs
-p blog5.get_summary
 
+
+blog5.date = Date.parse('2009-01-02')
+blog5.user = User.new 'disloyalist.party'
+blog5.text = "From the school of revision, Comes the standard inventor's rule, Books of subtle notation Compositions, all original\n" 
+p blog5.get_summary
 
 
 
