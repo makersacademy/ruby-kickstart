@@ -17,7 +17,3 @@ def alternate_words(string)
   end
   return_array
 end
-
-print alternate_words("Lorem ipsum dolor sit amet.")
-print alternate_words("Can't we all get along?")
-print alternate_words("Elementary, my dear Watson!")
