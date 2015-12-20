@@ -48,16 +48,12 @@ class BeerSong
     n == 1 ? "bottle" : "bottles"
   end
 
-    def verse(n)
-      if n.zero?
-        String.new
-      else
+  def verse(n)
       puts "#{write_number(n)} #{plural(n)} of beer on the wall,".capitalize
       puts "#{write_number(n)} #{plural(n)} of beer,".capitalize
       puts "Take one down, pass it around,"
       puts "#{write_number(n-1)} #{plural(n-1)} of beer on the wall.".capitalize
-    end
-    end
+  end
 
   def print_song
     beers.downto 1 do
@@ -66,6 +62,3 @@ class BeerSong
   end
 
 end
-
-song = BeerSong.new(30)
-puts song.print_song
