@@ -7,6 +7,11 @@
 
 class String
   def every_other_char
+  	to_return = ''
+  	each_chair.with_index do |chair, index|
+  		to_return << char if index.even?
+  	end
+  	to_return
   end
   
 end
