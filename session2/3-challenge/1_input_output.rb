@@ -7,7 +7,20 @@
 # Standard input will be like "9 2\n" and will expect you to print
 # "11\n7\n18\n" to standard output.
 
+# ORIGINAL ATTEMPT
+# def sum_difference_product
+# input = gets.chars.split { |integer| integer.to_i }
+# a = input[0]
+# b = input[1]
+# print a + b
+# print a - b
+# print a * b
+# end
+
 def sum_difference_product
-  # your code goes here
-  
+a , b = gets.split.collect { |num| num.to_i }
+
+print a + b
+print a - b
+print a * b
 end
