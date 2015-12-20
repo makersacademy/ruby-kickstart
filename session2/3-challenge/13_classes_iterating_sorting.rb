@@ -61,8 +61,90 @@
 #                       I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,
 #                       All my labor will be lost with time
 
+#blog5.get_date()
+#blog5.get_user()
+#blog5.get_text()
 
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+	attr_accessor :username, :blogs_array
+
+	def initialize(username)
+		@username = username
+		@blogs_array = []
+	end
+
+	def add_blog(date, text)
+		b = Blog.new(date, username, text)
+		blogs_array.push(b)
+		return b
+	end
+
+	def blogs
+		return blogs_array.sort{|x,y| y.date<=>x.date}
+	end
+end
+
+class Blog
+
+	attr_accessor :date, :user, :text
+
+	def initialize(date, user, text)
+		@date = date
+		@user = user
+		@text = text
+	end
+
+	def summary
+		text.split(/\s+/, 11)[0...10].join(' ')
+	end 
+
+	def ==(other)
+		if date == other.date && user == other.user && text == other.text
+			true
+		else
+			false
+		end
+	end
+
+
+  	def entry
+    	"#{user.username} #{date}\n#{text}"
+  	end
+
+	def to_s
+   		"#{user} on date #{date}: first 10 words are '#{self.summary()}' "
+  	end
+end
+
+#user = User.new("username")
+#user.add_blog("{ 2009, 4, 15 }","ciao")
+#user.add_blog("{ 2009, 4, 17 }", "belli")
+#user.add_blog("{ 2005, 4, 16 }", "mamma")
+
+#puts user.blogs
+
+
+#blog5 = Blog.new Date.today, "lissa", <<BLOG_ENTRY
+#Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci nunc, porta non tristique eu, auctor tincidunt mauris.
+#Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vitae nibh sapien. Curabitur
+#eget eros bibendum justo congue auctor non at turpis. Aenean feugiat vestibulum mi ac pulvinar. Fusce ut felis justo, in
+#porta lectus.
+#BLOG_ENTRY
+
+#puts blog5
+
+#blog6 = Blog.new Date.today, "lissa", "ok ok"
+
+
+u = User.new("ettoremaiorana")
+u.add_blog(Date.parse("2015-12-20"), "ciao ciao ciao")
+u.add_blog(Date.parse("2015-11-20"), " ciao ciao")
+
+
+#blogs_array = [blog5, blog6]
+#puts blogs_array.sort{|x,y| y.date<=>x.date}.first
