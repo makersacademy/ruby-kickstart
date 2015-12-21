@@ -13,6 +13,6 @@ def alternate_words(string)
 	result = []
 	array = string.split
 		array.select.with_index do |word, i|
-			result << word if i.odd?
+			result << word if i.even?
 		end
 end
