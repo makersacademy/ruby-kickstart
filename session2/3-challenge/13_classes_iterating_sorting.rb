@@ -68,19 +68,18 @@
 require 'date'
 
 class User
-  attr_accessor :username, :entries
+  attr_accessor :username, :blogs
 
   def initialize(username)
     self.username = username
-    self.entries = []
+    self.blogs = []
   end
 
   def add_blog(date, text)
-    Blog.new(date, self, text)
-  end
-
-  def blogs
-    self.entries.sort {|a,b| b.date <=> a.date}
+    new_blog = Blog.new(date, self, text)
+    self.blogs << new_blog
+    self.blogs = self.blogs.sort_by {|blog| blog.date}.reverse
+    new_blog
   end
 end
 
@@ -89,7 +88,6 @@ class Blog
 
   def initialize(date, user, text)
     self.date, self.user, self.text = date, user, text
-    self.user.entries << self
   end
 
   def entry
@@ -104,3 +102,18 @@ class Blog
     (self.user == other.user && self.date == other.date && self.text == other.text)
   end
 end
+
+# lissa = User.new 'QTSort'
+# lissa.username                  # => "QTSort"
+# puts lissa.blogs                     # => []
+#
+# lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
+# puts lissa.blogs                     # => [ blog1 ]
+#
+# blog1 = lissa.blogs.first
+# puts blog1.user                      # => lissa
+#
+# Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"                                    # we'll call this blog2
+# Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"              # we'll call this blog3
+# Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best ^_^"   # we'll call this blog4
+# puts lissa.blogs                     # => [ blog1 , blog4 , blog2 , blog3 ]
