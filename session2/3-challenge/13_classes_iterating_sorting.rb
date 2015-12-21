@@ -67,32 +67,46 @@
 # don't spend too much time worrying about them :)
 require 'date'
 
-class Users
+class User
+  attr_accessor "username", "blogs"
+
   def initialize(username)
     @username = username
+    $username = @username
+    self.blogs = []
   end
 
-  def add_blog
+  def add_blog(date, text)
     @date = date
     @text = text
+    added_blog = Blog.new(date, self, text)
+    blogs.push(added_blog)
+    self.blogs = blogs.sort_by {|x| x.date}.reverse
+    added_blog
   end
-
-  def blogs #a method blogs which returns an array of all blogs the user has written, they should be in reverse chronological order (newest first)
-
-  end
-
-  attr_accessor "username"
 
 end
 
 class Blog
 
-  attr_accessor "date", "text", "user"
+  attr_accessor "date", "text", "user", "username"
 
   def initialize(date, user, text)
     @date = date
     @user = user
+    $user = @user
     @text = text
   end
 
+  def ==(other)
+    date == other.date && user == other.user && text == other.text
+  end
+
+  def summary
+    @text.split[0..9].join(" ")
+  end
+
+  def entry
+    return  "#{$username} #{@date}\n#{@text}"
+  end
 end
