@@ -1,5 +1,5 @@
 # Given an array of elements, return true if any element shows up three times in a row
-#
+
 # Examples:
 # got_three? [1, 2, 2, 2, 3]  # => true
 # got_three? ['a', 'a', 'b']  # => false
@@ -8,6 +8,7 @@
 
 def got_three?(array)
   counter = 1
+
   previous_item = ""
   is_three = false
   array.each do |item|
