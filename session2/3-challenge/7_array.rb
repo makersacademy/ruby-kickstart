@@ -9,3 +9,10 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+	string_array = Array.new
+	string_array = string.scan(/[\w'’]+/)
+	string_array.values_at(* string_array.each_index.select {|i| i.even?})
+end
+
+puts alternate_words("Would a dating service on the net be frowned upon . . . ? I hope not. But even if it is, don’t let that stop you from notifying me via net mail if you start one.")
