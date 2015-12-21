@@ -17,4 +17,18 @@
 
 class Person
 
+	attr_accessor 'name', 'age'
+
+	def initialize (name, age)
+		@name = name
+		@age = age
+	end
+
+	def birthday
+		@birthday = @age += 1
+	end
 end
+
+# += adds left operand to the right operand and assign the result to left operand
+
+# birthday here is age +1, not birth date!

@@ -65,4 +65,66 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
+
 require 'date'
+
+# defines a class User
+class User
+
+	# creates reader & writer (getter & setter) methods for username and blogs
+	attr_accessor :username, :blogs
+
+	# @username = username is directly setting the variable
+	# self.username = username would call any function named 'username', but if there isn't one, will revert to returning the variable of the same, and will set variable
+
+	def initialize(username)
+		# sets instance variable @username to username passed in, and sets instance variable @blogs to empty array
+		@username = username
+		@blogs = []
+	end
+
+
+	def add_blog(date, text)
+		# creates a new instance of the Blog class, and assigns to 'added_blog' variable
+		# adds the variable to the array 'blogs'
+		# sorts the array 'blogs' by reverse date order, and assigns this to the @blogs instance variable
+		# returns the added blog variable
+		added_blog = Blog.new(date, self, text)
+		blogs << added_blog
+		@blogs = blogs.sort_by { |blog| blog.date }.reverse
+		added_blog
+	end
+end
+
+# defines a class Blog
+class Blog
+
+	# creates reader & writer (getter & setter) methods for date, user and text
+	attr_accessor :date, :user , :text
+
+	def initialize (date, user, text)
+		# sets instance variables @date, @user, @text to date, user and text passed in	
+		@date = date
+		@user = user
+		@text = text
+	end
+
+	def summary
+		# calls .split method on the variable 'text', returning the first 10 words, and then calls.join on those 10 words 
+		text.split[0..9].join(' ')
+	end
+
+	 def entry
+	 	# function that returns the username, date and text of a blog entry
+	    "#{user.username} #{date}\n#{text}"
+	 end
+
+	 def ==(other)
+	 	# function to determine if two blog entries are equal, by checking if they have the same date, user and text
+	     date == other.date &&
+	     user == other.user &&
+	     text == other.text
+	 end
+end
+
+
