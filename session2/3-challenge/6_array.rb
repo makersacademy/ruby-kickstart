@@ -15,9 +15,19 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
-require 'Prime'
-
 def prime_chars?(array)
   array_length = array.join.length
-  Prime.prime?(array_length)
+  is_prime = true
+
+  for i in 2..array_length-1
+    if array_length % i == 0
+      is_prime = false
+    end
+  end
+
+  if array_length < 2
+    is_prime = false
+  end
+
+  is_prime
 end
