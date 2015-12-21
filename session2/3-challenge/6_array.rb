@@ -15,3 +15,9 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require 'Prime'
+
+def prime_chars?(array)
+  array_length = array.join.length
+  Prime.prime?(array_length)
+end
