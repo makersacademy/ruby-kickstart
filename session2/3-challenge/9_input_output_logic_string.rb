@@ -23,9 +23,16 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
-def deaf_grandma
 
+
+def deaf_grandma
+  loop do
+    input = gets.chomp
+    break if input == 'BYE'
+    puts input != input.upcase || input == "" ? "HUH?! SPEAK UP, SONNY!" : "NO, NOT SINCE 1938!"
+  end
 end
+
 
 
 
