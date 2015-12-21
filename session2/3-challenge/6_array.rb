@@ -17,11 +17,18 @@
 
 def prime_chars?(array)
 
-  count = 0
+  chars = array.join.length
 
-  array.each { |x| count += x.size }
+  if chars == 2 || chars == 3
+    return true
 
-  require 'Prime'
-  Prime.prime?(count)
+  elsif chars == 0 || chars == 1
+    return false
 
+  else
+    for i in 2...chars
+      return false if chars % i == 0
+    end
+
+  end
 end
