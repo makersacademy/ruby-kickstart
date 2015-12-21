@@ -1,3 +1,4 @@
+require 'date'
 # DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
 
 # Define a class called User that keeps track of a person's username
@@ -5,6 +6,21 @@
 # it should have a method add_blog which accepts a date and text
 # it should have a method blogs which returns an array of all blogs the user has written
 # they should be in reverse chronological order (newest first)
+class User
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+    @username =username
+    @blogs = []
+  end
+
+  def add_blog(date, text)
+    blog_new = Blog.new(date, self, text)
+    blogs << blog_new
+    @blogs = blogs.sort_by {|blog| blog.date}.reverse
+    blog_new
+  end
+end
 #
 # Define a class called Blog that could be used to store an entry for your web log.
 # The class should have a getter and setter methods: text , date , user
@@ -16,7 +32,30 @@
 #      def ==(other)
 #        return self.date == other.date
 #      end
+class Blog
+attr_accessor :text, :date, :user
+def initialize (date, user, text)
+  @date = date
+  @user = user
+  @text = text
+end
 
+def entry
+  return "#{user.username} #{date}\n#{text}"
+end
+
+def summary
+  if @text.split.length < 10
+    return @text
+  else
+    textarray = @text.split[0..9]
+    return textarray.join(" ")
+  end
+end
+def ==(other)
+  @date == other.date && @user == other.user && @text == other.text
+  end
+end
 
 
 # ==========  EXAMPLE  ==========
@@ -65,4 +104,3 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
-require 'date'
