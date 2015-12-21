@@ -5,5 +5,7 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+	a = string.split("")
+	indices = a.each_index.select {|i| a[i] == "r" || a[i] == "R"}.map { |i| i + 1}
+	a.values_at(*indices).join
 end
