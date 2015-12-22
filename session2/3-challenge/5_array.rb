@@ -14,3 +14,9 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+# array.each_index.select { |n| array.include? n % 3 == 1 }
+
+def mod_three(array)
+new_array = array.map { |n| n % 3 } #here you can use map instead of select to have the full array
+new_array.reject { |n| n == 0 }  #it's fine no - time to rake it? yep
+end
