@@ -38,17 +38,15 @@ class Fraction
   end
   
   def numerator
-    return @numer
+    @numer
   end
   
   def denominator
-    return @denom
+    @denom
   end
   
   def to_s
-    
     return "#{@numer}/#{@denom}"
-    
   end
   
   def to_f
@@ -57,18 +55,8 @@ class Fraction
   end
   
   def lowest
-    i = @numer
-    while i > 0
-      numer_store = @numer%i
-      denom_store = @denom%i
-      if numer_store == 0 && denom_store == 0
-        @numer = @numer/i
-        @denom = @denom/i
-        break
-      end
-      i -= 1
-    end
-    self
+    divisor = gcd(numerator, denominator)
+    Fraction.new(numerator/divisor, denominator/divisor)
   end
   
   def gcd(a,b)
@@ -86,6 +74,8 @@ f.numerator = 50
 f.denominator = 100
 p f.to_s               # => "50/100"
 p f.to_f               # => 0.5
+
+
 
 
 
