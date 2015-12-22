@@ -4,5 +4,9 @@
 # add_more_ruby("The sad dad said sad stuff.")  # => "The happy dad said happy stuff."
 # add_more_ruby("Sad times are ahead!")         # => "Happy times are ahead!"
 
+# Stack overflow notes: To replace all instances use gsub/gsub! (ie. "global substitution"):
+# sentence.gsub! 'Robert', 'Joe'
+
 def add_more_ruby(string)
+	string.gsub! 'sad', 'happy'
 end
