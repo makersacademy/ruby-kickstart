@@ -66,47 +66,53 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
-$blog_store = []
-$i = 0
+
 class User
+  attr_accessor :username, :blogs
   
   def initialize(username)
-    @username = username
+    self.username = username
+    self.blogs    = Array.new
   end
   
-  def username
-    @username
-  end
+
   
   def add_blog(date, text)
-    $i += 1
-    $blog_store[$i-1] = Array.new
-    $blog_store[$i-1][1] = "blog#{$i}"
-    $blog_store[$i-1][0] = date
-    $blog_store[$i-1][2] = text
+    added_blog = Blog.new(date, self, text)
+    blogs << added_blog
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+    added_blog
   end
   
-  def blogs
-    @blog_return = Array.new
-    p $blog_store
-    $blog_store = $blog_store.sort.reverse
-    $blog_store.each {|x|
-      @blog_return.push(x[1])
-    }
-    return @blog_return
-  end
 end
 
 class Blog 
   
-  def initialize(date, user, text)
-    @date = date
-    @user = user
-    @text = text
-    @repeat = 0
-    $i += 1
-    store
-    puts "we'll call this blog#{$i}"
+  def date
+    @date
+  end
+  def date=(new_date)
+    @date = new_date
+  end
+  
+  def user
+    @user
+  end
+  def user=(new_user)
+    @user = new_user
+  end
+  
+  def text
+    @text
+  end
+  def text=(new_text)
+    @text = new_text
+  end
+  
+  def initialize(new_date, new_user, new_text)
+    self.date = new_date
+    self.user = new_user
+    self.text = new_text
   end
   
   def store
@@ -118,61 +124,40 @@ class Blog
     $blog_store[@array_position-1][2] = @text
   end
   
-  def get_summary
-    string_return = ""
-    ten_array = Array.new
-    puts $blog_store
-    ten_array = $blog_store[0][2].split
-    for j in 0...10
-      string_return = string_return + " " + ten_array[j]
-    end
-    string_return
+  def summary
+    text.split[0..9].join(' ')
   end
   
-  def date=(new_date)
-    @date = new_date
-    @repeat = 1
-    store
+  def entry
+    "#{user.username} #{date}\n#{text}"
   end
-  
-  def text=(new_text)
-    @text = new_text
-    @repeat = 1
-    store
+
+  def ==(other)
+    date   == other.date &&
+      user == other.user &&
+      text == other.text
   end
-  
-  def user=(new_user)
-    @user = new_user
-    @repeat = 1
-    store
-  end
-    
     
 end
 
 lissa = User.new 'QTSort'
-p lissa.username 
+p lissa.username                 
+p lissa.blogs   
+
 lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
-p lissa.blogs
-Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"
-Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"
-Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best"
-p lissa.blogs
+lissa.blogs                    
 
-blog5 = Blog.new Date.today, lissa, <<BLOG_ENTRY
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci nunc, porta non tristique eu, auctor tincidunt mauris.
- Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vitae nibh sapien. Curabitur
- eget eros bibendum justo congue auctor non at turpis. Aenean feugiat vestibulum mi ac pulvinar. Fusce ut felis justo, in
- porta lectus."
-BLOG_ENTRY
+blog1 = lissa.blogs.first
+p blog1.user                     
 
-p lissa.blogs
+Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"                                    
+Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"              
+Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best ^_^"   
+p lissa.blogs   
 
 
-blog5.date = Date.parse('2009-01-02')
-blog5.user = User.new 'disloyalist.party'
-blog5.text = "From the school of revision, Comes the standard inventor's rule, Books of subtle notation Compositions, all original\n" 
-p blog5.get_summary
+
+
 
 
 
