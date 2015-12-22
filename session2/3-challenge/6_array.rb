@@ -15,3 +15,23 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(strings)
+
+  strings.join.length.isprime?
+  
+end
+
+class Integer
+
+  def isprime?
+    return false if self < 2
+    i = 2 
+    while i <= self/2
+      return false if self % i == 0
+      i += 1
+    end
+  return true
+  end
+
+end
+
