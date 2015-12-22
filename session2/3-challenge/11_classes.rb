@@ -99,7 +99,7 @@ class BeerSong
       input_number = number(@beers)
       puts "#{input_number.capitalize} bottles of beer on the wall." if @beers !=1
       puts "#{input_number.capitalize} bottle of beer on the wall." if @beers ==1
-      puts
+      
         
     end
   end
@@ -108,5 +108,7 @@ end
 
 yay = BeerSong.new 99
 yay.print_song
+
+
 
 
