@@ -66,3 +66,99 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+  attr_accessor :username, :blogs
+  
+  def initialize(username)
+    self.username = username
+    self.blogs    = Array.new
+  end
+  
+
+  
+  def add_blog(date, text)
+    added_blog = Blog.new(date, self, text)
+    blogs << added_blog
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+    added_blog
+  end
+  
+end
+
+class Blog 
+  
+  def date
+    @date
+  end
+  def date=(new_date)
+    @date = new_date
+  end
+  
+  def user
+    @user
+  end
+  def user=(new_user)
+    @user = new_user
+  end
+  
+  def text
+    @text
+  end
+  def text=(new_text)
+    @text = new_text
+  end
+  
+  def initialize(new_date, new_user, new_text)
+    self.date = new_date
+    self.user = new_user
+    self.text = new_text
+  end
+  
+  def store
+    @array_position = $blog_store.length + 1 if @repeat == 0
+    @array_position = 1 if @repeat == 1
+    $blog_store[@array_position-1] = Array.new
+    $blog_store[@array_position-1][1] = "blog#{$i}"
+    $blog_store[@array_position-1][0] = @date
+    $blog_store[@array_position-1][2] = @text
+  end
+  
+  def summary
+    text.split[0..9].join(' ')
+  end
+  
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def ==(other)
+    date   == other.date &&
+      user == other.user &&
+      text == other.text
+  end
+    
+end
+
+lissa = User.new 'QTSort'
+p lissa.username                 
+p lissa.blogs   
+
+lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
+lissa.blogs                    
+
+blog1 = lissa.blogs.first
+p blog1.user                     
+
+Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"                                    
+Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"              
+Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best ^_^"   
+p lissa.blogs   
+
+
+
+
+
+
+
+

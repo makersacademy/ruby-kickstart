@@ -16,5 +16,34 @@
 #
 
 class Person
-
+  
+  def initialize(name_input, age_input)
+    @name_input = name_input
+    @age_input = age_input
+  end
+  
+  def name=(new_name)
+    @name_input = new_name
+  end
+  
+  def name 
+    @name_input
+  end
+  
+  def age=(new_age)
+    @age_input = new_age
+  end
+  
+  def age
+    @age_input
+  end
+  
+  def birthday
+    @age_input += 1
+  end
 end
+
+
+
+
+
