@@ -29,15 +29,18 @@ class User
   def add_blog(date, text)
     self.date = date
     self.text = text
+    @blog_hash << date => text
   end
 
-  def blogs(array)
-    array.sort
+  def blogs
+    @blog_hash = {}
+    @blog_hash.sort
   end
 
 end
 
 class Blog
+
 end
 
 
@@ -49,11 +52,11 @@ end
 # ==========  EXAMPLE  ==========
 #
 lissa = User.new 'QTSort'
-puts lissa.username                  # => "QTSort"
-# lissa.blogs                     # => []
+puts lissa.username                  # => "QTSort
+puts lissa.blogs                     # => []
 #
-# lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
-# lissa.blogs                     # => [ blog1 ]
+lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
+puts lissa.blogs                     # => [ blog1 ]
 #
 # blog1 = lissa.blogs.first
 # blog1.user                      # => lissa

@@ -31,7 +31,7 @@ class Fraction
   end
 
   def to_f
-    (numerator/denominator).to_f
+    numerator/denominator.to_f
   end
 
   def to_s
@@ -44,21 +44,7 @@ class Fraction
   end
 
   def lowest
-    numerator = numerator / gcd(numerator,denominator)
-    denominator = denominator / gcd(numerator,denominator)
+    Fraction.new(numerator / gcd(numerator,denominator), denominator / gcd(numerator,denominator) )
   end
 
 end
-
-
-f = Fraction.new 20, 60
-puts f.numerator          # => 20
-puts f.denominator        # => 60
-puts f.to_s               # => "20/60"
-puts f.lowest.to_s        # => "1/3"
-f.numerator = 50
-f.denominator = 100
-puts f.to_s               # => "50/100"
-puts f.to_f               # => 0.5
-f.numerator = 0
-puts f.lowest
