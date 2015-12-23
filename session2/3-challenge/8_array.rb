@@ -6,3 +6,26 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three? (array_elements)
+
+	array_elements.each_cons(3) { |x, y, z| return true if x == y && x == z && y == z }  
+
+	false
+
+end
+
+puts got_three? ([1, 2, 2, 2, 3])
+
+#array_elements.each_cons(3) do |x, y, z|  
+#
+#	if x == y && x == z && y == z 
+#
+#		return true 
+#	
+#	else 
+#
+#		return false 
+#	
+#	end
+#
+#	end
