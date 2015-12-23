@@ -23,10 +23,36 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
+#ORIGINAL IDEA def deaf_grandma
+#  def prompt
+#    puts 'HUH?! SPEAK UP, SONNY!'
+#  end
+#  answer = gets.chomp
+#    prompt
+#    while (answer) && (answer.lowercase) # while there's an answer and it's in lowercase
+#      prompt #enter the prompt
+#    end
+#    while (answer) && (answer.capitalize) # while there's an answer and it's in capitals
+#        puts "NO, NOT SINCE 1938!" # reply with this
+#      end
+#      if answer ==
+#          puts 'BYE'
+#        else
+#          prompt
+#  end
+#end
+
 def deaf_grandma
-
+  while line = gets
+    line.chomp!
+    break if line == "BYE"
+    if line == line.upcase && line != ""
+      puts "NO, NOT SINCE 1938!"
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+  end
 end
-
 
 
 
