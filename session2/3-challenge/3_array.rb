@@ -6,7 +6,19 @@
 # "".every_other_char         # => ""
 
 class String
-  def every_other_char
-  end
   
+  def every_other_char
+
+  	new_array = self.split("")
+
+  	new_array_2 = []
+
+  	new_array.each_index {|x| new_array_2 << new_array[x] if x.even?}
+
+  	new_array_2.join("")
+
+
+  end
+
 end
+
