@@ -8,5 +8,11 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(nums_array)
 
+ 	#numbers.select { |n| numbers.include? n*n }.sort
+
+	nums_array.select { |x| nums_array.include? x*x }.sort
+
+end
 
