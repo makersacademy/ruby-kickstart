@@ -15,3 +15,11 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? (array)
+	length = array.join().length
+	(2...length).each do |num|
+		return false if length % num == 0
+	end
+	return true unless array == [] || array == [""] || length == 0 || length == 1
+	false
+end
