@@ -9,3 +9,19 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words (sentence)
+
+	no_punctuation = sentence.gsub(/[ ! @ $ # % ^ & * ( ) \- = _ + [ ] : ; , . \/ < > ? \\ | ]/, " ")
+
+	new_array = no_punctuation.split(" ")
+
+	new_array_2 = []
+
+	new_array.each_index { |x| new_array_2 << new_array[x] if x.even?}
+
+	new_array_2
+
+end
+
+puts alternate_words ("Lorem ipsum dolor sit amet.")
+
