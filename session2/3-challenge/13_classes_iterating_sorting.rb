@@ -17,12 +17,39 @@
 #        return self.date == other.date
 #      end
 
+require 'date'
+
+class User
+  attr_accessor 'username', 'date', 'text'
+
+  def initialize(username)
+    @username = username
+  end
+
+  def add_blog(date, text)
+    self.date = date
+    self.text = text
+  end
+
+  def blogs(array)
+    array.sort
+  end
+
+end
+
+class Blog
+end
+
+
+
+
+
 
 
 # ==========  EXAMPLE  ==========
 #
-# lissa = User.new 'QTSort'
-# lissa.username                  # => "QTSort"
+lissa = User.new 'QTSort'
+puts lissa.username                  # => "QTSort"
 # lissa.blogs                     # => []
 #
 # lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
@@ -60,9 +87,3 @@
 #                       From the school of revision, Comes the standard inventor's rule, Books of subtle notation Compositions, all original
 #                       I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,
 #                       All my labor will be lost with time
-
-
-
-# date docs are at: http://ruby-doc.org/core/classes/Date.html
-# don't spend too much time worrying about them :)
-require 'date'
