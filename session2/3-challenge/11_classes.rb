@@ -24,24 +24,41 @@
 class BeerSong
   attr_accessor 'num_bottles'
 
-  def initialize
+  def initialize(num_bottles)
     num_bottles = 0 if num_bottles < 0
     num_bottles = 99 if num_bottles > 99
     self.num_bottles = num_bottles
   end
 
   def beer_song
-    
 
-  num_bottles=99
+    num_bottles.downto 1 do |n|
+    	puts  "#{num_bottles_str n} #{bottles n} of beer on the wall,"   ,
+            "#{num_bottles_str n} #{bottles n} of beer,"               ,
+    	      "Take one down pass it around,"            ,
+            "#{num_bottles_str n-1} #{bottles n-1} of beer on the wall."
+    end
 
-  while num_bottles>1
-  	print "#{num_bottles} bottles of beer on the wall, #{num_bottles} bottles of beer."
-  	num_bottles-=1
-  	puts " Take one down pass it around #{num_bottles} bottles of beer on the wall."
   end
 
-  puts "1 bottle of beer on the wall, 1 bottle of beer. Take it down pass it around, no more bottles of beer on the wall!"
+  def bottles(n)
+    n == 1 ? "bottle" : "bottles"
+  end
 
+  def num_bottles_str(n)
+    single_nums = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "tewelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+    tens_nums = ["ten", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eight", "ninety"]
+
+    if n>=0 && n<20
+      single_nums[n].capitalize
+    elsif n%10==0
+      tens_nums[n/10 -1].capitalize
+    else
+      "#{tens_nums[(n/10-1).to_i]}-#{single_nums[n%10]}".capitalize
+    end
+  end
 
 end
+
+testing = BeerSong.new 99
+testing.beer_song

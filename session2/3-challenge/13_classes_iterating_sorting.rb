@@ -34,7 +34,7 @@ class User
 
   def blogs
     @blog_hash = {}
-    @blog_hash.sort
+    @blog_hash.sort 
   end
 
 end

@@ -32,6 +32,7 @@ class Fraction
 
   def to_f
     numerator/denominator.to_f
+    # why doesn't this work with brackets around it? 
   end
 
   def to_s
