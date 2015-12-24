@@ -47,7 +47,7 @@ class BeerSong
 
   def num_bottles_str(n)
     single_nums = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "tewelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
-    tens_nums = ["ten", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eight", "ninety"]
+    tens_nums = ["ten", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"]
 
     if n>=0 && n<20
       single_nums[n].capitalize
