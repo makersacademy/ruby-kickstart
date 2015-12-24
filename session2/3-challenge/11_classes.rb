@@ -35,7 +35,7 @@ class BeerSong
     num_bottles.downto 1 do |n|
     	puts  "#{num_bottles_str n} #{bottles n} of beer on the wall,"   ,
             "#{num_bottles_str n} #{bottles n} of beer,"               ,
-    	      "Take one down pass it around,"            ,
+    	      "Take one down, pass it around,"            ,
             "#{num_bottles_str n-1} #{bottles n-1} of beer on the wall."
     end
 
