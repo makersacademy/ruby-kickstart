@@ -59,6 +59,3 @@ class BeerSong
   end
 
 end
-
-testing = BeerSong.new 99
-testing.print_song
