@@ -84,7 +84,7 @@ class User
 
 		blogList << Blog.new(date, username, text)
 
-		blogList
+		return blogList.last
 			
 	end
 
