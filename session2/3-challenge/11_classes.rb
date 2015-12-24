@@ -30,7 +30,7 @@ class BeerSong
     self.num_bottles = num_bottles
   end
 
-  def beer_song
+  def print_song
 
     num_bottles.downto 1 do |n|
     	puts  "#{num_bottles_str n} #{bottles n} of beer on the wall,"   ,
@@ -61,4 +61,4 @@ class BeerSong
 end
 
 testing = BeerSong.new 99
-testing.beer_song
+testing.print_song
