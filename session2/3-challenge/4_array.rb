@@ -9,4 +9,12 @@
 # This time you will have to define the method, it's called: get_squares
 
 
-
+def get_squares (array)
+  squares =[]
+  for num in array
+    if array.include? (num**2)
+      squares << num
+    end
+  end
+  squares.sort
+end
