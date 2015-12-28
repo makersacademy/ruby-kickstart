@@ -15,3 +15,25 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+class Integer
+def is_prime?
+	return false if self < 2
+	2.upto Math.sqrt(self) do |i| 
+	return false if self % i == 0
+end
+    true
+	end
+end
+
+def prime_chars?(array)
+array.join.length.is_prime?
+
+end
+
+
+
+
+	#1) join the array to make a string
+	#2) find the length of the string
+	#3) if length is a prime number return true.
+
