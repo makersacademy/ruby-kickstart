@@ -7,9 +7,9 @@
 
 class String
   def every_other_char
-  	array = chars.to_a
-    array.each_with_index {|a, b| print a if b % 2 ==0 }.to_s
+  	array=chars.to_a
+  	array.select.each_with_index { |_, i| i.even? }.join
   end
+
 end
 
-"abcdefg".every_other_char
