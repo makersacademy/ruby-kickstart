@@ -8,10 +8,8 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-def get_squares(array)
-	array_to_return = array.select {|x| array.include? x*x}.sort!
+def get_squares(numbers)
+  numbers.select { |n| numbers.include? n*n }.sort
 end
-
-get_squares [9, 3, 81]
 
 
