@@ -17,24 +17,21 @@
 
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
+
 def hi_hi_goodbye
-greeting = "hello! please enter a number!!"
-puts greeting
-n = gets.chomp
-if n == "bye"
-	puts "hi"
-else
-  while n != "bye"
-	puts "hi "*n.to_i
-    puts greeting
-    n = gets.chomp
-    if 
-    	n == "bye"
-    	break
+puts "please enter a number: "
+num = gets.chomp 
+num.to_i.times {|i| puts "hi"} 
+while num != "bye"
+	puts "please enter a number: "
+    num = gets.chomp 
+    num.to_i.times {|i| puts "hi"} 
+    if num == "bye"
+    	puts "goodbye"
     end
 end
 end
-end
+
 
 
 
@@ -43,3 +40,6 @@ end
 # This way you can try it out by running "$ ruby 2_input_output_control.rb"
 # but it will still work for our tests
 hi_hi_goodbye if $0 == __FILE__
+
+
+
