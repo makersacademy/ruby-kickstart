@@ -24,11 +24,29 @@
 # USER:     BYE
 
 def deaf_grandma
-
+	while user_input = gets.chomp
+		break if user_input == "BYE"
+		if user_input == user_input.upcase && user_input != ""
+			puts "NO, NOT SINCE 1938!"
+		else 
+			puts "HUH?! SPEAK UP, SONNY!"
+		end
+	end
 end
 
 
 
+
+=begin IDEAS
+1. prompt user for input (gets.chomp)
+	3 way decision split -
+		1. if you dont type caps she replies: HUH?! SPEAK UP, SONNY!
+		2. if you type all caps she replies: NO, NOT SINCE 1938!
+		3. if you type BYE in caps the program ends.
+		
+
+
+=end
 
 
 # This will call your code so you can run it from the terminal.

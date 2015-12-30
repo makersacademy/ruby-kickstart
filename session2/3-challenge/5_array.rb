@@ -14,3 +14,18 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+=begin 
+1, Takes an array of numbers
+2, returns a new array containing the remainder of the orig number / 3
+3, skips any numbers that are divisible by 3
+
+=end
+
+def mod_three(numbers)
+	return_array = []
+	numbers.each do | n |
+		next if n % 3 == 0
+		return_array << n % 3
+	end
+	return_array
+end

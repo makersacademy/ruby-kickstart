@@ -15,3 +15,33 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+=begin 
+
+1, method takes an array of strings
+	join all strings in array together using .join
+	.length to find the length
+2, method returns true if the sum of all the characters is prime. 
+	need to check remainders from 2 up to the number (so divide length by every number from 2 untill length)
+3, return the answer.
+
+=end
+
+def prime_chars?(array)
+	array_length = array.join.length
+	return false if array_length < 2
+	(2..array_length).each do | d | 
+		return true if array_length % d == 0
+	end
+	false
+end
+
+
+
+#needs to iterate using numbers from 2 up untill itself checking if it gets remainder 0 when divided
+
+
+
+
+
+
+
