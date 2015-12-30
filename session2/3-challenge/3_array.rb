@@ -8,5 +8,6 @@
 class String
   def every_other_char
   end
-  
 end
+
+
