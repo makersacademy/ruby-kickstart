@@ -6,4 +6,3 @@ gem 'helloworld'
 gem 'sinatra'
 gem 'nokogiri'
 gem 'capybara'
-gem ‘to_words’
