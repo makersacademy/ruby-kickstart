@@ -8,18 +8,7 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  if ARGV.empty?
-    input = gets.chomp.split
-    puts input[0].to_i + input[1].to_i 
-    puts input[0].to_i - input[1].to_i 
-    puts input[0].to_i * input[1].to_i 
-  else
-   n1 = ARGV[0]
-   n2 = ARGV[1]
-   puts n1.to_i + n2.to_i
-   puts n1.to_i - n2.to_i
-   puts n1.to_i * n2.to_i
- end
+  
 end
 
-sum_difference_product
+
