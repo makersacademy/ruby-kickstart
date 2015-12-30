@@ -1,3 +1,4 @@
+
 # Taken from http://pragprog.com/titles/fr_ltp/learn-to-program
 #
 # Write a Deaf Grandma program. Whatever you say to grandma (whatever
@@ -23,10 +24,26 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
+
+
+
 def deaf_grandma
+
+while (reply = gets.chomp) && (reply != 'BYE') 
+	
+	if reply == reply.upcase && reply != ""
+	
+		puts 'NO, NOT SINCE 1938!'
+	
+	else 
+		
+		puts 'HUH?! SPEAK UP, SONNY!'
+	
+	end
 
 end
 
+end
 
 
 
