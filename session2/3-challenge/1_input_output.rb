@@ -8,7 +8,6 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  
 end
 
 
