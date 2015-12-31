@@ -1,3 +1,5 @@
+#final solution
+
 # Write a method named every_other_char for strings that,
 # returns an array containing every other character
 #

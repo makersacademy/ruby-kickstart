@@ -1,3 +1,4 @@
+#final solution
 class BeerSong
   attr_accessor :beers
 

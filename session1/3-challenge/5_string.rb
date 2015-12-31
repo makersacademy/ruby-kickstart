@@ -1,3 +1,4 @@
+#final solution
 # Given a string, replace every instance of sad to happy
 # 
 # add_more_ruby("The clowns were sad.")         # => "The clowns were happy."

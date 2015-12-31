@@ -1,3 +1,5 @@
+#final solution
+
 # Prompt the user for a number, then read it in and print out "hi" that many times
 #
 # Repeat this process until the user submits "bye", then say "goodbye" and end the program

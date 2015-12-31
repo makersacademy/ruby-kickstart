@@ -1,3 +1,4 @@
+#final solution
 def arithmetic2(a, b)
   if a < b
     a / 2.0

@@ -1,3 +1,5 @@
+#final solution
+
 # Given an array of elements, return true if any element shows up three times in a row
 #
 # Examples:

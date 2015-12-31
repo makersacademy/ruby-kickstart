@@ -1,3 +1,5 @@
+#final solution
+
 # Make a person class that has a name, age, and birthday
 #
 # josh = Person.new 'Josh', 28

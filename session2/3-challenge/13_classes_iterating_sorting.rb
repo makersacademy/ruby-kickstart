@@ -1,3 +1,5 @@
+#final solution
+
 require 'date'
 
 class User

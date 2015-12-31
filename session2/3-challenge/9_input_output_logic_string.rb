@@ -1,3 +1,5 @@
+#final solution
+
 # Taken from http://pragprog.com/titles/fr_ltp/learn-to-program
 #
 # Write a Deaf Grandma program. Whatever you say to grandma (whatever

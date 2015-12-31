@@ -1,3 +1,5 @@
+#final solution
+
 class Integer
   def prime?
     return false if self < 2

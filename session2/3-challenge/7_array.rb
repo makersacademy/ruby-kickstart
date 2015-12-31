@@ -1,3 +1,5 @@
+#final solution
+
 # Given a sentence, return an array containing every other word.
 # Punctuation is not part of the word unless it is a contraction.
 # In order to not have to write an actual language parser, there won't be any punctuation too complex.

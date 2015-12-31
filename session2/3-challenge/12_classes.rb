@@ -1,3 +1,5 @@
+#final solution
+
 # DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
 
 # Define a class called Fraction
