@@ -23,24 +23,17 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
- puts "COME AND SAY HI TO YOUR GRANDMA!"
-i = gets.chomp
-
-while
-	i != i.upcase
-	puts "HUH? SPEAK UP SON!"
-	i = gets.chomp
-	while i == i.upcase
-		puts "NO! NOT SINCE " + (rand(1930..1950).to_s) + "!!!"
-		i = gets.chomp
-	  if i == "BYE"
-		break
-	end
-	end
+def deaf_grandma
+  while line = gets
+    line.chomp!
+    break if line == "BYE"
+    if line == line.upcase && line != ""
+      puts "NO, NOT SINCE 1938!"
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+  end
 end
-
-
-
 
 
 
