@@ -40,5 +40,3 @@ class BeerSong
     end.capitalize
   end
 end
-
-puts beers(22)
