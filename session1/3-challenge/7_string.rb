@@ -6,4 +6,25 @@
 
 def pirates_say_arrrrrrrrr(string)
 
+	new_string = ""
+
+	string.length.times do |index|
+		current_
+
+
+
+
+	#string.split("").each do|ch|
+	 #if ch == /r/i
+#	 	puts ch[+1]
+#	 end
+#	end
+
+
 end
+
+#{}"r".next
+
+
+
+#/[r]*/
