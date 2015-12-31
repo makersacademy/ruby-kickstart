@@ -26,10 +26,9 @@ def hi_hi_goodbye
   		num.to_i.times do |i|
   			print "hi "
   		end
-  	end
+  end
+  puts "goodbye"
 end
-
-
 
 
 # This will just invoke the method if you run this program directly
