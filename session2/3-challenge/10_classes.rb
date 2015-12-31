@@ -28,18 +28,3 @@ class Person
 	end
 end
 
-Jim = Person.new "Jimmy", 45
-
-puts Jim.birthday
-
-
-
-
-
-
-
-
-
-
-
-
