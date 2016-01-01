@@ -8,4 +8,14 @@
 # ten_twenty(6) # => 10
 
 def ten_twenty(n)
+
+even = 10
+
+if n%2 == 1
+even = 20
+
+else
+
+return even
+end
 end

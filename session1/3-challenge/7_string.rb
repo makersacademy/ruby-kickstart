@@ -6,4 +6,26 @@
 
 def pirates_say_arrrrrrrrr(string)
 
+string_array = string.chars.to_a
+output = ""
+x=0
+
+while x < string_array.size - 1
+
+
+if string_array[x] == "r"
+output << string_array[x+1]
+elsif string_array[x] == "R"
+output << string_array[x+1]
+
+end
+
+x += 1
+end
+
+
+return output
+
+
+ 
 end
