@@ -22,5 +22,33 @@
 # Add any additional methods you find helpful.
 
 
-# will review and submit later - solutions are not how I've done this before and I really need to review SELF
+# this code doesn't yet work (working on it still...) but feels much nicer than the solution provided
+
+class Beersong
+
+	attr_accessor :beer
+
+	def initialize(beer)
+		@beer = beer
+	end
+
+	def english_number(number)
+	if number < 0
+		return 'Please enter a positive number'
+	end
+	if number == 0
+		return 'zero'
+
+	num_at_start = 99
+	num_now > 2
+
+	while num_now > 2
+		puts english_number(num_now) + ' bottles of beer on the wall,'
+		puts english_number(num_now) + ' bottles of beer!'
+		num_now = num_now - 1
+		puts 'Take one down, pass it around,' 
+		puts english_number(num_now) + ' bottles of beer on the wall!'
+
+	end
+end
 
