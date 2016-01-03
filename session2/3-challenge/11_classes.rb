@@ -20,3 +20,7 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+
+# will review and submit later - solutions are not how I've done this before and I really need to review SELF
+

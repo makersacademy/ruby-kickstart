@@ -14,3 +14,11 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(numbers)
+  numbers.map { |number| number % 3 }.select { |number| number % 3 != 0 }
+end
+
+# noted that you can do this either way around, start with .map or .select
+
+# puts mod_three [4, 3, 5] works... 
+# but why does this method know numbers (param) can be an array and accepts arrays (when challenge 4 does not?)
