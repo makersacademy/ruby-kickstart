@@ -7,6 +7,11 @@
 
 class String
   def every_other_char
+array1 = self.split("")
+array2 = []
+array1.each_index { |x| array2 << array1[x] if x.even?}
+array2.join("")
+
   end
   
 end
