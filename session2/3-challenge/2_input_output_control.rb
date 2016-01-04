@@ -20,9 +20,23 @@
 
 def hi_hi_goodbye
   # your code here
-
+  def question
+    puts "Enter a number or say bye. Do it. Now."
+  end
+  
+  question
+  while (answer = gets) && (answer !~ /bye/)
+    answer.to_i.times {puts "hi "}
+    question
+  end
+  
+  puts "goodbye"
+  
+  
+  
+  
 end
-
+  
 
 
 

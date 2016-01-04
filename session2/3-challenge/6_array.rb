@@ -15,3 +15,27 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def is_prime? (number)
+  range = (2...(number))
+  if number == 2 || number == 3
+    return true
+  elsif number == 0 || number == 1
+    return false
+  elsif range.any? { |x| number % x == 0}
+    return false
+  else
+    return true 
+  end
+end
+
+def prime_chars? (array)
+  if is_prime? (array.join.length)
+    return true
+  else
+    return false
+  end
+end
+    
+    
+
+
