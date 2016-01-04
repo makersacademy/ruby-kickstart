@@ -11,7 +11,6 @@
 
 # <10 books => D, 10..20 books => C, >20 book =>B
 
-
 def grade(num_books, has_read_books)
 	case 
 	    when num_books < 10 then has_read_books == true ? "C" : "D"
