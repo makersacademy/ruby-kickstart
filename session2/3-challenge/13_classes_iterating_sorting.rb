@@ -109,3 +109,5 @@ class Blog
       text == other.text
   end
 end
+
+#..
