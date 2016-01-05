@@ -17,16 +17,63 @@
 #        return self.date == other.date
 #      end
 
+require 'date'
+
+class User
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+    self.username = username
+    self.blogs    = []
+  end
+
+  def add_blog(date, text)
+    added_blog = Blog.new(date, self, text)
+    blogs << added_blog
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+    added_blog
+  end
+end
+
+
+
+class Blog
+  attr_accessor :date, :user, :text
+
+  def initialize(date, user, text)
+    self.date = date
+    self.user = user
+    self.text = text
+  end
+
+  def summary
+    text.split[0..9].join(' ')
+  end
+
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def ==(other)
+    date   == other.date &&
+      user == other.user &&
+      text == other.text
+  end
+end
+
+
+
+
 
 
 # ==========  EXAMPLE  ==========
 #
-# lissa = User.new 'QTSort'
-# lissa.username                  # => "QTSort"
-# lissa.blogs                     # => []
+#lissa = User.new 'QTSort'
+#puts lissa.username                  # => "QTSort
+#puts lissa.blogs                     # => []
 #
-# lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
-# lissa.blogs                     # => [ blog1 ]
+#lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
+#puts lissa.blogs                     # => [ blog1 ]
 #
 # blog1 = lissa.blogs.first
 # blog1.user                      # => lissa
@@ -60,9 +107,3 @@
 #                       From the school of revision, Comes the standard inventor's rule, Books of subtle notation Compositions, all original
 #                       I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,
 #                       All my labor will be lost with time
-
-
-
-# date docs are at: http://ruby-doc.org/core/classes/Date.html
-# don't spend too much time worrying about them :)
-require 'date'

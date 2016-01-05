@@ -23,8 +23,29 @@
 # f.to_f               # => 0.5
 
 class Fraction
+  attr_accessor 'numerator', 'denominator'
+
+  def initialize (numerator, denominator)
+    self.numerator = numerator
+    self.denominator = denominator
+  end
+
+  def to_f
+    numerator/denominator.to_f
+    # why doesn't this work with brackets around it? 
+  end
+
+  def to_s
+    "#{numerator}/#{denominator}"
+  end
+
   def gcd(a,b)
     return a if b == 0
     gcd(b, a%b)
   end
+
+  def lowest
+    Fraction.new(numerator / gcd(numerator,denominator), denominator / gcd(numerator,denominator) )
+  end
+
 end
