@@ -5,5 +5,14 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+	result = ""
+	after_r = false
+	string.each_char do |x|
+		result << string[x] if after_r
+		after_r = false
+		if string[x] == "r" || string[x] == "R"
+			after_r = true
+		end
+	end
+	return result
 end
