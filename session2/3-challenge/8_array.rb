@@ -6,3 +6,8 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(array)
+  result = false
+  array.each_with_index { |x, y| result= true if array.at(y) === array.at(y+1) && array.at(y+1) === array.at(y+2)}
+  result
+end
