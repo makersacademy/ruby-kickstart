@@ -10,6 +10,21 @@
 # first_object nil, 1, 2      # => 1
 # first_object nil, nil, nil  # => nil
 
+
 def first_object(arg1, arg2, arg3)
-  
+=begin
+  return arg1 if arg1
+  return arg2 if arg2
+  return arg3 if arg3
+  nil
+=end
+  arg1 || arg2 || arg3 || nil
+
 end
+
+=begin
+lis << arg1 << arg2 << arg3
+lis.each{|i| return i if i}
+nil
+=end
+

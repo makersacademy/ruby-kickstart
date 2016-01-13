@@ -28,4 +28,20 @@
 # shared [1,2,:c], ['a','b',:c]      # => [{1=>[true, nil], 2=>[true, nil], :c=>[true, true], "a"=>[nil, true], "b"=>[nil, true]}, [:c]]
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
-
+def shared(a,b)
+  overview = Hash.new { |this_hash, key| this_hash[key] = Array.new }
+  union_arr = []
+  a.each{|nr| overview[nr] = [true,nil] }
+  b.each do |nr|
+    if overview.has_key?(nr)
+      overview[nr] = [true,true]
+      union_arr << nr
+    else
+      overview[nr] = [nil,true]
+    end
+  end
+  return [overview,union_arr.sort!]
+end
+  #go through first array and see if it is contained in the hash - if yes, add true if not then add nil
+  #go through second array and see if it is contained in the hash - if yes, add true & add to "union array", if not add nil
+  #add the hash to an array and add the union array

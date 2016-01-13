@@ -19,3 +19,23 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(criteria, *sets)
+  #go through each of the sets, in bulk of two
+  score = []
+  i = 0
+
+  while i < sets.length do
+    score << false if criteria == true and !!sets[i] == !!sets[i+1]
+    score << true if criteria == false and !!sets[i] == !!sets[i+1]
+    score << true if criteria == true and !!sets[i] != !!sets[i+1]
+    score << false if criteria == false and !!sets[i]!= !!sets[i+1]
+    i += 2
+  end
+  return score
+end
+
+
+
+  # using the criteria as lever, then determine what q to ask
+  # add result to new array
+  #return the array

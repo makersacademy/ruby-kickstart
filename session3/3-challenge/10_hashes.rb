@@ -31,4 +31,36 @@
 # create it from scratch :)
 
 
+=begin
+  directory = ""
+  filename = ""
+  new_filename = ""
+  list_files = []
+
+def pathify(usr)
+
+  #the key is the first directory
+  #each value is either a new hash, where the key is again the new directory
+  #or an array, where each part is an array
+  directories = usr.keys
+  #take out the first key, and remove ''
+  #add that to a string starting with '/ + directory / +
+=end
+
+def pathify(paths=Hash.new)
+  # base step
+  return paths.map { |path| '/' + path } if paths.is_a? Array
+
+  # recursive step
+  to_return = []
+  paths.each do |parent_path, child_dirs|
+    parent_path = '/' + parent_path         # paths begin with a /
+    child_paths = pathify child_dirs        # convert child directories to paths
+    child_paths.each do |child_path|        # join each child path to it's parent path
+      to_return << (parent_path + child_path)
+    end
+  end
+  to_return
+end
+
 
