@@ -70,19 +70,17 @@ require 'date'
 class User
 	def initialize(username)
 		self.username = username
+		self.blogs = []
 	end
 
-	attr_accessor :username
-
-	def blogs
-		blogroll = []
-		return blogroll.reverse
-		#return blogs sorted by reverse chron. order (push, then reverse?)
-	end
+	attr_accessor :username, :blogs
 
 	def add_blog(date, text)
 		# push new entries, add name to username.blogs
-		 ["blog" + (username.blogs.count+1).to_s]
+		 blogged = Blog.new(date, self, text)
+		 blogs << blogged
+		 self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+		 blogged
 	end
 end
 
@@ -93,11 +91,26 @@ class Blog
 		self.user = user
 	end
 
-
-
-def get_summary
-# puts excerpt of text
-end
+	def get_summary
+	# puts excerpt of text
+	text.split[0..9].join(" ")
+	end
 
 	attr_accessor :text, :date, :user
+
+	def ==(other)
+    	date   == other.date &&
+      user == other.user &&
+      text == other.text
+  end
+
+	def summary
+	# puts excerpt of text
+	text.split[0..9].join(" ")
+	end
+
+	def entry
+		return "#{user.username} #{date}
+#{text}"
+	end
 end
