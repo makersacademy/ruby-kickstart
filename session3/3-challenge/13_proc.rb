@@ -62,7 +62,7 @@ def your_sort(arr,&block)
 end
 =end
 
-def your_sort(arr,&sorter)
+def your_sort(array,&sorter)
   sorter ||= Proc.new {|a,b| a <=> b }
   array.each_index do |index1|
     array.each_index do |index2|
@@ -71,5 +71,3 @@ def your_sort(arr,&sorter)
     end
   end
 end
-  
-
