@@ -8,6 +8,12 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  puts "Input:"
+  input = gets.chomp
+  arr=[]
+  input.split.each{|x| arr << x.to_i}
+  arr.each_slice(2) { |a,b|
+print "#{a+b}\n#{a-b}\n#{a*b}\n"
+  }
 end
+#sum_difference_product
