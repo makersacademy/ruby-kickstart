@@ -21,14 +21,3 @@ def pirates_say_arrrrrrrrr(string)
 
 new_array.join("")
 end
-# split the string into an array
-# cycle through every character and check if its r
-# if r == true then new_array << l
-# if l == r then r = true
-# else r = false
-
-
-
-# if n == r then r = true
-
-# we want to check what each letter is, if it
