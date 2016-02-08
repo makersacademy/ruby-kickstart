@@ -6,5 +6,24 @@
 #
 
 def odds_and_evens(string, return_odds)
+array = string.split("")
+count = 0
+even_array =[]
+odd_array = []
+  array.each { |n|
+     if count % 2 == 0
+        even_array << n
+        count += 1
+     elsif count % 2 == 1
+        odd_array << n
+        count += 1
+     end
+     }
+
+if return_odds == false
+  even_array.join("")
+elsif return_odds == true
+  odd_array.join("")
+end
 
 end
