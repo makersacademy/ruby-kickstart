@@ -1,4 +1,4 @@
-gem 'rspec', '~> 3.2.0'
+gem 'rspec', '~> 3.3.0'
 
 # overriding Rake method that displays tasks so that -T will display in the correct order
 module Rake
