@@ -6,5 +6,20 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  counter = 0
+  new_string = ""
+  if return_odds
+    string.split("").each do |i|
+      new_string << i if counter.odd?
+      counter += 1
+      break if counter > string.length
+    end
+  else
+    string.split("").each do |i|
+      new_string << i if counter.even?
+      counter += 1
+      break if counter > string.length
+    end
+  end
+  return new_string
 end
