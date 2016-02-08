@@ -24,3 +24,4 @@ end
 
 beam_me_up("Ryker", "Data") # => "The away team consists of Ryker and Data."
 
+# defined? method is used to check what a certain variable is, it would tell you if its it's an expression or a method variable etc
