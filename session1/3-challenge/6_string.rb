@@ -14,3 +14,5 @@ def odds_and_evens(string, return_odds)
   end
   to_return
 end
+
+puts odds_and_evens("hello dad", true)
