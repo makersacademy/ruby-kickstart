@@ -1,5 +1,6 @@
 # Ruby organizes related data, and the ways of manipulating it, into an abstract idea called an object.
 # For example, the data that defines a number, and the methods on that number, define that number object.
+# An object is a set of data that's on your computer as well as a set of instructions that can manipulate that data.
 
 # At a computer level, the data for the number 5 are just ones and zeros, probably looking like this
 "%032b" % 5 # => "00000000000000000000000000000101"
