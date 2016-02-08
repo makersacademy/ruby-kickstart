@@ -9,4 +9,12 @@
 # arithmetic2(-6, -7)  # => -3.5
 
 def arithmetic2(a, b)
+	dividend = 0
+	if a < b 
+		dividend = a
+	else
+		dividend = b
+	end
+
+	return (dividend * 0.5)
 end
