@@ -1,4 +1,4 @@
-#Watch this video - https://vimeo.com/24093428 - these notes are in support of the video. 
+#Watch this video - https://vimeo.com/24093428 - these notes are in support of the video.
 
 #Try to keep up, have the notes open and ADD YOUR OWN NOTES TO IT TO HELP CLARIFY EVERYTHING FOR YOURSELF.
 
@@ -8,8 +8,8 @@
 #   Written By: Matz (Yukihiro Matsumoto)
 #   First Public Release: 1995
 #   Ruby is dynamic (interpreted), strongly typed (mostly), dynamically typed (known as duck typing)
-#   Paradigms:
-#     Procedural
+#   Paradigms: (the way that we think about and structure our source code)
+#     Procedural (step by step work through how to solve the problem)
 #     OO (except for some operators, _everything_ is an object)
 #     Functional
 
