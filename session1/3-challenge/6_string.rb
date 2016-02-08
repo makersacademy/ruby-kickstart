@@ -10,15 +10,9 @@ def odds_and_evens(string, return_odds)
   new_word =""
   arr.each_with_index do |character, index|
     if return_odds
-      if index.odd?
-        new_word += character
-        p character
-      end
+      new_word += character if index.odd?
     else
-      if index.even?
-        new_word += character
-        p character
-      end
+      new_word += character if index.even?
     end
   end
   new_word
