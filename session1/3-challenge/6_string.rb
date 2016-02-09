@@ -5,6 +5,17 @@
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
 
+
+string = ""
 def odds_and_evens(string, return_odds)
 
+if return_odds == true
+string.each_char.with_index{|x,i| string << x if i.odd?} 
+else
+string.each_char.with_index{|x,i| string << x if i.even?}
 end
+
+end
+
+
+
