@@ -21,7 +21,7 @@ def got_threee?(arr)
   false
 end
 
-def got_three?(arr)
+def got_threeee?(arr)
   retval = false
   result = []
   arr.each_cons(3) { |a, b,c| result << [a, b,c] }
@@ -32,4 +32,11 @@ result.length.times do
   end
 end
   retval
+end
+
+def got_three?(arr)
+  arr.each_cons(3) do |a,b,c|
+    return true if a == b && b == c
+  end
+  false
 end
