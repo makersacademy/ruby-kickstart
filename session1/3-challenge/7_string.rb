@@ -5,5 +5,12 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  ch_array = string.split("")
+  output = []
+  ch_array.each_with_index do |character, index|
+    if character.downcase == "r"
+      output << ch_array[index+1]
+    end
+  end
+  return output.join
 end
