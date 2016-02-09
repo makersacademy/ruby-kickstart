@@ -13,6 +13,23 @@
 
 
 def grade(num_books, has_read_books)
+	if has_read_books
+		 if num_books.between?(0,9)
+		 	"C"
+		elsif num_books.between?(10,20)
+			"B"
+		else
+			"A"
+		end
+	else
+		if num_books.between?(0,9)
+			"D"
+		elsif num_books.between?(10,20)
+			"C"
+		else
+			"B"
+		end
+	end
 end
 
 
