@@ -5,5 +5,12 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  arr = ""
+  array = string.split("")
+  i = 0
+  while i < string.length
+    array[i].downcase == "r" && array[i+1] != nil ? arr << array[i+1] : arr
+    i+=1
+  end
+  arr
 end
