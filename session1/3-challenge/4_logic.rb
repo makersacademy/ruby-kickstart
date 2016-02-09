@@ -13,6 +13,15 @@
 
 
 def grade(num_books, has_read_books)
+    
+    projected_grade = case num_books
+        when 0..9 then has_read_books ? "C" : "D"
+        when 10..20 then has_read_books ? "B" : "C"
+        else has_read_books ? "A" : "B"
+    end
+    
+    projected_grade
+    
 end
 
 

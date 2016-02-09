@@ -6,5 +6,9 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+    
+    result = String.new
+    string.each_char.with_index {|char,index| result += char if !( return_odds ^ index.odd? )}
+    result
+    
 end

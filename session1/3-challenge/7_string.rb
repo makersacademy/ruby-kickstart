@@ -5,5 +5,14 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+    
+    str = string.partition(/[rR]/)[2]
+    res = String.new
+    
+    while str != ''
+        res += str[0]
+        str = str.partition(/[rR]/)[2]
+    end
+    
+    res
 end
