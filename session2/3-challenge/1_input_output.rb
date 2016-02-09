@@ -12,3 +12,5 @@ def sum_difference_product
   first , second = gets.split.map { |num| num.to_i }
   print "#{first+second}\n#{first-second}\n#{first*second}\n"
 end
+
+#it's cool that you can assign variable using an array.
