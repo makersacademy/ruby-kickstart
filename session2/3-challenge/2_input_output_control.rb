@@ -25,7 +25,6 @@ def hi_hi_goodbye
     break if number.downcase == "bye"
   end
   puts "goodbye"
-
 end
 
 

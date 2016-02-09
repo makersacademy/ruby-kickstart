@@ -7,6 +7,11 @@
 
 class String
   def every_other_char
+    evens = ""
+    each_char.with_index do |ch, index|
+      evens << ch if index.even?
+    end
+    evens
   end
-  
+
 end
