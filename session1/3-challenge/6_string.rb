@@ -6,15 +6,11 @@
 #
 
 def odds_and_evens(string, return_odds)
-
   if return_odds == true
     string.chars.map.with_index { |c, i| c if i.odd?}.join
   else
      string.chars.map.with_index { |c, i| c if i.even?}.join
   end
-
-
-end
 
 =begin the somewhat scattered thought process:
 
@@ -33,9 +29,8 @@ if return_odds
   put odd characters of string in new_string
 else put even characters of string in new string.
 
-need a new string.
+need a new string? no. .map recreates Enumerables it is used on (in this case, the string we have converted to an array)
 
-new_string = []
 in this case, string.split("") == string.chars
   so string.chars
 
