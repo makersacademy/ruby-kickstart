@@ -9,3 +9,10 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+  arr = []
+  # Regex - NOT 0-9, A-Z, a-z, whitespace or apostrophe
+  # Split into pairs, only pass 1st of the pair into array
+  string.gsub(/[^0-9A-Za-z\s’']/," ").split.each_slice(2){|a,b| arr << a}
+  arr
+end
