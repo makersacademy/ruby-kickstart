@@ -9,5 +9,9 @@
 
 def sum_difference_product
   # your code goes here
-  
+  numbers = gets.chomp
+  num_arr = numbers.split(" ")
+  first = num_arr[0].to_i
+  second = num_arr[1].to_i
+  print "#{first+second}\n#{first-second}\n#{first*second}\n"
 end
