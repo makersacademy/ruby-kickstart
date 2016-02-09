@@ -5,5 +5,6 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  array = string.scan(/(?<=[r])./i)
+  return array.join('')
 end
