@@ -8,6 +8,10 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+    input = gets.chomp                     # getting input and removing \n
+    a, b = input.split.collect{|x| x.to_i} # makes two integers out of input and assigns them to 'a' and 'b'
+    sum = a + b
+    dif = a - b
+    pro = a * b
+    print "#{sum}\n#{dif}\n#{pro}\n"
 end
