@@ -6,11 +6,10 @@
 
 def pirates_say_arrrrrrrrr(string)
     chars = ""
-    (string.size-1).times do |i|
-        if string[i] == "r"
-            chars << string[i.next]
-            elsif string[i] == "R"
-            chars << string[i.next]
+    sd = string.downcase
+    (sd.size-1).times do |i|
+        if sd[i] == "r"
+            chars << sd[i.next]
         end
     end
     return chars
