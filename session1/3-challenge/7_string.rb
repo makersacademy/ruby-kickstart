@@ -5,19 +5,16 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string) 
-  array = string.split("")
-  new_array = []
-  r = false
-    array.each { |letter|
-      if r == true
-        new_array << letter
-      end
-      if letter == "R" or letter ==  "r"
-         r = true
-      else
-         r = false
-      end
-      }
-
-new_array.join("")
+r = false
+new_str = ""
+  string.downcase.each_char {|n|
+    if r == true
+      new_str << n 
+    end
+     n == "r" ? r = true : r = false
+    }
+new_str
+     
 end
+
+
