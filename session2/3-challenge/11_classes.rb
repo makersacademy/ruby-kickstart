@@ -20,3 +20,23 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+class BeerSong
+  attr_accessor 'num'
+  def initialize(num)
+    num = 0 if num < 0
+    num = 99 if num > 99
+    @num = num
+  end
+
+  def print_song(num)
+    first = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    tens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"]
+    rest = ["Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
+    if num > 10 && num < 20
+    puts "#{tens[num]} bottles of beer on the wall,"
+    puts "#{tens[num]} bottles of beer,"
+    puts "Take one down, pass it around,"
+    puts "#{} bottles of beer on the wall."
+  end
+end

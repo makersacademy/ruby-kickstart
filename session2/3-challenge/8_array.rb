@@ -7,14 +7,8 @@
 # got_three? [1, 2, 1, 1]     # => false
 
 def got_three?(arr)
-  retval = false
-  result = []
-  arr.each_cons(3) { |a, b,c| result << [a, b,c] }
-result.length.times do
-  result.each do |value|
-    retval = value.uniq.length == 1 ? true : false
-    return true if retval == true
+  arr.each_cons 3 do |a, b,c|
+    return true if a == b && b == c
   end
-end
-  retval
+  false
 end
