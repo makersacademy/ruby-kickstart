@@ -9,6 +9,7 @@
 
 # Singleton classes don't have names
 obj = Object.new
+obj.class # => Object
 obj.singleton_class # => #<Class:#<Object:0x00000100866ab8>>
 
 # You can access the singleton class like this
@@ -22,7 +23,7 @@ obj.singleton_methods # => [:greet]
 obj.greet # => "Howdy, partner."
 
 
-# Shortcut syntax for the above
+# Shortcut syntax for the above * automatically creates a singleton method for obj
 def obj.about
   "A plain old object with a few tricks."
 end
@@ -37,4 +38,6 @@ obj.singleton_methods # => [:greet, :about]
 #   How can you test your answer out?
 
 obj = Object.new
-puts obj.singleton_class.singleton_class # => #<Class:#<Class:#<Object:0x007fbd6210e3d0>>>
+puts obj.singleton_class.singleton_class
+# => #<Class:#<Class:#<Object:0x007fbd6210e3d0>>>
+# aka singleton_class of the singleton_class of the object at this memory address. phew.

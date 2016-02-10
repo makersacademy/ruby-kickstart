@@ -3,17 +3,17 @@
 # and getters the same as the variable they represent.
 
 class Car
-  def miles=(miles)
+  def miles=(miles) # sets instance variables
     @miles = miles
   end
 
-  def miles
+  def miles # gets variables
     @miles
   end
 end
 
 Car.instance_methods false # => [:miles=, :miles]
-
+# instance variables are private and hence inaccessible from the outside
 car = Car.new
 car.miles = 1000  # Ruby knows this is the miles= method
 car.miles         # => 1000

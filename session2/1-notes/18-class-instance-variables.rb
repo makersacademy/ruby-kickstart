@@ -17,7 +17,7 @@ class Person
   # is defined on the Person class itself
   @home_planet = 'Erth'
   Person.home_planet  # => "Erth"
-  Person.home_planet = 'Earth'
+  Person.home_planet = 'Earth' # setter method
   @home_planet        # => "Earth"
 
 
@@ -30,11 +30,11 @@ class Person
 
   # This one is for instances
   def home_planet
-    Person.home_planet
+    Person.home_planet # or self.class.home_planet
   end
 end
 
-Person.home_planet
+Person.home_planet # => "Earth"
 kate = Person.new 'Kate Beckinsale'
 josh = Person.new 'Josh Cheek'
 kate.home_planet  # => "Earth"

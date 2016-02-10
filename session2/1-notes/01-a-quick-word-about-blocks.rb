@@ -8,15 +8,14 @@ def mah_method!(method_param)
 end
 
 
-# This is the syntax for single line blocks
+# This is the syntax for single line blocks *by convention
 # note that you need parens around that 1,
 # we'll discuss why later
 mah_method!(1) { |block_parameter| block_parameter * 2 }
-
+# calling the method, passing it an argument, and passing the block
 
 # you also have multiline syntax
 # here you don't need parens around the 1
 mah_method! 1 do |param1, param2|
   param1 + param2
 end
-
