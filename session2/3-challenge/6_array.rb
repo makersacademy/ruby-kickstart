@@ -15,3 +15,21 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+class Integer
+    def prime?
+        if self < 2
+            return false
+        else
+            (2...self).each do |divisor| 
+                if self % divisor == 0 
+                    return false
+                end
+            end
+        end
+        true
+    end
+end
+
+def prime_chars?(input_array)
+    input_array.join.length.prime?
+end

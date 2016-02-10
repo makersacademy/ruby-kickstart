@@ -19,8 +19,18 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-
+  
+  while true
+    puts "Please enter a number, 'bye' to exit"
+    command = $stdin.gets.chomp
+    if command == 'bye'
+        puts "goodbye"
+        return
+    else    #no error checking, expect a int
+        puts "hi " * command.to_i
+    end
+  end
+    
 end
 
 

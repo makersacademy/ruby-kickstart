@@ -61,7 +61,45 @@
 #                       I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,
 #                       All my labor will be lost with time
 
+class User                                                                      #examples are wrong. Unless you call 
+	attr_accessor :username, :blogs
 
+	def initialize(user)
+		@username = user
+		@blogs = Array.new
+	end
+	
+  def add_blog(date, text)
+    @blogs << last_blog = Blog.new(date, self, text)
+    @blogs = @blogs.sort_by { |blog| blog.date }.reverse
+    last_blog                                                                   #maaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaybe, maybe, if you told me that you'd expect this return value we'd be all happy.
+  end
+		
+end
+
+
+
+
+class Blog
+	attr_accessor :text, :date, :user
+	
+	def initialize(date,user,text)
+		@date, @user, @text = date, user, text
+	end
+	
+	def summary
+		text.split[0..9].join(" ")			                                            #ehh.it works. should try regex
+	end
+	
+	def ==(other_blog)
+		( self.date == other_blog.date && self.user == other_blog.user && self.text == other_blog.text )
+	end
+
+	def entry                                                                     #likewise i'd like to be told you want this method instead of trying to reverse engineer it from an example
+		"#{@user.username} #{@date}\n#{@text}"
+	end
+	
+end
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
