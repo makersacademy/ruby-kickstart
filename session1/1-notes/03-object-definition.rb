@@ -9,3 +9,4 @@
 5.odd?  # => true
 5.next  # => 6
 
+#Object: set of data, and instructions to manipulate that data

@@ -9,3 +9,4 @@ my_string == your_string # => false
 my_string = "book"
 my_string == your_string # => true
 
+# == equality operater, = assignment operator 
