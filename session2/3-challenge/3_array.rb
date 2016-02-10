@@ -7,6 +7,13 @@
 
 class String
   def every_other_char
-  end
-  
+    newstr=""
+    each_char.each_with_index {|a,index|
+      newstr << a if index % 2 == 0
+    }
+  newstr
 end
+
+end
+
+
