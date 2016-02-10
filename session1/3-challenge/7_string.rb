@@ -4,15 +4,8 @@
 # pirates_say_arrrrrrrrr("Katy Perry is on the radio!")   # => "rya"
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
-def pirates_say_arrrrrrrrr(string)
+def pirates_say_arrrrrrrrr(input_string)
     
-    str = string.partition(/[rR]/)[2]
-    res = String.new
+    input_string.scan(/(?<=r)./i).join
     
-    while str != ''
-        res += str[0]
-        str = str.partition(/[rR]/)[2]
-    end
-    
-    res
 end
