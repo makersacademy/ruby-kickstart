@@ -7,6 +7,9 @@
 
 class String
   def every_other_char
+    staggered = ""
+    chars.each_slice(2) {|a, b| staggered << a}
+    staggered
   end
-  
 end
+
