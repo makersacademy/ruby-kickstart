@@ -6,5 +6,17 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+    odds = Array.new
+    evens = Array.new
+       string.each_char.with_index { |char, i|
+    if i.odd?
+        odds.push(char)
+    else
+        evens.push(char)
+    end }
+    if return_odds == true
+        return odds.join("")
+    else
+        return evens.join("")
+    end
 end
