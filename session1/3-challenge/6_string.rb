@@ -5,6 +5,21 @@
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
 
-def odds_and_evens(string, return_odds)
+# def odds_and_evens(string, return_odds)
+#   x = ""
+#   if return_odds
+#     string.each_char.with_index {|x, y|
+#       return x if y.odd?}
+#   else
+#     string.each_char.with_index {|x, y|
+#       return x if y.even?}
+#   end
+# end
 
+def odds_and_evens(string, return_odds)
+  if return_odds
+    string.each_char.with_index.map {|x, y| x if y.odd?}.join
+  else
+    string.each_char.with_index.map {|x, y| x if y.even?}.join
+  end
 end
