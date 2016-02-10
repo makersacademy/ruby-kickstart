@@ -11,6 +11,8 @@ def odds_and_evens(string, return_odds)
   else
      string.chars.map.with_index { |c, i| c if i.even?}.join
   end
+end
+
 
 =begin the somewhat scattered thought process:
 
