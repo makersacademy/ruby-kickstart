@@ -4,7 +4,7 @@
 # pirates_say_arrrrrrrrr("Katy Perry is on the radio!")   # => "rya"
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
-def pirates_say_arrrrrrrrr(string)
+def pirates_say_arrrrrrrrrr(string)
   retval = ""
   string.size.times do |index|
     if string[index].downcase == 'r' && (index+1 < string.size)
@@ -12,4 +12,9 @@ def pirates_say_arrrrrrrrr(string)
     end
   end
   retval
+end
+
+
+def pirates_say_arrrrrrrrr(string)
+ string.scan(/(?<=r)\w/im).join
 end
