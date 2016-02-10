@@ -66,3 +66,50 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+  def initialize(username)
+    @username = username
+    @bloglist = []
+  end
+  attr_accessor 'username'
+
+
+def add_blog(date,text)
+# takes date and text
+newblog = Blog.new(date, @username, text)
+@bloglist << newblog
+newblog
+end
+
+def blogs
+# array of all blogs written, sorted newest first
+@bloglist.sort_by{|x| x.date}.reverse
+end
+end
+
+class Blog
+  def initialize(date,user,text)
+    @date, @user, @text = date, user, text
+  end
+  attr_accessor 'date','user','text'
+
+def entry
+    "#{user.username} #{date}\n#{text}"
+end
+
+def summary
+    text.split(/ /).take(10).join(" ")
+end
+
+def ==(other)
+  return self.date == other.date && self.user == other.user && self.text == other.text
+end
+end
+#paul = User.new("paulr")
+#paul.add_blog(Date.parse("2016-02-10"), "Hello Blog1 I am writing a lot of things and this")
+#puts paul.username
+#puts paul.blogs
+
+#sec_blog = Blog.new(Date.parse("2010-11-11"),paul,"This is the second blog and it's well boring")
+#puts sec_blog.entry
