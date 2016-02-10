@@ -14,4 +14,10 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+def prime_chars?(array)
+    sum = array.join.length
+    return false if sum == 0 || sum == 1
+    Math.sqrt(sum).floor.downto(2).each {|x| return false if sum % x == 0}
+    true
+end
 
