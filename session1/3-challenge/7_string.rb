@@ -4,6 +4,14 @@
 # pirates_say_arrrrrrrrr("Katy Perry is on the radio!")   # => "rya"
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
-def pirates_say_arrrrrrrrr(string)
 
+def pirates_say_arrrrrrrrr(string)
+  arr = string.split("")
+  arr.each_with_index do |l, i|
+    if l == "R" || l == "r"
+      print arr[i+1]
+    # else
+    #   arr.delete(i)
+    end
+  end
 end
