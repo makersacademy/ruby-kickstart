@@ -15,3 +15,18 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array_of_strings)
+	if array_of_strings.length == 1 
+		string = array_of_strings[0]
+		sum = 0 + string.length
+	else
+		sum = 0 + array_of_strings.join.length
+	end
+	final_output = true
+	for i in 2..sum
+		final_output = false if sum % i == 0 && sum != i 
+	end
+	final_output = false if sum == 1 || sum == 0
+	final_output
+end
+
