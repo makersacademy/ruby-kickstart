@@ -16,5 +16,31 @@
 #
 
 class Person
+  def initialize name, age
+    @name = name
+    @age = age
+  end
+
+  def name
+     @name
+  end
+
+  def name=(new_name)
+    @name = new_name
+  end
+
+  def birthday
+    @age += 1
+  end
+
+  def age
+    @age
+  end
+  
+  def age=(new_age)
+    @age = new_age
+  end
 
 end
+
+
