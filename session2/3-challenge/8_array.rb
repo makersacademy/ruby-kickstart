@@ -8,9 +8,8 @@
 
 
 def got_three?(arr)
-	result = false
 	for i in 0...(arr.length)
-		result = true if (arr[i] == arr[i+1]) && (arr[i+2] == arr[i+1])
+		return true if (arr[i] == arr[i+1]) && (arr[i+2] == arr[i+1])
 	end
-	result
+	false
 end
