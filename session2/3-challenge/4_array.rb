@@ -8,5 +8,18 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(numbers)
+	numbers.select { |n| numbers.include? n*n }.sort
+end
 
+
+#def get_squares(array)
+	#return_array = []
+	#array.each do |number|
+		#test = number * number
+		#array.each { |number2| return_array << number if number2 == test }
+	#end
+	#return_array.sort
+		
+#end
 
