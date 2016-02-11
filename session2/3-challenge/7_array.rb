@@ -9,3 +9,21 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+  array = string.split(/[^a-zA-Z\'\’]/) - ["",nil]
+  output = []
+  array.each_with_index do | elem, index |
+    if index.even?
+      output << elem
+    end
+  end
+  output
+end
+
+# string.split
+# select
+# regex /([A-Za-z])\w)/
+
+#
+#  array = string.split
+#  array.each{|i| i.deleteif?(array[i].odd?)}
