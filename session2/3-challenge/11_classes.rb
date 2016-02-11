@@ -20,3 +20,51 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+class BeerSong
+
+  attr_accessor :beers
+
+  def initialize(beers)
+    beers = 0  if beers < 0
+    beers = 99 if beers > 99
+    self.beers = beers
+  end
+
+  def print_song
+    beers.downto 1 do |i|
+      print_stanza i
+    end
+  end
+
+  def print_stanza(n)
+    if n.zero?
+      String.new
+    else
+      puts "#{integer_to_word n} #{bottle n} of beer on the wall,"        ,
+           "#{integer_to_word n} #{bottle n} of beer,"                    ,
+           "Take one down, pass it around,"                         ,
+           "#{integer_to_word n - 1} #{bottle n-1} of beer on the wall."
+    end
+  end
+
+ 
+  def bottle(n)
+    if n == 1 then 'bottle' else 'bottles' end
+  end
+
+def integer_to_word(integer)
+	word = ""
+	if integer < 20
+		until_teens_array = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+		word << until_teens_array[integer]
+	elsif integer % 10 == 0
+		ten_divisible_array = ["zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+		word << ten_divisible_array[integer/10]
+	else
+		word << "#{integer_to_word(integer/10*10)}-#{integer_to_word(integer % 10)}".downcase
+	end
+	word.capitalize
+end
+
+end
