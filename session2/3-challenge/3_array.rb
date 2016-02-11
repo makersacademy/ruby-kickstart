@@ -6,7 +6,26 @@
 # "".every_other_char         # => ""
 
 class String
+
   def every_other_char
-  end
-  
+	to_return = ''
+
+	each_char.with_index do |a, b|
+    to_return << a if b.even?
+	end
+ 	to_return
 end
+end
+
+
+"abcdefg".every_other_char  # => "aceg"
+
+#class String
+  #def every_other_char
+    #to_return = ''
+    #each_char.with_index do |char, index|
+      #to_return << char if index.even?
+    #end
+    #to_return
+  #end
+#end
