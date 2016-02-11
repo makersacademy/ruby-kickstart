@@ -17,9 +17,9 @@
 def mod_three(array)
   result = []
   array.each {|n|
-  if n%3 != 0
-  result << n%3
-  end
+    if n%3 != 0
+      result << n%3
+    end
   }
-  return result 
+  return result
 end
