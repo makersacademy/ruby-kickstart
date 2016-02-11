@@ -9,3 +9,6 @@ def pirates_say_arrrrrrrrr(string)
   string.downcase.each_char.with_index {|x, i| output << string[i+1].to_s if x == "r"}
   output
 end
+
+# oneline solution with regex
+#string.scan(/(?<=r)\w/i).join
