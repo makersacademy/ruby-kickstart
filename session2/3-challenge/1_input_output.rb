@@ -10,5 +10,5 @@
 def sum_difference_product
   puts "your numbers please: "
   n = gets.chomp.split
-  puts "#{n[0].to_i + n[1].to_i} \n #{n[0].to_i - n[1].to_i} \n #{n[0].to_i * n[1].to_i}"
+  puts "#{n[0].to_i + n[1].to_i} \n #{n[0].to_i - n[1].to_i} \n #{n[0].to_i * n[1].to_i	}"
 end
