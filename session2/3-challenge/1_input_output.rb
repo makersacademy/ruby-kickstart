@@ -7,7 +7,14 @@
 # Standard input will be like "9 2\n" and will expect you to print
 # "11\n7\n18\n" to standard output.
 
+
 def sum_difference_product
-  # your code goes here
-  
+	input = gets.chomp # gets input and removing \n
+	a, b = input.split.map{|i| i.to_i} #makes two integers out of input (by splitting the input and mapping the values to integers) and assigns them to 'a' and 'b'
+  	sum = a + b
+  	difference = a - b
+  	product = a * b
+  	print "#{sum}\n#{difference}\n#{product}\n"
 end
+
+
