@@ -22,15 +22,12 @@
 # Add any additional methods you find helpful.
 # 
 class BeerSong
-    attr_accessor 'bottles'
-    def set_bottles(bottles)
-        @bottles = bottles
-    end
+    attr_accessor :bottles
     
     def initialize(input)
         @bottles = input
-        set_bottles(0) if input < 0
-        set_bottles(99) if input >= 99
+        @bottles = 0 if input < 0
+        @bottles = 99 if input > 99 
     end
     
     
