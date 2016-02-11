@@ -7,8 +7,12 @@
 
 class String
   def every_other_char
-    array = self.chars
-    array2 = array.select.each_with_index { |_, i| i.even? }
-    return array2.join("")
+    result = ""
+    self.each_char.with_index do |char, index|
+      if index.even?
+        result = result + char
+      end
+    end
+    return result
   end
 end
