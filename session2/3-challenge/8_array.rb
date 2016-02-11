@@ -6,3 +6,8 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(arr)
+ new_arr = []
+ arr.each.with_index {|x, i| new_arr.push(x.eql?(arr[i+1]) && x.eql?(arr[i+2]))}
+ p new_arr.include?(true) ? true : false
+end
