@@ -15,3 +15,4 @@ def arithmetic2(a, b)
 		result = b.to_f / 2
 	end
 end
+
