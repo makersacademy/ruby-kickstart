@@ -7,6 +7,14 @@
 
 class String
   def every_other_char
+  	arr=""
+  	each_char.with_index do |char, i|
+  		if (i ==0 || i %2==0) 
+  			arr << char
+  		end 		
+  	end
+  
+  arr
   end
   
 end
