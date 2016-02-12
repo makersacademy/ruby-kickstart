@@ -15,3 +15,20 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require "prime"
+
+  def prime_chars?(array)
+    new_arr = []
+      if array.length == 0
+        return false
+      else
+      array.each do |strings|
+        new_arr << strings.split("").flatten
+        end
+        if new_arr.flatten.length.prime?
+          return true
+        else
+          return false
+        end
+      end
+  end
