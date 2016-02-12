@@ -5,6 +5,14 @@
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
 
-def odds_and_evens(string, return_odds)
 
+
+def odds_and_evens(string, return_odds)
+  new_string = ""
+  string.size.times do |index|
+    next if return_odds && index.even?
+    next if !return_odds && index.odd?
+    new_string << string[index]cd
+  end
+  new_string
 end
