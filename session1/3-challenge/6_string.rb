@@ -7,12 +7,8 @@
 
 def odds_and_evens(string, return_odds)
   if return_odds
-    newString = string.split ""
-    newString = newString.select.with_index { |_, i| i.odd? }
-    newString.join
+    string.each_char.select.with_index { |c, i| i.odd? }.join
   else
-    newString = string.split ""
-    newString = newString.select.with_index { |_, i| i.even? }
-    newString.join
+    string.each_char.select.with_index { |c, i| i.even? }.join
   end
 end

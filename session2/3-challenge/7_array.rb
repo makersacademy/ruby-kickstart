@@ -10,6 +10,5 @@
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
 def alternate_words(str)
-  #arr = str.split(/\@?\$?\#?\%?\^?\&?\*?\(?\)?\-?\=?\_?\+?\[?\]?\:?\;?\,?\.?\/?\<?\>?\??\\?\|?\!?\.?\s+/)
-  str.gsub(/[^\w\s'’]/, ' ').split(" ").select.with_index { |_, x| x.even? }
+    str.gsub(/[^\w\s'’]/, ' ').split(" ").select.with_index { |c, x| x.even? }
 end

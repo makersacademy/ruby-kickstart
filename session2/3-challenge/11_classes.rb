@@ -22,21 +22,44 @@
 # Add any additional methods you find helpful.
 
 class BeerSong
-  attr_accessor 'num'
-  def initialize(num)
-    num = 0 if num < 0
-    num = 99 if num > 99
-    @num = num
+  attr_accessor :beers
+
+  def initialize(beers)
+    beers = 0  if beers < 0
+    beers = 99 if beers > 99
+    self.beers = beers
   end
 
-  def print_song(num)
-    first = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-    tens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"]
-    rest = ["Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
-    if num > 10 && num < 20
-    puts "#{tens[num]} bottles of beer on the wall,"
-    puts "#{tens[num]} bottles of beer,"
-    puts "Take one down, pass it around,"
-    puts "#{} bottles of beer on the wall."
+  def print_song
+    beers.downto 1 do |i|
+      print_stanza i
+    end
+  end
+
+  def print_stanza(n)
+    if n.zero?
+      String.new
+    else
+      puts "#{translate n} #{bottle n} of beer on the wall,"        ,
+           "#{translate n} #{bottle n} of beer,"                    ,
+           "Take one down, pass it around,"                         ,
+           "#{translate n - 1} #{bottle n-1} of beer on the wall."
+    end
+  end
+
+  # returns "bottle" or "bottles"
+  def bottle(n)
+    if n == 1 then 'bottle' else 'bottles' end
+  end
+
+  # translates number to English
+  def translate(n)
+    if 0 <= n && n <= 19
+      %w(zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen)[n]
+    elsif n % 10 == 0
+      %w(zero ten twenty thirty forty fifty sixty seventy eighty ninety)[n/10]
+    else
+      "#{translate n/10*10}-#{translate n%10}".downcase
+    end.capitalize
   end
 end
