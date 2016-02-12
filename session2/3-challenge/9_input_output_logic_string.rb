@@ -24,7 +24,15 @@
 # USER:     BYE
 
 def deaf_grandma
-
+	phrase = String.new
+	while phrase != "BYE" do
+		phrase = gets.chomp
+		if phrase == phrase.upcase && phrase != "BYE" && phrase != ""
+			puts "NO, NOT SINCE 1938!"
+		elsif phrase != "BYE" || phrase == ""
+			puts "HUH?! SPEAK UP, SONNY!"
+		end
+	end
 end
 
 
