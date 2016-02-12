@@ -20,3 +20,37 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+#counter = 6
+class BeerSong
+  attr_accessor :num
+  def initialize(num)
+    num < 0 ? num = 0 : num > 99 ? num = 99 :
+    @num = num
+  end
+
+  def print_song
+    if @num<=0
+      ""
+    else
+      while @num > 0
+        puts "#{read_num(@num)} bottle#{plural @num} of beer on the wall,\n#{read_num(@num)} bottle#{plural @num} of beer,\nTake one down, pass it around,\n#{read_num(@num-1)} bottle#{plural (@num-1)} of beer on the wall."
+        @num-=1
+      end
+    end
+  end
+
+  def plural number
+    number == 1 ? "" : "s"
+  end
+
+  def read_num(num)
+  	num_ary = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" ]
+  	tens_ary = ["Zero", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" ]
+
+  	ary = num.to_s.split("")
+  	first = ary[0].to_i
+  	second = ary[1].to_i
+
+  	(ary.length > 1 && second == 0) ? tens_ary[first] : (num >= 21) ? tens_ary[first]+"-"+num_ary[second].downcase : num_ary[num]
+  end
+end
