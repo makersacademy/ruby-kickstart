@@ -13,8 +13,5 @@ def got_three? array
   false
 end
 
-p got_three? [1, 2, 2, 2, 3]  # => true
-p got_three? ['a', 'a', 'b']  # => false
-p got_three? ['a', 'a', 'a']  # => true
-p got_three? [1, 2, 1, 1]     # => false
+
 
