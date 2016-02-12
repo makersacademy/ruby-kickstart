@@ -15,3 +15,19 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? array
+  array = array.join
+
+  test = true
+
+  for i in (2..Math.sqrt(array.length))
+    if array.length % i == 0
+      test = false
+      break
+    end
+  end
+
+  test = false if array.length < 2
+  return test
+
+end
