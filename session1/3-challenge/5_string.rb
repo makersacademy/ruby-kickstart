@@ -5,4 +5,7 @@
 # add_more_ruby("Sad times are ahead!")         # => "Happy times are ahead!"
 
 def add_more_ruby(string)
+
+	string.gsub(/sad/i) {|match| match.start_with?("S") ? "Happy" : "happy"}
+
 end
