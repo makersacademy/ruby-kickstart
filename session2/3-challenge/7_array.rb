@@ -10,5 +10,5 @@
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
 def alternate_words(words)
-	words.scan(/(?:\w*[\'\’])?\w+/).select {|item| !item.empty?}.select.with_index { |item, index| item if ( index % 2 == 0 ) }
+	words.scan(/(?:\w*[\'\’])?\w+/).select.with_index { |item, index| item if ( index % 2 == 0 ) }
 end
