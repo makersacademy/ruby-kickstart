@@ -77,9 +77,3 @@ class BeerSong
   end
 end
 
- a  = BeerSong.new 0
-# p a.beers
-# #p a.verse
-# #p a.english_number 0
-   a.print_song
-p String.new
