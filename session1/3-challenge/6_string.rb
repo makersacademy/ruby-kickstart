@@ -7,4 +7,10 @@
 
 def odds_and_evens(string, return_odds)
 
+	answer = ""
+	for pos in 0..string.length - 1
+		answer << string[pos].chr if (pos.odd? && return_odds) || (pos.even? && !return_odds)
+	end
+	return answer
+
 end
