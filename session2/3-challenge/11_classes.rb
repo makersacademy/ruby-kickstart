@@ -23,41 +23,37 @@
 
 class BeerSong
 
- def initialize (num_bottle)
-  @num_bottle = num_bottle
- end
+  def initialize(beers)
+    beers = 0 if beers < 0
+    beers = 99 if beers > 99
+    self.beers = beers
+  end
 
- attr_accessor 'num_bottle'
+  attr_accessor :beers
 
- def print_song
-   while num_bottle > 0
-     if self.num_bottle == 1
-       puts "#{num_bottle} bottle of beer on the wall,\n#{num_bottle} bottle of beer,\nTake one down, pass it around,"
-       self.num_bottle -= 1
-     elsif self.num_bottle > 1
-       puts "#{num_bottle} bottles of beer on the wall,\n#{num_bottle} bottles of beer,\nTake one down, pass it around,"
-       self.num_bottle -= 1
-       if self.num_bottle == 1
-         puts "#{num_bottle} bottle of beer on the wall.\n "
-       else
-         puts "#{num_bottle} bottles of beer on the wall.\n "
-       end
-     end
-   end
-   puts "Zero bottles of beer on the wall."
- end
+  def print_song
+    while beers > 0
+      if self.beers == 1
+        puts "#{to_eng(beers)} bottle of beer on the wall,\n#{to_eng(beers)} bottle of beer,\nTake one down, pass it around,\n#{to_eng(beers - 1)} bottles of beer on the wall."
+        self.beers -= 1
+      elsif self.beers == 2
+        puts "#{to_eng(beers)} bottles of beer on the wall,\n#{to_eng(beers)} bottles of beer,\nTake one down, pass it around,\n#{to_eng(beers - 1)} bottle of beer on the wall."
+        self.beers -= 1
+      elsif self.beers > 1
+        puts "#{to_eng(beers)} bottles of beer on the wall,\n#{to_eng(beers)} bottles of beer,\nTake one down, pass it around,\n#{to_eng(beers - 1)} bottles of beer on the wall."
+        self.beers -= 1
+      end
+    end
+    String.new
+  end
 
- # ones = {"1" => "one", "2" => "two", "3" => "three", "4" => "four", "5" => "five", "6" => "six", "7" => "seven", "8" => "eight". "9" => "nine"}
- # tens = {"2" => "Twenty-", "3" => "Thirty-", "4" => "Fourty-", "5" => "Fifty-", "6" => "Sixty-", "7" => "Seventy-", "8" => "Eighty-". "9" => "Ninety-"}
- # teens_special = {"11" => "Eleven", "12" => "Twelve"}
- #
- # # helper function to convert number to english
-
+  def to_eng(num)
+    if 1 <= num && num <= 19
+      ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"][num].capitalize
+    elsif num % 10 == 0 # 20, 30, 40, ...
+      ["zero", "one", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"][num / 10].capitalize
+    else
+      "#{to_eng(num/10*10)}-#{to_eng(num%10)}".capitalize
+    end
+  end
 end
-
-puts "Enter a number between 0 and 99"
-num_bottle = gets.chomp.to_i
-num_bottle = 99 if num_bottle > 99
-num_bottle = 0 if num_bottle < 0
-your_beer = BeerSong.new (num_bottle)
-your_beer.print_song
