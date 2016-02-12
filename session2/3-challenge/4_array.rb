@@ -11,8 +11,3 @@
 def get_squares array
   array.select {|num| array.include? (num**2)}.sort
 end
-
-p get_squares [9]                      # => []
-p get_squares [9,3]                    # => [3]
-p get_squares [9,3,81]                 # => [3, 9]
-p get_squares [25, 4, 9, 6, 50, 16, 5] # => [4, 5]
