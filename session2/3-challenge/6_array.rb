@@ -21,3 +21,4 @@ def prime_chars?(array_of_strings)
 end
 
 
+
