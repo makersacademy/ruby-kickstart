@@ -9,3 +9,14 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words sentence
+  array = sentence.chop.split(/[!@$^&*()-=_+\[\]:;,.\/<>?\\|#$]|\s/).map { |index| index if index != ""}
+
+  array = array.compact
+
+  array = array.each_with_index.map { |word, index| word if index.even?}
+
+  array = array.compact
+
+  return array
+end
