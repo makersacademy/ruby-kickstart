@@ -9,3 +9,15 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(sentence)
+  new_arr = []
+  arr = sentence.scan(/(?:\w*[\'\’])?\w+/)
+  arr.each_with_index do |word, index|
+    if index.even?
+      new_arr << arr[index].to_s
+    else
+      arr.delete(index)
+    end
+  end
+new_arr
+end
