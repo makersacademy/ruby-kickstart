@@ -80,11 +80,11 @@ class User
     self.blogs = blogs.sort_by { |blog| blog.date }.reverse
     added_blog
   end
-
-
+end
 
 class Blog
   attr_accessor :date, :user, :text
+
   def initialize(date, user, text)
     self.date = date
     self.user = user
@@ -103,5 +103,4 @@ class Blog
     date == other.date && user == other.user && text == other.text
   end
 
-end
 end
