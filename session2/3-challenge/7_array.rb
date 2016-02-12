@@ -14,8 +14,3 @@ def alternate_words string
   string.split(" ").values_at(*(0...string.split(" ").size).select(&:even?))
 end
 
-p alternate_words("Lorem ipsum dolor sit amet.")  # => ["Lorem", "dolor", "amet"]
-p alternate_words("Can't we all get along? dfsd c'dd")      # => ["Can't", "all", "along"]
-p alternate_words("Elementary, my dear Watson!")
-
-p *[1,2,3]
