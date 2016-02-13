@@ -6,3 +6,15 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three? (ary)
+
+	count = 0
+	ary.map.with_index do |value,i|  
+		 i > 0 && value == ary[i-1] ? count += 1 : count = 1 
+		break if count == 3
+	end
+
+	count >=3
+
+
+end
