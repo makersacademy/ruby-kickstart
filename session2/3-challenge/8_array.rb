@@ -6,3 +6,14 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+
+def got_three?(string)
+    threeinarow = false
+  string.each_with_index do |thing, index|
+        if string[index] == thing && string[index+1] == thing && string[index+2] == thing
+        threeinarow = true
+        end
+    end
+    return threeinarow
+
+end 
