@@ -8,6 +8,12 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  input = gets.chomp
+  arr = input.split(" ")
+  sum = arr[0].to_i + arr[1].to_i
+  difference = arr[0].to_i - arr[1].to_i
+  product = arr[0].to_i * arr[1].to_i
+  puts sum.to_s
+  puts difference.to_s
+  puts product.to_s
 end
