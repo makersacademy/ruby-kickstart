@@ -23,14 +23,20 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
-def deaf_grandma
-
-end
-
-
-
-
-
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
 deaf_grandma if $0 == __FILE__
+
+
+def deaf_grandma
+    while line = gets
+    break if line == 'BYE'
+        if  line == line.upcase && line != 'BYE' && line.chomp.empty? == false
+            puts "NO, NOT SINCE 1938!"
+        else
+            puts "HUH?! SPEAK UP, SONNY!"
+        end
+    end
+end
+
+
