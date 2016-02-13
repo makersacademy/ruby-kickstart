@@ -8,5 +8,13 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares (ary)
+	result = []
+	ary.each do |value| 
+		pos = ary.find_index(value**2)
+		result << value unless pos ==nil
+	end
 
+result.sort!
 
+end
