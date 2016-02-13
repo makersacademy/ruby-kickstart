@@ -6,7 +6,18 @@
 # "".every_other_char         # => ""
 
 class String
-  def every_other_char
-  end
-  
+   def initialize(strings)
+    @strings = strings
+    end
+
+    def every_other_char
+        oddchar=""
+         @strings.size.times do |num|
+            if num % 2 == 1
+             oddchar << @strings[num]
+            end
+
+        end
+        puts oddchar
+    end
 end
