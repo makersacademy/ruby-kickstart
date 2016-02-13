@@ -16,8 +16,8 @@
 #
 def alternate_words(sentence)
   new_array = []
-  sentence.gsub(/[^a-z"'"]/, ' ').split(" ").each_with_index {|i,index|
-   if index % 2 == 0
+  sentence.gsub(/[^a-zA-Z"'""’"]/, ' ').split(" ").each_with_index {|i,index|
+   if index % 2 == 0 
       new_array << i
     end
  }
