@@ -30,7 +30,7 @@ deaf_grandma if $0 == __FILE__
 
 def deaf_grandma
     while line = gets
-    break if line == 'BYE'
+    break if line.chomp == 'BYE'
         if  line == line.upcase && line != 'BYE' && line.chomp.empty? == false
             puts "NO, NOT SINCE 1938!"
         else
