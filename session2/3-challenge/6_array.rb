@@ -15,3 +15,15 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require 'prime'
+
+def prime_chars? (ary)
+	ary_len = 0
+
+	ary.each {|value| ary_len += value.length}
+
+
+	ary_len.prime?
+
+
+end
