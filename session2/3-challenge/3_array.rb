@@ -6,18 +6,11 @@
 # "".every_other_char         # => ""
 
 class String
-   def initialize(strings)
-    @strings = strings
+  def every_other_char
+    to_return = ''
+    each_char.with_index do |char, index|
+      to_return << char if index.even?
     end
-
-    def every_other_char
-        oddchar=""
-         @strings.size.times do |num|
-            if num % 2 == 1
-             oddchar << @strings[num]
-            end
-
-        end
-        puts oddchar
-    end
+    to_return
+  end
 end
