@@ -65,42 +65,25 @@ class BeerSong
 
     if numbers.has_key?(@beer_num)
       text_num = numbers[@beer_num]
-    elsif @beer_num > 90
-      text_num = numbers[90] + "-" + numbers[@beer_num - 90].downcase
-    elsif @beer_num > 80
-      text_num = numbers[80] + "-" + numbers[@beer_num - 80].downcase
-    elsif @beer_num > 70
-      text_num = numbers[70] + "-" + numbers[@beer_num - 70].downcase
-    elsif @beer_num > 60
-      text_num = numbers[60] + "-" + numbers[@beer_num - 60].downcase
-    elsif @beer_num > 50
-      text_num = numbers[50] + "-" + numbers[@beer_num - 50].downcase
-    elsif @beer_num > 40
-      text_num = numbers[40] + "-" + numbers[@beer_num - 40].downcase
-    elsif @beer_num > 30
-      text_num = numbers[30] + "-" + numbers[@beer_num - 30].downcase
-    elsif @beer_num > 20
-      text_num = numbers[20] + "-" + numbers[@beer_num - 20].downcase
+    else
+      unit = @beer_num % 10
+      tens = @beer_num - unit
+      text_num =  numbers[tens] + "-" + numbers[unit].downcase
     end
     return text_num
   end
 
-
   def print_song
     while @beer_num > 0
       text_num = convert_number()
-      if @beer_num == 1
-        puts "#{text_num} bottle of beer on the wall,"
-        puts "#{text_num} bottle of beer,"
-      else
-        puts "#{text_num} bottles of beer on the wall,"
-        puts "#{text_num} bottles of beer,"
-      end
+      suffix = @beer_num != 1 ? "s" : ""
+      puts "#{text_num} bottle#{suffix} of beer on the wall,"
+      puts "#{text_num} bottle#{suffix} of beer,"
       @beer_num -= 1
+      suffix = @beer_num != 1 ? "s" : ""
       text_num = convert_number()
-      puts "Take one down, pass it around," #unless @beer_num == 0
-      puts "#{text_num} bottles of beer on the wall." unless @beer_num == 1
-      puts "#{text_num} bottle of beer on the wall." if @beer_num == 1
+      puts "Take one down, pass it around,"
+      puts "#{text_num} bottle#{suffix} of beer on the wall."
     end
   end
 end
