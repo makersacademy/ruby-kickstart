@@ -17,16 +17,3 @@
 def mod_three(arr)
   arr.collect { |num| num % 3 }.select { |num| num > 0 }
 end
-
-# Note that array collect/map is the method I need to do something to every member of an array
-def mod_three(numbers)
-  to_return = []
-  numbers.each do |n|
-    if n % 3 == 0
-      to_return = []
-    else
-      to_return << n % 3
-    end
-  end
-  to_return
-end
