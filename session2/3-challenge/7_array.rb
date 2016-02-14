@@ -9,3 +9,9 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words str
+  new_str = str.gsub(/[!@$#%^&*(?)-=_+:;,.]/, " ")
+  arr = new_str.split(" ")
+  arr_even =  arr.select.each_with_index { |char, i| i.even? }
+  return arr_even
+end
