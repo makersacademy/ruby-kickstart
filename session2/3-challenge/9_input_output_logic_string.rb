@@ -23,14 +23,40 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
+#def deaf_grandma
+
+#while (user = gets.chomp) && (user != "BYE")
+	
+ #       puts "HUH?! SPEAK UP, SONNY!"
+	
+#	if  user != "" and user == user.upcase 
+#	puts "NO, NOT SINCE 1938!"
+#        end
+        
+
+
+#end
+#end
+
 def deaf_grandma
 
+user = gets.chomp
+while user != "BYE" 
+     if  user == "" || user != user.upcase
+     puts "HUH?! SPEAK UP, SONNY!"
+     else
+     puts "NO, NOT SINCE 1938!"
+     
+     end
+
+     user = gets.chomp
+
+end
 end
 
 
 
 
 
-# This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
 deaf_grandma if $0 == __FILE__

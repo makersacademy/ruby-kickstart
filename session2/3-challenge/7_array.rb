@@ -9,3 +9,23 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+
+wordArray = string.split(/[^a-zA-Z\'\`\’]/) - ["",nil] 
+
+oddArray = []
+
+wordArray.each_with_index do |x,i|
+	if i.even?
+		oddArray << x
+	end
+end
+
+oddArray
+
+end
+
+print alternate_words("Lorem ipsum dolor sit amet.")  # => ["Lorem", "dolor", "amet"]
+puts alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
+puts alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
+

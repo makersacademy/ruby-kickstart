@@ -14,3 +14,23 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three (array)
+
+modArray = []
+
+	array.each do |x|
+	if x % 3 != 0
+	modArray << x % 3
+	end
+	end
+modArray
+end
+
+puts mod_three [0]  # => []
+puts mod_three [1]  # => [1]
+puts mod_three [2]  # => [2]
+puts mod_three [3]  # => []
+puts mod_three [4]  # => [1]
+puts mod_three [5]  # => [2]
+puts mod_three [6]  # => []
+puts mod_three [7]  # => [1]
