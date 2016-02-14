@@ -24,7 +24,18 @@
 # USER:     BYE
 
 def deaf_grandma
-
+while true 
+	answer = gets.chomp! ## deaf_grandma has no output when the only input is BYE -was missing ! from chomp
+		if answer == "BYE"
+			puts "BYE"
+	break	
+end
+	if answer == answer.downcase
+		puts "HUH?"
+	else answer == answer.upcase && answer != ""
+		puts "NO, NOT SINCE 1938!"
+	end
+  end
 end
 
 
