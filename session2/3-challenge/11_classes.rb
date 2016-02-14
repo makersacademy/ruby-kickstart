@@ -20,3 +20,56 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+class BeerSong
+
+attr_accessor :beers
+
+def initialize(beers)
+beers = 0 if beers <0
+beers = 99 if beers >99
+self.beers = beers
+end
+
+
+
+def print_song
+    if beers == 0
+        puts ""
+    else
+    beers.downto 1 do |bottles|
+    sing_song bottles
+end
+  end
+end
+
+
+
+
+    def sing_song(bottles)
+      puts "#{translate n} #{bottle n} of beer on the wall,"        ,
+           "#{translate n} #{bottle n} of beer,"                    ,
+           "Take one down, pass it around,"                         ,
+           "#{translate n - 1} #{bottle n-1} of beer on the wall."
+            end
+
+    def oneormore(glasses)
+        if glasses == 1
+            "bottle"
+        else
+            "bottles"
+        end
+    end
+
+
+    def translate(num)
+      if num >= 0 && num <= 19
+       %w(zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen)[num]
+    elsif num % 10 == 0
+      %w(twenty thirty forty fifty sixty seventy eighty ninety)[num%10]
+    else
+      "#{translate num/10*10}-#{translate num%10}"
+    end.capitalize
+    end
+
+
+end
