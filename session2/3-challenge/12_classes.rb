@@ -22,9 +22,24 @@
 # f.to_s               # => "50/100"
 # f.to_f               # => 0.5
 
-class Fraction
+class Fraction #Bruch(rechnung)
   def gcd(a,b)
     return a if b == 0
     gcd(b, a%b)
+  end
+  def initialize(numerator,denominator)
+    @numerator = numerator
+    @denominator = denominator
+  end
+  attr_accessor 'numerator','denominator'
+  def to_s
+    return "#{@numerator}/#{@denominator}"
+  end
+  def to_f
+    return numerator.to_f / denominator.to_f
+  end
+  def lowest
+    new_gcd = gcd(@numerator,@denominator)
+    return Fraction.new @numerator/new_gcd, @denominator/new_gcd
   end
 end
