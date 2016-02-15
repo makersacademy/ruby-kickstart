@@ -19,7 +19,7 @@ newsentence=[]
 
     words = sentence.split
     words.each_with_index do |word, index|
-    newsentence << word if index.odd?
+    newsentence << word if index.even?
     end
   return newsentence
 
