@@ -20,3 +20,47 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+
+require 'to_words'
+
+class BeerSong
+
+	attr_accessor :number
+
+	def initialize (number)
+
+		@number = number < 0 ? 0 : (number > 99 ? 99 : number)
+
+	end
+
+	def print_song
+
+		for i in (@number).downto(1)
+
+			puts "#{wordify_number(i)} on the wall,"
+			puts "#{wordify_number(i)},"
+			puts "Take one down, pass it around,"
+			puts "#{wordify_number(i-1)} on the wall."
+			puts ""
+		
+		end
+	end
+
+	private
+
+	def wordify_number (number)
+
+		"#{number.to_words.gsub(" ","-").capitalize} bottle#{'s' unless number ==1} of beer"
+
+	end
+
+
+
+end
+
+song = BeerSong.new(100)
+
+song.print_song
+
+
