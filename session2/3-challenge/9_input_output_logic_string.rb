@@ -24,11 +24,16 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  chat = gets.chomp
+  until (chat == "BYE") do
+    if (chat != chat.upcase || chat == "")
+  	  puts "HUH?! SPEAK UP, SONNY!"
+    else
+      puts "NO, NOT SINCE 1938!"
+    end
+    chat = gets.chomp
+  end
 end
-
-
-
 
 
 # This will call your code so you can run it from the terminal.

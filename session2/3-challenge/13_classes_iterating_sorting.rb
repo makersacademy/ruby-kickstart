@@ -20,14 +20,14 @@
 
 
 # ==========  EXAMPLE  ==========
-#
+
 # lissa = User.new 'QTSort'
 # lissa.username                  # => "QTSort"
 # lissa.blogs                     # => []
-#
+
 # lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
 # lissa.blogs                     # => [ blog1 ]
-#
+
 # blog1 = lissa.blogs.first
 # blog1.user                      # => lissa
 #
@@ -66,3 +66,63 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+
+	attr_reader :username
+	attr_reader :blogs
+
+	def initialize(username)
+		@username = username
+		@blogs = []
+	end
+
+	def add_blog(date, text)
+		@blogs << Blogs.new(date, @username, text)
+	end
+
+	def blogs
+		@blogs.sort_by { |blog| blog.date }.reverse
+    	#add_blog
+	end
+
+
+end
+
+class Blogs
+	attr_accessor :date
+	attr_accessor :user
+	attr_accessor :text
+
+
+	def initialize (date, user, text)
+		@date = date
+		@user = user
+		@text = text
+	end
+
+	def get_summary
+		text_array = @text.split(" ")
+		if text_array.length > 10
+			text_array[0..9].join(" ")
+		else
+			@text
+		end
+	end
+
+	def entry
+    	puts "#{user.username} #{date}" , 
+    		"#{text}"
+
+    def ==(other)
+    	@date == other.date && @user == other.user && @text == other.text
+ 	 end
+
+  	end
+
+end
+
+lissa = User.new 'QTSort'
+lissa.username 
+p lissa.blogs
+
