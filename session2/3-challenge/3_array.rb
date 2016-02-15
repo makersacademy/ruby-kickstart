@@ -7,6 +7,11 @@
 
 class String
   def every_other_char
+  	newstring = ""
+  	each_char.with_index do |char, index|
+    newstring << char if index.even?
+    end
+    newstring
   end
   
 end
