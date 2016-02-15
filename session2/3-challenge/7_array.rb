@@ -11,8 +11,8 @@
 
 def alternate_words(sentence)
 
-    "!@$#%^&*()-=_+[]:;,./<>?\|".split(//).each do |others|
-    sentence.gsub!(others, " ")
+    "!@$#%^&*()-=_+[]:;,./<>?\\|".split(//).each do |others|
+    sentence = sentence.gsub(others, " ")
 
     end
 newsentence=[]
@@ -21,6 +21,6 @@ newsentence=[]
     words.each_with_index do |word, index|
     newsentence << word if index.even?
     end
-  return newsentence
+  newsentence
 
 end
