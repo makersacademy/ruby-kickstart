@@ -19,50 +19,65 @@
 
 
 
-# ==========  EXAMPLE  ==========
-#
-# lissa = User.new 'QTSort'
-# lissa.username                  # => "QTSort"
-# lissa.blogs                     # => []
-#
-# lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
-# lissa.blogs                     # => [ blog1 ]
-#
-# blog1 = lissa.blogs.first
-# blog1.user                      # => lissa
-#
-# Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"                                    # we'll call this blog2
-# Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"              # we'll call this blog3
-# Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best ^_^"   # we'll call this blog4
-# lissa.blogs                     # => [ blog1 , blog4 , blog2 , blog3 ]
-#
-# blog5 = Blog.new Date.today, lissa, <<BLOG_ENTRY
-# Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci nunc, porta non tristique eu, auctor tincidunt mauris.
-# Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vitae nibh sapien. Curabitur
-# eget eros bibendum justo congue auctor non at turpis. Aenean feugiat vestibulum mi ac pulvinar. Fusce ut felis justo, in
-# porta lectus.
-# BLOG_ENTRY
-#
-# blog5.get_summary   # => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci"
-# blog5.entry         # => QTSort 2010-05-28
-#                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci nunc, porta non tristique eu, auctor tincidunt mauris.
-#                          Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vitae nibh sapien. Curabitur
-#                          eget eros bibendum justo congue auctor non at turpis. Aenean feugiat vestibulum mi ac pulvinar. Fusce ut felis justo, in
-#                          porta lectus.
-#
-# blog5.date = Date.parse('2009-01-02')
-# blog5.user = User.new 'disloyalist.party'
-# blog5.text = "From the school of revision, Comes the standard inventor's rule, Books of subtle notation Compositions, all original\n" \
-#              "I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,\n" \
-#              "All my labor will be lost with time"
-#
-# blog5.entry      # => disloyalist.party 2009-01-02
-#                       From the school of revision, Comes the standard inventor's rule, Books of subtle notation Compositions, all original
-#                       I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,
-#                       All my labor will be lost with time
 
-
-
-# date docs are at: http://ruby-doc.org/core/classes/Date.html
-# don't spend too much time worrying about them :)
 require 'date'
+
+class User
+
+	attr_accessor :username
+	attr_accessor :blog_entries
+
+	def initialize (username)
+		self.username = username
+		self.blog_entries = []
+	end
+
+	def add_blog(date,text)
+
+		puts self.username
+
+		self.blog_entries = Blog.new( self.username, date, text)
+
+
+
+
+	end
+
+	def blogs
+
+		blog_entries.sort_by! &:date 
+
+	end
+
+
+end
+
+class Blog
+	attr_accessor :text
+	attr_accessor :date
+	attr_accessor :user
+
+	def initialize(user, date,  text)
+		self.user = user
+		self.date = date
+		self.text = text
+
+	end
+
+	def entry
+		"#{user} #{date}\n#{text}"
+
+	end
+
+	def summary
+
+		text.split[0..9].join(" ")
+
+	end
+
+      def ==(other)
+        return self.date == other.date && self.text == other.text && self.user ==other.user
+      end	
+
+end
+
