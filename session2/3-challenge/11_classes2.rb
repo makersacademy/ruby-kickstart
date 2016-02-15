@@ -24,21 +24,20 @@
 class BeerSong
   attr_accessor :num
   def initialize(num)
-    num < 0 ? num = 0 : num > 99 ? num = 99 :
+    num < 0 ? @num = 0 : num > 99 ? num = 99 :
     @num = num
   end
 
   def print_song
-    if @num<=0
-      ""
+    if @num == 0
+      puts ""
     else
       while @num > 0 do
         puts  "#{read_num(@num)} bottle#{plural @num} of beer on the wall,"    ,
               "#{read_num(@num)} bottle#{plural @num} of beer," ,
               "Take one down, pass it around,"  ,
-              "#{read_num(@num-1)} bottle#{plural (@num-1)} of beer on the wall." ,
-        @num = @num-1
-        return nil
+              "#{read_num(@num-1)} bottle#{plural (@num-1)} of beer on the wall."
+        @num-=1
       end
     end
   end
