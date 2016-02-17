@@ -15,3 +15,10 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(arr)
+  sum = arr.join().length
+  return false if sum == 0 || sum == 1
+  is_prime = true
+  (2..sum-1).each { |x| is_prime = false if sum % x == 0 }
+  return is_prime
+end
