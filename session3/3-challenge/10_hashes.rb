@@ -29,38 +29,42 @@
 #
 #
 # create it from scratch :)
+def pathify (hash)
 
-
-
-def pathify (hash, result=[])
-
-
-  hash.each do |key,value|
-
-
-    result << key
-    if value.is_a? Hash
-      ret_val = pathify(value, result)
-    else
-
-      tmp_value = Array.new(value)
-       temp = tmp_value.map do |leaf|
-         tmp_result = Array.new (result)
-         tmp_result << leaf
-       end
-       return temp
-    end
-    return  ret_val.map! {|path| "/#{path.join("/")}"}
+  final =[]
+  pathify_recursive(hash) do |i|
+    final << i
   end
-
+  final.map! {|path| "/#{path.join("/")}"}
 end
 
- p pathify 'usr' => {'bin' => ['ruby']}
- p pathify 'usr' => {'bin' => ['ruby', 'perl'] }
-p pathify 'usr' => {'bin' => ['ruby'], 'include' => ['zlib.h'] }                               # => ['/usr/bin/ruby', '/usr/include/zlib.h']
-p pathify 'usr' => {'bin' => ['ruby']}, 'opt' => {'local' => {'bin' => ['sqlite3', 'rsync']} } # => ['/usr/bin/ruby', 'opt/local/bin/sqlite3', 'opt/local/bin/rsync']
+def pathify_recursive hash, result=[], &block
 
-puts
+  hash.each do |key,value|
+    hash_branch = Array.new(result)
+    hash_branch << key
+
+    if value.is_a? Hash
+      pathify_recursive value,hash_branch,&block
+    else
+
+      value.each do |leaf|
+        array_branch = Array.new(hash_branch)
+        array_branch << leaf
+        block.call(array_branch)
+      end
+    end
+  end
+end
+
+
+#
+# p pathify 'usr' => {'bin' => ['ruby'], 'include' => ['zlib.h'] }                               # => ['/usr/bin/ruby', '/usr/include/zlib.h']
+# p pathify 'usr' => {'bin' => ['ruby']}
+# p pathify 'usr' => {'bin' => ['ruby', 'perl'] }
+#
+# p pathify 'usr' => {'bin' => ['ruby']}, 'opt' => {'local' => {'bin' => ['sqlite3', 'rsync']} } # => ['/usr/bin/ruby', 'opt/local/bin/sqlite3', 'opt/local/bin/rsync']
+
 
 
 
