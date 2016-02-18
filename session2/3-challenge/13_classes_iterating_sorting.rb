@@ -23,33 +23,17 @@
 require 'date'
 
 class User
-
 	attr_accessor :username
-	attr_accessor :blog_entries
+	attr_accessor :blogs
 
 	def initialize (username)
 		self.username = username
-		self.blog_entries = []
+		self.blogs = []
 	end
 
 	def add_blog(date,text)
-
-		puts self.username
-
-		self.blog_entries = Blog.new( self.username, date, text)
-
-
-
-
+		Blog.new(date, self, text)
 	end
-
-	def blogs
-
-		blog_entries.sort_by! &:date 
-
-	end
-
-
 end
 
 class Blog
@@ -57,27 +41,68 @@ class Blog
 	attr_accessor :date
 	attr_accessor :user
 
-	def initialize(user, date,  text)
+	def initialize(date, user, text)
 		self.user = user
 		self.date = date
 		self.text = text
-
+    user.blogs << self
+    user.blogs.sort!{|a,b| b.date <=> a.date}
 	end
 
 	def entry
-		"#{user} #{date}\n#{text}"
-
+		"#{user.username} #{date}\n#{text}"
 	end
 
-	def summary
+  def get_summary
+    text.split[0..9].join(" ")
+  end
+  def summary
+    text.split[0..9].join(" ")
+  end
 
-		text.split[0..9].join(" ")
-
+	def ==(other)
+		return self.date == other.date && self.text == other.text && self.user ==other.user
 	end
-
-      def ==(other)
-        return self.date == other.date && self.text == other.text && self.user ==other.user
-      end	
 
 end
-
+#
+# lissa = User.new 'QTSort'
+# p lissa.username                  # => "QTSort"
+# p lissa.blogs                     # => []
+#
+# lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
+# p lissa.blogs                     # => [ blog1 ]
+#
+# blog1 = lissa.blogs.first
+# p blog1.user                      # => lissa
+#
+# Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"                                    # we'll call this blog2
+# Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"              # we'll call this blog3
+# Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best ^_^"   # we'll call this blog4
+# p lissa.blogs                     # => [ blog1 , blog4 , blog2 , blog3 ]
+#
+#  blog5 = Blog.new Date.today, lissa, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci nunc, porta non tristique eu, auctor tincidunt mauris.
+#  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vitae nibh sapien. Curabitur
+#  eget eros bibendum justo congue auctor non at turpis. Aenean feugiat vestibulum mi ac pulvinar. Fusce ut felis justo, in
+#  porta lectus."
+# #
+# p blog5.get_summary   # => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci"
+# puts blog5.entry         # => QTSort 2010-05-28
+# #                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci nunc, porta non tristique eu, auctor tincidunt mauris.
+# #                          Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vitae nibh sapien. Curabitur
+# #                          eget eros bibendum justo congue auctor non at turpis. Aenean feugiat vestibulum mi ac pulvinar. Fusce ut felis justo, in
+# #                          porta lectus.
+# #
+# #
+# #
+# blog5.date = Date.parse('2009-01-02')
+# blog5.user = User.new 'disloyalist.party'
+# blog5.text = "From the school of revision, Comes the standard inventor's rule, Books of subtle notation Compositions, all original\n" \
+#              "I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,\n" \
+#              "All my labor will be lost with time"
+# #
+# puts blog5.entry      # => disloyalist.party 2009-01-02
+# #                       From the school of revision, Comes the standard inventor's rule, Books of subtle notation Compositions, all original
+# #                       I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,
+# #                       All my labor will be lost with time
+#
