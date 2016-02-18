@@ -31,7 +31,12 @@ def rotate(a)
   rotated
 end
 
-def spiral_access (two_d, &block)
+def spiral_access(two_d, &block)
+  two_d = two_d.transpose
+  spiral_access_recursive two_d, &block
+end
+
+def spiral_access_recursive (two_d, &block)
 
   two_d.delete_if{|row| row.all?{|e| e.nil?}}
   unless two_d.empty?
@@ -42,7 +47,7 @@ def spiral_access (two_d, &block)
     end
 
     two_d = rotate(two_d)
-    spiral_access(two_d,&block)
+    spiral_access_recursive two_d,&block
   end
 end
 
@@ -71,7 +76,6 @@ two_d = [[1,2,3],
 
 
 order = []
-two_d = two_d.transpose
 spiral_access two_d do |i|
   order << i
 end
