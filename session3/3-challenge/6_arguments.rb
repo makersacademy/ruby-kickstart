@@ -19,3 +19,16 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(opposite, *args)
+  output = []
+  args.each_slice(2) do |first, second|
+    first = !!first # => to convert elements into boolean
+    second = !!second
+    if opposite
+      output << (first != second)
+    else
+      output << (first == second)
+    end
+  end
+  output
+end
