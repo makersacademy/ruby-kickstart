@@ -1,0 +1,578 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"return",
+				"return_odds"
+			],
+			[
+				"has",
+				"has_read_books"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "session3/3-challenge/1_blocks.rb",
+			"settings":
+			{
+				"buffer_size": 322,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "session3/1-notes/10-blocks-introduction.rb",
+			"settings":
+			{
+				"buffer_size": 298,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "session3/1-notes/12-all-methods-take-blocks.rb",
+			"settings":
+			{
+				"buffer_size": 862,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "session3/1-notes/11-block-params-and-return.rb",
+			"settings":
+			{
+				"buffer_size": 392,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "session3/5-solved/1.rb",
+			"settings":
+			{
+				"buffer_size": 61,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "session3/3-challenge/2_hashes.rb",
+			"settings":
+			{
+				"buffer_size": 586,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/peteburch/Projects/learn_to_program/ch09-writing-your-own-methods/ask.rb",
+			"settings":
+			{
+				"buffer_size": 220,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "session3/1-notes/08-proc-introduction.rb",
+			"settings":
+			{
+				"buffer_size": 572,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "session3/1-notes/05-hash-setting-and-getting.rb",
+			"settings":
+			{
+				"buffer_size": 981,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "session3/1-notes/03-hash-introduction.rb",
+			"settings":
+			{
+				"buffer_size": 288,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "session3/1-notes/04-hash-literals.rb",
+			"settings":
+			{
+				"buffer_size": 368,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"se",
+				"Seeing Is Believing: Evaluate"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Enable Package"
+			],
+			[
+				"see",
+				"Seeing Is Believing: Evaluate"
+			],
+			[
+				"",
+				"Seeing Is Believing: Evaluate"
+			],
+			[
+				"eva",
+				"Seeing Is Believing: Evaluate"
+			],
+			[
+				"ev",
+				"Seeing Is Believing: Evaluate"
+			]
+		],
+		"width": 602.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/peteburch/Projects/learn_to_program/.git/COMMIT_EDITMSG",
+		"/Users/peteburch/Projects/ruby-kickstart/session3/5-solved/1.rb",
+		"/Users/peteburch/Projects/ruby_test.rb",
+		"/Users/peteburch/Projects/ruby-kickstart/session2/3-challenge/13_classes_iterating_sorting.rb",
+		"/Users/peteburch/Library/Application Support/Sublime Text 2/Packages/SeeingIsBelieving/Seeing Is Believing.sublime-settings",
+		"/Users/peteburch/Projects/ruby-kickstart/session2/1-notes/15-more-on-method-scope.rb",
+		"/Users/peteburch/Projects/ruby-kickstart/session2/1-notes/14-self.rb",
+		"/Users/peteburch/Projects/ruby-kickstart/session2/1-notes/13-initializing.rb",
+		"/Users/peteburch/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/peteburch/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/peteburch/Projects/ruby-kickstart/session2/1-notes/16-THIS-IS-GONNA-TRIP-YOU-UP.rb",
+		"/Users/peteburch/Projects/learning_plan/README.md",
+		"/Users/peteburch/Projects/ruby-kickstart/session1/3-challenge/6_string.rb",
+		"/Users/peteburch/Projects/ruby-kickstart/.git/COMMIT_EDITMSG",
+		"/Users/peteburch/Projects/ruby-kickstart/session1/3-challenge/4_logic.rb",
+		"/Users/peteburch/Projects/ruby-kickstart/README.mdown",
+		"/Users/peteburch/Projects/ruby-kickstart/session1/3-challenge/5_string.rb",
+		"/Users/peteburch/Projects/ruby-kickstart/session1/3-challenge/3_simple_logic.rb",
+		"/Users/peteburch/Projects/ruby-kickstart/session1/3-challenge/2_arithmetic.rb",
+		"/Users/peteburch/Projects/ruby-kickstart/session1/3-challenge/1_arithmetic.rb",
+		"/Users/peteburch/Projects/learning_plan/precourse_week01.md",
+		"/Users/peteburch/Projects/git_tutorial/work/hello/lib/hello.rb",
+		"/Users/peteburch/Projects/git_tutorial/work/hello/.git/MERGE_MSG",
+		"/Users/peteburch/Projects/git_tutorial/work/hello/Rakefile",
+		"/Users/peteburch/Projects/git_tutorial/work/hello/lib/greeter.rb",
+		"/Users/peteburch/Projects/git_tutorial/work/hello/.git/config",
+		"/Users/peteburch/Projects/git_tutorial/work/hello/.git/COMMIT_EDITMSG",
+		"/Users/peteburch/.gitconfig"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"  \n",
+			"string",
+			"end"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "session3/3-challenge/1_blocks.rb",
+					"settings":
+					{
+						"buffer_size": 322,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								283,
+								283
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "session3/1-notes/10-blocks-introduction.rb",
+					"settings":
+					{
+						"buffer_size": 298,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "session3/1-notes/12-all-methods-take-blocks.rb",
+					"settings":
+					{
+						"buffer_size": 862,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "session3/1-notes/11-block-params-and-return.rb",
+					"settings":
+					{
+						"buffer_size": 392,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "session3/5-solved/1.rb",
+					"settings":
+					{
+						"buffer_size": 61,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "session3/3-challenge/2_hashes.rb",
+					"settings":
+					{
+						"buffer_size": 586,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								400,
+								400
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/peteburch/Projects/learn_to_program/ch09-writing-your-own-methods/ask.rb",
+					"settings":
+					{
+						"buffer_size": 220,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								37,
+								40
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "session3/1-notes/08-proc-introduction.rb",
+					"settings":
+					{
+						"buffer_size": 572,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "session3/1-notes/05-hash-setting-and-getting.rb",
+					"settings":
+					{
+						"buffer_size": 981,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "session3/1-notes/03-hash-introduction.rb",
+					"settings":
+					{
+						"buffer_size": 288,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "session3/1-notes/04-hash-literals.rb",
+					"settings":
+					{
+						"buffer_size": 368,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 336.0,
+	"status_bar_visible": true
+}

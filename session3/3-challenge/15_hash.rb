@@ -46,5 +46,14 @@
 # head = {:data => 6, :next => head}
 # middle head                        # => 3
 
+def middle list, values=[]
+  values << list[:data]
+  return values[values.count / 2] if list[:next].nil?
+  middle(list[:next], values)
+end
 
-
+# head = {:data => 1, :next => nil}
+# head = {:data => 2, :next => head}
+# head = {:data => 3, :next => head}
+#
+# p middle(head)

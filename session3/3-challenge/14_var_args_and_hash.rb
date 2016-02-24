@@ -23,5 +23,28 @@
 # problem_14 2,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => true
 # problem_14 3,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => false
 
+def problem_14 (*args)
+
+    action = args.pop[:problem] if args.last.is_a?Hash
+    action ||= :count_clumps
+     args.send(action)
+end
+
+class Array
+  def count_clumps
+    self.each.with_index.inject(0){|res, (e,i)| res += (((e == self[i-1] && i > 0) && ((e != self[i-2] && i > 1) || i <= 1)) ? 1 : 0)}
+  end
+
+  def same_ends
+    temp = self
+    n = temp.slice!(0)
+    temp[0,n] == temp[-n,n]
+  end
+end
+
+# p problem_14 1, 2, 2, 3, 4, 4, :problem => :same_ends
+# p problem_14 1, 2, 2, 3, 4, 4
+# p problem_14 1, 1, 1, 1, 1,    :problem => :count_clumps
+
 
 

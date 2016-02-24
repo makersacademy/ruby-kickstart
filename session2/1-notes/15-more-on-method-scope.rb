@@ -19,4 +19,6 @@ class Example
   
 end
 
-Example.new.method1
+test = Example.new.method1
+
+test # => 
