@@ -9,5 +9,15 @@
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
 
+def staircase (num)
+	hash = Hash.new
+	evens = []
+	1.upto(num) do |i|
+		evens = Array.new(i) {|n| n+ 1 }.select {|m| m.even?}
+		hash[i] = evens if i.odd?
+	end
+	hash
+end
 
 
+# p staircase 9

@@ -1,7 +1,9 @@
+# Changed by Pete Burch so that count_clumps and same ends are methods of class Array
+
 RSpec.describe 'count_clumps' do
   def self.assert_counts(expected_count, array)
     it "counts #{expected_count} clumps in #{array.inspect}" do
-      actual_count = count_clumps(*array)
+      actual_count = array.count_clumps
       expect(actual_count).to eq expected_count
     end
   end
@@ -19,7 +21,9 @@ end
 RSpec.describe 'same_ends' do
   def self.assert_ends(ends_are_same, end_length, array)
     example "in #{array.inspect}, with end length #{end_length}, they ARE#{' NOT' unless ends_are_same} the same" do
-      result = same_ends(end_length, *array)
+
+
+      result = ((Array.new(1,end_length)<<array)).flatten.same_ends
       expect(result).to eq ends_are_same
     end
   end

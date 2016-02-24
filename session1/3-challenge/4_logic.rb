@@ -13,6 +13,16 @@
 
 
 def grade(num_books, has_read_books)
+	case num_books
+	when 0..9
+		temp = "D"
+	when 10..20
+		temp = "C"
+	else
+		temp = "B"
+	end
+
+	has_read_books ? (temp.ord - 1).chr : temp
 end
 
 

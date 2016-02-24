@@ -19,3 +19,14 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(control, *args)
+  result = []
+  until args ==[]
+    ary = args.slice!(0,2)
+    result << !((!!ary[0] ^ !!ary[1]) ^ control)
+
+  end
+  result
+end
+
+#p match_maker true, true,  true, false,  true

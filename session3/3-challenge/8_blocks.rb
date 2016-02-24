@@ -27,11 +27,14 @@
 
 class Person
 
-  attr_accessor :name
+  attr_accessor :name, :age, :quote
 
-  def initialize( &initializer )
+  def initialize(params={}, &initializer )
     @initializer = initializer
-    initializer.call self
+    self.name = params[:name]
+    self.age = params[:age]
+    self.quote = params[:quote]
+    initializer.call self unless initializer.nil?
   end
 
   def reinit
@@ -39,3 +42,26 @@ class Person
   end
 
 end
+
+
+# p Person.new(:name => 'Kris').name
+#
+# artist = Person.new :name => 'Prince' do |person|
+#   person.age   = 47
+#   person.quote = "Why don't you purify yourself in the waters of Lake Minnetonka?"
+#
+# end
+#
+# p artist.name   # => "Prince"
+# p artist.age    # => 47
+#
+# artist.name = 'The Artist Formarly Known As Prince'
+# artist.age  = 1999
+#
+# p artist.name   # => "The Artist Formarly Known As Prince"
+# p artist.age    # => 1999
+#
+# artist.reinit
+#
+# p artist.name   # => "The Artist Formarly Known As Prince"
+# p artist.age    # => 47

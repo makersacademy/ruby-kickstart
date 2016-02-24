@@ -9,6 +9,9 @@
 #
 # print_list_in_reverse head   # >> "1\n2\n"
 
-def print_list_in_reverse list
-  
+def print_list_in_reverse list, values=[]
+  values << list[:data]
+  print "#{values.reverse.join("\n")}\n" if list[:next].nil?
+  print_list_in_reverse(list[:next], values) unless list[:next].nil?
 end
+

@@ -31,6 +31,22 @@
 #   end
 # end
 
+def array_init (init_value=5, &block)
+  if block.nil?
+    Array.new(init_value){|i| (i * 100).to_s}
+  else
+    Array.new(init_value).map!.with_index{|n,i| block.call(i)}
+  end
+
+
+end
+
+p array_init
+p array_init(2) { |i| i.to_s }
+p array_init { |i| i.to_s }
+p array_init { 'hi' }
+
+
 
 
 

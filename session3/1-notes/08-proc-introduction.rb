@@ -19,3 +19,5 @@ def square_it_method(num)
 end
 square_it_method 5    # => 25
 square_it_method 10   # => 100
+
+square_it_method 15   # =>

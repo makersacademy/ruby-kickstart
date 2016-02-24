@@ -73,3 +73,19 @@ class HTMLTag
   end
 end
 
+
+
+html = HTMLTag.new 'p', 'Hello World', :multiline => false, :color => :red
+p html.to_s     # => <p style="color:#FF0000">Hello World</p>
+
+sports = [
+  HTMLTag.new('li', 'baseball', :multiline => false, :color => :red,   :font => :serif) ,
+  HTMLTag.new('li', 'soccer',   :multiline => false, :color => :green, :font => :sans_serif) ,
+  HTMLTag.new('li', 'football', :multiline => false, :color => :blue,  :font => :monospace) ,
+]
+
+ordered_list = HTMLTag.new 'ol' , sports.join , :multiline => true
+
+puts ordered_list
+
+

@@ -54,6 +54,35 @@
 #   end
 # end       # => ["a", "m", "r", 1, 3, 4, 9, 2.5, 9.0, 25.8]
 
+def your_sort (array, &block)
+
+  block ||= Proc.new{|a,b| a <=> b}
+  quicksort(array, &block)
+end
+
+
+def quicksort (array, &block)
+
+  if array.length <= 1
+    return array
+  else
+    pivot = array.sample
+    array.delete_at(array.index(pivot))
+    less = []
+    more = []
+    array.each do |x|
+      block.call(x, pivot) == -1 ? less << x : more  << x
+    end
+  end
+  sorted_array = []
+  sorted_array << quicksort(less, &block)
+  sorted_array << pivot
+  sorted_array << quicksort(more, &block)
+  sorted_array.flatten!
+end
+
+
+
 
 
 

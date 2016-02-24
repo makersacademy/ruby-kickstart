@@ -29,6 +29,42 @@
 #
 #
 # create it from scratch :)
+def pathify (hash)
+
+  final =[]
+  pathify_recursive(hash) do |i|
+    final << i
+  end
+  final.map! {|path| "/#{path.join("/")}"}
+end
+
+def pathify_recursive hash, result=[], &block
+
+  hash.each do |key,value|
+    hash_branch = Array.new(result)
+    hash_branch << key
+
+    if value.is_a? Hash
+      pathify_recursive value,hash_branch,&block
+    else
+
+      value.each do |leaf|
+        array_branch = Array.new(hash_branch)
+        array_branch << leaf
+        block.call(array_branch)
+      end
+    end
+  end
+end
+
+
+#
+# p pathify 'usr' => {'bin' => ['ruby'], 'include' => ['zlib.h'] }                               # => ['/usr/bin/ruby', '/usr/include/zlib.h']
+# p pathify 'usr' => {'bin' => ['ruby']}
+# p pathify 'usr' => {'bin' => ['ruby', 'perl'] }
+#
+# p pathify 'usr' => {'bin' => ['ruby']}, 'opt' => {'local' => {'bin' => ['sqlite3', 'rsync']} } # => ['/usr/bin/ruby', 'opt/local/bin/sqlite3', 'opt/local/bin/rsync']
+
 
 
 

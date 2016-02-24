@@ -19,9 +19,6 @@ RSpec.describe 'spiral_access' do
     assert_yielded [[1]], [1]
   end
 
-  it 'yields 1,2,3,4 when given [[1,2],[4,3]]' do
-    assert_yielded [[1,2],[4,3]], [1,2,3,4]
-  end
 
   it 'yields 1,2,3,4,5,6,7,8,9 when given [[1,2,3],[8,9,4],[7,6,5]]' do
     assert_yielded [[1,2,3], [8,9,4], [7,6,5]], [1,2,3,4,5,6,7,8,9]
@@ -47,4 +44,9 @@ RSpec.describe 'spiral_access' do
       [ 16 , 15 , 14 , 13 , 12 , 11 ],
     ], (1..36).to_a
   end
+
+  it 'yields 1,2,3,4 when given [[1,2],[4,3]]' do
+    assert_yielded [[1,2],[4,3]], [1,2,3,4]
+  end
+
 end
