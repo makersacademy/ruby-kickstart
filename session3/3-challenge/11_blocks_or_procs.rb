@@ -31,25 +31,9 @@
 #   end
 # end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def array_init ( count = 5, &block)
+  unless block
+    return Array.new(count) {|index| index*100}.map {|i| i.to_s }
+  end
+  Array.new(count, &block)
+end
