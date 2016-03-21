@@ -5,4 +5,11 @@
 # add_more_ruby("Sad times are ahead!")         # => "Happy times are ahead!"
 
 def add_more_ruby(string)
+   string.gsub!(/sad/i){ |word|  
+       if word == word.capitalize
+           "Happy"
+       else
+           "happy"
+       end
+   }
 end
