@@ -5,5 +5,7 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  result = ''
+  string.split('').each_with_index {|char,index| result += string.split('')[index+1] if (char == "r" || char == "R") && index < string.length - 1}
+  result
 end

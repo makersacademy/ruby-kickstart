@@ -4,7 +4,11 @@
 #
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
+# odds_and_evens("abcdefg",true)    # => "bdf"
+# odds_and_evens("abcdefg",false)   # => "aceg"
 
 def odds_and_evens(string, return_odds)
-
+  results = ''
+  string.split('').each_with_index {|char,index| results += char if index.odd? == return_odds}
+  results
 end
