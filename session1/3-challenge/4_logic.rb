@@ -1,3 +1,5 @@
+
+
 # A grad student at a local university thinks he has discovered a formula to
 # predict what kind of grades a person will get. He says if you own less than
 # 10 books, you will get a "D". If you own 10 to 20 books, you will get a "C",
@@ -18,8 +20,8 @@ def grade(num_books, reads_books)
     return "B" if num_books <= 20
     return "A"
   else
-    return “B” if num_books >  20
-    return "C" if num_books <= 20 && >= 10
+    return "D" if num_books <  10
+    return "C" if num_books <= 20
     return "B"
   end
 end
