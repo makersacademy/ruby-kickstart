@@ -19,8 +19,17 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-
+    
+    loop do 
+        puts "Enter a number: "
+        n = gets.chomp
+        if /bye/i.match(n)
+            puts "goodbye"
+            break
+        else
+            puts "#{ (["hi"] * n.to_i).join(" ") }"
+        end
+    end
 end
 
 
