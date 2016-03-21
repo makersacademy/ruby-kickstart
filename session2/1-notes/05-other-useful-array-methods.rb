@@ -24,7 +24,7 @@ chars # => ["a", "c", "d"]
 # Delete object
 chars.delete 'c'
 chars # => ["a", "d"]
-
+# Sergio: Removes all the entries 'c' in this case, not just the first one
 
 # Insert
 index = 1
@@ -34,3 +34,11 @@ chars # => ["a", "b", "c", "d"]
 
 # Sorting
 ['c', 'b', 'd', 'a'].sort # => ["a", "b", "c", "d"]
+
+#Sergio: Sorting for chars and strings is done by ASCII values, so capital letters are before because their ASCII values are lower, see example:
+%w( a b c ZZ WW XX YY d).sort  # => ["WW", "XX", "YY", "ZZ", "a", "b", "c", "d"] 
+
+
+
+
+

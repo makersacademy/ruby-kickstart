@@ -1,6 +1,7 @@
 # So methods being their own little world is totally a lie
 # They can actually see instance variables and methods
 # on their object.
+# Sergio, because they are public?
 
 class Example
   

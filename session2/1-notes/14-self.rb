@@ -33,3 +33,7 @@ class Example
   new         # => #<Example:0x000001008631d8>
 end
 
+# Sergio, I only see one object being created, it is a bit confusing to call for the creation of an object class
+# of the very same class that we are creating...
+
+

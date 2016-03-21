@@ -15,6 +15,7 @@ numbers # => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
 # iterate over the array two at a time
+# Sergio: each_slice is a method of the Enumerable mixin.
 result = []
 numbers.each_slice(2) { |a, b| result << [a, b] }
 result # => [[0, 1], [2, 3], [4, 5], [6, 7], [8, 9]]
@@ -22,6 +23,7 @@ result # => [[0, 1], [2, 3], [4, 5], [6, 7], [8, 9]]
 
 # iterate over the array in groups of two
 # hitting each group as we go
+#Sergio: Again an Enumerable
 result = []
 numbers[0..5].each_cons(2) { |a, b| result << [a, b] }
 result # => [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]]

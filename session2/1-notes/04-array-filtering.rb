@@ -4,6 +4,8 @@ numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 # Use select to make a new array of only the elements
 # you want if the block returns a truthy value then
 # that element will be in the result.
+# Sergio: both Enumerable and Array
+
 evens = numbers.select { |number| number.even? }
 evens   # => [0, 2, 4, 6, 8]
 
