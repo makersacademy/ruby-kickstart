@@ -1,3 +1,5 @@
+
+
 # You'll get a string and a boolean.
 # When the boolean is true, return a new string containing all the odd characters.
 # When the boolean is false, return a new string containing all the even characters.
@@ -12,7 +14,7 @@ def odds_and_evens(string, return_odds)
   string.size.times do |index|
     next if return_odds && index.even?
     next if !return_odds && index.odd?
-    new_string << string[index]cd
+    new_string << string[index]
   end
   new_string
 end
