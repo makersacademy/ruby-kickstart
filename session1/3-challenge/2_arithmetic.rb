@@ -10,6 +10,6 @@
 
 def arithmetic2(a, b)
 
-return a < b ? a / 2.0 : b / 2.0
+  a < b ? a / 2.0 : b / 2.0
 
 end
