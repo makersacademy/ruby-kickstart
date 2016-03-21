@@ -26,7 +26,10 @@
 # lissa.blogs                     # => []
 #
 # lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
-# lissa.blogs                     # => [ blog1 ]
+# lissa.blogs                     # => [#<Blog:0x007fec28c49b88
+#   @date=#<Date: 2010-05-28 ((2455345j,0s,0n),+0s,2299161j)>,
+#     @text="Sailor Mars is my favourite",
+#       @user=#<User:0x007fec2902e5c8 @blogs=[...], @username="QTSort">>] 
 #
 # blog1 = lissa.blogs.first
 # blog1.user                      # => lissa
@@ -34,7 +37,9 @@
 # Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"                                    # we'll call this blog2
 # Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"              # we'll call this blog3
 # Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best ^_^"   # we'll call this blog4
-# lissa.blogs                     # => [ blog1 , blog4 , blog2 , blog3 ]
+# lissa.blogs                     # => [ blog1 , blog4 , blog2 , blog3 ] this is
+# not how it will actuall appear. Please see lines 28-32 for how this will
+# appear.
 #
 # blog5 = Blog.new Date.today, lissa, <<BLOG_ENTRY
 # Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci nunc, porta non tristique eu, auctor tincidunt mauris.
