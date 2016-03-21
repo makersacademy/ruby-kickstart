@@ -14,3 +14,8 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(array)
+	array2 = []
+	array.each {|x| array2 << x % 3 if x % 3 != 0}
+	array2
+end
