@@ -36,4 +36,8 @@ example # invokes the method
 # Question: classes begin with uppercase letters, are they constants?
 #   Remember, constants are just variables that aren't supposed to change.
 #   go test this in irb
+# Sergio: a warning is issued complaining that a constant was already initialized and has been changed, 
+# but the change goes ahead.  It's flexible, warns but do not forbids
+
+
 

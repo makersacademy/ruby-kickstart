@@ -12,6 +12,13 @@ end
 my_own_little_world # => nil
 defined? twelve     # => "local-variable"
 
+#Sergio / defined? documentation http://ruby-doc.org/docs/keywords/1.9/Object.html#method-i-defined-3F
+# defined? also works for methods
+def x
+end
+defined?(x)  # => "method"
+
+
 
 # Well that seems pretty useless, eh? Fortunately, there is an Internet connection on this world!
 # You can pass objects, into the method. When we pass an object in, the variable that points to it

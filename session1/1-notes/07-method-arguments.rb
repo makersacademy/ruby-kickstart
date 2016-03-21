@@ -17,3 +17,5 @@ browser_goto(website)   # => "Direct your browser towards ruby-kickstart.com"
 # Ruby likes to be beautiful, it doesn't make you put parentheses where it can figure out what you meant.
 browser_goto website    # => "Direct your browser towards ruby-kickstart.com"
 
+
+

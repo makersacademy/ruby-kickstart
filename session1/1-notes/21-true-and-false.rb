@@ -23,3 +23,4 @@ false.class                     # => FalseClass
   !!object # => true, true, true, true, true, false
 end
 
+#Sergio: all object apart from false and nil has the boolean value true, (arrays, numbers, hashes, etc...)

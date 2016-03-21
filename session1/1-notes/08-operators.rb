@@ -8,7 +8,7 @@
 # but that's ugly, *ick*, Ruby is beautiful, so it lets you say
 3 + 5         # => 8
 2 - 4         # => -2
-10 / 3        # => 3
+10 / 3        # => 3  Sergio  notice it returns integer, use 10.0/3 to get a float 
 10 % 3        # => 1
 
 # See, it knows what to do :)

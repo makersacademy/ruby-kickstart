@@ -10,3 +10,5 @@ puts 'This will\nonly be one line'
   # Two lines.
   # This will\nonly be one line
 
+# Sergio: OK, good to know that difference.  Also, with single quotes there is not string interpolation possible
+
