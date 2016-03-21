@@ -1,4 +1,4 @@
-# fill out the method below, then run the tests with
+@# fill out the method below, then run the tests with
 #   $ rake 1:2
 
 
@@ -9,4 +9,6 @@
 # arithmetic2(-6, -7)  # => -3.5
 
 def arithmetic2(a, b)
+array =[a,b].sort
+array[0] / 2
 end
