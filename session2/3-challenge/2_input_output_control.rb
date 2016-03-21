@@ -20,7 +20,14 @@
 
 def hi_hi_goodbye
   # your code here
+  user_input = 0
+  while user_input != "bye"
+  	p "Enter a number"
+  	user_input = gets.chomp
+  	p ["hi"] * user_input.to_i * " "
+  end
 
+  p "goodbye" if user_input == "bye"
 end
 
 
