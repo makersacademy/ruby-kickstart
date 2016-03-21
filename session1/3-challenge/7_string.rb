@@ -5,5 +5,11 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+	answer = []
+	string.chars.each_with_index do |x,i| 
+		if x == "r" or x == "R"
+			answer.push(string[i+1])
+		end
+	end
+	answer.join('')
 end

@@ -6,5 +6,11 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	answer = []
+	if return_odds
+		string.chars.each_with_index { |x,i| answer.push(x) if i % 2 != 0 }
+	else
+		string.chars.each_with_index { |x,i| answer.push(x) if (i + 1) % 2 != 0 }
+	end
+	answer.join('')
 end
