@@ -5,4 +5,8 @@
 # add_more_ruby("Sad times are ahead!")         # => "Happy times are ahead!"
 
 def add_more_ruby(string)
+  subs = {'sad' => 'happy'}
+  subs.clone.each{ |k, v| subs[k.capitalize] = v.capitalize }
+  regex = /#{subs.keys.join('|')}/
+  string.gsub!(regex, subs)
 end
