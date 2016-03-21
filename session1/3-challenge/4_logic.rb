@@ -13,6 +13,22 @@
 
 
 def grade(num_books, has_read_books)
+if 
+        num_books < 10
+        score = "D"
+    elsif 
+        num_books < 21
+        score = "C"
+    else
+        num_books > 20
+        score = "B"
+    end
+
+if has_read_books > 0
+    (score.chr.ord - 1).chr
+else 
+    score
+end
 end
 
 
