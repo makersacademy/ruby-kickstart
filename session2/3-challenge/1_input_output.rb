@@ -9,5 +9,11 @@
 
 def sum_difference_product
   # your code goes here
-  
+  puts "Please enter two integers:"
+  entry_a = gets.chomp.split(" ")
+  a = entry_a[0].to_i
+  b = entry_a[1].to_i
+  puts a + b
+  puts a - b
+  puts a*b
 end
