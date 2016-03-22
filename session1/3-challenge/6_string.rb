@@ -7,4 +7,16 @@
 
 def odds_and_evens(string, return_odds)
 
+  return_string = ""
+
+  string_length = string.length
+
+  for x in 0...string_length
+    if x.odd? && return_odds == true
+      return_string << string[x]
+    elsif x.even? && return_odds == false
+      return_string << string[x]
+    end
+  end
+  return_string
 end
