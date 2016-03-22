@@ -6,5 +6,15 @@
 #
 
 def odds_and_evens(string, return_odds)
+  if return_odds
+    newstring = string.split("")
+    newstring.each do |x|
+      if x.index % 2 != 0
+        return x
+      end
+    end
 
+  else
+    #true
+  end
 end
