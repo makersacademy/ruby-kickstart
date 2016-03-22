@@ -15,4 +15,3 @@ def get_squares (numbers)
   end
   to_return.sort
 end
-
