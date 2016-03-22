@@ -15,3 +15,11 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(string_array)
+	length = string_array.join('').length
+	number_of_factors = 0
+	(1..length).each do |x|
+		number_of_factors += 1 if length % x == 0
+	end
+	number_of_factors == 2
+end
