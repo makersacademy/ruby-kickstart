@@ -12,10 +12,10 @@ def odds_and_evens(string, return_odds)
     while x < string.length
 
 		if return_odds
-			new_string << string[x]
+			new_string << string[x+1].to_s
 			x += 2
 		else
-			new_string << string[x+1].to_s
+			new_string << string[x].to_s
 			x += 2
 		end
 

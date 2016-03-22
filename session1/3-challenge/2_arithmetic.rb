@@ -10,17 +10,6 @@
 
 def arithmetic2(a, b)
 
-	if a < b
-
-		puts "#{a.to_f/2}"
-
-	elsif b > a
-
-		puts "#{b.to_f/2}"
-
-	else
-		puts "Same numbers."
-
-	end
+	 return a < b ? a.to_f/2 : b.to_f/2
 
 end
