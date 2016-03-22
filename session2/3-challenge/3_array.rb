@@ -7,6 +7,7 @@
 
 class String
   def every_other_char
+	self.gsub /(.).?/,'\1'
   end
   
 end

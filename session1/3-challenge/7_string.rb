@@ -7,7 +7,7 @@
 def pirates_say_arrrrrrrrr(string)
  to_return = ""
  string.split("").each_with_index do |x, index| 
-   if string[index] == "r" || string[index] ==  "R"
+   if x == "r" || x ==  "R" # string[index] == "r"
     i = index + 1
     to_return << string[i] unless i == string.length #starts at zero
    end
