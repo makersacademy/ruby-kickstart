@@ -1,3 +1,4 @@
+#final solution
 # remember, you can test this file with
 #   $ rake 1:3
 
@@ -8,4 +9,15 @@
 # ten_twenty(6) # => 10
 
 def ten_twenty(n)
+	if 
+		n.even? 
+		10
+	else 
+		20
+	end
 end
+
+puts ten_twenty(5) 
+puts ten_twenty(6) 
+puts ten_twenty(3)
+puts ten_twenty(2)

@@ -1,3 +1,5 @@
+#final solution
+
 # Write a method named get_squares that takes an array of numbers
 # and returns a sorted array containing only the numbers whose square is also in the array
 #
@@ -8,5 +10,8 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(numbers)
+  numbers.select { |n| numbers.include? n*n }.sort
+end
 
 

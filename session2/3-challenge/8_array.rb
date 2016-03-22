@@ -1,3 +1,5 @@
+#final solution
+
 # Given an array of elements, return true if any element shows up three times in a row
 #
 # Examples:
@@ -6,3 +8,9 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+
+def got_three?(array)
+	array.each_cons(3).any?{|x|x.uniq.length == 1}
+end
+
+puts got_three?([1, 2, 2, 3])

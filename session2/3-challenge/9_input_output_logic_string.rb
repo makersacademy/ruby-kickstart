@@ -1,3 +1,5 @@
+#final solution
+
 # Taken from http://pragprog.com/titles/fr_ltp/learn-to-program
 #
 # Write a Deaf Grandma program. Whatever you say to grandma (whatever
@@ -24,7 +26,15 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  while line = gets
+    line.chomp!
+    break if line == "BYE"
+    if line == line.upcase && line != ""
+      puts "NO, NOT SINCE 1938!"
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+  end
 end
 
 

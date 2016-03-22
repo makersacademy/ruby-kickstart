@@ -1,3 +1,5 @@
+#final solution
+
 # Make a person class that has a name, age, and birthday
 #
 # josh = Person.new 'Josh', 28
@@ -16,5 +18,15 @@
 #
 
 class Person
+	def initialize(name, age)
+		@name = name
+		@age = age 
+		@birthday = age + 1
+	end
+	attr_accessor "name", "age", "birthday"
 
+	def birthday
+		@age = age + 1
+	end
 end
+
