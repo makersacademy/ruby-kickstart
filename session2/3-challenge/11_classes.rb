@@ -57,29 +57,28 @@ class BeerSong
     end
     
     def print_song
-        if @beers.between?(3,99)
-            @beers.downto(3).each do |i|
-                puts "#{numberToText(i)} bottles of beer on the wall,"
-                puts "#{numberToText(i)} bottles of beer,"
-                puts "Take one down, pass it around,"
-                puts "#{numberToText(i-1)} bottles of beer on the wall."
-                removeBeer
-            end
-        end
-        
-        if @beers == 2
-            puts "#{numberToText(2)} bottles of beer on the wall,"
-            puts "#{numberToText(2)} bottles of beer,"
+        while @beers.between?(3,99)
+            puts "#{numberToText(@beers)} bottles of beer on the wall,"
+            puts "#{numberToText(@beers)} bottles of beer,"
             puts "Take one down, pass it around,"
-            puts "#{numberToText(1)} bottle of beer on the wall."
             removeBeer
+            puts "#{numberToText(@beers)} bottles of beer on the wall."
+        end
+
+        if @beers == 2
+            puts "#{numberToText(@beers)} bottles of beer on the wall,"
+            puts "#{numberToText(@beers)} bottles of beer,"
+            puts "Take one down, pass it around,"
+            removeBeer
+            puts "#{numberToText(@beers)} bottle of beer on the wall."
         end
         
         if @beers == 1
-            puts "#{numberToText(1)} bottle of beer on the wall,"
-            puts "#{numberToText(1)} bottle of beer,"
+            puts "#{numberToText(@beers)} bottle of beer on the wall,"
+            puts "#{numberToText(@beers)} bottle of beer,"
             puts "Take one down, pass it around,"
-            puts "#{numberToText(0)} bottles of beer on the wall."
+            removeBeer
+            puts "#{numberToText(@beers)} bottles of beer on the wall."
         end
         
         return "" if @beers == 0
