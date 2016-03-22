@@ -1,4 +1,4 @@
-# run me by using cd to get to my directory
+test# run me by using cd to get to my directory
 # then type $ ruby 1_first_program.rb
 
 puts "Hello reader."
