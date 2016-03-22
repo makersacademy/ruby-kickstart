@@ -6,5 +6,14 @@
 #
 
 def odds_and_evens(string, return_odds)
+if return_odds == false
+    return string.gsub(/(.)./, '\1')
 
+else return_odds == true
+   if string.length.odd?
+       return string.gsub(/.(.)/, '\1')[0...-1]
+   else 
+       return string.gsub(/.(.)/, '\1')
+   end
+end
 end
