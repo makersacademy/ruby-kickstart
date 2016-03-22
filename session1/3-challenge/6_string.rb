@@ -6,17 +6,17 @@
 #
 
 def odds_and_evens(string, return_odds)
-  stringarray = string.split(//)
-  newstringhash = Hash[(0...stringarray.size).zip stringarray]
+  stringarray = string.split("")
+  # newstringhash = Hash[(0...stringarray.size).zip stringarray]
+  newstring = []
 
   if return_odds
-    newstringhash.select do |key, value|
-      key.odd?
-    end.values.join("")
+    stringarray.each.with_index { |val,index| newstring << val if index.odd?}
+    newstring.join("")
+      #index.odd? newstring << value : false
   else
-    newstringhash.select do |key, value|
-      key.even?
-    end.values.join("")
+    stringarray.each.with_index { |val,index| newstring << val if index.even?}
+    newstring.join("")
   end
-end
 
+end
