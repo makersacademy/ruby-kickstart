@@ -6,3 +6,10 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(elements)
+  result = false
+  elements.each_cons(3) do |group|
+    result = true if group.uniq.size == 1
+  end
+  result
+end
