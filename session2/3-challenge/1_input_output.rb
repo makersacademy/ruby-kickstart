@@ -9,5 +9,19 @@
 
 def sum_difference_product
   # your code goes here
-  
+
+  nums = gets.chomp
+  numarr = nums.split(" ")
+
+  a = numarr[0].to_i
+  b = numarr[1].to_i
+
+  sum = a + b
+  diff = a - b
+  prod = a * b
+
+  puts sum
+  puts diff
+  puts prod
+
 end
