@@ -9,9 +9,9 @@
 
 def ten_twenty(n)
 	if n.even?
-		puts 10
-	else n.odd?
-		puts 20
+		return 10
+	else 
+		return 20
 	end
 end
 ten_twenty(5) # => 20
