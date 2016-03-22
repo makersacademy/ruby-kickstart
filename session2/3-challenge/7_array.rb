@@ -9,3 +9,11 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+	#filter the string with gsub and regex [^0-9A-Za-z'] for non alphanumeric characters
+	output = []
+	array = string.gsub(/[^0-9A-Za-z'’]/, ' ').split()
+	array.size.times.select { |index| output << array[index] if index.even? }
+	output.select { |i| i != ""}
+end
+
