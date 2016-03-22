@@ -20,3 +20,68 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+D = {   2   =>  "Twenty", 3   =>  "Thirty", 4   =>  "Forty", 5   =>  "Fifty", 
+        6   =>  "Sixty",  7   =>  "Seventy", 8   =>  "Eighty", 9   =>  "Ninety",
+        10  =>  "Ten", 11  =>  "Eleven", 12  =>  "Twelve", 13  =>  "Thirteen",
+        14  =>  "Fourteen", 15  =>  "Fifteen", 16  =>  "Sixteen", 17  =>  "Seventeen",
+        18  =>  "Eighteen", 19  =>  "Nineteen"
+}
+
+U = { 1 => "one", 2 => "two", 3 => "three", 4 => "four", 5 => "five", 6 => "six",
+        7 => "seven", 8 => "eight", 9 => "nine"
+}
+
+def numberToText(n)
+    tens , units = n / 10 , n % 10
+    return "Zero" if n == 0
+    return "#{U[n]}".capitalize if n.between?(1,9)
+    return "#{D[n]}" if n.between?(10,19)
+    if units == 0
+        return "#{D[tens]}"
+    else
+        return "#{D[tens]}-#{U[units]}"
+    end
+end
+
+class BeerSong
+    attr_reader :beers
+    def initialize(beers)
+        @beers = beers
+        @beers = 0 if beers < 0
+        @beers = 99 if beers > 99
+    end
+    
+    def removeBeer
+        @beers -= 1
+    end
+    
+    def print_song
+        if @beers.between?(3,99)
+            @beers.downto(3).each do |i|
+                puts "#{numberToText(i)} bottles of beer on the wall,"
+                puts "#{numberToText(i)} bottles of beer,"
+                puts "Take one down, pass it around,"
+                puts "#{numberToText(i-1)} bottles of beer on the wall."
+                removeBeer
+            end
+        end
+        
+        if @beers == 2
+            puts "#{numberToText(2)} bottles of beer on the wall,"
+            puts "#{numberToText(2)} bottles of beer,"
+            puts "Take one down, pass it around,"
+            puts "#{numberToText(1)} bottle of beer on the wall."
+            removeBeer
+        end
+        
+        if @beers == 1
+            puts "#{numberToText(1)} bottle of beer on the wall,"
+            puts "#{numberToText(1)} bottle of beer,"
+            puts "Take one down, pass it around,"
+            puts "#{numberToText(0)} bottles of beer on the wall."
+        end
+        
+        return "" if @beers == 0
+    end
+end
