@@ -8,4 +8,13 @@
 # ten_twenty(6) # => 10
 
 def ten_twenty(n)
+	if n.even?
+		puts 10
+	else n.odd?
+		puts 20
+	end
 end
+ten_twenty(5) # => 20
+ten_twenty(6) # => 10
+ten_twenty(10) 
+ten_twenty(99) 
