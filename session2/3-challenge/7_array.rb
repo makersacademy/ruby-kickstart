@@ -9,3 +9,8 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+	array = string.split(/[ ,!:;()\\@\\$\\&\\*+?.-]/).reject { |word| word == "" }
+	array.select!.with_index { |word, index| index%2 == 0 }
+end
+

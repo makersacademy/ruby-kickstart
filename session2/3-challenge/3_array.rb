@@ -7,6 +7,9 @@
 
 class String
   def every_other_char
+  	new_string = ""
+  	self.each_char.with_index { |c, index| index.odd? ? new_string << "" : new_string << c }
+  	new_string
   end
   
 end

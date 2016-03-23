@@ -15,3 +15,9 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(string_array)
+	char_count = string_array.join("").length
+	return false if char_count <= 1
+	Math.sqrt(char_count).to_i.downto(2).each {|i| return false if char_count % i == 0}
+	true
+end
