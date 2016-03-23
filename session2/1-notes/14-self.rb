@@ -9,6 +9,7 @@ class String
 end
 
 class String
+  self #=> String
   def existential
     self # => "abc"
   end
