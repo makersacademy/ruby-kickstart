@@ -24,29 +24,22 @@ ex = [
 
 
 def spiral_access(two_d, &block)
+  
+  order = []
+  loop do 
+    ary = two_d.shift
+    break if ary.nil?
+    order << ary
+    two_d = two_d.transpose.reverse
+  end
+  order = order.flatten!
+  
   if block
-    p "Block"
-    order = []
-    loop do 
-      ary = two_d.shift
-      break if ary.nil?
-      order << ary
-      two_d = two_d.transpose.reverse
-    end
-    order = order.flatten!
     order.map(&block)
   else
-    p "No block"
-    order = []
-    loop do 
-      ary = two_d.shift
-      break if ary.nil?
-      order << ary.flatten
-      two_d = two_d.transpose.reverse
-    end
-    order = order.flatten
     order
   end
+  
 end
 # order # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
 
