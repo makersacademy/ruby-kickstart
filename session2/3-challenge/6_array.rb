@@ -19,4 +19,3 @@ def prime_chars?(strings)
   strings.join.length.prime?
 
 end
-
