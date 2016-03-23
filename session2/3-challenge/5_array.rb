@@ -14,3 +14,12 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(array)
+    remainders = []
+    
+    array.each do |x|
+       rem = x % 3
+       remainders << rem unless rem == 0 || x == 0
+    end
+    remainders
+end
