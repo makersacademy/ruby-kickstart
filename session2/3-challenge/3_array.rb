@@ -7,6 +7,14 @@
 
 class String
   def every_other_char
+
+	toPrint = []
+	skipped = []
+	
+		self.chars.each_with_index { |x, i| i % 2 == 0 ? toPrint << x : skipped << x }
+		
+		return toPrint.join 
+		
   end
   
 end

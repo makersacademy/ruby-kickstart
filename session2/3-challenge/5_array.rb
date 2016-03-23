@@ -14,3 +14,9 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(array_of_numbers)
+	remainders = []
+	skip = []
+	array_of_numbers.each {|num| num % 3 == 0 ? skip << num : remainders << num % 3 }
+	return remainders
+end
