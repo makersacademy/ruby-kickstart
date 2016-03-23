@@ -15,3 +15,11 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+require 'prime'
+def prime_chars?(array)
+	sum = 0
+	array.select {|string| sum += string.length}
+	sum.prime?
+end
+
