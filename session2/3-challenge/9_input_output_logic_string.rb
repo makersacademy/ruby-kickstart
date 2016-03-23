@@ -26,11 +26,11 @@
 def deaf_grandma
 	answer = gets.chomp
 	until answer == "BYE"
-		until (answer = answer.upcase) && (answer != "")
+		if (answer == answer.upcase) && (answer != "")
+			puts "NO, NOT SINCE 1938!"
+		else
 			puts "HUH?! SPEAK UP, SONNY!"
-			answer = gets.chomp
 		end
-		puts "NO, NOT SINCE 1938!"
 		answer = gets.chomp
 	end
 end
