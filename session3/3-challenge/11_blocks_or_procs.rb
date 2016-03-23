@@ -22,7 +22,7 @@
 # array_init { |i| i.to_s }       # => ['0', '1', '2', '3', '4']
 # array_init 2                    # => ['0', '100']
 # array_init                      # => ['0', '100', '200', '300', '400']
-# array_init { 'hi }              # => ['hi', 'hi', 'hi', 'hi', 'hi']
+# array_init { 'hi' }              # => ['hi', 'hi', 'hi', 'hi', 'hi']
 # array_init 10 do |i|            # => [0, -5, 400, -15, 800, -25, 1200, -35, 1600, -45]
 #   if i % 2 == 0
 #     i * 200
@@ -31,6 +31,13 @@
 #   end
 # end
 
+def array_init(size = 5, &block)
+    if block.nil?
+        (0...size).to_a.map{ |i| (i * 100).to_s }
+    else
+        (0...size).to_a.map(&block)
+    end
+end
 
 
 
