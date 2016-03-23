@@ -15,3 +15,26 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(string_array)
+    
+    single_string = ""
+    
+    string_array.each { |str| single_string << str }
+    string_length = single_string.length
+    
+    if string_length == 0 || string_length == 1
+        return_val = false
+    elsif string_length <= 2
+      return_val = true
+    else
+      for x in (2..string_length-1)
+        if string_length % x == 0
+          return_val = false
+          break
+        else
+          return_val = true
+        end
+      end
+    end
+  return_val
+end
