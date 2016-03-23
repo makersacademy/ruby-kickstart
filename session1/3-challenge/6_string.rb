@@ -6,15 +6,14 @@
 #
 
 def odds_and_evens(string, return_odds)
-  if return_odds
-    newstring = string.split("")
-    newstring.each do |x|
-      if x.index % 2 != 0
-        return x
-      end
-    end
+ stringarray = string.split("")
+ newstring = []
 
-  else
-    #true
-  end
+ if return_odds
+   stringarray.each.with_index { |val,index| newstring << val if index.odd?}
+   newstring.join("")
+ else
+   stringarray.each.with_index { |val,index| newstring << val if index.even?}
+   newstring.join("")
+ end
 end

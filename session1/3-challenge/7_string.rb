@@ -12,7 +12,6 @@ def pirates_say_arrrrrrrrr(string)
 
    pirates.each_with_index do |val,index|
      if val == "r" || val == "R"
-       #variable = pirates.index(val)
        newstring << pirates[index + 1]
      end
    end
