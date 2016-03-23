@@ -19,6 +19,7 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
+  puts "Enter a number"
   while true
       input = gets.chomp
     if input == "bye"
@@ -30,7 +31,7 @@ def hi_hi_goodbye
 end
 end
 
-
+#Works!!!!
 
 
 # This will just invoke the method if you run this program directly
