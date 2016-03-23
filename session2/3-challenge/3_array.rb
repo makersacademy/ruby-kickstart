@@ -7,6 +7,9 @@
 
 class String
   def every_other_char
+    stringarray = self.split("")
+    newstring = []
+    stringarray.each.with_index { |val,index| newstring << val if index.even?}
+    newstring.join
   end
-  
 end
