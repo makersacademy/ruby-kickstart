@@ -20,6 +20,18 @@
 
 def hi_hi_goodbye
   # your code here
+  puts "Enter a number"
+  while line = gets
+  	number = line.chomp.to_i
+  	number.times do 
+  		print "hi "
+  	end
+  	puts ""
+  puts "Enter a number"
+  break if line.chomp == 'bye'
+  
+end
+puts "goodbye"
 
 end
 
