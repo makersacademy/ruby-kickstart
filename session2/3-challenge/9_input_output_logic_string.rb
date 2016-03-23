@@ -25,6 +25,10 @@
 
 def deaf_grandma
 
+	while (response=gets.chomp) !="BYE" 
+
+		(response!=response.upcase) || (response=="") ? (puts "HUH?! SPEAK UP, SONNY!") : (puts "NO, NOT SINCE 1938!")
+	end
 end
 
 
