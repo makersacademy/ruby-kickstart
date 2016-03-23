@@ -7,4 +7,30 @@
 
 def odds_and_evens(string, return_odds)
 
+splitsplat = string.split(//)
+endresult = []
+
+if return_odds
+  splitsplat.to_enum.with_index(1).each do |i, index|
+    if index % 2 == 0
+    endresult << i
+  end
 end
+end
+
+if !return_odds
+  splitsplat.to_enum.with_index(1).each do |i, index|
+    if index % 2 != 0
+    endresult << i
+  end
+end
+end
+
+solution = endresult.join
+return solution
+end
+
+# wow, this one was a lot of fun. I have yet to compare the "official"
+# solution to my own, but this was a great learning experience in terms
+# of thinking out what needed to be done, and then fumbling around
+# for the correct tools.
