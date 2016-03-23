@@ -9,5 +9,15 @@
 
 def sum_difference_product
   # your code goes here
-  
+  n1,n2 = gets.split.collect {|x| x.to_i}
+  puts "#{n1+n2}/n#{n1-n2}/n#{n1*n2}"
 end
+
+#I don't understand why another code won't work
+=begin
+def sum_difference_product
+  # your code goes here
+  n1,n2 = gets.split
+  puts "#{n1+n2}/n#{n1-n2}/n#{n1*n2}"
+end
+=end

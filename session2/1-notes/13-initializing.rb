@@ -1,3 +1,4 @@
+)
 # When you instantiate an object (make an instance
 # of a class), you use the new method. After doing all
 # the things necessary to make an object, the new method
