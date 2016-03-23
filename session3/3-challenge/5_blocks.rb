@@ -19,23 +19,34 @@ two_d = [
 # end
 # order # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
 
-def spiral_acess(array2d,&block)
-  size_a = array2d.length
 
+#using https://gist.github.com/wikiti/f367f9bbced61957a077
+
+def spiral_access(user_matrix, &block)
+  # Copy the matrix (optional) and prepare the output array.
+  output = []
+
+  # Lambdas to execute depending on the current case. In summary, they will do the following:
+  # top    -> remove the first array, which is the first row.
+  # right  -> for each row, remove the last element (last column) and return all of them packed (map).
+  # bottom -> remove the last array, which is the last row. The result must be reversed.
+  # left   -> for each row, remove the first element (first column) and return all of them packed (map). The result must be reversed.
+  cases_actions = {
+    top:    lambda{ user_matrix.shift                       },
+    right:  lambda{ user_matrix.map { |f| f.pop }           },
+    bottom: lambda{ user_matrix.pop.reverse                 },
+    left:   lambda{ user_matrix.map { |f| f.shift }.reverse }
+  }
+  # `cases` will iterate the above hash keys like following: top, right, bottom, left, top, right, ...
+  cases = cases_actions.keys.cycle
+
+  # Repeat until the matrix is empty (this will call the lambdas from the hash of above).
+  output += cases_actions[ cases.next ].call() until user_matrix.empty?
+
+  # Return output array.
+  output.map(&block)
 end
 
-def spiral(n)
-  spiral = Array.new(n) {Array.new(n, nil)}     # n x n array of nils
-  runs = n.downto(0).each_cons(2).to_a.flatten  # n==5; [5,4,4,3,3,2,2,1,1,0]
-  delta = [[1,0], [0,1], [-1,0], [0,-1]].cycle
-  x, y, value = -1, 0, -1
-  for run in runs
-    dx, dy = delta.next
-    run.times { spiral[y+=dy][x+=dx] = (value+=1) }
-  end
-  spiral
-end
-puts spiral(4)
 
 
 

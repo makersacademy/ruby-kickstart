@@ -57,3 +57,6 @@ def pay_by_store_credit(order)
   order.ship_goods
 end
 
+def pay_by(order, :type)
+
+end
