@@ -14,4 +14,12 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+require 'prime'
+def prime_chars?(array)
+  total = 0
+  array.each do |x|
+    total += x.length
+  end
+  total.prime? ? true : false
 
+end
