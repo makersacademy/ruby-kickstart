@@ -4,22 +4,10 @@
 
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 
-
 def odds_and_evens(string, return_odds)
-
-	if return_odds 
-    i = 1 
-  else 
-    i = 0
+  stringy = ""
+  string.chars.each_with_index do |char, i|
+    stringy += char if i.odd? == return_odds
   end
-
-  stringy = String.new
-
-  while i <= string.length - 1 do
-    stringy += string[i]
-    i += 2
-  end
-
-  return stringy
-
+  stringy
 end
