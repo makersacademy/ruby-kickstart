@@ -19,6 +19,24 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
+running = true
+  puts "write down your nymber"
+
+  while running == true
+
+  input = gets.chomp
+
+   if input == "bye" 
+
+    puts "goodbye"
+
+  break  
+
+else
+ 
+    puts "hi " * input.to_i 
+end
+end
   # your code here
 
 end
