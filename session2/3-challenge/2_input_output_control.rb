@@ -21,12 +21,12 @@
 def hi_hi_goodbye
   puts "Enter a number"
   input = gets.chomp
-  unless input == "bye"
-   hi * input.to_i
+  until input == "bye"
+   puts ("hi " * input.to_i).chomp
    puts "Enter a number"
    input = gets.chomp
   end
-  puts goodbye
+  puts "goodbye"
 end
 
 
@@ -36,3 +36,4 @@ end
 # This way you can try it out by running "$ ruby 2_input_output_control.rb"
 # but it will still work for our tests
 hi_hi_goodbye if $0 == __FILE__
+
