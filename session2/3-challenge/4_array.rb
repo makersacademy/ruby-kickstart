@@ -8,5 +8,10 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares (array)
+	squares_of = []
+	array.each {|n| squares_of << n if array.include?(n**2)}
+	squares_of.sort
+end
 
 
