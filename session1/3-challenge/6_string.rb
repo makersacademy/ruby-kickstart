@@ -6,5 +6,16 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+     new_array= string.split("")
+another_array = []
+if return_odds
+new_array.each.with_index {|char, index| another_array << char if index.odd?}
+another_array.join
+else 
+new_array.each.with_index {|char, index| another_array << char if index.even?}
+another_array.join
 end
+end
+
+  
+
