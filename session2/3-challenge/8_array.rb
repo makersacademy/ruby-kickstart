@@ -6,3 +6,13 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(arr)
+  newarr = arr.each_cons(3)
+
+  newarr.each do |x,y,z|
+    if x == y && y == z
+      return true
+    end
+  end
+
+end

@@ -6,7 +6,16 @@
 # "".every_other_char         # => ""
 
 class String
+
   def every_other_char
+    if self.length > 0
+      strarr = self.split("")
+      newarr = []
+      strarr.each.with_index { |val,index| newarr << [val] if index.even?}
+      newarr.join("")
+    else
+      return self
+    end
   end
-  
+
 end
