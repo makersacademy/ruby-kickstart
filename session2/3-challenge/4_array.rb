@@ -8,5 +8,15 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
-
+def get_squares(array)
+  squares = Array.new
+  array.select do |x|
+    array.each do |y|
+      if x ** 2 == y
+        squares.push(x)
+        break
+      end
+    end
+  end
+  squares.sort
+end
