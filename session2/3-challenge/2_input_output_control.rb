@@ -20,7 +20,14 @@
 
 def hi_hi_goodbye
   # your code here
+  puts "Enter a number or bye"
 
+while (user_input = gets) && (user_input !~ /bye/)
+    user_input.to_i.times { print "hi "}
+      puts
+      puts "Enter a number or bye"
+end
+   puts "goodbye"
 end
 
 
