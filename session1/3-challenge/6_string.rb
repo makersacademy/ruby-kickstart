@@ -7,12 +7,17 @@
 
 def odds_and_evens(string, return_odds)
     array = string.scan(/./)
+    array2 = Array.new
+    array3 = Array.new
+    
 	if return_odds 
-      array.values_at(* array.each_index.select {|i| i.odd?}).join
+      array.each_with_index {|x, index| array2 << x if index.odd?}
+	  array2.join
 	else
-		array.values_at(* array.each_index.select {|i| i.even?}).join
+		array.each_with_index {|x, index| array3 << x if index.even?}
+		array3.join
 	end
 end
 
-puts odds_and_evens("111222333444555", true)
+
 
