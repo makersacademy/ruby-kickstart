@@ -54,7 +54,20 @@
 #   end
 # end       # => ["a", "m", "r", 1, 3, 4, 9, 2.5, 9.0, 25.8]
 
-
-
-
-
+def your_sort(array, &block)
+    # If block is not given, we use the spaceship operator to compare
+    block ||= Proc.new { |a, b| a <=> b }
+    
+    0.upto(array.length-1) do |i| 
+        swapped = false
+        (array.length - 1).downto(i+1) do |j|  
+            comp = block.call array[j], array[j-1]
+            if comp == -1
+                array[j], array[j-1] = array[j-1], array[j]
+                swapped = true
+            end
+        end
+        break unless swapped
+    end
+    array
+end
