@@ -1,5 +1,4 @@
 # Taken from http://pragprog.com/titles/fr_ltp/learn-to-program
-#
 # Write a Deaf Grandma program. Whatever you say to grandma (whatever
 # you type in), she should respond with HUH?!  SPEAK UP, SONNY!, unless
 # you shout it (type in all capitals). If you shout, she can hear you
@@ -8,12 +7,8 @@
 #
 # Hint: Don't forget about chomp! "BYE\n" is not the same as "BYE"
 # (check the String cheatsheet if you need)
-#
 # remember, you can try your program by going to the terminal and typing   $ ruby 9_input_output_logic_string.rb
-#
 # example:
-#
-#
 # USER:     $ ruby 9_input_output_logic_string.rb
 # USER:     hi grandma.
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
@@ -22,11 +17,18 @@
 # USER:     bye
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
-
 def deaf_grandma
 
+while 
+input = gets.chomp!
+break if input == "BYE"
+if input == input.upcase && input != ""
+puts "NO, NOT SINCE 1938!"
+  else 
+puts "HUH?! SPEAK UP, SONNY!"
+end	
 end
-
+end
 
 
 
