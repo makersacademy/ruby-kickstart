@@ -11,7 +11,7 @@ def sum_difference_product
   array = gets.chomp.split
   a = array[0].to_i
   b = array[1].to_i
- 	sum = a + b
+  sum = a + b
   difference = a - b
   product = a * b
 
