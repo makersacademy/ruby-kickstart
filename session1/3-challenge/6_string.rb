@@ -6,5 +6,5 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	puts string[1]
 end
