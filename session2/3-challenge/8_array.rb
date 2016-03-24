@@ -6,3 +6,16 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(array)
+
+	array.chunk{|y| y}.map{|y, ys|
+		if ys.length == 3 then return true end
+	}
+	return false
+
+end
+
+#got_three?([1, 2, 2, 2, 3])  # => true
+#got_three?(['a', 'a', 'b']) # => false
+#got_three?(['a', 'a', 'a'])  # => true
+#got_three?([1, 2, 1, 1])     # => false
