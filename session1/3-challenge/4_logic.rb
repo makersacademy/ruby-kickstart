@@ -22,4 +22,3 @@ end
 
  
 
-puts grade(0,false)
