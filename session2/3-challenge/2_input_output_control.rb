@@ -19,9 +19,25 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
+
+puts "Enter a number"
+while userinput = gets
+  break if userinput.chomp == "bye"
+  userinput.to_i.times do
+      print "hi "
+    end
+  puts
+  puts "Enter a number"
+end
+puts "goodbye"
 
 end
+
+
+
+
+
+
 
 
 
@@ -30,3 +46,12 @@ end
 # This way you can try it out by running "$ ruby 2_input_output_control.rb"
 # but it will still work for our tests
 hi_hi_goodbye if $0 == __FILE__
+
+
+
+# notes: .to_i on a non-numeric string returns 0
+# I was worried that this was, while effective, a very clunky approach. Also,
+# I knew I had issues before with prompting for user input while using a while loop
+# i.e. avoiding repetition of the prompt. Comparing this to the solution, though,
+# I seem to have done an okay job. Though I prefer the solution's approach
+# in using a boolean rather than a break - I find the latter rather crass.
