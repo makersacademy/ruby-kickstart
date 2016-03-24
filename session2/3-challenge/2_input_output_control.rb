@@ -29,7 +29,6 @@ def hi_hi_goodbye
   end
 
   puts "goodbye"
-  exit
 
 end
 
