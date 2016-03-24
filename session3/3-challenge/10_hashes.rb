@@ -21,7 +21,7 @@
 #
 # EXAMPLES:
 #
-# pathify 'usr' => {'bin' => ['ruby']}                                                        # => ['/usr/bin/ruby']
+# pathify 'usr' => {'bin' => ['ruby']}                                                         # => ['/usr/bin/ruby']
 # pathify 'usr' => {'bin' => ['ruby', 'perl'] }                                                # => ['/usr/bin/ruby', '/usr/bin/perl']
 # pathify 'usr' => {'bin' => ['ruby'], 'include' => ['zlib.h'] }                               # => ['/usr/bin/ruby', '/usr/include/zlib.h']
 # pathify 'usr' => {'bin' => ['ruby']}, 'opt' => {'local' => {'bin' => ['sqlite3', 'rsync']} } # => ['/usr/bin/ruby', 'opt/local/bin/sqlite3', 'opt/local/bin/rsync']
@@ -31,4 +31,15 @@
 # create it from scratch :)
 
 
-
+def pathify(hash, parent = "")
+    hash.keys.map do |k|
+        if hash[k].is_a? Array
+            hash[k].map{ |file| "#{parent}/#{k}/#{file}" }
+        else
+            p k
+            pathify(hash[k], parent += "/#{k}")
+        end
+    end
+end
+hash = {'usr' => {'bin' => ['ruby']}, 'opt' => {'local' => {'bin' => ['sqlite3', 'rsync']} }}
+pathify(hash)
