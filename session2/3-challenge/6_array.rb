@@ -15,3 +15,21 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array_of_strings)
+
+number = array_of_strings.join.length
+
+    return false if number < 2
+
+    2.upto Math.sqrt(number) do |i|
+    return false if number % i == 0
+
+    end
+    true
+
+  end
+
+
+
+
+
