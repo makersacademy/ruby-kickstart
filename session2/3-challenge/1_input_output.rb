@@ -9,5 +9,14 @@
 
 def sum_difference_product
   # your code goes here
-  
+  input = gets.chomp
+  num_arr = input.split(" ")
+  first_digit = num_arr[0].to_i
+  sec_digit = num_arr[1].to_i
+  sum = first_digit + sec_digit
+  diff =  first_digit - sec_digit
+  product = first_digit * sec_digit
+  puts sum
+  puts diff
+  puts product
 end

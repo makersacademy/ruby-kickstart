@@ -7,6 +7,7 @@
 
 class String
   def every_other_char
+    output = self.chars.map.with_index{|v,i| i % 2 == 0 ? v : nil}
+    output.compact.join.to_s
   end
-  
 end

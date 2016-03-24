@@ -8,5 +8,8 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
-
+def get_squares(num)
+  return_array = []
+  return_array << num.map { |x| x if num.include? x**2 }
+  return_array.flatten.compact.sort!
+end
