@@ -8,6 +8,13 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+	answer = ""
+ 	input = $stdin.readline
+ 	num = input.split
+ 	sum = num[0].to_i + num[1].to_i
+  	dif = num[0].to_i - num[1].to_i
+   	pro = num[0].to_i * num[1].to_i
+
+   answer += sum.to_s + "\n" + dif.to_s + "\n"  + pro.to_s + "\n"
+   $stdout.puts answer
 end
