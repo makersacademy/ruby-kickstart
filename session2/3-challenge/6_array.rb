@@ -17,9 +17,6 @@
 require 'prime'
 def prime_chars?(array)
   total = 0
-  array.each do |x|
-    total += x.length
-  end
+  array.each {|x| total += x.length}
   total.prime? ? true : false
-
 end
