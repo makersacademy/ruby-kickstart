@@ -18,10 +18,22 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
-def hi_hi_goodbye
-  # your code here
 
+
+def hi_hi_goodbye
+	puts "Enter a number"
+	input = gets.chomp
+	while input != "bye"
+		puts "hi " * input.to_i #user always enters a string, we need to convert it to an Integer
+		puts "Enter a number"
+		input = gets.chomp #important to add this otherwhise we'll have an infinite loop
+	end
+		puts "goodbye"
+	
 end
+
+
+
 
 
 
