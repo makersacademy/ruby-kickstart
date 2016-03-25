@@ -27,4 +27,25 @@ class Fraction
     return a if b == 0
     gcd(b, a%b)
   end
+
+  attr_accessor "numerator", "denominator"
+
+  def initialize(numerator, denominator)
+    @numerator = numerator
+    @denominator = denominator
+  end
+
+  def to_f
+    numerator.to_f / denominator.to_f
+  end
+
+  def lowest
+    greatestcd = gcd(numerator,denominator)
+    Fraction.new(numerator/greatestcd, denominator/greatestcd)
+  end
+
+  def to_s
+    "#{numerator}/#{denominator}"
+  end
+
 end
