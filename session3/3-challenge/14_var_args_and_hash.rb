@@ -23,5 +23,28 @@
 # problem_14 2,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => true
 # problem_14 3,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => false
 
+def count_clumps(*args)
+    count = 0
+    1.upto(args.length - 1) do |i|
+        current = args[i]
+        left = args[i - 1]
+        i == args.length - 1 ? right = nil : right = args[i + 1]
+        count += 1 if (current == left) and (right != left)
+    end
+    count
+end
 
+# n is a mandatory argument. So in this case, n is the first element of params. 
+def same_ends(n, *params)
+    p [n, params]
+    return false if n > params.length
+    params.first(n) == params.last(n)
+end
 
+def problem_14(*params)
+    problem = params.pop[:problem] if params.last.is_a? Hash
+    problem ||= :count_clumps
+    
+    return count_clumps(*params) if problem == :count_clumps
+    return same_ends(*params) if problem == :same_ends
+end
