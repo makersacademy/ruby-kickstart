@@ -7,11 +7,26 @@
 # prime_chars? ['abc']            # => true
 # prime_chars? ['a', 'bc']        # => true
 # prime_chars? ['ab', 'c']        # => true
-# prime_chars? ['a', 'b', 'c']    # => true
+#
+
 #
 # Examples of length four
 # prime_chars? ['abcd']           # => false
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+
+
+
+def prime_chars?(array)
+    require 'prime'
+    sum = array.join.length
+    if sum.prime?
+        return true
+    else
+        return false
+    end
+end
+
+
 
