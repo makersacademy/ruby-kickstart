@@ -20,22 +20,20 @@
 # This will just invoke the method if you run this program directly
 # This way you can try it out by running "$ ruby 2_input_output_control.rb"
 # but it will still work for our tests
-# hi_hi_goodbye if $0 == __FILE__
+#hi_hi_goodbye if $0 == __FILE__
+
+
+
 
 def user_input
-    puts "Enter a number please: "
+	puts 'Enter a number please: '
 end
 
 def hi_hi_goodbye
-    user_input
-  while line = gets
-	puts "hi" * line.to_i
-	break if line.chomp == 'bye'
 	user_input
-	end
-	puts "goodbye"
+   	while user_input = gets
+	break if user_input.chomp == "bye"
+	puts "hi " * user_input.to_i
+     end
+  puts 'goodbye'
 end
-
-
-Correct
-
