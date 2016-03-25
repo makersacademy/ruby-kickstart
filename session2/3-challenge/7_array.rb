@@ -10,10 +10,13 @@
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
 def alternate_words(sentence)
-    "!@$#%^&*()-=_+[]:;,./<>?\|".chars do |char|
-        sentence = sentence.gsub(char, " ")
-    end
+    # Filtering using the special caracters string
+    # "!@$#%^&*()-=_+[]:;,./<>?\|".chars do |char|
+    #     sentence = sentence.gsub(char, " ")
+    # end
     
+    # Filtering using regexp
+    sentence = sentence.gsub(/[^'’\w\s]/, " ")
     words = sentence.split
     res = []
     words.each.with_index do |word, index| 
