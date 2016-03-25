@@ -16,7 +16,7 @@
 #
 # USER:     $ ruby 9_input_output_logic_string.rb
 # USER:     hi grandma.
-# GRANDMA:  HUH?! SPEAK UP, SONNY!
+# GRANDMA:
 # USER:     HI GRANDMA!
 # GRANDMA:  NO, NOT SINCE 1938!
 # USER:     bye
@@ -24,6 +24,22 @@
 # USER:     BYE
 
 def deaf_grandma
+  input = gets.chomp
+
+  if input != "BYE"
+
+    if input == input.upcase && input != ""
+      puts "NO, NOT SINCE 1938!"
+      deaf_grandma
+
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+      deaf_grandma
+    end
+
+  else
+  end
+
 
 end
 
