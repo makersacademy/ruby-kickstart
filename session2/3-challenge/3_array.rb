@@ -5,10 +5,16 @@
 # "abcdefg".every_other_char  # => "aceg"
 # "".every_other_char         # => ""
 
+
+
 class String
-    def every_other_char
-	array_new = ''
-        each_char.with_index { |char, index| array_new << char if index.even?} 
-        array_new
-    end
+  def every_other_char
+    return_str = ''
+	each_char.with_index do | char, i|
+	return_str << char if !i.odd?
+	end
+    return_str
+  end
 end
+
+
