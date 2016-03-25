@@ -11,7 +11,7 @@
 
 def alternate_words(sentence)
   result = []
-  sentence.scan(/\w+/).each_with_index {|word, index| result << word.gsub(/[^\w\'\’]/,"") if index.even?}
-  result.delete ""
+  sentence.gsub(/[^\w’']/, " ").split.each_with_index {|word,index|result << word if index.even?}
   result
 end
+
