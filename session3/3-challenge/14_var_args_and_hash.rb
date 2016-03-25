@@ -36,7 +36,6 @@ end
 
 # n is a mandatory argument. So in this case, n is the first element of params. 
 def same_ends(n, *params)
-    p [n, params]
     return false if n > params.length
     params.first(n) == params.last(n)
 end
