@@ -22,18 +22,15 @@ class User
   attr_accessor :username, :blogs
 
   def initialize(username)
-    @username = username
-    @blogs = []
+    self.username = username
+    self.blogs = []
   end
 
   def add_blog(date,text)
-    @blog = Blog.new(date,user,text)
-  end
-
-  def blogs
-    @blogs << add_blog(date,text)
-    @blogs.sort_by { |b| b.date }.reverse
-    @blogs
+    blog = Blog.new(date,self,text)
+    self.blogs << blog
+    self.blogs = self.blogs.sort_by { |b| b.date }.reverse  
+    blog
   end
 end
 
@@ -42,13 +39,13 @@ class Blog
   attr_accessor :text, :date, :user
 
   def initialize(date,user,text)
-    @date = date
-    @text = text
-    @user = user
+    self.date = date
+    self.text = text
+    self.user = user
   end
 
   def entry
-    "#{user.username} #{@date}\n#{@text}"
+    "#{user.username} #{date}\n#{text}"  
   end
 
   def summary
@@ -56,11 +53,12 @@ class Blog
   end
 
   def ==(other)
-    @date == other.date &&
-    @user == other.user &&
-    @text == other.text
+    date == other.date &&
+    user == other.user &&
+    text == other.text
   end
 end
+ 
 
 # ==========  EXAMPLE  ==========
 #

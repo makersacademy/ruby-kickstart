@@ -38,16 +38,14 @@ class BeerSong
     count = 99 if count > 99
  
     loop do
-      puts  "#{count.to_words.capitalize} #{bottle(count)} of beer on the wall,"        ,
-            "#{count.to_words.capitalize} #{bottle(count)} of beer,"                    ,
+      puts  "#{count.to_words.capitalize.split.join('-')} #{bottle(count)} of beer on the wall,"        ,
+            "#{count.to_words.capitalize.split.join('-')} #{bottle(count)} of beer,"                    ,
             "Take one down, pass it around,"                                            ,
-            "#{(count - 1).to_words.capitalize} #{bottle(count - 1)} of beer on the wall."
+            "#{(count - 1).to_words.capitalize.split.join('-')} #{bottle(count - 1)} of beer on the wall."
       count -= 1
       break if count == 0
     end
   end
 end
 
-beer_song = BeerSong.new(99)
-
-puts beer_song.print_song
+# BeerSong.new().print_song

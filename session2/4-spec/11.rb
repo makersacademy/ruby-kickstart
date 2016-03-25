@@ -1,4 +1,5 @@
 require_relative 'helper'
+require 'pry'
 
 RSpec.describe 'BeerSong' do
   def stanza(n)
