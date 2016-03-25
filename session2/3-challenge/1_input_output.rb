@@ -1,3 +1,5 @@
+
+
 # Remember you can test this code with
 #   $ rake 2:1
 
@@ -9,12 +11,8 @@
 
 
 def sum_difference_product
-   first_int = gets.chomp
-   second_int = gets.chomp
-   puts first_int.to_i + second_int.to_i
-   puts first_int.to_i - second_int.to_i
-   puts first_int.to_i * second_int.to_i
+  n1, n2 = gets.split.map { | i | i.to_i }
+  puts (n1 + n2)
+  puts (n1 - n2)
+  puts (n1 * n2)
 end
-  
-
-correct
