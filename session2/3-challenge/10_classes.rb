@@ -16,5 +16,16 @@
 #
 
 class Person
-
+attr_accessor :name, :age, :birthday
+def initialize name,age
+@name = name
+@age = age
 end
+
+attr_accessor
+def birthday
+  @age = age + 1
+end
+end
+
+#Works
