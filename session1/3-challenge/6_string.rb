@@ -6,5 +6,9 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	if string == false
+		string.split(//).each_slice(2).map(&:last).join
+	else 
+		string.split(//).each_slice(2).map(&:first).join
+	end
 end
