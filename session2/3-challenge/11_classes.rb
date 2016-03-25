@@ -56,9 +56,7 @@ class BeerSong
             puts "#{make_text(@bottles-1)} bottles of beer on the wall."
             @bottles -= 1
         end
-        if @bottles == 0
-        return ""
-        end
+        
     end
     
 end
