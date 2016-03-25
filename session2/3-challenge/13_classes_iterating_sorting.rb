@@ -1,7 +1,7 @@
 # DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
 
 # Define a class called User that keeps track of a person's username
-# it should receive the username when initialized
+# it should receive the username when initialized 
 # it should have a method add_blog which accepts a date and text
 # it should have a method blogs which returns an array of all blogs the user has written
 # they should be in reverse chronological order (newest first)
@@ -14,7 +14,7 @@
 # Two blogs should be equal to eachother if they have the same user, date, and text
 # here is a partially filled out example of how to define the == operator:
 #      def ==(other)
-#        return self.date == other.date
+#        return self.date == other.date && self.text == other.text && self.user == other.user
 #      end
 
 
@@ -32,7 +32,7 @@
 # blog1.user                      # => lissa
 #
 # Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"                                    # we'll call this blog2
-# Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"              # we'll call this blog3
+# Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fudge facebook >.<"              # we'll call this blog3
 # Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best ^_^"   # we'll call this blog4
 # lissa.blogs                     # => [ blog1 , blog4 , blog2 , blog3 ]
 #
@@ -65,4 +65,74 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
+
+
+# lissa = User.new 'QTSort'
+# lissa.username                  # => "QTSort"
+# lissa.blogs                     # => []
 require 'date'
+class User
+   attr_accessor :username, :blogs #add blogs in order to access blogs shown in ex without needing to use def blogs
+   def initialize(username)
+      self.username = username
+      self.blogs = [] #since initial output
+   end
+# lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
+# lissa.blogs                     # => [ blog1 ]
+   def add_blog(date, text)
+      added_blog = Blog.new(date, self, text)
+      self.blogs << added_blog #used self.blogs
+      self.blogs = self.blogs.sort_by { |blog| blog.date }.reverse #going to check irb
+      added_blog  
+   end
+end
+
+class Blog
+   attr_accessor :date , :user , :text 
+   def initialize (date, user, text) #almost this up with the ordering
+      self.date = date
+      self.user = user
+      self.text = text
+   end
+# have a method called summary that returns the first 10 words from the text (or the entire text if it is less than 10 words)
+   def summary
+      self.text.split.take(10).join(" ")  
+   end
+   def entry #did not see this in the instructions
+     "#{user.username} #{date}\n#{text}" 
+   end
+   def ==(other)
+     return self.date == other.date && self.text == other.text && self.user == other.user
+   end
+end
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

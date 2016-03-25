@@ -15,3 +15,14 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(strings)
+  require 'prime'
+  Prime.prime?(strings.join.length)
+end
+
+#Prime.prime? in ruby-doc
+
+
+
+
+

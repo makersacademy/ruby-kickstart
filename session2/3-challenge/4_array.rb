@@ -8,5 +8,15 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(numbers)
+  #[1,2,3,4,5].select { |num|  num.even?  } from ruby-doc
+  numbers.select {|num| numbers.include? num**2 }.sort!  
+end
+
+#numbers.select do |n|  thought i could use .each
+#    numbers.include? n**2
+#   numbers.sort
+	
+
 
 

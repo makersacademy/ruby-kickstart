@@ -22,9 +22,32 @@
 # USER:     bye
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
-
+=begin
 def deaf_grandma
+talk = gets.chomp
+  while true
+    break if talk == 'BYE'
+    if talk == talk.upcase && talk != ""
+       puts 'NO, NOT SINCE 1938!'
+       talk = gets.chomp
+    else 
+       puts 'HUH?! SPEAK UP, SONNY!'
+       talk = gets.chomp
+    end
+  end   
+end
+=end
+#shorten
 
+ def deaf_grandma
+  while talk = gets.chomp
+    break if talk == 'BYE'
+    if talk == talk.upcase && talk != ""
+       puts 'NO, NOT SINCE 1938!'
+    else 
+       puts 'HUH?! SPEAK UP, SONNY!'
+    end
+  end   
 end
 
 
