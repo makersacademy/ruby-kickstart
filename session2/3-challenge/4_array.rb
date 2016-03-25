@@ -9,10 +9,10 @@
 # This time you will have to define the method, it's called: get_squares
 
 def get_squares(array)
-    new_array = array.select { |n| array.include? n * n }
-    new_array.sort
+	array_new = array.select { |x| array.include?(x*x) }
+	array_new.sort
 end
-	
-Correct
+
+
 
 
