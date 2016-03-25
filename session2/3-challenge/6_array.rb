@@ -15,3 +15,13 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(strings)
+  i = 0
+
+  strings.each do |element|
+    i += element.length
+  end
+
+i.is_prime?
+
+end
