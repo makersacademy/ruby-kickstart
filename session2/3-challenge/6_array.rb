@@ -16,7 +16,5 @@
 # prime_chars? ['a', 'b', 'cd']   # => false
 require 'prime'
 def prime_chars?(array)
-  total = 0
-  array.each {|x| total += x.length}
-  total.prime? ? true : false
+  array.join.length.prime? ? true : false
 end
