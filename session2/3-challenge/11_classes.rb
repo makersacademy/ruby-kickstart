@@ -21,11 +21,15 @@
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
 
-#Not working!
 class BeerSong
 
   def initialize(bottles)
     @bottles = bottles
+    if @bottles < 0
+      @bottles = 0
+    elsif @bottles > 99
+      @bottles = 99
+    end
   end
 
   def num_to_word(int)
@@ -56,42 +60,39 @@ class BeerSong
       4 => "four",
       3 => "three",
       2 => "two",
-      1 => "one"
+      1 => "one",
+      0 => "zero"
     }
     str = ""
     num_hash.each do |num, name|
       if int == 0
-        return str
+        return "zero"
       elsif int.to_s.length == 1 && int/num > 0
         return str + "#{name}"
       elsif int < 100 && int/num > 0
         return str + "#{name}" if int%num == 0
-        return str + "#{name} " + num_to_word(int%num)
+        return str + "#{name}-" + num_to_word(int%num)
       elsif int/num > 0
-        return str + num_to_word(int/num) + " #{name} " + num_to_word(int%num)
+        return str + num_to_word(int/num) + " #{name}" + num_to_word(int%num)
       end
     end
   end
 
-  def bottles
-    if @bottles < 0
-      @bottles = 0
-    elsif @bottles > 99
-      @bottles = 99
-    end
+  def plural_check(bottles)
+    bottles != 1 ? plural = "bottles" : plural = "bottle"
   end
 
-  def lyrics
-    "#{num_to_word(bottles)} bottles of beer on the wall,"
-    "#{num_to_word(bottles)} bottles of beer,"
-    "Take one down, pass it around,"
-    "#{num_to_word(bottles)} bottles of beer on the wall."
+  def lyrics(bottles)
+    puts "#{num_to_word(bottles)} #{plural_check(bottles)} of beer on the wall,".capitalize
+    puts "#{num_to_word(bottles)} #{plural_check(bottles)} of beer,".capitalize
+    puts "Take one down, pass it around,"
+    puts "#{num_to_word(bottles - 1)} #{plural_check(bottles - 1)} of beer on the wall.".capitalize
   end
 
   def print_song
-    if @bottles == 0
-      print ""
+    @bottles.downto 1 do |x|
+      lyrics x
+      @bottles -= 1
     end
-    @bottles.downto(1) { |x| puts lyrics x }
   end
 end
