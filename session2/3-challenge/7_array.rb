@@ -9,3 +9,10 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(words)
+  arr_return = []
+  words.split(/(?!'\b)(?!’\b)\b\W+/).each_with_index do |char, index|
+  arr_return << char if index.even?
+  end
+  arr_return
+end
