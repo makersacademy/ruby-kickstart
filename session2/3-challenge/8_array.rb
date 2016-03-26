@@ -26,4 +26,4 @@ def got_three?(array)
 	answer
 end	
 
-puts got_three?([1, 2, 2, 1])
+ 
