@@ -9,3 +9,13 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+class String
+	def punc_strip
+		self.gsub('-', " ").gsub /[^A-z'’\s]/,""
+	end
+end
+
+def alternate_words(str)
+	str.punc_strip.split(" ").select.with_index {|w,index| index.even?}
+end
+

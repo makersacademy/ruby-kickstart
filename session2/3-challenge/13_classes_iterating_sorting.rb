@@ -73,3 +73,61 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+
+class User
+
+	attr_accessor 'username'
+
+	def initialize(username)
+		@username = username
+		@blogs = []
+	end
+
+	def add_blog(date,text)
+		@blogs << Blog.new(date, @username, text)
+		@blogs[@blogs.size-1]
+	end
+
+	def blogs
+		@blogs.sort! {|blog1,blog2| blog2.date <=> blog1.date}
+	end
+
+end
+
+
+class Blog
+
+	attr_accessor 'date', 'user', 'text'
+
+	def initialize(date, user, text)
+		@date = date
+		@user = user
+		@text = text
+	end
+
+	def summary
+		@text.split(" ")[0..9].join(" ")
+	end
+
+	def entry
+		return "#{@user.username} #{@date}\n#{@text}" 
+	end
+
+	def ==(other)
+    	return self.date == other.date && @user == other.user && @text == other.text
+    end
+
+end
+
+lissa = User.new 'QTSort'
+blog1 = lissa.add_blog Date.parse("2010-05-28"), "Sailor Venus is my favourite"
+blog2 = lissa.add_blog Date.parse("2007-01-02"), "Going dancing!"
+blog3 = lissa.add_blog Date.parse("2006-01-02"), "For the last time, fuck facebook >.<"
+blog4 = lissa.add_blog Date.parse("2010-01-02"), "Got a new job, cuz I'm pretty much the best ^_^"
+puts lissa.blogs.size
+blog_dates = lissa.blogs.map { |blog| blog.date }
+puts blog_dates #[Date.parse('2010-05-28'), Date.parse('2010-01-02'), Date.parse('2007-01-02'), Date.parse('2006-01-02')]
+puts lissa.blogs
+puts
+puts [blog1, blog4, blog2, blog3]

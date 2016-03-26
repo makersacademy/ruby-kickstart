@@ -7,6 +7,9 @@
 
 class String
   def every_other_char
+  	return_value = ''
+  	size.times {|index| return_value << self[index] if index.even?}
+  	return_value
   end
-  
 end
+

@@ -8,6 +8,8 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  input = gets.chomp.split(" ").map(&:to_i)
+  puts input[0] + input[1]
+  puts input[0] - input[1]
+  puts input[0] * input[1]
 end
