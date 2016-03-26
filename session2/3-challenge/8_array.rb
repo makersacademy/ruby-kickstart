@@ -5,4 +5,11 @@
 # got_three? ['a', 'a', 'b']  # => false
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
-
+def got_three?(array)
+  array.each_with_index do |item, i|
+    item_one = array[ i + 1 ]
+    item_two = array[ i + 2 ]
+   return true if item == item_one && item == item_two
+   end
+      false
+end
