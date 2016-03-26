@@ -17,4 +17,35 @@
 
 class Person
 
+	def initialize (name, age)
+		@name = name
+		@age = age	
+	end	
+
+	def name
+		return @name
+	end
+
+	def name=(name)
+		@name = name
+	end
+
+	def age
+		return @age
+	end	
+
+	def age=(age)
+		@age = age
+	end
+
+	def birthday 
+		@age += 1
+		return @age  
+	end
+
 end
+
+
+
+
+
