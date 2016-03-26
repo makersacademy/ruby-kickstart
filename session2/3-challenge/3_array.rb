@@ -7,6 +7,7 @@
 
 class String
   def every_other_char
+  	String.split("").delete_at even? 
   end
   
 end

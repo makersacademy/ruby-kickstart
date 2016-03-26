@@ -5,6 +5,17 @@
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
 
+
 def odds_and_evens(string, return_odds)
+	to_return = ""
+	if return_odds
+		to_return = string.split("").select.with_index { |_, i| i.odd? }
+	else
+		to_return = string.split("").select.with_index { |_, i| i.even? }
+	end
+	to_return.join			
 
 end
+
+
+
