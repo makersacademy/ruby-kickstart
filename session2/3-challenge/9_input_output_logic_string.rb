@@ -23,11 +23,20 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
+
 def deaf_grandma
 
+
+  while sentence = gets
+    sentence.chomp!
+    break if sentence == "BYE"
+    if sentence == sentence.upcase && (sentence != "" && sentence != " ")
+      puts "NO, NOT SINCE 1938!"
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+  end
 end
-
-
 
 
 
