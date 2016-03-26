@@ -23,8 +23,45 @@
 # f.to_f               # => 0.5
 
 class Fraction
-  def gcd(a,b)
+	#attr_accessor :num1, :num2
+	#not sure about what attr_accesor does or has to do regarding initialize or getter and setter methods  
+
+  def initialize (num1, num2) 
+  	@num1 = num1
+  	@num2 = num2
+  end
+
+  def numerator 
+  	@num1
+  end
+
+  def denominator
+  	@num2
+  end
+  
+  def numerator=(new_num1) #should be attr_reader @num1, be the same??
+    @num1 = new_num1
+  end
+
+  def denominator=(new_num2) #same as above
+  	@num2 = new_num2
+  end
+
+  def to_f
+  	(@num1 / @num2.to_f).round(1)
+  end
+
+  def to_s
+  	"#{numerator}/#{denominator}"
+  end
+
+  def gcd(a,b)			#I understand what it does but not the reult
     return a if b == 0
-    gcd(b, a%b)
+    gcd(b, a%b)			#What is this output?
+  end
+
+  def lowest
+  	divisor = gcd(@num1, @num2)
+  	Fraction.new(@num1/divisor, @num2/divisor)
   end
 end
