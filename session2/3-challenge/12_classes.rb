@@ -44,9 +44,7 @@ end
 
 def lowest
   new_gcd = gcd(numerator,denominator)
-  new_num = numerator / gcd
-  new_den = denominator / gcd
-  Fraction.new(new_num, new_den)
+  Fraction.new(numerator/new_gcd, denominator/new_gcd)
 end
 
 
