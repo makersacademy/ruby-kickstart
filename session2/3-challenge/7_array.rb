@@ -9,3 +9,26 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+
+	unwanted = ["!","@","$","#","%","^","&","*","(",")","-","=","_","+","[","]",":",";",",",".","/","<",">","?","|"]
+	counter = 0
+	new_str_arr = Array.new 
+
+	unwanted.each do |symbol|
+		string = string.gsub(symbol," ")
+	end
+	array_str = string.split(" ");
+
+	while counter < array_str.length do  
+		if counter.even?
+			new_str_arr.push(array_str[counter])
+		end	
+	counter += 1	
+	end
+	
+	return new_str_arr
+
+end	
+
+# alternate_words("Lorem! @ipsum: dolor sit amet.")
