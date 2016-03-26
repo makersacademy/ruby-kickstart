@@ -66,3 +66,35 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+  def initialize(username)
+    @username = username
+    @my_blogs = []
+  end
+
+  def add_blog(date, text)
+
+  end
+
+  def blogs
+
+  end
+
+end
+
+class Blog
+
+  attr_accessor :text , :date , :user
+
+  def initialize(date, user, text)
+    @date = date
+    @user = user
+    @text = text
+  end
+
+  def summary
+    @text.split(0..9).join(" ")
+  end
+
+end

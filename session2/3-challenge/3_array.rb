@@ -7,6 +7,9 @@
 
 class String
   def every_other_char
+    char_array = split("")
+    return_array = []
+    char_array.each_slice(2) { |a,b| return_array << a }
+    return_array.join
   end
-  
 end
