@@ -70,16 +70,16 @@ require 'date'
 class User
   def initialize(username)
     @username = username
+    @blogs = []
   end
 
-  attr_reader :username
+  attr_accessor :username, :blogs
 
   def add_blog(date,text)
-    #
-  end
-
-  def blogs
-    #return an array of all blogs the user has written in reverse chronological order (newest first)
+    new_blog = Blog.new(date,username,text)
+    self.blogs << new_blog
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+    new_blog
   end
 
 end
@@ -91,10 +91,17 @@ class Blog
     @text = text
   end
 
-attr_accessor :text :date :user
+attr_accessor :text, :date, :user
 
   def summary
-    #return the first 10 words from the text
+    text.split[0..9].join(' ')
   end
 
-  def
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def ==(other)
+    date == other.date && user == other.user && text == other.text
+  end
+end
