@@ -32,7 +32,7 @@ class BeerSong
 
   def print_song
     beer.downto 1 do |x|
-      puts song x
+      song x
       beer =- 1
   end
 
