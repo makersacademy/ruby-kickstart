@@ -19,7 +19,16 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
+	puts "Enter a number"
+
+	while iterator = gets.to_i
+	  iterator.times do
+	   	puts "hi"
+	  end
+	  break if gets == 'bye'
+	end
+
+	puts "goodbye"
 
 end
 

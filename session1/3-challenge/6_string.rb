@@ -6,9 +6,13 @@
 #
 
 def odds_and_evens(string, return_odds)
-	if string == false
-		string.split(//).each_slice(2).map(&:last).join
-	else 
-		string.split(//).each_slice(2).map(&:first).join
-	end
+  string_array = string.split(//)
+  if return_odds 
+    new_string = string_array.select {|x| string_array.index(x).odd?}
+  else
+    new_string = string_array.select {|x| string_array.index(x).even?}
+  end
+  return new_string.join('')
 end
+
+# Note: need to review this and understand why it's failing four tests only!
