@@ -37,8 +37,7 @@ class Fraction
 
   def lowest
     lowest = gcd(@numerator, @denominator)
-    @numerator /= lowest
-    @denominator /= lowest
+    Fraction.new(@numerator / lowest, denominator / lowest)
   end
 
   def to_f
@@ -50,5 +49,7 @@ class Fraction
   end
 
 end
+
+
 
 
