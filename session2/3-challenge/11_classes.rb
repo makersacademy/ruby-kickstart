@@ -1,26 +1,3 @@
-# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
-
-# Write a program that outputs the lyrics for "Ninety-nine Bottles of Beer on the Wall"
-# Your program should print the number of bottles in English, not as a number. For example:
-#
-# Ninety-nine bottles of beer on the wall,
-# Ninety-nine bottles of beer,
-# Take one down, pass it around,
-# Ninety-eight bottles of beer on the wall.
-# ...
-# One bottle of beer on the wall,
-# One bottle of beer,
-# Take one down, pass it around,
-# Zero bottles of beer on the wall.
-#
-# Your program should not use ninety-nine output statements!
-# Design your program with a class named BeerSong whose initialize method
-# receives a parameter indicating the number of bottles of beer initially on the wall.
-# If the parameter is less than zero, set the number of bottles to zero. Similarly,
-# if the parameter is greater than 99, set the number of beer bottles to 99
-# Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
-# Add any additional methods you find helpful.
-
 class BeerSong  
 
 attr_accessor :bottles # I need to check what does it do exactly
@@ -43,36 +20,38 @@ attr_accessor :bottles # I need to check what does it do exactly
       9  => "nine",     8  => "eight",    7  => "seven",
       6  => "six",      5  => "five",     4  => "four",
       3  => "three",    2  => "two",      1  => "one",
-      0 => "zero"}    
+                                          0 => "zero"
+      }    
     
     if number_words.has_key?(number)# returns from hash  unique numbers
       number_words[number] # gives us the value associated to a hash key
     
     else# for two digit numbers not already in hash
-      [number_words[number - (number % 10)], number_words[number % 10] ].join(" ") 
+      [number_words[number - (number % 10)], number_words[number % 10] ].join("-") 
       #hash[number - remainder] = hash value    #hash[remainder] = hash value
       #we can create an array with this both values and then use join method on the array
     end
   end
 
+  def non_plural(number) # We need this in orther to avoid the plural when there is 1 bottle.
+       number == 1 ? "bottle" : "bottles"
+  end
+
+
   def print_song
-    if @bootles == 0 #Since Josh said it has to be a new string (not explained on the above instruction, though, see Rspec)
+    if @bottles == 0 #Since Josh said it has to be a new string (not explained on the above instruction, though, see Rspec)
       String.new
     else
-     @bottles.downto(1) do |i| #using conver for every i in @bottles we can create the song.
-      if i == 1
-        puts "#{convert(i)} bottle of beer on the wall,".capitalize
-        puts "#{convert(i)} bottle of beer,".capitalize
-        puts "Take one down, pass it around,".capitalize
-        puts "Zero bottles of beer on the wall."
-      else puts "#{convert(i)} bottles of beer on the wall,".capitalize
-        puts "#{convert(i)} bottles of beer,".capitalize
-        puts "Take one down, pass it around,".capitalize
-        end
+     @bottles.downto(1) do |i| #using conver for every i in @bottles and non_plural we can create the song.
+          puts "#{convert(i)} #{non_plural(i)} of beer on the wall,".capitalize
+          puts "#{convert(i)} #{non_plural(i)} of beer,".capitalize
+          puts "Take one down, pass it around,".capitalize
+          puts "#{convert(i-1)} #{non_plural(i-1)} of beer on the wall.".capitalize
       end
-    end
-  end
+        end
+      
 end
-
-# beers = BeerSong.new(100)
-# beers.print_song
+end
+    
+beers = BeerSong.new(3)
+beers.print_song
