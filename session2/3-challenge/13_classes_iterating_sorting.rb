@@ -20,58 +20,48 @@
 require 'date'
 
 class User
-	  attr_accessor :username, :blogs
+  attr_accessor :username, :blogs
 
-	def intitialize(username)
-		
-		self.username = username
-		self.bloglist = []
+  def initialize(username)
+    self.username = username
+    self.blogs    = []
+  end
 
-	end
-
-	def add_blog (date, text)
-				
-		newblog = Blog.new(date, username, text) 
-		bloglist.push(newblog)
-	end
-
-	def blogs
-
-		self.bloglists = bloglists.sort_by {|blog| blog.date}.reverse
-		newblog
-
-	end
-
+  def add_blog(date, text)
+    added_blog = Blog.new(date, self, text)
+    blogs << added_blog
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+    added_blog
+  end
 end
+
+
 
 class Blog
+  attr_accessor :date, :user, :text
 
-	attr_accessor :text, :date, :user
+  def initialize(date, user, text)
+    self.date = date
+    self.user = user
+    self.text = text
+  end
 
-	def initalize(date, user, text)
-		self.date = date
-		self.user = user
-		self.text = text
-			
-	end
+  def summary
+    text.split[0..9].join(' ')
+  end
 
-	def post
-  		"#{user.username} #{date}\n#{text}"
-  	end 
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
 
-	def summary 
-	#summaries 10 words
-		summary = []
-		text.split(" ").each_with_index {|word, i| summary << word if i < 11 }
-		summary.join(" ") 
-	end
-
-	def ==(other)
-  	  date == other.date &&
+  def ==(other)
+    date   == other.date &&
       user == other.user &&
       text == other.text
- 	end
+  end
 end
+
+
 
 
 
