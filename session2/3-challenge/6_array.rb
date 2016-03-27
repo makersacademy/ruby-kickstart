@@ -15,32 +15,27 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+
+# def prime_chars?(strings)
+# 	counter = 1
+# 	prime_counter = 0
+# 	new_string_length = strings.join.length
+
+# 	while counter <= new_string_length do 				 
+# 		prime_counter += 1 if new_string_length % counter == 0
+# 		counter += 1	
+# 	end
+# 	return prime_counter == 2
+# end	
+
+
+require 'prime'
+
 def prime_chars?(strings)
-	counter = 2
 	new_string_length = strings.join.length
-	answer = false
+	return Prime.first(new_string_length).include?(new_string_length)
+end
 
-	if new_string_length < 2
-	
-		return answer
-	end
-
-	if new_string_length < 3
-		return true
-	end
-
-	while counter <= new_string_length do 				#  4   6
-		if new_string_length % counter == 0						#  
-			return answer
-		else 
-			answer = true
-		end	
-		counter += 1	
-	end
-	answer
-end	
 
  
-# puts prime_chars?(["7", "q", "5AW"])
-# puts prime_chars(["abd","c"])  
-# puts prime_chars(["abc","cd","e"])   
