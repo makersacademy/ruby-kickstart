@@ -11,19 +11,25 @@
 # I have included a greatest common divisor method for you
 # You should also define a method, to_s, that will represent the Fraction as a String
 #
-# EXAMPLE:
-# f = Fraction.new 20, 60
-# f.numerator          # => 20
-# f.denominator        # => 60
-# f.to_s               # => "20/60"
-# f.lowest.to_s        # => "1/3"
-# f.numerator = 50
-# f.denominator = 100
-# f.to_s               # => "50/100"
-# f.to_f               # => 0.5
+
 
 class Fraction
-  def gcd(a,b)
+  attr_accessor :numerator, :denominator
+def initialize (numerator, denominator)
+	@numerator = numerator
+	@denominator = denominator
+	end
+       def to_f
+       numerator.to_f/denominator.to_f
+       end
+def lowest
+ reduction = gcd(numerator, denominator)           # numer and denom reduced to lowest terms 
+	Fraction.new(numerator/reduction, denominator/reduction) 
+	end
+def to_s
+ "#{numerator}/#{denominator}"
+end
+	def gcd(a,b)
     return a if b == 0
     gcd(b, a%b)
   end
