@@ -24,9 +24,12 @@
 # USER:     BYE
 
 def deaf_grandma
-puts "Talk to granny"
-grandma = ""
-user = gets.chomp
+
+		print "Talk to granny"
+		grandma = ""
+		user = gets.chomp
+
+
 	while user != "BYE"
 		if user == user.upcase
 			grandma = "NO, NOT SINCE 1938!"

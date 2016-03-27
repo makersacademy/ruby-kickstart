@@ -17,6 +17,69 @@
 #        return self.date == other.date
 #      end
 
+require 'date'
+
+class User
+	  attr_accessor :username, :blogs
+
+	def intitialize(username)
+		
+		self.username = username
+		self.bloglist = []
+
+	end
+
+	def add_blog (date, text)
+				
+		newblog = Blog.new(date, username, text) 
+		bloglist.push(newblog)
+	end
+
+	def blogs
+
+		self.bloglists = bloglists.sort_by {|blog| blog.date}.reverse
+		newblog
+
+	end
+
+end
+
+class Blog
+
+	attr_accessor :text, :date, :user
+
+	def initalize(date, user, text)
+		self.date = date
+		self.user = user
+		self.text = text
+			
+	end
+
+	def post
+  		"#{user.username} #{date}\n#{text}"
+  	end 
+
+	def summary 
+	#summaries 10 words
+		summary = []
+		text.split(" ").each_with_index {|word, i| summary << word if i < 11 }
+		summary.join(" ") 
+	end
+
+	def ==(other)
+  	  date == other.date &&
+      user == other.user &&
+      text == other.text
+ 	end
+end
+
+
+
+
+
+
+
+
 
 
 # ==========  EXAMPLE  ==========
@@ -60,6 +123,11 @@
 #                       From the school of revision, Comes the standard inventor's rule, Books of subtle notation Compositions, all original
 #                       I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,
 #                       All my labor will be lost with time
+
+
+
+
+
 
 
 
