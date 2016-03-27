@@ -14,3 +14,14 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(input)
+	arr = []
+
+	input.select do |n|
+		if n % 3 != 0
+		arr << n % 3
+		end
+	end 
+
+	arr
+end
