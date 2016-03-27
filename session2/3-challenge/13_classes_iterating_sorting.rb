@@ -19,6 +19,68 @@
 
 
 
+
+
+#COMMENT: My solution was very similar to the original answer,
+# my only problem was that when defning a "blogs" method it overrode the blogs variable and in order
+# to make it work I copied the "add_blog" method from the solution
+
+
+require 'date'
+
+class User
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+    self.username = username
+    self.blogs = []
+  end
+  # Define a class called User that keeps track of a person's username
+  # it should receive the username when initialized
+
+  def add_blog(date, text)
+   added_blog = Blog.new(date, self, text)
+   blogs << added_blog
+   self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+   added_blog
+  end
+
+
+end
+
+
+
+class Blog
+  # Define a class called Blog that could be used to store an entry for your web log.
+  attr_accessor :date, :user, :text
+
+  def initialize(date, user, text)
+    self.date = date
+    self.user = user
+    self.text = text
+    # its initialize method should receive the date, user , and text
+  end
+
+  def summary
+    # have a method called summary that returns the first 10 words from the text
+    #(or the entire text if it is less than 10 words)
+  text.split[0...10].join(' ')
+  end
+
+  def entry
+  "#{user.username} #{date}\n#{text}"
+  end
+  # Two blogs should be equal to eachother if they have the same user, date, and text
+  # here is a partially filled out example of how to define the == operator:
+  def ==(other)
+      date == other.date && user == other.user && text == other.text
+  end
+
+end
+
+
+
+
 # ==========  EXAMPLE  ==========
 #
 # lissa = User.new 'QTSort'
@@ -65,4 +127,3 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
-require 'date'

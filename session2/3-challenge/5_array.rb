@@ -14,3 +14,11 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+
+def mod_three(array)
+  new_array =[]
+  new_array2 = []
+  array.select { |n| new_array << n if n%3 != 0 }
+  new_array.each { |n| new_array2 << n%3 }
+  return new_array2
+end
