@@ -1,3 +1,63 @@
+#This is not complete but I gave it a good go. I need to become more familiar with Class.......
+
+class User
+  attr_accessor :username
+  end
+
+  def initialize(username)
+    self.username = username
+  end
+
+  def add_blog(date, text)
+    @date = date
+    @text = text
+  end
+
+  def blogs
+    blogs_array = []
+    blogs_array << Blog(text, date, user)
+
+
+class Blog
+
+  def initialize(text, date, user)
+    self.text = text
+    self.date = date
+    self.user = user
+  end
+
+  #setter methods
+  def set_name(text)
+    @text = text
+  end
+
+  def set_date(date)
+    @date = date
+  end
+
+  def set_user(user)
+    @user = user
+  end
+
+  #getter methods
+  def get_text(text)
+    @text
+  end
+
+  def get_date(date)
+    @date
+  end
+
+  def get_user(user)
+    @user
+  end
+
+
+  def summary
+    return text.split[0..9.join(" ")
+  end
+
+end
 # DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
 
 # Define a class called User that keeps track of a person's username
@@ -64,5 +124,4 @@
 
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
-# don't spend too much time worrying about them :)
-require 'date'
+# don't spend too much time worrying about them :
