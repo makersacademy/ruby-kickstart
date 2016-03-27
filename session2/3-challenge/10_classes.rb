@@ -25,7 +25,7 @@ def initialize(name, age)
 def birthday
 
   @age += 1
-end
+
 
 
 end
