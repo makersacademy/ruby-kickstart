@@ -30,8 +30,7 @@ def prime_chars?(strings)
 	end
 
 	while counter <= new_string_length do 				#  4   6
-		if new_string_length % counter == 0		
-			answer = false				#  
+		if new_string_length % counter == 0						#  
 			return answer
 		else 
 			answer = true

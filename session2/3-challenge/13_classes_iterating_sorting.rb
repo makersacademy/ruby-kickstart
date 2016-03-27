@@ -61,7 +61,94 @@
 #                       I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,
 #                       All my labor will be lost with time
 
+class User 
 
+	
+
+	def initialize(username)
+		@username = username
+		@blogs = Array.new
+	end
+
+
+	def username
+		return @username
+	end
+
+	def username=(username)
+		@username = username
+	end	
+	
+	def add_blog(date,text)
+		new_blog = Blog.new(date,self,text)
+		@blogs << new_blog
+		return new_blog
+	end	
+
+	def blogs 
+
+		if @blogs.length > 1 
+			return @blogs.sort_by {|x| x.date}.reverse 
+		else
+			return @blogs
+		end	
+
+	end	
+end	
+
+class Blog
+
+	def initialize(date,user,text)
+		@date = date
+		@user = user
+		@text = text
+	end
+
+	def ==(other_blog)
+       return @date == other_blog.date && @user == other_blog.user && @text == other_blog.text 
+    end
+
+
+	def entry
+		return "#{@user.username} #{@date}\n#{@text}"
+	end
+
+
+	def date
+		return @date
+	end
+
+	
+	def date=(date)
+		@date = date
+	end
+
+	
+	def user
+		return @user
+	end
+
+	
+	def user=(user)
+		@user = user
+	end				
+
+	
+	def text
+		return @text
+	end
+
+
+	def text=(text)
+		@text = text
+	end
+
+
+	def summary
+		text_split = text.split
+		return text_split[0..9].join(" ")
+	end	
+end	
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
