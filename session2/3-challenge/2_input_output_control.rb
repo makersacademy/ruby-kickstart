@@ -18,22 +18,21 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
+puts "Enter a number"																	# Prompt user for input
+
 def hi_hi_goodbye
-	puts "Enter a number"
-
-	while iterator = gets.to_i
-	  iterator.times do
-	   	puts "hi"
-	  end
-	  break if gets == 'bye'
+	while response = gets 															# While loop on user input
+		response.chomp!										
+		if response != 'bye'
+			response.to_i.times do   												# Print 'hi' string as many times as requested
+				puts "hi"
+			end
+		elsif response == 'bye'
+			puts "goodbye"
+		end
+		break if response == 'bye'												# Break the loop if 'bye' is entered
 	end
-
-	puts "goodbye"
-
 end
-
-
-
 
 # This will just invoke the method if you run this program directly
 # This way you can try it out by running "$ ruby 2_input_output_control.rb"
