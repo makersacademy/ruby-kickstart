@@ -15,3 +15,9 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? (stringarray)
+	sum = stringarray.join("").size.to_i
+
+	require "prime"
+	sum.prime?
+end

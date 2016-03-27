@@ -7,7 +7,8 @@
 
 class String
   def every_other_char
-  	String.split("").delete_at even? 
+  	to_return = ""
+  	each_char.with_index {|e, i| to_return << e if i.even?}
+  	to_return
   end
-  
 end

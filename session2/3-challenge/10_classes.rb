@@ -15,6 +15,15 @@
 # josh.age      # => 30
 #
 
-class Person
+class Person  
+ def initalize(name, age, birthday)
+     @color = nil 
+     @age = nil
+     @birhtday = nil  
+ end
 
+ attr_accessor 'name, age, birthday'
 end
+
+josh = Person.new 'Josh, 29, 30'
+
