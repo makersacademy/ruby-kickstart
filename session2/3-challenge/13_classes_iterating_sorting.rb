@@ -19,7 +19,43 @@
 #        return self.date == other.date
 #      end
 
+require 'date'
 
+class User 																														# User class
+  attr_accessor :username, :blogs
+  def initialize(username)
+    self.username = username
+    self.blogs = []
+  end
+
+  def add_blog(date, text)
+    new_blog = Blog.new(date, self, text)
+    blogs << new_blog
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+    new_blog
+  end
+end
+ 
+class Blog 																														# Blog class
+  attr_accessor :date, :user, :text
+  def initialize(date, user, text)
+    self.date = date
+    self.user = user
+    self.text = text
+  end
+
+  def summary
+    text.split[0..9].join(' ')																				# Returns the first 10 words of the entry
+  end
+
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def ==(other)																												# Two blogs should be equal to eachother if they have the same user, date, and text
+    date == other.date && user == other.user && text == other.text
+  end
+end
 
 # ==========  EXAMPLE  ==========
 #
@@ -72,4 +108,4 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
-require 'date'
+
