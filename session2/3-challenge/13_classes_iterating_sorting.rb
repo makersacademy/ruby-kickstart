@@ -65,4 +65,55 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
+
+# it should have a method add_blog which accepts a date and text
+# it should have a method blogs which returns an array of all blogs the user has written
+# they should be in reverse chronological order (newest first)
 require 'date'
+class User
+  attr_accessor 'username', 'blogs'
+
+  def initialize(username)
+    @username = username
+    @blogs = []
+  end
+
+  def add_blog (date, text)
+    # @blogs << Blog.new(date, User, text)
+    blog = Blog.new(date, date, text)
+    blogs << blog
+    blog_log
+    blog
+  end
+
+  def blog_log
+    self.blogs = blogs.sort_by{|x| x.date}.reverse
+  end
+
+end
+
+class Blog
+  attr_accessor 'date', 'user', 'text'
+
+  def initialize(date, user, text)
+    @date = date
+    @user = user
+    @text = text
+  end
+
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def summary
+    array = text.split(' ')
+    array[0..9].join(' ')
+  end
+
+  def ==(other_blog)
+    date == other_blog.date &&
+    user == other_blog.user &&
+    text == other_blog.text
+  end
+
+end
