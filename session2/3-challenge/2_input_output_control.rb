@@ -14,16 +14,33 @@
 # USER:    bye
 # PROGRAM: goodbye
 
+def hi_hi_goodbye                                                                               #defines the method
+  puts "Enter a number or bye"                                                                  #puts the instruction to the screen
+  while (amount = gets.chomp) && (amount != "bye")                                              #starts a while loop base on the conditions and gets input
+    amount_for_loop = amount.to_i                                                               #converts the input to an int
+    amount_for_loop.times { print "hi " }                                                       #puts to the screen the word hi for the amount of times (uses a code block)
+    puts                                                                                        #puts a line break
+    puts "Enter a number or bye"                                                                #puts the instruction to the screen
+  end                                                                                           #ends the while loop
+  puts "Goodbye!"                                                                               #puts message to the screen if the condition for the while loop is not met
+end                                                                                             #ends the method
+
+
+=begin JOSH'S SOLUTION
+def prompt
+  puts 'Enter a number or bye'
+end
+
 def hi_hi_goodbye
-  puts "Enter a number or bye"
-  while (amount = gets) && (amount !~ /bye/)
-    amount.to_i.times { print "hi " }
+  prompt
+  while (line = gets) && (line !~ /bye/) # first is an assignment statement that returns a line or nil, and is thus boolean
+    line.to_i.times { print 'hi ' }
     puts
-    puts "Enter a number or bye"
+    prompt
   end
   puts "Goodbye!"
 end
-
+=end
 
 # This will just invoke the method if you run this program directly
 # This way you can try it out by running "$ ruby 2_input_output_control.rb"

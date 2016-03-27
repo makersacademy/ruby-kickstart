@@ -9,3 +9,29 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(sentence)                                                                   #Define the method
+  '!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each { |char| sentence = sentence.gsub(char, ' ') }   #Substitutes any punctuation in string with a space
+  words = sentence.split                                                                        #Splits the sentence string into an array called words
+  answer = []                                                                                   #Creates a new array for the answer
+  words.each_with_index do |word, index|                                                        #Loops on each word with an index
+    answer << word if index.even?                                                               #Appends to the array if the index value is even
+  end                                                                                           #Ends the loop
+  answer                                                                                        #Returns the answer array
+end                                                                                             #Ends the method
+
+
+=begin JOSH'S SOLUTION
+end
+def alternate_words(sentence)
+  # this will get better when we learn regular expressions :)
+  '!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each do |char|
+    sentence = sentence.gsub(char, ' ')
+  end
+  words = sentence.split
+  solution = []
+  words.each_with_index do |word, index|
+    solution << word if index.even?
+  end
+  solution
+end
+=end
