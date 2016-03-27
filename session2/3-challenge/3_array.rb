@@ -7,10 +7,10 @@
 
 class String
   def every_other_char
-  	final_arr = ""
-  	chars = self.split(//)
-  	to_add = chars.select {|e, i| e, i.odd?}
-  	final_arr << to_add
+  	arr = ''
+  	each_char.with_index do |x, i|
+  		arr << x if i.even?
+  	end
+  	arr
   end
-  final_arr
 end
