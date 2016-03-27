@@ -24,12 +24,16 @@
 # USER:     BYE
 
 def deaf_grandma
-
+	while response = gets 															# While loop on user input
+		response.chomp!
+		break if response == 'BYE'												# Break the loop if 'BYE' (caps) is entered
+		if response!= '' && response == response.upcase 	# Put response if user input is lower case
+			puts "NO, NOT SINCE 1938!"
+		else
+			puts "HUH?! SPEAK UP, SONNY!"
+		end
+	end
 end
-
-
-
-
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
