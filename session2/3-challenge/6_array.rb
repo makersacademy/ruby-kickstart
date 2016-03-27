@@ -15,3 +15,18 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require 'prime'
+
+def prime_chars?(to_test)
+return to_test.join.length.prime?
+end
+
+# okay, so having researched this later on, it seems requiring the prime module
+# may be a kind of cheat. however, I have looked at the "manual" way of doing
+# it, and in doing so learned a lot. although I think it would be disingenuous
+# to use what I learned as a solution to this exercise, as I would never have come
+# up with it myself. but there are a number of variations on the same idea at
+# http://stackoverflow.com/questions/3594345/ruby-determine-if-a-number-is-a-prime
+# looking at these has again demonstrated to me how to break down a problem
+# and also that there are a number of different ruby methods that can be applied
+# in the solution.
