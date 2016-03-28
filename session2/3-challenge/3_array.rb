@@ -6,11 +6,10 @@
 # "".every_other_char         # => ""
 
 class String
-  def every_other_char
-  	arr = ''
-  	each_char.with_index do |x, i|
-  		arr << x if i.even?
-  	end
-  	arr
+  def every_other_char	
+  	answer = ''																				# Start with an empty array
+  	arr = self.split(//)																				
+  	arr.each_index {|x| answer << arr[x] if x.even?}	# Append each character to the array if it has an even index
+  	answer																						# Return the array
   end
 end
