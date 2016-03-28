@@ -9,3 +9,12 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(sentence)
+  parsed = []
+  to_parse = sentence.gsub(/[^'’\w\s]/, " ").split
+  to_parse.each_slice(2) { | a, b | parsed << a }
+  return parsed
+end
+
+# it's going to take me a little more time to get my head around regular expressions, but
+# working on this amply demonstrated what a powerful too they can be.

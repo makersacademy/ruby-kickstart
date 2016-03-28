@@ -23,8 +23,37 @@
 # f.to_f               # => 0.5
 
 class Fraction
-  def gcd(a,b)
-    return a if b == 0
-    gcd(b, a%b)
+  def initialize(numerator, denominator)
+    @numerator = numerator
+    @denominator = denominator
   end
+
+attr_accessor 'numerator'
+attr_accessor 'denominator'
+
+def to_f
+  @numerator.to_f / @denominator.to_f
 end
+
+def to_s
+  @numerator.to_s + "/" + @denominator.to_s
+end
+
+def gcd(a,b)
+  return a if b == 0
+  gcd(b, a%b)
+end
+
+def lowest
+  divider = gcd(@numerator, @denominator)
+  Fraction.new(@numerator / divider, @denominator / divider)
+end
+
+end
+
+# this was all fairly straightforward, except I was unsure how rake was expecting
+# the value created by .lowest to be returned. I tried using "return". Also,
+# I went down a rabbit hold trying to convert the results to a string, as the
+# instructions seem to suggest this is required. Finally, I read the conversation
+# beneath @JackRim1's issue regarding this problem on git hub. Glad to see I had everything
+# down except this small issue, and that the rest of our approach aligned.

@@ -13,6 +13,25 @@
 
 
 def grade(num_books, has_read_books)
+  if has_read_books
+    return "A" if num_books > 20
+    return "C" if num_books < 10
+    return "B"
+  else
+    return "B" if num_books > 20
+    return "D" if num_books < 10
+    return "C"
+  end
 end
 
-
+# things I have learned from this exercise:
+# 1. Initially I came at it from the wrong direction, i.e.
+# trying to assign the grade first based on number of books,
+# and then modify it based on whether has_read_books was T or F.
+# when I started looking into using arrays to achieve this, I
+# realised there must be a simpler way.
+# Also, I started out using puts instead of return.
+# I also was working on a means of evaluating the mid-range grades (i.e. those
+# who hold 10 - 20 books) before realising a more elegant solution is to just have it
+# as the "default" value that the branch of the method returns. 
+#
