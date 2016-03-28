@@ -9,6 +9,7 @@
 # they should be in reverse chronological order (newest first)
 
 #1st class
+require 'date'
 
 class User
   attr_accessor :username
