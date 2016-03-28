@@ -5,5 +5,9 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  result = ""
+  string.split("").each_cons(2) do |character, next_element|
+  result << next_element if character == "r" || character == "R"
+  end
+  result
 end

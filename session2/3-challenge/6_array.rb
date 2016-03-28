@@ -15,3 +15,15 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array)
+  prime_result = array.join('').size
+  i = 2
+  return false if prime_result < i
+  while i < prime_result
+  can_be_divided = ((prime_result % i) == 0)
+  if can_be_divided then return false
+    else i += 1
+  end
+  end
+  true
+end

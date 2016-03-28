@@ -7,6 +7,8 @@
 
 class String
   def every_other_char
+    result = ""
+    self.split("").each_slice(2){|first, second| result << first }
+    result
   end
-  
 end
