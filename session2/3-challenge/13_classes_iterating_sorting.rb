@@ -21,7 +21,7 @@
 
 require 'date'
 
-class User 																														# User class
+class User                                                            # User class
   attr_accessor :username, :blogs
   def initialize(username)
     self.username = username
@@ -36,7 +36,7 @@ class User 																														# User class
   end
 end
  
-class Blog 																														# Blog class
+class Blog                                                            # Blog class
   attr_accessor :date, :user, :text
   def initialize(date, user, text)
     self.date = date
@@ -45,14 +45,14 @@ class Blog 																														# Blog class
   end
 
   def summary
-    text.split[0..9].join(' ')																				# Returns the first 10 words of the entry
+    text.split[0..9].join(' ')                                        # Returns the first 10 words of the entry
   end
 
   def entry
     "#{user.username} #{date}\n#{text}"
   end
 
-  def ==(other)																												# Two blogs should be equal to eachother if they have the same user, date, and text
+  def ==(other)                                                       # Two blogs should be equal to eachother if they have the same user, date, and text
     date == other.date && user == other.user && text == other.text
   end
 end
