@@ -11,7 +11,8 @@
 
 def alternate_words(string)
 	to_return = []
-	string.gsub!(/[^0-9A-Za-z' ]/, '').split.map.each_with_index {|v, i| to_return.push(v) if i.even?}
+	string = string.gsub(/[^0-9A-Za-z'’]/, ' ').split.map.each_with_index {|v, i| to_return.push(v) if i.even?}
 	to_return
 end
 
+# sentence = sentence.gsub(/[^'’\w\s]/, " ")

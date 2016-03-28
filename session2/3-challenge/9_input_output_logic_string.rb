@@ -25,13 +25,12 @@
 
 def deaf_grandma
 
-		print "Talk to granny"
 		grandma = ""
 		user = gets.chomp
 
 
 	while user != "BYE"
-		if user == user.upcase
+		if user == user.upcase && user !=""
 			grandma = "NO, NOT SINCE 1938!"
 		else 
 			grandma = "HUH?! SPEAK UP, SONNY!"
