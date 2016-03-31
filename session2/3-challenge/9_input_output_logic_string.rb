@@ -24,10 +24,32 @@
 # USER:     BYE
 
 def deaf_grandma
+	 while notgran = gets.chomp
+ break if notgran = "BYE"
+ 	
+	if notgran != notgran.downcase   && notgran != "" 
+     
+        puts "NO, NOT SINCE 1938!"   
+    else 
+    	
+        puts "HUH?! SPEAK UP, SONNY!"
 
+end
+end
 end
 
 
+def deaf_grandma
+  while line = gets
+    line.chomp!
+    break if line == "BYE"
+    if line == line.upcase && line != ""
+      puts "NO, NOT SINCE 1938!"
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+  end
+end
 
 
 
