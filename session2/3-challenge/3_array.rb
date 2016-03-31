@@ -5,8 +5,17 @@
 # "abcdefg".every_other_char  # => "aceg"
 # "".every_other_char         # => ""
 
+
+
+
 class String
   def every_other_char
-  end
+
+  	newarray = self.scan(/./)
   
+newarray = newarray.values_at(* newarray.each_index.select {|i| i.even?}).join("")
+
+
+
+  end
 end
