@@ -31,7 +31,11 @@
 #   end
 # end
 
-
+#CodeWars kata
+def array_init(elements=5, &block)
+	block ||= Proc.new { |index| (100 * index).to_s } # Reminder that ||= checks if variable is empty and allows you to set it yourself... otherwise it returns FALSE and doesn't create a new Proc
+	Array.new(elements, &block)
+end
 
 
 
