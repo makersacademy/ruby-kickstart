@@ -9,6 +9,16 @@
 #
 # print_list_in_reverse head   # >> "1\n2\n"
 
-def print_list_in_reverse list
-  
+def print_list_in_reverse *list
+	stdout = []
+	list.each do |k|
+		k.each do |k1, v1|
+			if v1.is_a?(Hash)
+				print_list_in_reverse(v1)
+			else
+			 	stdout << v1 unless v1.nil?
+			end
+		end
+	end
+	stdout.reverse.each { |i| p i }
 end
