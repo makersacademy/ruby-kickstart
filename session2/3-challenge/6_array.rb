@@ -15,3 +15,8 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars (strings)
+  (2..(string.join.length)**1/2) do |x|
+    return x%i==0 ? false : true
+  end
+  
