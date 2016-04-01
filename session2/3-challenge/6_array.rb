@@ -16,12 +16,15 @@
 # prime_chars? ['a', 'b', 'cd']   # => false
 
 def prime_chars?(strings)
-  i = 0
+  total = 0
 
   strings.each do |element|
-    i += element.length
+    total += element.length
   end
 
-i.is_prime?
+  return false if total <= 1
+
+  Math.sqrt(total).to_i.downto(2).each {|i| return false if total % i == 0}
+  true
 
 end
