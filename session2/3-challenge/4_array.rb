@@ -8,6 +8,6 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-def get_squares{numbers}
-  numbers.select {|number| numbers.include? number**number}.sort
+def get_squares(numbers)
+  numbers.select {|number| numbers.include? number*number}.sort
 end
