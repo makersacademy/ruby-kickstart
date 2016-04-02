@@ -109,7 +109,7 @@ class Blog
 end
 
 =begin
-#self testing
+#self test
 noah = User.new("MunkHaze")
 puts noah.username
 noah.add_blog(Date.parse, "Something in the way of things and that nothing really is the way it seems")
