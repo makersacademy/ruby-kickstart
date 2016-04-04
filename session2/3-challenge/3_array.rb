@@ -6,7 +6,9 @@
 # "".every_other_char         # => ""
 
 class String
-  def every_other_char
-  end
-  
+def every_other_char
+    my_string = self.chars
+  output = my_string.select.each_with_index { |chr, index| index.even? }
+return output.join("")
+end
 end
