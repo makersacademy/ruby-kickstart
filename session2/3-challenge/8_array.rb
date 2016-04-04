@@ -6,3 +6,24 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(array)
+	answer = false
+	counter = 0
+
+	while counter <= array.length - 1  do  										
+
+		array.each do |element|
+			# element 1
+			# counter 1 
+			if element == array[counter + 1] && element == array[counter+2]
+				return true
+			end
+		counter += 1
+		end	
+
+
+	end	
+	answer
+end	
+
+ 
