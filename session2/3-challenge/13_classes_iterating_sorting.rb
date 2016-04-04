@@ -72,4 +72,50 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
+
 require 'date'
+
+class User
+    attr_accessor :username, :blogs
+    
+    def initialize(username)
+        @username = username
+        @blogs = []
+    end
+    
+    def add_blog(date, text)
+        blog_aux = Blog.new(date, self, text)
+        @blogs.push(blog_aux)
+        @blogs = @blogs.sort_by { |blog| blog.date }.reverse
+        blog_aux
+    end
+    
+    # Return array of blogs in reverse chronological order (newest first)
+    def blogs
+        @blogs
+    end
+    
+end
+
+class Blog
+    attr_accessor :text, :date, :user
+    
+    def initialize(date, user, text)
+        @user = user
+        @text = text
+        @date = date
+    end
+    
+    # Returns the first 10 words from the text (or the entire text if it is less than 10 words)
+    def summary
+        return @text.split(" ").slice(0,10).join(" ")
+    end
+    
+    def ==(other)
+        @date == other.date and @text == other.text and @user == other.user
+    end
+    
+    def entry
+        "#{@user.username} #{@date}\n#{@text}"
+    end
+end

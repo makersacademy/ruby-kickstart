@@ -21,14 +21,29 @@
 #
 # EXAMPLES:
 #
-# pathify 'usr' => {'bin' => ['ruby']}                                                        # => ['/usr/bin/ruby']
+# pathify 'usr' => {'bin' => ['ruby']}                                                         # => ['/usr/bin/ruby']
 # pathify 'usr' => {'bin' => ['ruby', 'perl'] }                                                # => ['/usr/bin/ruby', '/usr/bin/perl']
 # pathify 'usr' => {'bin' => ['ruby'], 'include' => ['zlib.h'] }                               # => ['/usr/bin/ruby', '/usr/include/zlib.h']
-# pathify 'usr' => {'bin' => ['ruby']}, 'opt' => {'local' => {'bin' => ['sqlite3', 'rsync']} } # => ['/usr/bin/ruby', 'opt/local/bin/sqlite3', 'opt/local/bin/rsync']
+# pathify 'usr' => {'bin' => ['ruby']}, 'opt' => {'local' => {'bin' => ['sqlite3', 'rsync']} } # => ['/usr/bin/ruby', '/opt/local/bin/sqlite3', '/opt/local/bin/rsync']
 # pathify                                                                                      # => []
 #
 #
 # create it from scratch :)
 
 
-
+def pathify(hash, ary = [], root = nil)
+    hash.keys.map do |k|
+        if hash[k].is_a? Hash
+            if root.nil?
+                pathify(hash[k], ary, "#{k}")
+            else
+                pathify(hash[k], ary, "#{root}/#{k}")
+            end
+        else
+            hash[k].map do |file| 
+                root.nil? ? ary << "/#{k}/#{file}" : ary << "/#{root}/#{k}/#{file}"
+            end
+        end
+    end
+    ary
+end

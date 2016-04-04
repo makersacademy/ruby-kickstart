@@ -46,5 +46,15 @@
 # head = {:data => 6, :next => head}
 # middle head                        # => 3
 
+def countNodes(list, count = 1)
+    return count if list[:next] == nil
+    countNodes(list[:next], count += 1)
+end
 
-
+def middle(list)
+    nodes = countNodes(list)
+    foo = "list"
+    foo += "[:next]" * (nodes / 2)
+    foo += "[:data]"
+    eval(foo)
+end

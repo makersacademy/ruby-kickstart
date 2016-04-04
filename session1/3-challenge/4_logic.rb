@@ -11,8 +11,17 @@
 
 # <10 books => D, 10..20 books => C, >20 book =>B
 
-
+GRADES = %w(D C B A) 
 def grade(num_books, has_read_books)
+    if num_books < 10
+        index = 0
+    elsif num_books.between?(10,20)
+        index = 1
+    else
+        index = 2
+    end
+    index += 1 if has_read_books
+    GRADES[index]
 end
 
 

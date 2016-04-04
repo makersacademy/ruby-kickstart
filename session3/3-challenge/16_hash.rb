@@ -17,3 +17,16 @@
 # head = {:data => 6, :next => head}
 # print_list head                    # >> "6\n5\n4\n3\n2\n1\n"
 
+# Recursive method that creates a string with the data from the list
+def find_data(list, string = "")
+    if list[:next] == nil
+        string += "#{list[:data]}\n"
+        return string
+    else
+        find_data(list[:next], string += "#{list[:data]}\n")
+    end
+end
+
+def print_list(list)
+    puts find_data(list)
+end
