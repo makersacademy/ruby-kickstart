@@ -14,6 +14,12 @@
 # In these cases, don't do anything, because we don't know
 # why that error was raised.
 
-
-
-
+def full_name(person)
+    begin
+        "#{person.first_name} #{person.last_name}"
+    rescue FirstNameError
+        person.last_name
+    rescue LastNameError
+        person.first_name
+    end
+end
