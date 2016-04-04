@@ -11,5 +11,5 @@
 # first_object nil, nil, nil  # => nil
 
 def first_object(arg1, arg2, arg3)
-  
+    arg1 or arg2 or arg3 or nil
 end

@@ -19,4 +19,23 @@
 # stack.push 1
 # stack.push 2
 # stack # => [1, 2]
+require_relative './1_stack_classes_inspect'
 
+class StackInDisguise < Stack
+    def inspect
+        ary = []
+        while @head
+            ary << @head.data
+            @head = @head.next_node
+        end
+        res = "#{ary.reverse}"
+    end
+end
+
+# stack = StackInDisguise.new
+# stack.push 1
+# stack.push 2
+# stack.push []
+# stack.push false
+# stack.push /abc/
+# p stack

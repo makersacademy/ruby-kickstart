@@ -17,6 +17,14 @@
 #   sum + num
 # end
 #
+def passthrough(enum, passthrough_value, &block)
+    enum.each do |elem|
+        passthrough_value = block.call passthrough_value, elem
+    end
+    passthrough_value
+end
+
+
 # This should return 45 in the following manner:
 #   The first time the block is passed    0 ,  5 and it returns 5
 #   The second time the block is passed   5 ,  6 and it returns 11
