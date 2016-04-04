@@ -6,5 +6,24 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+    
+    if return_odds == true
+        return_string = ""
+        string.size.times do |letters|
+            if letters.odd?
+                return_string << string[letters]
+            end
+        end
+        return_string
+        else
+        
+        return_string = ""
+        string.size.times do |letters|
+            if letters.even?
+                return_string << string[letters]
+            end
+        end
+        return_string
+        
+    end
 end
