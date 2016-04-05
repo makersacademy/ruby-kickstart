@@ -1,6 +1,9 @@
 Welcome to RubyKickstart!
 =========================
 
+**Personal code by Rachel Smith can be found in folder 3 - Challenge of the first and second sections**
+
+
 **RubyKickstart is an interactive guide to learning the Ruby programming language.**
 
 **Disclaimer - this is a shameless continuation of the original Ruby Kickstart by Josh Cheek. I have no intention of reinventing the wheel, and I gladly stand on the shoulder of giants :)
