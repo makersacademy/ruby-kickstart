@@ -15,3 +15,21 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array) #["ac","b"] 
+	l = array.join.length
+	return false if l == 0 || l == 1
+	return is_prime(l)
+
+end
+
+
+def is_prime(number)
+	(2..number/2).each do |x| 
+		r = number % x 
+		if r == 0 
+			return false
+		end
+	end
+	true
+end	 
+

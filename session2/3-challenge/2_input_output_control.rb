@@ -18,10 +18,18 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
+
 def hi_hi_goodbye
-  # your code here
+  	
+  	begin 
+  		puts "Type a number or bye!"
+  		num_by_user = gets.chomp
+  		puts "hi " * num_by_user.to_i
+	end until num_by_user == "bye"
+	 puts "goodbye" 
 
 end
+
 
 
 
