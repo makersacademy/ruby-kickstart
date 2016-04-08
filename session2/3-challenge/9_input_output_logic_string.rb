@@ -23,12 +23,22 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
-def deaf_grandma
 
+def deaf_grandma
+	while true
+		said = gets.chomp
+ 		break if said == "BYE"
+  		response = if said == said.upcase && said != ""
+  		"NO, NOT SINCE 1938!"
+  		else
+      	"HUH?! SPEAK UP, SONNY!"
+    end
+    	puts response
+	end
 end
 
-
-
+# not sure why solution splits while and gets into more code than needed...?!
+# also blank line not made clear in question, sussed out from testing...
 
 
 # This will call your code so you can run it from the terminal.

@@ -9,3 +9,18 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(sentence)
+  '!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each do |char|
+    sentence = sentence.gsub(char, ' ')
+  end
+  solution = []
+  words = sentence.split
+  words.each_with_index do |word, index|
+    solution << word if index.even?
+  end
+  solution
+end
+
+# get second part of this fine (like being able to give a word an index number vs a character and searching accordingly)
+# but struggling with the regex part... think we are substituting a space for wherever there is one of the symbols?
+# I guess this lets you then iterate through the array (that now has spaces where there were symbols) and include every other word (excluding the symbols).

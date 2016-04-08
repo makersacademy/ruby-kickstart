@@ -15,3 +15,20 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+class Integer
+  def prime?
+    return false if self < 2
+    2.upto Math.sqrt(self) do |i|
+      return false if self % i == 0
+    end
+    true
+  end
+end
+
+def prime_chars?(strings)
+	strings.join.length.prime?
+end
+
+# prime? is a Ruby inbuilt method that returns true if number is a prime, which is calculated by taking strings, splitting characters (join) and counting (length)
+# so unsure you need to define prime? albeit can't get it to work without including definition (which I need to review again re use of SELF...)
+# on basis you do need to define it, I see why you have put inside class Integer, because you are adding a new method to this class (even thought I think it's already there?!)

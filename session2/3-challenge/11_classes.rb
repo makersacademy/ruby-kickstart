@@ -20,3 +20,35 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+
+# this code doesn't yet work (working on it still...) but feels much nicer than the solution provided
+
+class Beersong
+
+	attr_accessor :beer
+
+	def initialize(beer)
+		@beer = beer
+	end
+
+	def english_number(number)
+	if number < 0
+		return 'Please enter a positive number'
+	end
+	if number == 0
+		return 'zero'
+
+	num_at_start = 99
+	num_now > 2
+
+	while num_now > 2
+		puts english_number(num_now) + ' bottles of beer on the wall,'
+		puts english_number(num_now) + ' bottles of beer!'
+		num_now = num_now - 1
+		puts 'Take one down, pass it around,' 
+		puts english_number(num_now) + ' bottles of beer on the wall!'
+
+	end
+end
+

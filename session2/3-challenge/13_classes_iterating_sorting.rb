@@ -72,4 +72,44 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
-require 'date'
+
+equire 'date'
+
+class User
+  
+  	attr_accessor :username, :blogs
+
+  	def initialize(username)
+    	@username = username
+    	@blogs    = []
+  	end
+
+  	def add_blog(date, text)
+    	added_blog = Blog.new(date, text)
+    	blogs << added_blog
+    	blogs = blogs.sort_by { |blog| blog.date }.reverse
+    	added_blog
+  	end
+end
+
+
+
+class Blog
+  	attr_accessor :date, :user, :text
+
+  	def initialize(date, user, text)
+    	@date = date
+    	@user = user
+    	@text = text
+  	end
+
+  	def summary
+    	text.split[0..9].join(' ')
+  	end
+
+
+  end
+end
+
+# Have to get my head around SELF, and also setting values (including self) in initialize (vs just using param/arg) - think I'm making a bigger deal of this then I need to in my head...  
+# A bit confused by last requirement...  Timed out on this one...
