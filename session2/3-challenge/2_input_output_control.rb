@@ -19,8 +19,14 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-
+  puts "Enter a number"
+  input = gets.chomp
+  until input == "bye"
+   puts ("hi " * input.to_i).chomp
+   puts "Enter a number"
+   input = gets.chomp
+  end
+  puts "goodbye"
 end
 
 
@@ -30,3 +36,4 @@ end
 # This way you can try it out by running "$ ruby 2_input_output_control.rb"
 # but it will still work for our tests
 hi_hi_goodbye if $0 == __FILE__
+

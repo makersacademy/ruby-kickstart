@@ -6,3 +6,8 @@
 #
 # first_pos "The dog and the cat and the cow" # => {"The" => 0, "dog" => 1, "and" => 2, "the" => 3, "cat" => 4, "cow" => 7}
 
+def first_pos string
+  result = Hash.new
+  string.scan(/\w+/).each_with_index {|x,index|result[x] = index unless result.has_key?(x)}
+  result
+end

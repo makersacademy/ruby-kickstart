@@ -9,10 +9,24 @@
 # grade(4,  true)   # => "C"
 # grade(15, true)   # => "B"
 
-# <10 books => D, 10..20 books => C, >20 book =>B
-
-
-def grade(num_books, has_read_books)
+def grade(num_books, reads_books)
+  if num_books < 10
+    if reads_books
+      grade = "C"
+    else
+      grdes = "D"
+    end
+  elsif num_books <= 20
+    if reads_books
+    grade = "B"
+  else
+    gread = "C"
+  end
+  else
+    if reads_books
+      grade = "A"
+    else
+      grade = "B"
+    end
+  end
 end
-
-
