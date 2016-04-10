@@ -72,4 +72,53 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
+
+#I didn't even attempt this, as after failing on every single code wars kata I attempted, I just don't feel 
+# in any way capable of even conceiving of how to go about even starting to think about how to do this, and that
+# all the tutorials I spent hours and hours going through on the build up to this course were a complete
+# waste of time. I understand less about this at the end of the week then I did at the beginning. I feel like 
+#I've essentially gone backwards in the learning process so much that I wonder if I can still spell progress...
+
 require 'date'
+
+class User
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+    self.username = username
+    self.blogs    = []
+  end
+
+  def add_blog(date, text)
+    added_blog = Blog.new(date, self, text)
+    blogs << added_blog
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+    added_blog
+  end
+end
+
+
+
+class Blog
+  attr_accessor :date, :user, :text
+
+  def initialize(date, user, text)
+    self.date = date
+    self.user = user
+    self.text = text
+  end
+
+  def summary
+    text.split[0..9].join(' ')
+  end
+
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def ==(other)
+    date   == other.date &&
+      user == other.user &&
+      text == other.text
+  end
+end

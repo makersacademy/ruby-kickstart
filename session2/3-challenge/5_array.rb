@@ -14,3 +14,13 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(numbers)
+
+numbers.delete_if {|number| number % 3 == 0}.map {|number| number % 3} #had to look at the answer to help, but was very close.
+	
+
+
+
+
+
+end
