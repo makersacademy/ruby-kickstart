@@ -9,5 +9,11 @@
 # arithmetic1(-6)     # => -50
 
 def arithmetic1(n)
+(n * 5) - 20
+
 end
+
+puts arithmetic1(10)     # => 30
+puts arithmetic1(10.5)   # => 32.5
+puts arithmetic1(-6)     # => -50
 

@@ -5,5 +5,14 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+result = ""
+string.each_char.with_index do |letter, i| 
+if letter == "r"
+result << "#{string[i+1]}"
+end
+if letter == "R"
+result << "#{string[i+1]}"
+end
+end
+result
 end
