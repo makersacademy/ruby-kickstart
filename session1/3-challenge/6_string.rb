@@ -6,5 +6,11 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+characters = ""
+string.size.times do |index|
+next if return_odds == true && index.even?
+next if return_odds != true && index.odd?
+characters << string[index]
+end
+characters
 end

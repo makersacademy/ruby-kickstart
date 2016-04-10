@@ -23,9 +23,27 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
-def deaf_grandma
-
+def greeting
+    @reply = gets.chomp
 end
+
+def deaf_grandma
+    talking = true
+
+    while talking == true
+        greeting
+        if @reply == @reply.downcase || @reply == @reply.downcase.capitalize
+            puts "HUH?! SPEAK UP, SONNY!"
+        elsif @reply == "BYE"
+        talking = false
+        else
+        puts "NO, NOT SINCE 1938!"
+
+        end
+    end
+end
+
+
 
 
 
