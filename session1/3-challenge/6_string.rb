@@ -6,5 +6,13 @@
 #
 
 def odds_and_evens(string, return_odds)
+  total_chars = string.length
+  return_odds ? i = 1 : i = 0
+  result = ""
+  while i < total_chars
+    result += string[i]
+    i += 2
+  end
 
+  result
 end

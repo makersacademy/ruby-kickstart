@@ -24,7 +24,15 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  grandson = gets.chomp.strip
+  while grandson != "BYE"
+    if (grandson != grandson.upcase || grandson == '')
+      puts "HUH?! SPEAK UP, SONNY!"
+    else
+      puts "NO, NOT SINCE 1938!"
+    end
+    grandson = gets.chomp.strip
+  end
 end
 
 
