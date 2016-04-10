@@ -7,6 +7,11 @@
 
 class String
   def every_other_char
+    if self == ""
+      return self
+  else
+    arr = self.split(//)
+    arr.select.each_with_index {|_, i| i.even?}.join
+    end
   end
-  
 end

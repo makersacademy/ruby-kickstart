@@ -15,3 +15,13 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(arr_string)
+num =  arr_string.join.length
+return false if num <=1
+  for d in 2..(num - 1)
+    if (num % d) == 0
+    return false
+    end
+  end
+    true
+end
