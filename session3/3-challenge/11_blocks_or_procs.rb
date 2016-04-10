@@ -31,6 +31,20 @@
 #   end
 # end
 
+def array_init2(arg=5, &block)
+	if not block
+		block = lambda { |i| (i * 100).to_s }
+	end
+	Array.new(arg, &block)
+end
+
+def array_init(arg=5)
+	if block_given?
+		Array.new(arg) { |i| yield(i) }
+	else
+		Array.new(arg) { |i| (i*100).to_s }
+	end
+end
 
 
 

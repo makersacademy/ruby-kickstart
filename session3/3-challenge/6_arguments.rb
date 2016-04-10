@@ -19,3 +19,14 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(*args)
+	answer = []
+	args.each_with_index do |item,i|
+		if i.odd? and args[0]
+			((args[i] and args[i+1]) or (not args[i] and not args[i+1])) ? answer.push(false) : answer.push(true)
+		elsif i.odd? and not args[0]
+			((args[i] and args[i+1]) or (not args[i] and not args[i+1])) ? answer.push(true) : answer.push(false)
+		end
+	end
+	answer
+end

@@ -11,3 +11,14 @@
 
 
 
+def staircase(num)
+	answer = {}
+	(1..num).each do |k|
+		if k.odd?
+			array = []
+			(1..k).each{ |v| array.push(v) if v.even? }
+			answer[k]=array
+		end
+	end
+	answer
+end

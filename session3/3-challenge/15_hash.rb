@@ -46,5 +46,12 @@
 # head = {:data => 6, :next => head}
 # middle head                        # => 3
 
+def length_of_list(list)
+	return 1 if list[:next] == nil
+	1 + length_of_list(list[:next])
+end
 
-
+def middle(list,length=length_of_list(list)/2)
+	return list[:data] if length == 0
+	middle(list[:next],length-1)
+end

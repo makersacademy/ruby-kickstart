@@ -19,7 +19,14 @@
 # end
 # order # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
 
-
-
-
+def spiral_access(array_of_arrays, &block)
+	unless array_of_arrays.empty?
+		array_of_arrays[0].each do |item|
+			block.call(item)
+		end
+		array_of_arrays.delete_at(0)
+		array_of_arrays = array_of_arrays.transpose.reverse
+		spiral_access(array_of_arrays, &block)
+	end
+end
 
