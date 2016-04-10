@@ -19,11 +19,16 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
+  puts "Please type an integer!"
 
+while line = gets
+  puts "hi " * line.chomp.to_i
+  puts "Please type an integer!"
+  break if line.chomp == 'bye'
 end
 
-
+puts "goodbye"
+end
 
 
 # This will just invoke the method if you run this program directly

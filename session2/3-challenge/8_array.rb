@@ -6,3 +6,10 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(array)
+  bool = false
+  (array.length).times do |index|
+    bool = true if array[index] == array[index+1] && array[index] == array[index+2]
+  end
+  bool
+end
