@@ -20,13 +20,20 @@
 # USER:     HI GRANDMA!
 # GRANDMA:  NO, NOT SINCE 1938!
 # USER:     bye
-# GRANDMA:  HUH?! SPEAK UP, SONNY!
+# RANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
 def deaf_grandma
-
+while (phrase = gets.chomp) != ("BYE") 
+if phrase != phrase.upcase || phrase == ""
+puts "HUH?! SPEAK UP, SONNY!"
 end
 
+if phrase == phrase.upcase && phrase != ""
+puts "NO, NOT SINCE 1938!"
+end
+end
+end
 
 
 
