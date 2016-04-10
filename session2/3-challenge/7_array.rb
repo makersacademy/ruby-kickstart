@@ -9,3 +9,10 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(sentence)
+  x = sentence.split
+  x.values_at(* x.each_index.select {|i| i.even?})
+end
+
+
+# Doesn't look anything like the solution but I think it works

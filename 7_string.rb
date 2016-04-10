@@ -6,4 +6,5 @@
 
 def pirates_say_arrrrrrrrr(string)
 string.scan(/(?<=r)./i).join
-end
+ end
+

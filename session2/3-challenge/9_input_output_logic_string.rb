@@ -23,11 +23,17 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
-def deaf_grandma
 
+speak = 'hi grammy'
+while speak != "BYE"
+speak = gets.chomp
+while speak != speak.upcase
+puts 'HUH? SPEAK UP SONNY!'
+speak = gets.chomp
 end
-
-
+year = rand(21) + 1930
+puts 'NO, NOT SINCE ' + year.to_s
+end
 
 
 

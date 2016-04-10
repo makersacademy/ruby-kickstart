@@ -18,15 +18,25 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
+def user_input
+    puts "Enter a number or bye"
+    end
+
 def hi_hi_goodbye
-  # your code here
+    puts "Enter a number or bye"
+    while true
+        input = gets.chomp
+        if input = Integer(input) rescue nil
+            puts "hi " * input
+            else input == "bye"
+           puts "goodbye"
+           break
+            end
+        user_input
+        end
+    end
+    
 
-end
 
 
 
-
-# This will just invoke the method if you run this program directly
-# This way you can try it out by running "$ ruby 2_input_output_control.rb"
-# but it will still work for our tests
-hi_hi_goodbye if $0 == __FILE__

@@ -7,7 +7,51 @@
 # it should have a method add_blog which accepts a date and text
 # it should have a method blogs which returns an array of all blogs the user has written
 # they should be in reverse chronological order (newest first)
-#
+
+#1st class
+require 'date'
+
+class User
+  attr_accessor :username
+  #Must be symbols or strings according to error message
+  def initilize(username)
+    self.username = username
+    self.blogs = []
+  end
+    
+    def add_blog(date, text)
+      new_blogs = Blog.new(date, self, text)
+      blogs << new_blogs
+      self.blogs = blogs.sort_by {|blog| blog.date}.reverse
+      added_blogs
+    end
+  end
+  
+  class Blog
+    attr_accessor :date, :user, :text
+    
+    def initialize(date, user, text)
+      @date = date
+      @user = user
+      @text = text
+    end
+    
+    def summary
+      text.split[0..9].joi("")
+    end
+    
+    def add
+      "#{user.username}, #{date}, #{text}"
+    end
+    
+    def ==(other)
+    date   == other.date &&
+      user == other.user &&
+      text == other.text
+  end
+end
+
+
 # The other class is called Blog that could be used to store an entry for your web log.
 # The class should have a getter and setter methods: text , date , user
 # its initialize method should receive the date, user , and text

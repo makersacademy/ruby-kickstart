@@ -23,8 +23,29 @@
 # f.to_f               # => 0.5
 
 class Fraction
+  attr_accessor :numerator, :denominator
+  # need to be symbols or strings according to error message
+  
+  def initialize(numerator, denominator)
+    self.numerator, self.denominator = numerator, denominator
+    
+  
+  def to_s
+    numerator/denominator.to_s
+  end
+  
+  def to_f
+    numerator/denominator.to_f
+  end
+  
+  def lowest
+    divisor = gcd(numerator, denominator)
+    Fraction.new(numerator/divisor, denominator/divisor)
+  end
+  
   def gcd(a,b)
     return a if b == 0
     gcd(b, a%b)
   end
+end
 end
