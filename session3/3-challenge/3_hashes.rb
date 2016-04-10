@@ -6,3 +6,11 @@
 #
 # Example:
 # word_count "The dog and the cat" # => {"the" => 2, "dog" => 1, "and" => 1, "cat" => 1}
+
+def word_count(string)
+	string = string.downcase.split(' ')
+	string_2 = string.map do |word|
+		[word,string.count(word)]
+	end
+	Hash[string_2]
+end

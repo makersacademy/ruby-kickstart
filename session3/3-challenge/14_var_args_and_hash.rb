@@ -23,5 +23,32 @@
 # problem_14 2,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => true
 # problem_14 3,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => false
 
+def problem_14(*args)
+	if not args.last.is_a?(Hash)
+		count_clumps(*args)
+	elsif args.last[:problem] == :count_clumps
+		count_clumps(*args[0..-2])
+	else
+		same_ends(*args[0..-2])
+	end
+end
 
+def count_clumps(*array)
+	return 0 if array.length < 2
+	count = 0
+	stack = [array.first]
+	array[1..-1].each_with_index do |item,index|
+		if item != stack.last
+			stack << item
+		elsif (array[index+2].nil? or item!=array[index+2])	
+			count += 1
+		end
+	end
+	count
+end
+
+def same_ends(*array)
+	return true if array[0] == 0
+	array[1,array[0]] == array[(array[0]*(-1))..-1] ? true : false
+end
 

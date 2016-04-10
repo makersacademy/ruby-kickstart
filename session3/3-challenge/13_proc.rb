@@ -54,6 +54,22 @@
 #   end
 # end       # => ["a", "m", "r", 1, 3, 4, 9, 2.5, 9.0, 25.8]
 
+def your_sort(arr)
+	i = 0
+	while i < arr.length
+		i2 = i+1
+			while i2 < arr.length
+				if block_given?
+					arr[i] , arr[i2] = arr[i2] , arr[i] if yield(arr[i],arr[i2]) == 1
+				else
+					arr[i] , arr[i2] = arr[i2] , arr[i] if arr[i] > arr[i2]
+				end
+				i2 += 1
+			end
+		i += 1
+	end
+	arr
+end
 
 
 
