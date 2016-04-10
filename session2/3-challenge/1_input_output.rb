@@ -8,6 +8,15 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
+  numbers=gets.chomp.split(" ")
+  a=numbers[0].to_i
+  b=numbers[1].to_i
+sum=a+b
+difference=a-b
+product=a*b
+
+puts sum.to_s
+puts difference.to_s
+puts product.to_s
   
 end

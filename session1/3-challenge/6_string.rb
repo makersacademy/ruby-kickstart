@@ -6,5 +6,7 @@
 #
 
 def odds_and_evens(string, return_odds)
+new_string=string.split("")
+return_odds ? new_string.values_at(* new_string.each_index.select {|i| i.odd?}).join : new_string.values_at(* new_string.each_index.select {|i| i.even?}).join
 
 end
