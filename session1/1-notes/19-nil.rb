@@ -6,3 +6,5 @@ array = [1,5,7]
 array.find { |number| number * 2 == 10 } # => 5
 array.find { |number| number * 2 == 11 } # => nil
 
+# Sergio: All objects true, except false and nil.
+

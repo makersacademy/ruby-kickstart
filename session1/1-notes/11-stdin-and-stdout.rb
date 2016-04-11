@@ -32,3 +32,8 @@ puts "You said: #{user_response}"
 #
 # It's like a cookie monster for newlines!
 
+# chomp only affects to \n and \r, so good to use in combination with gets
+# chop can also be used, but it affects all the chars, takes the last one and removes it
+# see examples at: https://www.quora.com/What-does-chomp-mean-in-Ruby
+
+

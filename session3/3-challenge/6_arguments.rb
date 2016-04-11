@@ -19,3 +19,21 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(*args)
+  flag = args[0]
+  rest = args[1..-1].map {|e| !!e}
+  p rest
+  result = []
+  if flag
+    rest.each_slice(2).map do | pair|
+      result << (pair.first != pair.last)
+    end
+  else
+    rest.each_slice(2).map do | pair|
+      result << (pair.first == pair.last)
+    end
+  end
+  result
+end
+
+match_maker(true,  true,  false, true, nil)

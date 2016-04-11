@@ -24,4 +24,7 @@ end
 
 'one line if statement'     if true       # => "one line if statement"
 'one line unless statement' unless false  # => "one line unless statement"
+#Sergio unless == if not
+
+# Sergio: ternary condition will appear later I suppose
 

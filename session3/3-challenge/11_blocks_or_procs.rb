@@ -31,7 +31,14 @@
 #   end
 # end
 
-
+def array_init(size = 5, &block)
+    if block.nil?
+        p "I'm here"
+        (0...size).to_a.map{ |i| (i * 100).to_s }
+    else
+        (0...size).to_a.map(&block)
+    end
+end
 
 
 

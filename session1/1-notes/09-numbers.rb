@@ -15,9 +15,13 @@
 # what if you want to convert them?
 10.to_f   # => 10.0
 10.0.to_i # => 10
+10.3.to_i # => 10
+10.999.to_i # => 10  (removes the decimal part, just takes the integer)
 
 
 # You can also use parentheses, they will take on the value of whatever is inside them.
 (1 + 2) * 3     # => 9
 (91 + 2).even?  # => false
+1     +       2  # => 3  (all spaces are ignored)
+
 

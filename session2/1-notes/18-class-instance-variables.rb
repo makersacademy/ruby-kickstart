@@ -15,8 +15,8 @@ class Person
 
   # remember, self is Person, so @home_planet
   # is defined on the Person class itself
-  @home_planet = 'Erth'
-  Person.home_planet  # => "Erth"
+  @home_planet = 'Earth'
+  Person.home_planet  # => "Earth"
   Person.home_planet = 'Earth'
   @home_planet        # => "Earth"
 

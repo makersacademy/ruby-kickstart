@@ -56,3 +56,7 @@ def pay_by_store_credit(order)
   current_user.store_credit -= order.cost   # current_user is a method with no params (ie, the customer)
   order.ship_goods
 end
+
+def pay_by(order, :type)
+
+end

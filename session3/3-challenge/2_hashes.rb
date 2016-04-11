@@ -8,6 +8,17 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
-
-
+def staircase(number)
+  result = {}
+  1.upto(number) do |i|
+    if i.odd?
+      aux = []
+      1.upto(i) do |j|
+        aux << j if j.even?
+      end
+      result[i] = aux
+    end
+  end
+  result
+end
 
