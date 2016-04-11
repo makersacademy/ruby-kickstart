@@ -1,7 +1,7 @@
 # At any given time in Ruby, you are in the context
 # of some object. Right now we're in the main object.
 
-# You can see what object you're in by looking at self.
+# You can see what object you're in by looking at self, it's a keyword that gets the current object
 self # => main
 
 class String
@@ -32,4 +32,3 @@ class Example
   self.new    # => #<Example:0x000001008634f8>
   new         # => #<Example:0x000001008631d8>
 end
-

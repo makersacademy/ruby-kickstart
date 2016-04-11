@@ -11,7 +11,7 @@ chars << 'd'
 chars # => ["a", "b", "c", "d"]
 
 
-# Replace
+# Replace - overwrite
 chars[1] = 'Bee'
 chars # => ["a", "Bee", "c", "d"]
 
@@ -32,5 +32,5 @@ chars.insert index, 'b' , 'c'
 chars # => ["a", "b", "c", "d"]
 
 
-# Sorting
+# Sorting - will sort alphabetically
 ['c', 'b', 'd', 'a'].sort # => ["a", "b", "c", "d"]

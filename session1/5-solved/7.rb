@@ -8,3 +8,5 @@ def pirates_say_arrrrrrrrr(string)
   end
   to_return
 end
+
+# The way this works is the 'do' loop go to each letter, and adds if the add_next variable is true - it won't ever be true on the first letter (hence it is set to false to start, and at the end of the block it will be set to true if the current character is an r, so when the loop moves on to the character at the next index, add_next will be true and so the character is added onto the to_return string to be returned. )
