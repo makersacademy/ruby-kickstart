@@ -6,5 +6,15 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	to_return = ""
+	string.size.times do | i | 
+		if return_odds && i.odd?
+		to_return << string[i]
+		elsif !return_odds && i.even?
+		to_return << string[i]
+		end
+	end
+	to_return
 end
+
+#expect(odds_and_evens 'abcdefg', true).to eq 'bdf'
