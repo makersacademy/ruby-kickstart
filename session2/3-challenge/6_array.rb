@@ -15,3 +15,15 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array)
+  result = array.join.length.to_i
+  square = Math.sqrt(result)
+  if result <= 1 # 1 is not a prime number
+  	return false
+  elsif square >= 2
+	(2..square).each do |i|
+    	return false if result % i == 0
+	end
+  else return true
+  end
+end
