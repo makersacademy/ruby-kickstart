@@ -15,3 +15,36 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+def prime_chars? s
+    #make one string
+    ss = s.join()
+     
+    if ss.length < 2
+        return false
+    elsif ss.length == 2
+        return true
+    else
+        for i in (2...(ss.length))
+            return false if ss.length%i == 0
+        end
+    end
+     
+
+end
+
+#prime_chars? ['s']
+
+=begin
+require 'mathn'
+def prime_chars? s
+    ss = s.join()
+    if ss.length > 1
+        (ss.length).prime?
+    else
+        return false
+    end
+end
+
+=end
+

@@ -15,3 +15,15 @@
 #
 # line_sums('nums.txt')   # =>   808 + 919 + 822 + 876 + 974   # =>   4399
 
+#File.open "names", "w" do |file|
+
+def line_sums(file_name)
+  sum = 0
+  File.open(file_name).each_line do |line|
+    line.chomp!
+    #numbers = line.split(' ').map(&:to_i)
+    #sum += numbers.max
+    sum += line.split(' ').map(&:to_i).max
+  end
+  sum
+end

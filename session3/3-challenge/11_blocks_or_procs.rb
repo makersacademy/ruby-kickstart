@@ -32,8 +32,22 @@
 # end
 
 
+def array_init(size=5,&block)
+  output = Array.new(size) { |i| block ? block.call(i) : (i * 100).to_s }
+  output
+end
 
+#how he did it
+=begin
 
+def array_init(size=5, &block)
+  block ||= Proc.new { |i| (100 * i).to_s }
+  Array.new(size, &block)
+end
+
+=end
+
+#he used conditional assignment
 
 
 

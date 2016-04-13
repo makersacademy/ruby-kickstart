@@ -54,7 +54,20 @@
 #   end
 # end       # => ["a", "m", "r", 1, 3, 4, 9, 2.5, 9.0, 25.8]
 
+#very short verion...
+=begin
+def your_sort(arr,&block)
+  block ||= Proc.new {|a,b| a <=> b }
+  arr.sort(&block)
+end
+=end
 
-
-
-
+def your_sort(array,&sorter)
+  sorter ||= Proc.new {|a,b| a <=> b }
+  array.each_index do |index1|
+    array.each_index do |index2|
+      order = sorter.call(array[index1], array[index2])
+      array[index1], array[index2] = array[index2], array[index1] if order < 0
+    end
+  end
+end

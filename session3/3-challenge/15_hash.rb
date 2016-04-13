@@ -46,5 +46,32 @@
 # head = {:data => 6, :next => head}
 # middle head                        # => 3
 
+#cheating way
+=begin
 
+def middle (hash)
+  score = nil
+  if hash[:data].even?
+    score = hash[:data]/2
+  elsif hash[:data].odd?
+    score = hash[:data]/2 + 1
+  end
+  score
+end
+=end
+
+def middle(linked)
+  score = 1
+  score = rec(linked, score)
+  score.even? ? (score/2) : ((score/2) +1)
+end
+
+def rec(linked,score)
+  if linked[:next] != nil
+    score += 1
+    rec(linked[:next],score)
+  else
+    score
+  end
+end
 

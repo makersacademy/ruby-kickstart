@@ -7,6 +7,17 @@
 
 class String
   def every_other_char
+    word = ""
+    i = 0
+    while i < self.length
+      word+=self[i]
+      i += 2
+    end
+    return word
+
   end
-  
+
 end
+
+
+'abcdefg'.every_other_char

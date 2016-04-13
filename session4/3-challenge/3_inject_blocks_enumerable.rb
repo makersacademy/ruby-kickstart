@@ -26,3 +26,9 @@
 #   The fourth time the block is passed  35 , 10 and it returns 45
 #   The method then returns 45
 #
+
+def passthrough (enum, value, &block)
+  enum.each{|i| value = block.call(value,i)}
+  value
+end
+

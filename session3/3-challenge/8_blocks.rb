@@ -27,11 +27,19 @@
 
 class Person
 
-  attr_accessor :name
+  attr_accessor :name , :age , :quote
 
-  def initialize( &initializer )
-    @initializer = initializer
-    initializer.call self
+  def initialize(hash, &initializer)
+    hash.each_pair do |k,v|
+      instance_variable_set('@' + k.to_s, v)
+    end
+    if initializer
+      @name = name
+      @age = age
+      @quote = quote
+      @initializer = initializer
+      initializer.call self
+    end
   end
 
   def reinit

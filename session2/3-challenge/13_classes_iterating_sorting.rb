@@ -73,3 +73,62 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+	attr_accessor :username, :blogs
+
+	def initialize(username)
+	  	self.username = username
+        self.blogs = []
+	end
+
+	def add_blog(date, text)
+        new_blog = Blog.new(date, self, text)
+        blogs << new_blog
+        self.blogs = blogs.sort_by {|blog| blog.date}.reverse
+        new_blog
+    end
+
+end
+
+
+class Blog
+	attr_accessor :text, :date, :user
+
+	def initialize(date, user, text)
+		self.text, self.date, self.user = text, date, user
+	end
+
+    def summary
+        ary =[]
+        ary = text.split()
+        joined_together = ""
+		if ary.length >= 10
+            return ary[0..9].join(' ')
+            #0.upto(9) {|loop_index| joined_together << (ary[loop_index]+ " ") }
+            #ary.each {|x| summary += x}
+            #puts summary
+		else
+            return text
+		#puts ary
+        #return joined_together
+		end
+	end
+
+    def entry
+        content = "#{user.username.to_s} #{date.to_s}" + "\n" + text.to_s
+        return content
+    end
+
+    #def ==(other)
+    #    return self.date, self.user, self.text == other.date, other.user, other.text
+    #end
+
+    def ==(other)
+        date == other.date &&
+        user == other.user &&
+        text == other.text
+    end
+
+
+end

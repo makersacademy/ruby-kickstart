@@ -9,6 +9,13 @@
 #
 # print_list_in_reverse head   # >> "1\n2\n"
 
-def print_list_in_reverse list
-  
+def print_list_in_reverse(linked)
+  str = ""
+  str = rec(linked, str)
+  $stdout.write str
+end
+
+def rec(linked,str)
+  str = linked[:data].to_s + "\n" + str
+  linked[:next] != nil ? rec(linked[:next],str) : str
 end
