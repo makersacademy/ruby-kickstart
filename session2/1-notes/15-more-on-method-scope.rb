@@ -19,4 +19,4 @@ class Example
   
 end
 
-Example.new.method1
+puts Example.new.method1
