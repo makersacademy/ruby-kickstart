@@ -1,6 +1,6 @@
 # Remember you can test this code with
 #   $ rake 2:1
-
+#
 # Write a program that reads in two integers typed on the keybaord
 # and outputs their sum, difference, and product
 #
@@ -8,6 +8,6 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+	a, b = gets.split(" ").map(&:to_i)
+	print "#{a + b}\n#{a - b}\n#{a * b}\n"
 end
