@@ -73,3 +73,47 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+  attr_accessor "username", "blogs"
+
+  def initialize(username)
+    @username = username
+    @blogs = []
+  end
+
+  def add_blog(date, text)
+    newblog = Blog.new(date, @username, text) #instantiate a new blog
+    @blogs << newblog #add the new blog to the blogs array
+    newblog #return the new blog
+  end
+
+  def blogs
+    #return array of all blogs a user has written, reverse chronological order (newest first)
+    @blogs.sort_by { |blog| blog.date }.reverse
+  end
+
+end
+
+class Blog
+  attr_accessor "date", "user", "text" #create setter and getter for date, user and text
+
+  def initialize(date, user, text)
+    @text = text
+    @date = date
+    @user = user
+  end
+
+  def summary
+    text.split[0...10].join(" ") #Show the first 10 lines of a blog
+  end
+
+  def entry
+    "#{@user.username} #{@date}\n#{@text}" #create a new entry that lists the username
+  end
+
+  def ==(other)
+    date == other.date && user == other.user && text == other.text #Check if a blog is the same as another blog
+  end
+
+end

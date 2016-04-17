@@ -6,4 +6,14 @@
 
 def pirates_say_arrrrrrrrr(string)
 
+  pirates = string.split("")
+   newstring = []
+
+
+   pirates.each_with_index do |val,index|
+     if val == "r" || val == "R"
+       newstring << pirates[index + 1]
+     end
+   end
+   newstring.join("")
 end

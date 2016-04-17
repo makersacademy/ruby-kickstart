@@ -19,7 +19,16 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
+  puts "Enter a number?"
+  while true
+    num = gets.chomp
+    if num == "bye"
+      print "goodbye"
+      break
+    else
+      print "hi " * num.to_i
+    end
+  end
 
 end
 
