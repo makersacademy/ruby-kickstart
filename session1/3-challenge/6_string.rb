@@ -6,5 +6,21 @@
 #
 
 def odds_and_evens(string, return_odds)
+  input_string = string.split("")
+  output_string = Array.new
 
+  if return_odds
+    count = 1
+    while count <= input_string.length
+      output_string << input_string[count]
+      count +=2
+    end
+  else
+    count = 0
+    while count <= input_string.length
+      output_string << input_string[count]
+      count +=2
+    end
+  end
+  output_string.join("")
 end

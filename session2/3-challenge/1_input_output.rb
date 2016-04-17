@@ -8,6 +8,17 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+
+  input_numbers = gets # input from user
+
+  # split input into two numbers
+  numbers_array = input_numbers.split(" ")
+  number_1 = numbers_array[0].to_i
+  number_2 = numbers_array[1].to_i
+
+  # work out values
+  puts number_1 + number_2
+  puts number_1 - number_2
+  puts number_1 * number_2
+
 end

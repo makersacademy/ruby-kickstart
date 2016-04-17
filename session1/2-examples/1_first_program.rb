@@ -7,4 +7,5 @@ puts "Welcome to Ruby"
 puts "Lets demonstrate a simple calculation"
 answer = 2 + 2
 puts "2 plus 2 is #{answer}"
-
+answer = (2 + 2) * 2
+puts "If we double that it is #{answer}"
