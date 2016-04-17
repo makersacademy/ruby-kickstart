@@ -20,7 +20,13 @@
 
 def hi_hi_goodbye
   # your code here
-
+input=""
+while input.downcase!="bye"
+  puts "Enter a number"
+  input = gets.chomp
+  puts "hi "*input.to_i
+end
+puts "goodbye"
 end
 
 
