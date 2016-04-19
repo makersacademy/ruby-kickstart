@@ -6,5 +6,24 @@
 #
 
 def odds_and_evens(string, return_odds)
+ 
+ string_array = string.chars.to_a
+output=""
+x=0
+while x < string_array.size
 
+if (return_odds) && (x % 2 == 1) 
+ output << string_array[x] 
+elsif (!return_odds) && (x % 2 == 0)
+
+output << string_array[x]
 end
+x+=1
+end
+
+return output
+
+
+ 
+end
+

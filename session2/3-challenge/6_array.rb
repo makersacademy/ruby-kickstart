@@ -15,3 +15,21 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+class Integer
+	def prime?
+	if self <2 
+		return false
+	end
+2.upto (self - 1) { |a| return false if self % i == 0}
+
+true
+end
+
+def prime_chars? (a)
+
+
+
+a.join.size.prime?
+
+	
+end
