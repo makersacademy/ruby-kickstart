@@ -19,12 +19,19 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
 
+  while true
+    puts "Enter a number:"
+    no_of_times = gets.chomp
+    break if no_of_times == "bye"
+    no_of_times.to_i.times { puts "hi" }
+  end
+  
+  puts "goodbye"
 end
 
 
-
+# http://www.dotnetperls.com/iterator-ruby
 
 # This will just invoke the method if you run this program directly
 # This way you can try it out by running "$ ruby 2_input_output_control.rb"

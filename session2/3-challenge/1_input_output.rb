@@ -8,6 +8,11 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+n1, n2 = gets.split.map(&:to_i) # n1, n2 = gets.split.map { |n| n.to_i }
+puts n1 + n2
+puts n1 - n2
+puts n1 * n2
 end
+
+
+#http://ruby.about.com/od/strings/a/Splitting-Strings.htm
