@@ -14,3 +14,14 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(numbers)                                      #Defines the method with one parameter
+numbers.select { |num| num % 3 != 0}.map { |num| num % 3}   #Selects first number and only maps it if divides by 3 and not 0. Checks it. Checks num to see if it divides by 3.
+end                                                         #Ends the method
+
+
+
+=begin JOSH'S SOLUTION
+def mod_three(numbers)
+  numbers.select { |number| number % 3 != 0 }.map { |number| number % 3 }
+end
+=end

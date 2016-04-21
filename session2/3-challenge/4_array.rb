@@ -9,4 +9,14 @@
 # This time you will have to define the method, it's called: get_squares
 
 
+def get_squares(numbers)                            #defines method with one parameter
+answer = numbers.select{|n| numbers.include? n*n}   #Creates a new array to eaqual the return value of the block
+answer.sort                                         #Sorts the new array into order and returns
+end                                                 #Ends the method
 
+
+=begin JOSH'S SOLUTION
+def get_squares(numbers)
+  numbers.select { |n| numbers.include? n*n }.sort
+end
+=end

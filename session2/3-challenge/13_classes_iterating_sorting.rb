@@ -19,7 +19,96 @@
 #        return self.date == other.date
 #      end
 
+=begin
+I have had a go at creating the two classes but found this challenge tough so didn't want to spend longer than the suggested 30 mins on it as I've spent far too long this week (probably 50hours plus) on the previous challenges and on codewars. I have really enjoyed it but have found that hours of time going in sometimes reults in 30 mins of progress coming out! I am in the growth mindset though so feel that this is something that I WILL be able to do later on but not just at the moment.
+=end
 
+##########################################
+
+class User                            #Defines the class
+  attr_accessor username, blogs       #method attribute accessor to read/write or getter/setter methods
+
+  def initialize(username)            #initialize method
+    @username = username              #variable to initialized
+  end                                 #ends the method
+
+  def add_blog(date,time)
+    #code goes here
+  end                                 #ends the method
+end                                   #ends the class
+
+###########################################
+
+class Blog
+  attr_accessor text, date, user
+
+def initialize(date, user, text)
+    @date = date
+    @user = user
+    @text = text
+  end
+
+def summary
+  #code goes here
+end
+
+  def entry
+  #code goes here
+  end
+
+  def ==(other)
+  #code goes here
+  end
+end
+
+###########################################
+
+
+=begin JOSH'S SOLUTIONS
+require 'date'
+
+class User
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+    self.username = username
+    self.blogs    = []
+  end
+
+  def add_blog(date, text)
+    added_blog = Blog.new(date, self, text)
+    blogs << added_blog
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+    added_blog
+  end
+end
+
+
+
+class Blog
+  attr_accessor :date, :user, :text
+
+  def initialize(date, user, text)
+    self.date = date
+    self.user = user
+    self.text = text
+  end
+
+  def summary
+    text.split[0..9].join(' ')
+  end
+
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def ==(other)
+    date   == other.date &&
+      user == other.user &&
+      text == other.text
+  end
+end
+=end
 
 # ==========  EXAMPLE  ==========
 #

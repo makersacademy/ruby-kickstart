@@ -22,9 +22,63 @@
 # f.to_s               # => "50/100"
 # f.to_f               # => 0.5
 
+
+=begin
+I have created the class, the methods and the initialze method but needed to look at the solution in order to get the methods to work.
+I understand the reasoning behind creating a class and defining its methods.
+=end
+
 class Fraction
-  def gcd(a,b)
+  attr_accessor :numerator, :denominator                      #method attribute accessor to read/write or getter/setter methods
+
+def initialize(numerator, denominator)                        #method to initialize the values
+self.numerator, self.denominator = numerator, denominator
+end                                                           #ends the method
+
+def to_s                                                      #method that represents the value as a string
+  "#{numerator}/#{denominator}"
+end                                                           #ends the method
+
+def to_f                                                      #method that return the ratio as a float
+  numerator / denominator.to_f
+end                                                           #ends the method
+
+def gcd(a,b)                                                  #method that returns the greatest common divisor
+  return a if b == 0
+  gcd(b, a%b)
+end                                                           #ends the method
+
+def lowest                                                    #method that returns the lowest terms
+  divisor = gcd(numerator, denominator)
+  Fraction.new(numerator/divisor, denominator/divisor)
+end                                                           #ends the method
+end
+
+
+=begin JOSH'S SOLUTION
+class Fraction
+  attr_accessor :numerator, :denominator
+
+  def initialize(numerator, denominator)
+    self.numerator, self.denominator = numerator, denominator
+  end
+
+  def to_s
+    "#{numerator}/#{denominator}"
+  end
+
+  def to_f
+    numerator / denominator.to_f
+  end
+
+  def gcd(a, b)
     return a if b == 0
-    gcd(b, a%b)
+    gcd b, (a % b)
+  end
+
+  def lowest
+    divisor = gcd(numerator, denominator)
+    Fraction.new(numerator/divisor, denominator/divisor)
   end
 end
+=end
