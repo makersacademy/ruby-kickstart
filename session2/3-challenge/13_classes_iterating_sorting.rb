@@ -73,3 +73,60 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+    @username = username
+    @blogs = []
+  end
+#got the Blog.new idea from the solutions
+  def add_blog(date, text)
+    new_blog = Blog.new(date, @username, text)
+    blogs << new_blog
+    @blogs = blogs.sort_by { |blog| blog.date }.reverse
+    new_blog
+  end
+
+end
+
+class Blog
+  attr_accessor :text, :date, :user
+  def initialize(date, user, text)
+    @text = text
+    @date = date
+    @user = user
+  end
+
+  def summary
+    @text.split[0..9].join(' ')
+  end
+#These last two methods were taken from the solutions
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def ==(other)
+    date   == other.date &&
+      user == other.user &&
+      text == other.text
+  end
+
+end
+
+=begin
+#self test
+noah = User.new("MunkHaze")
+puts noah.username
+noah.add_blog(Date.parse, "Something in the way of things and that nothing really is the way it seems")
+noah.add_blog(Date.parse, "Strange how things are really but I am a counting bee")
+blog5 = Blog.new Date.today, noah, "<<BLOG_ENTRY
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci nunc, porta non tristique eu, auctor tincidunt mauris.
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vitae nibh sapien. Curabitur
+eget eros bibendum justo congue auctor non at turpis. Aenean feugiat vestibulum mi ac pulvinar. Fusce ut felis justo, in
+porta lectus.
+BLOG_ENTRY, "
+p noah.blogs
+puts blog5.summary
+=end

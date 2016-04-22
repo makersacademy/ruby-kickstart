@@ -14,3 +14,8 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(number)
+  number.collect {|x| x % 3 if x % 3 != 0 }.compact
+end
+
+# numbers.select { |n| numbers.include? n*n }.sort
