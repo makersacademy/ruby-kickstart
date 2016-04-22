@@ -9,3 +9,15 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+# from input, create array that's split by space, but does not include punctuation except '
+# array.each_index.select {|word| word.even?}
+
+# def alternate_words(string)
+#  array = string.scan(/[\w']+/)
+#  array.values_at(* array.each_index.select {|i| i.even?})
+# end
+
+def alternate_words(string)
+  array = string.scan(/[\w’']+/)
+  array.values_at(* array.each_index.select {|i| i.even?})
+end

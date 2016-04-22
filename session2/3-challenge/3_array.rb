@@ -7,6 +7,7 @@
 
 class String
   def every_other_char
+  array = self.split("")
+  array.values_at(* array.each_index.select {|i| i.even?}).join("")
   end
-  
 end
