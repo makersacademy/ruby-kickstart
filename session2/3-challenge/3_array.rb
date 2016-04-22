@@ -7,6 +7,9 @@
 
 class String
   def every_other_char
-  end
-  
+    array_new = []
+    self.chars.each_with_index{|char,index| if index % 2 == 0 then array_new << char end}
+    return array_new.join
 end
+end
+#Finished ...

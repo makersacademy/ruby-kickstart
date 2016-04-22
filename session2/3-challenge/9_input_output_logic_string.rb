@@ -24,10 +24,19 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  while true
+    response = gets.chomp
+  if response == "BYE"
+      break
+  elsif response != response.upcase || response.empty?
+    puts "HUH?! SPEAK UP, SONNY!"
+  else response == response.upcase
+    puts "NO, NOT SINCE 1938!"
+  end
+end
 end
 
-
+#works in IRB but not with rake
 
 
 

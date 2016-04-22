@@ -4,7 +4,17 @@
 #
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
-
 def odds_and_evens(string, return_odds)
-
+    new_string = ""
+    x = 0
+   while x < string.length
+        if return_odds
+            new_string << string[x+1].to_s
+            x += 2
+        else
+            new_string << string[x].to_s
+            x += 2
+        end
+    end
+    new_string
 end

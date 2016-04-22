@@ -8,6 +8,14 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
-end
+  input = gets.split()
+  a = input[0].to_i
+  b = input[1].to_i
+
+  print a+b
+  print a-b
+  print a*b
+
+  end
+
+works!
