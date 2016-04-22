@@ -24,7 +24,18 @@
 # USER:     BYE
 
 def deaf_grandma
+puts "Hey Sonny! It's your lovely Grandmother! How are you?"
 
+while (response = gets.chomp) != "BYE"
+    if response != response.upcase
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+
+    if (response == response.upcase)
+      puts "NO! NOT SINCE " + rand(1930..1950).to_s + "!"
+    end
+  end
+  puts "GOOD BYE, SONNY!"
 end
 
 
