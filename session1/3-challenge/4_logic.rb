@@ -13,6 +13,15 @@
 
 
 def grade(num_books, has_read_books)
+	if (num_books > 20) && (has_read_books == true)
+		"A"
+	elsif (((10..20).include?(num_books)) && (has_read_books == true)) || num_books > 20
+		"B"
+	elsif ((num_books < 10) && (has_read_books == true)) || (10..20).include?(num_books)
+		"C"
+	else
+		"D"
+	end
 end
 
 
