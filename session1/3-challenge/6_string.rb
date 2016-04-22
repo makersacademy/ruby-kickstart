@@ -6,5 +6,12 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  odds = ""
+  evens = ""
+  string.split("").each_with_index do |character,index|
+    odds << character if index.odd?
+    evens << character if index.even?
+  end
+  return odds if return_odds
+  evens
 end
