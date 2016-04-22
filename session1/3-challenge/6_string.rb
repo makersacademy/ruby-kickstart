@@ -6,5 +6,17 @@
 #
 
 def odds_and_evens(string, return_odds)
+	odds = []
+	evens = []
+	array = string.chars
+	
+	hash = Hash[array.each_with_index.map { |value, key| [key, value] }]
 
+		hash.each { |i, x| i % 2 == 0 ? evens << x : odds << x }
+		
+			if return_odds == false
+				return evens.join
+			else
+				return odds.join 
+			end	
 end

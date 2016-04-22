@@ -20,7 +20,6 @@
 #      end
 
 
-
 # ==========  EXAMPLE  ==========
 #
 # lissa = User.new 'QTSort'
@@ -73,3 +72,56 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class Blog
+	attr_accessor 'text'
+	attr_accessor 'date'
+	attr_accessor 'user'
+
+	def initialize(date, user, text)
+		@date = date
+		@user = user
+		@text = text
+	end
+
+	def summary
+		textArray = @text.split(' ')
+		if textArray.length <= 10
+			textArray.join(" ") #return
+		else 
+			textArray[0..9].join(" ") #return
+		end
+	end
+
+	def entry
+    	"#{user.username} #{date}\n#{text}"
+ 	end
+
+ 	def ==(other)
+       return self.date == other.date && self.user == other.user && self.text == other.text
+    end
+
+end
+
+class User 
+	attr_accessor 'username'
+	attr_accessor 'blogposts'
+
+	def initialize(username)	
+		@username = username
+		@blogposts = []
+	end
+
+	def add_blog(date, text)
+		blog = Blog.new(date, self, text)
+		@blogposts << blog
+		blog
+	end
+
+	def blogs
+		@blogposts.sort {|x, y| y.date <=> x.date}
+	end
+
+end
+
+

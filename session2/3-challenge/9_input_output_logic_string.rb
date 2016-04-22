@@ -25,6 +25,22 @@
 
 def deaf_grandma
 
+should_loop = true
+
+while should_loop
+
+    input = gets.chomp
+    
+    if input == 'BYE' 
+    	should_loop = false
+    	""
+    elsif input == input.upcase && input != ""
+    	puts 'NO, NOT SINCE 1938!'
+    else
+    	puts 'HUH?! SPEAK UP, SONNY!'
+    end
+end
+
 end
 
 
