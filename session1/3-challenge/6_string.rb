@@ -6,5 +6,16 @@
 #
 
 def odds_and_evens(string, return_odds)
+newString = ""
+
+if return_odds == true then string.each_char.with_index(0) {|x,i| newString << x if i.odd?}
+elsif return_odds == false then  string.each_char.with_index(0) {|x,i| newString << x if i.even?}
+end
+
+newString
+
 
 end
+
+
+

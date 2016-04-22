@@ -1,3 +1,4 @@
+
 # Write a method named prime_chars? which takes array of strings
 # and returns true if the sum of the characters is prime.
 #
@@ -14,4 +15,30 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+
+class Integer
+
+	def is_prime?
+
+		return false if self < 2
+		(2..Math.sqrt(self)).each do |x|
+		
+		return false if self % x == 0
+		end
+		true
+	end
+end 
+ 	def prime_chars?(array)
+ 	array.join.length.is_prime?
+ end
+
+
+
+
+puts  prime_chars? ['a']
+puts  prime_chars? ['abc']            # => true
+#puts  prime_chars? ['a', 'bc']        # => true
+#puts  prime_chars? ['ab', 'c']        # => true
+#puts  prime_chars? ['a', 'b', 'c']
+
 
