@@ -7,6 +7,11 @@
 
 class String
   def every_other_char
+  	newstring = []
+  	self.split(//).each_with_index do |char, ind|
+  		newstring << char if ind % 2 == 0
+  	end
+  	newstring.join()
   end
   
 end

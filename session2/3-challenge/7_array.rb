@@ -9,3 +9,8 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words (string)
+	solution = []
+	string.gsub(/[!@$#%^&*()\-=_+\[\]:;,.\/<>?\\|]/, " ").split(" ").each {|word| word.strip}.each_with_index {|word, ind| solution << word if ind % 2 == 0}
+	solution
+end
