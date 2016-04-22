@@ -15,3 +15,7 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? a
+	require 'prime'
+	Prime.prime?(a.join.chars.count)
+end
