@@ -5,6 +5,8 @@
 puts "Here's\nTwo lines."
 puts 'This will\nonly be one line'
 
+# NOT ONLY THAT, BUT STRING INTERPOLATION DOESN'T WORK WITH SINGLE QUOTES ASWELL
+
   # Output:
   # Here's
   # Two lines.

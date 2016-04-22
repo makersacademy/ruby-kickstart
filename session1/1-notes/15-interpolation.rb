@@ -4,7 +4,7 @@
 small_number = 5
 neg_number = -97
 
-puts "1 + 3 is #{1 + 3}"
+puts "1 + 3 is #{1 + 3}" # THE CODE INSIDE THE CURLY BRACES EQUATES TO ONE OBJECT ONLY
 puts "My two numbers are #{small_number} and #{neg_number.abs} (all positive here)"
 
   # Output:

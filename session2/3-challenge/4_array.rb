@@ -8,5 +8,19 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares array
+	newArray = []
+	array = array.sort
+	array.each do |x|
+		array.each do |y|
+			if x**2 == y
+				newArray.push(x)
+				break #need to break out of this loop as soon as a square is found, otherwise duplicates will occur
+			end
+		end
+	end
+	newArray
 
+end
 
+#puts get_squares [9,3,81]

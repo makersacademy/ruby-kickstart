@@ -23,3 +23,4 @@ false.class                     # => FalseClass
   !!object # => true, true, true, true, true, false
 end
 
+# EVERYTHING EXCEPT FALSE AND NIL EVALUATES TO TRUE

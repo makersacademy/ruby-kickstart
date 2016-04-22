@@ -8,6 +8,11 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
+	input = gets
+	var1 = input.split(" ")[0].to_i
+	var2 = input.split(" ")[1].match(/\d+/).to_s.to_i
+	#puts "#{var1 + var2}\\n#{(var1 - var2).abs}\\n#{var1*var2}\\n"
+	puts var1 + var2, var1 - var2, var1 * var2
+	  # your code goes here
   
 end

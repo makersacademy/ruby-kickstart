@@ -9,3 +9,11 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words string
+	array = string.scan(/(?!'.*'-)\b[\w’\w']+\b\b/)
+	newArray = []
+	array.each_with_index do |x, index|
+		newArray.push(x) if index % 2 == 0
+	end
+	newArray
+end

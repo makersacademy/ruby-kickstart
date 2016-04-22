@@ -20,3 +20,57 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+class BeerSong
+
+#I looked through the model answer twice and fully understood it. I managed to repeat the WHOLE code from memory below!
+	
+	attr_accessor :beers
+
+	# 1. Initialize beers
+	def initialize beers
+		beers = 0 if beers < 0
+		beers = 99 if beers > 99
+		self.beers = beers	
+	end
+
+	#2. Method with iterator counting down to 1
+	def print_song
+		beers.downto 1 do |n|
+			stanza n
+		end
+	end
+
+	#3. Method to call the stanzas
+	def stanza n
+		if n.zero?
+			String.new #why not just return? or break?
+		else #print stanza with calls to translate methods
+			puts  "#{trans n}" + "#{bottle n}" + " of beer on the wall,",
+				  	"#{trans n}" + "#{bottle n}" + " of beer,",
+				  	"Take one down, pass it around,",
+				  	"#{trans n-1}" + "#{bottle n-1}" + " of beer on the wall."
+		end
+	end
+
+	#4. Method to determine bottles or bottle
+	def bottle n
+		if n == 1
+			" bottle"
+		else
+			" bottles"
+		end
+	end
+
+	#5. Method to translate the numbers into words
+	def trans n #has a recusive call to itself 
+		if n >= 0 && n <= 19 # define 0-19
+			%w(zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen)[n]
+		elsif n%10 == 0 # tens
+			%w(zero ten twenty thirty forty fifty sixty seventy eighty ninety)[n/10]
+		else # all other numbers - First part works out via recursion the tens, second part works out the singles with the remainder
+			"#{trans n/10*10}" + "-" + "#{trans n%10}"
+		end.capitalize
+	end
+end
+
