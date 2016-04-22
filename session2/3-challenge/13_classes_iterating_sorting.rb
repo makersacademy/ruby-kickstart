@@ -73,3 +73,48 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class Blog
+    attr_accessor 'date', 'user', 'text' 
+    
+    def initialize(date, user, text)
+        @text = text
+        @date = date
+        @user = user
+    end
+    
+    def summary
+       words = @text.split " "                                  # splits @text into and array and sets it to words
+       ten_slice = words.slice(0, 10)                           # takes a slice of the first 10 words from words and sets it to ten_slice
+       string = ten_slice.join " "        
+       return string
+    end
+
+    def entry
+        "#{@user.username} #{@date}\n#{@text}"                  # @user returns user object id so .username required to call the username entered
+    end
+
+    def ==(other)
+        @date == other.date && @user == other.user && @text == other.text
+    end
+
+
+end
+
+
+class User 
+attr_accessor 'username', 'blogs'
+    
+    def initialize(username)                    # initialize taking username as a defined parameter
+        @username = username                    # 
+        @blogs = []                             # initializes @blogs with an empty array
+    end
+    
+    def add_blog(date, text)                                        
+        new_blog = Blog.new(date, self, text)                       
+        @blogs << new_blog
+        @blogs = @blogs.sort_by { |b| b.date }.reverse              #sorts @blogs by date then reverses for newest blog first
+        return new_blog
+    end
+    
+end
