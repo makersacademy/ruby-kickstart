@@ -20,6 +20,20 @@
 
 def hi_hi_goodbye
   # your code here
+  print "Enter a number "
+  user_prompt=gets.chomp
+  
+
+   until user_prompt == "bye"
+  	
+  	puts "hi " * user_prompt.to_i
+  	print "Enter a number "
+  	user_prompt=gets.chomp
+  	
+  	
+
+  end
+  puts "goodbye"
 
 end
 

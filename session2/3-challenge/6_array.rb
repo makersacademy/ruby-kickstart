@@ -14,4 +14,18 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+def prime_chars?(array_of_strings)
+
+	def is_prime?(num)
+		return false if num < 2
+   		Math.sqrt(num).floor.downto(2).each {|i| return false if num % i == 0}
+   		true
+	end
+
+	array2 = array_of_strings.map { |e| e.length  }
+	numbers = array2.inject(0){|sum,x| sum + x }
+	numbers.to_f
+	is_prime?(numbers)
+end
+
 
