@@ -9,3 +9,6 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(words)
+	words.scan(/(?:\w*[\'\’])?\w+/).select.with_index { |item, index| item if ( index % 2 == 0 ) }
+end
