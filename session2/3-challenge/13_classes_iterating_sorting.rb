@@ -19,7 +19,48 @@
 #        return self.date == other.date
 #      end
 
+class User
 
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+    self.username = username
+    self.blogs = []
+  end
+
+  def add_blog(date,text)
+    blog = Blog.new(date,self,text)
+    self.blogs << blog
+    self.blogs = self.blogs.sort_by { |b| b.date }.reverse  
+    blog
+  end
+end
+
+class Blog
+
+  attr_accessor :text, :date, :user
+
+  def initialize(date,user,text)
+    self.date = date
+    self.text = text
+    self.user = user
+  end
+
+  def entry
+    "#{user.username} #{date}\n#{text}"  
+  end
+
+  def summary
+    text.split[0..9].join(' ')
+  end
+
+  def ==(other)
+    date == other.date &&
+    user == other.user &&
+    text == other.text
+  end
+end
+ 
 
 # ==========  EXAMPLE  ==========
 #

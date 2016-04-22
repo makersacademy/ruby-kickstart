@@ -7,6 +7,9 @@
 
 class String
   def every_other_char
+  	array = []
+  	self.scan(/.?/).each_with_index { |value, index| array << value if index.even? }
+
+  	array.join
   end
-  
 end
