@@ -7,6 +7,10 @@
 
 class String
   def every_other_char
-  end
-  
+    arr = ''
+    self.length.times do |i|
+      arr << self[i] if i % 2 == 0
+    end
+    arr
+  end  
 end

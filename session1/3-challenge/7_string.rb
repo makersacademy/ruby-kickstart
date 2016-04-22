@@ -5,5 +5,10 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
+  new_string = String.new
+  string.length.times do |i| 
+    new_string << string[i+1].to_s if string[i].downcase == 'r' && defined? string[i+1]
 
+  end
+  new_string
 end

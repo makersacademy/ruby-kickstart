@@ -6,5 +6,11 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  new_string = ''
+  #return_odds == true ? (bool = 1) : (bool = 0)
+  bool = return_odds ? 1 : 0
+  string.length.times do |index|
+    new_string += string[index] if (index % 2 == bool)
+  end
+  new_string
 end
