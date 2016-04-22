@@ -3,7 +3,7 @@
 # will write them for you.
 
 class Car
-  attr_accessor 'miles'
+  attr_accessor 'miles' #a method that rights methods after the methods it receives ( a getter and a setter)
 end
 
 Car.instance_methods false # => [:miles, :miles=]
@@ -16,5 +16,5 @@ car.instance_variables              # => [:@miles]
 car.instance_variable_get '@miles'  # => 1000
 
 
-# attr_accessor is an example of metaprogramming, 
+# attr_accessor is an example of metaprogramming,
 # You can write methods yourself like attr_accessor

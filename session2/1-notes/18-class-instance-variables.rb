@@ -30,7 +30,7 @@ class Person
 
   # This one is for instances
   def home_planet
-    Person.home_planet
+    Person.home_planet #can use self.class then it will work dyanically incase you change the name of the class
   end
 end
 

@@ -23,9 +23,31 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
+
 def deaf_grandma
 
+response = gets.chomp
+
+
+
+while response != "BYE"
+
+if response != response.upcase || response == ""
+    puts "HUH?! SPEAK UP, SONNY!"
+    response = gets.chomp
+
+elsif (response == response.upcase && response != "BYE")
+      puts "NO, NOT SINCE 1938!"
+      response = gets.chomp
+elsif response == "BYE"
+
+
 end
+
+end
+end
+
+
 
 
 

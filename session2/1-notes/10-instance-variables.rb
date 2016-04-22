@@ -7,7 +7,7 @@
 class Car
   # we call methods like this a "setter"
   def set_miles(miles)
-    @miles = miles
+    @miles = miles #here is where it is initialized
   end
 
   # we call methods like this a "getter"

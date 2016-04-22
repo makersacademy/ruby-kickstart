@@ -18,7 +18,7 @@ class Flight
     local_variables   # => [:arrival_time]
 
     # We should have made it explicit by specifying that
-    # arrival_time= is a method on self
+    # arrival_time= is a method on self - forces it to be a method lookup not a local variable
     self.arrival_time = 0
   end
 end
