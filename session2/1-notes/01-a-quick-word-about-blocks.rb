@@ -11,7 +11,7 @@ end
 # This is the syntax for single line blocks
 # note that you need parens around that 1,
 # we'll discuss why later
-mah_method!(1) { |block_parameter| block_parameter * 2 }
+mah_method!(1) { |block_parameter| block_parameter * 2 } #You can always stick a code block on the end of a method call
 
 
 # you also have multiline syntax
@@ -19,4 +19,3 @@ mah_method!(1) { |block_parameter| block_parameter * 2 }
 mah_method! 1 do |param1, param2|
   param1 + param2
 end
-

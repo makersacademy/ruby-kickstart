@@ -9,4 +9,8 @@
 # arithmetic2(-6, -7)  # => -3.5
 
 def arithmetic2(a, b)
+  array = [a,b]
+  smallest_num = array.sort.reverse.pop
+  smallest_num.to_f / 2
+  
 end

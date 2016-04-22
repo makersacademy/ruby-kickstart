@@ -73,3 +73,68 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+# Define a class called User that keeps track of a person's username
+class User
+  attr_accessor :username, :blogs
+
+  # it should receive the username when initialized
+  # array blogs=[] to go here so new entries can be added below in add_blog
+  def initialize(username)
+    @username = username
+    @blogs = []
+  end
+
+# it should have a method add_blog which accepts a date and text - use Blog.new(see notes 13 for demo)
+# it should have a method blogs which returns an array of all blogs the user has written
+# they should be in reverse chronological order (newest first = use .reverse)
+  def add_blog(date, text)
+    new_blog = Blog.new(date, self, text)
+		@blogs << new_blog
+    @blogs = blogs.sort_by {|blog| blog.date }.reverse
+		new_blog
+  end
+
+  # def blogs
+  # end
+
+end
+
+# Define a class called Blog that could be used to store an entry for your web log.
+
+class Blog
+# The class should have a getter and setter methods: text , date , user
+# See notes 12: use arrt_accessor to create getter & setters in one go, eg: date= & date
+# Note: attr_accessor :date vs attr_accessor "date" - look up why
+  attr_accessor :date, :user, :text
+
+# its initialize method should receive the date, user , and text
+  def initialize(date, user, text)
+    @date = date
+    @user = user
+    @text = text
+  end
+
+# have a method called summary that returns the first 10 words from the text (or the entire text if it is less than 10 words)
+  def summary
+    text.split(" ")[0..9].join(" ")
+  end
+
+  # Two blogs should be equal to eachother if they have the same user, date, and text
+  # here is a partially filled out example of how to define the == operator:
+  #      def ==(other)
+  #        return self.date == other.date FINISH THIS EG
+  #      end
+  def ==(other)
+    return self.date == other.date && self.text == other.text && self.user == other.user
+  end
+
+  # To achieve example shown above: blog5.entry      # => disloyalist.party 2009-01-02
+  #                       From the school of revisio bla bla bla
+  # Need an entry method here to call .entry
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+
+
+end

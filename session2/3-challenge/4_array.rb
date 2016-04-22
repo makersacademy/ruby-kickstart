@@ -8,5 +8,11 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
-
+def get_squares(array)
+  new_array = []
+  array.each do |num|
+      square = num * num
+      new_array << num if array.include? square #new_array << num pushes numbers into a new array that I created (.push)
+  end
+  new_array.sort
+end

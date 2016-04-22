@@ -6,7 +6,7 @@
 # put your object into an initial state.
 
 class Instrument
-  def initialize(name, price)
+  def initialize(name, price) #The initialize method typically gives things in a class their initial state. Only ever 1(this is the case for all methods)
     @name = name
     @price = price
   end
@@ -17,4 +17,3 @@ end
 clarinet = Instrument.new 'Clarinet', 250
 clarinet.name   # => "Clarinet"
 clarinet.price  # => 250
-
