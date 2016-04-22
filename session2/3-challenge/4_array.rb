@@ -9,4 +9,6 @@
 # This time you will have to define the method, it's called: get_squares
 
 
-
+def get_squares(number_arr)
+	number_arr.select {|n| number_arr.include?(n**2)}.sort
+end

@@ -5,5 +5,12 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+	arrr = []
+	count = 0
+	string.split("").each do |letter|
+		count += 1
+		arrr << string[count] if letter.downcase == "r"
+	end
+	arrr.join("")
 end
+

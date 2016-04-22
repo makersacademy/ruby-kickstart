@@ -15,3 +15,9 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? (str)
+	size = str.join.size
+	return false if size < 2
+	(2..Math.sqrt(size)).each {|n| return false if size%n == 0}
+	true
+end

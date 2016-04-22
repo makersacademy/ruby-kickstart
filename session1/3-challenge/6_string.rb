@@ -6,5 +6,15 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	count = 0
+	new_string = ""
+	string.split("").each do |letter| 
+		count += 1
+		new_string << letter if !count.even? && !return_odds
+		new_string << letter if count.even? && return_odds
+	end
+	return new_string
 end
+
+
+odds_and_evens("abcdefg",false)
