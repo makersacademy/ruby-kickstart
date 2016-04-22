@@ -15,3 +15,23 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+def prime_chars?(string_array)
+  prime_check = true
+  char_num = string_array.join.length
+  if char_num == 0
+    prime_check = false
+  end
+  if char_num == 1
+    prime_check = false
+  end
+  check_array = (2..(char_num/2)).to_a
+  if prime_check == true
+  check_array.each do |divisor|
+    if char_num % divisor == 0
+      prime_check = false
+    end
+    end
+  end
+    prime_check
+end
