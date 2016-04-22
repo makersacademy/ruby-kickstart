@@ -7,4 +7,20 @@
 
 def odds_and_evens(string, return_odds)
 
+  if return_odds
+    i = 1
+  else
+    i = 0
+  end
+
+  string_edit = String.new
+
+  while i <= string.length - 1 do
+    string_edit += string[i]
+    i += 2
+  end
+
+string_edit
+
 end
+

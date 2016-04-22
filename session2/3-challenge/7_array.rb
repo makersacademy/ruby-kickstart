@@ -9,3 +9,15 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+  array_to_return = Array.new
+
+  string.gsub("-", " ").gsub(/[\!\@\$\#\%\^\&\*\(\=\+\[\]\:\;\,\.\/\<\>\?\\\|]/, "").split(" ").each_with_index do |word, i|
+    array_to_return.push(word) if i.even?
+  end
+  array_to_return
+end
+
+puts alternate_words("Can't, we all get along?")
+
+# could gsub to trim ,.?!

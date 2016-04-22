@@ -9,4 +9,18 @@
 # This time you will have to define the method, it's called: get_squares
 
 
+def get_squares(numbers)
 
+  array_to_return = Array.new
+
+  numbers.each do |element|
+    found = true
+    numbers.each do |square|
+      if (element * element == square) && found
+        array_to_return.push(element)
+        found = false
+      end
+    end
+  end
+  array_to_return.sort
+end

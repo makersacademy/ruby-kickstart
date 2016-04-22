@@ -13,6 +13,20 @@
 
 
 def grade(num_books, has_read_books)
+
+  if num_books < 10
+    grade_holder = 'D'
+  elsif num_books <=20
+    grade_holder = 'C'
+  elsif num_books > 20
+    grade_holder = 'B'
+  end
+
+  if has_read_books == true
+    grade_holder = (grade_holder.ord - 1).chr  # decrements grade value
+  end
+
+  return grade_holder
 end
 
 
