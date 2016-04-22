@@ -9,3 +9,13 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+	array = string.tr('--', '- ').split(" ")
+	final = []
+	for i in 0..array.length
+		final << array[i] if i % 2 == 0
+	end
+	return final.map{|x| x.to_s.gsub(/[^'’\w\s]/i, "")}.reject{|n| n.empty?}
+end
+
+puts alternate_words("What's going to become of him.")

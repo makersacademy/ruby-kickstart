@@ -19,11 +19,16 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-
+	loop do
+  		puts "\nEnter a number"
+  		num = gets.chomp
+  		break if num == "bye"
+  		num.to_i.times do |i|
+  			print "hi "
+  		end
+  end
+  puts "goodbye"
 end
-
-
 
 
 # This will just invoke the method if you run this program directly
