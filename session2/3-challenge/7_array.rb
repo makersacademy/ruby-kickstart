@@ -9,3 +9,8 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(str)
+    str = str.gsub(/[^\w\s\d’]/,' ') #changes all non-alphanumeric chracters excluding apostrophe into ' '
+    array_return = str.split(" ") 
+    array_return.select.with_index{|x,i| x if i.even?} #selects every other word
+end

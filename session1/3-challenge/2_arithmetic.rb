@@ -9,4 +9,5 @@
 # arithmetic2(-6, -7)  # => -3.5
 
 def arithmetic2(a, b)
+    a < b ?(a.fdiv 2) :(b.fdiv 2)
 end
