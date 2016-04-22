@@ -8,5 +8,12 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
-
+def get_squares(num_arr)
+  sorted = []
+  num_arr.each do |x|
+    if num_arr.include?(x*x)
+      sorted << x
+    end
+  end
+  sorted.sort!
+end
