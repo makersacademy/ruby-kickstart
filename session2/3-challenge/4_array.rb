@@ -9,4 +9,10 @@
 # This time you will have to define the method, it's called: get_squares
 
 
-
+def get_squares(squares)
+	
+	output = []
+	squares.each.with_index{|x,i| output << squares[i].to_i if squares.include? x*x}
+	output.sort
+		
+end
