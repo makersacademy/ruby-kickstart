@@ -10,3 +10,6 @@
 
 
 
+def get_squares (array)
+  array.select { |i| array.include? (i*i) }.sort
+end

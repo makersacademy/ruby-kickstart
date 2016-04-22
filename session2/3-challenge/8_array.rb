@@ -6,3 +6,11 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(elements)
+    for i in 0..(elements.length-3)
+      if elements[i] == elements[i+1] && elements[i] == elements[i+2]
+        return true
+      end
+    end
+    return false
+end

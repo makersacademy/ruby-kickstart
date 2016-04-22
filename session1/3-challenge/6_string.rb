@@ -6,5 +6,16 @@
 #
 
 def odds_and_evens(string, return_odds)
+  if return_odds
+    start = 1
+  else
+    start = 0
+  end
 
+  result = ""
+  
+  start.step string.length-1, 2 do |current|
+    result << string[current]
+  end
+  return result
 end
