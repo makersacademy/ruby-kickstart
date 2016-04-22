@@ -20,3 +20,48 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+class BeerSong
+  def initialize(bottles)
+    @bottles = 0 if bottles < 0
+    bottles > 99 ? @bottles = 99 : @bottles = bottles
+    @writnum = ""
+    @plural = "bottles"
+  end
+
+def print_song
+
+while @bottles > 0
+self.get_num
+puts "#{@writnum} #{@plural} of beer on the wall,\n#{@writnum} #{@plural} of beer,\nTake one down, pass it around,"
+@bottles -= 1
+self.get_num
+puts "#{@writnum} #{@plural} of beer on the wall."
+end
+end
+
+def get_num
+splitnum = []
+@bottles.to_s.split("").each{|x| splitnum << x.to_i}
+tens = ["Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"]
+ones = ["Zero","one","two","three","four","five","six","seven","eight","nine"]
+teens = ["Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"]
+  case @bottles
+  when 20..99
+    splitnum.each_slice(2){|a,b|
+      b == 0 ? (@writnum = "#{tens[a-2]}") : (@writnum = "#{tens[a-2]}-#{ones[b]}")
+    }
+  when 10..19
+    splitnum.each_slice(2){|a,b|
+      @writnum = "#{teens[b]}"
+    }
+  when 0..9
+    @writnum = "#{ones[splitnum[0]].capitalize}"
+    @bottles == 1 ? (@plural = "bottle") : (@plural = "bottles")
+  end
+end
+
+end
+
+#song = BeerSong.new(11)
+#song.print_song

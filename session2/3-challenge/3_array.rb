@@ -7,6 +7,8 @@
 
 class String
   def every_other_char
+    return split(//).select.with_index{|x,i| x if i.even?}.join unless self == ""
+    return ""
   end
-  
+
 end
