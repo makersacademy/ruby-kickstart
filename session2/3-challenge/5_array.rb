@@ -14,3 +14,7 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(numbers)
+  return_array = numbers.collect { |nums| nums % 3 }
+  return_array.delete_if { |zeros| zeros == 0 }
+end

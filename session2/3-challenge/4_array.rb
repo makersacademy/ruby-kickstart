@@ -8,5 +8,9 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
-
+def get_squares(numbers)
+  return_array = numbers.select do |nums|
+      numbers.include? nums * nums
+    end
+  return return_array.sort
+end
