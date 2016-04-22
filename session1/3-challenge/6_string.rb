@@ -6,5 +6,10 @@
 #
 
 def odds_and_evens(string, return_odds)
+  oddstr = ""
+  evenstr = ""
 
+  string.each_char.each_with_index {|a, index| index % 2 == 0 ? evenstr << a : oddstr << a}
+  
+  return_odds ? oddstr : evenstr
 end

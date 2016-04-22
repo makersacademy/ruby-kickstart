@@ -9,3 +9,18 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+
+# take in a sentence
+# return an array containing every other word
+#
+#
+def alternate_words(sentence)
+  new_array = []
+  sentence.gsub(/[^a-zA-Z"'""’"]/, ' ').split(" ").each_with_index {|i,index|
+   if index % 2 == 0 
+      new_array << i
+    end
+ }
+new_array
+end
+
