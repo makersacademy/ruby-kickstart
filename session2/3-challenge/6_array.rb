@@ -15,3 +15,10 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array)
+  length = 0
+  array.each { |string| length += string.length }
+  return false if length < 2
+  2.upto(Math.sqrt(length)) { |x| return false if length % x == 0 }
+  true
+end

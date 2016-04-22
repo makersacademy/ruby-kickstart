@@ -19,8 +19,15 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-
+  puts "Enter a number"
+  while n = gets
+    if n.to_i != 0
+      puts "hi" + (" hi" * (n.to_i - 1))
+      puts "Enter a number"
+    end
+    break if n == "bye"
+  end
+  puts "goodbye"
 end
 
 

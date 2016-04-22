@@ -9,5 +9,8 @@
 
 def sum_difference_product
   # your code goes here
-  
+  numbers = gets
+  a = numbers.split[0].to_i
+  b = numbers.split[1].to_i
+  puts "#{a+b}\n#{a-b}\n#{a*b}\n"
 end
