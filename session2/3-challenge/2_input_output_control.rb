@@ -20,7 +20,14 @@
 
 def hi_hi_goodbye
   # your code here
-
+  puts "Please give me a number or say bye to quit"
+  number = gets.chomp
+  while number != "bye"
+    puts "Hi " * number.to_i
+    puts "Please give me another number or say bye to quit"
+    number = gets.chomp
+  end
+  puts "goodbye"
 end
 
 

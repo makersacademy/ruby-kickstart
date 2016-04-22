@@ -14,3 +14,22 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+#def mod_three(numbers)
+#  numbers.each { |n| puts n % 3 if n % 3 != 0}
+#end
+
+#puts mod_three([3])
+
+def mod_three(numbers)
+  to_return = []
+  numbers.each do |n|
+    if n % 3 == 0
+    else
+      to_return << n % 3
+    end
+  end
+  to_return
+end
+
+puts mod_three([0,1,2,3,4,5,6,7])
+
