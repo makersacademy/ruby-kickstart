@@ -6,5 +6,38 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  if return_odds == true
+    string.chars.map.with_index { |c, i| c if i.odd?}.join
+  else
+     string.chars.map.with_index { |c, i| c if i.even?}.join
+  end
 end
+
+
+=begin the somewhat scattered thought process:
+
++ if the boolean is true, produce a new string with all of the even characters in the original one.
+
++ if the boolean is false, produce a new string with all of the odd characters in the original one.
+
+similarities:
+conditional boolean, new string, odd or even characters to return
+conditional boolean being return_odds == true
+
+applicable methods ?: .map .inject .split .chars .join .each_char .with_index
+  since .each_char will put out strings, it is necessary to couple that with another, maybe convert it into an array, which .chars, does, which produces indices, which are numerically accessible.
+
+if return_odds
+  put odd characters of string in new_string
+else put even characters of string in new string.
+
+need a new string? no. .map recreates Enumerables it is used on (in this case, the string we have converted to an array)
+
+in this case, string.split("") == string.chars
+  so string.chars
+
+Enumerable#map returns transforms elements in array (according to rules)
+Enumerable#with_index (or .each_with_index) iterates over item (char in this case) and index
+  .join (by default joins chars in string with "")
+  .even? .odd? (conditional instruction?)
+=end

@@ -1,5 +1,5 @@
-# When calling a setter method, always use an explicit
-# receiver. Otherwise it looks like you're setting a
+# When calling a setter method (ending in =), always use an explicit
+# receiver (object left of =). Otherwise it looks like you're setting a
 # local variable.
 
 class Flight
@@ -7,7 +7,7 @@ class Flight
 
   def reset
     arrival_time      # => 1100
-    arrival_time = 0
+    arrival_time = 0 # defined as a local variable not an instance variable
 
     # Wait, wtf is this?
     arrival_time      # => 0

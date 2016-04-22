@@ -7,7 +7,7 @@
 class Car
   # we call methods like this a "setter"
   def set_miles(miles)
-    @miles = miles
+    @miles = miles # => initialises instance variable, to be used across object
   end
 
   # we call methods like this a "getter"
@@ -26,3 +26,5 @@ car.instance_variable_get '@miles'  # => 1000
 
 # Question: We create our car by calling Car.new
 # where is the new method defined?
+
+# new method part of the Class class?

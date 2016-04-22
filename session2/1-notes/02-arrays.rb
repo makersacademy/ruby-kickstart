@@ -1,15 +1,17 @@
-# Arrays are ordered lists of objects.
+# Arrays are ordered lists of objects. always declared with []
 array = ['zero', 'one', 'two']
-
+# declared as literals above, but can also be declared with references, below
+zero = 'zero'
+array = [zero, 'one', 'two']
 
 # You access a given element by its index,
-# beginning at zero
+# beginning at zero – 'zeroth' number
 array[0] # => "zero"
 array[1] # => "one"
 array[2] # => "two"
 
 
-# If you go past the end, you get back nil
+# If you go past the end, you get back nil because the 3rd element doesn't exist
 array[3] # => nil
 
 
@@ -17,7 +19,7 @@ array[3] # => nil
 array[-1] # => "two"
 array[-2] # => "one"
 array[-3] # => "zero"
-
+array[-4] # => nil
 
 # Arrays know where the elements at their indexes are this
 # means it is just as cheap to look up an element really

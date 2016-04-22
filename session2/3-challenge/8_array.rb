@@ -6,3 +6,12 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(array)
+  array.each_cons(3).any? do |elem, elem2, elem3|
+    if elem == elem2 && elem2 == elem3
+      true
+    else
+      false
+    end
+  end
+end

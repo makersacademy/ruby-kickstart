@@ -26,10 +26,12 @@ chars.delete 'c'
 chars # => ["a", "d"]
 
 
-# Insert
+# Insert at given position (index)
 index = 1
 chars.insert index, 'b' , 'c'
 chars # => ["a", "b", "c", "d"]
+# also works if instead of index an Integer is applied
+# so chars.insert index in this case == chars. insert 1
 
 
 # Sorting

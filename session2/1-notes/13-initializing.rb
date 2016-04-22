@@ -5,12 +5,14 @@
 # any arguments you passed to new. This allows you to
 # put your object into an initial state.
 
+# you cannot overload initialize methods (you could write price=0 as default if no price given.)
+
 class Instrument
-  def initialize(name, price)
-    @name = name
+  def initialize(name, price) # => gives instantiated object a definitive state
+    @name = named
     @price = price
   end
-
+                        # requires name and price to set/access attributes
   attr_accessor 'name', 'price'
 end
 
