@@ -22,8 +22,20 @@
 # USER:     bye
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
+def question
+	@chat = gets.chomp
+end
 
 def deaf_grandma
+	question
+	until @chat=="BYE"
+		if (@chat==@chat.upcase && @chat!="")
+			puts "NO, NOT SINCE 1938!" 			
+		else
+			puts "HUH?! SPEAK UP, SONNY!" 			
+		end
+		question
+	end
 
 end
 

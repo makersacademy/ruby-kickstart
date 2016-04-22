@@ -15,3 +15,20 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+def prime? num
+	if num <2
+		return false
+	elsif num>2
+		for d in 2...num
+			return false if num%d==0 
+		end
+	end
+	return true
+end
+
+def prime_chars? array
+    new_string= array.join('')
+    num = new_string.length
+    prime? num
+end

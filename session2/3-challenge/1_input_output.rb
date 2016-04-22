@@ -9,5 +9,10 @@
 
 def sum_difference_product
   # your code goes here
-  
+  array = gets.split()
+  a = array[0].to_i
+  b = array[1].to_i 
+  puts a+b
+  puts a-b
+  puts a*b
 end
