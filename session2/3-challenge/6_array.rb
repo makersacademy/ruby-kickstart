@@ -15,3 +15,23 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def is_prime?(number)
+  if number == 2
+    return true
+  elsif number == 1 || number % 2 == 0
+    return false 
+  end
+  i = 3
+  while i <= Math.sqrt(number)
+    if number % i == 0 
+      i += 2 
+    end
+  end
+  return true
+end
+
+def prime_chars?(strings)
+  sum = 0
+  strings.each {|s| sum += s.length}
+  is_prime?(sum)
+end

@@ -8,6 +8,14 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  # Get the input numbers from the keyed input
+  input = gets.split.map {|e| e.to_i}
+  x = input[0]
+  y = input[1]
+
+  # Perform the arithmetic operations
+  puts x + y
+  puts x - y
+  puts x * y
+
 end
