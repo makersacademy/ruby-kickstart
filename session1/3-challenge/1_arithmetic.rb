@@ -1,3 +1,5 @@
+#correct
+
 # fill out the method below
 # then test tho see if you did them correctly with
 #  $ rake 1:1
@@ -9,5 +11,6 @@
 # arithmetic1(-6)     # => -50
 
 def arithmetic1(n)
+	n * 5 - 20
 end
 

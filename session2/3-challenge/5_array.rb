@@ -14,3 +14,7 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(array)
+	array_new = array.delete_if { |i| i % 3 == 0 }
+	array_new.map { |i| i % 3 }
+end
