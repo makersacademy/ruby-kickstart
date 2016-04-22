@@ -15,3 +15,17 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(chars_array)
+  require 'prime'
+  chars_number = chars_array.join.to_s.length
+  Prime.prime?(chars_number)
+end
+  prime_chars? ['abc']            # => true
+   prime_chars? ['a', 'bc']        # => true
+   prime_chars? ['ab', 'c']        # => true
+   prime_chars? ['a', 'b', 'c']    # => true
+  #
+   prime_chars? ['abcd']           # => false
+   prime_chars? ['ab', 'cd']       # => false
+   prime_chars? ['a', 'bcd']       # => false
+   prime_chars? ['a', 'b', 'cd']   # => false

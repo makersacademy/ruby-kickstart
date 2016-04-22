@@ -6,5 +6,16 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  counter = 1
+  result_odd = ''
+  result_even = ''
+  while counter <= string.length
+    if counter.odd?
+      result_even  += string[counter - 1]
+    else
+      result_odd += string[counter - 1]
+    end
+    counter += 1
+  end
+  return_odds ? result_odd : result_even
 end

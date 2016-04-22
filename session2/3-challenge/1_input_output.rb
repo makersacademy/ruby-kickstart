@@ -8,6 +8,13 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
+
+  puts "Enter two Integers separated by a space"
+  number = gets.chomp
   
+  ar = number.split(" ").map { |chr| chr.to_i}
+
+  puts ar[0] + ar[1]
+  puts ar[0] - ar[1]
+  puts ar[0] * ar[1]
 end
