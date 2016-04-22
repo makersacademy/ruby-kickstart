@@ -5,5 +5,9 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+	array = []
+	string.chars.each.with_index {|x, i| array << string.chars[i + 1] if i != -1	 if x == "r" || x == "R"}	
+	array.join("")
 end
+
+

@@ -6,7 +6,14 @@
 # "".every_other_char         # => ""
 
 class String
+ 
   def every_other_char
+  	returned = ""
+  	chars.map.with_index do |x, i|
+  		if i.even?
+  			returned << x
+  		end
+  	end
+  	returned
   end
-  
 end
