@@ -10,7 +10,7 @@
 # Try again!
 #
 # Did you pass? Yeah?
-# Great! No go finish the rest :D
+# Great! Now go finish the rest :D
 
 
 

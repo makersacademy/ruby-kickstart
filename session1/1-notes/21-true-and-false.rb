@@ -23,3 +23,4 @@ false.class                     # => FalseClass
   !!object # => true, true, true, true, true, false
 end
 
+# Only false and nil are false - everything else is true

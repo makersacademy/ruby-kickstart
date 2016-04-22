@@ -25,4 +25,4 @@ car.instance_variable_get '@miles'  # => 1000
 
 
 # Question: We create our car by calling Car.new
-# where is the new method defined?
+# where is the new method defined? On the class Class

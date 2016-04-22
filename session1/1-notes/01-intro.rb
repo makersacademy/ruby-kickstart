@@ -51,6 +51,6 @@
 #
 # Think about it, you can conceive of your own problems. And you can solve them.
 # You can create anything you can conceive of, like a brilliant architect.
-# "Whoever holds the keys to programming ends up building the reality in which the rest of us live."
+# "Whoever holds the keys to programming ends up building the reality in which the rest of us live. "
 # -- Douglas Rushkoff
 
