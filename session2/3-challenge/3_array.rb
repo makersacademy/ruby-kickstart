@@ -7,6 +7,19 @@
 
 class String
   def every_other_char
-  end
-  
+array = []
+odds = []
+y=0
+ array = self.chars
+ array.each do |x|
+ 	odds << array[y] 
+y+=2
 end
+ 
+
+p odds.join
+  end
+
+end
+
+"four score and seven years ago....".every_other_char

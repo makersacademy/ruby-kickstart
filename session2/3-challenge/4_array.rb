@@ -10,3 +10,20 @@
 
 
 
+def get_squares(array)
+
+result=[]
+
+array.each do |x|
+if array.include?(x*x)
+ result <<  x
+end
+
+end
+
+result.sort
+
+end
+
+
+get_squares ([3,9])

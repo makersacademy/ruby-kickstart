@@ -15,3 +15,27 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? (array)
+
+n = 0
+
+array.each do |x|
+	 n += x.length.to_i
+end
+
+if n <= 1
+	return false 
+end
+  
+ (2..n-1).each do |x| 
+  	if n % x == 0
+	return false 
+	true
+end
+end
+
+end
+
+
+
+prime_chars? ['ab']  
