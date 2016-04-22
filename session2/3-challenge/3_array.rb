@@ -7,6 +7,8 @@
 
 class String
   def every_other_char
+    to_return = []
+    split("").each_slice(2) {|a, b| to_return << a}
+    to_return.join
   end
-  
 end

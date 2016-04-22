@@ -5,5 +5,9 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  arrrrrrrr = ""
+  string.length.times do |n|
+    arrrrrrrr << string[n+1] if (string[n].downcase == "r" && n+1 != string.length)
+  end
+  return arrrrrrrr
 end

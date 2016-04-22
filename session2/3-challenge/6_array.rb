@@ -15,3 +15,12 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? (strings)
+  return false if strings.join.length < 2
+
+  (2...strings.join.length).each do |n|
+    return false if strings.join.length % n == 0
+  end
+
+  true
+end
