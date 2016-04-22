@@ -1,4 +1,4 @@
-# remember, you can test this file with
+d# remember, you can test this file with
 #   $ rake 1:3
 
 
@@ -8,4 +8,9 @@
 # ten_twenty(6) # => 10
 
 def ten_twenty(n)
+  if n % 2 == 0
+    10
+  else
+    20
+  end
 end
