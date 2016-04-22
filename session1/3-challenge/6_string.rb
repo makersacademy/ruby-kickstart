@@ -6,5 +6,18 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  arr = string.chars
+  new_word =""
+  arr.each_with_index do |character, index|
+    if return_odds
+      new_word += character if index.odd?
+    else
+      new_word += character if index.even?
+    end
+  end
+  new_word
 end
+
+
+p odds_and_evens("abcdefgh", true)
+p odds_and_evens("abcdefgh", false)

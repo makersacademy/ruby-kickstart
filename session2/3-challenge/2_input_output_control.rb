@@ -20,7 +20,16 @@
 
 def hi_hi_goodbye
   # your code here
-
+  loop do
+    puts "PROGRAM: Enter a number"
+    number = gets.chomp
+    if number = "bye"
+      puts "goodbye"
+      exit
+    end
+    puts "USER: #{number}"
+    puts "PROGRAM: #{"hi " * input.to_i}"
+  end
 end
 
 

@@ -15,3 +15,7 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? array
+  n = array.map(&:length).inject(0, &:+)
+  n > 1 ? (2...n).select{|z| n%z==0}.empty? : false
+end
