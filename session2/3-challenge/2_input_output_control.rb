@@ -18,9 +18,17 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
+
 def hi_hi_goodbye
   # your code here
-
+  puts "Enter a number or say bye?"
+  input = gets.chomp
+  while input != 'bye'
+    puts "hi " * input.to_i
+    puts "Enter a number or say bye?"
+    input = gets.chomp
+  end
+    puts "goodbye"
 end
 
 

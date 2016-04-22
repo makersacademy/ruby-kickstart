@@ -6,5 +6,12 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  array = string.split('').partition.with_index { |_, i| i.even?  }
+  even = array[0]
+  odd= array[1]
+  if return_odds
+    odd.join
+  else
+    even.join
+  end
 end
