@@ -1,4 +1,4 @@
-# Prompt the user for a number, then read it in and print out "hi" that many times
+1# Prompt the user for a number, then read it in and print out "hi" that many times
 #
 # Repeat this process until the user submits "bye", then say "goodbye" and end the program
 # HINT: Check out example 2 if you get stuck
@@ -18,12 +18,25 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
-def hi_hi_goodbye
-  # your code here
 
+def input
+	puts "Give me an integer or say bye"
 end
 
+def hi_hi_goodbye
+	
+	input
+	value = gets.chomp
 
+	while value != "bye"
+		value.to_i.times {print "hi "}
+		puts
+		input
+		value = gets.chomp
+	end
+
+	puts "goodbye"
+end
 
 
 # This will just invoke the method if you run this program directly

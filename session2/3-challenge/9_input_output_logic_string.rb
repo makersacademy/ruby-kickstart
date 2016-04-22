@@ -25,10 +25,20 @@
 
 def deaf_grandma
 
+		grandma = ""
+		user = gets.chomp
+
+
+	while user != "BYE"
+		if user == user.upcase && user !=""
+			grandma = "NO, NOT SINCE 1938!"
+		else 
+			grandma = "HUH?! SPEAK UP, SONNY!"
+		end
+		puts grandma
+		user = gets.chomp
+	end
 end
-
-
-
 
 
 # This will call your code so you can run it from the terminal.
