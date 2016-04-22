@@ -19,6 +19,25 @@
 #        return self.date == other.date
 #      end
 
+# Definiere eine Klasse "User" die den Usernamen einer Person festhält
+# sie sollte den Nutzernamen nach Initialisierung erhalten
+# sie sollte eine Methode "add_blog" haben, die Datum und Text enthält
+# sie sollte eine Methode "blogs" haben,welche ein Array mit allen Blogeinträgen
+# in umgekehrter chronologischer Reihenfolge zurückgibt, die der
+# Nutzer geschrieben hat (jeweils der neueste zuerst)
+#
+# Definiere eine Klasse namens "Blog", die benutzt werden kann, um
+# einen Blogeintrag zu speichern.
+# Die Klasse sollte getter und setter-Methoden beinhalten: Text, Datum, User
+# Ihre Initialisierungsmethode sollte Datum, User und Text erhalten
+# Sollte eine Zusammenfassungsmethode beinhalten, die alle Worte des Textes
+# bzw. genau die ersten 10 Worte aus dem Text beinhalten
+#
+# Zwei Blogs sollten gleich sein, wenn Nutzer, Datum und Text übereinstimmen
+# Hier ist ein teilweise ausgefülltes Beispiel, wie der == Operator definiert wird:
+# def ==(other)
+#   return self.date == other.date
+# end
 
 
 # ==========  EXAMPLE  ==========
@@ -73,3 +92,45 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+    self.username = username
+    self.blogs    = []
+  end
+
+  def add_blog(date, text)
+    added_blog = Blog.new(date, self, text)
+    blogs << added_blog
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+    added_blog
+  end
+end
+
+
+
+class Blog
+  attr_accessor :date, :user, :text
+
+  def initialize(date, user, text)
+    self.date = date
+    self.user = user
+    self.text = text
+  end
+
+  def summary
+    text.split[0..9].join(' ')
+  end
+
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def ==(other)
+    date   == other.date &&
+      user == other.user &&
+      text == other.text
+  end
+end

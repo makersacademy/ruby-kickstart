@@ -24,8 +24,36 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  while line = gets
+    line.chomp!
+    break if line == "BYE"
+    if line == line.upcase && line != ""
+      puts "NO, NOT SINCE 1938!"
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+  end
 end
+
+
+### my solution
+
+# def deaf_grandma
+#  salutation = gets
+#  salutation.chomp!
+#     if salutation != "BYE"
+#       while salutation != "BYE"
+#         if salutation != salutation.upcase
+#           puts "HUH?! SPEAK UP, SONNY"
+#         else
+#           puts "NO, NOT SINCE 1938!"
+#         end
+#       salutation = gets.chomp
+#       end
+#     else
+#   puts "BYE"
+# end
+# end
 
 
 

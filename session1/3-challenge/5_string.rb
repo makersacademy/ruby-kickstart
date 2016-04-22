@@ -5,4 +5,8 @@
 # add_more_ruby("Sad times are ahead!")         # => "Happy times are ahead!"
 
 def add_more_ruby(string)
+
+		# string.gsub(/sad/i, "sad" => "happy", "Sad" => "Happy" )
+		string.gsub!(/sad/i) {|s| (s.slice(0).ord - 11).chr + 'appy'}
+
 end
