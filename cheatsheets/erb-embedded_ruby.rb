@@ -34,7 +34,7 @@ Want to buy <%= product.upcase %>?
 TEMPLATE
 get_result str # => "Want to buy SHOES?\nWant to buy SHIRTS?\nWant to buy PANTS?\n"
 
-
+bruh
 
 # =====  It Can't See My Variables  =====
 # there are some weird binding situations that can occur when using ERB
