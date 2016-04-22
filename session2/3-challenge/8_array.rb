@@ -6,3 +6,11 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(array)
+	array.each_cons(3) do |a, b, c| #groups of 3 elements pass to the method
+		return true if a == b && b == c #need 3 in a row so 1st 2nd and 3rd must be the same
+	end
+	false
+end
+
+

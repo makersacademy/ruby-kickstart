@@ -73,3 +73,51 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+	attr_accessor :username, :userblogs
+
+  def initialize(username) # it should receive the username when initialized
+    @username = username
+  end
+
+  def add_blog (date, text) # it should have a method add_blog which accepts a date and text
+  	@daste = date
+	  @text = text
+	  blogs = Blog.new
+	 @userblogs << blogs
+  end
+
+  def blogs          # it should have a method blogs which returns an array of all blogs the user has written                  
+    @userblogs = []
+    @userblogs.sort_by {|blog| blog.date}.reverse  # they should be in reverse chronological order (newest first)
+  end
+
+end
+
+class Blog
+
+  attr_accessor :text, :date, :user
+
+  def initialize
+    @text = text
+	  @date = date
+	  @user = user
+  end
+
+
+  def summary(text)
+  	text[0...10]
+end
+
+end
+
+puts lissa = User.new('QTSort')
+puts lissa.username                  # => "QTSort"
+puts lissa.blogs                     # => []
+
+puts lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
+puts lissa.blogs                     # => [ blog1 ]
+#
+# blog1 = lissa.blogs.first
+# blog1.user                      # => lissa

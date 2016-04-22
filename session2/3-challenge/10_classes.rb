@@ -16,5 +16,14 @@
 #
 
 class Person
+	attr_accessor :name, :age, :birthday
 
+	def initialize(name, age)
+		@name = name
+		@age = age
+	end
+
+	def birthday #with this we add 1 to @age because the turn one year older (not explained in the description!!)
+		@age = @age + 1
+	end
 end
