@@ -15,3 +15,17 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+def prime_chars?(array)
+
+    n = array.join.length     
+    num_array = *(1..n)
+    num_array.select! {|divisor| n % divisor == 0 }    
+    if num_array.count == 2 
+        true 
+    elsif n < 2
+        false
+    else 
+        false
+    end
+end
