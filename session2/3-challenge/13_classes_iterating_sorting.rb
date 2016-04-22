@@ -18,7 +18,49 @@
 #      def ==(other)
 #        return self.date == other.date
 #      end
+require 'date'
 
+class User
+
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+    @username = username
+    @blogs = []
+  end
+
+  def add_blog(date,text)
+    blog = Blog.new date, self, text
+    @blogs << blog
+    @blogs.sort_by!{|x| x.date}.reverse!
+    blog
+  end
+
+end
+
+class Blog
+
+  attr_accessor :date, :user, :text
+
+  def initialize(date, user, text)
+    @date = date
+    @text = text
+    @user = user
+  end
+
+  def summary
+      @text.split.slice(0,10).join(" ")
+  end
+
+  def entry
+    "#{@user.username} #{@date}\n#{@text}"
+  end
+
+  def ==(other)
+   @date == other.date && @user == other.user && @text == other.text
+  end
+
+end
 
 
 # ==========  EXAMPLE  ==========
@@ -34,6 +76,7 @@
 #       @user=#<User:0x007fec2902e5c8 @blogs=[...], @username="QTSort">>] 
 #
 # blog1 = lissa.blogs.first
+# lissa.blogs.first
 # blog1.user                      # => lissa
 #
 # Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"                                    # we'll call this blog2
@@ -48,6 +91,9 @@
 # Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vitae nibh sapien. Curabitur
 # eget eros bibendum justo congue auctor non at turpis. Aenean feugiat vestibulum mi ac pulvinar. Fusce ut felis justo, in
 # porta lectus.
+
+
+
 # BLOG_ENTRY
 #
 # blog5.get_summary   # => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci"
@@ -69,7 +115,3 @@
 #                       All my labor will be lost with time
 
 
-
-# date docs are at: http://ruby-doc.org/core/classes/Date.html
-# don't spend too much time worrying about them :)
-require 'date'

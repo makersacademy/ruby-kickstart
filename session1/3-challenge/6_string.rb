@@ -6,5 +6,10 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  a=""
+  string.length.times do |x|
+     a.concat(string[x]) if x.even? && !return_odds
+     a.concat(string[x]) if x.odd? && return_odds
+    end
+  a
 end

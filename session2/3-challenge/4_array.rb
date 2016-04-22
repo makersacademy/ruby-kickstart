@@ -9,4 +9,6 @@
 # This time you will have to define the method, it's called: get_squares
 
 
-
+def get_squares(arr)
+  arr.sort.select{|x| arr.index(x*x) !=nil}
+end

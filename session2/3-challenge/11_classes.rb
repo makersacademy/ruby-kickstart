@@ -20,3 +20,48 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+
+class BeerSong
+
+  attr_accessor 'number'
+
+  def initialize(number)
+    @number = number
+    @number = 0  if number < 0
+    @number = 99 if number > 99
+  end
+
+  def print_song
+    while @number > 0
+      puts "#{writeNumber(@number)} of beer on the wall,"
+      puts "#{writeNumber(@number)} of beer,"
+      puts "Take one down, pass it around,"
+      puts "#{writeNumber(@number-1)} of beer on the wall."
+      @number -= 1
+    end
+
+  end
+
+  def writeNumber(num)
+    smallNumber = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine' ]
+    teensNumber = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
+    tensNumber = ['ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+    if num%10 == 0 && num !=0
+      letterNum = (tensNumber[num/10 - 1]).capitalize
+    elsif num < 10
+      letterNum = (smallNumber[num]).capitalize
+    elsif num < 20
+      letterNum = (teensNumber[num-11]).capitalize
+    else
+      letterNum = (tensNumber[num/10 - 1]).capitalize + '-' + smallNumber[num - (num/10)*10 ]
+    end
+
+
+    return "#{letterNum} bottles" if num != 1
+    "#{letterNum} bottle"
+  end
+
+end
+
+
