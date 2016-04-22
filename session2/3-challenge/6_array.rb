@@ -15,3 +15,20 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array)
+
+  chars = array.join.length
+
+  if chars == 2 || chars == 3
+    return true
+
+  elsif chars == 0 || chars == 1
+    return false
+
+  else
+    for i in 2...chars
+      return false if chars % i == 0
+    end
+
+  end
+end

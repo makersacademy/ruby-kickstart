@@ -73,3 +73,66 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+    @username = username
+    @blogs = []
+
+  end
+
+# add new blog and push to array of blogs
+  def add_blog(date, text)
+    added_blog = Blog.new(date, self, text)
+    @blogs << added_blog
+    @blogs = @blogs.sort_by { |blog| blog.date }.reverse
+    added_blog
+
+
+  end
+
+
+end
+
+class Blog
+
+  attr_accessor :date, :user, :text
+
+  def initialize(date, user, text)
+    @date = date
+    @user = user
+    @text = text
+    # @user.blogs << self
+  end
+
+# return first ten words
+  def summary
+    @text.split(" ")[0..9].join(" ")
+  end
+
+  def ==(other)
+    return self.date == other.date && self.text == other.text && self.user == other.user
+  end
+
+  def entry
+    "#{@user.username} #{@date}\n#{@text}"
+  end
+
+end
+
+# lissa = User.new 'QTSort'
+# puts lissa.username                  # => "QTSort"
+# puts lissa.blogs                     # => []
+#
+# lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
+# puts lissa.blogs                     # => [ blog1 ]
+#
+# blog1 = lissa.blogs.first
+# puts blog1.user                      # => lissa
+#
+# Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"                                    # we'll call this blog2
+# Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"              # we'll call this blog3
+# Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best ^_^"   # we'll call this blog4
+# puts lissa.blogs                     # => [ blog1 , blog4 , blog2 , blog3 ]
