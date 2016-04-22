@@ -15,3 +15,20 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime?(n)
+  if n == 0 or n ==1
+    return false
+  end
+  (2..n-1).each { |i| return false if n % i == 0}
+  true
+end
+
+def prime_chars?(array)
+  n = 0
+  sum = 0
+  while n < array.length
+    sum = sum + array[n].length
+    n = n+1
+  end
+  prime?(sum)
+end
