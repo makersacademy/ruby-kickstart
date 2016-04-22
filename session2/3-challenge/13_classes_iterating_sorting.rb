@@ -11,7 +11,8 @@
 # The other class is called Blog that could be used to store an entry for your web log.
 # The class should have a getter and setter methods: text , date , user
 # its initialize method should receive the date, user , and text
-# have a method called summary that returns the first 10 words from the text (or the entire text if it is less than 10 words)
+# have a method called summary that returns the first 10 words from the text (or the
+# entire text if it is less than 10 words)
 #
 # Two blogs should be equal to eachother if they have the same user, date, and text
 # here is a partially filled out example of how to define the == operator:
@@ -72,4 +73,100 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
-require 'date'
+require "date"
+
+class User
+
+	attr_accessor "username", "blogList"
+
+	def initialize (name)
+
+		self.username = name
+
+		self.blogList = []
+
+	end
+
+	def add_blog (date,text)
+
+		blogList << Blog.new(date, username, text)
+
+		return blogList.last
+			
+	end
+
+	def blogs
+
+		blogList.sort_by! {|blog| blog.date}.reverse
+
+	end
+	
+end
+
+class Blog
+
+	attr_accessor "text", "date", "user"
+
+	def initialize (date,user,text)
+
+		self.date = Date.parse(date.to_s)
+
+		self.user = user
+
+		self.text = text
+		
+	end
+
+	def get_summary
+
+		puts.summary
+
+	end
+
+	def summary
+
+		sum = text.split(" ")
+
+		sum.length > 9 ? sum[0..9].join(" ") : sum.length.join(" ")
+
+	end
+
+	def entry
+
+		"#{user.username} #{self.date}\n#{self.text}"
+
+	end
+
+	def ==(other)
+
+		return self.date == other.date && 
+				self.user == other.user && 
+				self.text == other.text
+		
+	end
+
+end
+
+# jeremy = User.new "JemmyBear"
+
+# jeremy.add_blog "2013-05-13", "My first blog"
+
+# puts jeremy.blogList[0].entry
+
+# jeremy.blogs
+
+# puts blog1 = jeremy.blogs.first
+
+# blog2 = Blog.new "2013-05-13", "JemmyBear", "My first blog"
+
+# puts blog2.==(jeremy.blogs.first)
+
+# puts jeremy.blogs.first.==(blog2)
+
+# blog1.user
+
+# Blog.new "2013-09-21", jeremy, "My second blog"
+# Blog.new "2013-10-17", jeremy, "My third blog"
+# Blog.new "2011-01-10", jeremy, "My time reversed blog"
+
+# jeremy.blogs

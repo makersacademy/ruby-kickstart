@@ -21,6 +21,20 @@
 def hi_hi_goodbye
   # your code here
 
+  puts "Enter a number"
+
+  while nHi = gets
+
+  	nHi.to_i.times {puts "hi"}
+
+  	puts "Enter a number"
+  	
+  	break if nHi.chomp == "bye"
+
+  end
+
+  puts "goodbye"
+
 end
 
 

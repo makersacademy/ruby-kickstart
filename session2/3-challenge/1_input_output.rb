@@ -9,5 +9,13 @@
 
 def sum_difference_product
   # your code goes here
-  
+  a = gets.split(" ")
+
+  n1 = a[0].to_i
+
+  n2 = a[1].to_i
+
+  puts "#{n1 + n2}\n#{n1 - n2}\n#{n1 * n2}\n"
 end
+
+# puts sum_difference_product "3 5\n"
