@@ -6,7 +6,9 @@
 # "".every_other_char         # => ""
 
 class String
-  def every_other_char
+def every_other_char
+  input = ""
+    each_char.with_index { |c, i| input << c if i.even?}
+    input
   end
-  
 end
