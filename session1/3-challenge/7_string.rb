@@ -5,5 +5,16 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+	string = string.downcase.split('')
+	pirates=[]
+	counter = 0
+	string.each do |x|
+		if x == 'r'
+			counter = counter + 1
+			pirates.push(string[counter])
+		else
+			counter = counter + 1	
+		end
+	end
+	return pirates.join	
 end

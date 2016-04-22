@@ -6,5 +6,23 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+string = string.split('')
+devolver = []
+    counter = 0
+	if return_odds == true
+		string.each do |x|
+			if counter % 2 != 0
+				devolver.push(x)
+			end
+			counter= counter + 1
+		end	
+	else
+		string.each do |x|			
+			if counter % 2 == 0
+				devolver.push(x)
+			end
+			counter= counter + 1
+		end	
+	end
+return devolver.join
 end
