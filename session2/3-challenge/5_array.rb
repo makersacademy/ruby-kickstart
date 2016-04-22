@@ -14,3 +14,14 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(nums)
+  newnums = []
+  nums.map do |n|
+    if n % 3 != 0
+      newnums << n % 3
+    end
+  end
+  newnums
+end
+
+puts mod_three([0,1,2,3,4,5,6,7])

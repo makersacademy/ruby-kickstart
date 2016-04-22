@@ -7,4 +7,10 @@
 
 def odds_and_evens(string, return_odds)
 
+		letters = string.split('')
+		return_odds == true ? letters.select.with_index { |a, i| i.odd? }.join('') : letters.select.with_index { |a, i| i.even? }.join('')
+		
 end
+
+puts odds_and_evens('blah blah blah', true)
+puts odds_and_evens('blah blah blah', false)

@@ -8,5 +8,14 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(nums)
+  newnums = []
+  nums.sort.map do |n|
+      if nums.include?(n*n)
+        newnums << n
+      end
+  end
+  return newnums
+end
 
-
+puts get_squares([9,3,81])

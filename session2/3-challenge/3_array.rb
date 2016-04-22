@@ -7,6 +7,8 @@
 
 class String
   def every_other_char
+    self.split('').select.with_index{|s,i| i.even? }.join('')
   end
-  
 end
+
+puts "abcdefg".every_other_char
