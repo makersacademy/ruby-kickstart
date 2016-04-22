@@ -1,22 +1,26 @@
-# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
+#Sorry, I spent a few hours on this (oops, not 30 minutes as recommended) and could only get this far. The basic song works but I couldn't translate the song from numeric form to "words"!!
 
-# Write a program that outputs the lyrics for "Ninety-nine Bottles of Beer on the Wall"
-# Your program should print the number of bottles in English, not as a number. For example:
-#
-# Ninety-nine bottles of beer on the wall,
-# Ninety-nine bottles of beer,
-# Take one down, pass it around,
-# Ninety-eight bottles of beer on the wall.
-# ...
-# One bottle of beer on the wall,
-# One bottle of beer,
-# Take one down, pass it around,
-# Zero bottles of beer on the wall.
-#
-# Your program should not use ninety-nine output statements!
-# Design your program with a class named BeerSong whose initialize method
-# receives a parameter indicating the number of bottles of beer initially on the wall.
-# If the parameter is less than zero, set the number of bottles to zero. Similarly,
-# if the parameter is greater than 99, set the number of beer bottles to 99
-# Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
-# Add any additional methods you find helpful.
+class BeerSong
+  attr_accessor :beer_start
+
+def initialize(beer_start)
+  @beer_start = beer_start
+    if beer_start < 0
+      beer_start = 0
+      puts "There are no beer bottles to fall."
+    elsif beer_start > 5
+      beer_start = 5
+    else beer_start = beer_start
+    end
+
+def print_song
+  until beer_start == 0
+  puts "  #{beer_start} bottles of beer on the wall, #{beer_start} bottles of beer
+  and if one of those bottles should happen to fall,
+  there will be.......
+  #{beer_start -= 1} bottles of beer on the wall.
+  "
+  puts "      All the bottles have fallen!"
+  end
+
+
