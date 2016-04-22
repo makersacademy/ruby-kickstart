@@ -8,5 +8,11 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(array)
+	square_roots = []
+	array.each {|n| square_roots << n if array.include?(n * n)}
+	square_roots.sort
+end
+
 
 

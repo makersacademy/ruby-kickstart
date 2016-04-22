@@ -19,7 +19,17 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
+  puts "Enter a number"
+	while answer = gets.chomp # Using a while loop with gets.chomp as a condition, can carry on asking for user input until you decide you've got what you want.
+	if answer == "bye"
+		puts "goodbye" 
+  		break # Finishes the loop
+	else
+  		puts "hi " * answer.to_i
+  		puts "Enter a number" # Print promp, so user knows to re-enter input
+  	end	
+  	end
+  
 
 end
 
