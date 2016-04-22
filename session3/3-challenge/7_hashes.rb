@@ -55,7 +55,7 @@ class HTMLTag
     color = options[:color]
     COLORS[color]
   end
-
+  
   def style
     if options[:font]
     return "style='font-family:#{font};color:#{color};'" if options[:color]
@@ -72,4 +72,3 @@ class HTMLTag
     "</#{name}>\n"
   end
 end
-

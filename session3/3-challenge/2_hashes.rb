@@ -8,6 +8,12 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
-
-
-
+def staircase(int)
+  retval = {}
+  (int+1).times do |val|
+    if (val.odd? && val > 0)
+      retval[val] = [*0..val].select {|num| num.even? && num > 0}
+    end
+  end
+  retval
+end

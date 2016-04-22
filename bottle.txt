@@ -1,0 +1,41 @@
+class BeerSong
+  attr_accessor :num_bottles
+
+  def initialize(num)
+    num = 99 if num > 99
+    num = 0 if num < 0
+    @num = num
+    @num_bottles = @num
+  end
+
+  # attr_accessor 'word'
+  # attr_reader 'word'
+  def num_word
+    single = %w(One Two Three Four Five Six Seven Eight Nine Ten)
+    teens = %w(Eleven Twelve Thirteen Fourteen Fifteen Sixteen Seventeen Eighteen Nineteen)
+    tens = %w(Twenty Thirty Forty Fifty Sixty Seventy Eighty Ninety)
+    word = single[@num - 1] if @num <= 10
+    word = teens[@num - 11] if (10..20).member?(@num)
+    if @num >= 20
+      small = @num % 10
+      big = @num / 10
+      word = tens[big - 2] + "-" + single[small - 1].downcase
+    end
+    @word = word
+  end
+
+  def print_song
+    if @num == 0
+      return ''
+    elsif @num == 1
+      puts "One bottle of beer on the wall,\nOne bottle of beer,\nTake one down, pass it around,\nZero bottles of beer on the wall."
+    else while @num > 1
+           puts "#{num_word} bottles of beer on the wall,\n#{num_word} bottles of beer,\nTake one down, pass it around,"
+           @num -= 1
+           puts "#{num_word} bottle of beer on the wall.\n" if @num == 1
+           puts "#{num_word} bottles of beer on the wall.\n" if @num > 1
+        end
+         puts "One bottle of beer on the wall,\nOne bottle of beer,\nTake one down, pass it around,\nZero bottles of beer on the wall."
+    end
+  end
+end

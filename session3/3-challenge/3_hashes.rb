@@ -6,3 +6,12 @@
 #
 # Example:
 # word_count "The dog and the cat" # => {"the" => 2, "dog" => 1, "and" => 1, "cat" => 1}
+
+def word_count(str)
+  retval = {}
+  arr = str.split
+  arr.length.times do |index|
+    retval[arr[index]] = arr.count(arr[index])
+  end
+  retval
+end

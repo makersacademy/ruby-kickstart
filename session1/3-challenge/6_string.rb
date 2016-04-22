@@ -6,5 +6,10 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  retval = ""
+  arr = return_odds ? ((1...string.size).step(2)).to_a :  ((0...string.size).step(2)).to_a
+  arr.each do |index|
+    retval << string[index]
+  end
+  retval
 end

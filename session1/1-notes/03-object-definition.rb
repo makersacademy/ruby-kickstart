@@ -8,4 +8,3 @@
 5.even? # => false
 5.odd?  # => true
 5.next  # => 6
-

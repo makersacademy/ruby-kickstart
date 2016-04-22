@@ -29,3 +29,16 @@
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
 
+def shared (arr1, arr2)
+  union = Hash.new do |hash, key|
+    hash[key] = [(arr1.include?(key)||nil), (arr2.include?(key)||nil)]
+  end
+  arr_test = arr1 | arr2
+  arr_test.each do |value|
+    union[value]
+  end
+
+  result = union.select { |key, value| value == [true, true] }.map { |key, value| key }
+
+  return union, result
+end
