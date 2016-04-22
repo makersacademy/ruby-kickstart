@@ -24,4 +24,22 @@
 # problem_14 3,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => false
 
 
+def problem_14(*arg)
+	problem = ""
+	if arg.is_a?(Hash) then problem = arg[:problem] else problem = nil end
+	problem ||= :count_clumps
+	return count_clumps(*arg) if problem == :count_clumps
+	same_ends(*arg) if problem == :same_ends
+end
 
+def count_clumps(*input)
+	clump_counter = 0
+	return "" if input == ""
+
+	input.chunk{ |i| i }.each { |key, value| clump_counter += 1 if value.length >= 2 }
+	clump_counter
+end
+
+def same_ends(n, *input)
+	if input[0, n] == input[-n, n] then true else false end
+end

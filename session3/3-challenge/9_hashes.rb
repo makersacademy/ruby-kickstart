@@ -28,4 +28,23 @@
 # shared [1,2,:c], ['a','b',:c]      # => [{1=>[true, nil], 2=>[true, nil], :c=>[true, true], "a"=>[nil, true], "b"=>[nil, true]}, [:c]]
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
+def shared(arr1,arr2)
+	#hash = Hash[(if arr1.empty? then arr2.sort else arr1.sort end).map {|element| [element]}]
+	hash = {}
+	#intersection = arr1.sort & arr2.sort does not evaluate to_s unless multiple conversion occurs
 
+	arr1.each { |element| 
+		hash[element] ||= [nil, nil]
+		hash[element][0] = true 
+	}
+	arr2.each { |element| 
+		hash[element] ||= [nil, nil]
+		hash[element][1] = true 
+	}
+
+	intersection = hash.select { |key, value| value == [true, true] }.map { |key, value| key }
+
+	return hash, intersection
+end
+
+p shared [1,2,:c], ['a','b',:c]

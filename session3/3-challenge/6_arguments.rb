@@ -19,3 +19,17 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(arg1, *arg2)
+	ans = []
+	arg2.each_slice(2) do |first, last|
+		first = !!first # !! converts value to a booleon
+		last = !!last
+		test = if arg1
+			first != last
+		else
+			first == last
+		end
+		ans << test
+	end
+	ans
+end

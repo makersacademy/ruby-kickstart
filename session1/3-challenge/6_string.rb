@@ -6,5 +6,15 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	output = ""
+	string.size.times do |index|
+		if return_odds && index.odd?
+			output << string[index]
+		elsif !return_odds && index.even?
+			output << string[index]
+		end
+	end
+	output
 end
+
+p odds_and_evens("abcdefg", true)

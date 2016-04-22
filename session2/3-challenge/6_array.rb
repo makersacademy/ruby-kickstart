@@ -15,3 +15,22 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array)
+	sum = 0
+	array.each do |string|
+		sum += string.length.to_i
+	end
+
+	return false if sum <=1
+
+	max = Math.sqrt(sum)
+	(2..max).any? do |p|
+		return false if sum % 1 == 0
+		end
+		true
+
+	#!!prime =(1 * sum) !~ /^1?$|^(11+?)\1+$/ && sum % 1 == 0 && sum != 0 && sum != 1
+	#!!prime = sum % 1 == 0 && sum != 0 && sum != 1
+end
+
+p prime_chars? ['abchd']

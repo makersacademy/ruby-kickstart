@@ -45,6 +45,12 @@
 # middle head                        # => 3
 # head = {:data => 6, :next => head}
 # middle head                        # => 3
+def middle(linked_list, position=positioner(linked_list)/2)
+	return linked_list[:data] if position == 0
+	middle(linked_list[:next], (position - 1) )
+end
 
-
-
+def positioner(linked_list)
+	return 0 if linked_list.nil?
+	1 + positioner(linked_list[:next])
+end

@@ -55,6 +55,24 @@
 # end       # => ["a", "m", "r", 1, 3, 4, 9, 2.5, 9.0, 25.8]
 
 
+def your_sort(array, &block)
+	block ||= Proc.new { |a, b| a <=> b } # same as Challenge 10 or 11
+	return [] if array.empty?
+	#bubble sort
+	n = array.length
+	loop do
+		swapped = false
 
+		(n-1).times do |i|
+			if array[i] > array[i+1]
+				sort = block.call(array[i], array[i+1])
+				array[i], array[i+1] = array[i+1], array[i]
+				swapped = true
+			end
+		end
 
+		break if not swapped
+	end
 
+	array
+end
