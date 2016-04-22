@@ -17,10 +17,17 @@
 
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
+def prompt
+  puts "Please enter a number."
+end
 
 def hi_hi_goodbye
   # your code here
-
+  prompt
+  while (input = gets) && (input !~ /bye/)
+    input.to_i.times {puts "Hi "}
+  end
+  puts "goodbye"
 end
 
 

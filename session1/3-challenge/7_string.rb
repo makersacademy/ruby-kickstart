@@ -5,5 +5,13 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
+  char_after_r = ""
+  char_return = false
 
+  string.size.times do |grandad|
+    current_char = string[grandad]
+    char_after_r << current_char if char_return
+    char_return = (current_char == "r" || current_char == "R")
+  end
+  char_after_r
 end

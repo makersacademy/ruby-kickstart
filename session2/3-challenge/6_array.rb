@@ -15,3 +15,25 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+class Integer
+  def prime?
+    num_array = (1..self)
+    primes_array = []
+    num_array.each do |divisor|
+      if self % divisor == 0
+        primes_array << divisor
+      end
+    end
+    if primes_array.count == 2
+      true
+    elsif self < 2
+      false
+    else
+      false
+    end
+  end
+end
+
+def prime_chars?(strings)
+  strings.join.length.prime?
+end

@@ -9,5 +9,14 @@
 
 def sum_difference_product
   # your code goes here
-  
+  a, b = gets.split.map { |x| x.to_i }
+
+  #sum
+  puts a + b
+
+  #difference
+  puts a - b
+
+  #product
+  puts a * b
 end
