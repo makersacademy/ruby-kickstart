@@ -7,6 +7,12 @@
 
 class String
   def every_other_char
+    output = ""
+    self.split("").each_with_index do |x, index|
+      output <<  x if index.even?
+    end
+    output
   end
   
 end
+
