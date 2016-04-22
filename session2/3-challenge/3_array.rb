@@ -7,6 +7,7 @@
 
 class String
   def every_other_char
+    self.split('').map.select.with_index {|_,ind| ind.even?}.join
   end
   
 end

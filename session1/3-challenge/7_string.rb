@@ -4,6 +4,8 @@
 # pirates_say_arrrrrrrrr("Katy Perry is on the radio!")   # => "rya"
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
-def pirates_say_arrrrrrrrr(string)
-
+def pirates_say_arrrrrrrrr(input_string)
+    
+    input_string.scan(/(?<=r)./i).join
+    
 end

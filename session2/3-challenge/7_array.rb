@@ -9,3 +9,7 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(input_string)
+    return_array = input_string.gsub(/^\s+/,'').split(/[^'’\w]+/)      #not considered = they won't be fed, or they are not to be considered part of the words? going with 2nd option.
+    return_array.values_at(*(0...return_array.length).step(2))                              #gsub in 13 is to strip leading whitespaces, otherwise " hi" would become ["","hi"] and fail.
+end

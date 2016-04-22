@@ -24,7 +24,16 @@
 # USER:     BYE
 
 def deaf_grandma
-
+    while true
+        user_input = $stdin.gets.chomp
+        if user_input == "BYE"
+            return 0
+        elsif user_input.upcase == user_input && user_input != ''
+            puts "NO, NOT SINCE 1938!"
+        else
+            puts "HUH?! SPEAK UP, SONNY!"
+        end
+    end    
 end
 
 
