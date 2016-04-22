@@ -8,6 +8,15 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
-
-
-
+def staircase integer
+  hash = Hash.new
+  for n in 1..integer
+    if n.odd?
+      hash[n] = [] if hash[n] == nil
+      for i in 2..n
+        hash[n] << i if i > 0 && i.even?
+      end
+    end
+  end
+  hash
+end

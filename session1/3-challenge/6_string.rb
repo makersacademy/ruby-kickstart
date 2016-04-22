@@ -6,5 +6,20 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  ch_array = string.split("")
+  output = []
+  if return_odds == true
+    ch_array.each_with_index do|character, index|
+      if index.odd?
+        output << ch_array[index]
+      end
+    end
+  else
+    ch_array.each_with_index do |character, index|
+      if index.even?
+        output << ch_array[index]
+      end
+    end
+  end
+  return output.join
 end
