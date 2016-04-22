@@ -15,3 +15,16 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array)
+  n = array.join.length
+  is_prime = true
+  return false if n < 2
+  (n).downto(2) do |x|
+    next if x == n
+    if n % x == 0
+      is_prime = false
+      break
+    end
+  end
+  is_prime
+end
