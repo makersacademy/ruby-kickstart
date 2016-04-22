@@ -7,6 +7,8 @@
 
 class String
   def every_other_char
-  end
-  
+   new_str = ""
+   scan(/./).each.with_index {|char, index| new_str += char if index.even?}
+   new_str
+  end  
 end

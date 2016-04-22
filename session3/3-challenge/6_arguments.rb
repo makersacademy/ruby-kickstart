@@ -19,3 +19,18 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(first_element, *args)
+
+  to_return = []
+  args.each_slice(2) do |first, second|
+    first = !!first
+    second = !!second
+    if first_element
+      first != second ? to_return << true : to_return << false
+    else
+      first == second ? to_return << true : to_return << false
+    end
+  end
+  to_return
+
+end

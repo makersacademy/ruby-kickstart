@@ -5,5 +5,10 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  output = ""
+  string.downcase.each_char.with_index {|x, i| output << string[i+1].to_s if x == "r"}
+  output
 end
+
+# oneline solution with regex
+#string.scan(/(?<=r)\w/i).join

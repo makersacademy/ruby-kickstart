@@ -19,7 +19,36 @@
 # end
 # order # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
 
+def spiral_access(arrays, iteration=0, &block)
+  # set the max for y and x
+  y_max = arrays.length - 1
+  x_max = arrays.first.length - 1
 
+  # return order array once iteration reaches the centre of 2D array
+  return if iteration > x_max/2 || iteration > y_max/2
 
+  # iteration = 0
+  # top row
+  iteration.upto (x_max - iteration) do |x|
+    block.call arrays[iteration][x]
+  end
 
+  # right column
+  (iteration + 1).upto (y_max - iteration) do |y|
+    block.call arrays[y][y_max - iteration]
+  end
 
+  # bottom row
+  (x_max - 1 - iteration).downto iteration do |x|
+    block.call arrays[x_max - iteration][x]
+  end
+
+  # left column
+  (y_max - 1 - iteration).downto (iteration + 1) do |y|
+    block.call arrays[y][iteration]
+  end
+
+  # recursion
+  spiral_access arrays, iteration+1, &block
+
+end

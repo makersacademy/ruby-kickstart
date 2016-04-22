@@ -8,6 +8,14 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
-
-
-
+def staircase(num)
+  keys = []
+  1.upto(num) {|i| keys << i if i.odd?}
+  hash = {}
+  keys.each do |x|
+    values = []
+    1.upto(x) {|y| values << y if y.even?}
+    hash[x] = values
+  end
+  hash
+end
