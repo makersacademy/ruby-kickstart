@@ -14,4 +14,9 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+require 'prime'
 
+def prime_chars?(array)
+	sum_array = array.join.length
+	true if Prime.prime?(sum_array)
+end

@@ -8,5 +8,13 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
+def get_squares(array)
+	sort_array = []
+	array.each_with_index do |value, index|
+		if array.include? value * value
+			sort_array << array[index]
+		end
+	end
+	sort_array.sort
+end
 
