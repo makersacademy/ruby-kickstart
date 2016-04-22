@@ -15,3 +15,22 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime number
+ return false if number == 0 or number == 1
+  (2...number).each do |num|
+    if number % num == 0
+      return false
+    end
+  end
+  return true
+end
+
+
+def prime_chars? array
+  sum = 0
+array.each do |string|
+  sum += string.length
+end
+
+prime(sum) ? true : false
+end
