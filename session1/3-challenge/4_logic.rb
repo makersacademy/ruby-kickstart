@@ -13,6 +13,16 @@
 
 
 def grade(num_books, has_read_books)
+    grade_array = ["A", "B", "C", "D"]
+    if num_books < 10
+        i = 3
+    elsif num_books <= 20
+        i = 2
+    else
+        i = 1
+    end
+    i -= 1 if has_read_books
+    grade_array[i]
 end
 
 

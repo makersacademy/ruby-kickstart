@@ -5,5 +5,9 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+    new_string = ""
+    for i in 0...(string.length - 1)
+        new_string << string[i+1] if string[i].downcase == "r"
+    end
+    new_string
 end
