@@ -10,3 +10,7 @@
 
 
 
+def get_squares array
+  array.select{|x| x if array.include?(x**2)}.sort
+end
+
