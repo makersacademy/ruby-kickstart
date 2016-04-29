@@ -6,5 +6,9 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	output = ""
+	for i in (0...string.length)
+		output << string[i] if (return_odds && i%2==1) || (!return_odds && i%2==0)
+	end
+	output
 end
