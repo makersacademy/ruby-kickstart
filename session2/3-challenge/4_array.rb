@@ -10,3 +10,8 @@
 
 
 
+def get_squares(arr)
+    arr2 = []
+    arr.sort.each { |x| arr2 << x if arr.include?(x**2) }
+    arr2
+end
