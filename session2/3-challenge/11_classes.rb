@@ -33,15 +33,19 @@ class BeerSong
     @beer = @bottles != 1 ? "bottles" : "bottle"
   end
 
+  def humanize_bottles
+    @bottles.humanize.capitalize
+  end
+
   def print_song
     while @bottles > 0
       pluralize_bottles?
-      puts "#{@bottles.humanize.capitalize} #{@beer} of beer on the wall,"
-      puts "#{@bottles.humanize.capitalize} #{@beer} of beer,"
+      puts "#{humanize_bottles} #{@beer} of beer on the wall,"
+      puts "#{humanize_bottles} #{@beer} of beer,"
       puts "Take one down, pass it around,"
       @bottles -= 1
       pluralize_bottles?
-      puts "#{@bottles.humanize.capitalize} #{@beer} of beer on the wall."
+      puts "#{humanize_bottles} #{@beer} of beer on the wall."
     end
   end
 end

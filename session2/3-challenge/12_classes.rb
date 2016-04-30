@@ -26,8 +26,7 @@ class Fraction
   attr_accessor :numerator, :denominator
 
   def initialize(a,b)
-    @numerator = a
-    @denominator = b
+    @numerator, @denominator = a, b
   end
 
   def gcd(a=@numerator,b=@denominator)
@@ -36,7 +35,7 @@ class Fraction
   end
 
   def to_f
-    @numerator.to_f/@denominator.to_f
+    @numerator/@denominator.to_f
   end
 
   def lowest
