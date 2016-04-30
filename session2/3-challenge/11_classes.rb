@@ -29,7 +29,7 @@ class BeerSong
     @bottles = [[99,bottles].min, 0].max
   end
 
-  def pluralize_bottles?
+  def pluralize_bottles
     @beer = @bottles != 1 ? "bottles" : "bottle"
   end
 
@@ -39,12 +39,12 @@ class BeerSong
 
   def print_song
     while @bottles > 0
-      pluralize_bottles?
+      pluralize_bottles
       puts "#{humanize_bottles} #{@beer} of beer on the wall,"
       puts "#{humanize_bottles} #{@beer} of beer,"
       puts "Take one down, pass it around,"
       @bottles -= 1
-      pluralize_bottles?
+      pluralize_bottles
       puts "#{humanize_bottles} #{@beer} of beer on the wall."
     end
   end
