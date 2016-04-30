@@ -24,7 +24,16 @@
 # USER:     BYE
 
 def deaf_grandma
-
+    text = gets.chomp
+    while text != "BYE"
+        if  text == text.downcase 
+    	    puts 'HUH?! SPEAK UP, SONNY!'
+    	    text = gets.chomp
+        elsif (text == text.upcase) 
+        	puts 'NO, NOT SINCE 1938!'
+	        text = gets.chomp
+        end
+    end
 end
 
 
@@ -33,4 +42,4 @@ end
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
-deaf_grandma if $0 == __FILE__
+#deaf_grandma if $0 == __FILE__
