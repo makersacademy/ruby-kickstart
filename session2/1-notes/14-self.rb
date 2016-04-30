@@ -14,6 +14,7 @@ class String
   end
 end
 "abc".existential
+# self is the object calling the method in this case
 
 
 # For a given context, you can always see your instance
@@ -30,6 +31,6 @@ class Example
   # in the third.
   Example.new # => #<Example:0x00000100863818>
   self.new    # => #<Example:0x000001008634f8>
-  new         # => #<Example:0x000001008631d8>
+  new         # => #<Example:0x000001008631d8> # if there is no receiver before method, it will use self automatically!
 end
 
