@@ -4,6 +4,8 @@
 
 # when a user passes an argument to a ruby program
 # it is stored in the ARGV array
+
+
 unless ARGV.first
   puts "You need to submit a number to check"
   exit(1) # Use exit(0) to exit the program early.

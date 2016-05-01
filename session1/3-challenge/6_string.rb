@@ -6,5 +6,16 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+    string = string.split(//)
+    string2 = []
+    if return_odds == true
+       string.each_with_index do |item,index| 
+         string2.push(item) if (index %2 !=0)
+       end
+     else
+        string.each_with_index do |item,index| 
+         string2.push(item) if (index %2 == 0)
+        end
+    end
+    string2.join("")
 end

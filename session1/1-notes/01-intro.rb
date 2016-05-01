@@ -1,5 +1,7 @@
 #Watch this video - https://vimeo.com/24093428 - these notes are in support of the video. 
 
+#ruby-doc.org => to learn more about methods and classes
+
 #Try to keep up, have the notes open and ADD YOUR OWN NOTES TO IT TO HELP CLARIFY EVERYTHING FOR YOURSELF.
 
 #At the end, you can always clean up your notes and make a pull request if you think that you've made improvements :)

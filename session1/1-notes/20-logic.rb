@@ -10,7 +10,7 @@ def go_outside?(raining, umbrella)
 end
 
 go_outside?(true,  true)   # => true
-go_outside?(true , false)  # => false
+go_outside?(true, false)  # => false
 go_outside?(false, true )  # => false
 go_outside?(false, false)  # => false
 

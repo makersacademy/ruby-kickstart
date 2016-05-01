@@ -5,6 +5,9 @@
 puts "Here's\nTwo lines."
 puts 'This will\nonly be one line'
 
+# "" are special characters - they understand the methods"
+# '' will not recognise the methods
+
   # Output:
   # Here's
   # Two lines.
