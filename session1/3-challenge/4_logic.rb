@@ -13,6 +13,16 @@
 
 
 def grade(num_books, has_read_books)
+    arr_grades = ["D", "C", "B", "A"]
+    read = has_read_books ? 1 : 0
+        if num_books < 10
+            arr_grades[0+read]
+        elsif (10..20).include? num_books
+            arr_grades[1+read]
+        else
+            arr_grades[2+read]
+        end
 end
+
 
 

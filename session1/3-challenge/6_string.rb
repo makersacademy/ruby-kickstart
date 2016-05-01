@@ -6,5 +6,20 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+    n = string.length
+    arr = []
+    x = 0
+    if return_odds
+        while x < n do
+        arr << string[x] if x.odd?
+        x += 1
+        end
+    else
+        while x < n do
+        arr << string[x] if x.even?
+        x += 1
+        end
+    end
+    arr.join
 end
+
