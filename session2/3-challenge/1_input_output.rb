@@ -10,7 +10,5 @@
 def sum_difference_product
   input_nums = gets
   a, b = input_nums[/^-?\d+/].to_i, input_nums[/(?<=\s)\d+/].to_i
-  puts (a+b)
-  puts (a-b)
-  puts (a*b)
+  puts "#{(a+b)}\n#{(a-b)}\n#{(a*b)}"
 end
