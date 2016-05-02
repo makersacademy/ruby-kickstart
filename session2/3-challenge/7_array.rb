@@ -9,3 +9,19 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words sentence
+	@Invalid_characters = %r{[\!\@\$\#\%\^\&\*\(\)\-\=\_\+\[\]\:\;\,\.\/\<\>\?\\\|]}
+	@sentence_array = []
+
+	# break sentence into an array of words where there is whitespace, -- or - 
+	sentence.split(/\s|\-\-|\-/).each_with_index do |word,i|
+		# remove invalid characters from word
+		updated_word = word.tr(@Invalid_characters.match(word).to_s, '')
+
+		# add 'clean' word to array
+		@sentence_array.push(updated_word) if i.even? && updated_word != ''
+	end
+
+	# return final array
+	@sentence_array
+end
