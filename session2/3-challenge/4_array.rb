@@ -8,5 +8,7 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
+def get_squares nums_to_square
+	nums_to_square.select {|el| nums_to_square.include?(el**2)}.sort
+end
 
