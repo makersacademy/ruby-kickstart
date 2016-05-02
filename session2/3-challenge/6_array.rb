@@ -15,3 +15,8 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require 'prime'
+
+def prime_chars? arr_of_str
+	arr_of_str.join.size.prime?
+end
