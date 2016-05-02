@@ -6,5 +6,10 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+even = []
+odd = []
+(0...string.size).each do |i|
+  i.even? ? even.push(string[i]) : odd.push(string[i])
+end
+return_odds ? odd.join : even.join
 end
