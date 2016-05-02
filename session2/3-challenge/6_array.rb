@@ -14,4 +14,25 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+require 'prime'
 
+def prime_chars? (string_array)
+    
+    sum = 0
+    
+    
+    string_array.each do |string|
+        sum += string.length
+    end
+    
+    return sum.prime?
+    
+    
+    
+    end
+        
+        
+    
+    
+    
+    
