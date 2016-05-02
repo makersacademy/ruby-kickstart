@@ -10,3 +10,15 @@
 
 
 
+def get_squares arr
+	@arr_sorted = Array.new
+
+	arr.sort.map do |num|
+		# puts num.to_s + ' ' + (num*num).to_s
+		if arr.include?(num*num)
+			@arr_sorted.push(num)
+		end
+	end
+
+	@arr_sorted
+end
