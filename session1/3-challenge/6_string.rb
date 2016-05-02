@@ -6,5 +6,12 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+    new_string=""
+    if string.length>0
+        return_odds == true ? string.split("").map.with_index {|x, i| new_string<< x if i.odd?} : string.split("").map.with_index {|x, i| new_string<< x if i.even?}
+        p new_string
+    else
+        return ""
+    end
 end
+p odds_and_evens("a",false)
