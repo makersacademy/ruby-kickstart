@@ -4,6 +4,9 @@
 # pirates_say_arrrrrrrrr("Katy Perry is on the radio!")   # => "rya"
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
-def pirates_say_arrrrrrrrr(string)
 
+
+def pirates_say_arrrrrrrrr(string)
+	string.downcase.scan(/r+\w/).map{|x| x[1..-1]}.join
 end
+
