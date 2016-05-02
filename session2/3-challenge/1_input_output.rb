@@ -8,6 +8,12 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
+  input = $stdin.gets.chomp
+  i = input.split(' ').map {|a| a.to_i}
   
+  sum = i[0] + i[1]
+  diff = i[0] - i[1]
+  prod = i[0] * i[1]
+
+  print sum.to_s + "\n" + diff.to_s + "\n" + prod.to_s + "\n" 
 end
