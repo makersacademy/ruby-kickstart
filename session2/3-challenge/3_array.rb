@@ -7,6 +7,12 @@
 
 class String
   def every_other_char
+		newString = ''
+
+		self.split('').each_slice(2) do |a,b|
+			newString = newString + a
+		end
+
+		return newString
   end
-  
 end
