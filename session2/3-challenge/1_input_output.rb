@@ -8,6 +8,12 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+ puts "Input 2 Intergers seperated with a space"
+
+input = gets.chomp
+a = input.split(' ').map(&:to_i)
+puts "#{a[0] + a[1]}"
+puts "#{a[0] - a[1]}"
+puts "#{a[0] * a[1]}"
 end
+
