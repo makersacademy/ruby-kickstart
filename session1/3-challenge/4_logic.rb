@@ -13,6 +13,21 @@
 
 
 def grade(num_books, has_read_books)
+  
+  letter_array = ["D","C","B","A"]
+  
+  if num_books < 10 
+    grade = 0
+  elsif num_books.between?(10,20) 
+    grade = 1
+  elsif num_books > 20  
+    grade = 2
+  end
+
+  has_read_books ? grade += 1 : grade 
+
+  letter_array[grade]
+
 end
 
 
