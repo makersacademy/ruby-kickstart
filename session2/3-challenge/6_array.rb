@@ -15,3 +15,7 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require 'prime'
+def prime_chars? arr
+  Prime.prime?(arr.map.each{|i| i.split('')}.flatten.size)
+end
