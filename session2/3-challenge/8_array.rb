@@ -6,3 +6,8 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three? arr
+	result = []
+	arr.each_cons(3){|a, b, c| result << (a == b && b == c) }
+	result.include?(true)
+end
