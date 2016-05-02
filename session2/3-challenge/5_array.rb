@@ -14,3 +14,19 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three array
+	@newArray = []
+
+	array.each do |num|
+		remainder_of_3 = num % 3
+
+		if remainder_of_3 != 0
+			@newArray.push(remainder_of_3)
+		end
+	end
+
+	@newArray
+end
+
+
+# mod_three([1,2,3,4,5])
