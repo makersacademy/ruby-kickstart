@@ -13,6 +13,19 @@
 
 
 def grade(num_books, has_read_books)
+
+  grades = %w{D C B A}
+
+  has_read_books ? add_grade = 1 : add_grade = 0
+
+  if num_books < 10
+    grades[0 + add_grade]
+  elsif num_books <= 20
+    grades[1 + add_grade]
+  else
+    grades[2 + add_grade]	
+  end
+
 end
 
 
