@@ -24,7 +24,19 @@
 # USER:     BYE
 
 def deaf_grandma
-
+	loop do
+	input = gets.chomp
+		case
+			when input == 'BYE'
+				break
+			when input == ''
+				puts 'HUH?! SPEAK UP, SONNY!'
+			when input == input.upcase
+				puts 'NO, NOT SINCE 1938!'
+			else
+				puts 'HUH?! SPEAK UP, SONNY!'
+		end
+	end
 end
 
 

@@ -7,6 +7,11 @@
 
 class String
   def every_other_char
+char = self.split('')
+odd_char = ""
+char.select.with_index {|el, i| i.even? ? odd_char << el : nil }
+odd_char.to_s
   end
-  
 end
+
+

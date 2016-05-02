@@ -9,12 +9,8 @@ def pirates_say_arrrrrrrrr(string)
 	char_index = []
 	output = ""
 	characters.each_with_index {|char,index| char.downcase == "r" ? char_index.push(index += 1) : ''}
-
- characters.map.with_index {|char,index| char_index.include?(index) ? output << char : nil }.compact
-
+ 	characters.map.with_index {|char,index| char_index.include?(index) ? output << char : nil }.compact
  return output
-
-
 end
 
 print pirates_say_arrrrrrrrr("This is a really hard problem")
