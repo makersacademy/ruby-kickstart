@@ -6,5 +6,15 @@
 #
 
 def odds_and_evens(string, return_odds)
+	newString = ''
 
+	for i in 0...string.length
+		if i.odd? && return_odds
+			newString = newString + string.slice(i)
+		elsif i.even? && return_odds == false
+			newString = newString + string.slice(i)
+		end
+	end
+
+	return newString
 end
