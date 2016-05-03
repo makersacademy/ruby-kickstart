@@ -14,4 +14,8 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+require 'prime'
 
+def prime_chars?(stringArray)
+	return Prime.prime? stringArray.join().bytesize 
+end
