@@ -13,4 +13,8 @@ def odds_and_evens(string, return_odds)
     characters << string[x]
   end
   characters
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> bb8b84482f31e165e699fbf7e589038989fee53b
