@@ -14,3 +14,7 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(num_array)
+	new_array = num_array.map { |x| x % 3}
+	new_array.reject { |y| y == 0}
+end
