@@ -9,3 +9,12 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(sentence)
+
+	punctuation = "!@$#%^&*()-=_+[]:;,./<>?\\|"
+	punctuation.each_char { |char| sentence.gsub!(char, "") }
+	word_array = sentence.split(" ")
+	modified_array = []
+	word_array.each_with_index { |value, index| modified_array << value if index.even? }
+
+end
