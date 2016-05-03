@@ -16,5 +16,17 @@
 #
 
 class Person
+   attr_accessor 'name'
+   attr_accessor 'age'
+   
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
 
+  def birthday
+    #think this should have a better name, birthday to me implies a specific day.
+    #'has_a_birthday' or 'ages_1_year' seem more intuitive to me.
+    @age += 1
+  end
 end
