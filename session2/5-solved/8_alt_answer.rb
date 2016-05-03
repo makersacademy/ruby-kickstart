@@ -8,5 +8,6 @@
 
 def got_three?(arr)
   arr.chunk{ |x| x }.map{|x| x.flatten.count}.any?{|x| x > 3}
+  #Not the most readable answer but i thought it was an interesting use of chunk nevertheless
 end
 
