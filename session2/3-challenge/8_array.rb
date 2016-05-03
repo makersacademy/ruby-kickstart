@@ -6,3 +6,7 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(arr)
+  arr.chunk { |x| x }.map{|x| x.flatten.count}.any?{|x| x > 3}
+end
+
