@@ -9,11 +9,8 @@ def pirates_say_arrrrrrrrr(string)
     newarray = []
     array.each_with_index do |v,i|
     	if v == "r" || v == "R"
-    		newarray << i
+    		newarray << i + 1
     	end
-    end
-    newarray.map! do |x| 
-    	x + 1
     end
     array.values_at(*newarray).join
 end
