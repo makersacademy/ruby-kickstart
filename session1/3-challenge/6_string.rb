@@ -7,15 +7,10 @@
 
 def odds_and_evens(string, return_odds)
 	characters = ""
-	if return_odds == true
-		string.size.times {|index| 
-			index.even? 
-			characters << string[index]}
-	else
-		string.size.times {|index| 
-			index.odd? 
-			characters << string[index]}
-		
-end
-
+  string.size.times do |x|
+    next if return_odds && x.even?
+    next if !return_odds && x.odd?
+    characters << string[x]
+  end
+  characters
 end
