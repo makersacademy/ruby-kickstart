@@ -7,6 +7,10 @@
 
 class String
   def every_other_char
-  end
-  
+  	output = ""
+  	for i in (0...length).step(2) do
+	  output << self[i]  		
+  	end
+  	output
+  end 
 end
