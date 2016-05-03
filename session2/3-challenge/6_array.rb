@@ -15,3 +15,12 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+def isPrime(num)
+  return false if num < 2
+  (2...num).to_a.select{|x| num%x == 0}.compact.empty?
+end
+
+def prime_chars?(array)
+  isPrime(array.join.size)
+end

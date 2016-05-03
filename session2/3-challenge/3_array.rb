@@ -7,6 +7,10 @@
 
 class String
   def every_other_char
+    odd = []
+    self.each_char.with_index { |c, i| i.even? ? odd.push(c) : ()}
+    odd.join
   end
-  
 end
+
+
