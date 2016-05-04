@@ -8,6 +8,10 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
-end
+  puts "Please provide two numbers"
+  numbers = gets.chomp.split(" ").map {|num| num.to_i}
+  print numbers[0] + numbers[1]
+  print numbers[0] - numbers[1]
+  print numbers[0] * numbers[1]
+end 
+
