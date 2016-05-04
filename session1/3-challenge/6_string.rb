@@ -7,4 +7,13 @@
 
 def odds_and_evens(string, return_odds)
 
+  string_array = string.chars
+
+  if return_odds
+    string_array.values_at(* string_array.each_index.select {|x| x.odd?}).join
+  else
+    string_array.values_at(* string_array.each_index.select {|x| x.even?}).join
+  end
+
+
 end
