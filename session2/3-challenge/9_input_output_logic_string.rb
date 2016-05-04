@@ -25,6 +25,12 @@
 
 def deaf_grandma
 
+  loop do
+    user_input_s = gets
+    break if user_input_s == "BYE\n"
+    (user_input_s == user_input_s.upcase) && (user_input_s != "\n")  ? (puts "NO, NOT SINCE 1938!") : (puts "HUH?! SPEAK UP, SONNY!")
+  end
+
 end
 
 
