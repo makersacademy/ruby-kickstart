@@ -13,6 +13,28 @@
 
 
 def grade(num_books, has_read_books)
+#	if  num_books > 20 && has_read_books == true
+#		"A"
+#	elsif ((10...20).include? num_books) == true && has_read_books == true || num_books > 20 && has_read_books == false
+#		"B"
+#	elsif ((10...20).include? num_books) == true && has_read_books == false || num_books < 10 && has_read_books == true
+#		"C"
+#	else num_books < 10 && has_read_books == false
+#		"D"
+#	end		
+	if num_books > 20 && has_read_books == true
+		"A"
+	elsif num_books > 20 && has_read_books == false
+		"B"
+	elsif ((10..20).include? num_books) == true && has_read_books == true
+		"B"
+	elsif ((10..20).include? num_books) == true && has_read_books == false
+		"C"
+	elsif num_books < 10 && has_read_books == true
+		"C"
+	else num_books < 10 && has_read_books == false
+		"D"
+	end
 end
 
 
