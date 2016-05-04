@@ -6,4 +6,8 @@
 
 def pirates_say_arrrrrrrrr(string)
 
+  string_array = string.chars
+  indexes = string_array.each_with_index.map {|char, index| char.downcase == 'r' ? index : nil}.compact # gives an array of the indexes we want
+  indexes.map {|x| string_array[x+1]}.join # iterates through each index for string_array 
+
 end
