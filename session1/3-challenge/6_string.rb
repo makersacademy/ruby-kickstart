@@ -3,8 +3,8 @@
 # When the boolean is false, return a new string containing all the even characters.
 #
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
-#
+
 
 def odds_and_evens(string, return_odds)
-
+	string.split('').select.each_with_index { |v, i| return_odds ? i.odd? : i.even? }.join
 end
