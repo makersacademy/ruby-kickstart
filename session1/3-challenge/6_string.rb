@@ -6,5 +6,18 @@
 #
 
 def odds_and_evens(string, return_odds)
+  i = 0
+  new_string = ''
 
+  string.each_char do |c| 
+    if return_odds
+      new_string << c if i % 2 == 1
+    else
+      new_string << c if i % 2 == 0
+    end
+
+    i += 1
+  end
+
+  new_string
 end

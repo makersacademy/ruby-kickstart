@@ -19,8 +19,14 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
+  input = $stdin.gets.chomp
 
+  until input == "bye"
+    puts "hi " * input.to_i
+    input = $stdin.gets.chomp
+  end
+
+  puts "goodbye"
 end
 
 

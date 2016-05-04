@@ -24,12 +24,13 @@
 # USER:     BYE
 
 def deaf_grandma
+  input = $stdin.gets.chomp
 
+  until input == "BYE"
+    input.upcase == input && input != "" ? (puts "NO, NOT SINCE 1938!") : (puts "HUH?! SPEAK UP, SONNY!")
+    input = $stdin.gets.chomp
+  end
 end
-
-
-
-
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
