@@ -23,11 +23,17 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
+
 def deaf_grandma
-
+    while reply = gets.chomp
+    break if reply == "BYE"
+        if reply.upcase == reply && /[a-zA-Z]/.match(reply)
+            puts "NO, NOT SINCE 1938!"
+        else
+            puts "HUH?! SPEAK UP, SONNY!"
+        end
+    end
 end
-
-
 
 
 

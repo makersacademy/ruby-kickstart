@@ -8,6 +8,12 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  puts "Please enter 2 integers"
+  num_arr = gets.chomp.split(" ").map(&:to_i)
+  num1 = num_arr[0]
+  num2 = num_arr[1]
+  puts num1 + num2
+  puts num1 - num2
+  puts num1 * num2
+  puts
 end
