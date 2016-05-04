@@ -7,4 +7,45 @@
 
 def odds_and_evens(string, return_odds)
 
+  ans = ""
+  notans = ""
+
+  if return_odds
+
+    string.size.times do | character |
+
+      if character.odd?
+        ans << string[character]
+      else
+        notans << string[character]
+      end
+
+    end
+
+  else
+
+    string.size.times do | character |
+
+      if character.even?
+        ans << string[character]
+      else
+        notans << string[character]
+      end
+
+    end
+
+  end
+
+if return_odds
+
+  puts "Check completed: the odd characters are '#{ans}'"
+
+else
+
+  puts "Check completed: the even characters are '#{ans}'"
 end
+
+ans
+
+end
+
