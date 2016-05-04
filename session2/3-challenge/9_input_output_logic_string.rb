@@ -24,12 +24,12 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  while true
+  	input = gets.chomp
+  	break if input == "BYE"
+  	puts input == "" || input.match(/[a-z]/) ? "HUH?! SPEAK UP, SONNY!" : "NO, NOT SINCE 1938!"
+  end
 end
-
-
-
-
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
