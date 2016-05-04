@@ -4,10 +4,6 @@
 # pirates_say_arrrrrrrrr("Katy Perry is on the radio!")   # => "rya"
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
-# NOTE: shortened method name for ease of typing from "pirates_say_aarrrrrrrrr" to "p".
-
-# NOTE: sample string = "ar"
-
 def pirates_say_arrrrrrrrr(string)
 
   ans = ""
@@ -25,7 +21,7 @@ def pirates_say_arrrrrrrrr(string)
 
     if x.downcase == "r"
 
-    # This block asks "is the current character (i.e. "x") a letter "r"? If it is then ruby executes the below.
+    # This block asks "is the current character (i.e. "x") a letter "r"? The .downcase adds to this, meaning we're actually asking if x was lower case would it match lower case "r". If it does then ruby executes the below.
 
       ans << a[i+1].to_s
 
