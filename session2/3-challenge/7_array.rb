@@ -9,3 +9,20 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(phrase)
+    
+    every_other_word = Array.new
+    
+    words = phrase.gsub(/[^a-zA-Z0-9\'\’\s]/," ").split(" ")
+    
+    
+    for i in 0...words.length do 
+        every_other_word << words[i] if i.even?
+    end
+    
+    every_other_word
+    
+end
+    
+   
+
