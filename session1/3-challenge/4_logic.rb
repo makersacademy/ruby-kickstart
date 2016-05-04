@@ -24,9 +24,9 @@ def grade(num_books, has_read_books)
     grade = 2
   end
 
-  has_read_books ? grade += 1 : grade 
+  has_read_books ? grade += 1 : grade
 
-  letter_array[grade]
+  letter_array[grade] 
 
 end
 
