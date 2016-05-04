@@ -15,19 +15,19 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
-def prime_chars?(string_array)
-	no_of_chars = string_array.join.length
-	divider = 2
-	is_prime = true
-	no_of_chars.times do
-		if divider == no_of_chars
-			break
-		elsif no_of_chars % divider ==  0
-			is_prime = false
-			break
-		else
-			divider += 1
-		end
-	end
-	is_prime
+def prime_chars?(strings)
+  int = strings.join.length
+  return false if int < 2
+  2.upto (int - 1) do |i|
+    return false if int % i == 0
+  end
+  true
 end
+
+# puts prime_chars? ['ab']
+
+
+
+
+
+
