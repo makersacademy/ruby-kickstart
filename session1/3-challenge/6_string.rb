@@ -6,5 +6,28 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  array = string.split("")
+  new_array = Array.new
+  for i in 0..array.length do
+    if i % 2 == 0 && return_odds == false
+      new_array << array[i]
+    elsif i % 2 != 0 && return_odds == true
+      new_array << array[i]
+    end
+  end
+  new_array.join
 end
+
+=begin
+# Code not passing tests.
+
+def odds_and_evens(string, return_odds)
+  string = string.to_s.split("")
+  if return_odds
+    x = string.select {|char| string.index(char).odd? }
+  else
+    x = string.select {|char| string.index(char).even? }
+  end
+  x.join
+end
+=end
