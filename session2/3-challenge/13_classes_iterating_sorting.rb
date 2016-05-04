@@ -1,3 +1,7 @@
+# date docs are at: http://ruby-doc.org/core/classes/Date.html
+# don't spend too much time worrying about them :)
+require 'date'
+
 # DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
 
 # In this exercise you'll need to create two classes.
@@ -20,26 +24,71 @@
 #      end
 
 
+class User
+	attr_accessor 'username'
+
+	def initialize username
+		self.username = username
+
+		@blogs = Array.new
+	end
+
+	def add_blog date, text
+		@blogs.push(Blog.new date, username, text)
+	end
+
+	def blogs
+		@blogs
+	end
+end
+
+class Blog
+	attr_accessor 'text', 'date', 'user'
+
+	def initialize date, user, text
+		self.date = date
+		self.user = user
+		self.text = text
+	end
+
+	def summary
+		text_array = text.split(' ')
+		summary = String.new
+
+		for i in 0...10
+			if i < 9
+				summary += text_array[i].to_s + ' '
+			else
+				summary += text_array[i].to_s
+			end
+		end
+
+		summary
+	end
+
+end
+
 
 # ==========  EXAMPLE  ==========
 #
-# lissa = User.new 'QTSort'
-# lissa.username                  # => "QTSort"
-# lissa.blogs                     # => []
+lissa = User.new 'QTSort'
+# p lissa.username                  # => "QTSort"
+# p lissa.blogs                     # => []
 #
-# lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
-# lissa.blogs                     # => [#<Blog:0x007fec28c49b88
+lissa.add_blog Date.parse("2010-05-28"), "Sailor Mars is my favourite"
+# p lissa.blogs                     # => [#<Blog:0x007fec28c49b88
 #     @date=#<Date: 2010-05-28 ((2455345j,0s,0n),+0s,2299161j)>,
 #     @text="Sailor Mars is my favourite",
-#       @user=#<User:0x007fec2902e5c8 @blogs=[...], @username="QTSort">>] 
+#       @user=#<User:0x007fec2902e5c8 @blogs=[...], @username="QTSort">>]
 #
-# blog1 = lissa.blogs.first
-# blog1.user                      # => lissa
+blog1 = lissa.blogs.first
+p blog1.summary
+# p blog1.user                      # => lissa
 #
 # Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"                                    # we'll call this blog2
 # Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"              # we'll call this blog3
 # Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best ^_^"   # we'll call this blog4
-# lissa.blogs                     # => [ blog1 , blog4 , blog2 , blog3 ] this is
+# p lissa.blogs                     # => [ blog1 , blog4 , blog2 , blog3 ] this is
 # not how it will actually appear. Please see lines 28-32 for how unnamed blog objects will
 # appear.
 #
@@ -67,9 +116,3 @@
 #                       From the school of revision, Comes the standard inventor's rule, Books of subtle notation Compositions, all original
 #                       I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,
 #                       All my labor will be lost with time
-
-
-
-# date docs are at: http://ruby-doc.org/core/classes/Date.html
-# don't spend too much time worrying about them :)
-require 'date'
