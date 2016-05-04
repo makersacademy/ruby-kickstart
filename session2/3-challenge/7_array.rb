@@ -12,3 +12,4 @@
 def alternate_words(str)
 	str.gsub(/[!@$#%^&*()-=_+\[\]:;,.\/<>?\\|]/,' ').split(' ').select.each_with_index{|v, i| i.even?}
 end
+

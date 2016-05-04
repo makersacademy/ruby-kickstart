@@ -9,3 +9,4 @@ def pirates_say_arrrrrrrrr(string)
 	string.split('').each_cons(2) { |c, n| if c =~ /[Rr]/ then result += n end }
 	result
 end
+

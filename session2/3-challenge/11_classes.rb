@@ -79,5 +79,5 @@ class BeerSong
 	end
 end
 
-puts BeerSong.new(456).print_song #TEST
+#puts BeerSong.new(456).print_song #TEST
 

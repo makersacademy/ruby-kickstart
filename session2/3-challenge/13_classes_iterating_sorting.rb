@@ -55,7 +55,6 @@ class Blog
 
 end
 
-
 # ==========  EXAMPLE  ==========
 #
 # lissa = User.new 'QTSort'

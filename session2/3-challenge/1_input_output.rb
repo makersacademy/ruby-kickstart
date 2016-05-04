@@ -13,3 +13,4 @@ def sum_difference_product
 	puts n.inject(:-)
 	puts n.inject(:*)
 end
+

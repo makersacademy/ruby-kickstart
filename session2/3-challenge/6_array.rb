@@ -19,3 +19,4 @@ require 'prime'
 def prime_chars? arr
   Prime.prime?(arr.map.each{|i| i.split('')}.flatten.size)
 end
+

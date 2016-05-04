@@ -9,5 +9,4 @@ class String
   def every_other_char
   	self.split('').select.each_with_index {|v, i| i.even?}.join
   end
-  
 end

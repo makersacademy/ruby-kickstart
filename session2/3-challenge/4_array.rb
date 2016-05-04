@@ -11,3 +11,4 @@
 def get_squares arr
   arr.select.each {|i| arr.include?(i**2)}.sort
 end	
+

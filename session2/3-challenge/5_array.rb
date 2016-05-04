@@ -17,3 +17,4 @@
 def mod_three arr
   arr.map.each {|i| i % 3} - [0]
 end
+

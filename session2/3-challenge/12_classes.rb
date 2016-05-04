@@ -47,3 +47,4 @@ class Fraction
   	@numerator.to_f / @denominator
   end
 end
+
