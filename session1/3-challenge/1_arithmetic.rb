@@ -9,7 +9,6 @@
 # arithmetic1(-6)     # => -50
 
 def arithmetic1(n)
-  puts n * 5 - 20
+  return n * 5 - 20
 end
-$ rake 1:1
 
