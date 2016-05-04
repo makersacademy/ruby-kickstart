@@ -20,16 +20,11 @@ def prime_chars? (string_array)
     
     sum = 0
     
-    
     string_array.each do |string|
         sum += string.length
     end
-    
-    return sum.prime?
-    
-    
-    
-    end
+    sum.prime?
+end
         
         
     
