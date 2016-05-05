@@ -7,6 +7,12 @@
 
 class String
   def every_other_char
-  end
-  
+    str=""
+    self.length.times do |x|
+        next if x.odd?
+        str<< self[x]
+    end
+    str
 end
+end
+
