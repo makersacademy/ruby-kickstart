@@ -28,17 +28,17 @@ class User
 	attr_accessor 'username'
 
 	def initialize username
-		self.username = username
+		@username = username
 
 		@blogs = Array.new
 	end
 
 	def add_blog date, text
-		@blogs.push(Blog.new date, username, text)
+		Blog.new date, self, text
 	end
 
 	def blogs
-		@blogs
+		@blogs.sort! { |a,b| b.date <=> a.date }
 	end
 end
 
@@ -46,73 +46,36 @@ class Blog
 	attr_accessor 'text', 'date', 'user'
 
 	def initialize date, user, text
-		self.date = date
-		self.user = user
-		self.text = text
+		@date = date
+		@user = user
+		@text = text
+
+		# Automagically add a new blog to the user's blog list
+		user.blogs << self
 	end
 
 	def summary
-		text_array = text.split(' ')
-		summary = String.new
+		# Split the text into an array of words
+		text_array = @text.split(' ')
 
+		summary = Array.new
+
+		# Loop through (and save) the first 10 in the array
 		for i in 0...10
-			if i < 9
-				summary += text_array[i].to_s + ' '
-			else
-				summary += text_array[i].to_s
-			end
+			summary << text_array[i]
 		end
 
-		summary
+		# Join them together in holy matrimony
+		summary = summary.join(' ')
+	end
+
+	def entry
+		# Return a string in a format not specified by the instructions -.-
+		"#{user.username} #{date.to_s}\n#{text}"
+	end
+
+	def == other
+		@user == other.user && @date == other.date && @text == other.text
 	end
 
 end
-
-
-# ==========  EXAMPLE  ==========
-#
-lissa = User.new 'QTSort'
-# p lissa.username                  # => "QTSort"
-# p lissa.blogs                     # => []
-#
-lissa.add_blog Date.parse("2010-05-28"), "Sailor Mars is my favourite"
-# p lissa.blogs                     # => [#<Blog:0x007fec28c49b88
-#     @date=#<Date: 2010-05-28 ((2455345j,0s,0n),+0s,2299161j)>,
-#     @text="Sailor Mars is my favourite",
-#       @user=#<User:0x007fec2902e5c8 @blogs=[...], @username="QTSort">>]
-#
-blog1 = lissa.blogs.first
-p blog1.summary
-# p blog1.user                      # => lissa
-#
-# Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"                                    # we'll call this blog2
-# Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"              # we'll call this blog3
-# Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best ^_^"   # we'll call this blog4
-# p lissa.blogs                     # => [ blog1 , blog4 , blog2 , blog3 ] this is
-# not how it will actually appear. Please see lines 28-32 for how unnamed blog objects will
-# appear.
-#
-# blog5 = Blog.new Date.today, lissa, <<BLOG_ENTRY
-# Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci nunc, porta non tristique eu, auctor tincidunt mauris.
-# Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vitae nibh sapien. Curabitur
-# eget eros bibendum justo congue auctor non at turpis. Aenean feugiat vestibulum mi ac pulvinar. Fusce ut felis justo, in
-# porta lectus.
-# BLOG_ENTRY
-#
-# blog5.get_summary   # => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci"
-# blog5.entry         # => QTSort 2010-05-28
-#                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci nunc, porta non tristique eu, auctor tincidunt mauris.
-#                          Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vitae nibh sapien. Curabitur
-#                          eget eros bibendum justo congue auctor non at turpis. Aenean feugiat vestibulum mi ac pulvinar. Fusce ut felis justo, in
-#                          porta lectus.
-#
-# blog5.date = Date.parse('2009-01-02')
-# blog5.user = User.new 'disloyalist.party'
-# blog5.text = "From the school of revision, Comes the standard inventor's rule, Books of subtle notation Compositions, all original\n" \
-#              "I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,\n" \
-#              "All my labor will be lost with time"
-#
-# blog5.entry      # => disloyalist.party 2009-01-02
-#                       From the school of revision, Comes the standard inventor's rule, Books of subtle notation Compositions, all original
-#                       I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,
-#                       All my labor will be lost with time
