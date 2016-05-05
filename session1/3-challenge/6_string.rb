@@ -6,5 +6,8 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	odds =[]
+	evens =[]
+	string.split(//).each.with_index{|char,index| index.odd? ? odds.push(char) : evens.push(char)  }
+	return_odds ? odds.join : evens.join
 end
