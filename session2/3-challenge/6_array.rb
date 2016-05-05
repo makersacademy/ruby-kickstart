@@ -1,7 +1,8 @@
 # Write a method named prime_chars? which takes array of strings
 # and returns true if the sum of the characters is prime.
 #
-# Remember that a number is prime if the only integers that can divide it with no remainder are 1 and itself.
+# Remember that a number is prime if the only integers that can divide 
+# it with no remainder are 1 and itself.
 #
 # Examples of length three
 # prime_chars? ['abc']            # => true
@@ -15,3 +16,10 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(arr)
+	require 'prime'
+	new_arr = arr.join.length
+	Prime.prime?(new_arr)
+end
+
+ 
