@@ -8,12 +8,10 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-input = gets
-input = input.scan(/\d/).map!(&:to_i)
+input = gets.split(" ").map!(&:to_i)
 sum = input[0]+input[1]
 diff = input[0]-input[1]
 prod = input[0]*input[1]
-print "#{sum}\n#{diff}\n#{prod}"
+print "#{sum}\n#{diff}\n#{prod}\n"
 end
 
-sum_difference_product()
