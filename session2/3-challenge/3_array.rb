@@ -7,6 +7,11 @@
 
 class String
   def every_other_char
-  end
-  
+  	string_to_return = ""
+	each_char.with_index do | c, i |
+		next if i.odd?
+		string_to_return << c
+		end
+	string_to_return
+	end
 end
