@@ -8,14 +8,11 @@
 class String
  
   def every_other_char
-  	input = gets.split(//)
-  	input.length.times do |x|
-  		print input[x] if x.even?
+  	output = ""
+  	each_char.with_index do |x, i|
+  		output << x if i.even?
   	end
+	output
   end
-
-puts "Enter some characters"
-new_string = String.new
-new_string.every_other_char
 
 end
