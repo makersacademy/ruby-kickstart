@@ -23,7 +23,15 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
-def deaf_grandma
+def deaf_grandma 
+	while ((msg = gets.chomp) && (msg != "BYE"))
+		if (msg != msg.upcase || msg == "")
+			print "HUH?! SPEAK UP, SONNY!\n"
+		elsif (msg == msg.upcase)
+			print "NO, NOT SINCE 1938!\n"
+		end
+
+	end
 
 end
 
