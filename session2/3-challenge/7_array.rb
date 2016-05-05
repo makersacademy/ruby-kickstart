@@ -9,3 +9,42 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(sentence)
+  # Creates new method that takes one argument
+  # "sentence".
+
+  to_return = []
+  # Creates new variable and assigns it an
+  # empty array.
+
+  sentence.scan(/[\w’']+/).each.with_index {|x, i| to_return << x if i.even?}
+
+  to_return
+
+end
+
+# "can't read well."
+# /w/         =>  ["w"]
+# => scans for the letter "w"
+
+# /\w/        =>  ["c", "a", "n", "t", "r", "e",
+#                 "a", "d", "w", "e", "l", "l"]
+# => scans for each word character
+
+# /\w’/       =>  []
+# => scans for "[word character]’"
+
+# /\w'/       =>  ["n'"]
+# => scans for "[word character]'"
+
+# /\w’'/      =>  []
+
+# /[\w’']+/  =>  ["can't", "read", "well"]
+
+# /\w+/       =>  ["can", "t", "do", "that"]
+
+# /[w’]/      =>  ["c", "a", "n", "t", "r", "e",
+#                 "a", "d", "w", "e", "l", "l"]
+
+# /[\w’']/    =>  ["c", "a", "n", "t", "r", "e",
+#                 "a", "d", "w", "e", "l", "l"]
