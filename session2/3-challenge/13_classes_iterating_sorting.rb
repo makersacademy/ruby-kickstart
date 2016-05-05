@@ -1,14 +1,10 @@
-# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
-
-# In this exercise you'll need to create two classes.
-
-# One class is called User that keeps track of a person's username
+# Define a class called User that keeps track of a person's username
 # it should receive the username when initialized
 # it should have a method add_blog which accepts a date and text
 # it should have a method blogs which returns an array of all blogs the user has written
 # they should be in reverse chronological order (newest first)
 #
-# The other class is called Blog that could be used to store an entry for your web log.
+# Define a class called Blog that could be used to store an entry for your web log.
 # The class should have a getter and setter methods: text , date , user
 # its initialize method should receive the date, user , and text
 # have a method called summary that returns the first 10 words from the text (or the entire text if it is less than 10 words)
@@ -28,10 +24,7 @@
 # lissa.blogs                     # => []
 #
 # lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
-# lissa.blogs                     # => [#<Blog:0x007fec28c49b88
-#     @date=#<Date: 2010-05-28 ((2455345j,0s,0n),+0s,2299161j)>,
-#     @text="Sailor Mars is my favourite",
-#       @user=#<User:0x007fec2902e5c8 @blogs=[...], @username="QTSort">>] 
+# lissa.blogs                     # => [ blog1 ]
 #
 # blog1 = lissa.blogs.first
 # blog1.user                      # => lissa
@@ -39,9 +32,7 @@
 # Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"                                    # we'll call this blog2
 # Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"              # we'll call this blog3
 # Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best ^_^"   # we'll call this blog4
-# lissa.blogs                     # => [ blog1 , blog4 , blog2 , blog3 ] this is
-# not how it will actually appear. Please see lines 28-32 for how unnamed blog objects will
-# appear.
+# lissa.blogs                     # => [ blog1 , blog4 , blog2 , blog3 ]
 #
 # blog5 = Blog.new Date.today, lissa, <<BLOG_ENTRY
 # Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci nunc, porta non tristique eu, auctor tincidunt mauris.
@@ -73,3 +64,43 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+	attr_accessor :username, :blogs
+
+	def initialize(username)
+		@username = username
+		@blogs = []
+	end
+
+	def add_blog(date,text)
+		blog = Blog.new(date,@username,text)
+		@blogs << blog
+		@blogs = @blogs.sort_by { |blog| blog.date }.reverse
+		blog
+	end
+end
+
+class Blog
+	attr_accessor :date, :user, :text
+
+	def entry
+		"#{user.username} #{date}\n#{text}"
+	end
+
+	def initialize(date, user, text)
+		@date, @user, @text = date, user, text
+	end
+
+	def summary
+		@text.split.size < 10 ? @text : @text.split[0..9].join(" ")
+	end
+
+	def ==(other)
+
+		return (self.date == other.date) && (self.user == other.user) && (self.text == other.text)
+	end
+
+end
+
+
