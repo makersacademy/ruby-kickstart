@@ -27,11 +27,7 @@ def hi_hi_goodbye
   	input = gets.chomp
   end
   puts "goodbye"
-  exit
 end
-
-hi_hi_goodbye()
-
 
 # This will just invoke the method if you run this program directly
 # This way you can try it out by running "$ ruby 2_input_output_control.rb"
