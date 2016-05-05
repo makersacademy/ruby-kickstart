@@ -6,3 +6,6 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(arr)
+	!!(arr.unshift(' ').push(' ').join(' ') =~ (/(\s\w+)\1\1/))
+end 
