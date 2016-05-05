@@ -6,5 +6,18 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	length = string.size
+	count = 0
+	new_string = ""
+while length > count do
+	if return_odds && count.even?
+		new_string << string[count]
+	elsif !return_odds && count.odd?
+		new_string << string[count]
+	end
+count += 1
 end
+return new_string
+end
+
+odds_and_evens("Testing 1, 2, 3", true)
