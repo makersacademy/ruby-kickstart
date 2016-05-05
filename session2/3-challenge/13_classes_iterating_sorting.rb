@@ -18,6 +18,54 @@
 #      def ==(other)
 #        return self.date == other.date
 #      end
+require 'date'
+
+class User
+	attr_accessor :username
+	def initialize(username)
+		@username = username
+		@blogs = []
+	end
+
+	def add_blog(date,text)
+		new_blog = Blog.new(date,self,text)
+		@blogs << new_blog
+		return new_blog
+	end
+
+	def blogs
+		@blogs.sort_by! {|blog| blog.date }.reverse
+	end
+end
+
+class Blog
+	attr_accessor :text, :date, :user
+		def initialize(date,user,text)
+			@date = date
+			@text = text
+			@user = user
+		end
+
+		def summary
+			text_array = @text.split(' ')
+			output = ""
+			text_array.select.with_index {|word,index| index <= 9 ? output << (word + " ") : nil }
+			return output.strip
+		end
+
+		def entry
+		"#{user.username} #{@date}\n#{@text}"
+		end
+
+		def ==(other)
+			((self.date == other.date) && (self.text == other.text)) && (self.user == other.user)
+		end
+end
+
+
+
+
+
 
 
 
@@ -72,4 +120,4 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
-require 'date'
+
