@@ -17,11 +17,22 @@ def alternate_words(sentence)
   # Creates new variable and assigns it an
   # empty array.
 
-  sentence.scan(/[\w’']+/).each.with_index {|x, i| to_return << x if i.even?}
+  sentence.scan(/[\w'’]+/).each.with_index {|x, i| to_return << x if i.even?}
+  # (1) sentence.scan(/[\w'’]+/) creates an array of words
+  #     => can't we all get along? => ["can't", "we", "all", "get", "along"]
+
+  # (2) the (/[\w'’]+/) is searching the string to match words
+  #     that include one or more of:
+  #     (a) a word character;
+  #     (b) a word character followed by a straight quote; or
+  #     (c) a word character followed by a curly quote.
 
   to_return
 
 end
+
+# RESULTS FROM IRB TESTING of sentence.scan(/[\w'’]+/) VARIATIONS
+# FOR UNDERSTANDING
 
 # "can't read well."
 # /w/         =>  ["w"]
@@ -35,11 +46,13 @@ end
 # => scans for "[word character]’"
 
 # /\w'/       =>  ["n'"]
-# => scans for "[word character]'"
+# => scans for "[word character]'", i.e. any word character followed immediately by an apostrophe
 
 # /\w’'/      =>  []
+# =>
 
 # /[\w’']+/  =>  ["can't", "read", "well"]
+# =>
 
 # /\w+/       =>  ["can", "t", "do", "that"]
 
