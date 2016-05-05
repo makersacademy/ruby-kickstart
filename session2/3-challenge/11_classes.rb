@@ -30,21 +30,19 @@ class BeerSong
     @beers = beers
   end
 
-  def translate(number)
-  singles = ["one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
-  tens = ["twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
-    if number == 0
-  	print "Zero"
-  	elsif number < 20	
-    print singles[number-1].capitalize
-    elsif number > 19
-      if number % 10 == 0
-        print "#{tens[number/10 - 2]}".capitalize
-      else
-        print "#{tens[number/10 - 2]}-#{singles[number%10-1]}".capitalize
-      end
-    end
+def translate(n)
+  singles = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+  tens = ["zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+  if n == 0
+    return "Zero"
+  elsif n < 20
+    return singles[n].capitalize
+  elsif n >= 20 && n%10 == 0
+    return tens[n/10].capitalize
+  else 
+    return (tens[n/10] + "-" + singles[n%10]).capitalize
   end
+end
 
   def bottle(n)
     if n == 1 
