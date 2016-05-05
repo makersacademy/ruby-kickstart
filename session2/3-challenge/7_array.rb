@@ -9,3 +9,9 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+#Refactor this to use strip
+
+
+def alternate_words(sentence)
+  sentence.split(/(?!(\u2019|\u0027))\W/).delete_if{|word| word == "" } .select.with_index{|string, index| index.even?}
+end
