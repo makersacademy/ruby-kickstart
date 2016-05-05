@@ -19,3 +19,5 @@ require "prime"
 def prime_chars?(x)
   x.join.size.prime?
 end
+
+#2:6 solved
