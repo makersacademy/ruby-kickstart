@@ -1,4 +1,4 @@
-EM
+GEM
   remote: https://rubygems.org/
   specs:
     capybara (2.4.4)
