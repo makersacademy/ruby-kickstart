@@ -14,8 +14,7 @@
 # USER:    bye
 # PROGRAM: goodbye
 
-
-# remember you can try your program out with              $ ruby 2_input_output_control.rb
+# remember you can try your program out with $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
