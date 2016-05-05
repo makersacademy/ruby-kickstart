@@ -8,5 +8,5 @@
 
 
 def got_three?(array)
-  !array.each.select.with_index {|a, index| array[index] == array[index + 1] && array[index] == array[index + 2] }.empty?
+  !array.each.select.with_index {|a, i| array[i] == array[i + 1] && array[i] == array[i + 2] }.empty?
 end
