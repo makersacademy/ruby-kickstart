@@ -20,10 +20,18 @@
 
 def hi_hi_goodbye
   # your code here
-
+  puts "Enter a number"
+  input = gets.chomp
+  while input != "bye" do
+  	puts "hi " * input.to_i
+  	puts "Enter a number"
+  	input = gets.chomp
+  end
+  puts "goodbye"
+  exit
 end
 
-
+hi_hi_goodbye()
 
 
 # This will just invoke the method if you run this program directly
