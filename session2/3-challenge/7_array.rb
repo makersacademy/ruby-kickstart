@@ -14,5 +14,5 @@ def alternate_words(sentence)
 	arr = sentence.split
 	new_arr = []
 	arr.map.with_index { |value, index| new_arr << value if index.even? }
-	new_arr = new_arr.map { |element| element.tr("!@$#%^&*()-=_+[]:;,./<>?\|", '') }
+	new_arr = new_arr.map { |element| element.gsub(/[!@$#%^&*()-=_+\[\]:;,.\/<>?\\|]/, '') }
 end
