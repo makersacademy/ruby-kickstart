@@ -18,7 +18,7 @@ while length > count do
 	end
 
 end
-print new_string
+new_string
 end
 
 pirates_say_arrrrrrrrr("are you really learning Ruby?")
