@@ -5,5 +5,12 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+    strArray = []
+    string.split(//).each_with_index do |c, i|
+      if c == "R" || c == "r"
+        strArray << string[i + 1]
+        next if c != "R" && c != "r"
+      end
+    end
+    strArray.join("")
 end

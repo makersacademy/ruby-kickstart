@@ -11,8 +11,19 @@
 
 # <10 books => D, 10..20 books => C, >20 book =>B
 
+#Refactor this mess
+#Break down into TRUE AND FALSE
 
 def grade(num_books, has_read_books)
+  grade_a = ["D", "C", "B", "A"]
+  if has_read_books == false
+    return grade_a[0] if num_books < 10
+    return grade_a[1] if num_books <= 20
+    return grade_a[2] if num_books > 20
+  else
+    return grade_a[1] if num_books < 10
+    return grade_a[2] if num_books <= 20
+    return grade_a[3] if num_books > 20
+  end
+
 end
-
-
