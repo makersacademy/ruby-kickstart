@@ -10,13 +10,14 @@ def odds_and_evens(string, return_odds)
 	count = 0
 	new_string = ""
 while length > count do
-	if return_odds && count.even?
+	if return_odds && count.odd?
 		new_string << string[count]
-	elsif !return_odds && count.odd?
+	elsif !return_odds && count.even?
 		new_string << string[count]
 	end
 count += 1
 end
+puts new_string
 return new_string
 end
 
