@@ -7,6 +7,10 @@
 
 class String
   def every_other_char
+  	new_string = ''
+  	self.length.times do |position|
+  		new_string += self[position] if position.even?
+  	end
+  	new_string
   end
-  
 end

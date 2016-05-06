@@ -9,3 +9,15 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(sentence)
+
+	punctuation = "!@$#%^&*()-=_+[]:;,./<>?\\|"
+	punctuation.each_char { |char| sentence = sentence.gsub(char, " ") }
+	
+	word_array = sentence.split(" ")
+	modified_array = []
+	word_array.each_with_index { |value, index| modified_array << value if index.even? }
+	return modified_array
+end
+
+# puts alternate_words("If you want to accomplish something in the world, idealism is not enough--you need to choose a method that works to achieve the goal. In other words, you need to be pragmatic.")
