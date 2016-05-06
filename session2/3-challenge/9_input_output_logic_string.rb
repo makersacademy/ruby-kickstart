@@ -23,13 +23,22 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
+
+
 def deaf_grandma
-
+    say=""
+    while say != "BYE"
+        say= gets.chomp
+        puts "huh?! speak up, sonny!".upcase if say == ""
+        while say != say.upcase
+            puts "huh?! speak up, sonny!".upcase
+            say= gets.chomp
+        end
+        if say != "BYE" && say != ""
+             puts "No, not since 1938!".upcase
+        end
+    end
 end
-
-
-
-
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
