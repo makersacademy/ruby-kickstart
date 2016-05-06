@@ -6,3 +6,9 @@
 #
 # first_pos "The dog and the cat and the cow" # => {"The" => 0, "dog" => 1, "and" => 2, "the" => 3, "cat" => 4, "cow" => 7}
 
+def first_pos(string)
+	array = string.split(" ")
+	 hash = Hash.new(0)
+     array.each {|key| hash[key] = array.index(key)}
+     hash
+end
