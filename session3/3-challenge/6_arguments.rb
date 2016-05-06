@@ -19,3 +19,17 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(operator,*args)
+	to_return = []
+	args.each_slice (2) do |val1,val2|
+		val1 = !!val1
+		val2 = !!val2
+		answer = val1 == val2
+		if operator == true
+			to_return << !answer
+		else
+			to_return << answer
+		end
+	end
+	to_return
+end
