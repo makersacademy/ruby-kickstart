@@ -53,9 +53,9 @@ end
   end
 
   def song_words(n)
-  	if n == 0 
-  	  puts "Zero bottles of been on the wall."
-  	else
+    if n == 0 
+      puts "Zero bottles of been on the wall."
+    else
       puts "#{translate(n)} #{bottle(n)} of beer on the wall,"
       puts "#{translate(n)} #{bottle(n)} of beer,"
       puts "Take one down, pass it around,"
@@ -64,11 +64,10 @@ end
   end
 
   def print_song
-  	until @beers == 0
-  		song_words(@beers)
-  		@beers -= 1
-  	end
+    until @beers == 0
+      song_words(@beers)
+      @beers -= 1
+    end
   end
 
 end
-
