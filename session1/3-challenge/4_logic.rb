@@ -14,7 +14,7 @@
 
 def grade(num_books, has_read_books)
   if num_books.between?(0, 9)
-if has_read_books == true
+    if has_read_books == true
       return "C"
     else return "D"
     end
