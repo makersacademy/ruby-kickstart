@@ -23,3 +23,5 @@
 
 
 
+def spiral_access (arrayOfArrays, block)
+	block do |i| 

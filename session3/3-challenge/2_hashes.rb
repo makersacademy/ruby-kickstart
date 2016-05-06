@@ -11,3 +11,14 @@
 
 
 
+def staircase int
+	hash = {}
+	steps = []
+	1.upto(int) { |i|  steps << i}
+	oddSteps  = steps.select.each_with_index { |_,i| i % 2 == 0 }
+	evenSteps = steps.select.each_with_index { |_,i| i % 2 != 0 }
+	oddSteps.each_with_index do |i|
+		hash[i] = evenSteps.select.each { |c| c < i}
+	end
+	hash
+end

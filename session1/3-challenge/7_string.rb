@@ -5,5 +5,10 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+	chars = string.split(//)
+	returnString = ''
+	chars.each_with_index do |c,i|
+		returnString << chars[i+1].to_s if c == 'r' || c == 'R'
+	end
+	returnString
 end

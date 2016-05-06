@@ -20,3 +20,33 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+require 'numbers_and_words'
+
+class BeerSong
+	attr_accessor :beerBottles
+
+	def initialize(beerBottles)
+		if beerBottles != 0
+			@beerBottles = beerBottles >= 99 ? 99 : beerBottles
+		else
+			@beerBottles = nil
+		end
+	end
+
+	def print_song
+		btl = ''
+		if @beerBottles
+			while @beerBottles > 0  do
+				num = (I18n.with_locale(:en) { @beerBottles.to_words }).capitalize
+				@beerBottles -= 1
+				nextNum = (I18n.with_locale(:en) { @beerBottles .to_words }).capitalize
+				btl, nextBtl = num == 'One' ? 'bottle' : 'bottles', nextNum == 'One' ? 'bottle' : 'bottles'
+				puts "#{num} #{btl} of beer on the wall,"
+				puts "#{num} #{btl} of beer,"
+				puts "Take one down, pass it around,"
+				puts "#{nextNum} #{nextBtl} of beer on the wall." if @beerBottles != 0
+			end
+			puts "Zero bottles of beer on the wall." if @beerBottles == 0
+		end
+	end
+end

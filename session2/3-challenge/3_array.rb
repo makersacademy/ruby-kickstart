@@ -6,7 +6,8 @@
 # "".every_other_char         # => ""
 
 class String
-  def every_other_char
-  end
-  
+	def every_other_char
+		chars = self.split(//)
+		return (chars.select.each_with_index { |_,i| i % 2 == 0 }).join()
+	end
 end

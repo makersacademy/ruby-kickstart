@@ -19,8 +19,16 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-
+	puts 'Enter a number'
+	while (msg = gets) && (msg != 'bye')
+		count = msg.to_i
+		sayString = ''
+		count.times do
+			sayString << 'hi '
+		end
+		puts sayString
+	end
+	puts 'goodbye'
 end
 
 
