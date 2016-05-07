@@ -9,4 +9,8 @@
 # This time you will have to define the method, it's called: get_squares
 
 
-
+def get_squares(ary)
+  new_ary = []
+  ary.select { |i| new_ary.push i if ary.include? i*i}
+  new_ary.sort
+end
