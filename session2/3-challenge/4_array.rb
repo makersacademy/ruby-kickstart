@@ -8,5 +8,15 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+#class Array
+	def get_squares(arr)
+	#	arr.select {|n| return n if arr.include? Math.sqrt(n).to_i}.sort
+	#	new_arr = []
+		arr.sort.select {|n| arr.include? n * n }
+	#	arr.select {|n| arr.include? n * * }.sort 
+	end
+	
+
+#end
 
 

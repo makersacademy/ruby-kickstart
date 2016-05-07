@@ -5,5 +5,15 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
+   arr_string = string.split("")
+   new_string = []
 
+   arr_string.each_with_index do |item, index|
+   	if item == "r" || item == "R" 
+  	new_string << arr_string[index +1].to_s
+  	end
+  end
+
+  new_string.join("")
 end
+
