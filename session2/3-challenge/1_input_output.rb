@@ -9,5 +9,8 @@
 
 def sum_difference_product
   # your code goes here
-  
+	arr = gets.split(" ") 
+	a = arr[0].to_f
+	b = arr[1].to_f 
+	print((a + b),"\n", a - b ,"\n", (a * b),"\n")
 end
