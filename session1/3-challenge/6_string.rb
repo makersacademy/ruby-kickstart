@@ -7,4 +7,24 @@
 
 def odds_and_evens(string, return_odds)
 
+  new_string = ""
+
+if return_odds == true
+  n = 1
+  while n < (string.length)
+    new_string << string[n]
+    n += 2
+  end
+else
+  n = 0
+  while n < (string.length-1)
+    new_string << string.length
+    n += 2
+  end
 end
+
+return new_string
+
+end
+
+
