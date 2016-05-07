@@ -20,3 +20,62 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+require "humanize"
+
+class BeerSong
+
+  attr_accessor :bottles
+
+  def initialize(bottles)
+    if bottles < 0
+      @bottles = 0
+    elsif bottles > 99
+      @bottles = 99
+    else
+      @bottles = bottles
+    end
+  end
+
+  def nums_eng
+    if @bottles == 1
+      print "One bottle"
+    elsif @bottles == 0
+      print "Zero bottles"
+    else
+      print "#{@bottles.humanize.capitalize} bottles"
+    end
+  end
+
+
+
+  def print_song
+    while @bottles > 0
+      puts "#{nums_eng} of beer on the wall,"
+      puts "#{nums_eng} of beer,"
+      puts "Take one down, pass it around,"
+      @bottles -= 1
+      puts "#{nums_eng} of beer on the wall."
+    end
+  end
+
+end
+
+# idea. Alternative to humanize gem.
+=begin
+  def translate
+    @array1 = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen",
+      "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+    @array2 = ["twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eigthy", "ninety"]
+    if @bottles == 1
+      puts "One bottle"
+    elsif @bottles < 20
+      puts "#{@array1[@bottles]} bottles"
+    else
+      @x = @bottles.to_s.chars
+      units = @x[1].to_i
+      tens = @x[0].to_i
+      puts "#{@array2.[tens]}-#{array2.[@units]}"
+    end
+  end
+=end
