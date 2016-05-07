@@ -8,5 +8,12 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(array)
 
+  squares = array.map {|item| item * item} # gives an array of the square values
+  in_both = squares & array # returns elements that feature in both arrays
+  selects = in_both.map {|x| Math.sqrt(x).to_i} # finds the square root of those elements
+  array.select {|x| selects.include?(x)}.sort # selects all the matching elements in the original array
+
+end
 
