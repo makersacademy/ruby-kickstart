@@ -10,3 +10,8 @@
 
 
 
+def get_squares arr
+	arr.sort!.select do |num|
+		arr.include?(num*num)
+	end
+end

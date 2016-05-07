@@ -9,3 +9,12 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+Invalid_chars = %r{[\!\@\$\#\%\^\&\*\(\)\-\=\_\+\[\]\:\;\,\.\/\<\>\?\\\|]}
+
+def alternate_words sentence
+	sentence.split(/\s|\-\-|\-/).select!.with_index { |word, i|
+		i.even? && word.tr(Invalid_chars.match(word).to_s, '') != ''
+	}.map! { |word|
+		word.tr(Invalid_chars.match(word).to_s, '')
+	}
+end

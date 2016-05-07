@@ -5,5 +5,7 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+	string.split('').select.with_index { |item, i|
+		string.split('')[i-1].downcase == 'r' if i > 0
+	}.join
 end

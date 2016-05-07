@@ -21,9 +21,20 @@
 def hi_hi_goodbye
   # your code here
 
+	puts "pls enter a number"
+
+	while num = gets.chomp
+		num.to_i.times do |i|
+			puts "hi".chomp
+		end
+
+		if num == "bye"
+			puts "goodbye"
+			break
+		end
+	end
+
 end
-
-
 
 
 # This will just invoke the method if you run this program directly
