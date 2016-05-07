@@ -19,3 +19,7 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(bool,*args)
+  args.map{|x| x == false || x == nil ? false : true}.each_slice(2).to_a.map{|x| bool ? x[0] != x[-1] : x[0] == x[-1] }
+end
+
