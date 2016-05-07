@@ -17,9 +17,7 @@
 def mod_three(numbers)
   mthree = []
   numbers.each do |n|
-   mthree << n % 3 if n % 3 != 0
+    mthree << n % 3 if n % 3 != 0
   end
-    mthree.sort
+  return mthree
 end
-
-
