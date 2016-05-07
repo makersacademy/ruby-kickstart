@@ -15,3 +15,14 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array)
+
+  length = array.join.length
+  return false if length <= 1 # 0 and 1 aren't primes
+  Math.sqrt(length).to_i.downto(2).each { |x| return false if length % x == 0} #finds the square root of length, 
+  #then test each number incrememntally from that number down to 2, to see whether length is divisible by it.
+  true 
+
+end
+
+prime_chars?(['a', 'b', 'c'])
