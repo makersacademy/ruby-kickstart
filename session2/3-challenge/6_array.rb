@@ -15,3 +15,15 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+def prime_chars?(ary)
+  string = ary.join.length
+  return false if string < 2
+  for i in (2..string-1) do
+    return false if string % i == 0
+  end
+  return true
+end
+
+
+
