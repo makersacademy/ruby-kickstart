@@ -8,5 +8,7 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
+def get_squares array
+	array.select.with_index{|x, i| array.any?{|y| y == x*x}}.sort
+end
 
