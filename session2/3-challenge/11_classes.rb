@@ -27,6 +27,7 @@ class BeerSong
 		if number <= 0
 			@bottles = 0
 		elsif number > 99
+			
 			@bottles = 99
 		else @bottles = number
 		end
@@ -69,7 +70,7 @@ class BeerSong
 
 
 		while @bottles > 0
-			
+
 			english_number
 
 			puts "#{@number_string.capitalize + ' ' + @ref} of beer on the wall,"
