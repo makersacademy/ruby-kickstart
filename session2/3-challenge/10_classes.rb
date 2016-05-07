@@ -15,16 +15,14 @@
 # josh.age      # => 30
 
 class Person
+	attr_accessor 'name', 'age'
+
 	def initialize (name, age)
 		@name = name
 		@age = age
 	end
 
-	attr_accessor 'name', 'age'
-
 	def birthday
 		@age = @age + 1
 	end
 end
-
-# I hope the instructions were vague on purpose

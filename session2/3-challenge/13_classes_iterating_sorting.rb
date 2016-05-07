@@ -29,7 +29,6 @@ class User
 
 	def initialize username
 		@username = username
-
 		@blogs = Array.new
 	end
 
@@ -51,31 +50,22 @@ class Blog
 		@text = text
 
 		# Automagically add a new blog to the user's blog list
-		user.blogs << self
+		@user.blogs << self
 	end
 
 	def summary
-		# Split the text into an array of words
-		text_array = @text.split(' ')
-
-		summary = Array.new
-
-		# Loop through (and save) the first 10 in the array
-		for i in 0...10
-			summary << text_array[i]
-		end
-
-		# Join them together in holy matrimony
-		summary = summary.join(' ')
+		# Split the text into an array of words and ignore any after the 10th
+		@text.split(' ').reject.with_index {|word,i|
+			i > 9
+		}.join(' ')
 	end
 
 	def entry
 		# Return a string in a format not specified by the instructions -.-
-		"#{user.username} #{date.to_s}\n#{text}"
+		"#{@user.username} #{@date.to_s}\n#{@text}"
 	end
 
 	def == other
 		@user == other.user && @date == other.date && @text == other.text
 	end
-
 end

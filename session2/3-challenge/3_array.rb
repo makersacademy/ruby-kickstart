@@ -7,12 +7,8 @@
 
 class String
   def every_other_char
-		newString = ''
-
-		self.split('').each_slice(2) do |a,b|
-			newString = newString + a
-		end
-
-		return newString
+		self.split('').select.with_index { |item, i|
+			i.even?
+		}.join
   end
 end

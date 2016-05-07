@@ -18,11 +18,5 @@
 require 'prime'
 
 def prime_chars? array
-	@count = 0
-
-	array.map do |word|
-		@count = @count + word.length
-	end
-
-	Prime.prime?(@count)
+	Prime.prime?(array.join.length)
 end

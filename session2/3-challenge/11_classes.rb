@@ -54,15 +54,11 @@ class BeerSong
 			@numString = @tens[@bottle_array[0].to_i - 1]
 
 			# if number ends in 0, move on because the
-			# whole number has already been translated
+			# whole number has already been translated.
 			# otherwise...
 			unless @bottle_array[1] == "0"
-
-				# add a little dash
-				@numString = @numString + '-'
-
-				# then append the translated second digit to the final string
-				@numString = @numString + @ones[@bottle_array[1].to_i - 1]
+				# append the translated second digit to the final string
+				@numString += '-' + @ones[@bottle_array[1].to_i - 1]
 			end
 		end
 
@@ -81,18 +77,16 @@ class BeerSong
 		while @bottles > 0
 			puts "#{@numString.capitalize + ' ' + @plural} of beer on the wall,"
 			puts "#{@numString.capitalize + ' ' + @plural} of beer,"
+			puts "Take one down, pass it around,"
 
 			if @bottles > 1
-				@bottles = @bottles - 1
+				@bottles -= 1
 				english_num
 
-				puts "Take one down, pass it around,"
 				puts "#{@numString.capitalize + ' ' + @plural} of beer on the wall."
 			else
-				@bottles = @bottles - 1
+				@bottles -= 1
 				english_num
-				
-				puts "Take one down, pass it around,"
 
 				# this one is different because it's the last bottle
 				puts "Zero bottles of beer on the wall."
