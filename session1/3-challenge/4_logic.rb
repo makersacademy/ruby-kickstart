@@ -11,22 +11,18 @@
 
 # <10 books => D, 10..20 books => C, >20 book =>B
 
+Grades = ["A", "B", "C", "D"]
 
 def grade(num_books, has_read_books)
-
-grades = ["A", "B", "C", "D"]
-
 	case
 		when num_books < 10
 			gradeIndex = 3
 		when num_books <= 20
 			gradeIndex = 2
-		else 
+		else
 			gradeIndex = 1
 	end
 
-	return grades[gradeIndex] unless has_read_books
-	return grades[gradeIndex - 1]
+	return Grades[gradeIndex] unless has_read_books
+	Grades[gradeIndex - 1]
 end
-
-

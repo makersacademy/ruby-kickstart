@@ -10,5 +10,5 @@
 
 def arithmetic2(a, b)
 	return a.to_f / 2 unless b < a
-	return b.to_f / 2
+	b.to_f / 2
 end

@@ -10,10 +10,9 @@
 def sum_difference_product
   # your code goes here
 
-	input = gets.chomp
-	input_arr = input.split(' ')
+	input = gets.chomp.split(' ')
 
-  puts input_arr.first.to_i + input_arr.last.to_i
-	puts input_arr.first.to_i - input_arr.last.to_i
-	puts input_arr.first.to_i * input_arr.last.to_i
+  puts input.first.to_i + input.last.to_i
+	puts input.first.to_i - input.last.to_i
+	puts input.first.to_i * input.last.to_i
 end
