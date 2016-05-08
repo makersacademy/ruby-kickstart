@@ -73,3 +73,16 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+  attr_accessor 'username'
+  
+  def initialize(username)
+    @username = username
+  end
+  
+  def add_blog(date, text)
+    
+  end
+  
+end
