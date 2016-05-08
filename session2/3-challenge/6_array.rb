@@ -15,3 +15,14 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(letters)
+  prime = []
+  letters.join.length do |x|
+    prime << x % x != 1 || x != x
+    end
+     return prime
+    else
+      return false
+end 
+
+#This is not working. Need to figure out what is wrong
