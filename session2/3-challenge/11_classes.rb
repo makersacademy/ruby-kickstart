@@ -20,3 +20,37 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+require 'humanize'
+
+class BeerSong
+	def initialize(beers)
+		if beers < 0
+			@beers = 0
+		elsif beers > 99
+			@beers = 99
+		else
+			@beers = beers
+		end
+	end
+
+	def bottles_of_beer
+		if @beers == 1
+			"One bottle"
+		else
+			"#{@beers.humanize.capitalize} bottles"
+		end
+	end
+
+	def print_song
+		while @beers > 0
+			puts "#{bottles_of_beer} of beer on the wall,"
+			puts "#{bottles_of_beer} of beer,"
+			puts "Take one down, pass it around,"
+			@beers -= 1
+			puts "#{bottles_of_beer} of beer on the wall."
+		end
+	end
+end
+
+
+
