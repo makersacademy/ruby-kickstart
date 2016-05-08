@@ -5,5 +5,9 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+ 	pirate = []   
+ 	(0...string.size).each do |i|
+ 	 string[i] == "r" || string[i] == "R" ? pirate.push(string[i+1]) : ()
+ 	end
+ 	pirate.join
 end
