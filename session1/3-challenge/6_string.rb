@@ -6,24 +6,20 @@
 #
 
 def odds_and_evens(string, return_odds)
+arr = string.chars
+odds = []
+evens = []
 
-  new_string = ""
-
-if return_odds == true
-  n = 1
-  while n < (string.length)
-    new_string << string[n]
-    n += 2
-  end
-else
-  n = 0
-  while n < (string.length-1)
-    new_string << string.length
-    n += 2
-  end
+for i in 0..arr.length - 1
+  odds << arr[i] if i % 2 != 0
+  evens << arr[i] if i % 2 == 0
 end
 
-return new_string
+if return_odds == true
+  return odds.join
+else
+  return evens.join
+end
 
 end
 
