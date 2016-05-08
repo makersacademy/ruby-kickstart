@@ -9,3 +9,25 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+# class String
+#   def every_other_wrd(string)
+#     string.gets.chomp.split.each_index.select { |s| s.odd? }.map
+#   end
+# end
+# class String
+#   def every_other_wrd(string)
+#     string.gets.chomp.split.values_at(1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21)
+#   end
+# end
+def alternate_words(sentence)
+  # this will get better when we learn regular expressions :)
+  '!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each do |char|
+    sentence = sentence.gsub(char, ' ')
+  end
+  words = sentence.split
+  solution = []
+  words.each_with_index do |word, index|
+    solution << word if index.even?
+  end
+  solution
+end

@@ -15,3 +15,14 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+class Fixnum
+  def prime(i,c)
+    return true i % c == 0 || { return false if i <= 1 || if i % c != 0 }
+    end
+end
+
+class Fixnum
+  def prime_chars
+    self.chars.each { |i| sum += i && if i.prime?}
+    end
+end
