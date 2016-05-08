@@ -6,3 +6,8 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three? nums
+ 
+ nums.select.with_index {|n,i| n if nums[i] == nums[i+1] && nums[i] == nums[i+2]}.size > 0
+ 
+end
