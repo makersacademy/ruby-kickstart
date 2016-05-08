@@ -7,6 +7,6 @@
 
 class String
   def every_other_char
+    chars.select.with_index {|item, index| index%2 == 0}.join
   end
-  
 end
