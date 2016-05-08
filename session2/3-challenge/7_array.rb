@@ -9,3 +9,6 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words in_str
+ +	in_str.split(/\s|(?!('|’))[[:punct:]]/).delete_if {|word| word == ""}.select.with_index {|word,i| word if i % 2 == 0 }
+ +end
