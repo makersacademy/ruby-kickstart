@@ -9,4 +9,8 @@
 # This time you will have to define the method, it's called: get_squares
 
 
-
+def get_squares(arr)
+  squares_arr= arr.map {|x| x*x}
+ 	recurring_numbers= squares_arr.select {|x| x if arr.include?(x)}
+ 	recurring_numbers.map {|x| Math.sqrt(x).to_i}.sort
+end
