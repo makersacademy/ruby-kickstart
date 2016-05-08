@@ -20,3 +20,73 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+
+
+class BeerSong
+    
+    def initialize(beers)
+        beers = 0 if beers < 0
+        beers = 99 if beers > 99
+        @beers = beers
+    end
+    
+    def num_to_string(beers)
+        
+        tens_strings = ["Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"]
+        units_strings = ["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten"]    
+        teens_strings = ["Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"]
+        
+        if beers >= 20
+            return tens_strings[beers/10 - 2] if beers % 10 == 0
+            return tens_strings[(beers/10)-2] + "-" + units_strings[(beers % 10)].downcase
+        elsif beers < 20 && beers >= 10
+            return teens_strings[beers-10]
+        else
+            return units_strings[beers]
+        end
+    end
+    
+    def one_bottle?(counter)
+       counter == 1 ? "bottle" : "bottles" 
+    end
+
+    def print_song
+         
+        counter = @beers
+        
+         @beers.times do
+            
+            puts "#{num_to_string(counter)} #{one_bottle?(counter)} of beer on the wall,"
+            puts "#{num_to_string(counter)} #{one_bottle?(counter)} of beer,"
+            puts "Take one down, pass it around,"
+            counter -= 1
+            puts "#{num_to_string(counter)} #{one_bottle?(counter)} of beer on the wall." 
+            
+        end
+    end
+end
+        
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

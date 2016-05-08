@@ -6,5 +6,15 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+    ary = string.chars
+    
+    odd_even = return_odds ? 0 : 1
+    
+    letters = String.new
+    
+    for i in 0...ary.length
+        letters << ary[i] unless i % 2 == odd_even
+    end
+    
+    letters
 end

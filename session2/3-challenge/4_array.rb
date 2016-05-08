@@ -9,4 +9,12 @@
 # This time you will have to define the method, it's called: get_squares
 
 
+    def get_squares(ary)
+        squares = []
+        ary.each do |x|
+            squares << x if ary.include?(x**2)
+        end
+        squares.sort!
+    end
+
 

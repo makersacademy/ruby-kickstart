@@ -7,6 +7,13 @@
 
 class String
   def every_other_char
+    
+    odds = ""
+      for i in 0...self.length do
+        odds << self[i] if i.even?
+      end
+      
+      odds
   end
   
 end
