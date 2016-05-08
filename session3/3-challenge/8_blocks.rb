@@ -29,7 +29,7 @@ class Person
 
   attr_accessor :name, :age, :quote
 
-  def initialize(hash, &initializer)
+  def initialize(hash={}, &initializer)
     @initializer = initializer
     @name = hash[:name]
     @age = hash[:age]

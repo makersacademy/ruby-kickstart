@@ -28,4 +28,23 @@
 # shared [1,2,:c], ['a','b',:c]      # => [{1=>[true, nil], 2=>[true, nil], :c=>[true, true], "a"=>[nil, true], "b"=>[nil, true]}, [:c]]
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
+def shared a,b
+
+   keys = (a + b).uniq
+   arr = [[nil,nil]]
+   keys.size.times{ arr << [nil,nil] }
+
+   hash =  Hash[keys.zip arr]
+
+   a.each{|x|  hash[x][0] = true if hash.keys.include?(x)}
+   b.each{|y|  hash[y][-1] = true if hash.keys.include?(y) }
+
+   common = hash.keys.select{|x| x if hash[x][0] == true && hash[x][-1] == true}
+   [hash, common]
+end
+
+shared [1,2,:c], ['a','b',:c]
+
+
+
 
