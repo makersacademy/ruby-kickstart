@@ -15,6 +15,18 @@
 # josh.age      # => 30
 #
 
-class Person
+class Person 
+    attr_accessor :name , :age
+    
+    def initialize(name, age)
+        @name=name
+        @age=age
+    end 
 
+    def birthday
+        birthday= @age+1
+        @age=birthday
+    end
 end
+
+
