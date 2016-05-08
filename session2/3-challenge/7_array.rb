@@ -9,3 +9,16 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+#def alternate_words(string)
+  #  new_arr= string.split(" ").map.with_index{|x, i| x if i.even?}.compact!.join(" ")
+    #'!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each {|x| new_arr= new_arr.gsub(x, ' ')}
+    #p new_arr.split(' ').reject {|x| x==""}
+#end
+
+def alternate_words(string)
+  '!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each {|x| string = string.gsub(x, ' ')}
+  new_string = string.split(" ")
+  arr= []
+  new_string.each_with_index {|x, i| arr<< x if i.even?}
+  arr
+end
