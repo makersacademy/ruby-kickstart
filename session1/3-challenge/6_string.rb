@@ -6,5 +6,5 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	string.split(//).inject(""){ |mem, var| (return_odds = !return_odds) ? mem << var : mem}
 end

@@ -21,6 +21,7 @@
 # f.denominator = 100
 # f.to_s               # => "50/100"
 # f.to_f               # => 0.5
+conseccutive strings
 
 class Fraction
   def gcd(a,b)
