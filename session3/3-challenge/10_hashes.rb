@@ -30,5 +30,34 @@
 #
 # create it from scratch :)
 
+def pathify(paths={})
+# tried regex, but failed lol
+=begin
+  return [] if paths == {}
+
+  str = paths.to_s.gsub(/[=>\\"{}]+/, ' ').strip
+  array = str.scan(/\[(.+)\]/)[0][0].split(',').map(&:strip)
+  first = str.gsub(/\[.+\]/, "").split
+  arr2 = []
+  array.each{|x|  arr2 << ('/' + first.join('/') + '/' + x )}
+  arr2
+=end
+
+  return paths.map { |path| '/' + path } if paths.is_a? Array
+
+  to_return = []
+  paths.each do |parent_path, child_dirs|
+    parent_path = '/' + parent_path
+    child_paths = pathify child_dirs
+    child_paths.each do |child_path|
+      to_return << (parent_path + child_path)
+    end
+  end
+  to_return
+
+end
+
+p pathify({"usr"=>{"bin"=>["ruby"], "include"=>["zlib.h"]}})
+
 
 

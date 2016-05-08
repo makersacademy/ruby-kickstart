@@ -9,5 +9,15 @@
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
 
+def staircase n
+  odd = [*1..n].select(&:odd?)
+  even = [*1..n].select(&:even?)
+  arr = []
+  ((n/2.0).ceil).times do |i|
+    arr << odd[i]
+    arr << even.select{|x| x < odd[i]}
+  end
+  Hash[*arr]
+end
 
 

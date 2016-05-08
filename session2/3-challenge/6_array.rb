@@ -15,3 +15,10 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require 'prime'
+
+def prime_chars? array
+  array.map(&:length).reduce(0, :+).prime?
+end
+
+

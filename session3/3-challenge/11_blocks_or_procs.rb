@@ -32,7 +32,11 @@
 # end
 
 
-
+def array_init(a=5,&block)
+  array = [*0...a]
+  return array.map!{|i| (i * 100).to_s} if block == nil
+  array.map{|i| yield i}
+end
 
 
 

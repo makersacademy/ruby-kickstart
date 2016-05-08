@@ -12,7 +12,16 @@
 # <10 books => D, 10..20 books => C, >20 book =>B
 
 
-def grade(num_books, has_read_books)
+def grade(books, read)
+  arr = ["D","C","B","A"]
+  r = read ? 1 : 0
+    if books < 10
+      arr[0+r]
+    elsif (10..20).include? books
+      arr[1+r]
+    else
+      arr[2+r]
+    end
 end
 
 

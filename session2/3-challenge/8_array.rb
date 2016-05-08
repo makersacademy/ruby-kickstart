@@ -6,3 +6,6 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three? array
+  array.each_cons(3).to_a.map(&:uniq).flat_map(&:size).include? 1
+end
