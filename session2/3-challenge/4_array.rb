@@ -8,5 +8,16 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(input)
+input.sort
+squared = input.map {|x| x*x }
+output = []
+input.length.times.with_index do |x,i|
+	if input.include?(squared[i])
+		output << input[i]
+	end
+end
+return output.sort
+end
 
 

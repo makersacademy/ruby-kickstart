@@ -15,3 +15,24 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+class Fixnum
+def prime?	
+	return false if self <= 1
+	Math.sqrt(self).to_i.downto(2).each {|i| return false if self % i == 0}
+	true
+end
+end
+
+def prime_chars?(input)
+	return input.join.length.prime?
+end
+
+prime_chars? ['abc']            # => true
+prime_chars? ['a', 'bc']        # => true
+prime_chars? ['ab', 'c']        # => true
+prime_chars? ['a', 'b', 'c']    # => true
+
+prime_chars? ['abcd']           # => false
+prime_chars? ['ab', 'cd']       # => false
+prime_chars? ['a', 'bcd']       # => false
+prime_chars? ['a', 'b', 'cd']   # => false

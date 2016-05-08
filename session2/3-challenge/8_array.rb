@@ -6,3 +6,17 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(input)
+count = 1
+previous = 0
+input.each do |x|
+	if x == previous 
+		count += 1
+	else
+		count = 1
+	end
+	previous = x
+	return true if count == 3
+end
+	return false
+end
