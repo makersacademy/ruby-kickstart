@@ -20,7 +20,12 @@
 
 def hi_hi_goodbye
   # your code here
-
+	puts "enter a number or bye to exit"
+	while (num = gets) && (num != "bye")
+		num.to_i.times{ print "hi "}
+		puts "enter a number or bye to exit"
+	end
+	puts "goodbye"
 end
 
 

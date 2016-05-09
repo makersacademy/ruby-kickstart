@@ -8,4 +8,10 @@
 # alternate_words("Lorem ipsum dolor sit amet.")  # => ["Lorem", "dolor", "amet"]
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
+def alternate_words(string)
+	output =[]
+	"!@$#%^&*()-=_+[]:;,./<>?\\|".split(//).each{|char| string = string.gsub(char," ")}
+	string.split(" ").each.with_index{|c,i| output.push(c) if i.even?}
+	output
+end
 
