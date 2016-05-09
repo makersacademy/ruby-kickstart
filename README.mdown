@@ -5,14 +5,19 @@ Welcome to RubyKickstart!
 
 **Disclaimer - this is a shameless continuation of the original Ruby Kickstart by Josh Cheek. I have no intention of reinventing the wheel, and I gladly stand on the shoulder of giants :)
 
-How you should use this
+Our recommended guide to starting this project:
 ============
 
-* Fork this repo
+* Fork this repo to your own Github
 * Clone it down to your local machine
-* Run `bundle install`
-* Answer the questions and push them up to github
-* Send a pull request
+* Run `bundle install` (you may need an extra something to get this working ... )
+* Answer the first question (in the challenge section)
+* Commit through github and push it up to your repo
+* Send a pull request straight away (yes - after your first answer)
+* Answer the second question (in the challenge section)
+* Commit throught github and push it up to your repo
+
+... the PR will automatically update itself! 
 
 The course consists of six sessions, all of which have common features:
 
