@@ -8,7 +8,7 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  puts "Please input two integers"
+  
   integers = gets.chomp.split(' ')
   num1 = integers[0].to_i
   num2 = integers[1].to_i
