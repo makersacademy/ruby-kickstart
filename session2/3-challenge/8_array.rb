@@ -6,3 +6,11 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(array)
+
+array.each_cons(3).any? { |a, b, c| a == b && b == c } 
+
+end
+
+
+
