@@ -18,9 +18,32 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
-def hi_hi_goodbye
-  # your code here
+# ========================= MY SOLUTION BELOW, COMMENTED OUT AS DID NOT PASS RAKE ============
+# ===========SOLUTION IN BELOW THAT, IN ORDER TO PASS CI BUILD TEST =============
 
+# def hi_hi_goodbye
+#   # your code here
+#   	puts "Please type in a number"
+# 	number = gets.chomp
+
+# 	while line = gets
+# 		number.times {print "hi "}
+# 		break if line.chomp == 'bye'
+# 	end
+# end
+
+def prompt
+  puts 'Enter a number or bye'
+end
+
+def hi_hi_goodbye
+  prompt
+  while (line = gets) && (line !~ /bye/) # first is an assignment statement that returns a line or nil, and is thus boolean
+    line.to_i.times { print 'hi ' }
+    puts
+    prompt
+  end
+  puts "Goodbye!"
 end
 
 

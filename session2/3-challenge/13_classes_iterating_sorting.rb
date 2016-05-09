@@ -73,3 +73,75 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+#This is a program that is downloaded from Ruby that will convert your date
+#into a specific format. When inserting date below, it should be written
+#in the format: Date.parse("2010-05-28").
+
+class User 
+#this is setting up a new class called User
+  attr_accessor :username, :blogs 
+  #this creates the read and write getter 
+  #and setter methods that enable us to access the data defined in the 
+  #instance variable and change the information if required. 
+
+  def initialize(username)
+    self.username = username
+    self.blogs    = []
+  end
+  #this initialize method sets the default instance variables which will be
+  #passed to the object that is created when typing User.new. They are 
+  #instance variables that only exist within the instance of the class 
+  #(i.e. the object we create). self.username is just another way or writing
+  # @username and self is dependant on where it is declared. In this example,
+  # self is the initialized object (lissa). 
+
+  def add_blog(date, text)
+    added_blog = Blog.new(date, self, text)
+    blogs << added_blog
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+    added_blog
+  end
+
+  #this method askes us to pass a date and some text for the blog. 
+  #it creates a new Blog object passing it the date and text passed
+  #in the method call, and then asigns this new Blog to a local variable
+  #called added_blog. This is then appended to the instance variable blogs
+  #(and added to the array). The value of the added_blog variable is then
+  #returned. 
+end
+
+
+
+class Blog
+  attr_accessor :date, :user, :text
+
+  #new Class called Blog with getter and setter methods added
+  #for date, user and text. 
+  def initialize(date, user, text)
+    self.date = date
+    self.user = user
+    self.text = text
+  end
+  #initialize method for provide default data to the newly created object
+  #the date, user and text are added to instance variabes. 
+  def summary
+    text.split[0..9].join(' ')
+  end
+  #this method splits the text and passed the first 10 indices to be
+  #joined again at the space, to provide a summary for the blog. 
+
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+  #this method just provides a mechanism to return the basic data for
+  #the blog entry.
+
+  def ==(other)
+    date   == other.date &&
+      user == other.user &&
+      text == other.text
+  end
+  #this checks whether the contents of one blog are equal to the contents
+  #of another
+end
