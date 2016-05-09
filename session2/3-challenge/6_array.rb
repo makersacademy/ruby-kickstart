@@ -14,4 +14,10 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+require "prime"
 
+def prime_chars?(x)
+  x.join.size.prime?
+end
+
+#2:6 solved
