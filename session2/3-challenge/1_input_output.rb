@@ -8,6 +8,9 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+ input_nums = gets
+  a, b = input_nums[/^-?\d+/].to_i, input_nums[/(?<=\s)\d+/].to_i
+ 	puts (a+b)
+    puts (a-b)
+ 	puts (a*b)
 end
