@@ -7,7 +7,19 @@
 # Standard input will be like "9 2\n" and will expect you to print
 # "11\n7\n18\n" to standard output.
 
+
+
+
 def sum_difference_product
-  # your code goes here
+  
+  integers = gets.chomp.split(' ')
+  num1 = integers[0].to_i
+  num2 = integers[1].to_i
+  puts num1 + num2 
+  puts num1 - num2 
+  puts num1 * num2
   
 end
+
+sum_difference_product
+
