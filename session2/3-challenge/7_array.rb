@@ -10,9 +10,26 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+# =========== MY SOLUTION IS BELOW COMMENTED OUT - IT SEEMED TO WORK OK IN IRB, BUT FAILED RAKE
+# TESTING ====================================================================================
+
+
+# def alternate_words(sentence)
+# 	arr = sentence.split
+# 	new_arr = []
+# 	arr.map.with_index { |value, index| new_arr << value if index.even? }
+# 	new_arr = new_arr.map { |element| element.gsub(/[!@$#%^&*()-=_+\[\]:;,.\/<>?\\|]/, '') }
+# end
+
 def alternate_words(sentence)
-	arr = sentence.split
-	new_arr = []
-	arr.map.with_index { |value, index| new_arr << value if index.even? }
-	new_arr = new_arr.map { |element| element.gsub(/[!@$#%^&*()-=_+\[\]:;,.\/<>?\\|]/, '') }
+  # this will get better when we learn regular expressions :)
+  '!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each do |char|
+    sentence = sentence.gsub(char, ' ')
+  end
+  words = sentence.split
+  solution = []
+  words.each_with_index do |word, index|
+    solution << word if index.even?
+  end
+  solution
 end
