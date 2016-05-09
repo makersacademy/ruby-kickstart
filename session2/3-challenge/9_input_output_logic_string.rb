@@ -4,7 +4,7 @@
 # you type in), she should respond with HUH?!  SPEAK UP, SONNY!, unless
 # you shout it (type in all capitals). If you shout, she can hear you
 # (or at least she thinks so) and yells back, NO, NOT SINCE 1938!
-# You can't stop talking to grandma until you shout BYE.
+# You can't stop talking to grandma until you shout BYE..
 #
 # Hint: Don't forget about chomp! "BYE\n" is not the same as "BYE"
 # (check the String cheatsheet if you need)
@@ -24,12 +24,32 @@
 # USER:     BYE
 
 def deaf_grandma
-
+# Creates new method
+  say = gets.chomp
+# Creates new variable and assigns it the
+# user's input from the keyboard
+    while say != 'BYE'
+# While say is not equal to 'BYE' do the
+# following steps:
+      if say != say.upcase || say == ""
+# If say is not uppercase OR is blank
+# do the following steps
+        puts "HUH?! SPEAK UP, SONNY!"
+        say = gets.chomp
+# Puts the string to the screen and
+# updates the say variable to the user's
+# latest keyboard input
+      elsif say == say.upcase && say !=""
+# If say IS uppercase AND say is not blank
+# dot he following steps.
+        puts "NO, NOT SINCE 1938!"
+        say = gets.chomp
+# Puts the string to the screen and
+# updates the say variable to the user's
+# latest keyboard input
+      end
+    end
 end
-
-
-
-
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.

@@ -1,4 +1,4 @@
-# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
+# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!.
 
 # Write a program that outputs the lyrics for "Ninety-nine Bottles of Beer on the Wall"
 # Your program should print the number of bottles in English, not as a number. For example:
@@ -20,3 +20,42 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+class BeerSong
+
+  attr_accessor :num_of_beers
+
+  def initialize(num_of_beers)
+
+    num_of_beers = 0 if num_of_beers < 0
+    num_of_beers = 99 if num_of_beers > 99
+    @num_of_beers = num_of_beers
+
+  end
+
+   def wordify(num_of_beers, word=" bottle")
+    num_of_beers == 1 ? ending = word + "" : ending = word + "s"
+    split_num = num_of_beers.to_s.chars.map(&:to_i)
+    teens = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
+    tens = ['ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+    ones = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'zero']
+    if num_of_beers < 10 # 1 to 9
+      return ones[num_of_beers-1] + ending
+    elsif num_of_beers > 10 && num_of_beers < 20 # 10 to
+      return teens[num_of_beers-11] + ending
+    else
+      return tens[split_num[0]-1] + ending if split_num[1] == 0
+      return tens[split_num[0]-1] + "-" + ones[split_num[1]-1] + ending
+    end
+  end
+
+  def print_song
+    while @num_of_beers > 0
+      puts wordify(@num_of_beers).capitalize + " of beer on the wall,"
+      puts wordify(@num_of_beers).capitalize + " of beer,"
+      puts "Take one down, pass it around,"
+      @num_of_beers -= 1
+      puts wordify(@num_of_beers).capitalize + " of beer on the wall."
+    end
+  end
+end

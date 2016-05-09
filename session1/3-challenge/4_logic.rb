@@ -11,8 +11,61 @@
 
 # <10 books => D, 10..20 books => C, >20 book =>B
 
+#MY SOLUTION
 
 def grade(num_books, has_read_books)
+
+  if (num_books < 10 && has_read_books == false)
+    "D"
+
+  elsif (num_books < 10 && has_read_books == true)
+    "C"
+
+  elsif (num_books >=10 && num_books <= 20 && has_read_books == false)
+    "C"
+  elsif (num_books >=10 && num_books <= 20 && has_read_books == true)
+    "B"
+
+  elsif (num_books > 20 && has_read_books ==false)
+    "B"
+
+  else
+    "A"
+
+  end
+
 end
+
+#FAVOURITE SOLUTION(S) FROM THE COHORT
+
+# M. Butler:
+
+# def grade(num_books, has_read_books)
+#    if num_books > 20
+#        has_read_books ? "A" : "B"
+#    elsif num_books >= 10
+#        has_read_books ? "B" : "C"
+#    else
+#        has_read_books ? "C" : "D"
+#    end
+#end
+
+# G. Tormiston
+
+#def grade(num_books, has_read_books)
+
+#  letter_array = ["D","C","B","A"]
+
+#  if num_books < 10
+#    grade = 0
+#  elsif num_books.between?(10,20)
+#    grade = 1
+#  elsif num_books > 20
+#    grade = 2
+#  end
+
+#  has_read_books ? grade += 1 : grade
+
+#  letter_array[grade]
 
 

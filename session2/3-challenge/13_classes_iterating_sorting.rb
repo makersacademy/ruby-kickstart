@@ -1,4 +1,4 @@
-# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
+# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!.
 
 # In this exercise you'll need to create two classes.
 
@@ -31,7 +31,7 @@
 # lissa.blogs                     # => [#<Blog:0x007fec28c49b88
 #     @date=#<Date: 2010-05-28 ((2455345j,0s,0n),+0s,2299161j)>,
 #     @text="Sailor Mars is my favourite",
-#       @user=#<User:0x007fec2902e5c8 @blogs=[...], @username="QTSort">>] 
+#       @user=#<User:0x007fec2902e5c8 @blogs=[...], @username="QTSort">>]
 #
 # blog1 = lissa.blogs.first
 # blog1.user                      # => lissa
@@ -73,3 +73,51 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+    @username = username
+    @blogs = []
+  end
+
+  def add_blog(date, text)
+
+    blog = Blog.new(date, @username, text)
+
+    @blogs << blog
+
+    @blogs = @blogs.sort_by { |blog| blog.date }.reverse
+
+    blog
+
+  end
+
+end
+
+class Blog
+  attr_accessor :date, :user, :text
+
+  def initialize(date, user, text)
+    @date = date
+    @user = user
+    @text = text
+
+  end
+
+  def summary
+    @text.split[0...10].join(' ')
+  end
+
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def ==(other)
+    date == other.date &&
+    user == other.user &&
+    text == other.text
+  end
+end
+

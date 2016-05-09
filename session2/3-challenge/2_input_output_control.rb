@@ -16,15 +16,54 @@
 
 
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
-# and when you think it is correct, you can test it with  $ rake 2:2
+# and when you think it is correct, you can test it with  $ rake 2:2 t
 
-def hi_hi_goodbye
-  # your code here
-
+def prompt
+  puts "Hello, please enter a number"
 end
 
+# Creates a method that simply puts the
+# user prompt to the screen.
 
+def hi_hi_goodbye
 
+# Creates a method that does the following:
+
+  prompt
+
+# Calls the prompt method
+
+  num = gets.chomp
+
+# Creates variable and assigns it the user input
+
+  while num != "bye"
+
+# While the user input is not equal to "bye" run
+# the below code
+
+    puts "hi " * num.to_i
+
+# Changes num variable from string to integer and
+# puts "hi" to the screen that number of times
+
+    prompt
+
+# Calls the prompt method again
+
+    num = gets.chomp
+
+# Updates the num variable with the new user input
+# and loop ends before restarting
+
+  end
+
+  puts "Goodbye"
+
+# Puts "Goodbye" to the screen once while loop has
+# ended
+
+end
 
 # This will just invoke the method if you run this program directly
 # This way you can try it out by running "$ ruby 2_input_output_control.rb"
