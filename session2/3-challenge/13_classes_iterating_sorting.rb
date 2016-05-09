@@ -72,7 +72,8 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
- require 'date'
+
+require 'date'
  
 class User
  
