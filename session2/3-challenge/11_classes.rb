@@ -18,5 +18,28 @@
 # receives a parameter indicating the number of bottles of beer initially on the wall.
 # If the parameter is less than zero, set the number of bottles to zero. Similarly,
 # if the parameter is greater than 99, set the number of beer bottles to 99
-# Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
+# Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero. 
 # Add any additional methods you find helpful.
+
+class BeerSong
+
+attr_accessor :num
+
+def initialize(num)
+	@num = num 
+	num = 0 if num < 0 
+	num = 99 if num > 0
+end
+
+
+def song
+	num.downto 1 do |i|
+	verse i
+	end
+end
+
+
+
+
+
+
