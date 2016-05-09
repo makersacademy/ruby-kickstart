@@ -16,7 +16,7 @@
 
 
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
-# and when you think it is correct, you can test it with  $ rake 2:2
+# and when you think it is correct, you can test it with  $ rake 2:2 t
 
 def prompt
   puts "Hello, please enter a number"

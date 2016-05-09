@@ -1,4 +1,4 @@
-# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
+# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!.
 
 # Write a program that outputs the lyrics for "Ninety-nine Bottles of Beer on the Wall"
 # Your program should print the number of bottles in English, not as a number. For example:

@@ -1,4 +1,4 @@
-# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
+# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!.
 
 # In this exercise you'll need to create two classes.
 

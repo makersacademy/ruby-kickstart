@@ -1,4 +1,4 @@
-# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
+# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!.
 
 # Define a class called Fraction
 # This class is used to represent a ratio of two integers

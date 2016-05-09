@@ -7,7 +7,7 @@
 # Standard input will be like "9 2\n" and will expect you to print
 # "11\n7\n18\n" to standard output.
 
-#
+# t
 
 def sum_difference_product
   a = gets.chomp.split(" ").map(&:to_i)

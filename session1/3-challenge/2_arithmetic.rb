@@ -16,3 +16,4 @@ def arithmetic2(a, b)
   end
 
 end
+
