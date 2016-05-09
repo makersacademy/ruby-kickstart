@@ -14,3 +14,8 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(arr)
+	new_arr = arr.map { |index| index % 3 }
+	new_arr = new_arr.reject { |index| index == 0 }
+	new_arr
+end
