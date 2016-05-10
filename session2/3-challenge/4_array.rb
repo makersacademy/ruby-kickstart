@@ -8,5 +8,23 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(arr)
+	arr2 = []
+	arr.each do |x| arr2 << x if arr.include?(x**2)
+	end
+	p arr2.sort
+end
+
+
+
+	#def square!
+	#	self.map {|num| num ** 2} 
+	#end
+	#new = []
+	#new << arr.square!
+	#print arr 
+	#print new
+
+
 
 
