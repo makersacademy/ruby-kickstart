@@ -7,6 +7,12 @@
 
 class String
   def every_other_char
+  arr = split("").to_a
+  index = arr.each_index.select {|x| x.even? }
+  arr.values_at(*index).join
   end
-  
+
 end
+
+
+  #arr[*index] == [] ? "" : arr[*index].join("")

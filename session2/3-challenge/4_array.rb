@@ -8,5 +8,10 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(array)
+   array.select {|n| array.include? n ** 2}.sort
+end
+  
 
 
+#array & array.map {|num| Math.sqrt(num).to_i }}.sort
