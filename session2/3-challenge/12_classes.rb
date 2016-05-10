@@ -24,11 +24,6 @@
 
 class Fraction
   
-  def gcd(a,b)
-    return a if b == 0
-    gcd(b, a%b)
-  end
-  
   attr_accessor 'numerator', 'denominator'
   def initialize (numerator, denominator)
      @numerator, @denominator = numerator, denominator
@@ -42,8 +37,15 @@ class Fraction
     "#{numerator}/#{denominator}"
   end
   
-  def lowest
-    devisor = gcd(numerator, devisor)  # Not sure where to go from here. Requires more work
+  def gcd(a,b)
+    return a if b == 0
+    gcd(b, a%b)
   end
+  
+  def lowest
+    devisor = gcd(numerator, denominator)
+    Fraction.new(numerator/devisor, @denominator/devisor)
+  end
+  
   
 end
