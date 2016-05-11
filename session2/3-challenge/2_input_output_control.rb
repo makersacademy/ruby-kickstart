@@ -18,9 +18,13 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
-def hi_hi_goodbye
-  # your code here
 
+def hi_hi_goodbye
+  while (line = gets) && (line !~ /bye/) # first is an assignment statement that returns a line or nil, and is thus boolean
+    line.to_i.times { print 'hi ' }
+    puts
+  end
+  puts "Goodbye!"
 end
 
 
