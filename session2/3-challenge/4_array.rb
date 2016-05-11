@@ -9,4 +9,12 @@
 # This time you will have to define the method, it's called: get_squares
 
 
-
+def get_squares(numbers)
+  squares = []
+  numbers.each do |x|
+   if numbers.include?(x**2)
+     squares << x
+   end
+  end
+  squares.sort
+end

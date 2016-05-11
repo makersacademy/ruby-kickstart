@@ -15,3 +15,10 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require 'prime'
+
+def prime_chars?(letters)
+  letters.join.length.prime?
+end
+
+#This is not working. Need to figure out what is wrong
