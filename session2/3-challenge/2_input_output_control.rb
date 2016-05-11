@@ -19,9 +19,23 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
+	puts "Enter a number"
+	num = gets.chomp
+	if /\d+/.match(num)
+		puts "hi " * num.to_i
+		hi_hi_goodbye
+	elsif num == "bye"
+		puts "goodbye"
+	else
+		puts "please type in a number or 'bye' "
+		hi_hi_goodbye
+	end
+end
+
+
   # your code here
 
-end
+
 
 
 
