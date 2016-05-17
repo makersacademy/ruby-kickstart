@@ -93,7 +93,7 @@ end
 class Blog
   attr_accessor :text, :date, :user
 
-  def initilaize(text, date, user)
+  def initialize(text, date, user)
     @text = text
     @date = date
     @user = user
