@@ -13,6 +13,17 @@
 
 
 def grade(num_books, has_read_books)
+    if has_read_books = true && num_books = true 
+        return grade A;
+    else 
+        if num_books < 10 
+            return grade D;
+        elsif num_books < 20
+            return grade C;
+        else
+            return grade B;
+        end
+    end    
 end
 
-
+rake 1:4

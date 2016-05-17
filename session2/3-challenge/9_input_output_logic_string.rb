@@ -23,13 +23,22 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
-def deaf_grandma
-
-end
 
 
+  def deaf_grandma
+    while line = gets
+      line.chomp!
+      break if line == "BYE"
+      if line == line.upcase && line != ""
+        puts "NO, NOT SINCE 1938!"
+      else
+        puts "HUH?! SPEAK UP, SONNY!"
+      end
+    end
+  end
 
-
+rake 2:9
+$ ruby 9_input_output_logic_string.rb
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.

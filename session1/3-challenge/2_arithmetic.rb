@@ -9,4 +9,11 @@
 # arithmetic2(-6, -7)  # => -3.5
 
 def arithmetic2(a, b)
+    if a < b 
+        return a/2.0;
+    else 
+        return b/2.0;
+    end
 end
+
+$ rake 1:2
