@@ -8,6 +8,12 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
-
-
-
+def staircase number
+staircase = Hash.new([])
+odd_ints = (1..number).to_a.select {|x| x.odd? }
+even_ints = (1..number).to_a.select {|x| x.even? }
+odd_ints.each do |odd_num|
+	staircase[odd_num] = even_ints.select { |even_num| even_num < odd_num }
+	end
+	return staircase
+end
