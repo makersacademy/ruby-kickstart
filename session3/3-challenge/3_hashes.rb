@@ -6,3 +6,10 @@
 #
 # Example:
 # word_count "The dog and the cat" # => {"the" => 2, "dog" => 1, "and" => 1, "cat" => 1}
+
+def word_count string
+word_hash = Hash.new(0)
+array = string.downcase.split(' ')
+array.each {|word| word_hash[word] += 1}
+return word_hash
+end
