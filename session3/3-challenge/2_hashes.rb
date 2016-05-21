@@ -10,4 +10,15 @@
 
 
 
+def staircase(n)
+  hash = Hash.new {|hash, key| hash[key] = [] }      # => {}
+  (1..n).each{|number| hash[number] if number.odd?}  # => 1..5
+  hash.map{|key, value| hash[key] = even_nums(key)}  # => [[], [2], [2, 4]]
+  hash                                               # => {1=>[], 3=>[2], 5=>[2, 4]}
+end                                                  # => :staircase
 
+def even_nums(n)
+  (1...n).map{|x| x if x.even?}.compact  # => [], [2], [2, 4]
+end                                      # => :even_nums
+
+staircase(5)  # => {1=>[], 3=>[2], 5=>[2, 4]}
