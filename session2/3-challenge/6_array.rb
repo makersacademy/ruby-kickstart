@@ -17,19 +17,6 @@
 
 
 =begin
-def prime_chars?(arr)
-	n = arr.join.length
-	if n == 1
-		return false
-	elsif n == 0
-		return false
-	else
-	!(2...n).detect{|x| n % x == 0}
-	end
-end
-=end
-
-=begin
 def prime_chars?(n)
 	#n = arr.join.length
 	if n == 1 || 0

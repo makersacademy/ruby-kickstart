@@ -27,15 +27,27 @@
 
 class Person
 
-  attr_accessor :name
+  attr_accessor :name, :age, :quote
 
-  def initialize( &initializer )
+  def initialize(options ={}, &initializer )
     @initializer = initializer
-    initializer.call self
+    @name = options[:name]
+    @age = options[:age]
+    @quote = options[:quote]
+    @initializer.call self if block_given?
   end
 
   def reinit
     @initializer.call self
   end
-
 end
+
+artist = Person.new :name => 'Prince' do |person|
+  person.age   = 47
+  person.quote = "Why don't you purify yourself in the waters of Lake Minnetonka?"
+end
+
+artist.age
+artist.age = 24
+artist.reinit
+artist.age
