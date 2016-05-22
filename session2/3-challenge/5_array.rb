@@ -13,4 +13,11 @@
 # mod_three [7]  # => [1]
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
+def mod_three(arr)
+new_arr = []
+arr.each {|x| new_arr << x % 3 if x % 3 != 0 }
+return new_arr
+end
+
+
 

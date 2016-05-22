@@ -6,5 +6,21 @@
 #
 
 def odds_and_evens(string, return_odds)
+res = ""
+
+  if return_odds == true
+    for i in 1..(string.length-1)
+      res << string[i] if  i % 2 != 0
+    end
+  else
+    for i in 0..(string.length-1)
+      res << string[i] if  i % 2 == 0
+    end
+  end
+  res
 
 end
+
+puts odds_and_evens("abcdef",false)
+
+
