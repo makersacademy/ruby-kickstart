@@ -9,3 +9,20 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+
+def alternate_words(string)
+	odd_words = []
+	no_punct = string.scan(/(\w+’?'?\w*)/)
+	no_punct.each_with_index{|value, index| odd_words << value if index.even?}
+	odd_words.flatten
+end
+
+=begin
+
+	odd_words = []
+	correct_concat = string.
+	no_punct = string.scan(/[^\?!@\$#%\^\&\\\*()-=_\+\[\]:;,\.\/<>?\|]/).join
+	no_punct.split(' ').each_with_index{|value, index| odd_words << value if index % 2 == 0}
+	odd_words
+
+=end

@@ -19,3 +19,14 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(*arg)
+  param = arg.shift
+  real_values = arg.map{|x| !!(x)}.each_slice(2).to_a
+  if param == true
+    real_values.map{|x| x[0] != x[1]}
+  else
+    real_values.map{|x| x[0] == x[1]}
+  end
+end
+
+# match_maker true,  true,  true, 0, nil

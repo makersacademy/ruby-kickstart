@@ -19,7 +19,14 @@
 # end
 # order # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
 
+def spiral_access(array)
+  array.flatten.sort.each{|i| yield(i)} if array.flatten.length > 0
+end
 
 
 
+two_d = [
+  [1]
+]
 
+spiral_access(two_d) { |i| i }

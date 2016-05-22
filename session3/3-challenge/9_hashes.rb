@@ -29,3 +29,16 @@
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
 
+def shared(a,b)
+  hash = Hash.new { |hash, key| hash[key] = []}
+  (a + b).uniq.each{|ele| hash[ele]}
+  hash.each do|key, value|
+     a.include?(key) ? value.push(true) : value.push(nil)
+     b.include?(key) ? value.push(true) : value.push(nil)
+  end
+  included = []
+  hash.each{|key, value| included << key if value == [true, true]}
+  return [hash].push(included)
+end
+
+shared [1,2,3], [1,2,4]

@@ -8,7 +8,7 @@
 # it should have a method blogs which returns an array of all blogs the user has written
 # they should be in reverse chronological order (newest first)
 #
-# The other class is called Blog that could be used to store an entry for your web log.
+# The other class is called Blog that could be used to store an entry for your web log.d
 # The class should have a getter and setter methods: text , date , user
 # its initialize method should receive the date, user , and text
 # have a method called summary that returns the first 10 words from the text (or the entire text if it is less than 10 words)
@@ -18,7 +18,6 @@
 #      def ==(other)
 #        return self.date == other.date
 #      end
-
 
 
 # ==========  EXAMPLE  ==========
@@ -31,7 +30,7 @@
 # lissa.blogs                     # => [#<Blog:0x007fec28c49b88
 #     @date=#<Date: 2010-05-28 ((2455345j,0s,0n),+0s,2299161j)>,
 #     @text="Sailor Mars is my favourite",
-#       @user=#<User:0x007fec2902e5c8 @blogs=[...], @username="QTSort">>] 
+#       @user=#<User:0x007fec2902e5c8 @blogs=[...], @username="QTSort">>]
 #
 # blog1 = lissa.blogs.first
 # blog1.user                      # => lissa
@@ -73,3 +72,45 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+module Compare
+    def ==(other)
+       return @date == other.date && @text == other.text && @user == other.user
+  end
+end
+
+class User
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+  self.username = username
+  @blogs = []
+  end
+
+
+  def add_blog(date, text)
+    new_blog = Blog.new(date, self, text)
+    @blogs << new_blog
+    @blogs = blogs.sort_by { |x| x.date }.reverse
+    new_blog
+  end
+end
+
+class Blog
+  include Compare
+  attr_accessor :text, :user, :date
+
+  def initialize(date, user, text)
+  @date = date
+  @user = user
+  @text = text
+  end
+
+  def summary
+    self.text.split(' ')[0,10].inject{|sum,word| sum + ' ' + word}
+  end
+
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+end
+
