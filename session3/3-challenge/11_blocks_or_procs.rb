@@ -31,25 +31,9 @@
 #   end
 # end
 
+def aray_init(size=5, &block)
+  block ||= Proc.new { |i| (100 * i).to_s }
+  Array.new(size, &block)
+end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+rake 3:11
