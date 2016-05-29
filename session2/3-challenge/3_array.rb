@@ -7,6 +7,16 @@
 
 class String
   def every_other_char
+    array = []
+    if self == ''
+      return ''
+    else
+      self.chars.each_with_index do |el, index| 
+        if index.even? then 
+          array << el
+        end
+      end
+   end
+    array.join('')
   end
-  
 end

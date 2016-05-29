@@ -15,3 +15,13 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+def prime_chars?(array)
+  require 'prime'
+    if array == [] or array == ['']
+      puts "error"
+    else
+      num = array.join.length
+      Prime.prime?(num)
+     end
+end
