@@ -32,9 +32,17 @@
 # end
 
 
-
-
-
+def array_init(para=5, &block)
+   if block_given? and para.is_a? Integer
+     (0..(para - 1)).to_a.map(&block)
+   elsif block_given? and !para.is_a? Integer
+     (0..(para.size - 1)).to_a.map(&block)
+   elsif !block_given? and para.is_a? Integer
+     (0..(para - 1)).to_a.map {|i| (i * 100).to_s}
+   else
+     (0..(para.size - 1)).to_a.map {|i| (i * 100).to_s}
+   end
+end
 
 
 

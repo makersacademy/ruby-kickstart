@@ -19,3 +19,17 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(first_parameter, *arg)
+  array = []
+  arg.each_slice 2 do |first, last|
+    first  = !!first
+    last   = !!last
+    result = if first_parameter
+               first != last
+             else
+               first == last
+             end
+    array << result
+  end
+  array
+end

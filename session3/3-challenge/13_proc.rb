@@ -55,6 +55,12 @@
 # end       # => ["a", "m", "r", 1, 3, 4, 9, 2.5, 9.0, 25.8]
 
 
-
+def your_sort(arg, &block)
+  if !block_given?
+    arg.sort
+  else
+    arg.sort(&block)
+  end
+end
 
 
