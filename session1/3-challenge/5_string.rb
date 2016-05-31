@@ -5,4 +5,6 @@
 # add_more_ruby("Sad times are ahead!")         # => "Happy times are ahead!"
 
 def add_more_ruby(string)
+	string = string.gsub 'sad', 'happy'
+	string = string.gsub 'Sad', 'Happy'
 end
