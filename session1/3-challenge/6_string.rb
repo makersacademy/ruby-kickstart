@@ -6,5 +6,16 @@
 #
 
 def odds_and_evens(string, return_odds)
+	if return_odds
+		# return the odd characters
+		string.each_char do|c|
+			puts c
+		end
 
+	else
+		#return the even characters
+
+	end
 end
+
+puts "123456789".gsub(/(.)./, '\1@')
