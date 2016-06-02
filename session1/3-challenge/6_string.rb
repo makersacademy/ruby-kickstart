@@ -6,16 +6,36 @@
 #
 
 def odds_and_evens(string, return_odds)
+	
+	newstring = ""
 	if return_odds
 		# return the odd characters
 		string.each_char do|c|
-			puts c
+			if string.index(c).odd?
+				newstring = newstring + c
+			end
+			
 		end
+		return newstring
+	end
+		
 
-	else
+	if !return_odds
 		#return the even characters
-
+		string.each_char do|c|
+			if string.index(c).even?
+				newstring = newstring + c
+			end
+		end
+		return newstring
 	end
 end
 
-puts "123456789".gsub(/(.)./, '\1@')
+
+	#puts newstring
+
+
+
+
+puts odds_and_evens('112233445566778899', true)
+
