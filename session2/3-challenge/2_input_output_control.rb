@@ -20,7 +20,13 @@
 
 def hi_hi_goodbye
   # your code here
-
+  while (line = gets.chomp) != "bye"
+  	for i in 1..(line.to_i)
+  		print "hi "
+  	end
+  	puts "\n"
+  end
+  puts "goodbye"
 end
 
 
