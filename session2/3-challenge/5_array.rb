@@ -14,3 +14,7 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(numbers)
+	numbers = numbers.map { |number| number * number }  #map the new values
+	numbers = numbers.select { |number| number.even? }  #filter out the zeros or whatever
+end

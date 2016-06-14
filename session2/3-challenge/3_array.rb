@@ -7,6 +7,23 @@
 
 class String
   def every_other_char
+
+  	retval = ''
+  	return '' if self == ''
+  
+  	for i in 0..self.length
+  		#puts i
+  		# puts self[i]
+  		retval << self[i].to_s if i.even?
+  	end
+
+  	#puts retval
+  	return retval
   end
+
   
 end
+
+
+
+ # puts "12".every_other_char
