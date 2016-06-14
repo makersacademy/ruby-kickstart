@@ -12,7 +12,7 @@
 
 def get_squares(nums)
 
-	da_squares = nums.select { |number| nums.include? number*number }.sort
+	da_squares = nums.select { |number| nums.include? number*number }
 
 	da_squares.sort
 end
