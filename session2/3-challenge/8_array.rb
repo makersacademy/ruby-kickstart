@@ -6,3 +6,8 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(nums)
+	
+end
+
+p got_three? [1,2,2,2,3]
