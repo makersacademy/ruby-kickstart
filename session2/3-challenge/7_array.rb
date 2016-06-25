@@ -11,7 +11,7 @@
 
 def alternate_words(sentence)
 	punctuation = ["!", "@", "$", "#", "%", "^", "&", "*", "(", ")", "-", "=", "_", "+", "[", "]", ":", ";", ",", ".", "/", "<", ">", "?", "\\", "|"]
-	punctuation.each {|char| sentence.gsub! char, '' }
+	punctuation.each {|char| sentence = sentence.gsub char, ' ' }
 
 	sentence = sentence.split
 	#p sentence
@@ -40,5 +40,5 @@ def alternate_words(sentence)
 
 end
 
- alternate_words("Lorem ipsum dolor sit amet.")
+# alternate_words("Lorem ipsum dolor sit amet.")
 p alternate_words "Lorem ipsum dolor sit amet."
