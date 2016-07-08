@@ -8,7 +8,7 @@
 # it should have a method blogs which returns an array of all blogs the user has written
 # they should be in reverse chronological order (newest first)
 #
-# The other class is called Blog that could be used to store an entry for your web log.
+# The other class is called Blog that could be used to store an entry for your web blog.
 # The class should have a getter and setter methods: text , date , user
 # its initialize method should receive the date, user , and text
 # have a method called summary that returns the first 10 words from the text (or the entire text if it is less than 10 words)
@@ -73,3 +73,24 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+
+	attr_reader :username
+
+	def initialize(username)
+		@username = username
+	end
+
+end
+
+class Blog
+
+	attr_accessor :text , :date, :user
+
+end
+
+joel = User.new 'joel'
+
+p joel.username
+
