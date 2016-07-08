@@ -6,3 +6,8 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three? arr
+
+!arr.select.with_index{|x,i| arr[i]==arr[i+1] && arr[i]==arr[i+2]}.empty?
+
+end

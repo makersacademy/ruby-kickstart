@@ -7,4 +7,6 @@
 
 def odds_and_evens(string, return_odds)
 
+return_odds==true ? string.split("").select.with_index{|x,i| i.odd?}.join() :  string.split("").select.with_index{|x,i| i.even?}.join() 
+
 end
