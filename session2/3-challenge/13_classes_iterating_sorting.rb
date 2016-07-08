@@ -82,15 +82,47 @@ class User
 		@username = username
 	end
 
+	def blogs=(other)
+		@blogs = []
+		@blogs << other
+	end
+
+	def blogs
+		return @blogs
+	end
+
 end
 
 class Blog
 
-	attr_accessor :text , :date, :user
+	attr_accessor  :date, :user, :text
+
+	def initialize(date, user, text)
+		@date = date
+		@user = user
+		@text = text
+
+		user.blogs = self
+	end
+
+	def summary
+		sum = text.split
+
+		return text if sum.length < 10 
+
+		return sum[0..9].join(" ")
+	end
+
+	def ==(other)
+		return self.date == other.date && self.user == other.user && self.text == other.text
+	end
 
 end
 
 joel = User.new 'joel'
 
 p joel.username
+
+
+p joel.blogs
 
