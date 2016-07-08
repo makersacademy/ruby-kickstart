@@ -15,3 +15,9 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+def prime_chars? arr
+require 'prime'
+return if arr.empty?
+arr.map(&:length).inject(:+).prime?
+end
