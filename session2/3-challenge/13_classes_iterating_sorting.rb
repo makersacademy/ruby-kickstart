@@ -76,19 +76,24 @@ require 'date'
 
 class User
 
-	attr_reader :username
+	attr_accessor :username, :my_blogs
 
 	def initialize(username)
 		@username = username
+		@my_blogs = []
 	end
 
 	def blogs=(other)
-		@blogs = []
-		@blogs << other
+		@my_blogs << other
 	end
 
 	def blogs
-		return @blogs
+		sortedblogs = my_blogs.sort_by{ |b| b.date }.reverse
+		return sortedblogs
+	end
+
+	def add_blog(date, text)
+		Blog.new date, self, text
 	end
 
 end
@@ -117,12 +122,24 @@ class Blog
 		return self.date == other.date && self.user == other.user && self.text == other.text
 	end
 
+	def entry
+		return "#{user.username} #{date}\n#{text}"
+	end
+
 end
 
 joel = User.new 'joel'
 
 p joel.username
 
+
+
+
+# post = Blog.new Date.today, joel, "yay blogs! are 1 2 3 4 5 6 7 9 9 9 9 "
+
+# p post.summary
+
+joel.add_blog Date.today, "another post"
 
 p joel.blogs
 
