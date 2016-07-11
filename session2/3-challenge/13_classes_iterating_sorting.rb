@@ -83,8 +83,8 @@ class User
 		@my_blogs = []
 	end
 
-	def blogs=(other)
-		@my_blogs << other
+	def blogs_append(other)
+		my_blogs << other
 	end
 
 	def blogs
@@ -107,15 +107,11 @@ class Blog
 		@user = user
 		@text = text
 
-		user.blogs = self
+		user.blogs_append self
 	end
 
 	def summary
-		sum = text.split
-
-		return text if sum.length < 10 
-
-		return sum[0..9].join(" ")
+		return text.split[0..9].join(" ")
 	end
 
 	def ==(other)
