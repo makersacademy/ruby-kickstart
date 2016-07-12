@@ -76,20 +76,16 @@ require 'date'
 
 class User
 
-	attr_accessor :username, :my_blogs
+	attr_accessor :username, :blogs
 
 	def initialize(username)
 		@username = username
-		@my_blogs = []
+		@blogs = []
 	end
 
 	def blogs_append(other)
-		my_blogs << other
-	end
-
-	def blogs
-		sortedblogs = my_blogs.sort_by{ |b| b.date }.reverse
-		return sortedblogs
+		blogs << other
+		blogs = blogs.sort_by{ |b| b.date }.reverse
 	end
 
 	def add_blog(date, text)
