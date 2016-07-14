@@ -4,4 +4,12 @@
 # reverse_map(1, 2, 3) { |i| i * 2 }      # => [6, 4, 2]
 # reverse_map(1, 2, 3) { |i| i * 2 }      # => [6, 4, 2]
 
-'test' # => "test"
+def reverse_map(*args, &block)
+	out = []
+
+	args.reverse!.each { |item| out << block.call(item) }
+
+	return out
+end
+
+# reverse_map(1, 2, 3) { |i| i * 2 } # => [6, 4, 2]
