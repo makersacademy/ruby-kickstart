@@ -6,5 +6,33 @@
 #
 
 def odds_and_evens(string, return_odds)
+	i = 0
+	newstring = ""
 
+	if return_odds
+		# return the odd characters
+		
+		while i < string.length
+			if i.odd?
+				puts string[i]
+				newstring << string[i]
+			end
+			i = i +1
+		end
+
+	else
+		#return the even characters
+		while i < string.length
+			if i.even?
+				puts string[i]
+				newstring << string[i]
+			end
+			i = i +1
+		end
+
+	end
+
+	return newstring
 end
+
+#puts odds_and_evens('1122334455667789', true)

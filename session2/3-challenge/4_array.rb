@@ -10,3 +10,11 @@
 
 
 
+def get_squares(nums)
+
+	da_squares = nums.select { |number| nums.include? number*number }
+
+	da_squares.sort
+end
+
+#puts get_squares [9,3,2,4]

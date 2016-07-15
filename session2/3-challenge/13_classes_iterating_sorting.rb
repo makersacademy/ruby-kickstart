@@ -8,7 +8,7 @@
 # it should have a method blogs which returns an array of all blogs the user has written
 # they should be in reverse chronological order (newest first)
 #
-# The other class is called Blog that could be used to store an entry for your web log.
+# The other class is called Blog that could be used to store an entry for your web blog.
 # The class should have a getter and setter methods: text , date , user
 # its initialize method should receive the date, user , and text
 # have a method called summary that returns the first 10 words from the text (or the entire text if it is less than 10 words)
@@ -73,3 +73,68 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+
+
+
+	attr_accessor :username, :blogs
+
+	def initialize(username)
+		@username = username
+		@blogs = []
+	end
+
+	def blogs_append(other)
+		blogs << other
+		blogs.sort_by!{ |b| b.date }.reverse!
+
+	end
+
+	def add_blog(date, text)
+		Blog.new date, self, text
+	end
+
+end
+
+class Blog
+
+	attr_accessor  :date, :user, :text
+
+	def initialize(date, user, text)
+		@date = date
+		@user = user
+		@text = text
+
+		user.blogs_append self
+	end
+
+	def summary
+		return text.split[0..9].join(" ")
+	end
+
+	def ==(other)
+		return self.date == other.date && self.user == other.user && self.text == other.text
+	end
+
+	def entry
+		return "#{user.username} #{date}\n#{text}"
+	end
+
+end
+
+joel = User.new 'joel'
+
+p joel.username
+
+
+
+
+# post = Blog.new Date.today, joel, "yay blogs! are 1 2 3 4 5 6 7 9 9 9 9 "
+
+# p post.summary
+
+joel.add_blog Date.today, "another post"
+
+p joel.blogs
+

@@ -13,7 +13,7 @@ class String
     self # => "abc"
   end
 end
-"abc".existential
+"abc".existential # => 
 
 
 # For a given context, you can always see your instance

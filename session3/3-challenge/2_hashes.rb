@@ -10,4 +10,21 @@
 
 
 
+def staircase(num)
 
+	range = (1..num).to_a # => [1, 2, 3, 4, 5]
+
+	odds = range.reject { |n| n.even? } # => [1, 3, 5]
+	evens = range.reject {|n| n.odd? } # => [2, 4]
+
+
+	out = {}
+	for n in odds 
+		out[n] = evens.reject {|i| i > n }
+	end
+
+	return out
+
+end
+
+# staircase(5) # => {1=>[], 3=>[2], 5=>[2, 4]}

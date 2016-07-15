@@ -15,3 +15,23 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(strings)
+	#flatten
+	newstr = ""
+	strings.each { |str| newstr << str }
+	len = newstr.length
+
+	#check for auto primes
+	return false if len < 2
+	return true if len == 2
+
+	#check for prime
+	for i in 2..(len - 2)
+		return false if len % i == 0
+	end
+
+	return true
+
+end
+
+# p prime_chars?( ['ab'] )
