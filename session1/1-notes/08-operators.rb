@@ -15,7 +15,12 @@
 # (% tells you the remainder)
 
 # Ruby wants to help you, but syntactic sugar wouldn't be much help
-# if it changed the semantics of math, so Ruby respects order of operations.
+# if it changed the semantics of math, so Ruby respects order of operations,
+# which is a stardard order for calculations involving more than one arithmetic
+# operation. Rule 1 is perform any calculations inside parentheses.
+# Rule two is next perform all multiplications and divisions, working from left to right
+# Rule three is lastly perform all additions and subtractions, working from left to right
+
 2 * 3 + 10   # => 16
 2 + 3 * 10   # => 32
 
