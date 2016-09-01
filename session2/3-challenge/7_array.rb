@@ -9,3 +9,17 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+
+def alternate_words(sentence)
+	#split after every character, into an array
+	#iterate over the array using each.
+	#iterating over each character, refreshes the variable set as 'sentence'
+	#replacing the punctuation character with a space.
+  "!@$#%^&*()-=_+[]:;,./<>?\\|".split(//).each do |char|
+  	sentence = sentence.gsub(char, ' ')
+  end
+  words = sentence.split
+  #this iterates over each two elements in the array of split words, 
+  #and collects the first element into a new array
+  words.each_slice(2).collect(&:first)
+end
