@@ -6,3 +6,8 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+#check every 3 consecutive numbers
+#see if they all match eachother
+def got_three?(input)
+	input.each_cons(3).detect {|a, b, c| a == b && b == c}
+end
