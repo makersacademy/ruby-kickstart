@@ -17,4 +17,18 @@
 
 class Person
 
+attr_accessor :name, :age
+
+  def initialize(name, age)
+  	@name = name
+  	@age = age
+  end
+
+#calling this method on the object, will return the value of the age plus 1
+#stores the new value in the variable as it uses += instead of just +
+#so everytime this method is called, a new age is used, and a new birthday is returned
+  def birthday
+  	@age += 1
+  end
+
 end
