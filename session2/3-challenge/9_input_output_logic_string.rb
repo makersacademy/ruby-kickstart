@@ -23,14 +23,32 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
+#get user to type something in, chomp off the new line
+#if the user doesn't type in all capitals, then the output is huh speak up
+#if the user types in all capitals, the output is no not since 1938
+#loop this until the user inputs BYE
 def deaf_grandma
+  #sets user_input as a new empty string object
+  user_input = ""
+  #until the user_input is equals to "BYE"
+  #get the user_input and chomp off the new line
+   until user_input == "BYE"
+   user_input = gets.chomp
+   #within the until loop, if the user input is not the same as user input all caps
+   #or it is an empty string still, then put the following string
+    if user_input != user_input.upcase  || user_input == ""
+   	 puts "HUH?! SPEAK UP, SONNY!"
+    #else if it is all caps, AND the input is NOT "BYE" then put the following
+    elsif user_input == user_input.upcase && user_input != "BYE"
+   	 puts "NO, NOT SINCE 1938!"
+     #finally, if none of the above is true, then check for BYE, then which it breaks.
+    else user_input == "BYE"
+    end
+   end
 
 end
-
-
-
-
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
 deaf_grandma if $0 == __FILE__
+
