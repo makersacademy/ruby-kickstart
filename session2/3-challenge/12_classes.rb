@@ -45,6 +45,8 @@ class Fraction
 
     def lowest
     divisor = gcd(@numerator, @denominator)
+    #creates a new class object, with the new numerator and denominator values
+    #so when you call this method, it creates a new object to use with these numbers
     Fraction.new(numerator/divisor, denominator/divisor)
 	end
 
@@ -60,7 +62,7 @@ class Fraction
     #if the above is not true, it runs the method again, with b as the first num
     #and the remainder of a/b as the second number
     gcd(b, a%b)
-    
+
   end
 
 end
