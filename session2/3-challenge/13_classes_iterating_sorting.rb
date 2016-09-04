@@ -13,14 +13,8 @@
 # its initialize method should receive the date, user , and text
 # have a method called summary that returns the first 10 words from the text (or the entire text if it is less than 10 words)
 #
-# Two blogs should be equal to eachother if they have the same user, date, and text
-# here is a partially filled out example of how to define the == operator:
-#      def ==(other)
-#        return self.date == other.date
-#      end
 
-
-
+#
 # ==========  EXAMPLE  ==========
 #
 # lissa = User.new 'QTSort'
@@ -72,4 +66,79 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
-require 'date'
+
+
+# 1. create a new class called User
+# 2. initialize it with 1 arugment called username - create instance variable
+# 3. define a method called add_blog, with two arguments, date and text
+# 4. define a method called blogs, returns all blogs user's have written, in to an array
+# the latest one should be first
+# 
+# 1. create another class called Blog
+# 2. create getter and setter methods for text, date, user (attr_accessor)
+# 3. initialize it with 3 arguments, date, user, text - create instance variable
+# 4. create a method called summary to return the first 10 words
+# 5. 
+
+require 'date' #this loads both the Date and DateTime classes
+
+class User #create new class
+  
+  attr_accessor :username, :blogs #allow read and write access
+
+	def initialize(username)#initialize new objects with these instance varialbes
+		@username = username
+		@blogs = [] #creates new array here to add to later
+	end
+
+  def add_blog(date, text)
+    added_blog = Blog.new(date, self, text) #create a new Blog class object
+    #with the date and time taken from add_blog method arguement, and the same
+    #value 'self' from the user value initialized with in the Blog class
+    blogs << added_blog #push this new blog object to the blogs array
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse #sorts the blog order
+    #using the .date method
+    added_blog #returns the added blog
+  end
+
+end
+
+class Blog
+	attr_accessor :date, :user, :text
+
+	def initialize(date, user, text)
+	  @date = date
+	  @user = user
+	  @text = text
+	end
+
+	def summary
+		text.split[0..9].join(" ") #splits the text into an array (first 10 words)
+		#then joins them back together as a string with a space inbetween
+	end
+
+	def entry
+		"#{user.username} #{date}\n#{text}" #prints out the string using .entry
+	end
+
+# Two blogs should be equal to eachother if they have the same user, date, and text
+# here is a partially filled out example of how to define the == operator:
+#      def ==(other)
+#        return self.date == other.date
+#      end
+	def ==(other)
+		self.date == other.date && self.user == other.user && self.text == other.text
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
