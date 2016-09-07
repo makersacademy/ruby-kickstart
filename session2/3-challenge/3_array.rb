@@ -7,6 +7,9 @@
 
 class String
   def every_other_char
+  	output = ""
+  	  chars = split('')
+  	  chars.each_slice(2) {|char, other| output << "#{char}"}
+  	  output
   end
-  
 end

@@ -22,9 +22,47 @@
 # f.to_s               # => "50/100"
 # f.to_f               # => 0.5
 
+# new class object, that takes two Integers
+# first Integer is called numerator and the second is denominator
+# inititalize the object with these two names, setting the instance variables that can be accessed whenever in the object scope
+# allow the Integers to be reset 
+# create a method called to_f - returns the ratio as a float = numberator / denominator to_f
+# create a method called lowest - using the gcd to divide both numbers by
+# create a method called to_s which returns the fraction as a string
 class Fraction
-  def gcd(a,b)
+
+  attr_accessor :numerator, :denominator
+
+	def initialize(numerator, denominator)
+		@numerator = numerator
+		@denominator = denominator
+	end
+
+    def to_f
+    	@numerator / @denominator.to_f
+	end
+
+
+    def lowest
+    divisor = gcd(@numerator, @denominator)
+    #creates a new class object, with the new numerator and denominator values
+    #so when you call this method, it creates a new object to use with these numbers
+    Fraction.new(numerator/divisor, denominator/divisor)
+	end
+
+	def to_s
+		"#{@numerator}/#{@denominator}"
+	end
+
+
+#this returns a number that you divide both numbers by to get a new fraction
+  def gcd(a, b)
+  	#if this line is true, it just returns a
     return a if b == 0
+    #if the above is not true, it runs the method again, with b as the first num
+    #and the remainder of a/b as the second number
     gcd(b, a%b)
+
   end
+
 end

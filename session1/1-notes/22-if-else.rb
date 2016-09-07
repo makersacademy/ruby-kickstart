@@ -1,4 +1,6 @@
 # Lets say you actually want to do something conditionally
+# Any time you have an expression it returns an object (the last thing that is evaluated)
+
 
 if 4 == (2 + 2)
   "I get evaluated"   # => "I get evaluated"
