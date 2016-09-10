@@ -33,8 +33,12 @@
 #   return: [["American Redbud Tree", "1 to 2 feet", "$5.95"],
 #            ["Autumn Flowering Cherry", "2 to 4 feet", "$8.95"]]
 #
-
-
-
-
+def tree_parser(s)
+  array = []
+  s.each_line do |line|
+    line =~ /^(.*)[,;] which ships (at|@) (.*), cost:? (.*)$/i
+    array << [$1, $3, $4]
+  end
+  array
+end
 

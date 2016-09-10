@@ -28,6 +28,11 @@
 #   The concat method will do the same thing as the << method
 
 class ApplicationController
-  def body_class
+
+  def body_class.<<(str)
+  @orignal_str = ""
+     @original_str << string
   end
+  
 end
+

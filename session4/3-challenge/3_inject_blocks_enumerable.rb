@@ -26,3 +26,9 @@
 #   The fourth time the block is passed  35 , 10 and it returns 45
 #   The method then returns 45
 #
+def passthrough(en_ob, initial, &block)
+   en_ob.each do |el|  
+   initial = block.call(initial,el)
+   end
+   initial
+end

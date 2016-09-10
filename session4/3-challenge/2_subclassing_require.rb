@@ -20,3 +20,16 @@
 # stack.push 2
 # stack # => [1, 2]
 
+require File.dirname(__FILE__) + "/1"
+
+class  StackInDisguise < Stack
+  def inspect
+    ar = []
+    current = @head
+    while current
+      ar << current.data
+      current = current.next_node
+    end
+    ar.reverse.inspect
+  end
+end
