@@ -25,4 +25,31 @@
 # ff.min                        # => 1
 # ff.select { |num| num.odd? }  # => [1, 5, 3]
 
+module ListInspect
+  def inspect
+    result = '#<List: '
+    each { |element| result << "#{element.inspect}, " }
+    result.sub!(/, $/, '')
+    result + '>'
+  end
+end
 
+
+class List
+  include Enumerable
+  include ListInspect
+  
+  def initialize
+  @ar = []
+  end
+  
+  def <<(num)
+  @ar << num
+  self
+  end
+  
+  def each(&block)
+    @ar.each(&block)
+  end
+  
+end

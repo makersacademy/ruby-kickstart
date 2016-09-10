@@ -12,5 +12,5 @@ puts "My two numbers are #{small_number} and #{neg_number.abs} (all positive her
   # My two numbers are 5 and 97 (all positive here)
   #
 
-# Notice we can do anything inside of the #{} we want, including referencing objects and calling methods on them.
+# Notice we can do anything inside of the #{} we want, including referencing objects and calling methods on them. if i knew this!!!
 

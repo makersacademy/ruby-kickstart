@@ -24,10 +24,20 @@
 # USER:     BYE
 
 def deaf_grandma
-
+   answer = gets.chomp
+   while answer  != 'BYE'
+     if answer != answer.upcase or answer == ''
+       puts 'HUH?! SPEAK UP, SONNY!'
+       answer = gets.chomp
+     else
+       puts 'NO, NOT SINCE 1938!'
+       answer = gets.chomp
+     end
+  end
 end
 
-
+#if you type in downcase program return HUH? SPEAK UP, SONNY! if you type in all upcase , program return NO, NOT SINCE 1938
+#the program stops when you type in BYE.
 
 
 

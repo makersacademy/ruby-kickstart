@@ -1,4 +1,4 @@
-# Befor tackling this problem, go and digest the lecture on RECURSION:
+# Before tackling this problem, go and digest the lecture on RECURSION:
 
 # https://vimeo.com/24716767
 

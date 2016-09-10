@@ -5,3 +5,6 @@
 #
 # longest_method o # => :this_is_a_really_really_really_really_really_long_method_name
 
+def longest_method(arg)
+  arg.methods.select {|el| el if el.size >= 26}.sort.last
+end

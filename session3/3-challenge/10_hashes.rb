@@ -32,3 +32,17 @@
 
 
 
+def pathify(arg=Hash.new)
+  return arg.map { |key| '/' + key } if arg.is_a? Array
+  
+  result = []
+  arg.each do |main, second|
+    main = '/' + main    
+    second_dir = pathify second       
+    second_dir.each do |second_new|       
+      result << (main + second_new)
+    end
+  end
+  result
+end
+

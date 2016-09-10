@@ -2,5 +2,5 @@
 # Have the method below return the right regex:
 
 def bar_regex
-  
+  /bar/i
 end

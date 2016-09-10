@@ -9,5 +9,12 @@
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
 
-
-
+def staircase(arg)
+  new_hash = {}
+  1.upto(arg) do |odd_num| next if odd_num.even?
+  mix_keys_value = Array.new(odd_num) {|el| el + 1}
+  values = mix_keys_value.select {|ev| ev.even?}
+  new_hash[odd_num] = values
+  end
+  new_hash
+end

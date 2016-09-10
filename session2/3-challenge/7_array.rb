@@ -9,3 +9,17 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+#to clear the can't i will use gsub.(/'/, '') 
+#to remove the , I will use, gsub(/,/, '')
+
+
+def alternate_words(arg)
+  array = []
+  new = arg.gsub(/[,.?;\-\(\)]/, ' ').split(' ')
+  new.each_with_index do |item,index|
+  if (index % 2 == 0) then 
+    array.push(item)
+  end
+  end
+    array
+end
