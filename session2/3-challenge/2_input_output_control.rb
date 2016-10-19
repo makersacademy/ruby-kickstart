@@ -19,11 +19,18 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
+  puts "Please enter a number."
 
+  while number = gets.chomp
+    case number
+    when "bye"
+      puts "goodbye"
+      break
+    else
+    puts "hi " * number.to_i
+  end
 end
-
-
+end
 
 
 # This will just invoke the method if you run this program directly
