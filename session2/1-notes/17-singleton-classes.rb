@@ -34,7 +34,10 @@ obj.singleton_methods # => [:greet, :about]
 #   has a singleton class, then do singleton classes have
 #   singleton classes?
 #
+#Yes
+#
 #   How can you test your answer out?
+# call .singleton_class on .singleton_class
 
 obj = Object.new
 puts obj.singleton_class.singleton_class # => #<Class:#<Class:#<Object:0x007fbd6210e3d0>>>
