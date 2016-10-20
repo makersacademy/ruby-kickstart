@@ -31,7 +31,7 @@
 # lissa.blogs                     # => [#<Blog:0x007fec28c49b88
 #     @date=#<Date: 2010-05-28 ((2455345j,0s,0n),+0s,2299161j)>,
 #     @text="Sailor Mars is my favourite",
-#       @user=#<User:0x007fec2902e5c8 @blogs=[...], @username="QTSort">>] 
+#       @user=#<User:0x007fec2902e5c8 @blogs=[...], @username="QTSort">>]
 #
 # blog1 = lissa.blogs.first
 # blog1.user                      # => lissa
@@ -73,3 +73,53 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+#create class
+class User
+  #attr_accessor to read/write username and blogs
+  attr_accessor :username, :blogs
+
+#initialize function
+  def initialize(username)
+    self.username = username
+    self.blogs    = []
+  end
+
+#add_blog function that puts the blogs into the array in the reverse order
+  def add_blog(date, text)
+    added_blog = Blog.new(date, self, text)
+    blogs << added_blog
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+    added_blog
+  end
+end
+
+
+#blog class
+class Blog
+  #attr_accessor to set/read date user and text
+  attr_accessor :date, :user, :text
+
+# initialzie function with date, user and text
+  def initialize(date, user, text)
+    self.date = date
+    self.user = user
+    self.text = text
+  end
+
+#summary function
+  def summary
+    text.split[0..9].join(' ')
+  end
+
+#entry function
+  def entry
+    "#{user.username} #{date}\n#{text}"
+  end
+#other function
+  def ==(other)
+    date   == other.date &&
+      user == other.user &&
+      text == other.text
+  end
+end
