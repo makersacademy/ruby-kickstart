@@ -1,0 +1,136 @@
+Welcome to RubyKickstart!
+=========================
+
+**RubyKickstart is an interactive guide to learning the Ruby programming language.**
+
+**Disclaimer - this is a shameless continuation of the original Ruby Kickstart by Josh Cheek. I have no intention of reinventing the wheel, and I gladly stand on the shoulder of giants :)
+
+Our recommended guide to starting this project:
+============
+
+* Fork this repo to your own Github
+* Clone it down to your local machine
+* Run `bundle install` (you may need an extra something to get this working ... )
+* Answer the first question (in the challenge section)
+* Commit through github and push it up to your repo
+* Send a pull request straight away (yes - after your first answer)
+* Answer the second question (in the challenge section)
+* Commit throught github and push it up to your repo
+
+... the PR will automatically update itself! 
+
+The course consists of six sessions, all of which have common features:
+
+  **Notes**
+  ---------
+  Each session has a set of notes files, which are just simple Ruby programs that are heavily commented to walk you through the material of that session. You should go through this section first.
+
+  The first item in each section has a link to a video that you should watch as you go along. The notes are synched with the videos - try to keep up, and add your own notes for clarification wherever you need it.
+
+  **Examples**
+  ------------
+  Examples are sparse, to say the least. They're full Ruby programs that demonstrate the material taught in the notes.
+
+  You can run them on your own machine, and modify them to experiment with the ideas they demonstrate.
+
+  Once you've gone through the notes for a section, have a look and a play with the examples to check you fully understand what's going on.
+
+  *PLEASE BE ENCOURAGED TO ADD AS MANY EXAMPLES AS YOU CAN!*
+
+  **Challenges**
+  --------------
+  Challenges are found in each session, and you should try to tackle all of them BEFORE looking at any of the solutions. They provide fun programming exercises for you to work through, so you have something to work on that checks and develops your understanding of the session's information.
+
+  Challenges are taken from a few different places. Several are taken from different books, including the third edition of Absolute Java by Walter Savitch, and one was taken from Learn to Program by Chris Pine, a book to teach programming to absolute beginners, using Ruby.
+
+  The rest were spawned out of the brain of Mr Cheek himsef.
+
+
+  Don't forget to run `rake <session_number>:<challenge_number>` as you go along for feedback on whether your solutions are correct, and once you've got all your tests passing, you can compare your solution to the solutions in the 'solved' section (next)
+
+  If you have suggestions for further challenges, please create them and MAKE A PULL REQUEST!! :)
+  
+  Please put your answers in the challenges section. After completing the first two chapters, submit a pull request and Travis CI will check everything for you. 
+
+  **Solved & Specs**
+  -------------------
+  Along with challenges, each session provides solutions to its challenges and
+  a suite of automated tests you can use to test the correctness of your solutions.
+
+  Feel free to add your own alternative/improved solutions in this section and make a pull request to me. It would be cool to have dozens of solutions in every section so people can analyze all the different ways you can solve a problem and learn from them.
+
+  **Cheatsheets**
+  ---------------
+  Although not part of the sessions, RubyKickstart has a number of cheatsheets which contain all the syntax for various topics. Some of the material in the cheatsheets is not covered in the notes or examples for sessions, so make sure you check out the cheatsheets before diving into the challenges.
+
+  It might also be worth printing out the cheatsheets and sticking them on your wall, or turning them into Anki / Memrise / Quizlet decks - if you do this, be sure to share the link with us so we can let all our students use them!
+
+
+Sessions Overview
+========
+
+- Chapter 1
+    * Introduction
+    * Arithmetic
+    * Logic
+    * String
+    * Basic IO
+- Chapter 2
+    * Arrays
+    * Basic Classes
+    * Singleton Classes
+- Chapter 3
+    * Symbols
+    * Hashes
+    * Blocks / Procs
+    * Method Parameters
+- Chapter 4
+    * Boolean Return Values
+    * Introspection / Reflection
+    * Ranges
+    * Simple File IO
+    * Inheritance
+    * Exceptions
+- Chatper 5
+    * Modules
+    * Regular Expressions
+    * Ruby gems
+- Chapter 6
+    * The Web
+    * Sinatra
+    * ERB
+    * Rack
+    * Git
+    * Heroku
+
+
+What you'll need to use it
+==========================
+
+ To use RubyKickstart, you'll need several tools:
+
+   - [**Ruby**](http://www.ruby-lang.org/en/) the happy programming language :)
+   - [**Rake** version 0.8.7+](http://rubygems.org/gems/rake) see if you have it by typing "gem list" at the command line, we use it to apply the tests
+   - [**RSpec** version 2.0+](http://rubygems.org/gems/rspec) currently we use this for testing
+   - [**git**](http://help.github.com/git-installation-redirect) lets you download our changes without overwriting your work. Good installation instructions at (http://help.github.com/git-installation-redirect)
+   - [**A text editor**](http://texteditors.org/cgi-bin/wiki.pl) Our Recommendations:
+     * Windows: [SciTE](http://www.scintilla.org/SciTE.html) should come with the one click installer
+     * Linux: [SciTE](http://www.scintilla.org/SciTE.html) also works great on linux :)
+     * Mac: [Sublime Text 2](http://www.sublimetext.com/2) or [Atom](https://atom.io/). Atom works straight away with Terminal and is growing in popularity. Sublime Text will need you to setup env variables to launch projects using the subl command.
+
+Age
+===
+
+This is several years old now, but it was updated to RSpec 3 and cleaned it up a lot
+in December 2014. Everything should still work fine and be applicable.
+
+There is now a Gemfile in the root, you can ignore it, it's mostly for letting me
+know what versions I last checked it against.
+
+
+Quizzes
+===
+
+There used to be quizzes that were placed at the end of each section, and could be used to check that you'd retained all the information you'd just been taught. They're gone now... While I'll try to create them in the near future, if you fancy the challenge, feel free to jump in and make them on Memrise/Quizlet and send a link to jordan@makersacademy.com
+
+That's it - enjoy the walkthrough!
