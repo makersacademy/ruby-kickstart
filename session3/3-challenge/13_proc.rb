@@ -54,7 +54,19 @@
 #   end
 # end       # => ["a", "m", "r", 1, 3, 4, 9, 2.5, 9.0, 25.8]
 
+#define the sort method, taking in an array and a block
+def your_sort( array , &orderer )
+  # if it is nil, then it hasn't been set, default to spaceship operator for comparison result
+  orderer ||= Proc.new { |a, b| a <=> b }
 
-
-
-
+#in the array check each by index one
+  array.each_index do |index1|
+    #do the same with index two
+    array.each_index do |index2|
+      # create a variable called order, and call the array at index 1 and at index 2
+      order = orderer.call(array[index1], array[index2])
+      #sort the array
+      array[index1], array[index2] = array[index2], array[index1] if order < 0
+    end
+  end
+end
