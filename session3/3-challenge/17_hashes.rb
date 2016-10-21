@@ -9,6 +9,10 @@
 #
 # print_list_in_reverse head   # >> "1\n2\n"
 
-def print_list_in_reverse list
-  
+# will come back to this one when I have more time and understanding
+
+def print_list_in_reverse(list)
+  return unless list
+  print_list_in_reverse list[:next]
+  puts list[:data]
 end
