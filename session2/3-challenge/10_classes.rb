@@ -16,5 +16,17 @@
 #
 
 class Person
+  #set an attr_accessor so name and age can be read and written
+attr_accessor "name", "age"
+
+#initialize functions to set the name and age (I'd initially had birthday sa well, but the specs only call for name and age)
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+# a birthday method that adds 1 to the age
+  def birthday
+    @age += 1
+  end
 
 end

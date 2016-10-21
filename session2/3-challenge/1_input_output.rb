@@ -8,6 +8,13 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  puts "Please choose two integers"
+  int = gets
+
+  int_array = int.split(" ").map {|x| x.to_i}
+  sum =  int_array[0] + int_array[1]
+  difference = int_array[0] - int_array[1]
+  product = int_array[0] * int_array[1]
+
+  print "#{sum}#{difference}#{product}"
 end

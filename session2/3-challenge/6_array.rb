@@ -15,3 +15,11 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array_of_strings)
+  #join the array into a string, and count the length
+number_of_chars = array_of_strings.join.length
+#require the prime class
+require 'prime'
+#check if the lenth of the string is a prime number
+Prime.prime?(number_of_chars)
+end

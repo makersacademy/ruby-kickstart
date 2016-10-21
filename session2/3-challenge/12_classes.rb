@@ -22,9 +22,38 @@
 # f.to_s               # => "50/100"
 # f.to_f               # => 0.5
 
+
+# Define class
 class Fraction
-  def gcd(a,b)
-    return a if b == 0
-    gcd(b, a%b)
+
+#set the attr_accessor that can read and write the numerator and denominator
+attr_accessor :numerator, :denominator
+
+#set the variables in the initialize function
+def initialize(numerator, denominator)
+  @numerator = numerator
+  @denominator = denominator
+end
+
+#set the float
+def to_f
+  numerator/denominator.to_f
+end
+
+#String method
+def to_s
+  "#{numerator}/#{denominator}"
+end
+
+#greatest common divisor method supplied
+def gcd(a,b)
+  return a if b == 0
+  gcd(b, a%b)
   end
+
+#using the supplied method
+def lowest
+  divisor = gcd(numerator, denominator)
+  Fraction.new(numerator/divisor, denominator/divisor)
+end
 end

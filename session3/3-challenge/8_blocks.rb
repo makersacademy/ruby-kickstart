@@ -24,10 +24,10 @@
 # artist.name   # => "The Artist Formarly Known As Prince"
 # artist.age    # => 47
 
-
+=begin this works in IRB
 class Person
-
-  attr_accessor :name
+#attr_acessor for name, age and quote
+  attr_accessor :name, :age, :quote
 
   def initialize( &initializer )
     @initializer = initializer
@@ -38,4 +38,28 @@ class Person
     @initializer.call self
   end
 
+end
+
+artist = Person.new do |person|
+  person.name = 'Prince'
+  person.age = "47"
+  person.quote = "Why don't you purify yourself in the waters of Lake Minnetonka?"
+end
+=end
+
+
+class Person
+  attr_accessor :name, :age, :quote
+
+  def initialize(options=Hash.new, &initializer)
+    self.name    = options[:name]
+    self.age     = options[:age]
+    self.quote   = options[:quote]
+    @initializer = (initializer || Proc.new { |person| })
+    reinit
+  end
+
+  def reinit
+    @initializer.call(self)
+  end
 end

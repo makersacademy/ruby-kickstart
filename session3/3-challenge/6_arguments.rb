@@ -19,3 +19,23 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+#define the method, the first true_or_false which explains how the result will be evaluated, and *elements for the unknown number of elements we will later receive
+def match_maker(true_or_false, *elements)
+  #create an empty array to store the results in
+array = []
+
+# for the elements, take two at a time, and call them first and second
+elements.each_slice 2 do |first, second|
+  # use our solution 'key' true_or_false
+  result = if true_or_false
+    # for true, if first and second are different, return true, for false, return false
+      first != second
+      true
+      # for true, if first and second are the same, return false, for false return true
+    else
+      first == second
+      false
+    end
+    #append the result to that array
+    array << result
+  end

@@ -31,25 +31,10 @@
 #   end
 # end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#define the method, set the size to 5
+def array_init(size=5, &block)
+  # if the block was submitted run it, or if not create a Proc that iterates through it, multiplies it by 100, and changes the result to a string
+  block ||= Proc.new { |i| (100 * i).to_s }
+  #create a new array, with the size, and the block
+  Array.new(size, &block)
+end

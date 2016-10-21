@@ -9,3 +9,9 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(sentence)
+  #Filter out special characters (except apostrophes) and split into words
+  sentence_array = sentence.gsub(/[^0-9A-Za-z'’ ]/, ' ').split(" ")
+  #Only even numbers by index
+  sentence_array.select.each_with_index { |_, x| x.even? }
+end
