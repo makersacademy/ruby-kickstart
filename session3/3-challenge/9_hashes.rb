@@ -28,4 +28,24 @@
 # shared [1,2,:c], ['a','b',:c]      # => [{1=>[true, nil], 2=>[true, nil], :c=>[true, true], "a"=>[nil, true], "b"=>[nil, true]}, [:c]]
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
+#define the method that takes parameters a and b
+def shared(a, b)
+#create an empty hash
+  union = {}
+  #iterate through each element of array a, and put the element into the hash as key
+  a.each do |element|
 
+    union[element] ||= [nil, nil]
+    union[element][0] = true
+  end
+  #iterate through each element of array a, and put the element into the hash as value
+  b.each do |element|
+    union[element] ||= [nil, nil]
+    union[element][1] = true
+  end
+#puts the key value pairs into a new array (result) when the value is true/true.
+  result = union.select { |key, value| value == [true, true] }.map { |key, value| key }
+
+#returns the new array, and sorts the results.
+  return union, result.sort
+end
