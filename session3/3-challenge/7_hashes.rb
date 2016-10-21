@@ -39,7 +39,8 @@ class HTMLTag
     :blue => "#0000FF"
   }
 
-  attr_accessor :name, :innerHTML, :options
+# added a color and multiline to attr_accessor to be read and written
+  attr_accessor :name, :innerHTML, :options, :color, :multiline
 
   # options: :multiline should be true or false
   def initialize(name, innerHTML, options={})
@@ -72,4 +73,3 @@ class HTMLTag
     "</#{name}>\n"
   end
 end
-
