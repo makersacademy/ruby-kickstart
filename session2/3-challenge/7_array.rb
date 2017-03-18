@@ -9,3 +9,17 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(sentence)
+    '!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each do |char|
+      sentence = sentence.gsub(char, ' ')
+    end
+    # I didn't have the 3 lines above, until checking the answer
+    to_return = []
+    word = sentence.split
+    word.each_with_index do |item, index|
+      to_return << item if index.even?
+    end
+    to_return
+    #Below was my original line, attemptimg the gsub on punctuation at the end
+    #to_return.each{ |s| s.gsub! '!@$#%^&*()-=_+[]:;,./<>?\|', '' }
+end

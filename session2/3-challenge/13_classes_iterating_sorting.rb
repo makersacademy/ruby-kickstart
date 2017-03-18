@@ -18,9 +18,6 @@
 #      def ==(other)
 #        return self.date == other.date
 #      end
-
-
-
 # ==========  EXAMPLE  ==========
 #
 # lissa = User.new 'QTSort'
@@ -72,4 +69,48 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
+
+# As far as I got after 30mins
+
 require 'date'
+
+class User
+  attr_accessor 'username'
+
+  def initialize(username)
+    @username = username
+  end
+
+  def add_blog(date, text)
+    text = ""
+  end
+
+  def blogs
+    b = Blog.new.(text, date, self)
+    blogs << b
+    blogs.sort_by { |blog| blog.date }.reverse
+
+  end
+end
+
+class Blog
+  attr_accessor 'text', 'date', 'user'
+
+  def initialize(text, date, user)
+    @text = text
+    @date = date
+    @user = user
+  end
+
+  def summary
+    if text.split.size <= 10
+      return text
+    else
+    return text.split[0...9].join(' ')
+    end
+  end
+
+  def ==(other)
+    return self.date == other.date && self.text == other.text && self.user == other.user
+  end
+end
