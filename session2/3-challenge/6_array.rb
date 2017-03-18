@@ -15,3 +15,11 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(a)
+  
+  sum_char = a.map {|char| char.length}.reduce(:+)
+  return false if sum_char.to_i < 2
+  (2..Math.sqrt(sum_char)).each { |i| return false if sum_char % i == 0}
+
+  return true
+end

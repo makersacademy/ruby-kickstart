@@ -8,4 +8,14 @@
 # ten_twenty(6) # => 10
 
 def ten_twenty(n)
+  if n.odd?
+    return 20
+  else
+    return 10
+  end
 end
+#if number.odd?
+#  puts "Yes, #{number} is odd"
+#else
+#  puts "No, #{number} is not odd"
+#end
