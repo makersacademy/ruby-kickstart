@@ -19,8 +19,14 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
+  action = 0
 
+  while action != "bye"
+    action.to_i.times { print "hi "}
+    puts "Tell me how many times!"
+    action = gets.chomp
+  end
+  puts "goodbye"
 end
 
 
@@ -29,4 +35,5 @@ end
 # This will just invoke the method if you run this program directly
 # This way you can try it out by running "$ ruby 2_input_output_control.rb"
 # but it will still work for our tests
+
 hi_hi_goodbye if $0 == __FILE__
