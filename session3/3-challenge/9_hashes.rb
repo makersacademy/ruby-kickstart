@@ -28,4 +28,28 @@
 # shared [1,2,:c], ['a','b',:c]      # => [{1=>[true, nil], 2=>[true, nil], :c=>[true, true], "a"=>[nil, true], "b"=>[nil, true]}, [:c]]
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
+def shared(arr_1, arr_2)
+  hash_of_elements = Hash.new
 
+  combined = arr_1 + arr_2
+
+  combined.each do |element|
+    hash_of_elements[element] = [nil, nil]
+  end
+
+
+  arr_1.each do |element|
+    hash_of_elements[element][0] = true
+  end
+
+
+  arr_2.each do |element|
+    hash_of_elements[element][1] = true
+  end
+
+  matching_keys = hash_of_elements.map{|k,v| v == [true, true] ? k : nil}.compact.sort
+  [hash_of_elements, matching_keys]
+
+end
+
+p shared [1,2,3], [1,2,4]

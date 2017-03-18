@@ -13,3 +13,6 @@
 # Then require them in this document
 #   Note: Even though you install helloworld, the name of the file you need to require is hello_world (with an underscore)
 
+require 'hello_world'
+require 'sinatra'
+require 'nokogiri'

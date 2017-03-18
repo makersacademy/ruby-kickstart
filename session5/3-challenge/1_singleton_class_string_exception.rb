@@ -27,35 +27,36 @@
 #
 
 class ApplicationController
+
   def body_class
     return @body_class if @body_class
     @body_class = String.new
 
-    class << @body_class
-
-      def <<(str)
-        return self if self[/\b#{str}\b/]
-        concat ' ' unless length.zero?
-        concat str
-      end
-
-      def +(str)
-        raise_exception
-      end
-
-      def []= str, str2
-        raise_exception
-      end
-
-      def * str
-        raise_exception
-      end
-
-      def raise_exception
-        raise RuntimeError.new("use << method instead")
-      end
+    def @body_class.<<(str)
+      return self if self[/\b#{str}\b/]
+      concat ' ' if length != 0
+      concat str
     end
-    @body_class
-  end
-end
 
+    def @body_class.+(str)
+      raise_exception
+    end
+
+    def @body_class.[]=(x, y)
+      raise_exception
+    end
+
+    def @body_class.*(str)
+      raise_exception
+    end
+
+    def @body_class.raise_exception
+      raise RuntimeError.new("use << method instead")
+    end
+
+    @body_class
+
+  end
+
+
+end

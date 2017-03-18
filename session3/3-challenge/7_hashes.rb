@@ -1,3 +1,6 @@
+# THIS CHALLENGE IS ALREADY COMPLETE WHEN YOU OPEN THE FILE! PASSES RSPEC STRAIGHT AWAY AND THE STUFF
+# DESCRIBED IN THE INSTRUCTIONS IS ALREADY DONE!
+
 # DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!
 
 # This challenge is based off of Example 1 (session 3/2-examples/1_hashes)
@@ -72,4 +75,3 @@ class HTMLTag
     "</#{name}>\n"
   end
 end
-

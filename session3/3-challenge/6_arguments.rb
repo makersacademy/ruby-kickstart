@@ -19,3 +19,48 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(*elements)
+
+output = []
+pairs = []
+determin = elements.shift
+elements.each_slice(2) {|a, b| pairs << [a, b]}
+
+pairs.each do |a, b|
+
+  if determin
+    if (a && b) || (!a && !b )
+      output << false
+    else
+      output << true
+    end
+  else
+    if (a && b) || (!a && !b )      
+      output << true
+    else
+      output << false
+    end
+  end
+end
+output
+end
+
+=begin
+print match_maker true,  true,  true                # => [false]
+puts
+print match_maker true,  false, false               # => [false]
+puts
+print match_maker true,  false, true                # => [true]
+puts
+print match_maker true,  true,  false               # => [true]
+puts
+print match_maker true,  true,  true, false, true   # => [false, true]
+puts
+print match_maker true,  true,  true, false, nil    # => [false, false]
+puts
+print match_maker true,  true,  true, true, nil     # => [false, true]
+puts
+print match_maker true,  true,  true, 0, nil        # => [false, true]
+puts
+=end
+

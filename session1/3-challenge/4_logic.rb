@@ -13,6 +13,11 @@
 
 
 def grade(num_books, has_read_books)
+  case num_books
+    when 0..9 then has_read_books == true ? "C" : "D"
+    when 10..20 then has_read_books == true ? "B" : "C"
+    when 20..Float::INFINITY then has_read_books == true ? "A" : "B"
+  end
 end
 
 

@@ -7,6 +7,12 @@
 
 class String
   def every_other_char
+    other = ""
+    length.times do |i|
+        other << self[i] if i.even?
+    end
+    other
   end
-  
 end
+
+#{}"".every_other_char.inspect

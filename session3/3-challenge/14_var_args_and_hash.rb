@@ -23,5 +23,38 @@
 # problem_14 2,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => true
 # problem_14 3,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => false
 
+def problem_14(*params)
+  problem = params.pop[:problem] if params.last.is_a? Hash
+  problem ||= :count_clumps
+  return count_clumps(params) if problem == :count_clumps
+  return same_ends(params) if problem == :same_ends
+end
 
+def count_clumps(*nums)
+  nums.flatten!
+  count = 0
+  while nums.length > 1
+    if nums[1] == nums[0]
+      count+=1
+      nums.delete_at(1)
+      while nums[1] == nums[0]
+        nums.delete_at(1)
+      end
+      nums.delete_at(0)
+    elsif nums[1] != nums[0]
+      nums.delete_at(0)
+    end
+  end
+  count
+end
 
+def same_ends(*nums)
+  nums.flatten!
+  n = nums.shift
+  nums[0..n-1] == nums[-n..-1]
+end
+
+#p problem_14 [1, 2, 2, 3, 4, 4],    :problem => :count_clumps
+#p problem_14 2,    [5, 6, 45, 99, 13, 5, 6],  :problem => :same_ends    # => false
+#problem_14 2,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => true
+#problem_14 3,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => false

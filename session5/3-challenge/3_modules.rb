@@ -26,3 +26,32 @@
 # ff.select { |num| num.odd? }  # => [1, 5, 3]
 
 
+class List
+
+  include Enumerable
+
+  def initialize
+    @stuff = []
+  end
+
+  def << (elem)
+    @stuff << elem
+    self
+  end
+
+  def each(&block)
+    @stuff.each(&block)
+  end
+
+  def inspect
+    result = "#<List: "
+    each {|elem| result << "#{elem.inspect}, "}
+    result.gsub!(/, $/, '')
+    result << '>'
+  end
+
+end
+
+list = List.new
+list << 1 << 5 << 2 << 7
+p list.min

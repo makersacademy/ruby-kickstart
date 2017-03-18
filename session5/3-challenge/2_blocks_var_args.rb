@@ -3,7 +3,7 @@
 #  YOU MUST HAVE CHALLENGE ONE PASSING BEFORE ATTEMPTING THIS CHALLENGE   #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #
-# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solution, try to understand the code, then close the file, come back here, and try again to solve it. 
+# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solution, try to understand the code, then close the file, come back here, and try again to solve it.
 #
 # My boss can now add CSS classes from his controller, so he is happy.
 # But there are a lot of controller methods, and so he has to go to a lot of different
@@ -85,6 +85,17 @@
 #   * You are going to need to combine variable length parameters with an options hash. This can't be done in the method signature
 
 
+class ApplicationController
 
+  def self.css_classes(*params)
+    options = params.pop if params.last.is_a? Hash
+    options ||= Hash.new
 
+    before_filter options do |controller|
+      params.each do |css_body_class|
+        controller.body_class << css_body_class
+      end
+    end
+  end
 
+end
