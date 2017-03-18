@@ -15,3 +15,17 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(input)
+	number = 0
+	input.each { |x| number += x.length }
+	if number < 2
+		return false
+	elsif number == 2
+		return true
+	else
+		for x in 2..Math.sqrt(number)
+			return false if number % x == 0
+		end
+		return true
+	end
+end
