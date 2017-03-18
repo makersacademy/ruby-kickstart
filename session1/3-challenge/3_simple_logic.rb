@@ -8,4 +8,9 @@
 # ten_twenty(6) # => 10
 
 def ten_twenty(n)
+	if n.odd?
+		return 20
+	else
+		return 10
+	end
 end

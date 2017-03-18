@@ -6,5 +6,14 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	if return_odds == true
+		variable = string.split("")
+		varible2 = variable.values_at(* variable.each_index.select {|i| i.odd?})
+		varible2.join
+	else
+		variable = string.split("")
+		varible2 = variable.values_at(* variable.each_index.select {|i| i.even?})
+		varible2.join
+	end
 end
+
