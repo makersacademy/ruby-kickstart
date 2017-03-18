@@ -7,7 +7,20 @@
 # staircase 3  # => {1 => [], 3 => [2]}
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
+def staircase(number)
+  all_numbers = (1..number)
+  hash = {}
+  all_numbers.each do |num|
+    evens_up_to_num = all_numbers.select {|x| x.even? && x < num}
+      hash.store(num, evens_up_to_num) if num.odd?
+  end
 
+  # hash.each_key do |key|
+  #   evens = all_numbers.select {|x| x.even? && x < key}
+  #   hash[key] = evens
+  # end
 
+  hash
+end
 
-
+puts staircase(12)

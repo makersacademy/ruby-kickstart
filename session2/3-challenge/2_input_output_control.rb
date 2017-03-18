@@ -17,11 +17,18 @@
 
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
+def loops
+  puts "please enter a 'number' or 'goodbye'"
+end
 
 def hi_hi_goodbye
-  # your code here
-
+  loops
+  number = gets.chomp
+  return "goodbye" if number == "bye"
+  number.to_i.times {print "hi "}
+  hi_hi_goodbye
 end
+
 
 
 

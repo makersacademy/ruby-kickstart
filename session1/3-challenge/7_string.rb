@@ -5,5 +5,9 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+string.each_char.each_cons(2)
+    .with_object("") do |(a,b), to_return|
+      next unless a.downcase == "r"
+      to_return << b
+    end
 end
