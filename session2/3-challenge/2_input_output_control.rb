@@ -17,11 +17,21 @@
 
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
+def greeting
+  puts "Enter a number or say bye"
+end
 
 def hi_hi_goodbye
-  # your code here
-
+    greeting
+  while
+    (response = gets) && (response.downcase !~ /bye/)
+    response.to_i.times { print "hi "}
+    puts
+    greeting
+  end
+    puts "goodbye"
 end
+
 
 
 
