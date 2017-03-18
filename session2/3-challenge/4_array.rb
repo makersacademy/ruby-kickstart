@@ -8,5 +8,9 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares (numbers)
+      # .select returns a new array containing all elements for which the given block returns a true value.
+numbers.select { |num| numbers.include? num*num }.sort # look for numbers that return true to num * num
+end
 
-
+puts get_squares [25, 4, 9, 6, 50, 16, 5]

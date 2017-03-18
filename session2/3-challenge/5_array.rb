@@ -14,3 +14,10 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three (numbers)
+                                                              # .select looks for numbers which remainder is different than 0
+  numbers.select { |num| num % 3 != 0 }.map { |num| num % 3 } # we want to save in the new array the actual remainders and not the number, so:
+                                                              # .map creates a new array containing the values of num % 3
+end
+
+puts mod_three [0,1,2,3,4,5,6,7]

@@ -9,10 +9,51 @@
 # grade(4,  true)   # => "C"
 # grade(15, true)   # => "B"
 
-# <10 books => D, 10..20 books => C, >20 book =>B
+# <10 books => D, 10..20 books => C, >20 bo//ok =>B
 
 
 def grade(num_books, has_read_books)
+
+=begin
+  if num_books < 10 && has_read_books == false
+    return 'D' # if I don't use return, the method keeps executing the code and returns the last expression evaluated, which is nil.
+  elsif num_books < 10 && has_read_books == true
+    return 'C'
+  end
+
+  if num_books.between?(10,20) && has_read_books == false
+    return 'C'
+  elsif num_books.between?(10,20) && has_read_books == true
+    return 'B'
+  end
+
+  if num_books > 20 && has_read_books == false
+    return 'B'
+  elsif num_books > 20 && has_read_books == true
+    return 'A'
+  end
+=end
+
+  #the solution below is more 'DRY' :)
+
+  if has_read_books
+    if num_books > 20
+      return 'A' # if I don't use return, the method keeps executing the code and returns the last expression evaluated, which is nil.
+    elsif num_books.between?(10,20)
+      return 'B'
+    else
+      return 'C'
+    end
+  else
+    if num_books > 20
+      return 'B'
+    elsif num_books.between?(10,20)
+      return 'C'
+    else
+      return 'D'
+    end
+  end
+
 end
 
-
+puts grade(19, false)
