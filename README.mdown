@@ -1,4 +1,4 @@
-Welcome to RubyKickstart!
+Welcome to RubyKickstart! changes
 =========================
 
 **RubyKickstart is an interactive guide to learning the Ruby programming language.**
