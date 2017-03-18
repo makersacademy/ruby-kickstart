@@ -20,3 +20,45 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+class BeerSong
+  attr_accessor :n
+  def initialize(x)
+    n = x.to_i
+    if (n >= 1) && (n <=99)
+      @beer = n
+    elsif n > 99
+      @beer = 99
+    else
+      @beer = 0
+    end
+  end
+
+  #from his, cuz it's nicer
+  def translate(n)
+    if 0 <= n && n <= 19
+      %w(zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen)[n]
+    elsif n % 10 == 0
+      %w(zero ten twenty thirty forty fifty sixty seventy eighty ninety)[n/10]
+    else
+      "#{translate n/10*10}-#{translate n%10}".downcase
+    end.capitalize
+  end
+
+
+def print_song
+
+  if @beer == 0
+    ""
+  else
+    while @beer >= 1
+      plural = @beer != 1 ? "s" : ""
+      print (translate(@beer ))+" bottle"+ plural +" of beer" + " on the wall,\n"
+      print (translate(@beer ))+" bottle"+ plural + " of beer" + ",\n"
+      print "Take one down, pass it around,\n"
+      @beer -= 1
+      print  (translate(@beer))+" bottle"+ (@beer != 1 ? "s" : "") + " of beer"+" on the wall.\n"
+      end
+    end
+  end
+end

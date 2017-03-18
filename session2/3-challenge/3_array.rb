@@ -7,6 +7,9 @@
 
 class String
   def every_other_char
+    a = ''
+    self.each_char.with_index{|x,y| y.even? ? a << x : x}
+    a
   end
   
 end

@@ -6,5 +6,14 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  a = ''
+  string.each_char.with_index{|x,y|
+    if return_odds
+      y.odd? ? a << x : x
+    else
+      y.even? ? a << x : x
+    end
+    }
+  a
 end
+

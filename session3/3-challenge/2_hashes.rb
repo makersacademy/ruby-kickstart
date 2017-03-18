@@ -9,5 +9,13 @@
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
 
-
-
+def staircase n
+  x = {}
+  a = 0
+  while a < n
+    a += 1
+    next if a.even?
+    x[a] = (2..a).select(&:even?)
+  end
+  x
+end
