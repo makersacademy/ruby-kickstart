@@ -73,3 +73,45 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+  attr_accessor :username, :blogs #Defining of class called User and setting up the setter and getter for username and blogs. attr_accessor is used to make variables boths readable and writeable at the same time.
+
+  def initialize(username) # Method initialiaze is define with username parameter
+    self.username = username # username is assigned to self, which in this case is User class object
+    self.blogs    = [] # User blogs is assigned to an array
+  end
+
+  def add_blog(date, text) # Method add_blog is defined, which accept two parameters: date and text
+    added_blog = Blog.new(date, self, text) # New instance of the class Blog is defined which accepts three parameters: date, self and text
+    blogs << added_blog # Adding of the added_blog instance to the end of the blogs array
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse #Interation through the blogs array which sorts the elements by date but in reversed order ans assign it to the User blogs
+    added_blog # calls added_blog
+  end
+end
+
+
+
+class Blog # Defining of Blog class and setting up three getter and setter for date, user and text.
+  attr_accessor :date, :user, :text
+
+  def initialize(date, user, text) # Method initialize is defined which accept three parameters: date, user and text
+    self.date = date #
+    self.user = user # Assigning of all received arguments for date, user and
+    self.text = text # text to self object which in this case is Blog class
+  end
+
+  def summary # summary method is defined
+    text.split[0..9].join(' ') # text is splitted into array including 10 elements (index positions from 0 to 9) so only 10 first words in text are taken. Then they are joined together with the spaces between them.
+  end
+
+  def entry # entry method is defined which return a string including username, date and text
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def ==(other) # Defining of == operators which makes sure that array stays the same when blogs has the same date, user and text as the one already included.
+    date   == other.date &&
+      user == other.user &&
+      text == other.text
+  end
+end
