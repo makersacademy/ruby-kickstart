@@ -6,5 +6,19 @@
 #
 
 def odds_and_evens(string, return_odds)
+  array = []
+  if return_odds == true
+    n=1
+  else
+    n=0
+  end
+  
+  loop do
+    break if string[n] == nil
+    array << string[n]
+    n += 2
+  end
+  
+p array.join
 
 end
