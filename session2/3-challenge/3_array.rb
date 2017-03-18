@@ -7,6 +7,13 @@
 
 class String
   def every_other_char
-  end
-  
+    output = ''
+    each_char.with_index do |item, index|
+      if index % 2 == 0
+        output << item
+      end
+    end
+
+      return output
+      end
 end

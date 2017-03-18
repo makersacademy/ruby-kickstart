@@ -25,7 +25,21 @@
 
 def deaf_grandma
 
+
+while true
+  user = gets.chomp
+  if user == 'BYE'
+    break
+  end
+    if user == user.downcase 
+      puts 'HUH?! SPEAK UP, SONNY!'
+    else
+      puts 'NO, NOT SINCE 1938!'
+    end
+
 end
+end
+
 
 
 

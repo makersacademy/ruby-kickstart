@@ -15,3 +15,19 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? arr
+  num = arr.join.size
+
+  if num == 1
+   return false
+ elsif num == 2 || num == 3
+   return true
+  elsif num % 2 == 0 || num % 3 == 0
+    return false
+  else
+    return true
+  end
+end
+
+puts prime_chars? ['a','b','c']
+puts prime_chars? ['ciao','bye']

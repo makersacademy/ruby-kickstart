@@ -6,3 +6,15 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three? array
+
+  array.each_with_object(Hash.new(0)) do |word,counts|
+    counts[word] += 1
+    return true if counts[word] >= 3
+
+  end
+
+end
+
+puts got_three? [1,2,2,2,3]
+puts got_three? [1,2,3,3,3]
