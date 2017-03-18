@@ -4,7 +4,13 @@
 #
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
-
 def odds_and_evens(string, return_odds)
-
+	var = string.split(//)
+	if !return_odds
+		var1 = var.values_at(* var.each_index.select {|i| i.even?})
+    var1.join
+	else
+		var1 = var.values_at(* var.each_index.select {|i| i.odd?})
+    var1.join
+  end
 end
