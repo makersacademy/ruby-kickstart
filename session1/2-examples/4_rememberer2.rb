@@ -37,4 +37,3 @@ loop do
   puts user_message(lines_seen, line)
   record_observation(lines_seen, line)
 end
-

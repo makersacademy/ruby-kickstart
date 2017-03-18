@@ -22,4 +22,3 @@ false.class                     # => FalseClass
 [0, 1, "two", :three, Object.new, nil].each do |object|
   !!object # => true, true, true, true, true, false
 end
-

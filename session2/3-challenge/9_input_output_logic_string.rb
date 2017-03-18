@@ -24,6 +24,33 @@
 # USER:     BYE
 
 def deaf_grandma
+  puts "What did you want sonny?"
+
+  while true
+
+  request = gets.chomp
+
+  if request == "bye"
+    puts "You want to get high?"
+    request = gets.chomp
+    if request == "bye"
+      puts "You feel like you could cry?"
+      request = gets.chomp
+      if request == "bye"
+        puts "Oh, are you off?"
+        break
+      end
+    end
+  end
+
+  if request == request.upcase
+    random_year = 1930 + rand(21)
+    puts "No, not since " + random_year.to_s + "!"
+  else
+    puts "Huh? Speak up, laddy!"
+  end
+
+  end
 
 end
 

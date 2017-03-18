@@ -11,4 +11,3 @@ def is_this_a_method?
 end
 
 is_this_a_method? # => "Yes, it is!"
-

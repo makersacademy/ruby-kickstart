@@ -15,4 +15,3 @@ def = 3 # !> useless use of a literal in void context
 # ~> -:14: syntax error, unexpected '='
 # ~> def = 3 # !> useless use of a literal in void context
 # ~>      ^
-

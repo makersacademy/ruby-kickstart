@@ -12,7 +12,41 @@
 # <10 books => D, 10..20 books => C, >20 book =>B
 
 
-def grade(num_books, has_read_books)
+# def grade(num_books, has_read_books)
+#
+#  if num_books < 10               # My initial workings read num_books first
+#    if has_read_books == true     # then split based on read_books
+#      puts "C"
+#    else
+#      puts "D"
+#    end
+#  elsif num_books < 20
+#    if has_read_books == true
+#      puts "B"
+#    else
+#      puts "C"
+#    end
+#  elsif num_books > 20
+#    if has_read_books == true
+#      puts "A"
+#    else
+#      puts "B"
+#    end
+#  end
+# end
+
+def grade(num_books, reads_books) # Makes more sense to split based on the
+  if reads_books == true          # read_books boolean first.
+    return "C" if num_books <  10
+    return "B" if num_books <= 20
+    return "A"
+  else
+    return "D" if num_books <  10
+    return "C" if num_books <= 20
+    return "B"
+  end
 end
 
-
+puts grade(4,  false)  # => "D"
+puts grade(4,  true)   # => "C"
+puts grade(15, true)   # => "B"

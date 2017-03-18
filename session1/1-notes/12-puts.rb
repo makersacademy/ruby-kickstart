@@ -23,4 +23,3 @@ puts thing_to_print
   # Output:
   # 56
   #
-

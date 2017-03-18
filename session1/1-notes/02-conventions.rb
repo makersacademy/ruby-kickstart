@@ -9,4 +9,3 @@ my_var      # => 4
 # of the object it refers to.
 
 # For more complicated output, such as from a print statement, it'll be placed below the code.
-

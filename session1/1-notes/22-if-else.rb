@@ -24,4 +24,3 @@ end
 
 'one line if statement'     if true       # => "one line if statement"
 'one line unless statement' unless false  # => "one line unless statement"
-

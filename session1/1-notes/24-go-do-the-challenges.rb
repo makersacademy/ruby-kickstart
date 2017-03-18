@@ -32,4 +32,3 @@
 # For this section, you'll need:
 # https://github.com/JoshCheek/ruby-kickstart/blob/master/cheatsheets/logic_and_control.rb
 # https://github.com/JoshCheek/ruby-kickstart/blob/master/cheatsheets/strings.rb
-

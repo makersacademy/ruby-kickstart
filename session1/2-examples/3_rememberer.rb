@@ -17,4 +17,3 @@ loop do
     lines_seen << line
   end
 end
-

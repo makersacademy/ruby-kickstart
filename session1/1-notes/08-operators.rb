@@ -20,5 +20,8 @@
 2 + 3 * 10   # => 32
 
 # Question: If operators are just methods on objects, can other objects have operators?
-# Lets open up irb and try it out!
+# Yes they can!
 
+"cow" + "chicken"   # => "cowchicken"
+
+# Lets open up irb and try it out!
