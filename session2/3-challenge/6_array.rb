@@ -15,3 +15,10 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require 'prime'
+
+def prime_chars?(array)
+	word = ""
+	array.each {|letter| word += letter }
+	word.length.prime?
+end

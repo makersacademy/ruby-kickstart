@@ -5,5 +5,16 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+	array = string.split("")
+	i = 0
+	word = ""
+	for e in array
+		if e.downcase == "r"
+			word += array[i+1].to_s
+			i += 1
+		else
+			i += 1
+		end
+	end
+	word
 end

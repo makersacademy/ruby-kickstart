@@ -14,3 +14,9 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(array)
+	return [] if array.length == 1 && array[0] % 3 == 0
+	remainder = array.map { |num| num % 3 }
+	remainder.delete_if {|val| val == 0 }
+	remainder
+end
