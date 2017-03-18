@@ -15,3 +15,22 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? (array)
+    count = array.join('')
+    x = count.split('').count
+    if x < 2
+        return false
+    elsif x == 2
+        return true
+    elsif
+        for y in 2..(x - 1)
+            if (x % y) == 0
+                return false
+            end
+        end
+    return true
+    end
+end
+
+prime_chars? ['ab', 'c']  
+prime_chars? ['ab', 'cd'] 

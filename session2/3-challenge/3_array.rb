@@ -7,6 +7,11 @@
 
 class String
   def every_other_char
+    array1 = self.split("")
+    array2 = array1.select.with_index { |_, i| i.even? }
+    return array2.join("")
   end
   
 end
+
+"abcdefgh".every_other_char

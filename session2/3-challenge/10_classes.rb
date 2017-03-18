@@ -16,5 +16,28 @@
 #
 
 class Person
-
+    attr_accessor 'name'
+    def initialize(name, age)
+        @name = name
+        @age = age
+    end
+    
+    attr_accessor 'age'
+    def age
+        age = @age
+    end
+    
+    attr_accessor 'birthday'
+    def birthday 
+        @age += 1
+    end
+        
+        
 end
+
+
+josh = Person.new 'Joshua', 28
+
+puts josh.name
+puts josh.age
+puts josh.birthday
