@@ -5,5 +5,15 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  to_return = ""
+  counter = 0
+  while counter < string.length
+    if (string[counter] == 'r' || string[counter] == 'R') && counter != string.length-1
+      to_return << string[counter+1]
+    end
+    counter += 1
+  end
+  to_return
 end
+
+puts pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")

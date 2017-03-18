@@ -20,3 +20,121 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+
+class BeerSong
+  attr_accessor :beers
+
+  def initialize(beers)
+    beers = 0  if beers < 0
+    beers = 99 if beers > 99
+    self.beers = beers
+  end
+
+  def print_song
+    beers.downto 1 do |i|
+      print_stanza i
+    end
+  end
+
+  def print_stanza(num)
+    while num > 0
+      puts englishNumber(num).capitalize + " #{bottle num} of beer on the wall, " + englishNumber(num) + " #{bottle num} of beer."
+      num -= 1
+      if num == 0
+        puts 'Take one down and pass it around, no more bottles of beer on the wall.'
+      else
+        puts 'Take one down and pass it around, ' + englishNumber(num) + ' #{bottle num} of beer on the wall.'
+      end
+      puts ''
+    end
+
+    puts 'No more bottles of beer on the wall, no more bottles of beer.'
+    puts 'Go to the store and buy some more, ' + englishNumber(store) + ' bottles of beer on the wall.'
+  end
+
+  def englishNumber number
+
+  #first let's take care of negatives and zero
+  if number < 0
+    puts 'please enter a number that isn\'t negative'
+  end
+  if number == 0
+    return 'zero'
+  end
+
+  numString = ''
+
+  #now let's create arrays for all the words that we need
+  onesPlace = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+  tensPlace = ['ten', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+  teenagers = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
+
+  left = number
+  write = left/1000000
+  left = left - write*1000000
+
+  if write > 0
+    millions = englishNumber write
+    numString = numString + millions + ' million'
+    if left > 0
+      numString = numString + ' '
+    end
+  end
+
+
+  write = left/1000
+  left = left -write*1000
+
+  if write > 0
+    #recursive part to get the thousands
+    thousands = englishNumber write
+    numString = numString + thousands + ' thousand'
+    if left > 0
+      numString = numString + ' '
+    end
+  end
+
+  write = left/100
+  left = left - write*100
+
+  if write > 0
+    #recursive part to get the hundreds
+    hundreds = englishNumber write
+    numString = numString + hundreds + ' hundred'
+    if left > 0
+      numString = numString + ' '
+    end
+  end
+
+  write = left/10
+  left = left - write*10
+
+  if write > 0
+    if ((write == 1) and (left > 0))
+      numString = numString + teenagers[left-1]
+      left = 0
+    else
+      numString = numString + tensPlace[write-1]
+    end
+    if left > 0
+      numString = numString + '-'
+    end
+  end
+
+  write = left
+  left = 0
+
+  if write > 0
+    numString = numString + onesPlace[write-1]
+  end
+
+  numString
+end
+
+  # returns "bottle" or "bottles"
+  def bottle(n)
+    if n == 1 then 'bottle' else 'bottles' end
+  end
+
+end

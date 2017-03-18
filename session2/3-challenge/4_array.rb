@@ -10,3 +10,7 @@
 
 
 
+def get_squares arrasy
+  array.select { |x| array.include? x*x }.sort
+end
+

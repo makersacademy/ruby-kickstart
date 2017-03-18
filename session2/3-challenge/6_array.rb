@@ -15,3 +15,14 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? array
+  isprime = true
+  length = 0
+  array.each { |str| length += str.length}
+  isprime = false if length < 2
+  for i in 2..length-1
+    isprime = false if length % i == 0
+  end
+  isprime
+end
+
