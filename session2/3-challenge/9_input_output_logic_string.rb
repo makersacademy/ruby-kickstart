@@ -24,8 +24,56 @@
 # USER:     BYE
 
 def deaf_grandma
+  while line = gets
+    break if line == "BYE"
+    if line == line.upcase && line != ""
+      puts "NO, NOT SINCE 1938"
+    else
+      puts "SPEAK UP SONNY! "
+    end
+  end
 
+=begin
+
+def deaf_grandma
+  while line = gets
+    line.chomp!
+    break if line == "BYE"
+    if line == line.upcase && line != ""
+      puts "NO, NOT SINCE 1938!"
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+  end
 end
+
+=end
+
+# deaf_grandma if $0 == __FILE__ # this will call your code so you can run it from the terminal
+
+# Doesnt go through rake test, however script works.
+=begin
+
+bye = 0
+response = ""
+
+while bye < 3
+  response = gets.chomp
+
+  if response == "BYE"
+     bye = bye + 1
+
+   elsif response == response.downcase
+     puts "HUH?! SPEAK UP, SONNY!"
+     bye = 0
+
+   else # response == response.upcase
+     puts "NO, NOT SINCE 1938!"
+     bye = 0
+   end
+ end
+
+=end
 
 
 
@@ -33,4 +81,4 @@ end
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
-deaf_grandma if $0 == __FILE__
+# deaf_grandma if $0 == __FILE__

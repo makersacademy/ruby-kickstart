@@ -18,15 +18,47 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
+def prompt
+  puts 'Enter a number or bye'
+end
+
 def hi_hi_goodbye
-  # your code here
+  prompt
+  while (line = gets) && (line !~ /bye/) # first is an assignment statement that returns a line or nil, and is thus boolean
+    line.to_i.times { print 'hi ' }
+    puts
+    prompt
+  end
+  puts "Goodbye!"
+end
+
+# My attempt to resolve this:
+# Q1: Why I cannot exit the script - goodbye
+# Q2: It doesnt work without argumebt (number)
+#
+#
+=begin
+def hi_hi_goodbye(number)
+
+  new_str = ""
+  while number != "bye"
+   puts "Enter  number"
+   number = gets.chomp.to_i
+   number.times {new_str = new_str + "hi "}
+   puts new_str
+   new_str = ""
+  end
+    puts "goodbye"
+    exit(0)
 
 end
 
+hi_hi_goodbye(10)
+=end
 
 
 
 # This will just invoke the method if you run this program directly
 # This way you can try it out by running "$ ruby 2_input_output_control.rb"
 # but it will still work for our tests
-hi_hi_goodbye if $0 == __FILE__
+#hi_hi_goodbye if $0 == __FILE__
