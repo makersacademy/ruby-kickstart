@@ -7,7 +7,12 @@
 # Standard input will be like "9 2\n" and will expect you to print
 # "11\n7\n18\n" to standard output.
 
-def sum_difference_product
-  # your code goes here
-  
+def sum_difference_product	
+	a, b = gets.split
+	a = a.to_i
+	b = b.to_i
+		sum = a + b
+		diff = a - b
+		prod = a * b
+	puts "#{sum}\n#{diff}\n#{prod}\n"
 end

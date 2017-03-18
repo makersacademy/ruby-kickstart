@@ -6,5 +6,26 @@
 #
 
 def odds_and_evens(string, return_odds)
+	evenstring = ""
+	oddstring = ""
+	letters = string.split ''
+	letters.each_index do |i|
+		if i % 2 == 0
+			evenstring << string[i]
+		else
+			oddstring << string[i]
+		end
+	end
+	if return_odds == false
+		return evenstring
+	else
+		return oddstring
+	end
+
 
 end
+
+
+	
+
+odds_and_evens("abcdefg", true)

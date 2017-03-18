@@ -73,3 +73,84 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+require 'date'
+
+class User
+	#define the user class
+  attr_accessor :username, :blogs
+  #write setter and getter methods for username and blogs
+
+  def initialize(username)
+  	#def initialize method, recieving username
+    self.username = username
+    #set the recieved username to the User class
+    self.blogs    = []
+    #set blogs in class to an array
+  end
+
+  def add_blog(date, text)
+  	#defining the add blog method, taking the date and recieved text
+    added_blog = Blog.new(date, self, text)
+    #method creates a new instance of the Blog class, taking the date, the User and the text
+    blogs << added_blog
+    #appends the new Blog instance to the blogs array
+    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+    #calls the User blogs array and sorts the elements by date in reverse order
+    added_blog
+    #returns the added blod
+  end
+end
+
+
+
+class Blog
+  attr_accessor :date, :user, :text
+  #writes getter and setter methods for date, user and text
+
+  def initialize(date, user, text)
+  	#recieves date, user and text and keeps them in Blog class
+    self.date = date
+    self.user = user
+    self.text = text
+  end
+
+  def summary
+  	#splits the text into an array and takes the first 10 words(array index start at 0)
+  	#joins them with a space
+    text.split[0..9].join(' ')
+  end
+
+  def entry
+  	#puts username, date and text
+    "#{user.username} #{date}\n#{text}"
+  end
+
+  def ==(other)
+  	#redefine the == method so that if one blog has the same date, user and text as another
+  	#in the blogs array it is the same.
+    date   == other.date &&
+      user == other.user &&
+      text == other.text
+  end
+end
+
+
+lissa = User.new 'QTSort'
+#creates a new instance of the User class, taking the username 'QTSort' for lissa
+lissa.username                  # => "QTSort"
+lissa.blogs                     # => []
+
+lissa.add_blog Date.parse("2010-05-28") , "Sailor Mars is my favourite"
+lissa.blogs                     # => [ blog1 ]
+#
+ blog1 = lissa.blogs.first
+blog1.user                      # => lissa
+#
+Blog.new Date.parse("2007-01-02"), lissa, "Going dancing!"                                    # we'll call this blog2
+Blog.new Date.parse("2006-01-02"), lissa, "For the last time, fuck facebook >.<"              # we'll call this blog3
+Blog.new Date.parse("2010-01-02"), lissa, "Got a new job, cuz I'm pretty much the best ^_^"   # we'll call this blog4
+lissa.blogs                     # => [ blog1 , blog4 , blog2 , blog3 ]
+
+
+
