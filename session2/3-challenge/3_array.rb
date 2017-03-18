@@ -7,6 +7,17 @@
 
 class String
   def every_other_char
+
+new = ''
+
+  each_char.with_index {|letter, position| new << letter if position.even? }
+
+new
   end
-  
+
 end
+
+
+
+p "abcdefg".every_other_char  # => "aceg"
+p "".every_other_char         # => ""
