@@ -30,6 +30,9 @@ def example
   end
 end
 
+puts example
+
+
 example # invokes the method
 
 

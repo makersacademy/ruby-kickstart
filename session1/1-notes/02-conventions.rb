@@ -5,6 +5,8 @@
 my_var = 4
 my_var      # => 4
 
+
+
 # This shows what that line evaluates to, and in the case of a line with just a variable on it, shows the value
 # of the object it refers to.
 
