@@ -6,7 +6,16 @@
 # "".every_other_char         # => ""
 
 class String
-  def every_other_char
+	
+  
+  def every_other_char 
+  	words = ''
+  	each_char.with_index do |l, i|
+  		words << l if i.even?
+  	end
+  	words
+
+
   end
   
 end

@@ -14,3 +14,12 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(numbers)
+  numbers = numbers.to_a
+  our_array = []
+  numbers.map do |n|
+    next if n % 3 == 0
+      our_array << (n % 3)
+  end
+  our_array
+end
