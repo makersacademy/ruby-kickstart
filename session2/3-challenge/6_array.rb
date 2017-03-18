@@ -15,3 +15,16 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array)
+	tot = array.join('').length
+	if tot < 2
+		false
+	else
+		div = (2..tot).to_a.delete_if { |x| tot % x != 0 }
+		if div.count == 1
+			true
+		else
+			false
+		end
+	end
+end

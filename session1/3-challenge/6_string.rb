@@ -6,5 +6,7 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  ns = ""
+  return_odds ? string.split('').each_with_index {|v, x| if x.odd?; ns << v; end} : string.split('').each_with_index {|v, x| if x.even?; ns << v; end}
+  ns
 end

@@ -24,7 +24,16 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  string = $stdin.gets.chomp
+  if string == string.upcase && string != ""
+    unless string == "BYE"
+  	  puts "NO, NOT SINCE 1938!"
+      deaf_grandma
+    end
+  elsif string != string.upcase || string == ""
+  	puts "HUH?! SPEAK UP, SONNY!"
+    deaf_grandma
+  end
 end
 
 

@@ -7,6 +7,8 @@
 
 class String
   def every_other_char
+    ret = ""
+    self.split('').each_with_index {|x, y| if y.even?; ret << x; end}
+    ret
   end
-  
 end
