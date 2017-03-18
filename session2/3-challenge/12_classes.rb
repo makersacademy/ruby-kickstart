@@ -23,8 +23,29 @@
 # f.to_f               # => 0.5
 
 class Fraction
+  attr_accessor :numerator, :denominator
+
+  def initialize(numerator, denominator)
+    self.numerator = numerator
+    self.denominator = denominator
+  end
+
+  def to_f
+    return self.numerator.to_f / self.denominator.to_f
+  end
+
   def gcd(a,b)
     return a if b == 0
     gcd(b, a%b)
   end
+
+  def lowest
+    gcd = gcd(self.numerator,self.denominator)
+    return Fraction.new(self.numerator/gcd, self.denominator/gcd)
+  end
+
+  def to_s
+    return "#{self.numerator}/#{self.denominator}"
+  end
+
 end

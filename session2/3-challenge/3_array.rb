@@ -7,6 +7,9 @@
 
 class String
   def every_other_char
+    to_return = String.new
+    range = 0...self.length
+    range.step(2) {|x| to_return << self[x] }
+    to_return
   end
-  
 end
