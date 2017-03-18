@@ -8,6 +8,10 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+int = gets.chomp
+  new_int = int.split(/ /)
+  first_int = new_int[0].to_i
+  second_int = new_int[1].to_i
+
+  puts "#{first_int + second_int}\n#{first_int - second_int}\n#{first_int * second_int}"
 end

@@ -30,6 +30,10 @@ def example
   end
 end
 
+# rescue (when placed between begin and end) allows us to run code that would normally error. In this example,
+# we're capturing the errors under the name "exception"
+
+
 example # invokes the method
 
 

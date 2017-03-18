@@ -8,7 +8,7 @@
 
 
 
-# When the LHS is false, returns the LHS
+# When the LHS is false, returns the RHS
 nil   || 1        # => 1
 false || "abc"    # => "abc"
 
