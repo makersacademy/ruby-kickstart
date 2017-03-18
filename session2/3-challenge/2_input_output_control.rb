@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # Prompt the user for a number, then read it in and print out "hi" that many times
 #
 # Repeat this process until the user submits "bye", then say "goodbye" and end the program
@@ -19,7 +20,21 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
+  stop = false
+
+  while stop == false
+    puts "Enter a number"
+    input = gets.chomp
+
+    if input == 'bye'
+      puts 'goodbye'
+      stop = true
+    end
+
+    if input != "\n"
+      puts 'hi '*input.to_i
+    end
+  end
 
 end
 

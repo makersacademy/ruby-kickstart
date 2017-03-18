@@ -8,5 +8,18 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(array)
+  solution = []
+  sortedArray = array.sort()
+  sortedArray.each do |i|
+    (0..sortedArray.length-1).each do |n|
+      if i*i == sortedArray[n]
+        solution.push(i)
+        break
+      end
+    end
+  end
 
+  return solution
 
+end

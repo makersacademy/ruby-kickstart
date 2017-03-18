@@ -6,3 +6,11 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(array)
+  array.each_index do |x|
+    if array[x] == array[x+1] && array[x] == array[x+2]
+      return true
+    end
+  end
+  return false
+end
