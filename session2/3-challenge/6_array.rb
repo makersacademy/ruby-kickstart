@@ -15,3 +15,13 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(arr)
+  require 'prime'
+
+  arr.join.length.prime?
+  # Prime.prime?(count)
+
+
+end
+
+p prime_chars? ['ab', 'cd']

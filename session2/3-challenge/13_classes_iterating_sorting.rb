@@ -67,9 +67,48 @@
 #                       From the school of revision, Comes the standard inventor's rule, Books of subtle notation Compositions, all original
 #                       I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,
 #                       All my labor will be lost with time
+require 'date'
 
+class User
 
+  attr_accessor :username, :blogs
+
+    def initialize(username)
+      self.username = username
+      self.blogs = []
+    end
+
+    def add_blog(date, text)
+      blog = Blog.new(date, self, text)
+
+      blogs << blog
+      self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+      blog
+    end
+  end
+
+class Blog
+
+  attr_accessor :user, :text, :date
+
+    def initialize(date, user, text)
+      self.user, self.text, self.date = user, text, date
+    end
+
+    def summary
+      text.split[0..9].join(" ")
+    end
+
+    def entry
+      "#{user.username} #{date}\n#{text}"
+    end
+
+    def ==(other)
+      date == other.date &&
+      user == other.user &&
+      text == other.text
+    end
+end
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
-require 'date'

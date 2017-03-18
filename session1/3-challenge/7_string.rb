@@ -6,4 +6,12 @@
 
 def pirates_say_arrrrrrrrr(string)
 
+	arr = string.split(//)
+
+  output = []
+  arr.each_cons(2) { |a,b| output << b if a == "r" || a == "R" }
+  output.join
+
 end
+
+p pirates_say_arrrrrrrrr("are you really learning Ruby?")

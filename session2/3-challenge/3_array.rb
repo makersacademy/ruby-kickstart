@@ -7,6 +7,17 @@
 
 class String
   def every_other_char
+  	
+  	arr = split("")
+  	output = []
+
+  	# output = arr.select { |index| index.even? }
+
+	arr.each_slice(2) { |a, b| output << [a] }
+
+	output.flatten.join
   end
   
 end
+
+puts "string".every_other_char

@@ -9,3 +9,16 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(blah)
+
+  output = blah.split(/[\?\!\@\$\#\%\^\&\*\(\)\-\=\_\+\[\]\:\;\,\.\/\<\>\\\|\s]/)
+  output.reject!(&:empty?)
+
+  output1 = []
+  output.each_slice(2) { |a, b| output1 << [a] }
+
+  output1.flatten
+
+end
+
+p alternate_words("Elementary, my dear Watson!")
