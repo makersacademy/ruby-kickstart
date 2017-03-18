@@ -14,3 +14,13 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+<<<<<<< HEAD
+
+def mod_three(our_numbers)
+  div_by_three = our_numbers.select { |numbers| numbers % 3 != 0 }.map { |numbers| numbers % 3 }
+  puts div_by_three
+end
+
+mod_three [0,1,2,3,4,5,6,7]
+=======
+>>>>>>> c6e3db68b1696c9b1ce9890d9a36cc8d971f72ab
