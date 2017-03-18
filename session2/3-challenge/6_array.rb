@@ -15,3 +15,22 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime? (n)
+  n.to_i
+  if n < 2
+    return false
+  elsif n == 2
+    return true
+  else
+  for x in 2..(n - 1)
+    if n % x == 0
+      return false
+    end
+  end
+  true
+end
+end
+
+def prime_chars?(strings)
+  strings.join.length.prime?
+end
