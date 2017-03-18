@@ -7,4 +7,23 @@
 
 def odds_and_evens(string, return_odds)
 
+	if return_odds
+		counter = 1
+		new_string = ""
+		while counter <= string.length - 1
+			new_string += string[counter]
+			counter += 2
+		end
+		new_string
+	else
+		counter = 0
+		new_string = ""
+		while counter <= string.length - 1
+			new_string += string[counter]
+			counter += 2
+		end
+		new_string
+	end
+
+
 end

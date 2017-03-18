@@ -13,6 +13,22 @@
 
 
 def grade(num_books, has_read_books)
+
+	if has_read_books
+
+		case 
+		when num_books < 10 then "C"
+		when num_books <= 20 && num_books > 9 then "B"
+		when num_books > 20 then "A"
+		end
+	else
+		case 
+		when num_books < 10 then "D"
+		when num_books <= 20 && num_books > 9 then "C"
+		when num_books > 20 then "B"
+		end
+	end
+
 end
 
 

@@ -7,6 +7,9 @@
 
 class String
   def every_other_char
+  	my_string =''
+  	split(//).each_slice(2) {|a, b| my_string << a}
+  	my_string
   end
   
 end
