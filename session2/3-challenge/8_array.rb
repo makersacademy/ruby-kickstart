@@ -6,3 +6,23 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three? arr
+  head = nil
+  count = 0
+
+  arr.each do |x|
+    if (x != head)
+      head = x
+      count = 1
+    else
+      count += 1
+    end
+
+    if (count == 3)
+      return true
+    end
+  end
+
+  return false
+end
+

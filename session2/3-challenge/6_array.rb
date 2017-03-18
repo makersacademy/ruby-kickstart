@@ -15,3 +15,15 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? ( arr)
+  def isPrime?
+    2.upto self do |i|
+      if ((self%i) == 0)
+        return (self == i)
+      end
+    end
+    return false
+  end
+
+  return arr.join.length.isPrime?
+end
