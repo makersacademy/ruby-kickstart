@@ -20,7 +20,7 @@ car = Car.new
 car.set_miles 1000
 car.get_miles # => 1000
 
-car.instance_variables              # => [:@miles]
+car.instance_variables              # => [:@miles] Leon: like "Hey what instance variables do you have?"
 car.instance_variable_get '@miles'  # => 1000
 
 

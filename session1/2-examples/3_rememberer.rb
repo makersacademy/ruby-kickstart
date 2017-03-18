@@ -16,5 +16,6 @@ loop do
     puts "No, I haven't seen #{line} before"
     lines_seen << line
   end
+  puts lines_seen
 end
 

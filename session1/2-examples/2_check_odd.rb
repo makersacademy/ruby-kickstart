@@ -1,4 +1,4 @@
-  # Invoke this program with a number
+ # Invoke this program with a number
 # $ ruby 2_check_odd.rb number
 
 

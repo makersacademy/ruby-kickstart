@@ -1,3 +1,4 @@
+#!/Users/leonwee/.rvm/rubies/ruby-2.2.1/bin/ruby
 # fill out the method below
 # then test tho see if you did them correctly with
 #  $ rake 1:1
@@ -9,5 +10,8 @@
 # arithmetic1(-6)     # => -50
 
 def arithmetic1(n)
+  n * 5 - 20
 end
+
+puts arithmetic1(10)
 

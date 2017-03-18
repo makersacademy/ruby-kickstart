@@ -10,7 +10,7 @@ end
 my_number = 56
 
 if my_number < 12
-  puts "Fewer than a dozen"
+  puts "Fewer than a dozen"      # if my_number is 10 it finds the first if statement that it satisfies and then its done
 elsif my_number < 64
   puts "You could hold me in 6 bits"
 else

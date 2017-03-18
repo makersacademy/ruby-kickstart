@@ -12,6 +12,8 @@
 10    / 3 # => 3
 10.0  / 3 # => 3.3333333333333335
 
+#Leon: Go on ruby-doc.org to check specific methods and notes on them
+
 # what if you want to convert them?
 10.to_f   # => 10.0
 10.0.to_i # => 10
