@@ -6,5 +6,25 @@
 #
 
 def odds_and_evens(string, return_odds)
+  return_string = ''
 
+  new_string = string.split(//) # =>
+  if return_odds == true
+    new_string.each_index do |item|
+      if item.odd?
+        return_string << new_string[item]
+      end
+    end
+  else
+    new_string.each_index do |item|
+      if item.even?
+        return_string << new_string[item]
+      end
+    end
+  end
+
+
+  return_string # =>
 end
+
+# puts odds_and_evens('abcde', true)   # FOR TESTING
