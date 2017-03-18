@@ -25,6 +25,23 @@
 
 def deaf_grandma
 
+	# get input
+
+	input = gets.chomp
+
+	# return in caps
+
+	while input != "BYE"
+		if input != input.upcase || input == ""
+			puts "HUH?! SPEAK UP, SONNY!"
+		else
+			puts "NO, NOT SINCE 1938!"
+		end
+		input = gets.chomp
+	end
+
+	# except if in all caps, reply
+
 end
 
 
