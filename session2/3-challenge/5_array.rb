@@ -14,3 +14,11 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(numbers)
+  numbers.select { |number| number % 3 != 0 }.map { |number| number % 3 }
+end
+
+=begin
+Line 18 - .select creates a new array of the values that equal true from the original
+array.  .map then creates yet another new array from the one .select just created
+=end

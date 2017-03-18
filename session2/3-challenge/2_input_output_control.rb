@@ -18,11 +18,25 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
-def hi_hi_goodbye
-  # your code here
-
+def prompt
+  puts 'Enter a number or bye:'
 end
 
+def hi_hi_goodbye
+  prompt
+  while (line = gets) && (line != /bye/)
+    line.to_i.times { puts 'hi'}
+    puts prompt
+  end
+  puts 'Goodbye!'
+end
+
+=begin
+line 27 is asigning the users imput to gets and while there is a string entered
+it will equate to true.
+The && boolean is then comparing it with the input not equalling bye: /bye/ searches
+for the string 'bye' in the input.  If both are true then the next line is executed
+If one is false ie no text input or input is 'bye' then line 31 is executed.
 
 
 
