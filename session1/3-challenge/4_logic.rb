@@ -11,8 +11,24 @@
 
 # <10 books => D, 10..20 books => C, >20 book =>B
 
-
 def grade(num_books, has_read_books)
+
+	grades = ""
+
+	if num_books < 10
+		grades = "D"
+	elsif num_books > 20 
+		grades = "B"
+	else
+		grades = "C"
+	end
+    
+	if has_read_books == true
+		grades = grades.ord - 1
+		grades = grades.chr
+	end
+	
+	grades
+	
+
 end
-
-

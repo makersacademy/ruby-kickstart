@@ -9,5 +9,9 @@
 # arithmetic1(-6)     # => -50
 
 def arithmetic1(n)
-end
 
+new_number = (n*5)-20
+
+new_number
+
+end

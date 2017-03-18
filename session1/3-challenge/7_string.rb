@@ -6,4 +6,17 @@
 
 def pirates_say_arrrrrrrrr(string)
 
+	new_string = ""
+	x = 0
+	while x < string.length
+	    
+		if string[x] == "r" || string[x] == "R"
+		    
+			new_string << string[x+1].to_s
+		end
+		x += 1
+	end
+	
+	new_string
+
 end
