@@ -16,6 +16,8 @@ class Car
   end
 end
 
+# Unlike a local variable an instance variable has a default value of nil
+
 car = Car.new
 car.set_miles 1000
 car.get_miles # => 1000
