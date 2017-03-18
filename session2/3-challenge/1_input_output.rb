@@ -7,7 +7,10 @@
 # Standard input will be like "9 2\n" and will expect you to print
 # "11\n7\n18\n" to standard output.
 
+#How do we check it's an int being parsed in?
+# Integer(gets) rescue false
+
 def sum_difference_product
-  # your code goes here
-  
+  nums = gets.chomp.split(/ /).map{|a| a.to_i}
+  puts "#{nums[0]+nums[1]}\n#{nums[0]-nums[1]}\n#{nums[0]*nums[1]}"
 end
