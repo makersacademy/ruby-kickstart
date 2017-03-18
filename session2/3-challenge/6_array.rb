@@ -15,3 +15,30 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require 'prime'
+prime_numbers  = Prime.entries(100)
+p prime_numbers
+
+def prime_chars?(array)
+  array.join.length do |num|
+    return true if num % 1 == 0 || num % num == 0
+    end
+    return false
+  end
+end
+
+def prime_chars?(array)
+  array.join.length { |num| keep_if? num % 1 == 0 ? true : false}.map {|num|keep_if? num % num == 0 ? true : false}
+end
+
+# Examples of length three
+puts prime_chars? ['abc']
+puts prime_chars? ['a', 'bc']
+puts prime_chars? ['ab', 'c']
+puts prime_chars? ['a', 'b', 'c']
+#
+# Examples of length four
+puts prime_chars? ['abcd']
+puts prime_chars? ['ab', 'cd']
+puts prime_chars? ['a', 'bcd']
+puts prime_chars? ['a', 'b', 'cd']
