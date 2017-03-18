@@ -6,4 +6,6 @@
 
 def pirates_say_arrrrrrrrr(string)
 
+    a = string.each_char{}
+
 end
