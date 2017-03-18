@@ -16,7 +16,7 @@ array[3] # => nil
 # Negative indexes backwards from the end
 array[-1] # => "two"
 array[-2] # => "one"
-array[-3] # => "zero"
+array[-4] # => "zero"
 
 
 # Arrays know where the elements at their indexes are this
