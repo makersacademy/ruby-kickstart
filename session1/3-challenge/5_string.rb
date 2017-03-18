@@ -5,4 +5,10 @@
 # add_more_ruby("Sad times are ahead!")         # => "Happy times are ahead!"
 
 def add_more_ruby(string)
-end
+	string.capitalize.gsub("sad","happy")
+end 
+
+puts add_more_ruby("I was extremely SAD today")
+
+puts add_more_ruby("It was a very sad day")
+

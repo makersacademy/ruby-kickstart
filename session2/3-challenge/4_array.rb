@@ -8,5 +8,22 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares array
+	new_array = []
+	array.each do |number|
+	if array.include? number**2 
+	new_array << number
+	end
+end 
+	return new_array.sort 
+end 
+
+
+
+print get_squares [2,4,81,9,13,6,36]
+
+
+# We need to return only the numbers that have their squared value in the array as well
+
 
 

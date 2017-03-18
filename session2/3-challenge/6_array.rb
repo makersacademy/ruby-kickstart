@@ -15,3 +15,12 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+ def prime_chars?(array)
+        (2..Math.sqrt(array.join.length)).each { |i| return false if array.join.length % i == 0}
+        return true
+    end
+
+
+
+puts prime_chars? ['abcdefg']
