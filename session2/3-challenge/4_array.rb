@@ -8,5 +8,20 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares array
+	squares = []
+	roots =[]
+array.each do |variable|
+	squared = variable * variable
+	squares << squared
+end
+allsquares = array & squares
+allsquares.sort
+allsquares.each do |variable|
+	root = Math.sqrt(variable)
+	roots << root.to_i
+end
+puts roots.sort.uniq
+end
 
-
+# how about numbers.select { |n| numbers.include? n*n }.sort

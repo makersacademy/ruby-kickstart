@@ -20,3 +20,45 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+class BeerSong
+  attr_accessor :beers
+
+  def initialize(beers)
+    beers = 0  if beers < 0 #sort out the exceptions
+    beers = 99 if beers > 99
+    self.beers = beers #we put self in front of it so the interpreter knows we are invoking fee= rather than creating a local variable
+  end
+
+  def print_song
+    beers.downto 1 do |i| #go down the numbers till 1
+      print_stanza i #print stanza which takes a variable 
+    end
+  end
+
+  def print_stanza(n)
+    if n.zero? 
+      String.new #what?
+    else
+      puts "#{translate n} #{bottle n} of beer on the wall,"        , #n is the number!
+           "#{translate n} #{bottle n} of beer,"                    ,
+           "Take one down, pass it around,"                         ,
+           "#{translate n - 1} #{bottle n-1} of beer on the wall."
+    end
+  end
+
+  # returns "bottle" or "bottles"
+  def bottle(n)
+    if n == 1 then 'bottle' else 'bottles' end #just being flash here
+  end
+
+  # translates number to English
+  def translate(n)
+    if 0 <= n && n <= 19
+      %w(zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen)[n] #just mapping
+    elsif n % 10 == 0
+      %w(zero ten twenty thirty forty fifty sixty seventy eighty ninety)[n/10] 
+    else
+      "#{translate n/10*10}-#{translate n%10}".downcase #what
+    end.capitalize
+  end
+end

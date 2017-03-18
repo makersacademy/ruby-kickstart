@@ -15,12 +15,12 @@
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
 def mod_three array
-result = []
-array.each do |variable|
-	remainder = variable % 3
-	result << remainder
-end
-result.delete_if {|i| i == 0}
-p result
+array.select { |number| number % 3 != 0 }.map { |number| number % 3 }
 
 	end
+
+	numbers = [0,1,2,3,4,5,6,7]
+
+	puts mod_three(numbers)
+
+#numbers.select { |number| number % 3 != 0 }.map { |number| number % 3 }

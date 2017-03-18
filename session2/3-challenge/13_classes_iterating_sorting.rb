@@ -73,3 +73,20 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+class User
+  attr_accessor :username, :blogs
+
+  def initialize(username)
+    self.username = username
+    self.blogs    = []
+  end
+end
+
+class Blog
+
+end
+
+philip = User.new "Philip"
+
+puts philip.username
