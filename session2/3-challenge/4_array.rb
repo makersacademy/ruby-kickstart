@@ -8,5 +8,11 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
+def get_squares(ary)
+  newAry = []
+  ary.each do |x|
+   newAry << x if ary.include?(x * x)
+  end
+  newAry.sort
+end
 
