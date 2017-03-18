@@ -1,7 +1,7 @@
 puts "Hello, start typing!"
 
 while line = gets
-  puts "You submitted #{line.inspect}"
+  puts "You submitted #{line}"
   break if line.chomp == 'exit'
 end
 

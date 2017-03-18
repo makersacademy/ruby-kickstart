@@ -18,10 +18,17 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
-def hi_hi_goodbye
-  # your code here
 
+def hi_hi_goodbye
+	number = 0
+until number == "bye"
+	number.to_i.times do print "hi " end
+puts "Enter a number"
+number = $stdin.gets.chomp
 end
+puts "goodbye"
+end
+
 
 
 
