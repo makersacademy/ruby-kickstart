@@ -9,3 +9,10 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(words)
+  words = words.gsub(/[\!\@\$\#\%\^\&\*\(\)\-\=\_\+\[\]\:\;\,\.\/\<\>\?\\\|]/, ' ')
+  words = words.split
+  words.values_at(* words.each_index.select { |i| i.even?})
+end
+
+# This appears to work as is needed by the challenge but the rake check doesn't like this one either
