@@ -19,7 +19,13 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
+  puts "Please input number:"
+ 
+while (line = gets) && (line !~ /bye/)
+	line.to_i.times {puts "hi"}
+end
+
+puts "goodbye"
 
 end
 
