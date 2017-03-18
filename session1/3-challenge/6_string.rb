@@ -6,5 +6,16 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+    s = ''
+    len = string.length
+  if return_odds
+    (0...len).each do |x|
+      x.odd? ? s << string[x] : next
+    end
+  else
+    (0...len).each do |x|
+      x.even? ? s << string[x] : next
+    end
+  end
+  s
 end

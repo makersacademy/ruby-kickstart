@@ -19,3 +19,33 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker *args
+  s = []
+  l = args.length
+  if args[0]
+    (1...l).each do |x|
+      if x.odd?
+        if !!args[x] == !!args[x+1]
+          s << false
+        else
+          s << true
+        end
+      else
+        next
+      end
+    end
+  else
+    (1...l).each do |x|
+      if x.odd?
+        if !!args[x] != !!args[x+1]
+          s << false
+        else
+          s << true
+        end
+      else
+        next
+      end
+    end
+  end
+  s
+end

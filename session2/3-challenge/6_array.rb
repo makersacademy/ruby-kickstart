@@ -1,3 +1,4 @@
+require 'prime'
 # Write a method named prime_chars? which takes array of strings
 # and returns true if the sum of the characters is prime.
 #
@@ -15,3 +16,10 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? arr
+  s = ''
+  arr.each do |x|
+    s = s + x
+  end
+  Prime.prime?(s.length) ? true : false
+end
