@@ -6,3 +6,12 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(arr)
+  arr.each_cons 3 do |a, b, c|
+   if a == b && b == c
+     return true
+   exit
+   end
+  end
+  return false
+end
