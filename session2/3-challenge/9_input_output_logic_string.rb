@@ -22,11 +22,18 @@
 # USER:     bye
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
-
-def deaf_grandma
-
+                    # => nil
+while true                       # => true
+input = gets.chomp               # ~> NoMethodError: undefined method `chomp' for nil:NilClass
+if input == "BYE"
+  break
+elsif
+    input == input.upcase
+  puts "NO, NOT SINCE 1938!"
+else
+  puts "HUH?! SPEAK UP, SONNY!"
 end
-
+end
 
 
 
@@ -34,3 +41,10 @@ end
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
 deaf_grandma if $0 == __FILE__
+
+# >> Hiya
+
+# ~> NoMethodError
+# ~> undefined method `chomp' for nil:NilClass
+# ~>
+# ~> /Users/matt/Dropbox/Projects/ruby-kickstart/session2/3-challenge/9_input_output_logic_string.rb:27:in `<main>'

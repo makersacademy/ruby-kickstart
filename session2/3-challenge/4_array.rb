@@ -9,4 +9,14 @@
 # This time you will have to define the method, it's called: get_squares
 
 
+def get_squares array
+  squared = array.map  {|n| n*n}                          # => [625, 16, 81, 36, 2500, 256, 25]
+  result = array & squared                                # => [25, 16]
+  result.map {|i|Math.sqrt(i).to_i}.sort {|x,y| x <=> y}  # => [4, 5]
+end
 
+array = [25, 4, 9, 6, 50, 16, 5]  # => [25, 4, 9, 6, 50, 16, 5]
+
+get_squares array  # => [4, 5]
+
+test
