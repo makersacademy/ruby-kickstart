@@ -9,3 +9,19 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(sentence)
+    alt_array = []
+
+    #convert all given punctuation marks into spaces
+    '!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each do |marks|
+      sentence = sentence.gsub(marks, ' ')
+    end
+
+    #iterate over the words and return only the even ones
+    sentence.split.each_with_index do |word, index|
+    alt_array << word if index.even?
+    end
+
+    return alt_array
+
+end

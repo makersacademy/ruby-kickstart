@@ -11,6 +11,8 @@ end
 # This is the syntax for single line blocks
 # note that you need parens around that 1,
 # we'll discuss why later
+
+# ST: Passing a block of code to the method, but the method isn't doing anything with it at the moment
 mah_method!(1) { |block_parameter| block_parameter * 2 }
 
 
@@ -19,4 +21,3 @@ mah_method!(1) { |block_parameter| block_parameter * 2 }
 mah_method! 1 do |param1, param2|
   param1 + param2
 end
-

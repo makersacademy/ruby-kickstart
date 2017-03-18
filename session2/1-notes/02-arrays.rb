@@ -17,6 +17,7 @@ array[3] # => nil
 array[-1] # => "two"
 array[-2] # => "one"
 array[-3] # => "zero"
+array[-4] # => nil
 
 
 # Arrays know where the elements at their indexes are this

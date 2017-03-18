@@ -6,5 +6,13 @@
 #
 
 def odds_and_evens(string, return_odds)
+  return_odds ? n = 1 : n = 0
+  newstring = ""
 
+    while n < string.length do
+        newstring << string[n]
+        n += 2
+    end
+
+  return newstring
 end
