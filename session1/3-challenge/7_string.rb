@@ -5,5 +5,14 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+	result = ""
+	0.upto(string.length - 2) do |i|
+		c1 = string[i] 
+		c2 = string [i+1]
+		if (c1 == "r" || c1 == "R")
+			result += c2  
+		end
+	end
+	return result
 end
+

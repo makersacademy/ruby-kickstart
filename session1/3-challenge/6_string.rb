@@ -6,5 +6,12 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  result = ""
+  0.upto(string.length - 1) do |num|
+  
+  	if (return_odds == true && !num.even?) or (return_odds == false && num.even? )
+  		result << string[num]
+	end
+  end
+  return result
 end
