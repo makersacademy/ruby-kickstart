@@ -20,7 +20,18 @@
 
 def hi_hi_goodbye
   # your code here
-
+  ans=true
+  while ans
+    puts "Enter a number"
+    numb = gets.chomp
+    if numb == "bye"
+      ans=false
+      puts "goodbye"
+    else
+      numb.to_i.times {|i| print "hi "}
+      puts
+    end
+  end
 end
 
 

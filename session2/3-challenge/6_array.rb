@@ -15,3 +15,16 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? (array)
+
+  numb= array.inject(0) {|sum, x| sum + x.length}
+
+  if numb == 0 || numb == 1
+  	x=false
+  else
+    x=true
+    (numb-1).downto(2) {|n| x=false if numb % n == 0}
+  end
+  x
+end
+

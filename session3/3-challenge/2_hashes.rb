@@ -8,6 +8,18 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
+def staircase (numb)
 
+  hary={}
+
+  1.upto(numb) do |n|
+  	ary=[]
+  	if !n.even?
+      1.upto(n) {|x| ary << x if x.even?}
+      hary.store(n, ary)
+    end
+  end
+  hary
+end
 
 

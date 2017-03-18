@@ -9,5 +9,9 @@
 
 def sum_difference_product
   # your code goes here
-  
+  puts "Enter two numbers"
+  str=gets.chomp
+  print str.split(" ").inject {|sum, n| sum.to_i + n.to_i}.to_s+"\n"+
+        str.split(" ").inject {|sum, n| sum.to_i - n.to_i}.to_s+"\n"+
+        str.split(" ").inject {|sum, n| sum.to_i * n.to_i}.to_s+"\n"
 end
