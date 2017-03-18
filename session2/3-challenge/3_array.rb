@@ -6,7 +6,12 @@
 # "".every_other_char         # => ""
 
 class String
-  def every_other_char
-  end
-  
+ def every_other_char
+  	if self.to_s == ""
+  		return ""
+  	end
+  	array = []
+  	self.split("").each_with_index { |i, index| array << i if index % 2 == 0 }
+  	array.join
+ end 
 end
