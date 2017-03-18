@@ -25,6 +25,15 @@
 
 def deaf_grandma
 
+loop do
+	response = gets.chomp
+	breaf if response == "BYE"
+	if response == response.upcase && response != ""
+		puts "NO, NOT SINCE 1938!"
+	else puts "HUH?! SPEAK UP SONNY!"
+	end
+end
+
 end
 
 
