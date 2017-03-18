@@ -5,5 +5,10 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+final_result = ""
+string.split.each do |x|
+  next if x == "r" || x == "R"
+  return final_result >> string[x]
+  end
+  final_result
 end
