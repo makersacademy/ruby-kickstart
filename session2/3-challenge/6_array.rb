@@ -15,3 +15,10 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+require 'mathn'
+
+def prime_chars?(array)
+  sum = 0
+  array.each { |i| sum += i.length }
+  sum.prime?
+end

@@ -8,6 +8,6 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
-
-
-
+def staircase(n)
+  (1..n).each_with_object(Hash.new(0)) { |i, count| if i.odd? then count[i] = (1..i).select { |i| i.even? } end }
+end

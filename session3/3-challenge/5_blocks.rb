@@ -19,7 +19,38 @@
 # end
 # order # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
 
+def spiral_access two_d, &block
+  a, b, counter = 0, -1, 0
+  list = []
 
+  (two_d[a].length).times {                                       # first step across right
+    b += 1
+    list << two_d[a][b] }
 
+  counter += 1
 
+  while counter <= two_d.length-1
 
+    (two_d.length-counter).times {                                # 0,4 -> 4,4 (down)
+      a += 1
+      list << two_d[a][b] }
+    (two_d.length-counter).times {                                # 4,4 -> 4,0 (left)
+      b -= 1
+      list << two_d[a][b] }
+
+    counter += 1
+
+    (two_d.length-counter).times {                                # 4,0 -> 1,0 (up)
+      a -= 1
+      list << two_d[a][b] }
+    (two_d.length-counter).times {                                # 0,0 -> 0,4 (right)
+      b += 1
+      list << two_d[a][b] }
+
+    counter += 1
+
+  end
+
+  list.each(&block)
+
+end

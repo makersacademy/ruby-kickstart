@@ -24,7 +24,14 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  while true
+    input = gets.chomp
+    if input.include?('BYE')
+       break
+    else
+      puts input.match(/[a-zA-Z]/) != nil && input == input.upcase ? "NO, NOT SINCE 1938!" : "HUH?! SPEAK UP, SONNY!"
+    end
+  end
 end
 
 
