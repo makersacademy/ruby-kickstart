@@ -15,3 +15,12 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars? string
+  num = string.join.length
+
+  2.upto(num - 1) do |i|
+    return false if num % i == 0
+  end
+
+  true
+end

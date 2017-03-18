@@ -8,5 +8,8 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(numbers)
+  return [] if numbers.length <= 1
 
-
+  numbers.select { |num| numbers.include? num*num }.sort
+end

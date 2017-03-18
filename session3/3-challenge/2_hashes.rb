@@ -8,6 +8,18 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
+def staircase(number)
+  key = []
 
+  1.upto(number) {|num| key << num if num.odd?}
 
+  values = key.each.map {|num| (1..num).to_a}
+  evens = []
+  values.each {|arr| arr.map {|i| evens << i if i.even?}}
 
+  hash = Hash[key.zip evens]
+
+  hash
+end
+
+puts staircase(10)
