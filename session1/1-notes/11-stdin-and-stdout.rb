@@ -10,6 +10,7 @@
 # Whatever you type will be sent to your program's stdin.
 
 # Use gets to read a line from stdin
+print "Want to say something to me?"
 user_response = gets
 
 # Use puts to write the line to stdout
@@ -31,4 +32,3 @@ puts "You said: #{user_response}"
 # line       # => "Line\n"
 #
 # It's like a cookie monster for newlines!
-

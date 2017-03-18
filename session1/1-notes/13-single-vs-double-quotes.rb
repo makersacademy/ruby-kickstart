@@ -9,4 +9,3 @@ puts 'This will\nonly be one line'
   # Here's
   # Two lines.
   # This will\nonly be one line
-

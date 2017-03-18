@@ -7,6 +7,8 @@
 
 class String
   def every_other_char
+    returned_string = ""
+    each_char.with_index {|c, i| returned_string << c if i.even?}
+    returned_string
   end
-  
 end
