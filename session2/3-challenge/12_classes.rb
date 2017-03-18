@@ -23,8 +23,47 @@
 # f.to_f               # => 0.5
 
 class Fraction
-  def gcd(a,b)
+	attr_accessor :numerator, :denominator
+
+	def initialize(numerator,denominator)
+		@numerator = numerator
+		@denominator = denominator
+	end
+
+	def to_float
+		@float = @numerator.to_f/@denominator.to_f
+		return @float.to_f
+	end
+
+	def to_string
+		@string = ("#{@numerator}/#{@denominator}").to_s
+		return @string
+	end
+
+	def lowest
+		return "#{@numerator/gcd(@numerator,@denominator)}" + "/" + "#{@denominator/gcd(@numerator,@denominator)}"
+	end
+
+  def gcd(a,b) #input for one of the other functions - greatest common divisor
     return a if b == 0
     gcd(b, a%b)
+    #puts b
   end
 end
+
+f = Fraction.new 20, 60
+puts f.numerator
+puts f.denominator
+puts f.to_float
+puts f.to_string
+puts f.lowest
+
+
+#steps
+	#add def initialize then create setter methods attr_accessor numerator denominator
+	#add .to_f method - divides a/b and returns as a float
+	#add .to_s method
+	#add lowest method - return lowest common denominator - use gcd method
+		#numerator & 
+
+

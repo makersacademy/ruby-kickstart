@@ -13,6 +13,26 @@
 
 
 def grade(num_books, has_read_books)
+	if num_books < 10 
+		grade = "D"
+	elsif num_books <=20 && num_books >=10
+		grade = "C"
+	elsif num_books >20
+		grade = "B"
+	else
+		puts "Not a number"
+	end
+
+	if has_read_books == true
+		(grade.ord - 1).chr # (.ord) finds the ASCII character number and decrements by 1 then turns into its corresponding character (.chr)
+	else
+		grade
+	end
 end
+
+grade(4,  false)  # => "D"
+grade(4,  true)   # => "C"
+grade(15, true)   # => "B"
+
 
 

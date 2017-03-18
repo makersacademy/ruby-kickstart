@@ -8,6 +8,15 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  # integer1 = $stdin.gets.chomp.to_i
+  # integer2 = $stdin.gets.chomp.to_i
+  a , b = gets.split.map { |num| num.to_i }
+  puts a + b
+  puts a - b
+  puts a * b
+ 
+ #puts "#{sum}\n#{difference}\n#{product}\n"
+ #multiple solutions work but test not passing (even when copy solution)
 end
+
+sum_difference_product

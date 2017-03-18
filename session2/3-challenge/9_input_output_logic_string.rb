@@ -24,13 +24,28 @@
 # USER:     BYE
 
 def deaf_grandma
-
+	puts "You've gone to visit grandma, you start the conversation"
+	input = $stdin.gets.chomp
+	until input == "BYE"
+		input = $stdin.gets.chomp
+		if input == input.downcase
+			puts "HUH?! SPEAK UP, SONNY!"
+		elsif input == input.upcase && input != "BYE"
+			puts "NO, NOT SINCE 1938!"
+		end
+	end	
 end
 
+deaf_grandma
 
+#steps
+	#ask for some user input (e.g. speak to grandma) and create variable to store
+	#test user input -> if capitals then get "NO, NOT SINCE 1938" if not then "HUH?! SPEAK UP"
+	#continue to ask for input until get "BYE"
+	# use an until statement e.g. until input = "BYE" if 
 
 
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
-deaf_grandma if $0 == __FILE__
+# deaf_grandma if $0 == ruby 9_input_output_logic_string

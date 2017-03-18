@@ -9,3 +9,24 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+#steps
+	#build a function called alternate_words which takes a string
+	#need to turn that string into an array
+	#iterate over the array and store string of every other index in another array
+	#Remove specified list of punctuation from each element (method to do this?)
+	#return that new array -> may need to set-up empty variable for that array
+
+def alternate_words(sentence) #Not clear why failing test because exact same output
+	array = sentence.split(' ')
+	
+	new_array = []
+	array.length.times {|index| new_array << array[index] if index.even?}
+	new_array.map! {|element| element.gsub(/\p{P}(?<!')/, "")}
+	return new_array
+end
+
+alternate_words("Lorem ipsum dolor sit amet.")
+alternate_words("Can't we all get along?")
+alternate_words("Elementary, my dear Watson!")
+
+

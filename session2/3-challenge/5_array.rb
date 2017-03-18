@@ -14,3 +14,14 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(numbers)
+	new_array = numbers.reject {|x| x % 3 == 0}.map {|x| x % 3}
+	return new_array
+end
+
+mod_three([0,1,2,3,4,5,6,7])
+#steps
+	#set-up function to take array of numbers
+	#make a new array out of this array (use map?)
+	#iterate over numbers array and use modulo to give remainder when divided by 3 - exclude if modulo == 0
+

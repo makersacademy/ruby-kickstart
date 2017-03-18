@@ -19,6 +19,99 @@
 #        return self.date == other.date
 #      end
 
+#steps
+	#set-up class User - ultimately stores user info and their blogs
+	#initialize the user when receives a username
+	#method add_blog that takes a date and text to add to a blog
+	#method blogs that returns array of all blogs user written in chronological order (newest first)
+		# => pulls in an array (where stored?) and sorts (method to make sure most recently added is first 
+			#- this may be through how you add blogs e.g. goes at the front with unshift) 
+		# => need to think about the .entry variable?
+	#think how would do this with a hash? >> just get a working version
+	
+	#set-up class Blog - ultimately stores entry for web log
+	#set up initialize with accessible (getter and setter) methods for text date and user
+	#method for summary first 10 words from text or entire text if less than 10 words
+		# => method on a string or array which take first x number of words - something like head-10 in command line
+			#may also need the else statement for showing whole string
+	#set-up a comparison method to map same blogs - if have same user, date and text?
+
+require 'date'
+
+class User
+	attr_accessor :username
+	def initialize(username)
+		@username = username
+		@blogs = []
+	end
+
+	def add_blog(date, text)
+		#check the existing number of blogs
+		#bind date and text into an array that then assign a blog number too
+		#adds blog and then puts into an array of blog(n)
+		#n = @blogs.length + 1	
+
+		@date = date
+		@text = text
+
+		#how do you create a counter in a variable for an array? Do you need too?
+
+		@blogs = @blogs.push([@date, @text])
+	
+		p @blogs
+	end
+
+	def blogs
+		#just shows the latest array as sorted by blog(n)
+		p @blogs.reverse
+	end
+
+end
+
+class Blog
+	attr_accessor :date, :user, :text 
+
+	def initialize(date, user, text)
+		@date = date
+		@user = user
+		@text = text
+	end
+
+	def get_summary
+		@summary = @text.split(' ')
+		
+		@summary.each_with_index do |word, index|
+			print "#{word} " if index < 10
+		end
+	end
+
+	def entry
+		puts @user
+		puts @date
+		puts @text
+	end
+
+	def ==(other)
+		if self.user == other.user && self.date == other.date && self.text == other.text
+			puts "This is the same object"
+		end
+	end
+
+end
+
+alex = User.new('Handy437')
+puts alex.username
+alex.add_blog("16-04-2015", "Adding an entry")
+alex.add_blog("19-04-2015", "Adding another entry")
+alex.blogs
+blog1 = Blog.new("19-04-2015", 'Handy437', "Here is some blog entry that I need to make more than 10 words")
+puts blog1.text
+blog1.get_summary
+blog1.entry
+blog2 = Blog.new("19-04-2015", 'Handy437', "Here is some blog entry that I need to make more than 10 words")
+blog2.entry
+p blog1 == blog2 #returns nil?
+#puts Blog.new("19-04-2015", 'Handy437', "Here is some blog entry that I need to make more than 10 words") == ("19-04-2015", 'Handy437', "Here is some blog entry that I need to make more than 10 words") 
 
 
 # ==========  EXAMPLE  ==========
@@ -72,4 +165,3 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
-require 'date'
