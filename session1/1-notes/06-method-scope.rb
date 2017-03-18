@@ -12,6 +12,8 @@ end
 my_own_little_world # => nil
 defined? twelve     # => "local-variable"
 
+#global variables are possible as well, and will come later.
+
 
 # Well that seems pretty useless, eh? Fortunately, there is an Internet connection on this world!
 # You can pass objects, into the method. When we pass an object in, the variable that points to it
@@ -22,5 +24,5 @@ def beam_me_up(person1, person2)
   "The away team consists of #{person1} and #{person2}."
 end
 
-beam_me_up("Ryker", "Data") # => "The away team consists of Ryker and Data."
+puts beam_me_up("Ryker", "Data") # => "The away team consists of Ryker and Data."
 
