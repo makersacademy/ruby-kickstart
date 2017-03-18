@@ -7,6 +7,11 @@
 
 class String
   def every_other_char
+    new = ""
+    each_char.with_index {|i, index| new << i if  index.even?}
+    new
   end
-  
+
 end
+#if character index = even add to new array
+#return new array

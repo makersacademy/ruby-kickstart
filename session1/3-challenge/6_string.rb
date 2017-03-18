@@ -7,4 +7,19 @@
 
 def odds_and_evens(string, return_odds)
 
+	if return_odds == true
+    letters = ""
+		string.length.times do |i| if i.odd?
+      letters << string[i]
+			end
+		end
+    letters
+   else
+	  letters = ""
+		string.length.times do |i|	if i.even?
+				letters << string[i]
+			end
+		end
+		letters
+end
 end
