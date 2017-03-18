@@ -19,4 +19,3 @@ mah_method!(1) { |block_parameter| block_parameter * 2 }
 mah_method! 1 do |param1, param2|
   param1 + param2
 end
-

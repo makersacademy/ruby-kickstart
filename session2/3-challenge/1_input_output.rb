@@ -9,5 +9,9 @@
 
 def sum_difference_product
   # your code goes here
-  
+  numbers = gets
+  n_array = numbers.split(/\s/)
+  first_n = n_array[0].to_i
+  second_n = n_array[1].to_i
+  puts first_n + second_n, first_n - second_n, first_n * second_n
 end

@@ -31,4 +31,3 @@ puts "You said: #{user_response}"
 # line       # => "Line\n"
 #
 # It's like a cookie monster for newlines!
-

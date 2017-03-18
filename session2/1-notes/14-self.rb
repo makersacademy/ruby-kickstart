@@ -32,4 +32,3 @@ class Example
   self.new    # => #<Example:0x000001008634f8>
   new         # => #<Example:0x000001008631d8>
 end
-

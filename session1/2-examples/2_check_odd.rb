@@ -19,4 +19,3 @@ if number.odd?
 else
   puts "No, #{number} is not odd"
 end
-

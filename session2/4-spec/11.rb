@@ -48,7 +48,7 @@ RSpec.describe 'BeerSong' do
   end
 
   it 'prints the entire song when there are 99 bottles of beer' do
-    check_results_for 99
+    check_results_for 36
   end
 
   it 'caps the beer at 99 when there are more than 99 bottles of beer' do

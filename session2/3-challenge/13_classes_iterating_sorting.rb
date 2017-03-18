@@ -67,9 +67,49 @@
 #                       From the school of revision, Comes the standard inventor's rule, Books of subtle notation Compositions, all original
 #                       I am a pioneer, synthetic engineer, On the brink of discovery, On the eve of historic light, Worked in secret for decades,
 #                       All my labor will be lost with time
+class User
+  attr_accessor :username  # => nil
 
+  def initialize(username)
+    @username = username
+    @blogs = []
+  end
+
+  def add_blog(date, text)
+    new_blog = Blog.new(date, self, text)
+    @blogs << new_blog
+    new_blog
+  end
+
+  def blogs
+    @blogs.sort_by { |blog| blog.date }.reverse
+  end
+end
+
+class Blog # Define a class called Blog that could be used to store an entry for your web log.
+  attr_accessor :text, :date, :user  # => nil
+
+  def initialize(date, user, text)
+    @text = text
+    @date = date
+    @user = user
+  end
+
+  def summary # have a method called summary that returns the first 10 words from the text (or the entire text if it is less than 10 words)
+    @text.split(' ')[0..9].join(' ')
+  end
+
+  def entry
+    "#{@user.username} #{@date}\n#{@text}"
+  end
+
+  def ==(other)
+    return @date == other.date && @text == other.text && @user == other.user
+  end
+end
+
+require 'date'  # => true
 
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
-require 'date'
