@@ -5,5 +5,12 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+    pirate_string = ""
+    letters = string.split("")
+    letters.each_with_index do |letter, i|
+      if letter == "r" || letter == "R"
+        pirate_string << letters[i + 1] unless letters[i + 1].nil?
+      end
+   end
+   pirate_string
 end

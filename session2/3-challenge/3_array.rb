@@ -7,6 +7,15 @@
 
 class String
   def every_other_char
+    return "" if self.empty?
+    
+    list = []
+    
+    self.size.times do |x|
+      letter = self[x]
+      list << letter if x.even?
+    end   
+    list.join
   end
   
 end
