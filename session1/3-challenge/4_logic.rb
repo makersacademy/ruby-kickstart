@@ -5,14 +5,22 @@
 # He further hypothesizes that if you actually read your books, then you will
 # get a full letter grade higher in every case.
 #
-# grade(4,  false)  # => "D"
-# grade(4,  true)   # => "C"
+# grade(4, false)  # => "D"
+# grade(4, true)   # => "C"
 # grade(15, true)   # => "B"
-
+#
 # <10 books => D, 10..20 books => C, >20 book =>B
 
 
 def grade(num_books, has_read_books)
+    if num_books < 10
+        return "C" if has_read_books == true    
+        return "D" if has_read_books == false
+    elsif num_books <= 20
+        return "B" if has_read_books == true    
+        return "C" if has_read_books == false
+    else num_books > 20
+        return "A" if has_read_books == true    
+        return "B" if has_read_books == false
+    end
 end
-
-
