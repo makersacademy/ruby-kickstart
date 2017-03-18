@@ -5,5 +5,19 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
+  to_return = ""
 
+  string.size.times do |index|
+    current_char = string[index]
+    next_char    = string[index + 1] || ''
+
+    to_return << next_char if (current_char == 'r' || current_char == 'R')
+  end
+
+  to_return
 end
+
+
+pirates_say_arrrrrrrrr("are you really learning Ruby?")
+pirates_say_arrrrrrrrr("Katy Perry is on the radio!")
+pirates_say_arrrrrrrrr("Pirates_say_arrrrrrrrr")

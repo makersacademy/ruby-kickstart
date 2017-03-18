@@ -8,5 +8,19 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares arr
+output = []
 
+  if arr.length <= 1
+    output
+  else
+    output = arr.select { |x| arr.include?(x ** 2)}
+  end
 
+output.sort
+end
+
+get_squares [9]
+get_squares [9,3]
+get_squares [9, 3, 81]
+get_squares [25, 4, 9, 6, 50, 16, 5]
