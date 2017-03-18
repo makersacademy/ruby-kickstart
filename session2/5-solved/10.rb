@@ -1,9 +1,10 @@
 class Person
-  attr_accessor 'name', 'age'
+  attr_accessor :name
+  attr_accessor :age
 
   def initialize(name, age)
     @name = name
-    @age  = age
+    @age = age
   end
 
   def birthday

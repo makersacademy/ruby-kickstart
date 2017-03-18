@@ -8,6 +8,7 @@
 # arithmetic1(10.5)   # => 32.5
 # arithmetic1(-6)     # => -50
 
-def arithmetic1(n)
-end
 
+def arithmetic1(n)
+  n * 5 - 20
+end

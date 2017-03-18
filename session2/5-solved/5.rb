@@ -1,3 +1,5 @@
 def mod_three(numbers)
-  numbers.select { |number| number % 3 != 0 }.map { |number| number % 3 }
+  myary = []
+  numbers.map {|num| myary << num % 3 unless num % 3 == 0 }
+  myary
 end

@@ -23,10 +23,21 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
+
 def deaf_grandma
-
+  while line = gets
+    line.chomp!
+    if line == "BYE"
+      break
+    elsif line == line.upcase && line != ""
+      puts "NO, NOT SINCE 1938!"
+      deaf_grandma
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+      deaf_grandma
+    end
+  end
 end
-
 
 
 

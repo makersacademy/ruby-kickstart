@@ -1,6 +1,6 @@
 def sum_difference_product
-  a , b = gets.split.map { |num| num.to_i }
-  puts a + b
-  puts a - b
-  puts a * b
+  x, y = gets.split.map {|n| n.to_i }
+  puts x + y
+  puts x - y
+  puts x * y
 end

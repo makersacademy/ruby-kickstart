@@ -1,9 +1,13 @@
 def odds_and_evens(string, return_odds)
-  to_return = ""
-  string.size.times do |index|
-    next if return_odds && index.even?
-    next if !return_odds && index.odd?
-    to_return << string[index]
+  mystring = ""
+  if return_odds
+    string.size.times do |i|
+      i.even? ? next : mystring << string[i]
+    end
+  else
+    string.size.times do |i|
+      i.odd? ? next : mystring << string[i]
+    end
   end
-  to_return
+  mystring
 end

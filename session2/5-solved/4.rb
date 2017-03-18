@@ -1,3 +1,3 @@
 def get_squares(numbers)
-  numbers.select { |n| numbers.include? n*n }.sort
+  numbers.select {|num| numbers.include? num ** 2 }.sort
 end

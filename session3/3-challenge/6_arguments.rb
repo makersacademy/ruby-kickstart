@@ -19,3 +19,14 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(determine, *other)
+  array = []
+  other.each_slice(2) do |first, second|
+    if !!first == !!second then
+      determine == false ? array << true : array << false
+    else
+      determine == false ? array << false : array << true
+    end
+  end
+  array
+end

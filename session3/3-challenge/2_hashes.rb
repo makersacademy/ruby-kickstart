@@ -8,6 +8,16 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
+def staircase(n)
+  oddshash = {}
+  (1..n).each do |odds|
+    odds.odd? ? odds : next
+    evensary = Array.new(odds) {|odds| odds + 1 unless (odds + 1).odd? }
+    oddshash[odds] = evensary.compact
+  end
+  oddshash
+end
 
-
-
+# tests
+#puts staircase(1)
+#puts staircase(5)
