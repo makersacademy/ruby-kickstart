@@ -15,3 +15,28 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(strings)
+	sum = 0
+	strings.each do |i|
+		sum += i.length
+	end
+	
+	prime_number = true
+  for i in 2..sum-1
+  	if sum % i == 0
+  		prime_number = false 
+  	end 
+  end
+  return prime_number	
+end
+
+p prime_chars? ['abc']            # => true
+p prime_chars? ['a', 'bc']        # => true
+# prime_chars? ['ab', 'c']        # => true
+# prime_chars? ['a', 'b', 'c']    # => true
+#
+# Examples of length four
+p prime_chars? ['abcd']           # => false
+# prime_chars? ['ab', 'cd']       # => false
+# prime_chars? ['a', 'bcd']       # => false
+# prime_chars? ['a', 'b', 'cd']   # => false
