@@ -15,3 +15,16 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+def prime_chars?(strings)
+    string_len = strings.split.join.length
+    return false if string_len < 2
+    2.upto Math.sqrt(string_len) do |i|
+        return false if string_len % i == 0
+    end
+    return true
+end
+
+puts prime_chars?('abckdsfkjsdge')
+    
+        

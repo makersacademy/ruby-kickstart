@@ -8,5 +8,12 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares (array)
+    squares = array.map {|x| x*x}
+    in_common = (array & squares).map {|i| i}.sort
+    
+end
 
+puts get_squares([25, 4, 9, 6, 50, 16, 5])
+    
 

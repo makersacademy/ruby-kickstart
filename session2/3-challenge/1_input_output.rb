@@ -8,6 +8,12 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+    puts "Type in two integers"
+    a = gets.to_i
+    b = gets.to_i
+    puts a + b
+    puts a - b
+    puts a * b
 end
+
+sum_difference_product

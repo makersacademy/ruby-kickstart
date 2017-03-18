@@ -9,3 +9,13 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def every_other_word(string)
+    the_string = []
+    array = string.split(' ')
+    array.each_with_index do |char, index|
+      the_string << char if index.even?
+    end
+    return the_string
+end
+puts every_other_word("Can't we all get along?")
+
