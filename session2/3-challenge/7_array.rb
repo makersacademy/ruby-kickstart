@@ -9,3 +9,20 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(the_sentence)
+  not_cons = "! @ $ # % ^ & * ( ) - = _ + [ ] : ; , . / < > ? \ |"
+
+  not_cons.length.times do |ticker|
+    if the_sentence.include? not_cons[ticker]
+      the_sentence[not_cons[ticker]] = " "
+    end
+  end
+
+  splitted, the_sentence = [], the_sentence.split
+  the_sentence.size.times do |index|
+    splitted << the_sentence[index] if index.even?
+  end
+  splitted
+
+end
+#alternate_words ("Lorem ipsum dolor sit amet.")
