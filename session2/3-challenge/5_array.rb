@@ -3,14 +3,20 @@
 # Exclude any numbers which are actually dividible by three.
 #
 # EXAMPLES:
-# mod_three [0]  # => []
-# mod_three [1]  # => [1]
-# mod_three [2]  # => [2]
-# mod_three [3]  # => []
-# mod_three [4]  # => [1]
-# mod_three [5]  # => [2]
-# mod_three [6]  # => []
-# mod_three [7]  # => [1]
-#
-# mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+# p mod_three [0]  # => []
+# p mod_three [1]  # => [1]
+# p mod_three [2]  # => [2]
+# p mod_three [3]  # => []
+# p mod_three [4]  # => [1]
+# p mod_three [5]  # => [2]
+# p mod_three [6]  # => []
+# p mod_three [7]  # => [1]
+# p mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
+
+
+def mod_three(numbers)
+  return_arr = []
+  numbers.map {|i| return_arr.push i%3 if i % 3 != 0}
+  return_arr
+end
