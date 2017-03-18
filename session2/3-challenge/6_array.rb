@@ -15,3 +15,20 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(arr)
+	l = arr.join.length
+	if l > 3
+		2.step(l-1) do |i|
+			if l%i == 0
+				return false
+			end
+		end
+	elsif [0,1].count(l) > 0
+		return false
+	end
+	true
+end
+
+#p prime_chars? ['ab', 'c']  
+#p prime_chars? ['a', 'b', 'cd'] 
+#p prime_chars? ['a', 'berw', 'cd'] 
