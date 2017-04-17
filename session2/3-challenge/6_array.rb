@@ -15,3 +15,14 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+
+def prime_chars? (arr)
+	arr.each_char.with_index {|a, b| a + b}
+end
+prime_chars? [1,2,3,4,5,67,7,]
+=begin 
+- add each charecter within an array
+- determine of the sum of the array is a prime number
+- if the sum of the number of characters is a prime number => return true
+	x % x == 0 && x % 1 == 0
+=end

@@ -20,3 +20,80 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+
+class BeerSong
+
+	def initialize (beers)
+		if beers > 99
+			@beers == 99
+		elsif beers < 0 
+			@beers == 0
+		else
+		@beers = beers
+		end
+	end
+
+	attr_accessor = 'beers'
+
+	def bottle(n)
+		if n == 1
+			"bottle"
+		else
+			"bottles"
+		end
+	end
+
+	def print_song
+		while @beers > 0
+			puts "#{number(@beers)} #{bottle(@beers)} of beer on the wall," 
+			puts "#{number(@beers)} #{bottle(@beers)} of beer,"
+			@beers -= 1
+			puts "Take one down, pass it around,"
+			puts "#{number(@beers)} #{bottle(@beers)} of beer on the wall"
+		end
+
+		if @beers == 0
+			puts "No more bottles of beer on the wall."
+		end
+	end
+
+	def number(beers)
+	   ones = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
+	   teens = ['Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen']
+	   tens = ['Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety']
+
+	   string = ''
+
+	   if beers > 19
+		   tensplace = beers / 10
+		   string << tens[tensplace - 1]
+		   beers -= tensplace * 10
+		   return string if beers % 10 == 0
+		   string << '-'
+	   elsif (beers < 20 && beers > 9)
+	   		teensplace = beers % 10
+	     	return string << teens[teensplace-1]
+	   end
+
+	   if beers >= 0
+	     string << ones[beers]
+	     string
+	   end
+	end
+end
+
+
+bottles = BeerSong.new(5)
+bottles.print_song
+
+
+
+
+
+
+	
+
+
+
+

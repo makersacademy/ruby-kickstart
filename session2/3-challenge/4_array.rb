@@ -8,5 +8,13 @@
 
 # This time you will have to define the method, it's called: get_squares
 
+def get_squares(arr)
+	arr.select {|x| arr.include? x*x }.sort	
+end
 
 
+
+
+=begin
+- the method formula = retrun array if sqaure root of num is in the array
+=end
