@@ -23,11 +23,36 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
+#def deaf_grandma 
+#loop do
+#	str = gets.chomp
+#	if str != nil
+#		
+#		if str == str.upcase && str != 'BYE' && str != ""
+#			puts 'NO, NOT SINCE 1938!'
+#		elsif str == 'BYE'
+#			break
+#		else
+#			puts 'HUH?! SPEAK UP, SONNY!'
+#       
+#		end
+#	
+# 	end
+#end
+
+#end
+
 def deaf_grandma
-
+  while line = gets
+    line.chomp!
+    break if line == "BYE"
+    if line == line.upcase && line != ""
+      puts "NO, NOT SINCE 1938!"
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+  end
 end
-
-
 
 
 

@@ -8,5 +8,9 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
+def get_squares(array)
+	
+	array2 = array.select {|x|  array.include? x*x }
+	array2.sort
+end
 

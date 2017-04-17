@@ -5,5 +5,7 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+z = ""
+string.split("").each_index{|x| z << string[x+1] if string.downcase[x] == "r" && string[x+1] != nil  }
+z
 end
