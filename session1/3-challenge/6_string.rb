@@ -6,5 +6,7 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  string.chars.each_slice(2).collect {|x| return_odds ? x.first : x.last}.join("")
 end
+
+#puts odds_and_evens("Quite complicated this thing", false)

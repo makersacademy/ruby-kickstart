@@ -8,6 +8,14 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  puts "Type somethign in"
+  x = gets.chomp.to_i
+  puts "Type somethign else in"
+  y = gets.chomp.to_i
+
+  print x + y
+  print x - y
+  print x * y
 end
+
+whatever = sum_difference_product
