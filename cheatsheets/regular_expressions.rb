@@ -231,3 +231,356 @@ str.scan(/.\Z/)     # => ["?"]
 # to match the break between a word and nonword boundry, use \b
 str.scan(/\w\b/) # => ["o", "y", "g", "w", "e", "u"]
 str.scan(/\b\w/) # => ["H", "m", "d", "h", "a", "y"]
+
+Arrays
+
+[ 1 , 2 , 3 ]                       # => [1, 2, 3]
+Array.new(2)                        # => [nil, nil]
+Array.new(5) { |i| i * 5 }          # => [0, 5, 10, 15, 20]
+Array.new(2) { Array.new(2) }       # => [[nil, nil], [nil, nil]]
+ary = [ ]                           # => []
+ary = Array.new                     # => []
+  # initializing an array of strings on whitespace
+%w(this that, and the other)        # => ["this", "that,", "and", "the", "other"]
+
+
+# =====  Accessing and assigning  =====
+ary = %w(ruby python perl php javascript c)
+ary[0]                # => "ruby"
+ary[1]                # => "python"
+ary[2]                # => "perl"
+ary[3]                # => "php"
+ary[4] = 'ecmascript'
+ary                   # => ["ruby", "python", "perl", "php", "ecmascript", "c"]
+
+  # negative indexes are applied from the end
+ary[-1]               # => "c"
+ary[-2]               # => "ecmascript"
+ary[-3]               # => "php"
+
+  # first and last (unfortunately can't do ary.first = 'abc' , for reasons that will become clearer when we talk more about the object model)
+ary.first             # => "ruby"
+ary.last              # => "c"
+
+
+  # subarrays, give a range of indexes, or a start index and length
+ary                   # => ["ruby", "python", "perl", "php", "ecmascript", "c"]
+ary[0..2]             # => ["ruby", "python", "perl"]
+ary[-3..-1]           # => ["php", "ecmascript", "c"]
+ary[2,3]              # => ["perl", "php", "ecmascript"]
+
+  # can replace a range of indexes with elements from an array (size doesn't need to match)
+ary                   # => ["ruby", "python", "perl", "php", "ecmascript", "c"]
+ary[1..2] = [9,8,7,6,5,4,3,2,1]
+ary                   # => ["ruby", 9, 8, 7, 6, 5, 4, 3, 2, 1, "php", "ecmascript", "c"]
+
+
+ary = Array(0..10)    # => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ary.insert(5,'five')
+ary                   # => [0, 1, 2, 3, 4, "five", 5, 6, 7, 8, 9, 10]
+
+
+# =====  Sorting  =====
+before = [3,6,3,0,8,235,-3]
+after  = before.sort
+before       # => [3, 6, 3, 0, 8, 235, -3]
+after        # => [-3, 0, 3, 3, 6, 8, 235]
+
+  # a bang on the end of a method means "watch out", many methods have a "safe" version which will return a new object
+  # and a "dangerous" version, which will mutate the current object. (this is not it's only use, so check the docs ;)
+before       # => [3, 6, 3, 0, 8, 235, -3]
+before.sort!
+before       # => [-3, 0, 3, 3, 6, 8, 235]
+
+  # you can sort based on your own criteria, your block must simply evaluate to -1 , 0 , or 1
+  # This is the same as Java's compareTo method. We have a method like that already, our spaceship operator
+  # if this example is too confusing, let me know (or if it's cake, you can brag)
+after = before.sort do |a,b|
+  b <=> a   # sort such that larger elements come first
+end
+before # => [-3, 0, 3, 3, 6, 8, 235]
+after  # => [235, 8, 6, 3, 3, 0, -3]
+
+  # An object with a name and age
+class Person
+  attr_accessor 'name', 'age'
+  def initialize(name, age)
+    @name, @age = name, age
+  end
+  def inspect
+    "<#{name}(#{age})>"
+  end
+end
+
+  # whatever the block returns will be used to sort the object
+people = [
+  Person.new( 'Ernie'    , 20 ),
+  Person.new( 'Sara'     , 50 ),
+  Person.new( 'Monique'  , 10 ),
+  Person.new( 'Mohammed' , 60 ),
+]
+people.sort_by { |person| person.age } # => [<Monique(10)>, <Ernie(20)>, <Sara(50)>, <Mohammed(60)>]
+
+
+
+# =====  Adding / removing / replacing / finding elements  =====
+
+  # appending / pushing / popping  (never have to write a stack again)
+ary = [1,2,3]
+ary << 4
+ary             # => [1, 2, 3, 4]
+ary.push 5
+ary             # => [1, 2, 3, 4, 5]
+ary.pop         # => 5
+ary             # => [1, 2, 3, 4]
+
+  # if you want to push / pop from the beginning, it's called unshifting and shifting
+  # to help you remember which is which, it might help to associate shift with the assembly command shl
+ary = [1,2,3]
+ary.unshift 0
+ary             # => [0, 1, 2, 3]
+ary.shift       # => 0
+ary             # => [1, 2, 3]
+
+  # removing items
+ary = Array(1..10)             # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ary.delete 5
+ary                            # => [1, 2, 3, 4, 6, 7, 8, 9, 10]
+
+ary = Array(1..10)             # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ary.reject { |i| i % 2 == 0 }  # => [1, 3, 5, 7, 9]
+ary.select { |i| i % 2 == 0 }  # => [2, 4, 6, 8, 10]
+
+  # checking for an object
+ary = Array(3..10)    # => [3, 4, 5, 6, 7, 8, 9, 10]
+ary.include?(5)       # => true
+ary.index(5)          # => 2
+ary.include?(11)      # => false
+ary.index(11)         # => nil
+
+
+# =====  Iterating  =====
+
+  # iterate over each element
+sum , ary = 0 , [1,2,3]
+ary.each { |num| sum += num }
+sum       # => 6
+
+  # iterating over each index , capture results in a new Array
+results = Array.new
+%w(a b c).each_index { |i| results.push i }
+results   # => [0, 1, 2]
+
+  # what if you care about both elements and indexes?
+results = Array.new
+%w(a b c).each_with_index do |character,index|
+  results.push "index #{index} holds element #{character}"
+end
+results   # => ["index 0 holds element a", "index 1 holds element b", "index 2 holds element c"]
+
+  # create a new array, where each element is derived from the original array
+  # whatever the block returns (its last line) will be at that index in the new array
+ary = [0,1,1,1,1,3]
+ary.map { |num| num * 2 }                       # => [0, 2, 2, 2, 2, 6]
+ary.map { |num| %w(zero one two three)[num] }   # => ["zero", "one", "one", "one", "one", "three"]
+
+  # iterate over multiple elements
+result = []
+Array(1..10).each_slice(2) { |a, b| result << [a, b] }
+result # => [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]
+
+result = []
+Array(1..10).each_cons(2) { |a, b| result << [a, b] }
+result # => [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]
+
+# ===== Miscellaneous useful shit  =====
+  # equality
+[1,2,3] == [1,2,3]              # => true
+[1,2,3] == [3,2,1]              # => false
+
+  # repetition
+[1,22] * 3                      # => [1, 22, 1, 22, 1, 22]
+
+  # concatenation
+[1,2] + %w(3 4)                 # => [1, 2, "3", "4"]
+
+  # difference
+[1,2,3,4] - [3,5]               # => [1, 2, 4]
+
+  # max and min
+[3, 4, 13, 2, -3, 7].max        # => 13
+[3, 4, 13, 2, -3, 7].min        # => -3
+
+  # intersection
+[1,3,4] & [0,3,4,5]             # => [3, 4]
+
+  # union (order is not guaranteed)
+[1,3,4] | [0,3,4,5]             # => [1, 3, 4, 0, 5]
+
+  # convert each element to a string, and join them together
+[1,2,3].join(' and ')           # => "1 and 2 and 3"
+
+  # length / size  (get tired of trying to remember which is correct? In Ruby, they both are ^_^)
+[1,2,3].length                  # => 3
+[1,2,3].size                    # => 3
+
+  # reverse
+[1,2,3].reverse                 # => [3, 2, 1]
+
+  # transpose
+a = [1,2,3]
+b = %w(one two three)
+[ a , b ].transpose             # => [[1, "one"], [2, "two"], [3, "three"]]
+a.zip b                         # => [[1, "one"], [2, "two"], [3, "three"]]
+
+  # assigning to variables
+a = [1,2,3]
+num1 , num2 , num3 = a
+num1                            # => 1
+num2                            # => 2
+num3                            # => 3
+
+  # "removing" the brackets to feed as arguments
+def sum( x , y , z )
+  x + y + z
+end
+a = [1,2,3]
+sum(*a)                         # => 6
+
+
+OTHER STUFF
+
+# Difference between consequtive elements
+[1, 3, 7].each_cons(2).map {|a, b| b - a }  #=> [2, 4]
+
+HASHES 
+
+# http://ruby-doc.org/core/classes/Hash.html
+
+
+# =====  Initializing  =====
+# populated
+{ 1 => 'one' , 2 => 'two' } # => {1=>"one", 2=>"two"}
+Hash[ 1,'one' , 2,'two' ]   # => {1=>"one", 2=>"two"}
+
+# empty
+{}                          # => {}
+Hash.new                    # => {}
+
+
+# =====  Nonexistent Keys  =====
+# by default, nonexistent keys return nil
+hash = Hash.new   # => {}
+hash[:josh]       # => nil
+
+# to change this behaviour, you can pass new a block that receives the hash and the nonexistent key
+# and then adds it to the hash in the way that you would like
+aliases = Hash.new { |this_hash, key| this_hash[key] = Array.new }
+aliases         # => {}
+aliases[:josh]  # => []
+aliases         # => {:josh=>[]}
+aliases[:jeff] << 'the dude' << 'his dudeness' << 'duder' << 'el duderino'
+aliases         # => {:josh=>[], :jeff=>["the dude", "his dudeness", "duder", "el duderino"]}
+
+
+# =====  Access and Assign  =====
+# generally access and assign like ths
+hash = Hash.new
+hash                          # => {}
+hash["my key"] = "my value"
+hash                          # => {"my key"=>"my value"}
+hash["my key"]                # => "my value"
+
+# access multiple values at once
+hash = Hash[ *[ Array('a'..'j') , Array(1..10) ].transpose.flatten ] # just populating
+hash                                  # => {"a"=>1, "b"=>2, "c"=>3, "d"=>4, "e"=>5, "f"=>6, "g"=>7, "h"=>8, "i"=>9, "j"=>10}
+hash.values_at 'j' , 'e' , 'i' , :x   # => [10, 5, 9, nil]
+
+# more interesting options with fetch (think how this might be helpful in param default values)
+hash = { "a" => 100, "b" => 200 }
+hash.fetch "a"                              # => 100
+hash.fetch "z" , "go fish"                  # => "go fish"
+hash.fetch("z") { |el| "go fish, #{el}"}    # => "go fish, z"
+
+# sometimes you might use has_key to check for a key, for example, if you're using an init block
+hash = Hash.new { true }
+hash[:a] = :b
+hash[1000]                                  # => true
+hash.has_key? 1000                          # => false
+
+hash = { 12 => nil }
+hash[12]                                    # => nil
+hash[13]                                    # => nil
+hash.has_key? 12                            # => true
+hash.has_key? 13                            # => false
+
+# and the converse
+hash = { "a" => 100, "b" => 200 }
+hash.has_value?(100)                        # => true
+hash.has_value?(999)                        # => false
+
+
+# =====  Removal  =====
+# delete accepts a key and returns its value. You can give a block that will be invoked and returned
+# in the event that the keyt o delete was not seen
+hash = Hash[*Array(1..10)]                  # => {1=>2, 3=>4, 5=>6, 7=>8, 9=>10}
+hash.delete 1                               # => 2
+hash.delete 100                             # => nil
+hash                                        # => {3=>4, 5=>6, 7=>8, 9=>10}
+hash.delete(3)   { |n| "#{n} not found" }   # => 4
+hash.delete(100) { |n| "#{n} not found" }   # => "100 not found"
+
+# delete_if to remove all pairs from a hash
+# that cause the block to evaluate to true
+hash = Hash[*Array(1..10)]                  # => {1=>2, 3=>4, 5=>6, 7=>8, 9=>10}
+hash.delete_if do |key,value|
+  key % 5 == 0 || value % 5 == 0
+end
+hash                                        # => {1=>2, 3=>4, 7=>8}
+
+
+# =====  Iterating  =====
+# pass a block that receives the key and the value
+cities = { :Chicago => :USA , :Paris => :France , :Ramstein => :Germany }
+results = Array.new
+cities.each do |city,country|
+  results << "#{city} is in #{country}"
+end
+results # => ["Chicago is in USA", "Paris is in France", "Ramstein is in Germany"]
+
+
+# =====  Other Useful Methods  =====
+
+# there is also a self mutator version: merge!
+defaults = { :color => :red , :city => 'Wichita' }
+custom   = { :city => 'Boston' }
+merged   = defaults.merge custom
+defaults                      # => {:color=>:red, :city=>"Wichita"}
+custom                        # => {:city=>"Boston"}
+merged                        # => {:color=>:red, :city=>"Boston"}
+
+cities = { :Chicago => :USA , :Paris => :France , :Ramstein => :Germany }
+cities.keys                   # => [:Chicago, :Paris, :Ramstein]
+cities.values                 # => [:USA, :France, :Germany]
+cities.length                 # => 3
+cities.size                   # => 3
+cities.empty?                 # => false
+Hash.new.empty?               # => true
+
+
+hash = Hash[*Array(1..10)]
+hash                          # => {1=>2, 3=>4, 5=>6, 7=>8, 9=>10}
+hash.clear
+hash                          # => {}
+
+# get a key for a given value (remember, there could be more than one key with the same value)
+hash = { "a" => 100, "b" => 200 }
+hash.index(200)               # => "b" # !> Hash#index is deprecated; use Hash#key
+hash.index(999)               # => nil # !> Hash#index is deprecated; use Hash#key
+
+# swap keys with values
+hash = { :n => 1, :m => 1, :o => 2 }  # n and m have the same value, n ends up getting squashed
+hash.invert                   # => {1=>:m, 2=>:o}
+
+# convert to an array
+{ :Chicago => :USA , :Paris => :France , :Ramstein => :Germany }.to_a # => [[:Chicago, :USA], [:Paris, :France], [:Ramstein, :Germany]]

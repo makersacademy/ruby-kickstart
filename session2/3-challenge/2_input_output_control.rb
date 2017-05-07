@@ -19,12 +19,15 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-
+  puts "Enter a number? Or type bye to exit"
+  while line = gets
+    line.to_i.times {print "hi "}
+    puts
+    puts "Enter a number? Or type bye to exit"
+    break if line.chomp == "bye"
+  end
+  puts "goodbye"
 end
-
-
-
 
 # This will just invoke the method if you run this program directly
 # This way you can try it out by running "$ ruby 2_input_output_control.rb"
