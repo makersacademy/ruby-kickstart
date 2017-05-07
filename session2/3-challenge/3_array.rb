@@ -5,11 +5,12 @@
 # "abcdefg".every_other_char  # => "aceg"
 # "".every_other_char         # => ""
 
-
-  def every_other_char(sentence)
-    sentence.chars.each_slice(2).collect {|x| x.first}.join("")
+class String
+    def every_other_char(string)
+    string.chars.each_slice(2).collect {|x| x.first}.join("")
   end
+end
 
 
 
-puts every_other_char("")
+#puts every_other_char("Four score and seven years ago...")
