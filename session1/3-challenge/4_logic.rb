@@ -9,10 +9,37 @@
 # grade(4,  true)   # => "C"
 # grade(15, true)   # => "B"
 
-# <10 books => D, 10..20 books => C, >20 book =>B
-
-
-def grade(num_books, has_read_books)
+def grade(num_books, reads_books)
+  if num_books < 10 && reads_books
+    return "C"
+  elsif num_books <= 20 && reads_books
+    return "B"
+  elsif num_books > 20 && reads_books
+    return "A"
+  elsif num_books < 10 && !reads_books
+    return "D"
+  elsif num_books <= 20 && !reads_books
+    return "C"
+  elsif num_books > 20 && !reads_books
+    return "B"
+  end
 end
 
+puts grade(4, false)
+puts grade(4, true)
+puts grade(15, true)
 
+#Given solution - nested if statements
+
+def grade1(num_books, reads_books)
+  if reads_books
+    return "C" if num_books < 10
+    return "B" if num_books <= 20
+    return "A"
+  else
+    return "D" if num_books < 10
+    return "C" if num_books <= 20
+    return "B"
+
+  end
+end

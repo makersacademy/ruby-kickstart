@@ -8,4 +8,12 @@
 # ten_twenty(6) # => 10
 
 def ten_twenty(n)
+  if n % 2 == 0
+    10
+  else
+    20
+  end
 end
+
+puts ten_twenty(5)
+puts ten_twenty(6)
