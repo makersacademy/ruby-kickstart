@@ -20,9 +20,9 @@
 
 def hi_hi_goodbye
   puts "Type a number or type bye."
-  while (n = gets) && (n !~ /bye/)
-  puts "hi " * n.to_i
-  puts "Type a number or type bye."
+  while (n = gets) && (n.chomp != "bye")
+    puts "hi " * n.to_i
+    puts "Type a number or type bye."
   end
   puts "goodbye"
 end
