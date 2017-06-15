@@ -7,6 +7,15 @@
 
 class String
   def every_other_char
+    newstring = ""
+    self.size.times do |index|
+      if index % 2 == 0
+        newstring = newstring + self[index]
+      end
+    end
+    return newstring
   end
-  
+
 end
+
+puts "hello".every_other_char

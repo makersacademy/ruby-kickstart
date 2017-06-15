@@ -9,4 +9,8 @@
 # This time you will have to define the method, it's called: get_squares
 
 
+def get_squares(list)
+  list.select {|i| list.include?(i*i)}.sort
+end
 
+puts get_squares([9, 3, 81])

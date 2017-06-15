@@ -15,3 +15,12 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(string)
+  n = string.join.length
+  #puts n
+  return false if n < 2
+  Math.sqrt(n).to_i.downto(2).each {|i| return false if n % i == 0}
+  true
+end
+
+puts prime_chars?(['a', 'bc'])
