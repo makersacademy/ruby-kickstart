@@ -15,3 +15,13 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(ary)
+  sum = ary.join.size
+  return false if sum < 2
+  return true if sum == 3 || sum == 2
+  if (2...sum-1).any?{|i| sum % i == 0}
+    false
+  else
+    true
+  end
+end
