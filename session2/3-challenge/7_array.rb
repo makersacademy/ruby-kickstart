@@ -9,3 +9,8 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+  ary = []
+  string.scan(/[a-z'’]+/i).each_slice(2) { |a, b| ary << a }
+  return ary
+end
