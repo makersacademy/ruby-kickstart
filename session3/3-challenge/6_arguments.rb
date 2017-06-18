@@ -19,3 +19,17 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(truthy, *elements)
+  my_array = Array.new
+  elements.each_slice(2) do |one, two|
+    one = !!one
+    two = !!two
+    result = if truthy
+              one != two
+            else
+              one == two
+            end
+    my_array << result
+  end
+  return my_array
+end
