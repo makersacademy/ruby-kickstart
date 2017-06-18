@@ -27,8 +27,16 @@
 # pathify 'usr' => {'bin' => ['ruby']}, 'opt' => {'local' => {'bin' => ['sqlite3', 'rsync']} } # => ['/usr/bin/ruby', 'opt/local/bin/sqlite3', 'opt/local/bin/rsync']
 # pathify                                                                                      # => []
 #
-#
-# create it from scratch :)
+def pathify(paths=Hash.new)
+  return paths.map { |path| '/' + path } if paths.is_a? Array
 
-
-
+  to_return = []
+  paths.each do |parent_path, child_dirs|
+    parent_path = '/' + parent_path
+    child_paths = pathify child_dirs
+    child_paths.each do |child_path|
+      to_return << (parent_path + child_path)
+    end
+  end
+  to_return
+end
