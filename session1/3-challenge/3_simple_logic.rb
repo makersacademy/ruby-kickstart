@@ -12,4 +12,5 @@ def ten_twenty(n)
     return 10
   else
     return 20
+  end
 end

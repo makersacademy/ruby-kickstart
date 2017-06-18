@@ -6,7 +6,8 @@
 
 def pirates_say_arrrrrrrrr(string)
   to_return = ""
-  add_next = falsestring.size.times do |index|
+  add_next = false
+  string.size.times do |index|
     current_char = string[index,1]
     to_return << current_char if add_next
     add_next = (current_char == "r" || current_char == "R")
