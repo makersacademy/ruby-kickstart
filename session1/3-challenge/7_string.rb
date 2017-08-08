@@ -5,5 +5,8 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+   string.split(//).each_with_index.map{|x,z| string.split(//)[z+1] if x=="r" or x== "R"  }.compact.join
+   
+  
 end
+pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")
