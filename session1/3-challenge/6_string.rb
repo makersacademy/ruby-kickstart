@@ -5,6 +5,16 @@
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 #
 
-def odds_and_evens(string, return_odds)
 
+  
+
+def odds_and_evens(string, return_odds)
+  if return_odds==true 
+  string.split("").each_with_index.map { |x,z| x if z.odd?}.compact.join
+  elsif return_odds==false 
+  string.split("").each_with_index.map {|x,z| x if z.even?}.compact.join
+end 
 end
+
+odds_and_evens("abcdefghik@#",false)
+odds_and_evens("abcdefghik@#",true)
