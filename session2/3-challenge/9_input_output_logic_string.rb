@@ -24,7 +24,17 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  p "please start the conversation with grandma!"
+loop do 
+  a=gets.chomp
+  if a=="BYE"
+    break 
+  elsif a==a.downcase
+    p "HUH?!  SPEAK UP, SONNY!"
+  elsif a=a.upcase && a!="BYE"
+    p "NO, NOT SINCE 1938!"
+  end 
+end 
 end
 
 
