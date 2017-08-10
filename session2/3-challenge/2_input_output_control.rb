@@ -20,6 +20,17 @@
 
 def hi_hi_goodbye
   # your code here
+  
+while true 
+p "please enter a number :"
+a=gets 
+p "hi"*a.to_i 
+break if a.gsub(/\n/,"") == 'bye' #newline gave me a headache , took me a long time to realize why bye was not equalling a 
+
+end
+
+p "goodbye"
+
 
 end
 
