@@ -5,4 +5,17 @@
 # got_three? ['a', 'a', 'b']  # => false
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
+def got_three?(array_list)
+  a=nil 
+  for i in array_list
+    if array_list.join.include?("#{i.to_s*3}")
+      a=true 
+      break 
+    else 
+      a=false 
+    end 
+  end 
+  a
+end 
+got_three?([1, 2, 5, 'a','a','a'])
 
