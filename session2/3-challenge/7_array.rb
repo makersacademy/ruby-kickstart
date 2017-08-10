@@ -9,3 +9,11 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+  string.gsub(/\W/,"")
+  string.split.each_with_index.map {|x,y|  x.gsub(/\W/,"") if y%2==0}.compact
+end
+#alternate_words("Lorem ipsum dolor sit amet.")  # => ["Lorem", "dolor", "amet"]
+alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
+#alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
+
