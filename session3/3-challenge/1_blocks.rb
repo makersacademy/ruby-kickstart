@@ -3,4 +3,7 @@
 #
 # reverse_map(1, 2, 3) { |i| i * 2 }      # => [6, 4, 2]
 # reverse_map(1, 2, 3) { |i| i * 2 }      # => [6, 4, 2]
-
+def reverse_map(arraylist)
+  arraylist.reverse!.map{|z| z**2}
+end 
+reverse_map([1,2,3,4])
