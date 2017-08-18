@@ -8,6 +8,16 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
-
+def staircase(num)
+a=(1..num).to_a
+h={}
+for i in a 
+  h[i] = (1..i).select{|z| z.even?}
+end 
+c=h.select{|key,value| key if key.to_i.odd?}
+p c
+end 
+staircase(5)
+ 
 
 
