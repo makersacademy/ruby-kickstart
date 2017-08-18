@@ -7,6 +7,9 @@
 
 class String
   def every_other_char
+    self.split(//).each_with_index.map {|x,z| x if z.even?}.compact.join
   end
   
 end
+ 
+"abcdefg".every_other_char

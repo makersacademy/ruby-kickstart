@@ -9,5 +9,10 @@
 
 def sum_difference_product
   # your code goes here
+  a=gets.to_i 
+  b=gets.to_i
+   "#{(a+b)}\n#{(a-b)}\n#{(a*b)}\n"
+  
   
 end
+sum_difference_product

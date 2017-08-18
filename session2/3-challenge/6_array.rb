@@ -15,3 +15,16 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array_list)
+  a=( array_list.each.map{|x| (x.length)}.inject(0){|total,z| total+z}) #getting sum of lengths of elements in array_list
+  if [0,1].include?a #checking for primality 
+    false 
+  elsif [2,3].include?a 
+    true 
+  else 
+    ( (2..(a/2)).to_a.map { |x| a%x}.include?0 )? false : true 
+  end   
+
+end 
+prime_chars?(['a','bcdefg'])
+
