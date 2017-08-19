@@ -18,6 +18,29 @@
 #   order << i
 # end
 # order # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+def spiral_access #two_d = given array can be removed and argument supplied for two_d after def spiral_access
+two_d = [
+   [ 1,  2,  3,  4, 5],
+   [16, 17, 18, 19, 6],
+   [15, 24, 25, 20, 7],
+   [14, 23, 22, 21, 8],
+   [13, 12, 11, 10, 9],
+ ]
+ order = []
+ loop do 
+ order<<two_d[0]
+ order<<two_d.slice(1..-2).each.map{|z| z[-1]}
+ order<<two_d[-1].reverse
+ order<<two_d.slice(1..-2).reverse.each.map{|z| z[0]}
+ two_d.delete_at(0)
+ two_d.delete_at(-1)
+ two_d.slice(0..-1).each{|z| z.delete_at(-1)}
+ two_d.slice(0..-1).each{|z| z.delete_at(0)}
+ break if two_d.length==1
+ end 
+ order<<two_d
+ order.join(' ')
+end 
 
 
 
