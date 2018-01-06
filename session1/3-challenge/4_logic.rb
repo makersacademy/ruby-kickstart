@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A grad student at a local university thinks he has discovered a formula to
 # predict what kind of grades a person will get. He says if you own less than
 # 10 books, you will get a "D". If you own 10 to 20 books, you will get a "C",
@@ -11,8 +13,19 @@
 
 # <10 books => D, 10..20 books => C, >20 book =>B
 
-
 def grade(num_books, has_read_books)
+  if num_books < 10
+    return 'C' if has_read_books
+    return 'D'
+  end
+
+  if (10..20).cover?(num_books)
+    return 'B' if has_read_books
+    return 'C'
+  end
+
+  if num_books > 20
+    return 'A' if has_read_books
+    return 'B'
+  end
 end
-
-
