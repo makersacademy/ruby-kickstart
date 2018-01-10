@@ -15,3 +15,16 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(array)
+	my_string = ""
+	array.each {|str| my_string << str}
+	if my_string.size < 2 then return false
+	else
+		for i in 2..(my_string.size/2)
+			if my_string.size % i == 0 && my_string.size != i
+				return false
+			end
+		end
+		return true
+	end
+end

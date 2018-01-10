@@ -19,3 +19,14 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker (setter, *args)
+	result = []
+	args.each_slice(2) do |a,b| 
+		if setter
+			result << (!!a ^ !!b)
+		else 
+			result << not(!!a ^ !!b)
+		end
+	end
+	result
+end

@@ -9,5 +9,12 @@
 
 def sum_difference_product
   # your code goes here
-  
+  numbers = gets.chomp.split(" ").map! {|num| num.to_i}.sort
+  sum = numbers[0] + numbers[1]
+  diff = numbers[0] - numbers[1]
+  prod = numbers[0] * numbers[1]
+
+  puts sum
+  puts diff
+  puts prod  
 end

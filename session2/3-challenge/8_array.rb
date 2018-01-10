@@ -6,3 +6,19 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three? array
+	count = 1
+	element = nil
+	array.each do |item|
+		if item == element && count == 2
+			return true
+		elsif item == element
+			count += 1
+			element = item
+		else
+			count = 1
+			element = item
+		end
+	end
+	false
+end

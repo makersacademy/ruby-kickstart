@@ -8,6 +8,19 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
+def evens int
+	even_arr = []
+	1.upto(int) {|num| if num.even? then even_arr.push(num) end}
+	even_arr
+end
+
+def staircase int
+	num_hash = Hash.new
+	1.upto(int) do |num|
+		if num.odd? then num_hash[num] = evens(num) end
+		end
+	num_hash
+end
 
 
 

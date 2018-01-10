@@ -6,5 +6,12 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+	str_arr = string.split("")
+	ret_str_arr = []
+		for i in 0...str_arr.length
+			if (i % 2 == 0 && !return_odds) || (i % 2 == 1 && return_odds)
+				ret_str_arr.push(str_arr[i])
+			end
+		end
+	ret_str_arr.join("")
 end
