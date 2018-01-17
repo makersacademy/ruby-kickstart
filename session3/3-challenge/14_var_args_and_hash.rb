@@ -23,5 +23,37 @@
 # problem_14 2,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => true
 # problem_14 3,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => false
 
+def count_clumps *arr
+	clumps = 0
+	count = 0
+	for i in 1...arr.length #better way in solutions
+		if arr[i] == arr [i-1] && i == (arr.length-1)
+			clumps += 1
+		elsif	arr[i] == arr [i-1]
+			count += 1
+		elsif count > 0
+			clumps += 1
+			count = 0
+		else
+			count = 0
+		end
+	end
+	clumps
+end
+
+def same_ends *arr
+	n = arr[0]
+	if arr[1..n] == arr[(arr.length-n)..(arr.length-1)] then true else false end #better way in solutions
+end
+
+def problem_14(*args)
+	if args.last.is_a? Hash
+		prob = args.pop
+	else
+		prob = {}
+	end
+	prob[:problem] ||= :count_clumps
+	self.send(prob[:problem], *args)
+end
 
 

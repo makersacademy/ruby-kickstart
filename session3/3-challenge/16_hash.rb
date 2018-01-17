@@ -17,3 +17,17 @@
 # head = {:data => 6, :next => head}
 # print_list head                    # >> "6\n5\n4\n3\n2\n1\n"
 
+
+#Misunderstood what needed to be outputted. This could have been achieved much more easily using a while loop and simply setting the item to puts as the item[:next]
+def print_list node
+	str = iterate node
+	puts str
+end
+
+def iterate node
+	return "" if !node
+	str = ""
+	str << node[:data].to_s + "\n"
+	str << iterate(node[:next])
+	return str
+end

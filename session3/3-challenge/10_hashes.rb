@@ -30,5 +30,18 @@
 #
 # create it from scratch :)
 
-
+def pathify(files = Hash.new ,str="", ret_arr=[] )
+	to_return = ret_arr
+	files.each do |k,v|
+		root_str = str + "/#{k.to_s}"
+		if v.is_a? Array
+			v.each do |file|
+				to_return << root_str + "/" + file.to_s
+			end
+		else
+			to_return = pathify(v, root_str, to_return)
+		end
+	end
+	to_return
+end
 

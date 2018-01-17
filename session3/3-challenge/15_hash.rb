@@ -46,5 +46,15 @@
 # head = {:data => 6, :next => head}
 # middle head                        # => 3
 
+def middle list
+	arr = []
+	unload arr, list
+	arr[(arr.length-1)/2]
+end
 
-
+def unload arr, list
+	return arr if list == nil
+	unload arr, list[:next]
+	arr << list[:data]
+	arr
+end

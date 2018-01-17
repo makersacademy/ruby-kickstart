@@ -54,7 +54,22 @@
 #   end
 # end       # => ["a", "m", "r", 1, 3, 4, 9, 2.5, 9.0, 25.8]
 
-
+def your_sort(arr, &block)
+	block ||= Proc.new {|a,b| a <=> b}
+	loop do
+		swapped = false
+		for i in 0...(arr.length-1)
+			if block.call(arr[i], arr[i+1]) > 0	
+			 	temp = arr[i+1]
+			 	arr[i+1] = arr[i]
+			 	arr[i] = temp
+			 	swapped = true
+			end
+		end
+		break if not swapped
+	end
+	arr
+end 
 
 
 
