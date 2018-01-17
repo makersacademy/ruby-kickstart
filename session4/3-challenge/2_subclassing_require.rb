@@ -20,3 +20,16 @@
 # stack.push 2
 # stack # => [1, 2]
 
+require File.expand_path("../../3-challenge/1_stack_classes_inspect.rb",__FILE__)
+
+class StackInDisguise < Stack
+	def inspect
+		to_return = []
+		node = @head
+		while node
+			to_return << node.data
+			node = node.next_node
+		end
+		to_return.reverse.inspect
+	end
+end
