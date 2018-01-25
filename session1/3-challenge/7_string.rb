@@ -5,5 +5,12 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  new_array = []
+  array = string.downcase.split("")
+  i = 0
+  while i < array.length
+    new_array.push(array[i+1]) if array[i] == "r"
+    i += 1
+  end
+  return new_array.join.to_s
 end
