@@ -15,5 +15,13 @@
 # why that error was raised.
 
 
+def full_name(person)
+	begin
+		fullname = person.first_name + " " + person.last_name
+	rescue FirstNameError => e
+		person.last_name
+	rescue LastNameError => e
+		person.first_name
+	end
 
-
+end

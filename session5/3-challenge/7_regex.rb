@@ -35,6 +35,13 @@
 #
 
 
-
-
-
+def tree_parser str
+	return_arr = []
+	if !str.size.zero?
+		str.each_line do |line| 
+			found = line.scan(/\b([A-Z].*)\p{P}.*[@|at].*([1-9].*[1-9].*feet).*(\$[1-9].*\..*[1-9]*)\b/)
+			return_arr << found[0]
+		end
+	end
+	return_arr
+end

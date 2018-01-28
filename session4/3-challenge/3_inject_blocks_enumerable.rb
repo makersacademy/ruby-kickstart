@@ -26,3 +26,10 @@
 #   The fourth time the block is passed  35 , 10 and it returns 45
 #   The method then returns 45
 #
+
+def passthrough(enumerable, pt_value, &block)
+	enumerable.each do |num|
+		pt_value = block.call(pt_value, num)
+	end
+	pt_value
+end

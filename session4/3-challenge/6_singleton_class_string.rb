@@ -28,6 +28,15 @@
 #   The concat method will do the same thing as the << method
 
 class ApplicationController
+
   def body_class
+  	return @str if @str
+  	@str = ""
+  	def @str.<<(word)
+  		self.concat(" ") unless self.length.zero?
+  		self.concat(word)
+  	end
+  	@str
   end
+
 end

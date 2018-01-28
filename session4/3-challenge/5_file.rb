@@ -15,3 +15,10 @@
 #
 # line_sums('nums.txt')   # =>   808 + 919 + 822 + 876 + 974   # =>   4399
 
+def line_sums filename
+	total = 0
+	File.foreach filename do |line|
+		total += line.split(" ").map! {|num| num.to_i}.max
+	end
+	total
+end

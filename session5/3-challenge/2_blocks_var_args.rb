@@ -84,7 +84,24 @@
 #   * First think about where you need to put this method so that it will be available to all the controllers
 #   * You are going to need to combine variable length parameters with an options hash. This can't be done in the method signature
 
+class ApplicationController
 
+	def self.css_classes *args
+		classes = []
+		options = Hash.new
+		args.each do |arg|
+			if arg.is_a? Hash
+				options = arg
+			else
+				classes << arg
+			end
+		end
+		self.before_filter options do |controller|
+			classes.each {|css| controller.body_class << css}
+		end
+	end
+
+end
 
 
 

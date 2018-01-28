@@ -25,4 +25,31 @@
 # ff.min                        # => 1
 # ff.select { |num| num.odd? }  # => [1, 5, 3]
 
+class List
 
+	include Enumerable
+
+	def initialize
+		@values = []
+	end
+
+	def <<(val)
+		  @values << val
+		  self
+	end
+
+	def inspect
+		output_string = "#<List: "
+		vals = ""
+		@values.each do |val|
+			vals.length.zero? ? vals << "#{val}" : vals << ", #{val}"
+			end 
+		output_string << vals << ">"
+	end
+
+	def each &block
+		@values.each &block
+	end
+
+
+end

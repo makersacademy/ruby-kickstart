@@ -27,35 +27,35 @@
 #
 
 class ApplicationController
+
   def body_class
     return @body_class if @body_class
-    @body_class = String.new
+    @body_class = ""
 
     class << @body_class
 
-      def <<(str)
-        return self if self[/\b#{str}\b/]
-        concat ' ' unless length.zero?
-        concat str
+      def << (string)
+        return self if self[/\b#{string}\b/]
+        self.concat(" ") unless self.size == 0
+        self.concat(string)
       end
 
-      def +(str)
-        raise_exception
-      end
-
-      def []= str, str2
-        raise_exception
-      end
-
-      def * str
-        raise_exception
-      end
-
-      def raise_exception
+      def + (string)
         raise RuntimeError.new("use << method instead")
       end
+
+      def * (string)
+        raise RuntimeError.new("use << method instead")
+      end
+
+      def []= (key,value)
+        raise RuntimeError.new("use << method instead")
+      end
+
     end
+
     @body_class
   end
+
 end
 

@@ -31,6 +31,33 @@
 #       </table>
 #     </body>
 #   </html>
+require_relative '7_regex'
+require 'sinatra'
 
 def trees_to_html(trees)
+	html = "<!doctype html>
+  \t<html>
+  \t\t<head>
+  \t\t\t<title>Green Thumb Nursery</title>
+  \t\t</head>
+  \t\t<body>
+  \t\t\t<h1>Catalog</h1>
+  \t\t\t<table>
+  \t\t\t\t<tr>
+	\t\t\t\t\t<td>Type of tree</td>
+	\t\t\t\t\t<td>Size of the tree</td>
+	\t\t\t\t\t<td>Price of the tree</td>
+  \t\t\t\t</tr>"
+	tree_parser(trees).each do |row|
+		html << "\n\t\t\t\t<tr>
+	\t\t\t\t\t<td>#{row[0]}</td>
+	\t\t\t\t\t<td>#{row[1]}</td>
+	\t\t\t\t\t<td>#{row[2]}</td>
+\t\t\t\t</tr> "
+				end
+	html << "\n\t\t\t</table>
+\t\t</body>
+\t</html>"
+	puts html
+	html
 end

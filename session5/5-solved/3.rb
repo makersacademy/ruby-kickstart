@@ -58,7 +58,7 @@ end
 # class List
 #   include ListInspect
 #   include Enumerable
-#
+
 #   class Node
 #     attr_accessor :data, :link
 #     def initialize(data, link)
@@ -66,12 +66,12 @@ end
 #       @link = link
 #     end
 #   end
-#
+
 #   def initialize
 #     @first = nil
 #     @last  = nil
 #   end
-#
+
 #   def <<(element)
 #     node = Node.new(element, nil)
 #     @last.link = node if @last
@@ -79,7 +79,7 @@ end
 #     @first ||= @last
 #     self
 #   end
-#
+
 #   def each(&block)
 #     crnt = @first
 #     while crnt

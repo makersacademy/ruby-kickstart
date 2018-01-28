@@ -11,5 +11,10 @@
 # first_object nil, nil, nil  # => nil
 
 def first_object(arg1, arg2, arg3)
-  
+  result = arg1 || arg2 || arg3 #Better way in the solution by adding fourth arg as nil
+  if result 
+  	result
+  else 
+  	nil 
+  end
 end

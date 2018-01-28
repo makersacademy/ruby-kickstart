@@ -21,3 +21,7 @@
 #
 # Example:  list_of_errors_and_exceptions # => ['ArgumentError', 'NoMethodError', ...]
 # (depending on your Ruby version, your results will either be Strings of Symbols)
+
+def list_of_errors_and_exceptions
+	Module.constants.grep(/exception|error/i)
+end
