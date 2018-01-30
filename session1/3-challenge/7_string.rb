@@ -5,5 +5,10 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+str = string.split("")
+str.map.with_index do |x, i|
+  if x.downcase == "r" 
+    str[i + 1]
+  end
+end.join
 end
