@@ -1,18 +1,18 @@
 require 'sinatra'
-require File.dirname(__FILE__)+'/lib/caesar_cipher'
+include CaesarCipher
 
-get '/' do
-  erb :home
+get "/" do
+	erb :home
 end
 
-post '/encrypt' do
-  @decrypted = params[:message]
-  @encrypted = CaesarCipher.encrypt @decrypted
-  erb :encrypt
+get "/encrypt" do
+	@message = params[:message]
+	@code = encrypt @encryption
+	erb :encrypt
 end
 
-post '/decrypt' do
-  @encrypted = params[:message]
-  @decrypted = CaesarCipher.decrypt @encrypted
-  erb :decrypt
+get "/decrypt" do
+	@encryption = params[:enc_message]
+	@message = encrypt @encryption
+	erb :decrypt
 end

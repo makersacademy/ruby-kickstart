@@ -1,5 +1,6 @@
 if $LOADED_FEATURES.grep(/session6\/5-solved\/1/).empty?
   app_root = File.expand_path "../../3-challenge/1_build_an_app", __FILE__
+  puts "found it"
 else
   app_root = File.expand_path "../../5-solved/jordan_app", __FILE__
 end
