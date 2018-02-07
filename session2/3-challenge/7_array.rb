@@ -9,3 +9,6 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words(string)
+  string.scan(/(?!['|’].*['|’])\b[\w['|’]]+\b/).to_a.map.with_index{|value, index| value if index.even?}.compact
+end

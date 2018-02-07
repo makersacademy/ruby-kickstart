@@ -22,7 +22,7 @@ array[-3] # => "zero"
 # Arrays know where the elements at their indexes are this
 # means it is just as cheap to look up an element really
 # deep as it is for an element right at the beginning.
-array = (0...5000).to_a # the numbers 1 to 5k
+array = (0...5000).to_a # the numbers 0 to 4999
 
 
 # about half a second to access element at index 2500

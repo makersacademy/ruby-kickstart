@@ -7,3 +7,5 @@ class String
     to_return
   end
 end
+
+"".every_other_char
