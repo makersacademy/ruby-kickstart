@@ -25,11 +25,14 @@
 
 def deaf_grandma
 
+  while string = gets.chomp()
+    break if string == "BYE"
+    puts (string == string.upcase) && (string != "") ? "NO, NOT SINCE 1938!" : "HUH?! SPEAK UP, SONNY!"
+
+
+  end
+
 end
-
-
-
-
 
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
