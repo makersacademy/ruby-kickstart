@@ -6,3 +6,11 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(array)
+  r = []
+  r_2 = []
+  l = array.length
+  array.each_cons(2) { |a, b| r << [a, b] }
+  r.each_cons (2) {|e1, e2| r_2 << (e1 == e2)}
+  r_2.include? true
+end
