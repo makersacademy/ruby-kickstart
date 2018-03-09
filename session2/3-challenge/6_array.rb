@@ -26,3 +26,4 @@ def prime_chars?(strings_array)
   	false
   end
 end
+
