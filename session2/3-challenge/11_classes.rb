@@ -71,7 +71,6 @@ class BeerSong
         print "#{convert_number(i)} #{i == 1 ? "bottle" : "bottles"} of beer on the wall,\n#{convert_number(i)} #{i == 1 ? "bottle" : "bottles"} of beer,\nTake one down, pass it around,\n#{convert_number(i-1)} #{(i-1) == 1 ? "bottle" : "bottles"} of beer on the wall.\n"
         i -= 1
       end
-      # print "One bottle of beer on the wall,\nOne bottle of beer,\nTake one down, pass it around,\nZero bottles of beer on the wall."
     end
 
   end
@@ -87,10 +86,4 @@ class BeerSong
       end
     end
   end
-
-  # #{bottles_num} bottles of beer on the wall,
-  # Ninety-nine bottles of beer,
-  # Take one down, pass it around,
-  # Ninety-eight bottles of beer on the wall.
-
 end
