@@ -27,8 +27,7 @@ class Fraction
   attr_accessor :numerator, :denominator
 
   def initialize(a,b)
-    @numerator = a
-    @denominator = b
+    @numerator,@denominator  = a, b
   end
 
 
