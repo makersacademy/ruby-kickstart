@@ -37,7 +37,7 @@ class Fraction
   end
 
   def to_f
-    return @numerator.to_f / @denominator.to_f
+    return @numerator / @denominator.to_f
   end
 
   def to_s
