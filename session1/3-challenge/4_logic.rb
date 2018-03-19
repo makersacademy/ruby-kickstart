@@ -13,6 +13,30 @@
 
 
 def grade(num_books, has_read_books)
+    # case statement 
+    # or if statement? 
+    # if statement + .next for 'true'
+    if num_books < 10
+        if has_read_books != true
+        "D"
+        else
+            "C"
+        end
+    elsif
+        num_books >= 10 && num_books <= 20
+        if has_read_books != true
+        "C"
+        else
+            "B"
+        end
+    elsif
+        num_books > 20
+        if has_read_books != true
+        "B"
+        else
+            "A"
+        end
+    end
 end
 
 
