@@ -5,4 +5,9 @@
 # add_more_ruby("Sad times are ahead!")         # => "Happy times are ahead!"
 
 def add_more_ruby(string)
+    #gsub method
+    #include? 
+    # may need case statement too?
+    string.gsub('sad', 'happy').gsub('Sad', 'Happy')
+
 end
