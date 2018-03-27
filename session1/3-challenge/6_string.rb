@@ -6,5 +6,10 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+    # index_of ? gets the index then return odd index? 
+    if return_odds == true
+        string.chars.select.each_with_index{ |_, i| i.odd? }
+        elsif return_odds == false
+        string.chars.select.each_with_index{ |_, i| i.even? }
+      end
 end
