@@ -6,5 +6,7 @@
 #
 
 def odds_and_evens(string, return_odds)
+    # if statement
+    # split string into char array? .chars
 
 end

@@ -5,5 +5,8 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
+    # use next or i + 1 in an iteration? 
+    # need to get _all_ instances of 'r' not just first
+    # suggests to use .map rather than .select / .each
 
 end
