@@ -1,4 +1,4 @@
-gem 'rspec', '~> 3.2.0'
+gem 'rspec'
 
 # overriding Rake method that displays tasks so that -T will display in the correct order
 module Rake
@@ -100,4 +100,3 @@ sessions_with_problems.each do |session, problems|
 end
 
 task :default => get_sessions.map { |session| "#{session}:all" }
-

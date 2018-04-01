@@ -9,4 +9,6 @@ def pirates_say_arrrrrrrrr(string)
     # need to get _all_ instances of 'r' not just first
     # suggests to use .map rather than .select / .each
 
+    # split in .chars
+    # check each value for 'r', return .next 
 end
