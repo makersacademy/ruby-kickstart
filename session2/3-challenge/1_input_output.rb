@@ -15,5 +15,5 @@ def sum_difference_product(a,b)
   # below gives the correct answer in repl.it , needs to take the numbers from input using get
   # rather than explicitly using them as parameters
   p (a+b).to_s + "\n" + (a-b).to_s +  "\n" + (a*b).to_s
-
+  # extra note
 end
