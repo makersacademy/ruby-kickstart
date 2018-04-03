@@ -10,7 +10,8 @@
 def sum_difference_product(a,b)
   # your code goes here
   # use .inspect to get /n like in examples ?
-  # use p as it puts + .inspect 
+  # use p as it puts + .inspect
+  # needs to include some kind of gets like the 2_gets.rb example 
   p (a+b).to_s + "\n" + (a-b).to_s +  "\n" + (a*b).to_s
 
 end
