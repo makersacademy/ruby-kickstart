@@ -8,6 +8,9 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  puts "Hello, please enter two numbers, seperated by a space "
+  line = gets
+    puts "You submitted #{line}"
+arr = line.split(" ").map(&:to_i)
+puts "#{arr.sum}\n#{arr[0]-arr[1]}\n#{arr[0]*arr[1]}"
 end
