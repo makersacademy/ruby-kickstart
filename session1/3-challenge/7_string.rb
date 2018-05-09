@@ -5,11 +5,9 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-    rtn = ""
-    arr = string.split("")
-    arr.each_with_index { |x, i|
-      if x == "r" || x == "R" then rtn.concat(arr[i + 1]) unless arr[i + 1] == nil end}
+    rtn=""
+    arr=string.split("")
+    arr.each_with_index {|x, i|if x=="r"||x=="R" then rtn.concat(arr[i+1]) unless arr[i+1] == nil end}
     rtn
   end
 
-  
