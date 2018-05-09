@@ -8,5 +8,5 @@
 # ten_twenty(6) # => 10
 
 def ten_twenty(n)
-return n%2==0?10:20 
+n.even? ? 10:20 
 end
