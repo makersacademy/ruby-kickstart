@@ -14,4 +14,7 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
-
+def prime_chars?(strarr)
+    require 'prime'
+    strarr.join.length.prime?
+    end
