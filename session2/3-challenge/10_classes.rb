@@ -10,11 +10,18 @@
 #
 # josh.birthday # => 29
 # josh.age      # => 29
-#
+#2L10
 # josh.birthday # => 30
 # josh.age      # => 30
-#
 
 class Person
-
-end
+    attr_accessor:name
+    attr_accessor :age
+   def initialize (name, age)
+   @name = name
+   @age=age 
+   end 
+   def birthday 
+   @age+=1 
+   end 
+   end
