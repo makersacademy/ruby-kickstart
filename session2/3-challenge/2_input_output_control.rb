@@ -20,7 +20,13 @@
 
 def hi_hi_goodbye
   # your code here
-
+  while num = gets
+    num.to_i.times {
+      print "hi "
+    }
+    break if num.chomp == 'bye'
+  end
+  puts "goodbye"
 end
 
 
