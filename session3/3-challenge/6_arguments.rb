@@ -19,3 +19,12 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+
+def match_maker(switch,*args)
+    arr=args.each_slice(2).to_a
+    true_or_false=[]
+    arr.each{|x| true_or_false.push((x[0] && x[1]))}
+    true_or_false
+    end
+    
+    match_maker true, 0, nil
