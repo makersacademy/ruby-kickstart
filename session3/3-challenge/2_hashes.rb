@@ -15,3 +15,4 @@ def staircase(n)
     nums
   end
   
+  

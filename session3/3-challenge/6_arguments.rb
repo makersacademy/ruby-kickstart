@@ -21,10 +21,12 @@
 
 
 def match_maker(switch,*args)
+
     arr=args.each_slice(2).to_a
     true_or_false=[]
-    arr.each{|x| true_or_false.push((x[0] && x[1]))}
+    arr.each{|x| if x[0]==nil or x[1] == nil then true_or_false.push(true)
+    elsif switch == true  then true_or_false.push(!(x[0] && x[1])) 
+    else true_or_false.push((x[0] && x[1])) end}
+    
     true_or_false
     end
-    
-    match_maker true, 0, nil

@@ -10,6 +10,6 @@
 def word_count(str)
     arr=str.downcase.split(" ")
     counter=Hash.new(0)
-    arr.each{|x| counter[x]=arr.count(x)}
+    arr.each{|x|counter[x]=arr.count(x)}
     counter 
     end 
