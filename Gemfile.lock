@@ -17,6 +17,8 @@ GEM
     mustermann (1.0.2)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    nokogiri (1.8.2-x64-mingw32)
+      mini_portile2 (~> 2.3.0)
     public_suffix (3.0.2)
     rack (2.0.4)
     rack-protection (2.0.1)
@@ -48,6 +50,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   capybara
@@ -58,7 +61,7 @@ DEPENDENCIES
   sinatra
 
 RUBY VERSION
-   ruby 2.5.0p0
+   ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.1
+   1.16.3
