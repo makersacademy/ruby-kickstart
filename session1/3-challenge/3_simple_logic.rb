@@ -7,5 +7,9 @@
 # ten_twenty(5) # => 20
 # ten_twenty(6) # => 10
 
+# My solution 27 July 2018
 def ten_twenty(n)
+  # ternary conditional operator
+  # test-expression ? if-true-expression : if-false-expression
+  n % 2 == 0 ? 10 : 20
 end
