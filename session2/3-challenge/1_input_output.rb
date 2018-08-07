@@ -8,6 +8,9 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  first_num , second_num = gets.split.map do |number| 
+    number.to_i 
+  end
+  puts "#{first_num + second_num}\n #{first_num - second_num}\n#{first_num * second_num}"
 end
+
