@@ -8,5 +8,8 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
-
+def get_squares(array)
+  return [] if array.length <= 1
+  result = array.select { |element| array.include?(element * element) }
+  result.sort
+end
