@@ -6,3 +6,9 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+def got_three?(array)
+  array.each_cons(3) do |first_charac, second_charac, third_charac|
+    return true if first_charac == second_charac && second_charac == third_charac
+  end
+return false
+end
