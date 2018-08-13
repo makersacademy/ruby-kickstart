@@ -5,5 +5,14 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+    result = ""
+    array = string.split("")
+    array.each_index do |i|
+        if array[i].downcase == "r"
+            unless array[i+1].nil?
+                result += array[i+1]
+            end
+        end
+    end
+    return result
 end
