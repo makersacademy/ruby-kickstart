@@ -19,8 +19,12 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-
+    a = gets.chomp
+    while a != "bye"
+        puts("hi " * a.to_i)
+        a = gets.chomp
+    end
+    puts "goodbye"
 end
 
 
