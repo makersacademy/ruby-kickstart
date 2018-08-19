@@ -5,5 +5,5 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  string.chars.map.with_index { |n, i| n == "R" || n == "r" ? string[i+1] : nil }.join
 end
