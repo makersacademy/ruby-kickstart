@@ -20,3 +20,23 @@
 # if the parameter is greater than 99, set the number of beer bottles to 99
 # Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
 # Add any additional methods you find helpful.
+
+class BeerSong
+  @@numbers = {0=>"one",
+               1=>"two",
+               3=>"three",
+               4=>"four",
+               5=>"five",
+               6=>"six",
+               7=>"seven",
+               8=}
+
+  def initialize(number)
+    @number = number
+    @number = 0 if number < 0
+    @number = 99 if number > 99
+  end
+
+
+
+end

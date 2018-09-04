@@ -31,7 +31,7 @@
 # lissa.blogs                     # => [#<Blog:0x007fec28c49b88
 #     @date=#<Date: 2010-05-28 ((2455345j,0s,0n),+0s,2299161j)>,
 #     @text="Sailor Mars is my favourite",
-#       @user=#<User:0x007fec2902e5c8 @blogs=[...], @username="QTSort">>] 
+#       @user=#<User:0x007fec2902e5c8 @blogs=[...], @username="QTSort">>]
 #
 # blog1 = lissa.blogs.first
 # blog1.user                      # => lissa
@@ -72,4 +72,37 @@
 
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
+
+
 require 'date'
+
+class Blog
+end
+
+class User < Blog
+
+  @@blogs = []
+
+  attr_accessor :username
+
+  def initialize(username)
+    @username = username
+  end
+
+  def add_blog(date, text)
+    @blogs = []
+    @date = date
+    @text = text
+    @blogs << [@date, @text]
+    @blogs.sort
+  end
+
+  def blogs
+    p self
+  end
+
+end
+
+lissa = User.new("QTSort")
+lissa.add_blog(Date.parse("2010-05-28") , "Sailor Mars is my favourite")
+lissa.blogs
