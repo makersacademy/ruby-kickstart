@@ -5,5 +5,8 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+    arr = string.split('')
+    index_arr = arr.size.times.select {|i| arr[i] == "r" || arr[i] == "R"}
+    result_index = index_arr.map {|x| x + 1}
+    result_index.map {|x| string[x]}.join('')
 end
