@@ -8,5 +8,13 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
+def get_squares(arr)
+    results = []
+    arr.map {|x| 
+      if arr.include? x**2
+        results << x
+      end
+    }
+    return results.sort
+end
 
