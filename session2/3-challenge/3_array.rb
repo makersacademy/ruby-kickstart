@@ -7,6 +7,14 @@
 
 class String
   def every_other_char
+    # arr = gets.to_s.split('')
+    # arr.each_index.select {|i| i.even?}.map {|x| arr[x]}.join('') 
+
+    result = '' 
+    each_char.with_index {|x, i|
+      result << x if i.even?
+    }
+    result    
   end
   
 end
