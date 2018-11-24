@@ -9,5 +9,9 @@
 
 def sum_difference_product
   # your code goes here
-  
+  full = gets.split(' ').map{|x| x.to_i}
+  puts full.reduce{|sum, num| sum + num}
+  puts full.reduce{|sum, num| sum - num}
+  puts full.reduce{|sum, num| sum * num}
+
 end
