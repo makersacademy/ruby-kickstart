@@ -15,3 +15,13 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+def prime_chars?(num_arr)
+require 'prime'
+total = 0
+  num_arr.each do |x|
+    total +=  x.length
+  end
+Prime.prime?(total)
+end
+
+# puts prime_chars?(["s"])
