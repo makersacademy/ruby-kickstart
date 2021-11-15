@@ -1,13 +1,13 @@
 def append(array, n)
   return array if n < 0
-  array << n
   append(array, n-1)
+  array << n
 end
 
 def reverse_append(array, n)
   return array if n < 0
-  reverse_append(array, n-1)
   array << n
+  reverse_append(array, n-1)
 end
 
 def fib(n)
