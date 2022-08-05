@@ -6,9 +6,22 @@
 
 def odds_and_evens(string, return_odds)
   even =
-    string.split("").select.with_index { |character, index| index.even? }.join
+    string
+      .split("")
+      .select
+      .each_with_index { |character, index| index.even? }
+      .join
+
+  # split string then select each char with the index of even.
+
   odd =
-    string.split("").select.with_index { |character, index| index.odd? }.join
+    string
+      .split("")
+      .select
+      .each_with_index { |character, index| index.odd? }
+      .join
+
+  # split string then select each char with the index of odd.
 
   if return_odds == true
     return odd
